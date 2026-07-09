@@ -1,0 +1,4 @@
+/* Playground styles: pull in the package theme (tokens + component @source) and
+   scan the playground's own files so its layout utilities are generated too. */
+@import 'shadcn-solidjs-theme/theme.css';
+@source '.';
