@@ -140,6 +140,28 @@ package that no app consumes yet, but it must be handled deliberately:
   exact versions that passed. If any leg fails, stop and report — the owner decides whether
   to wait for GA or to build on Solid 1.9 with a documented upgrade path.
 
+**Release timing, as far as anyone has said (checked 2026-09-04).** No date
+has been published for Solid 2.0 stable, for Solid Router 2.0 stable, or for
+the main docs switching to 2.0. Core is at `rc.6` (2026-09-02, a new candidate
+every few days since March); the router's `next` line is at `next.21`
+(2026-09-01, six builds in three weeks) and ships as part of the coordinated
+2.0 platform release, not on its own schedule; TanStack Solid Query is at
+`6.0.0-rc.3` and tracks core to stable. The official 2.0 documentation
+already exists at https://v2.solidjs.com/ (Solid Router 2.0 included), with
+the caveat that APIs may change before stable; https://docs.solidjs.com/ stays
+on 1.x with no announced switch date. Therefore:
+
+- Gate 0 and exact pins are the posture: build against `solid-js@2.0.0-rc.6`,
+  `@solidjs/router@2.0.0-next.21` (the admin's) and
+  `@tanstack/solid-query@6.0.0-rc.3` (the admin's), record them in the README,
+  and re-pin when stable lands — as its own small increment with the owner's
+  word, not silently.
+- Watch two places for the stable release: the solidjs/solid releases page
+  (https://github.com/solidjs/solid/releases) and the "Road to 2.0"
+  discussion (https://github.com/solidjs/solid/discussions/2425).
+- Read the router's 2.0 API from https://v2.solidjs.com/, never from the
+  router repository's README on `main`, which still describes the 1.x design.
+
 ## 4. The headless-library decision (part of the decision entry)
 
 shadcn-style components are styling over headless primitives. The React
