@@ -1,0 +1,37 @@
+[
+  {
+    "command": "bun run check",
+    "exitCode": 0,
+    "seconds": 1.95
+  },
+  {
+    "command": "bun run lint",
+    "exitCode": 0,
+    "seconds": 0.94
+  },
+  {
+    "command": "bun run test",
+    "exitCode": 0,
+    "seconds": 2.44
+  },
+  {
+    "command": "bun run test:coverage",
+    "exitCode": 0,
+    "seconds": 2.48
+  },
+  {
+    "command": "bun run test:server",
+    "exitCode": 0,
+    "seconds": 0.68
+  },
+  {
+    "command": "THEME_PORT=4403 RESULTS_FILE=docs/evidence/combobox-cmb2-integration.json bun run test:integration",
+    "exitCode": 0,
+    "seconds": 67.71
+  },
+  {
+    "command": "THEME_PORT=4403 RESULTS_FILE=docs/evidence/combobox-cmb2-e2e.json bun run test:e2e",
+    "exitCode": 0,
+    "seconds": 30.86
+  }
+]

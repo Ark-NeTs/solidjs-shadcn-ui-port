@@ -64,6 +64,8 @@ Detailed examples, every variant/size, accessibility notes and customization:
 and tracks browser, SSR, visual and accessibility gaps. Run `bun run dev` for the live gallery.
 Open `/?combobox-contracts` for focused native-form, object-result and controlled-owner
 examples; [CMB-1 delivery](docs/COMBOBOX-CMB1-DELIVERY.md) records their browser acceptance.
+The same page includes long-list and modal navigation examples, verified in
+[CMB-2 delivery](docs/COMBOBOX-CMB2-DELIVERY.md).
 
 ![Light component gallery](docs/screenshots/light.png)
 ![Dark component gallery](docs/screenshots/dark.png)

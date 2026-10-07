@@ -1,0 +1,157 @@
+{
+  "config": {
+    "argv": [
+      "/Users/arktas/.asdf/installs/nodejs/25.3.0/bin/node",
+      "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/node_modules/.bin/playwright",
+      "test",
+      "tests/integration/cmb2-probe.spec.ts",
+      "--project",
+      "firefox"
+    ],
+    "configFile": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/playwright.config.ts",
+    "rootDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "integration/**/*.spec.ts",
+          "e2e/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [
+          "**/visual.spec.ts"
+        ],
+        "testMatch": [
+          "integration/**/*.spec.ts",
+          "e2e/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/tmp/cmb2-probe.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": {
+      "command": "bun run dev",
+      "url": "http://127.0.0.1:4403",
+      "reuseExistingServer": false,
+      "timeout": 60000
+    }
+  },
+  "suites": [
+    {
+      "title": "integration/cmb2-probe.spec.ts",
+      "file": "integration/cmb2-probe.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "probe geometry and focus",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1618,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "GEOMETRY {\n  item: {\n    x: \u001b[33m72\u001b[39m,\n    y: \u001b[33m875.9000244140625\u001b[39m,\n    width: \u001b[33m280\u001b[39m,\n    height: \u001b[33m32\u001b[39m,\n    top: \u001b[33m875.9000244140625\u001b[39m,\n    right: \u001b[33m352\u001b[39m,\n    bottom: \u001b[33m907.9000244140625\u001b[39m,\n    left: \u001b[33m72\u001b[39m\n  },\n  list: {\n    x: \u001b[33m72\u001b[39m,\n    y: \u001b[33m570\u001b[39m,\n    width: \u001b[33m280\u001b[39m,\n    height: \u001b[33m288\u001b[39m,\n    top: \u001b[33m570\u001b[39m,\n    right: \u001b[33m352\u001b[39m,\n    bottom: \u001b[33m858\u001b[39m,\n    left: \u001b[33m72\u001b[39m\n  },\n  scroll: \u001b[33m942.0999755859375\u001b[39m,\n  height: \u001b[33m288\u001b[39m,\n  offset: \u001b[33m288\u001b[39m,\n  total: \u001b[33m1280\u001b[39m\n}\n"
+                    },
+                    {
+                      "text": "POPUP FOCUS {\n  active: \u001b[32m'<button aria-label=\"Popup fruit\" class=\"inline-flex shrink-0 items-center justify-center rounded-md border border-input p-2 text-sm outline-none focus-visible:ring-3 focus-visible:ring-ring/50 disabled:opacity-50\" type=\"button\" data-slot=\"popover-trigger\" aria-haspopup=\"dialog\" aria-expanded=\"false\" aria-controls=\"popover-cl-13\" data-state=\"closed\">Apple</button>'\u001b[39m,\n  log: [\n    \u001b[32m'<button aria-label=\"Popup fruit\" class=\"inline-flex shrink-0 items-center justify-center rounded-md border border-input p-2 text-sm outline-none focus-visible:ring-3 focus-visible:'\u001b[39m,\n    \u001b[32m'<input aria-label=\"Popup fruit search\" role=\"combobox\" aria-autocomplete=\"list\" aria-expanded=\"true\" aria-controls=\"combobox-cl-12-list\" data-slot=\"input\" class=\"h-8 w-full rounded'\u001b[39m,\n    \u001b[32m'<button type=\"button\" data-slot=\"button\" data-variant=\"default\" data-size=\"default\" class=\"group/button inline-flex shrink-0 items-center justify-center rounded-lg border border-tr'\u001b[39m,\n    \u001b[32m'<button aria-label=\"Popup fruit\" class=\"inline-flex shrink-0 items-center justify-center rounded-md border border-input p-2 text-sm outline-none focus-visible:ring-3 focus-visible:'\u001b[39m\n  ]\n}\n"
+                    },
+                    {
+                      "text": "MODAL FOCUS {\n  active: \u001b[32m'<input id=\"modal-fruit\" role=\"combobox\" aria-autocomplete=\"list\" aria-expanded=\"false\" aria-controls=\"combobox-cl-15-list\" data-slot=\"input\" class=\"h-8 w-full rounded-lg border border-input bg-transparent px-2.5 py-1 text-base transition-colors outline-none file:inline-flex file:h-6 file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:pointer-events-none disabled:cursor-not-allowed disabled:bg-input/50 disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 md:text-sm dark:bg-input/30 dark:disabled:bg-input/80 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 min-w-0\">'\u001b[39m,\n  log: [\n    \u001b[32m'<button aria-label=\"Popup fruit\" class=\"inline-flex shrink-0 items-center justify-center rounded-md border border-input p-2 text-sm outline-none focus-visible:ring-3 focus-visible:'\u001b[39m,\n    \u001b[32m'<input aria-label=\"Popup fruit search\" role=\"combobox\" aria-autocomplete=\"list\" aria-expanded=\"true\" aria-controls=\"combobox-cl-12-list\" data-slot=\"input\" class=\"h-8 w-full rounded'\u001b[39m,\n    \u001b[32m'<button type=\"button\" data-slot=\"button\" data-variant=\"default\" data-size=\"default\" class=\"group/button inline-flex shrink-0 items-center justify-center rounded-lg border border-tr'\u001b[39m,\n    \u001b[32m'<button aria-label=\"Popup fruit\" class=\"inline-flex shrink-0 items-center justify-center rounded-md border border-input p-2 text-sm outline-none focus-visible:ring-3 focus-visible:'\u001b[39m,\n    \u001b[32m'<button type=\"button\" data-slot=\"popover-trigger\" aria-haspopup=\"dialog\" aria-expanded=\"false\" aria-controls=\"popover-cl-14\" data-state=\"closed\">Open fruit editor</button>'\u001b[39m,\n    \u001b[32m'<button type=\"button\" data-slot=\"button\" data-variant=\"default\" data-size=\"default\" class=\"group/button inline-flex shrink-0 items-center justify-center rounded-lg border border-tr'\u001b[39m,\n    \u001b[32m'<input id=\"modal-fruit\" role=\"combobox\" aria-autocomplete=\"list\" aria-expanded=\"false\" aria-controls=\"combobox-cl-15-list\" data-slot=\"input\" class=\"h-8 w-full rounded-lg border bor'\u001b[39m,\n    \u001b[32m'<button type=\"button\" data-slot=\"button\" data-variant=\"default\" data-size=\"default\" class=\"group/button inline-flex shrink-0 items-center justify-center rounded-lg border border-tr'\u001b[39m,\n    \u001b[32m'<input id=\"modal-fruit\" role=\"combobox\" aria-autocomplete=\"list\" aria-expanded=\"true\" aria-controls=\"combobox-cl-15-list\" data-slot=\"input\" class=\"h-8 w-full rounded-lg border bord'\u001b[39m\n  ]\n}\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-07T23:16:15.225Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1ec850e723247b93b91f-5c448aee151382fc2268",
+          "file": "integration/cmb2-probe.spec.ts",
+          "line": 2,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-07T23:16:14.030Z",
+    "duration": 3769.884,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

@@ -463,9 +463,19 @@ restoration on unmount. Invalid submission exposes a named error and opens the
 chooser; use `aria-describedby` for additional help.
 
 Arrow Up/Down open and navigate enabled choices with wrapping; Enter commits;
-Escape cancels and Tab exits. Home/End retain native text-cursor behavior.
+Escape cancels. Tab discards the draft after native focus navigation: from an
+inline input it reaches the optional trigger, then the next control; Shift+Tab
+reaches the preceding control. From popup search, Tab reaches the next outside
+control and Shift+Tab returns to the trigger. Deferred closure is canceled on
+unmount or a newer open/close request. Home/End retain native text-cursor behavior.
 IME composition does not commit selections. Active options scroll inside the
-list while DOM focus remains on the input. Use a Label or explicit aria-label;
+list while DOM focus remains on the input. Scrolling accounts for the opening
+scale animation. List/Collection render callbacks use layout-neutral presentation
+wrappers to isolate reactive row reads; style options by their data-slot rather
+than assuming they are direct DOM children of the list.
+[Navigation acceptance](COMBOBOX-CMB2-DELIVERY.md) covers a 40-option list, native
+Tab destinations and a chooser inside modal Popover. Physical IME remains unrun.
+Use a Label or explicit aria-label;
 ComboboxLabel is a **group** label, not a field label.
 
 For the admin's popup-search pattern, place `ComboboxTrigger` outside Content,

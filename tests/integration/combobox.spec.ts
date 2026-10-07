@@ -19,3 +19,6 @@ test('keeps open content accessible and within enlarged narrow viewports',async(
 
 import { comboboxContracts } from '../combobox-contracts';
 comboboxContracts();
+
+import { comboboxNavigation } from '../combobox-navigation';
+comboboxNavigation();

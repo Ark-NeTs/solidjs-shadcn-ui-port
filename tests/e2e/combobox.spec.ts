@@ -6,3 +6,6 @@ test('built Combobox searches, commits, resets and recovers a rejected change',a
 
 import { comboboxContracts } from '../combobox-contracts';
 comboboxContracts();
+
+import { comboboxNavigation } from '../combobox-navigation';
+comboboxNavigation();

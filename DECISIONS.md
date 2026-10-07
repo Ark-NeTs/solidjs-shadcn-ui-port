@@ -158,3 +158,18 @@ semantics and unsupported Base UI APIs explicitly. This is the fourteenth
 component; neither the whole catalog nor an admin framework migration is done.
 The latest working agreement requires a codex branch for commit/push, superseding
 the earlier direct-main exception for this task.
+
+## Combobox navigation follow-up — 2026-10-08 (D19/D90)
+
+Browser acceptance exposed underscrolling during the popup scale animation,
+wide list insertion dependencies and Firefox focus restoration after Tab. Keep
+geometry changes local to Combobox: convert rectangle deltas into unscaled
+scrollTop units. Cache filtered/enabled/active derivations and give rendered rows
+layout-neutral presentation wrappers under For so their template reads belong to
+individual insertion scopes; the collection helper uses the same contract.
+
+Let native Tab navigation finish before closing in the next task. Suppress
+restoration for that dismissal only; cancel queued closure on disposal or a newer
+request. Popup Shift+Tab returns to the trigger, following native DOM order.
+No focusable-element enumeration, forced clicks, diagnostic filters or library
+pin changes are introduced. See [CMB-2 delivery](docs/COMBOBOX-CMB2-DELIVERY.md).

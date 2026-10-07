@@ -1,0 +1,779 @@
+{
+  "config": {
+    "argv": [
+      "/Users/arktas/.asdf/installs/nodejs/25.3.0/bin/node",
+      "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/node_modules/.bin/playwright",
+      "test",
+      "tests/integration/combobox.spec.ts",
+      "--grep",
+      "active options|inline Tab|popup search Tab|nested chooser"
+    ],
+    "configFile": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/playwright.config.ts",
+    "rootDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "integration/**/*.spec.ts",
+          "e2e/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [
+          "**/visual.spec.ts"
+        ],
+        "testMatch": [
+          "integration/**/*.spec.ts",
+          "e2e/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/tmp/cmb2-focused.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": {
+      "command": "bun run dev",
+      "url": "http://127.0.0.1:4403",
+      "reuseExistingServer": false,
+      "timeout": 60000
+    }
+  },
+  "suites": [
+    {
+      "title": "integration/combobox.spec.ts",
+      "file": "integration/combobox.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "active options stay visible through wrapping and scrolling in desktop layouts",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5613,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate\n    at expectActiveVisible (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/combobox-navigation.ts:15:7)\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/combobox-navigation.ts:27:7",
+                    "location": {
+                      "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/combobox-navigation.ts",
+                      "column": 7,
+                      "line": 15
+                    },
+                    "snippet": "  13 |     const popup = node.closest('[data-slot=\"popover-content\"]')!.getBoundingClientRect();\n  14 |     return item.top >= Math.max(list.top, popup.top, 0) - 1 && item.bottom <= Math.min(list.bottom, popup.bottom, innerHeight) + 1;\n> 15 |   })).toBe(true);\n     |       ^\n  16 | }\n  17 |\n  18 | /** Exercise long lists, real sequential focus and nested modal dismissal. */"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/combobox-navigation.ts",
+                        "column": 7,
+                        "line": 15
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate\n\n  13 |     const popup = node.closest('[data-slot=\"popover-content\"]')!.getBoundingClientRect();\n  14 |     return item.top >= Math.max(list.top, popup.top, 0) - 1 && item.bottom <= Math.min(list.bottom, popup.bottom, innerHeight) + 1;\n> 15 |   })).toBe(true);\n     |       ^\n  16 | }\n  17 |\n  18 | /** Exercise long lists, real sequential focus and nested modal dismissal. */\n    at expectActiveVisible (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/combobox-navigation.ts:15:7)\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/combobox-navigation.ts:27:7"
+                    },
+                    {
+                      "location": {
+                        "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/browser-fixture.ts",
+                        "column": 69,
+                        "line": 10
+                      },
+                      "message": "Error: No browser errors or development diagnostics\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"[WIDE_SCOPE_DEPS] effect \\\"div.children\\\" is subscribed to 40 sources — it re-runs when any of them change. Narrow its reads or split it into smaller memos. Sources: anonymous, anonymous, anonymous, anonymous, anonymous, anonymous, anonymous, anonymous, anonymous, anonymous, anonymous, anonymous, …\u001b[39m\n\u001b[31m+   in <ComboboxContracts> › <ComboboxNavigation> › <Combobox> › <Context> › computed › <Popover> › <Context> › computed › div.children › <ComboboxContent> › <Inside> › computed › <PopoverContent> › <Show> › value › <PopoverView> › <Dynamic> › <Anonymous> › computed › effect › <ComboboxList> › div.children › div.children\u001b[39m\n\u001b[31m+ [WIDE_SCOPE_DEPS] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#wide_scope_deps\u001b[39m\n\u001b[31m+ [WIDE_SCOPE_DEPS] deeper evidence: import { attribution } from \\\"solid-js/attribution\\\"; attribution.enable() explains every re-run — why-chains, costs(), feedback(), history(\\\"hold\\\" | \\\"waterfall\\\") — agent loop: node_modules/@solidjs/diagnostics/skills/agent-loops/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/diagnostics/skills/agent-loops/SKILL.md\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n   at browser-fixture.ts:10\n\n   8 |     await use(messages);\n   9 |     await testInfo.attach('browser-diagnostics',{body:JSON.stringify(messages),contentType:'application/json'});\n> 10 |     expect(messages,'No browser errors or development diagnostics').toEqual([]);\n     |                                                                     ^\n  11 |   },{auto:true}],\n  12 | });\n  13 | export { expect };\n    at Object.base.extend.diagnostics.auto (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/browser-fixture.ts:10:69)"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-07T23:14:35.719Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/integration-combobox-activ-ac39d-crolling-in-desktop-layouts-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "WyJbV0lERV9TQ09QRV9ERVBTXSBlZmZlY3QgXCJkaXYuY2hpbGRyZW5cIiBpcyBzdWJzY3JpYmVkIHRvIDQwIHNvdXJjZXMg4oCUIGl0IHJlLXJ1bnMgd2hlbiBhbnkgb2YgdGhlbSBjaGFuZ2UuIE5hcnJvdyBpdHMgcmVhZHMgb3Igc3BsaXQgaXQgaW50byBzbWFsbGVyIG1lbW9zLiBTb3VyY2VzOiBhbm9ueW1vdXMsIGFub255bW91cywgYW5vbnltb3VzLCBhbm9ueW1vdXMsIGFub255bW91cywgYW5vbnltb3VzLCBhbm9ueW1vdXMsIGFub255bW91cywgYW5vbnltb3VzLCBhbm9ueW1vdXMsIGFub255bW91cywgYW5vbnltb3VzLCDigKZcbiAgaW4gPENvbWJvYm94Q29udHJhY3RzPiDigLogPENvbWJvYm94TmF2aWdhdGlvbj4g4oC6IDxDb21ib2JveD4g4oC6IDxDb250ZXh0PiDigLogY29tcHV0ZWQg4oC6IDxQb3BvdmVyPiDigLogPENvbnRleHQ+IOKAuiBjb21wdXRlZCDigLogZGl2LmNoaWxkcmVuIOKAuiA8Q29tYm9ib3hDb250ZW50PiDigLogPEluc2lkZT4g4oC6IGNvbXB1dGVkIOKAuiA8UG9wb3ZlckNvbnRlbnQ+IOKAuiA8U2hvdz4g4oC6IHZhbHVlIOKAuiA8UG9wb3ZlclZpZXc+IOKAuiA8RHluYW1pYz4g4oC6IDxBbm9ueW1vdXM+IOKAuiBjb21wdXRlZCDigLogZWZmZWN0IOKAuiA8Q29tYm9ib3hMaXN0PiDigLogZGl2LmNoaWxkcmVuIOKAuiBkaXYuY2hpbGRyZW5cbltXSURFX1NDT1BFX0RFUFNdIHJlcGFpciBndWlkZTogbm9kZV9tb2R1bGVzL3NvbGlkLWpzL3NraWxscy9yZWFjdGl2aXR5LWRpYWdub3N0aWNzL1NLSUxMLm1kIOKAlCBodHRwczovL2dpdGh1Yi5jb20vc29saWRqcy9zb2xpZC9ibG9iL21haW4vcGFja2FnZXMvc29saWQvc2tpbGxzL3JlYWN0aXZpdHktZGlhZ25vc3RpY3MvU0tJTEwubWQjd2lkZV9zY29wZV9kZXBzXG5bV0lERV9TQ09QRV9ERVBTXSBkZWVwZXIgZXZpZGVuY2U6IGltcG9ydCB7IGF0dHJpYnV0aW9uIH0gZnJvbSBcInNvbGlkLWpzL2F0dHJpYnV0aW9uXCI7IGF0dHJpYnV0aW9uLmVuYWJsZSgpIGV4cGxhaW5zIGV2ZXJ5IHJlLXJ1biDigJQgd2h5LWNoYWlucywgY29zdHMoKSwgZmVlZGJhY2soKSwgaGlzdG9yeShcImhvbGRcIiB8IFwid2F0ZXJmYWxsXCIpIOKAlCBhZ2VudCBsb29wOiBub2RlX21vZHVsZXMvQHNvbGlkanMvZGlhZ25vc3RpY3Mvc2tpbGxzL2FnZW50LWxvb3BzL1NLSUxMLm1kIOKAlCBodHRwczovL2dpdGh1Yi5jb20vc29saWRqcy9zb2xpZC9ibG9iL21haW4vcGFja2FnZXMvZGlhZ25vc3RpY3Mvc2tpbGxzL2FnZW50LWxvb3BzL1NLSUxMLm1kIl0="
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/integration-combobox-activ-ac39d-crolling-in-desktop-layouts-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/integration-combobox-activ-ac39d-crolling-in-desktop-layouts-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/combobox-navigation.ts",
+                    "column": 7,
+                    "line": 15
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "385cb6c6b2e672ec102d-606a579bf3e4ce472e02",
+          "file": "combobox-navigation.ts",
+          "line": 21,
+          "column": 5
+        },
+        {
+          "title": "active options stay visible through wrapping and scrolling in narrow enlarged layouts",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5435,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate\n    at expectActiveVisible (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/combobox-navigation.ts:15:7)\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/combobox-navigation.ts:27:7",
+                    "location": {
+                      "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/combobox-navigation.ts",
+                      "column": 7,
+                      "line": 15
+                    },
+                    "snippet": "  13 |     const popup = node.closest('[data-slot=\"popover-content\"]')!.getBoundingClientRect();\n  14 |     return item.top >= Math.max(list.top, popup.top, 0) - 1 && item.bottom <= Math.min(list.bottom, popup.bottom, innerHeight) + 1;\n> 15 |   })).toBe(true);\n     |       ^\n  16 | }\n  17 |\n  18 | /** Exercise long lists, real sequential focus and nested modal dismissal. */"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/combobox-navigation.ts",
+                        "column": 7,
+                        "line": 15
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate\n\n  13 |     const popup = node.closest('[data-slot=\"popover-content\"]')!.getBoundingClientRect();\n  14 |     return item.top >= Math.max(list.top, popup.top, 0) - 1 && item.bottom <= Math.min(list.bottom, popup.bottom, innerHeight) + 1;\n> 15 |   })).toBe(true);\n     |       ^\n  16 | }\n  17 |\n  18 | /** Exercise long lists, real sequential focus and nested modal dismissal. */\n    at expectActiveVisible (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/combobox-navigation.ts:15:7)\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/combobox-navigation.ts:27:7"
+                    },
+                    {
+                      "location": {
+                        "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/browser-fixture.ts",
+                        "column": 69,
+                        "line": 10
+                      },
+                      "message": "Error: No browser errors or development diagnostics\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"[WIDE_SCOPE_DEPS] effect \\\"div.children\\\" is subscribed to 40 sources — it re-runs when any of them change. Narrow its reads or split it into smaller memos. Sources: anonymous, anonymous, anonymous, anonymous, anonymous, anonymous, anonymous, anonymous, anonymous, anonymous, anonymous, anonymous, …\u001b[39m\n\u001b[31m+   in <ComboboxContracts> › <ComboboxNavigation> › <Combobox> › <Context> › computed › <Popover> › <Context> › computed › div.children › <ComboboxContent> › <Inside> › computed › <PopoverContent> › <Show> › value › <PopoverView> › <Dynamic> › <Anonymous> › computed › effect › <ComboboxList> › div.children › div.children\u001b[39m\n\u001b[31m+ [WIDE_SCOPE_DEPS] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#wide_scope_deps\u001b[39m\n\u001b[31m+ [WIDE_SCOPE_DEPS] deeper evidence: import { attribution } from \\\"solid-js/attribution\\\"; attribution.enable() explains every re-run — why-chains, costs(), feedback(), history(\\\"hold\\\" | \\\"waterfall\\\") — agent loop: node_modules/@solidjs/diagnostics/skills/agent-loops/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/diagnostics/skills/agent-loops/SKILL.md\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n   at browser-fixture.ts:10\n\n   8 |     await use(messages);\n   9 |     await testInfo.attach('browser-diagnostics',{body:JSON.stringify(messages),contentType:'application/json'});\n> 10 |     expect(messages,'No browser errors or development diagnostics').toEqual([]);\n     |                                                                     ^\n  11 |   },{auto:true}],\n  12 | });\n  13 | export { expect };\n    at Object.base.extend.diagnostics.auto (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/browser-fixture.ts:10:69)"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-07T23:14:41.952Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/integration-combobox-activ-2863c--in-narrow-enlarged-layouts-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "WyJbV0lERV9TQ09QRV9ERVBTXSBlZmZlY3QgXCJkaXYuY2hpbGRyZW5cIiBpcyBzdWJzY3JpYmVkIHRvIDQwIHNvdXJjZXMg4oCUIGl0IHJlLXJ1bnMgd2hlbiBhbnkgb2YgdGhlbSBjaGFuZ2UuIE5hcnJvdyBpdHMgcmVhZHMgb3Igc3BsaXQgaXQgaW50byBzbWFsbGVyIG1lbW9zLiBTb3VyY2VzOiBhbm9ueW1vdXMsIGFub255bW91cywgYW5vbnltb3VzLCBhbm9ueW1vdXMsIGFub255bW91cywgYW5vbnltb3VzLCBhbm9ueW1vdXMsIGFub255bW91cywgYW5vbnltb3VzLCBhbm9ueW1vdXMsIGFub255bW91cywgYW5vbnltb3VzLCDigKZcbiAgaW4gPENvbWJvYm94Q29udHJhY3RzPiDigLogPENvbWJvYm94TmF2aWdhdGlvbj4g4oC6IDxDb21ib2JveD4g4oC6IDxDb250ZXh0PiDigLogY29tcHV0ZWQg4oC6IDxQb3BvdmVyPiDigLogPENvbnRleHQ+IOKAuiBjb21wdXRlZCDigLogZGl2LmNoaWxkcmVuIOKAuiA8Q29tYm9ib3hDb250ZW50PiDigLogPEluc2lkZT4g4oC6IGNvbXB1dGVkIOKAuiA8UG9wb3ZlckNvbnRlbnQ+IOKAuiA8U2hvdz4g4oC6IHZhbHVlIOKAuiA8UG9wb3ZlclZpZXc+IOKAuiA8RHluYW1pYz4g4oC6IDxBbm9ueW1vdXM+IOKAuiBjb21wdXRlZCDigLogZWZmZWN0IOKAuiA8Q29tYm9ib3hMaXN0PiDigLogZGl2LmNoaWxkcmVuIOKAuiBkaXYuY2hpbGRyZW5cbltXSURFX1NDT1BFX0RFUFNdIHJlcGFpciBndWlkZTogbm9kZV9tb2R1bGVzL3NvbGlkLWpzL3NraWxscy9yZWFjdGl2aXR5LWRpYWdub3N0aWNzL1NLSUxMLm1kIOKAlCBodHRwczovL2dpdGh1Yi5jb20vc29saWRqcy9zb2xpZC9ibG9iL21haW4vcGFja2FnZXMvc29saWQvc2tpbGxzL3JlYWN0aXZpdHktZGlhZ25vc3RpY3MvU0tJTEwubWQjd2lkZV9zY29wZV9kZXBzXG5bV0lERV9TQ09QRV9ERVBTXSBkZWVwZXIgZXZpZGVuY2U6IGltcG9ydCB7IGF0dHJpYnV0aW9uIH0gZnJvbSBcInNvbGlkLWpzL2F0dHJpYnV0aW9uXCI7IGF0dHJpYnV0aW9uLmVuYWJsZSgpIGV4cGxhaW5zIGV2ZXJ5IHJlLXJ1biDigJQgd2h5LWNoYWlucywgY29zdHMoKSwgZmVlZGJhY2soKSwgaGlzdG9yeShcImhvbGRcIiB8IFwid2F0ZXJmYWxsXCIpIOKAlCBhZ2VudCBsb29wOiBub2RlX21vZHVsZXMvQHNvbGlkanMvZGlhZ25vc3RpY3Mvc2tpbGxzL2FnZW50LWxvb3BzL1NLSUxMLm1kIOKAlCBodHRwczovL2dpdGh1Yi5jb20vc29saWRqcy9zb2xpZC9ibG9iL21haW4vcGFja2FnZXMvZGlhZ25vc3RpY3Mvc2tpbGxzL2FnZW50LWxvb3BzL1NLSUxMLm1kIl0="
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/integration-combobox-activ-2863c--in-narrow-enlarged-layouts-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/integration-combobox-activ-2863c--in-narrow-enlarged-layouts-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/combobox-navigation.ts",
+                    "column": 7,
+                    "line": 15
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "385cb6c6b2e672ec102d-9d73da5a88ff36973d8a",
+          "file": "combobox-navigation.ts",
+          "line": 21,
+          "column": 5
+        },
+        {
+          "title": "inline Tab and Shift+Tab discard drafts and reach native neighboring controls",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 419,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-07T23:14:47.887Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "385cb6c6b2e672ec102d-d1c3b0177bc7d01f8f16",
+          "file": "combobox-navigation.ts",
+          "line": 43,
+          "column": 3
+        },
+        {
+          "title": "popup search Tab and Shift+Tab close and reach the corresponding outside neighbor",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 416,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-07T23:14:48.454Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "385cb6c6b2e672ec102d-8aad3c2b6ad4052bf45a",
+          "file": "combobox-navigation.ts",
+          "line": 61,
+          "column": 3
+        },
+        {
+          "title": "nested chooser selects and dismisses independently while its modal retains focus and scroll lock",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 760,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-07T23:14:48.875Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "385cb6c6b2e672ec102d-e116015a8b89099d5fef",
+          "file": "combobox-navigation.ts",
+          "line": 81,
+          "column": 3
+        },
+        {
+          "title": "active options stay visible through wrapping and scrolling in desktop layouts",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5436,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate\n    at expectActiveVisible (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/combobox-navigation.ts:15:7)\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/combobox-navigation.ts:27:7",
+                    "location": {
+                      "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/combobox-navigation.ts",
+                      "column": 7,
+                      "line": 15
+                    },
+                    "snippet": "  13 |     const popup = node.closest('[data-slot=\"popover-content\"]')!.getBoundingClientRect();\n  14 |     return item.top >= Math.max(list.top, popup.top, 0) - 1 && item.bottom <= Math.min(list.bottom, popup.bottom, innerHeight) + 1;\n> 15 |   })).toBe(true);\n     |       ^\n  16 | }\n  17 |\n  18 | /** Exercise long lists, real sequential focus and nested modal dismissal. */"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/combobox-navigation.ts",
+                        "column": 7,
+                        "line": 15
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate\n\n  13 |     const popup = node.closest('[data-slot=\"popover-content\"]')!.getBoundingClientRect();\n  14 |     return item.top >= Math.max(list.top, popup.top, 0) - 1 && item.bottom <= Math.min(list.bottom, popup.bottom, innerHeight) + 1;\n> 15 |   })).toBe(true);\n     |       ^\n  16 | }\n  17 |\n  18 | /** Exercise long lists, real sequential focus and nested modal dismissal. */\n    at expectActiveVisible (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/combobox-navigation.ts:15:7)\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/combobox-navigation.ts:27:7"
+                    },
+                    {
+                      "location": {
+                        "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/browser-fixture.ts",
+                        "column": 69,
+                        "line": 10
+                      },
+                      "message": "Error: No browser errors or development diagnostics\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"[WIDE_SCOPE_DEPS] effect \\\"div.children\\\" is subscribed to 40 sources — it re-runs when any of them change. Narrow its reads or split it into smaller memos. Sources: anonymous, anonymous, anonymous, anonymous, anonymous, anonymous, anonymous, anonymous, anonymous, anonymous, anonymous, anonymous, …\u001b[39m\n\u001b[31m+   in <ComboboxContracts> › <ComboboxNavigation> › <Combobox> › <Context> › computed › <Popover> › <Context> › computed › div.children › <ComboboxContent> › <Inside> › computed › <PopoverContent> › <Show> › value › <PopoverView> › <Dynamic> › <Anonymous> › computed › effect › <ComboboxList> › div.children › div.children\u001b[39m\n\u001b[31m+ [WIDE_SCOPE_DEPS] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#wide_scope_deps\u001b[39m\n\u001b[31m+ [WIDE_SCOPE_DEPS] deeper evidence: import { attribution } from \\\"solid-js/attribution\\\"; attribution.enable() explains every re-run — why-chains, costs(), feedback(), history(\\\"hold\\\" | \\\"waterfall\\\") — agent loop: node_modules/@solidjs/diagnostics/skills/agent-loops/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/diagnostics/skills/agent-loops/SKILL.md\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n   at browser-fixture.ts:10\n\n   8 |     await use(messages);\n   9 |     await testInfo.attach('browser-diagnostics',{body:JSON.stringify(messages),contentType:'application/json'});\n> 10 |     expect(messages,'No browser errors or development diagnostics').toEqual([]);\n     |                                                                     ^\n  11 |   },{auto:true}],\n  12 | });\n  13 | export { expect };\n    at Object.base.extend.diagnostics.auto (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/browser-fixture.ts:10:69)"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-07T23:14:49.964Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/integration-combobox-activ-ac39d-crolling-in-desktop-layouts-firefox/test-failed-1.png"
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "WyJbV0lERV9TQ09QRV9ERVBTXSBlZmZlY3QgXCJkaXYuY2hpbGRyZW5cIiBpcyBzdWJzY3JpYmVkIHRvIDQwIHNvdXJjZXMg4oCUIGl0IHJlLXJ1bnMgd2hlbiBhbnkgb2YgdGhlbSBjaGFuZ2UuIE5hcnJvdyBpdHMgcmVhZHMgb3Igc3BsaXQgaXQgaW50byBzbWFsbGVyIG1lbW9zLiBTb3VyY2VzOiBhbm9ueW1vdXMsIGFub255bW91cywgYW5vbnltb3VzLCBhbm9ueW1vdXMsIGFub255bW91cywgYW5vbnltb3VzLCBhbm9ueW1vdXMsIGFub255bW91cywgYW5vbnltb3VzLCBhbm9ueW1vdXMsIGFub255bW91cywgYW5vbnltb3VzLCDigKZcbiAgaW4gPENvbWJvYm94Q29udHJhY3RzPiDigLogPENvbWJvYm94TmF2aWdhdGlvbj4g4oC6IDxDb21ib2JveD4g4oC6IDxDb250ZXh0PiDigLogY29tcHV0ZWQg4oC6IDxQb3BvdmVyPiDigLogPENvbnRleHQ+IOKAuiBjb21wdXRlZCDigLogZGl2LmNoaWxkcmVuIOKAuiA8Q29tYm9ib3hDb250ZW50PiDigLogPEluc2lkZT4g4oC6IGNvbXB1dGVkIOKAuiA8UG9wb3ZlckNvbnRlbnQ+IOKAuiA8U2hvdz4g4oC6IHZhbHVlIOKAuiA8UG9wb3ZlclZpZXc+IOKAuiA8RHluYW1pYz4g4oC6IDxBbm9ueW1vdXM+IOKAuiBjb21wdXRlZCDigLogZWZmZWN0IOKAuiA8Q29tYm9ib3hMaXN0PiDigLogZGl2LmNoaWxkcmVuIOKAuiBkaXYuY2hpbGRyZW5cbltXSURFX1NDT1BFX0RFUFNdIHJlcGFpciBndWlkZTogbm9kZV9tb2R1bGVzL3NvbGlkLWpzL3NraWxscy9yZWFjdGl2aXR5LWRpYWdub3N0aWNzL1NLSUxMLm1kIOKAlCBodHRwczovL2dpdGh1Yi5jb20vc29saWRqcy9zb2xpZC9ibG9iL21haW4vcGFja2FnZXMvc29saWQvc2tpbGxzL3JlYWN0aXZpdHktZGlhZ25vc3RpY3MvU0tJTEwubWQjd2lkZV9zY29wZV9kZXBzXG5bV0lERV9TQ09QRV9ERVBTXSBkZWVwZXIgZXZpZGVuY2U6IGltcG9ydCB7IGF0dHJpYnV0aW9uIH0gZnJvbSBcInNvbGlkLWpzL2F0dHJpYnV0aW9uXCI7IGF0dHJpYnV0aW9uLmVuYWJsZSgpIGV4cGxhaW5zIGV2ZXJ5IHJlLXJ1biDigJQgd2h5LWNoYWlucywgY29zdHMoKSwgZmVlZGJhY2soKSwgaGlzdG9yeShcImhvbGRcIiB8IFwid2F0ZXJmYWxsXCIpIOKAlCBhZ2VudCBsb29wOiBub2RlX21vZHVsZXMvQHNvbGlkanMvZGlhZ25vc3RpY3Mvc2tpbGxzL2FnZW50LWxvb3BzL1NLSUxMLm1kIOKAlCBodHRwczovL2dpdGh1Yi5jb20vc29saWRqcy9zb2xpZC9ibG9iL21haW4vcGFja2FnZXMvZGlhZ25vc3RpY3Mvc2tpbGxzL2FnZW50LWxvb3BzL1NLSUxMLm1kIl0="
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/integration-combobox-activ-ac39d-crolling-in-desktop-layouts-firefox/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/integration-combobox-activ-ac39d-crolling-in-desktop-layouts-firefox/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/combobox-navigation.ts",
+                    "column": 7,
+                    "line": 15
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "385cb6c6b2e672ec102d-87f5a6bb023049e599d4",
+          "file": "combobox-navigation.ts",
+          "line": 21,
+          "column": 5
+        },
+        {
+          "title": "active options stay visible through wrapping and scrolling in narrow enlarged layouts",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 6397,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate\n    at expectActiveVisible (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/combobox-navigation.ts:15:7)\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/combobox-navigation.ts:27:7",
+                    "location": {
+                      "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/combobox-navigation.ts",
+                      "column": 7,
+                      "line": 15
+                    },
+                    "snippet": "  13 |     const popup = node.closest('[data-slot=\"popover-content\"]')!.getBoundingClientRect();\n  14 |     return item.top >= Math.max(list.top, popup.top, 0) - 1 && item.bottom <= Math.min(list.bottom, popup.bottom, innerHeight) + 1;\n> 15 |   })).toBe(true);\n     |       ^\n  16 | }\n  17 |\n  18 | /** Exercise long lists, real sequential focus and nested modal dismissal. */"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/combobox-navigation.ts",
+                        "column": 7,
+                        "line": 15
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate\n\n  13 |     const popup = node.closest('[data-slot=\"popover-content\"]')!.getBoundingClientRect();\n  14 |     return item.top >= Math.max(list.top, popup.top, 0) - 1 && item.bottom <= Math.min(list.bottom, popup.bottom, innerHeight) + 1;\n> 15 |   })).toBe(true);\n     |       ^\n  16 | }\n  17 |\n  18 | /** Exercise long lists, real sequential focus and nested modal dismissal. */\n    at expectActiveVisible (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/combobox-navigation.ts:15:7)\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/combobox-navigation.ts:27:7"
+                    },
+                    {
+                      "location": {
+                        "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/browser-fixture.ts",
+                        "column": 69,
+                        "line": 10
+                      },
+                      "message": "Error: No browser errors or development diagnostics\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"[WIDE_SCOPE_DEPS] effect \\\"div.children\\\" is subscribed to 40 sources — it re-runs when any of them change. Narrow its reads or split it into smaller memos. Sources: anonymous, anonymous, anonymous, anonymous, anonymous, anonymous, anonymous, anonymous, anonymous, anonymous, anonymous, anonymous, …\u001b[39m\n\u001b[31m+   in <ComboboxContracts> › <ComboboxNavigation> › <Combobox> › <Context> › computed › <Popover> › <Context> › computed › div.children › <ComboboxContent> › <Inside> › computed › <PopoverContent> › <Show> › value › <PopoverView> › <Dynamic> › <Anonymous> › computed › effect › <ComboboxList> › div.children › div.children\u001b[39m\n\u001b[31m+ [WIDE_SCOPE_DEPS] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#wide_scope_deps\u001b[39m\n\u001b[31m+ [WIDE_SCOPE_DEPS] deeper evidence: import { attribution } from \\\"solid-js/attribution\\\"; attribution.enable() explains every re-run — why-chains, costs(), feedback(), history(\\\"hold\\\" | \\\"waterfall\\\") — agent loop: node_modules/@solidjs/diagnostics/skills/agent-loops/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/diagnostics/skills/agent-loops/SKILL.md\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n   at browser-fixture.ts:10\n\n   8 |     await use(messages);\n   9 |     await testInfo.attach('browser-diagnostics',{body:JSON.stringify(messages),contentType:'application/json'});\n> 10 |     expect(messages,'No browser errors or development diagnostics').toEqual([]);\n     |                                                                     ^\n  11 |   },{auto:true}],\n  12 | });\n  13 | export { expect };\n    at Object.base.extend.diagnostics.auto (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/browser-fixture.ts:10:69)"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-07T23:14:56.986Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/integration-combobox-activ-2863c--in-narrow-enlarged-layouts-firefox/test-failed-1.png"
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "WyJbV0lERV9TQ09QRV9ERVBTXSBlZmZlY3QgXCJkaXYuY2hpbGRyZW5cIiBpcyBzdWJzY3JpYmVkIHRvIDQwIHNvdXJjZXMg4oCUIGl0IHJlLXJ1bnMgd2hlbiBhbnkgb2YgdGhlbSBjaGFuZ2UuIE5hcnJvdyBpdHMgcmVhZHMgb3Igc3BsaXQgaXQgaW50byBzbWFsbGVyIG1lbW9zLiBTb3VyY2VzOiBhbm9ueW1vdXMsIGFub255bW91cywgYW5vbnltb3VzLCBhbm9ueW1vdXMsIGFub255bW91cywgYW5vbnltb3VzLCBhbm9ueW1vdXMsIGFub255bW91cywgYW5vbnltb3VzLCBhbm9ueW1vdXMsIGFub255bW91cywgYW5vbnltb3VzLCDigKZcbiAgaW4gPENvbWJvYm94Q29udHJhY3RzPiDigLogPENvbWJvYm94TmF2aWdhdGlvbj4g4oC6IDxDb21ib2JveD4g4oC6IDxDb250ZXh0PiDigLogY29tcHV0ZWQg4oC6IDxQb3BvdmVyPiDigLogPENvbnRleHQ+IOKAuiBjb21wdXRlZCDigLogZGl2LmNoaWxkcmVuIOKAuiA8Q29tYm9ib3hDb250ZW50PiDigLogPEluc2lkZT4g4oC6IGNvbXB1dGVkIOKAuiA8UG9wb3ZlckNvbnRlbnQ+IOKAuiA8U2hvdz4g4oC6IHZhbHVlIOKAuiA8UG9wb3ZlclZpZXc+IOKAuiA8RHluYW1pYz4g4oC6IDxBbm9ueW1vdXM+IOKAuiBjb21wdXRlZCDigLogZWZmZWN0IOKAuiA8Q29tYm9ib3hMaXN0PiDigLogZGl2LmNoaWxkcmVuIOKAuiBkaXYuY2hpbGRyZW5cbltXSURFX1NDT1BFX0RFUFNdIHJlcGFpciBndWlkZTogbm9kZV9tb2R1bGVzL3NvbGlkLWpzL3NraWxscy9yZWFjdGl2aXR5LWRpYWdub3N0aWNzL1NLSUxMLm1kIOKAlCBodHRwczovL2dpdGh1Yi5jb20vc29saWRqcy9zb2xpZC9ibG9iL21haW4vcGFja2FnZXMvc29saWQvc2tpbGxzL3JlYWN0aXZpdHktZGlhZ25vc3RpY3MvU0tJTEwubWQjd2lkZV9zY29wZV9kZXBzXG5bV0lERV9TQ09QRV9ERVBTXSBkZWVwZXIgZXZpZGVuY2U6IGltcG9ydCB7IGF0dHJpYnV0aW9uIH0gZnJvbSBcInNvbGlkLWpzL2F0dHJpYnV0aW9uXCI7IGF0dHJpYnV0aW9uLmVuYWJsZSgpIGV4cGxhaW5zIGV2ZXJ5IHJlLXJ1biDigJQgd2h5LWNoYWlucywgY29zdHMoKSwgZmVlZGJhY2soKSwgaGlzdG9yeShcImhvbGRcIiB8IFwid2F0ZXJmYWxsXCIpIOKAlCBhZ2VudCBsb29wOiBub2RlX21vZHVsZXMvQHNvbGlkanMvZGlhZ25vc3RpY3Mvc2tpbGxzL2FnZW50LWxvb3BzL1NLSUxMLm1kIOKAlCBodHRwczovL2dpdGh1Yi5jb20vc29saWRqcy9zb2xpZC9ibG9iL21haW4vcGFja2FnZXMvZGlhZ25vc3RpY3Mvc2tpbGxzL2FnZW50LWxvb3BzL1NLSUxMLm1kIl0="
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/integration-combobox-activ-2863c--in-narrow-enlarged-layouts-firefox/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/integration-combobox-activ-2863c--in-narrow-enlarged-layouts-firefox/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/combobox-navigation.ts",
+                    "column": 7,
+                    "line": 15
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "385cb6c6b2e672ec102d-fec6bc246af8ecc90fa6",
+          "file": "combobox-navigation.ts",
+          "line": 21,
+          "column": 5
+        },
+        {
+          "title": "inline Tab and Shift+Tab discard drafts and reach native neighboring controls",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1287,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-07T23:15:04.649Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "385cb6c6b2e672ec102d-43bb80ac3a3592c5a24e",
+          "file": "combobox-navigation.ts",
+          "line": 43,
+          "column": 3
+        },
+        {
+          "title": "popup search Tab and Shift+Tab close and reach the corresponding outside neighbor",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5868,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeFocused\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('group', { name: 'Popup focus order' }).getByRole('button', { name: 'After popup chooser' })\nExpected: focused\nReceived: inactive\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeFocused\" getByRole('group', { name: 'Popup focus order' }).getByRole('button', { name: 'After popup chooser' }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('group', { name: 'Popup focus order' }).getByRole('button', { name: 'After popup chooser' })\u001b[22m\n\u001b[2m    14 × locator resolved to <button type=\"button\" data-slot=\"button\" data-size=\"default\" data-variant=\"default\" class=\"group/button inline-flex shrink-0 items-center justify-center rounded-lg border border-transparent bg-clip-padding text-sm font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-…>After popup chooser</button>\u001b[22m\n\u001b[2m       - unexpected value \"inactive\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeFocused\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('group', { name: 'Popup focus order' }).getByRole('button', { name: 'After popup chooser' })\nExpected: focused\nReceived: inactive\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeFocused\" getByRole('group', { name: 'Popup focus order' }).getByRole('button', { name: 'After popup chooser' }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('group', { name: 'Popup focus order' }).getByRole('button', { name: 'After popup chooser' })\u001b[22m\n\u001b[2m    14 × locator resolved to <button type=\"button\" data-slot=\"button\" data-size=\"default\" data-variant=\"default\" class=\"group/button inline-flex shrink-0 items-center justify-center rounded-lg border border-transparent bg-clip-padding text-sm font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-…>After popup chooser</button>\u001b[22m\n\u001b[2m       - unexpected value \"inactive\"\u001b[22m\n\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/combobox-navigation.ts:70:78",
+                    "location": {
+                      "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/combobox-navigation.ts",
+                      "column": 78,
+                      "line": 70
+                    },
+                    "snippet": "  68 |     await input.fill('Ban');\n  69 |     await input.press('Tab');\n> 70 |     await expect(group.getByRole('button', { name: 'After popup chooser' })).toBeFocused();\n     |                                                                              ^\n  71 |     await expect(trigger).toHaveText('Apple');\n  72 |     await expect(input).toHaveCount(0);\n  73 |     await trigger.click();"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/combobox-navigation.ts",
+                        "column": 78,
+                        "line": 70
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeFocused\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('group', { name: 'Popup focus order' }).getByRole('button', { name: 'After popup chooser' })\nExpected: focused\nReceived: inactive\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeFocused\" getByRole('group', { name: 'Popup focus order' }).getByRole('button', { name: 'After popup chooser' }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('group', { name: 'Popup focus order' }).getByRole('button', { name: 'After popup chooser' })\u001b[22m\n\u001b[2m    14 × locator resolved to <button type=\"button\" data-slot=\"button\" data-size=\"default\" data-variant=\"default\" class=\"group/button inline-flex shrink-0 items-center justify-center rounded-lg border border-transparent bg-clip-padding text-sm font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-…>After popup chooser</button>\u001b[22m\n\u001b[2m       - unexpected value \"inactive\"\u001b[22m\n\n\n  68 |     await input.fill('Ban');\n  69 |     await input.press('Tab');\n> 70 |     await expect(group.getByRole('button', { name: 'After popup chooser' })).toBeFocused();\n     |                                                                              ^\n  71 |     await expect(trigger).toHaveText('Apple');\n  72 |     await expect(input).toHaveCount(0);\n  73 |     await trigger.click();\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/combobox-navigation.ts:70:78"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-07T23:15:06.546Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/integration-combobox-popup-07c2b-responding-outside-neighbor-firefox/test-failed-1.png"
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/integration-combobox-popup-07c2b-responding-outside-neighbor-firefox/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/integration-combobox-popup-07c2b-responding-outside-neighbor-firefox/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/combobox-navigation.ts",
+                    "column": 78,
+                    "line": 70
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "385cb6c6b2e672ec102d-d2e3deae3bc5f4d968a6",
+          "file": "combobox-navigation.ts",
+          "line": 61,
+          "column": 3
+        },
+        {
+          "title": "nested chooser selects and dismisses independently while its modal retains focus and scroll lock",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 6730,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeFocused\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('dialog', { name: 'Fruit editor', exact: true }).getByRole('button', { name: 'After modal chooser' })\nExpected: focused\nReceived: inactive\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeFocused\" getByRole('dialog', { name: 'Fruit editor', exact: true }).getByRole('button', { name: 'After modal chooser' }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('dialog', { name: 'Fruit editor', exact: true }).getByRole('button', { name: 'After modal chooser' })\u001b[22m\n\u001b[2m    14 × locator resolved to <button type=\"button\" data-slot=\"button\" data-size=\"default\" data-variant=\"default\" class=\"group/button inline-flex shrink-0 items-center justify-center rounded-lg border border-transparent bg-clip-padding text-sm font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-…>After modal chooser</button>\u001b[22m\n\u001b[2m       - unexpected value \"inactive\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeFocused\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('dialog', { name: 'Fruit editor', exact: true }).getByRole('button', { name: 'After modal chooser' })\nExpected: focused\nReceived: inactive\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeFocused\" getByRole('dialog', { name: 'Fruit editor', exact: true }).getByRole('button', { name: 'After modal chooser' }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('dialog', { name: 'Fruit editor', exact: true }).getByRole('button', { name: 'After modal chooser' })\u001b[22m\n\u001b[2m    14 × locator resolved to <button type=\"button\" data-slot=\"button\" data-size=\"default\" data-variant=\"default\" class=\"group/button inline-flex shrink-0 items-center justify-center rounded-lg border border-transparent bg-clip-padding text-sm font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-…>After modal chooser</button>\u001b[22m\n\u001b[2m       - unexpected value \"inactive\"\u001b[22m\n\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/combobox-navigation.ts:103:78",
+                    "location": {
+                      "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/combobox-navigation.ts",
+                      "column": 78,
+                      "line": 103
+                    },
+                    "snippet": "  101 |     await input.fill('Che');\n  102 |     await input.press('Tab');\n> 103 |     await expect(modal.getByRole('button', { name: 'After modal chooser' })).toBeFocused();\n      |                                                                              ^\n  104 |     await expect(input).toHaveValue('Banana');\n  105 |     await expect(page.getByRole('listbox')).toHaveCount(0);\n  106 |     await modal.getByRole('button', { name: 'Close fruit editor' }).focus();"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/combobox-navigation.ts",
+                        "column": 78,
+                        "line": 103
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeFocused\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('dialog', { name: 'Fruit editor', exact: true }).getByRole('button', { name: 'After modal chooser' })\nExpected: focused\nReceived: inactive\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeFocused\" getByRole('dialog', { name: 'Fruit editor', exact: true }).getByRole('button', { name: 'After modal chooser' }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('dialog', { name: 'Fruit editor', exact: true }).getByRole('button', { name: 'After modal chooser' })\u001b[22m\n\u001b[2m    14 × locator resolved to <button type=\"button\" data-slot=\"button\" data-size=\"default\" data-variant=\"default\" class=\"group/button inline-flex shrink-0 items-center justify-center rounded-lg border border-transparent bg-clip-padding text-sm font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-…>After modal chooser</button>\u001b[22m\n\u001b[2m       - unexpected value \"inactive\"\u001b[22m\n\n\n  101 |     await input.fill('Che');\n  102 |     await input.press('Tab');\n> 103 |     await expect(modal.getByRole('button', { name: 'After modal chooser' })).toBeFocused();\n      |                                                                              ^\n  104 |     await expect(input).toHaveValue('Banana');\n  105 |     await expect(page.getByRole('listbox')).toHaveCount(0);\n  106 |     await modal.getByRole('button', { name: 'Close fruit editor' }).focus();\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/combobox-navigation.ts:103:78"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-07T23:15:13.003Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/integration-combobox-neste-ef207-tains-focus-and-scroll-lock-firefox/test-failed-1.png"
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/integration-combobox-neste-ef207-tains-focus-and-scroll-lock-firefox/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/integration-combobox-neste-ef207-tains-focus-and-scroll-lock-firefox/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/combobox-navigation.ts",
+                    "column": 78,
+                    "line": 103
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "385cb6c6b2e672ec102d-479e23c278596fce18f6",
+          "file": "combobox-navigation.ts",
+          "line": 81,
+          "column": 3
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-07T23:14:34.370Z",
+    "duration": 46307.447,
+    "expected": 4,
+    "skipped": 0,
+    "unexpected": 6,
+    "flaky": 0
+  }
+}

@@ -4,6 +4,7 @@ import type { JSX } from '@solidjs/web';
 import { Button } from 'shadcn-solidjs-theme/ui/button';
 import { Label } from 'shadcn-solidjs-theme/ui/label';
 import { Combobox, ComboboxInput, ComboboxContent, ComboboxList, ComboboxItem, ComboboxEmpty, ComboboxValue, ComboboxChips, ComboboxChip, ComboboxChipsInput, ComboboxClear } from 'shadcn-solidjs-theme/ui/combobox';
+import { ComboboxNavigation } from './combobox-navigation';
 const fruits = ['Apple', 'Banana', 'Cherry'];
 type Place = { id: string; label: string };
 
@@ -12,7 +13,7 @@ export function ComboboxContracts() {
   return <main class="space-y-8 bg-background text-foreground">
     <h1>Combobox form and ownership examples</h1>
     <MultipleForm controlled={false}/><MultipleForm controlled/>
-    <ObjectForm/><ControlledForm/>
+    <ObjectForm/><ControlledForm/><ComboboxNavigation/>
   </main>;
 }
 
