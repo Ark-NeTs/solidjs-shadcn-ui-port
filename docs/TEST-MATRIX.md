@@ -1,6 +1,7 @@
 # Component acceptance and test matrix
 
-Audited 2026-10-08 against component/test source at `314f27a`. Covers the **14
+Initially audited 2026-10-08 against source at `314f27a`; updated with the
+[CMB-1 browser evidence](COMBOBOX-CMB1-DELIVERY.md). Covers the **14
 implemented component families**, including their compound parts. The other
 catalog entries in [COMPONENT-MAP.md](../COMPONENT-MAP.md) remain unimplemented;
 their adoption probes are not delivered-component acceptance tests.
@@ -8,14 +9,15 @@ their adoption probes are not delivered-component acceptance tests.
 This is a behavior inventory, not a claim that every possible state is tested.
 Read the assertions in the linked tests: a broad test title alone is not evidence
 for every behavior it mentions. Gaps below are unverified acceptance cases, not
-confirmed implementation bugs. This documentation change adds no test coverage.
+confirmed implementation bugs. The initial audit added no tests; the CMB-1
+follow-up adds the browser contracts linked below.
 
 ## Reading the evidence
 
 | Mark | Meaning |
 | --- | --- |
 | U | Vitest + Testing Library in jsdom. Events can be synthetic; overlay APIs and geometry may be mocked. |
-| B | Playwright against source components in the development gallery, in Chromium and Firefox. |
+| B | Playwright against source components in the development gallery and focused examples, in Chromium and Firefox. |
 | E | Playwright against a freshly built package/gallery, in Chromium and Firefox. This is not an admin application E2E test. |
 | S | Server-rendered HTML assertions in Node. This is not hydration verification. |
 | V | Chromium screenshot comparison. A shared gallery image is not a separate assertion for every component/state. |
@@ -36,13 +38,14 @@ are implementation scope limits, not features that an existing test proves.
 | Diagnostics and cleanup are checked | [Unit setup](../vitest.setup.ts), [browser fixture](../tests/browser-fixture.ts) | Every unit test checks console warn/error after cleanup; every B/E test checks console warning/error and page errors. SSR has no equivalent diagnostic fixture. |
 | Whole-gallery accessibility | [B: light/dark examples have no axe accessibility violations](../tests/integration/foundation.spec.ts#L27) | Applies to the rendered, settled gallery state. Axe does not certify screen-reader usability or all dynamic states. |
 | Whole-gallery visual appearance | [V: light/dark/mobile component gallery](../tests/e2e/visual.spec.ts#L3) | Shared images include every family; not every variant/state combination. |
-| Unit execution coverage | [Coverage configuration](../vitest.config.ts), [measured coverage](evidence/test-matrix-coverage.json) | 100% statements, branches, functions and lines for included component/helper source; not exhaustive behavior coverage. |
+| Unit execution coverage | [Coverage configuration](../vitest.config.ts), [measured coverage](evidence/combobox-cmb1-coverage.json) | 100% statements, branches, functions and lines for included component/helper source; not exhaustive behavior coverage. |
 
-The last implementation delivery recorded **80 unit tests, 6 grouped SSR tests,
-54 browser integration runs (27 scenarios × 2 engines), and 27 E2E runs
-(9 journeys × 2 engines + 9 Chromium visual tests)**. Those visual tests compare
+The CMB-1 delivery records **80 unit tests, 6 grouped SSR tests,
+62 browser integration runs (31 scenarios × 2 engines), and 35 E2E runs
+(13 journeys × 2 engines + 9 Chromium visual tests)**. Those visual tests compare
 12 images. These totals are package-wide, not per component. See the
-[fresh matrix verification](TEST-MATRIX-DELIVERY.md) for this documentation audit.
+[CMB-1 verification](COMBOBOX-CMB1-DELIVERY.md) for current results and the
+[initial matrix verification](TEST-MATRIX-DELIVERY.md) for the original audit.
 
 ## Button
 
@@ -216,16 +219,20 @@ not backend fault-injection tests.
 | Acceptance requirement | Existing evidence |
 | --- | --- |
 | Search draft does not commit selection; single selection serializes and resets | [U: filters without committing drafts, selects, serializes and resets to the original default](../tests/unit/combobox.test.tsx#L15), [B: keyboard/form/reset/required selection](../tests/integration/combobox.spec.ts#L4), [E: built workflow](../tests/e2e/combobox.spec.ts#L3) |
-| Controlled null/value/input/open rejection preserves the owner | [U: keeps null/value/input/open owners authoritative when requests are rejected](../tests/unit/combobox.test.tsx#L22); [B: rejected single selection](../tests/integration/combobox.spec.ts#L7) |
-| Object keys and selected values survive replacement/empty external results | [U: uses object keys for selection and preserves selected items absent from async results](../tests/unit/combobox.test.tsx#L25); this supplies signals, not out-of-order network responses |
-| Multiple selection, chip removal, repeated FormData entries and reset | [U: supports multiple chips, clear, repeated values and removing selected options](../tests/unit/combobox.test.tsx#L28); [B: selects multiple chips and clears by explicit remove actions](../tests/integration/combobox.spec.ts#L13) checks UI only |
+| Controlled null/value/input/open rejection preserves the owner | [U: keeps null/value/input/open owners authoritative when requests are rejected](../tests/unit/combobox.test.tsx#L22); [B: rejected single selection](../tests/integration/combobox.spec.ts#L7), [B/E: rejected opening/query/dismissal and explicit owner updates](../tests/combobox-contracts.ts#L70) |
+| Object keys and selected values survive replacement/empty external results | [U: uses object keys for selection and preserves selected items absent from async results](../tests/unit/combobox.test.tsx#L25); [B/E: replacement/empty results, stable-key selection and reset](../tests/combobox-contracts.ts#L40). These supply signals, not out-of-order network responses |
+| Multiple selection, chip removal, repeated FormData entries and reset | [U: supports multiple chips, clear, repeated values and removing selected options](../tests/unit/combobox.test.tsx#L28); [B: original chip UI scenario](../tests/integration/combobox.spec.ts#L13), [B/E: controlled and uncontrolled native submission, removal, clear and reset](../tests/combobox-contracts.ts#L7) |
 | Disabled skipping, empty search, popup search focus/return and required error | [B: empty/disabled/rejected](../tests/integration/combobox.spec.ts#L7), [B: searches inside a popup and returns focus to its trigger](../tests/integration/combobox.spec.ts#L10), [B: required error](../tests/integration/combobox.spec.ts#L4) |
 | Composition Enter does not commit; active option scroll calculation is bounded | [U: synthetic isComposing event](../tests/unit/combobox.test.tsx#L19), [U: mocked option geometry](../tests/unit/combobox.test.tsx#L61) |
 | Canceled/deferred reset and input work are disposed on unmount | [U: disabled/reset disposal](../tests/unit/combobox.test.tsx#L34), [U: deferred input disposal](../tests/unit/combobox.test.tsx#L46), [U: reset-owner unmount](../tests/unit/combobox.test.tsx#L58) |
 | Open dark/enlarged-mobile accessibility and light/dark/mobile appearance | [B: keeps open content accessible and within enlarged narrow viewports](../tests/integration/combobox.spec.ts#L16), [V: open combobox](../tests/e2e/visual.spec.ts#L16) |
 
-Open **CMB-1**: real-browser multiple FormData/reset, object-valued results and
-controlled open/query rejection lack dedicated browser assertions. **CMB-2**:
+**CMB-1 closed:** four shared scenarios run in both Chromium and Firefox through
+[source integration](../tests/integration/combobox.spec.ts#L21) and
+[built E2E](../tests/e2e/combobox.spec.ts#L8), covering native repeated form values,
+reset, fresh object identities and rejected controlled requests.
+
+Open **CMB-2**:
 physical IME, long-list active-option visibility, nested modal usage and Tab exit
 focus order remain unverified. The synthetic Home key in U is not an assertion
 about the native text caret. Complete Base UI API parity remains an implementation
@@ -264,7 +271,6 @@ order the next test work; they do not assign bug severity to untested behavior.
 
 | Priority | ID | Component(s) | Concrete closure condition |
 | --- | --- | --- | --- |
-| Next | CMB-1 | Combobox | Both browsers assert repeated FormData values and reset after chip edits; object replacement and rejected open/query changes preserve canonical UI. |
 | Next | CMB-2 | Combobox | Browser checks prove long-list active option visibility, Tab destination and nesting in a modal; separately record a manual IME session. |
 | Next | POP-1 | Popover | Browser asserts placement after scrolling/resizing/moving its anchor, collision flipping and a clipped ancestor. |
 | Next | ALT-1 | Alert Dialog | Browser loops Tab/Shift+Tab across both boundaries, then verifies a nested dialog returns focus without escaping the parent. |
@@ -284,6 +290,12 @@ No claim is made that every supported combination appears above. The matrix maps
 currently stated component contracts to concrete evidence and highlights the
 reviewed gaps. Full catalog/API parity remains tracked separately in the catalog
 and component guide; it cannot be closed by increasing execution coverage alone.
+
+## Closed acceptance gaps
+
+| ID | Closed | Evidence |
+| --- | --- | --- |
+| CMB-1 | 2026-10-08 | [Delivery](COMBOBOX-CMB1-DELIVERY.md): four form/object/owner scenarios × two engines × source and built exports. No runtime fix was needed. |
 
 ## Maintenance
 

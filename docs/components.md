@@ -452,6 +452,11 @@ submits no mutations, and performs no retries. Large lists are not virtualized.
 Root `disabled` blocks editing and submission; `readOnly` blocks user changes
 while retaining submitted values. `name`, `form`, and `required` configure a
 visually hidden native select. Multiple values use repeated FormData entries.
+For controlled forms, provide `defaultValue` as the reset baseline and accept
+the reset request in `onValueChange` when the owner permits it.
+The [form and ownership examples](../playground/combobox-contracts.tsx) run at
+`/?combobox-contracts`; their [browser contracts](../tests/combobox-contracts.ts)
+exercise both source and built exports in Chromium and Firefox.
 Rejected controlled changes preserve canonical values. Reset waits until the
 browser finishes resetting fields, respects cancellation, and cancels pending
 restoration on unmount. Invalid submission exposes a named error and opens the

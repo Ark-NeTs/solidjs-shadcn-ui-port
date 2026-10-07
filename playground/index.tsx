@@ -13,6 +13,7 @@ import { Checkbox, type CheckedState } from 'shadcn-solidjs-theme/ui/checkbox';
 import { Switch } from 'shadcn-solidjs-theme/ui/switch';
 import './index.css';
 import { ComboboxExamples } from './combobox';
+import { ComboboxContracts } from './combobox-contracts';
 import { TabsExamples, OverlayExamples } from './overlays';
 const variants = ['default', 'secondary', 'outline', 'ghost', 'destructive', 'link'] as const;
 /** Keep demonstration state in the application, with no data layer in components. */
@@ -124,4 +125,4 @@ function ToggleExamples() {
     </CardContent></Card>
   </div>;
 }
-render(() => <Playground />, document.getElementById('app')!);
+render(() => new URLSearchParams(location.search).has('combobox-contracts') ? <ComboboxContracts/> : <Playground />, document.getElementById('app')!);

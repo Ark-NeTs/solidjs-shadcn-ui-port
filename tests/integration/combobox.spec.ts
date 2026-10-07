@@ -16,3 +16,6 @@ test('selects multiple chips and clears by explicit remove actions',async({page}
 test('keeps open content accessible and within enlarged narrow viewports',async({page})=>{
  await page.setViewportSize({width:390,height:844});await page.goto('/?dark');await page.evaluate(()=>document.documentElement.style.fontSize='24px');await page.getByRole('combobox',{name:'Favorite fruit'}).press('ArrowUp');await expect(page.getByRole('listbox')).toBeVisible();const bounds=await page.getByRole('dialog').boundingBox();expect(bounds!.x).toBeGreaterThanOrEqual(0);expect(bounds!.x+bounds!.width).toBeLessThanOrEqual(390);expect((await new AxeBuilder({page}).include('[aria-labelledby="combobox-heading"]').analyze()).violations).toEqual([]);
 });
+
+import { comboboxContracts } from '../combobox-contracts';
+comboboxContracts();
