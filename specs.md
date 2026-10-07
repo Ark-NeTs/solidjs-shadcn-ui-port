@@ -4,15 +4,22 @@ Written 2026-09-04 for the agent that will build this package. Read this
 whole file, then the repo's `CLAUDE.md`, then `packages/shadcn-theme/README.md`
 and `packages/shadcn-svelte-theme/README.md`, before writing a line of code.
 
-## Current owner direction — 2026-10-07
+## Current owner direction — 2026-10-08
 
-**Current batch authorized:** “implement Checkbox and Switch, evaluating Kobalte
+**Current batch authorized:** “Continue with Tabs, Popover, Alert Dialog.”
+Evaluate Kobalte first, preserve diagnostics, and deliver the three components,
+tests and docs. The owner subsequently authorized the full commit/push workflow
+and requested merging into local main; push only the codex branch. See
+[KOBALTE-OVERLAYS.md](KOBALTE-OVERLAYS.md) and
+[OVERLAYS-DELIVERY.md](OVERLAYS-DELIVERY.md).
+
+**Previous batch:** “implement Checkbox and Switch, evaluating Kobalte
 first.” The form-field batch is committed as `a916220`. Preserve that priority,
 record measured adoption failures, and deliver this bounded component batch
 with tests and docs. See [KOBALTE-TOGGLES.md](KOBALTE-TOGGLES.md) and
 [TOGGLES-DELIVERY.md](TOGGLES-DELIVERY.md).
 
-**Next batch authorized:** “commit and implement Input, Textarea, and Label.”
+**Earlier batch:** “commit and implement Input, Textarea, and Label.”
 The foundation is committed as `b82f86c`. Extend its native-field contract with
 these three components; see [FORM-FIELDS-DELIVERY.md](FORM-FIELDS-DELIVERY.md).
 The earlier broad Gate 0 restriction does not block this explicitly requested batch.

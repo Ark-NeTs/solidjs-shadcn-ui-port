@@ -1,5 +1,5 @@
 {
-  "scope": "Ten native components only; full admin parity is a later gate.",
+  "scope": "Thirteen components only; full admin parity is a later gate.",
   "subpaths": [
     {
       "subpath": "ui/alert-dialog",
@@ -13,16 +13,7 @@
         "AlertDialogHeader",
         "AlertDialogTitle"
       ],
-      "missing": [
-        "AlertDialog",
-        "AlertDialogAction",
-        "AlertDialogCancel",
-        "AlertDialogContent",
-        "AlertDialogDescription",
-        "AlertDialogFooter",
-        "AlertDialogHeader",
-        "AlertDialogTitle"
-      ]
+      "missing": []
     },
     {
       "subpath": "ui/badge",
@@ -98,11 +89,7 @@
         "PopoverContent",
         "PopoverTrigger"
       ],
-      "missing": [
-        "Popover",
-        "PopoverContent",
-        "PopoverTrigger"
-      ]
+      "missing": []
     },
     {
       "subpath": "ui/skeleton",
@@ -125,11 +112,7 @@
         "TabsList",
         "TabsTrigger"
       ],
-      "missing": [
-        "Tabs",
-        "TabsList",
-        "TabsTrigger"
-      ]
+      "missing": []
     },
     {
       "subpath": "ui/textarea",

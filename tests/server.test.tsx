@@ -16,3 +16,13 @@ it('server-renders toggle state, native forms and accessible roles',()=>{
   const html=renderToString(()=><form><Checkbox id="terms" name="terms" defaultChecked="indeterminate" aria-label="Terms" required/><Switch id="alerts" name="alerts" defaultChecked aria-label="Alerts" size="sm"/></form>);
   expect(html).toContain('aria-checked="mixed"');expect(html).toContain('data-indeterminate');expect(html).toContain('role="switch"');expect(html).toContain('aria-checked="true"');expect(html).toContain('name="terms"');expect(html).toContain('name="alerts"');expect(html).toContain('data-size="sm"');
 });
+
+// Server markup keeps selected tab content and declared layer structure without DOM effects.
+import { Tabs, TabsList, TabsTrigger, TabsContent, Popover, PopoverTrigger, PopoverContent, PopoverTitle, AlertDialog, AlertDialogTrigger, AlertDialogContent, AlertDialogTitle } from '../src';
+it('renders tabs and closed overlay triggers without a browser',()=>{
+ const html=renderToString(()=><><Tabs defaultValue="one"><TabsList><TabsTrigger value="one">One</TabsTrigger><TabsTrigger value="two">Two</TabsTrigger></TabsList><TabsContent value="one">Selected server panel</TabsContent><TabsContent value="two">Inactive child</TabsContent></Tabs><Popover><PopoverTrigger>Details</PopoverTrigger><PopoverContent><PopoverTitle>Popup</PopoverTitle></PopoverContent></Popover><AlertDialog><AlertDialogTrigger>Delete</AlertDialogTrigger><AlertDialogContent><AlertDialogTitle>Confirm</AlertDialogTitle></AlertDialogContent></AlertDialog></>);
+ expect(html).toContain('Selected server panel');expect(html).not.toContain('Inactive child');expect(html).toContain('aria-selected="true"');expect(html).toContain('role="tabpanel"');expect(html).toContain('aria-expanded="false"');expect(html).not.toContain('role="alertdialog"');
+});
+it('renders forced overlay structure without opening native layers on the server',()=>{
+ const html=renderToString(()=><><Popover><PopoverContent forceMount><PopoverTitle>Server popup</PopoverTitle></PopoverContent></Popover><AlertDialog><AlertDialogContent forceMount><AlertDialogTitle>Server alert</AlertDialogTitle></AlertDialogContent></AlertDialog></>);expect(html).toContain('Server popup');expect(html).toContain('Server alert');expect(html).toContain('popover="auto"');expect(html).toContain('role="alertdialog"');
+});

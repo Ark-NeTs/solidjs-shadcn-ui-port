@@ -84,3 +84,46 @@ without generating a second change event. Form reset waits for the browser's
 reset action and checks cancellation/unmount before restoring state, including
 mixed state and controls linked by a reactive `form` attribute. The listener is
 removed on ownership change or unmount. No backend mutation/retry is built in.
+
+## 2026-10-08 — Tabs, Popover and Alert Dialog
+
+Owner instruction: “Continue with Tabs, Popover, Alert Dialog.” Checkbox/Switch
+were committed as bb04c79. The owner subsequently authorized commit and push
+through a codex branch and requested a local main merge. Direct pushes to main
+remain prohibited by the working agreement.
+
+Evaluate Kobalte first, retain the isolated unpatched failures in
+KOBALTE-OVERLAYS.md, and implement the requested components without importing
+the cumulative experimental patches. No missing catalog capability requires a
+corvu dependency. This is not blanket rejection of either library for later work.
+
+Tabs owns uncontrolled selection and derives roving focus, selection and IDs
+from live registrations; controlled values remain authoritative. The native
+button list supports disabled entries, RTL, orientation and manual activation.
+Inactive panel children unmount by default; forceMount preserves them under a
+hidden panel. Bound the tab list with scrolling for narrow/enlarged layouts;
+line lists reserve space for the indicator inside the scroll viewport.
+
+Use HTML popover for nonmodal top-layer rendering and HTML dialog showModal for
+modality and background inertness. Add modal Tab wrapping because Chromium may
+otherwise move focus to browser chrome. Shared lifecycle code restores focus,
+uses Cancel as the alert's least-destructive target, balances scroll locks and
+removes listeners on cleanup. Native toggle/close notifications request an
+owner update; any rejected close reopens only after the native event completes
+and only while the original effect is still alive. Avoid reopening during
+beforetoggle, which produced browser warnings and a Firefox InvalidStateError.
+
+Top-layer content stays in its original DOM/theme ancestry. AlertDialogPortal is
+a compatibility composition wrapper, not a document.body portal. Content owns
+the default overlay. This intentionally differs from Radix internals; document
+native node/ref types and unsupported APIs rather than promising full API parity.
+No exit-presence delay is implemented. Modern native popover/dialog support is
+required; the accepted engines are Chromium and Firefox from the pinned tooling.
+
+Use framework-neutral @floating-ui/dom 1.8.0 for fixed placement, flip, shift and
+available-size constraints. Observe only while open; dispose observers and guard
+both coordinate and size writes against stale completions. The built ESM includes
+Floating UI; source consumers resolve the pinned dependency. There are no network
+requests or application services. Async confirmation belongs to the owner, which
+prevents default closure, disables duplicate submission, preserves drafts on
+failure, and closes explicitly after success.

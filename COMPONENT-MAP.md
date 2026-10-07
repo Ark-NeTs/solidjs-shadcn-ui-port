@@ -1,8 +1,8 @@
 # shadcn/ui → Solid 2 component map
 
-**Implemented (2026-10-07):** Button, Badge, Card, Separator, Skeleton, Input,
-Textarea, Label, Checkbox and Switch now have owned Solid 2 source, documentation and passing unit, browser and built-library tests.
-See [TOGGLES-DELIVERY.md](TOGGLES-DELIVERY.md), [FORM-FIELDS-DELIVERY.md](FORM-FIELDS-DELIVERY.md) and the earlier
+**Implemented (2026-10-08):** Button, Badge, Card, Separator, Skeleton, Input,
+Textarea, Label, Checkbox, Switch, Tabs, Popover and Alert Dialog now have owned Solid 2 source, documentation and passing unit, browser and built-library tests.
+See [OVERLAYS-DELIVERY.md](OVERLAYS-DELIVERY.md), [TOGGLES-DELIVERY.md](TOGGLES-DELIVERY.md), [FORM-FIELDS-DELIVERY.md](FORM-FIELDS-DELIVERY.md) and the earlier
 [FOUNDATION-DELIVERY.md](FOUNDATION-DELIVERY.md). These use native HTML;
 headless-library findings below remain relevant to later primitives.
 
@@ -12,7 +12,8 @@ Assessed 2026-10-07 against `@kobalte/core@2.0.0-alpha.2`.
 for all nine primitive categories in corvu's documented catalog. Several
 shadcn components still need substantial implementation work that neither
 library supplies. This is a source/API assessment, not runtime certification,
-complete API parity, or a delivery claim. No dependencies have been added.
+complete API parity, or a delivery claim. This initial mapping added no dependencies; the implemented Popover now uses
+Floating UI, as recorded in DECISIONS.md.
 
 **Browser follow-up:** [BROWSER-VALIDATION.md](BROWSER-VALIDATION.md) preserves
 unpatched results. [KOBALTE-LIFECYCLE.md](KOBALTE-LIFECYCLE.md) records the tested
@@ -80,7 +81,7 @@ No row currently selects corvu; alternatives are evaluated below.
 | --- | --- | --- | --- |
 | [Accordion](https://ui.shadcn.com/docs/components/accordion) | K | `accordion` | Single/multiple expansion, disabled items, heading/trigger semantics, keyboard navigation. |
 | [Alert](https://ui.shadcn.com/docs/components/alert) | K | `alert` | Title/description/icon slots; use alert announcements only when appropriate. |
-| [Alert Dialog](https://ui.shadcn.com/docs/components/alert-dialog) | K | `alert-dialog` | Explicit cancel/action parts, destructive confirmation, initial/return focus. |
+| [Alert Dialog](https://ui.shadcn.com/docs/components/alert-dialog) | N | `alert-dialog` evaluated first; native modal chosen | Implemented explicit cancel/action, controlled state, least-destructive focus, nesting and scroll locks. See KOBALTE-OVERLAYS.md and OVERLAYS-DELIVERY.md. |
 | [Aspect Ratio](https://ui.shadcn.com/docs/components/aspect-ratio) | N | CSS `aspect-ratio` | Ratio prop, sizing and overflow behavior; no headless state needed. |
 | [Attachment](https://ui.shadcn.com/docs/components/attachment) | C | `button` + owned presentation | File preview/metadata/removal slots; uploads and transport remain host-owned. `file-field` is optional only if an upload control is added. |
 | [Avatar](https://ui.shadcn.com/docs/components/avatar) | K | `image` | Image/fallback timing, failures, alt text; add group/badge presentation parts. |
@@ -120,7 +121,7 @@ No row currently selects corvu; alternatives are evaluated below.
 | [Native Select](https://ui.shadcn.com/docs/components/native-select) | N | Native select/option/optgroup | Form value, keyboard/browser behavior, disabled state and styled icon. |
 | [Navigation Menu](https://ui.shadcn.com/docs/components/navigation-menu) | K | `navigation-menu` | Links, trigger/content/viewport composition, pointer/focus transitions and RTL. |
 | [Pagination](https://ui.shadcn.com/docs/components/pagination) | K | `pagination` | Map generated state to link-shaped parts; preserve href/current-page semantics and host-controlled paging. |
-| [Popover](https://ui.shadcn.com/docs/components/popover) | K | `popover` | Trigger/anchor/content, modal choice, collision placement and focus restoration. |
+| [Popover](https://ui.shadcn.com/docs/components/popover) | N | `popover` evaluated first; native top layer + Floating UI chosen | Implemented trigger/anchor/content, modal choice, collision placement, controlled rejection and focus restoration. See KOBALTE-OVERLAYS.md and OVERLAYS-DELIVERY.md. |
 | [Progress](https://ui.shadcn.com/docs/components/progress) | K | `progress` | Determinate/indeterminate values, accessible text and themed indicator. |
 | [Questionnaire](https://ui.shadcn.com/docs/components/questionnaire) | C | `radio-group`, `checkbox`, `text-field`, `button`, `progress`; evaluate `steps` | Own ordered answers/navigation/validation, freeform and skipped answers, reset/resume, shortcuts and controlled state. No ready-made questionnaire exists. |
 | [Radio Group](https://ui.shadcn.com/docs/components/radio-group) | K | `radio-group` | Arrow navigation, required/disabled, controlled value and form submission. |
@@ -135,7 +136,7 @@ No row currently selects corvu; alternatives are evaluated below.
 | [Spinner](https://ui.shadcn.com/docs/components/spinner) | N | SVG/icon + CSS | Reduced motion and accessible busy/status presentation. |
 | [Switch](https://ui.shadcn.com/docs/components/switch) | N | `switch` evaluated first; native input chosen | Implemented checked/disabled/readonly, sizes, labels, forms/reset and RTL. Unpatched Kobalte default-on reset and diagnostics fail; see KOBALTE-TOGGLES.md and TOGGLES-DELIVERY.md. |
 | [Table](https://ui.shadcn.com/docs/components/table) | N | Native table elements | Caption/header/body/footer semantics and overflow; data logic belongs to Data Table. |
-| [Tabs](https://ui.shadcn.com/docs/components/tabs) | K | `tabs` | Automatic/manual activation, orientation, disabled tabs and panel mounting. |
+| [Tabs](https://ui.shadcn.com/docs/components/tabs) | N | `tabs` evaluated first; owned signal/native button composition | Implemented automatic/manual activation, RTL/orientation, disabled tabs, controlled selection and panel mounting. See KOBALTE-OVERLAYS.md and OVERLAYS-DELIVERY.md. |
 | [Textarea](https://ui.shadcn.com/docs/components/textarea) | N | Native textarea; `text-field` evaluated for field composition | Implemented and tested: native multiline editing, controlled drafts, reset, sizing and label association without context. See FORM-FIELDS-DELIVERY.md. |
 | [Toast](https://ui.shadcn.com/docs/components/toast) | K | `toast` | Region/queue, dismiss/actions, duration/pause, announcements, swipe and positioning. |
 | [Toggle](https://ui.shadcn.com/docs/components/toggle) | K | `toggle-button` | Pressed/unpressed/disabled, variants and accessible name. |

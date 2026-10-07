@@ -129,3 +129,8 @@ Controlled/uncontrolled mode switching during a component's lifetime is not
 part of the supported contract.
 
 Next, implement the next component batch, evaluating Kobalte first.
+
+Documentation image note (2026-10-08): shared `docs/screenshots/light.png`,
+`dark.png` and `mobile.png` now show the thirteen-component gallery. This report's
+measured results remain the original ten-component batch; see
+[OVERLAYS-DELIVERY.md](OVERLAYS-DELIVERY.md) for current screenshots and acceptance.

@@ -258,3 +258,142 @@ These are reviewed Solid gallery baselines, not pixel comparisons against React.
 ![Light gallery](screenshots/light.png)
 ![Dark gallery](screenshots/dark.png)
 ![Narrow layout](screenshots/mobile.png)
+
+## Tabs
+
+```tsx
+import { Tabs, TabsList, TabsTrigger, TabsContent } from 'shadcn-solidjs-theme/ui/tabs';
+<Tabs defaultValue="overview">
+  <TabsList aria-label="Workspace sections">
+    <TabsTrigger value="overview">Overview</TabsTrigger>
+    <TabsTrigger value="activity">Activity</TabsTrigger>
+    <TabsTrigger value="restricted" disabled>Restricted</TabsTrigger>
+  </TabsList>
+  <TabsContent value="overview">Ready to work.</TabsContent>
+  <TabsContent value="activity">Your activity goes here.</TabsContent>
+  <TabsContent value="restricted">Unavailable.</TabsContent>
+</Tabs>
+```
+
+Root: `value`, `defaultValue`, `onValueChange(value)`,
+`orientation="horizontal" | "vertical"` and
+`activationMode="automatic" | "manual"`. Without a valid uncontrolled default,
+the first enabled registered tab is selected. Controlled owners may reject a
+request. Use unique values within a root and one matching panel per trigger.
+List: `variant="default" | "line"`, `loop` (true by default), and a required
+accessible name via `aria-label` or `aria-labelledby`. Also exported:
+`tabsListVariants` and all four part prop types.
+
+Arrow keys skip disabled tabs; horizontal navigation follows inherited CSS
+direction, vertical navigation uses Up/Down. Home/End target the endpoints.
+Manual activation moves focus without selecting until Space, Enter or click.
+Tab leaves the tablist. IDs, native attributes, events, classes and refs stay
+reactive; caller-cancelled click/keydown handlers prevent internal actions.
+Panel refs target divs and trigger refs target buttons. Selection changes
+unmount inactive children; `TabsContent forceMount` preserves local drafts under
+`hidden`. Store drafts above Tabs when they must survive ordinary panel switches.
+The scrolling tablist prevents narrow layouts from overflowing the page.
+
+## Popover
+
+```tsx
+import { Popover, PopoverTrigger, PopoverContent, PopoverHeader,
+  PopoverTitle, PopoverDescription, PopoverClose } from 'shadcn-solidjs-theme/ui/popover';
+<Popover>
+  <PopoverTrigger class={buttonVariants({ variant: 'outline' })}>Edit details</PopoverTrigger>
+  <PopoverContent align="start" side="bottom">
+    <PopoverHeader>
+      <PopoverTitle>Details</PopoverTitle>
+      <PopoverDescription>Changes stay in this preview.</PopoverDescription>
+    </PopoverHeader>
+    <Label for="display-name">Display name</Label>
+    <Input id="display-name" defaultValue="North studio" />
+    <PopoverClose class={buttonVariants({ variant: 'outline' })}>Done</PopoverClose>
+  </PopoverContent>
+</Popover>
+```
+
+Root: `open`, `defaultOpen`, `onOpenChange(open)`, `modal` (false by default).
+Trigger/Close are native buttons, styled by callers; no nested Button or React
+`asChild`. Optional `PopoverAnchor` is a div used for positioning, while the
+trigger remains the focus-return target. Content accepts `side` (four edges),
+`align="start" | "center" | "end"`, `sideOffset` (4), `alignOffset` (0),
+`collisionPadding` (8), `avoidCollisions` (true), and `forceMount` (false).
+Floating UI flips/shifts and limits available width/height; `data-side` reflects
+the final placement. Position updates stop on close/unmount. Override dimensions
+and semantic tokens through `class`, `style` or the original theme ancestor.
+
+Provide Title or an explicit `aria-label`/`aria-labelledby`; Description wires
+`aria-describedby` automatically. Content is a div in nonmodal mode and a native
+dialog in modal mode; Header is a div, Title an h2 and Description a p. The browser
+renders content above clipping ancestors while keeping inherited theme variables.
+Nonmodal Escape and outside pointer clicks dismiss. Outside clicks preserve the
+new focus target; explicit close/Escape returns focus to the trigger. Modal mode
+blocks background interaction, locks document scrolling and wraps Tab focus.
+Choose modality before opening. Native auto popovers are exclusive unless nested;
+coordinate controlled owners rather than forcing unrelated auto popovers open.
+
+Content lifecycle hooks are `onOpenAutoFocus`, `onCloseAutoFocus` and
+`onEscapeKeyDown`, each receiving a cancellable Event. Prevent default to replace
+the component's focus step or refuse Escape. Native initial focus still runs when
+showModal is called; a custom open hook can focus a chosen element itself.
+Controlled close rejection is reconciled after the native close notification.
+Closed content unmounts by default; `forceMount` keeps it hidden and stops its
+positioning observers. There is no delayed exit animation, portal-container API,
+virtual anchor or complete Radix/Kobalte prop compatibility in this release.
+
+## Alert Dialog
+
+```tsx
+import { AlertDialog, AlertDialogTrigger, AlertDialogContent, AlertDialogHeader,
+  AlertDialogTitle, AlertDialogDescription, AlertDialogFooter,
+  AlertDialogCancel, AlertDialogAction } from 'shadcn-solidjs-theme/ui/alert-dialog';
+<AlertDialog>
+  <AlertDialogTrigger class={buttonVariants({ variant: 'destructive' })}>Remove item</AlertDialogTrigger>
+  <AlertDialogContent>
+    <AlertDialogHeader>
+      <AlertDialogTitle>Remove this item?</AlertDialogTitle>
+      <AlertDialogDescription>You can cancel and keep it.</AlertDialogDescription>
+    </AlertDialogHeader>
+    <AlertDialogFooter>
+      <AlertDialogCancel>Keep item</AlertDialogCancel>
+      <AlertDialogAction onClick={removeLocalItem}>Remove item</AlertDialogAction>
+    </AlertDialogFooter>
+  </AlertDialogContent>
+</AlertDialog>
+```
+
+Root shares the open/defaultOpen/onOpenChange contract. Content accepts
+`size="default" | "sm"`, `forceMount` and the three lifecycle hooks described
+above. Always provide a title or explicit accessible name; description is
+optional. Native modal behavior makes the background inert; outside clicks do
+not dismiss. Cancel receives initial focus; Escape and accepted action/cancel
+requests close and restore the trigger. Keyboard Tab/Shift+Tab wrap inside the
+active modal. Scroll locks remain until the last nested modal closes.
+
+All sibling parts are exported: Trigger, Portal, Overlay, Content, Header,
+Footer, Media, Title, Description, Action and Cancel. Portal preserves children
+in place because native top-layer rendering supplies the stacking behavior.
+Content includes its overlay automatically. The optional standalone Overlay is
+hidden while closed; do not add a second one to a normal Content composition.
+Content ref/native attributes target the inner div; accessible naming attributes
+also name the outer `role="alertdialog"` native dialog. Title is h2, Description
+is p, other layout parts are divs, and actions are native buttons. Action/Cancel
+accept Button variants/sizes; Cancel defaults to outline. Trigger styling is
+caller-owned. Do not place these triggers inside another button.
+
+For async work use controlled `open`. In Action's click handler call
+`event.preventDefault()`, guard/disable duplicate submissions, and start the
+application-owned operation. Keep Cancel and Escape disabled/cancelled while
+an operation's outcome is uncertain; close explicitly only on confirmed success.
+Render an error with an explicit retry after failure and preserve the draft.
+The playground demonstrates those transitions with manual completion/failure
+buttons; no operation or retry is hidden inside the library.
+
+![Light popover](screenshots/popover-light.png)
+![Dark alert dialog](screenshots/alert-dark.png)
+![Mobile alert dialog](screenshots/alert-mobile.png)
+
+The new components require modern HTML popover/dialog APIs. Chromium and Firefox
+are tested; older browsers, WebKit, hydration and physical assistive-technology
+sessions are not certified by this batch. See [delivery evidence](../OVERLAYS-DELIVERY.md).

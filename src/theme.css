@@ -146,3 +146,13 @@
 @media (prefers-reduced-motion: reduce) {
   [data-slot="checkbox"], [data-slot="switch"], [data-slot="switch-thumb"] { transition: none; }
 }
+/* Browser-native top layers preserve local theme inheritance without a body portal. */
+[data-slot="popover-content"][popover]:not(:popover-open),
+[data-slot="popover-content"]:is(dialog):not([open]),
+[data-slot="alert-dialog-shell"]:not([open]),
+[data-slot="tabs-content"][hidden] { display: none; }
+[data-slot="alert-dialog-shell"]::backdrop { background: transparent; }
+@media (prefers-reduced-motion: reduce) {
+  [data-slot="popover-content"], [data-slot="alert-dialog-content"],
+  [data-slot="alert-dialog-overlay"], [data-slot="tabs-trigger"] { animation: none; transition: none; }
+}

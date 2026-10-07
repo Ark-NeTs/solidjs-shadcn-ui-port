@@ -1,0 +1,44 @@
+[
+  {
+    "command": "bun run check",
+    "exitCode": 0,
+    "seconds": 1.655,
+    "output": "$ tsc --noEmit\n"
+  },
+  {
+    "command": "bun run lint",
+    "exitCode": 0,
+    "seconds": 0.852,
+    "output": "$ eslint src tests playground scripts *.ts\n"
+  },
+  {
+    "command": "bun run test",
+    "exitCode": 0,
+    "seconds": 1.746,
+    "output": "$ vitest run\n\n RUN  v4.1.10 /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme\n\n\n Test Files  6 passed (6)\n      Tests  64 passed (64)\n   Start at  00:16:37\n   Duration  1.39s (transform 909ms, setup 1.27s, import 1.08s, tests 687ms, environment 4.08s)\n\n"
+  },
+  {
+    "command": "bun run test:coverage",
+    "exitCode": 0,
+    "seconds": 1.668,
+    "output": "$ vitest run --coverage\n\n RUN  v4.1.10 /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme\n      Coverage enabled with v8\n\n\n Test Files  6 passed (6)\n      Tests  64 passed (64)\n   Start at  00:16:39\n   Duration  1.30s (transform 807ms, setup 1.11s, import 1.14s, tests 861ms, environment 2.54s)\n\n % Coverage report from v8\n-------------------|---------|----------|---------|---------|-------------------\nFile               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s \n-------------------|---------|----------|---------|---------|-------------------\n-------------------|---------|----------|---------|---------|-------------------\n\n=============================== Coverage summary ===============================\nStatements   : 100% ( 715/715 )\nBranches     : 100% ( 394/394 )\nFunctions    : 100% ( 298/298 )\nLines        : 100% ( 249/249 )\n================================================================================\n"
+  },
+  {
+    "command": "bun run test:server",
+    "exitCode": 0,
+    "seconds": 0.662,
+    "output": "$ vitest run --config vitest.server.config.ts\n\n RUN  v4.1.10 /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme\n\n\n Test Files  1 passed (1)\n      Tests  5 passed (5)\n   Start at  00:16:41\n   Duration  320ms (transform 172ms, setup 0ms, import 216ms, tests 15ms, environment 0ms)\n\n"
+  },
+  {
+    "command": "bun run build",
+    "exitCode": 0,
+    "seconds": 1.258,
+    "output": "$ vite build && tsc -p tsconfig.build.json\nvite v8.3.3 building client environment for production...\ntransforming...\n\u2713 25 modules transformed.\nrendering chunks...\ncomputing gzip size...\ndist/shadcn-solidjs-theme.css  344.38 kB \u2502 gzip: 230.66 kB\ndist/styles.js                   0.00 kB \u2502 gzip:   0.02 kB\ndist/shadcn-solidjs-theme.js    63.54 kB \u2502 gzip:  17.05 kB\n\n\u2713 built in 139ms\n"
+  },
+  {
+    "command": "bun run parity:report",
+    "exitCode": 0,
+    "seconds": 0.21,
+    "output": "$ bun scripts/check-admin-parity.ts\n{\n  \"scope\": \"Thirteen components only; full admin parity is a later gate.\",\n  \"subpaths\": [\n    {\n      \"subpath\": \"ui/alert-dialog\",\n      \"requested\": [\n        \"AlertDialog\",\n        \"AlertDialogAction\",\n        \"AlertDialogCancel\",\n        \"AlertDialogContent\",\n        \"AlertDialogDescription\",\n        \"AlertDialogFooter\",\n        \"AlertDialogHeader\",\n        \"AlertDialogTitle\"\n      ],\n      \"missing\": []\n    },\n    {\n      \"subpath\": \"ui/badge\",\n      \"requested\": [\n        \"Badge\"\n      ],\n      \"missing\": []\n    },\n    {\n      \"subpath\": \"ui/button\",\n      \"requested\": [\n        \"Button\"\n      ],\n      \"missing\": []\n    },\n    {\n      \"subpath\": \"ui/card\",\n      \"requested\": [\n        \"Card\",\n        \"CardContent\",\n        \"CardDescription\",\n        \"CardHeader\",\n        \"CardTitle\"\n      ],\n      \"missing\": []\n    },\n    {\n      \"subpath\": \"ui/checkbox\",\n      \"requested\": [\n        \"Checkbox\"\n      ],\n      \"missing\": []\n    },\n    {\n      \"subpath\": \"ui/combobox\",\n      \"requested\": [\n        \"Combobox\",\n        \"ComboboxContent\",\n        \"ComboboxEmpty\",\n        \"ComboboxInput\",\n        \"ComboboxItem\",\n        \"ComboboxList\",\n        \"ComboboxTrigger\"\n      ],\n      \"missing\": [\n        \"Combobox\",\n        \"ComboboxContent\",\n        \"ComboboxEmpty\",\n        \"ComboboxInput\",\n        \"ComboboxItem\",\n        \"ComboboxList\",\n        \"ComboboxTrigger\"\n      ]\n    },\n    {\n      \"subpath\": \"ui/input\",\n      \"requested\": [\n        \"Input\"\n      ],\n      \"missing\": []\n    },\n    {\n      \"subpath\": \"ui/label\",\n      \"requested\": [\n        \"Label\"\n      ],\n      \"missing\": []\n    },\n    {\n      \"subpath\": \"ui/popover\",\n      \"requested\": [\n        \"Popover\",\n        \"PopoverContent\",\n        \"PopoverTrigger\"\n      ],\n      \"missing\": []\n    },\n    {\n      \"subpath\": \"ui/skeleton\",\n      \"requested\": [\n        \"Skeleton\"\n      ],\n      \"missing\": []\n    },\n    {\n      \"subpath\": \"ui/switch\",\n      \"requested\": [\n        \"Switch\"\n      ],\n      \"missing\": []\n    },\n    {\n      \"subpath\": \"ui/tabs\",\n      \"requested\": [\n        \"Tabs\",\n        \"TabsList\",\n        \"TabsTrigger\"\n      ],\n      \"missing\": []\n    },\n    {\n      \"subpath\": \"ui/textarea\",\n      \"requested\": [\n        \"Textarea\"\n      ],\n      \"missing\": []\n    },\n    {\n      \"subpath\": \"utils\",\n      \"requested\": [\n        \"cn\"\n      ],\n      \"missing\": []\n    }\n  ],\n  \"complete\": false\n}\n"
+  }
+]

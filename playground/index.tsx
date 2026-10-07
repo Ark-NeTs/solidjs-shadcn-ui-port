@@ -12,6 +12,7 @@ import { Label } from 'shadcn-solidjs-theme/ui/label';
 import { Checkbox, type CheckedState } from 'shadcn-solidjs-theme/ui/checkbox';
 import { Switch } from 'shadcn-solidjs-theme/ui/switch';
 import './index.css';
+import { TabsExamples, OverlayExamples } from './overlays';
 const variants = ['default', 'secondary', 'outline', 'ghost', 'destructive', 'link'] as const;
 /** Keep demonstration state in the application, with no data layer in components. */
 function Playground() {
@@ -34,9 +35,9 @@ function Playground() {
       </header>
       <section id="top" class="py-12">
         <Badge variant="secondary">Solid 2 · First release</Badge>
-        <h1 class="mt-5 max-w-2xl text-4xl font-semibold tracking-tight sm:text-5xl">A shared language,<br />ten building blocks.</h1>
+        <h1 class="mt-5 max-w-2xl text-4xl font-semibold tracking-tight sm:text-5xl">A shared language,<br />thirteen building blocks.</h1>
         <p class="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">Familiar shadcn styling. Reactive Solid components. Shared light and dark tokens, ready to compose into your next screen.</p>
-        <div class="mt-6 samples"><Button as="a" href="#components">Explore components</Button><span class="text-xs text-muted-foreground">Button / Badge / Card / Separator / Skeleton / Input / Textarea / Label / Checkbox / Switch</span></div>
+        <div class="mt-6 samples"><Button as="a" href="#components">Explore components</Button><span class="text-xs text-muted-foreground">Button / Badge / Card / Separator / Skeleton / Input / Textarea / Label / Checkbox / Switch / Tabs / Popover / Alert Dialog</span></div>
       </section>
       <Separator />
       <section id="components" class="demo-section" aria-labelledby="button-heading">
@@ -63,7 +64,9 @@ function Playground() {
       <section class="demo-section" aria-labelledby="skeleton-heading"><h2 id="skeleton-heading">05 / Skeleton</h2><p>Quiet loading placeholders. Reduced motion is respected automatically.</p><div class="demo-grid"><Card aria-busy={pending() ? "true" : "false"}><CardContent class="pt-4"><Show when={pending()} fallback={<p>Content is ready. Save the preview above to see its loading state.</p>}><div role="status" class="sr-only">Loading preview</div><div class="samples"><Skeleton class="size-12 rounded-full" /><div class="flex-1 space-y-3"><Skeleton class="h-4 w-3/4" /><Skeleton class="h-4 w-1/2" /></div></div></Show></CardContent></Card><div class="snippet m-0"><code>{'<Loading fallback={<Skeleton class="h-24 w-full" />}><Content /></Loading>'}</code></div></div></section>
       <section class="demo-section" aria-labelledby="fields-heading"><h2 id="fields-heading">06–08 / Input, Textarea &amp; Label</h2><p>Native fields, explicit labels, and drafts owned by your application.</p><FormExamples /></section>
       <section class="demo-section" aria-labelledby="toggles-heading"><h2 id="toggles-heading">09–10 / Checkbox &amp; Switch</h2><p>Selections and settings with native labels, keyboard access, and form behavior.</p><ToggleExamples /></section>
-      <footer class="mt-16 border-t pt-6 text-xs text-muted-foreground">Ten components · Shared semantic tokens · No application services</footer>
+      <section class="demo-section" aria-labelledby="tabs-heading"><h2 id="tabs-heading">11 / Tabs</h2><p>Named panels, roving focus, and automatic or manual activation.</p><TabsExamples/></section>
+      <section class="demo-section" aria-labelledby="overlays-heading"><h2 id="overlays-heading">12–13 / Popover &amp; Alert Dialog</h2><p>Contextual editing and explicit confirmation, with focus managed by the browser.</p><OverlayExamples/></section>
+      <footer class="mt-16 border-t pt-6 text-xs text-muted-foreground">Thirteen components · Shared semantic tokens · No application services</footer>
     </main>
   </div>;
 }

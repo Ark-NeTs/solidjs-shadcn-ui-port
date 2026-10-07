@@ -10,3 +10,6 @@ export * from './components/ui/textarea';
 export * from './components/ui/label';
 export * from './components/ui/checkbox';
 export * from './components/ui/switch';
+export * from './components/ui/tabs';
+export * from './components/ui/popover';
+export * from './components/ui/alert-dialog';
