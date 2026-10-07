@@ -124,5 +124,10 @@ during this merge preparation.
 [Retained pre-merge output](docs/evidence/overlays-merge-checks.json). The branch
 is based on local main, including its nine existing unpublished ancestor commits.
 Only this component batch is staged in the new commit. The requested merge uses
-a local fast-forward; the branch is pushed while origin/main stays unchanged,
-as required by the no-direct-push rule.
+a local fast-forward. Commit `20c9183` is now on local main. Publication of
+`codex/solid-tabs-overlays` was rejected by automatic approval review because
+the GitLab destination
+(`git@gitlab.com:arknet-group2/restaurant-management.git`) was not verified as
+private/user-owned and the general push instruction was not accepted as specific
+authorization for this payload. No remote ref was updated; explicit destination
+approval is required before retrying. Direct pushes to main remain prohibited.
