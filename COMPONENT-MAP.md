@@ -27,6 +27,9 @@ unresolved, including an observed Drawer timing warning. Dependencies and
 patches are isolated from production;
 Kobalte remains the first candidate, with no corvu fallback selected.
 
+Per-component behavioral acceptance and remaining test gaps are tracked in the
+[acceptance matrix](docs/TEST-MATRIX.md). Catalog mappings alone do not close those gaps.
+
 ## Scope and evidence
 
 - The [current main catalog](https://ui.shadcn.com/docs/components) contains

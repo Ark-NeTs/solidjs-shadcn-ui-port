@@ -59,7 +59,9 @@ import { cn } from 'shadcn-solidjs-theme/utils';
 The root build emits declarations. No application imports this package yet.
 
 Detailed examples, every variant/size, accessibility notes and customization:
-[Component guide](docs/components.md). Run `bun run dev` for the live gallery.
+[Component guide](docs/components.md).
+[Per-component acceptance matrix](docs/TEST-MATRIX.md) links requirements to tests
+and tracks browser, SSR, visual and accessibility gaps. Run `bun run dev` for the live gallery.
 
 ![Light component gallery](docs/screenshots/light.png)
 ![Dark component gallery](docs/screenshots/dark.png)

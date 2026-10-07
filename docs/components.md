@@ -496,3 +496,8 @@ check does not certify a port of the admin or every Base UI behavior.
 ![Light searchable chooser](screenshots/combobox-light.png)
 ![Dark searchable chooser](screenshots/combobox-dark.png)
 ![Narrow searchable chooser](screenshots/combobox-mobile.png)
+
+## Acceptance evidence
+
+See the [per-component test matrix](TEST-MATRIX.md) for linked assertions,
+SSR/visual scope, and open acceptance gaps for every implemented family.

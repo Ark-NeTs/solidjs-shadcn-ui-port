@@ -21,6 +21,10 @@ Before declaring the work complete, review every checklist item. Report
 verification evidence, unmet criteria, and any items that do not apply, with
 reasons. Disclose checks that were not run.
 
+Maintain [docs/TEST-MATRIX.md](docs/TEST-MATRIX.md) when adding or changing components.
+Link acceptance requirements to actual test assertions and keep unverified gaps
+explicit; shared coverage and unit percentages do not certify every behavior.
+
 Keep DELIVERY.md as a reusable checklist; record task-specific results in the
 delivery report.
 

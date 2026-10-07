@@ -1,0 +1,37 @@
+[
+  {
+    "command": "bun run check",
+    "exitCode": 0,
+    "seconds": 2.35
+  },
+  {
+    "command": "bun run lint",
+    "exitCode": 0,
+    "seconds": 1.06
+  },
+  {
+    "command": "bun run test",
+    "exitCode": 0,
+    "seconds": 2.76
+  },
+  {
+    "command": "bun run test:coverage",
+    "exitCode": 0,
+    "seconds": 4.96
+  },
+  {
+    "command": "bun run test:server",
+    "exitCode": 0,
+    "seconds": 0.71
+  },
+  {
+    "command": "THEME_PORT=4403 RESULTS_FILE=docs/evidence/test-matrix-integration.json bun run test:integration",
+    "exitCode": 0,
+    "seconds": 53.57
+  },
+  {
+    "command": "THEME_PORT=4403 RESULTS_FILE=docs/evidence/test-matrix-e2e.json bun run test:e2e",
+    "exitCode": 0,
+    "seconds": 21.25
+  }
+]
