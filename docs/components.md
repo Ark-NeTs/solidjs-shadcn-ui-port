@@ -397,3 +397,102 @@ buttons; no operation or retry is hidden inside the library.
 The new components require modern HTML popover/dialog APIs. Chromium and Firefox
 are tested; older browsers, WebKit, hydration and physical assistive-technology
 sessions are not certified by this batch. See [delivery evidence](../OVERLAYS-DELIVERY.md).
+
+## Combobox
+
+```tsx
+import { createSignal } from 'solid-js';
+import {
+  Combobox, ComboboxInput, ComboboxContent, ComboboxList,
+  ComboboxItem, ComboboxEmpty,
+} from 'shadcn-solidjs-theme/ui/combobox';
+import { Label } from 'shadcn-solidjs-theme/ui/label';
+
+function FruitField() {
+  const [fruit, setFruit] = createSignal<string | null>('Apple');
+  return <>
+    <Label for="fruit">Favorite fruit</Label>
+    <Combobox items={['Apple', 'Banana', 'Cherry']} value={fruit()}
+      onValueChange={next => setFruit(next)} name="fruit" required>
+      <ComboboxInput id="fruit" showClear />
+      <ComboboxContent>
+        <ComboboxList>{(item: string) =>
+          <ComboboxItem value={item}>{item}</ComboboxItem>
+        }</ComboboxList>
+        <ComboboxEmpty>No matches. Try another search.</ComboboxEmpty>
+      </ComboboxContent>
+    </Combobox>
+  </>;
+}
+```
+
+`items` is required. Strings work directly; objects require stable unique keys
+with `itemToStringValue` and human-readable labels with `itemToStringLabel`.
+Null represents no single selection. Empty string is a real item; a required
+single-value form field rejects its empty serialized value, following HTML.
+Do not use null/undefined as option values or duplicate keys.
+
+`value`/`onValueChange` and `open`/`onOpenChange` are independently controlled.
+Omit them to use `defaultValue` and `defaultOpen`. Defaults are read at mount;
+reset returns to that baseline. A controlled owner can reject selection or
+closure. Search is a draft: typing alone never changes the submitted value.
+Selection, Escape, Tab and dismissal discard the uncontrolled search draft.
+`inputValue`/`onInputValueChange` let the application own search; callback reasons
+are `input-change`, `input-clear`, `item-select`, and `dismiss`. Input paste follows
+the browser's input event and reports `input-change`.
+
+Default filtering is a trimmed, case-insensitive label substring. `filteredItems`
+bypasses it for application filtering or asynchronously supplied results. Keep
+request cancellation, stale-result checks, pending/error presentation, and retry
+in the application. Render loading/status/error content beside the list; show
+ComboboxEmpty only when an empty result is ready. The library starts no requests,
+submits no mutations, and performs no retries. Large lists are not virtualized.
+
+`isItemDisabled` excludes options from keyboard selection and pointer activation.
+Root `disabled` blocks editing and submission; `readOnly` blocks user changes
+while retaining submitted values. `name`, `form`, and `required` configure a
+visually hidden native select. Multiple values use repeated FormData entries.
+Rejected controlled changes preserve canonical values. Reset waits until the
+browser finishes resetting fields, respects cancellation, and cancels pending
+restoration on unmount. Invalid submission exposes a named error and opens the
+chooser; use `aria-describedby` for additional help.
+
+Arrow Up/Down open and navigate enabled choices with wrapping; Enter commits;
+Escape cancels and Tab exits. Home/End retain native text-cursor behavior.
+IME composition does not commit selections. Active options scroll inside the
+list while DOM focus remains on the input. Use a Label or explicit aria-label;
+ComboboxLabel is a **group** label, not a field label.
+
+For the admin's popup-search pattern, place `ComboboxTrigger` outside Content,
+and place `ComboboxInput showTrigger={false}` inside Content. The trigger opens
+a named chooser dialog and focus enters its search field. Selection/Escape
+return focus to the trigger. `ComboboxValue` displays the current canonical label
+or its `placeholder`. Both editable-input and trigger-first examples are in the
+live gallery. Content inherits Popover's placement/lifecycle props and theme
+ancestry; it contains an explicitly named listbox.
+
+For multiple selection use `multiple` and an array value. Compose
+`ComboboxChips`, `ComboboxValue<string>` with a one-argument render callback,
+`ComboboxChip value={item}`, and `ComboboxChipsInput`. Chips provide named remove
+buttons (`showRemove={false}` hides one); multiple selection keeps the popup open.
+`ComboboxClear` clears through the owner and supports a cancellable click handler.
+The gallery demonstrates this complete composition.
+
+Additional parts: `ComboboxGroup` (name it with aria-label/aria-labelledby),
+`ComboboxLabel`, `ComboboxSeparator`, and `ComboboxCollection` for rendering the
+filtered items inside manual group markup. A List render callback must declare
+its item parameter; zero-argument functions are treated as Solid JSX. Manual
+markup must represent the same options as the root's filtered collection.
+
+Intentional differences from the React/Base UI sibling: Solid `class`, lowercase
+native attributes, callback refs, and native Popover placement; no React ref
+object `useComboboxAnchor`, custom anchor prop, arbitrary Base UI `render` prop,
+virtualization, auto-highlight/auto-select, chip arrow-navigation, or exit-presence
+animation is promised. Input/Content reuse existing token-based field/popover
+styles instead of the sibling's unavailable InputGroup/Base UI internals. The
+seven names currently imported by the React admin are present, but that inventory
+check does not certify a port of the admin or every Base UI behavior.
+
+![Light searchable chooser](screenshots/combobox-light.png)
+![Dark searchable chooser](screenshots/combobox-dark.png)
+![Narrow searchable chooser](screenshots/combobox-mobile.png)

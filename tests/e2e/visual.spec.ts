@@ -13,3 +13,6 @@ for(const mode of ['light','dark','mobile'])test(`${mode} open overlays`,async({
  if(mode==='mobile')await page.setViewportSize({width:390,height:844});await page.goto(mode==='dark'?'/?dark':'/');await page.evaluate(()=>document.fonts.ready);await page.emulateMedia({reducedMotion:'reduce'});
  await page.getByRole('button',{name:'Workspace details',exact:true}).click();await expect(page.getByRole('dialog')).toBeVisible();await expect(page).toHaveScreenshot(`popover-${mode}.png`,{animations:'disabled',maxDiffPixelRatio:0.001});await page.keyboard.press('Escape');await page.getByRole('button',{name:'Remove preview',exact:true}).click();await expect(page.getByRole('alertdialog')).toBeVisible();await expect(page).toHaveScreenshot(`alert-${mode}.png`,{animations:'disabled',maxDiffPixelRatio:0.001});
 });
+for(const mode of ['light','dark','mobile'])test(`${mode} open combobox`,async({page})=>{
+ if(mode==='mobile')await page.setViewportSize({width:390,height:844});await page.goto(mode==='dark'?'/?dark':'/');await page.evaluate(()=>document.fonts.ready);await page.emulateMedia({reducedMotion:'reduce'});await page.getByRole('combobox',{name:'Favorite fruit'}).press('ArrowDown');await expect(page.getByRole('listbox')).toBeVisible();await expect(page).toHaveScreenshot(`combobox-${mode}.png`,{animations:'disabled',maxDiffPixelRatio:0.001});
+});

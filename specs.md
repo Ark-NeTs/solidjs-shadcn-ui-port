@@ -6,7 +6,11 @@ and `packages/shadcn-svelte-theme/README.md`, before writing a line of code.
 
 ## Current owner direction — 2026-10-08
 
-**Current batch authorized:** “Continue with Tabs, Popover, Alert Dialog.”
+**Current batch:** implement Combobox as the next increment. Evaluate Kobalte first;
+deliver source, docs and tests, then commit/push on a codex branch under the latest
+working agreement. See [COMBOBOX-DELIVERY.md](COMBOBOX-DELIVERY.md).
+
+**Previous batch authorized:** “Continue with Tabs, Popover, Alert Dialog.”
 Evaluate Kobalte first, preserve diagnostics, and deliver the three components,
 tests and docs. The owner subsequently authorized the full commit/push workflow
 and requested merging into local main; push only the codex branch. See

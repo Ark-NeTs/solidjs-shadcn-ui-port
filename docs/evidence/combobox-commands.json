@@ -1,0 +1,68 @@
+[
+  {
+    "command": "bun run check",
+    "exitCode": 0,
+    "seconds": 2.456,
+    "log": "docs/evidence/combobox-check.txt"
+  },
+  {
+    "command": "bun run lint",
+    "exitCode": 0,
+    "seconds": 1.04,
+    "log": "docs/evidence/combobox-lint.txt"
+  },
+  {
+    "command": "bun run test",
+    "exitCode": 0,
+    "seconds": 2.551,
+    "log": "docs/evidence/combobox-test.txt"
+  },
+  {
+    "command": "bun run test:coverage",
+    "exitCode": 0,
+    "seconds": 2.692,
+    "log": "docs/evidence/combobox-test-coverage.txt"
+  },
+  {
+    "command": "bun run test:server",
+    "exitCode": 0,
+    "seconds": 0.689,
+    "log": "docs/evidence/combobox-test-server.txt"
+  },
+  {
+    "command": "bun run build",
+    "exitCode": 0,
+    "seconds": 1.463,
+    "log": "docs/evidence/combobox-build.txt"
+  },
+  {
+    "command": "bun run parity:report",
+    "exitCode": 0,
+    "seconds": 0.235,
+    "log": "docs/evidence/combobox-parity-report.txt"
+  },
+  {
+    "command": "bun run parity:admin",
+    "exitCode": 0,
+    "seconds": 0.206,
+    "log": "docs/evidence/combobox-parity-admin.txt"
+  },
+  {
+    "command": "THEME_PRODUCTION=1 THEME_PORT=4403 RESULTS_FILE=docs/evidence/combobox-visual-update.json bunx --no-install playwright test tests/e2e/visual.spec.ts --update-snapshots",
+    "exitCode": 0,
+    "seconds": 14.956,
+    "log": "docs/evidence/combobox-visual-update.txt"
+  },
+  {
+    "command": "THEME_PORT=4403 RESULTS_FILE=docs/evidence/combobox-integration.json bun run test:integration",
+    "exitCode": 0,
+    "seconds": 64.921,
+    "log": "docs/evidence/combobox-integration.txt"
+  },
+  {
+    "command": "THEME_PORT=4403 RESULTS_FILE=docs/evidence/combobox-e2e.json bun run test:e2e",
+    "exitCode": 0,
+    "seconds": 20.656,
+    "log": "docs/evidence/combobox-e2e.txt"
+  }
+]

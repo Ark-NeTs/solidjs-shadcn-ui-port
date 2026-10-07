@@ -1,0 +1,126 @@
+$ bun scripts/check-admin-parity.ts
+{
+  "scope": "Fourteen components; checks imported names only, not React-to-Solid behavioral or application parity.",
+  "subpaths": [
+    {
+      "subpath": "ui/alert-dialog",
+      "requested": [
+        "AlertDialog",
+        "AlertDialogAction",
+        "AlertDialogCancel",
+        "AlertDialogContent",
+        "AlertDialogDescription",
+        "AlertDialogFooter",
+        "AlertDialogHeader",
+        "AlertDialogTitle"
+      ],
+      "missing": []
+    },
+    {
+      "subpath": "ui/badge",
+      "requested": [
+        "Badge"
+      ],
+      "missing": []
+    },
+    {
+      "subpath": "ui/button",
+      "requested": [
+        "Button"
+      ],
+      "missing": []
+    },
+    {
+      "subpath": "ui/card",
+      "requested": [
+        "Card",
+        "CardContent",
+        "CardDescription",
+        "CardHeader",
+        "CardTitle"
+      ],
+      "missing": []
+    },
+    {
+      "subpath": "ui/checkbox",
+      "requested": [
+        "Checkbox"
+      ],
+      "missing": []
+    },
+    {
+      "subpath": "ui/combobox",
+      "requested": [
+        "Combobox",
+        "ComboboxContent",
+        "ComboboxEmpty",
+        "ComboboxInput",
+        "ComboboxItem",
+        "ComboboxList",
+        "ComboboxTrigger"
+      ],
+      "missing": []
+    },
+    {
+      "subpath": "ui/input",
+      "requested": [
+        "Input"
+      ],
+      "missing": []
+    },
+    {
+      "subpath": "ui/label",
+      "requested": [
+        "Label"
+      ],
+      "missing": []
+    },
+    {
+      "subpath": "ui/popover",
+      "requested": [
+        "Popover",
+        "PopoverContent",
+        "PopoverTrigger"
+      ],
+      "missing": []
+    },
+    {
+      "subpath": "ui/skeleton",
+      "requested": [
+        "Skeleton"
+      ],
+      "missing": []
+    },
+    {
+      "subpath": "ui/switch",
+      "requested": [
+        "Switch"
+      ],
+      "missing": []
+    },
+    {
+      "subpath": "ui/tabs",
+      "requested": [
+        "Tabs",
+        "TabsList",
+        "TabsTrigger"
+      ],
+      "missing": []
+    },
+    {
+      "subpath": "ui/textarea",
+      "requested": [
+        "Textarea"
+      ],
+      "missing": []
+    },
+    {
+      "subpath": "utils",
+      "requested": [
+        "cn"
+      ],
+      "missing": []
+    }
+  ],
+  "complete": true
+}

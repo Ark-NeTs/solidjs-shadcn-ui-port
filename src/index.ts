@@ -13,3 +13,4 @@ export * from './components/ui/switch';
 export * from './components/ui/tabs';
 export * from './components/ui/popover';
 export * from './components/ui/alert-dialog';
+export * from './components/ui/combobox';

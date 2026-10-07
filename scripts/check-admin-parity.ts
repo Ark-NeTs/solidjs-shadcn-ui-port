@@ -29,12 +29,13 @@ const delivered:Record<string,string[]>={
   'ui/tabs':['Tabs','TabsList','TabsTrigger','TabsContent'],
   'ui/popover':['Popover','PopoverTrigger','PopoverContent','PopoverAnchor','PopoverHeader','PopoverTitle','PopoverDescription'],
   'ui/alert-dialog':['AlertDialog','AlertDialogTrigger','AlertDialogPortal','AlertDialogOverlay','AlertDialogContent','AlertDialogHeader','AlertDialogTitle','AlertDialogDescription','AlertDialogFooter','AlertDialogAction','AlertDialogCancel','AlertDialogMedia'],
+  'ui/combobox':['Combobox','ComboboxContent','ComboboxEmpty','ComboboxInput','ComboboxItem','ComboboxList','ComboboxTrigger'],
   'ui/checkbox':['Checkbox'],'ui/switch':['Switch'],
   'ui/input':['Input'],'ui/textarea':['Textarea'],'ui/label':['Label'],
   'ui/separator':['Separator'],'ui/skeleton':['Skeleton'],'utils':['cn'],
 };
 const rows=[...imports].sort(([a],[b])=>a.localeCompare(b)).map(([subpath,names])=>({subpath,requested:[...names].sort(),missing:[...names].filter(name=>!delivered[subpath]?.includes(name)).sort()}));
-const report={scope:'Thirteen components only; full admin parity is a later gate.',subpaths:rows,complete:rows.every(row=>row.missing.length===0)};
+const report={scope:'Fourteen components; checks imported names only, not React-to-Solid behavioral or application parity.',subpaths:rows,complete:rows.every(row=>row.missing.length===0)};
 writeFileSync(resolve(root,'docs/evidence/admin-parity.json'),JSON.stringify(report,null,2)+'\n');
 console.log(JSON.stringify(report,null,2));
 if(process.argv.includes('--strict')&&!report.complete)process.exitCode=1;

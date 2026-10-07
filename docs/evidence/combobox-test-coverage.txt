@@ -1,0 +1,23 @@
+$ vitest run --coverage
+
+ RUN  v4.1.10 /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme
+      Coverage enabled with v8
+
+
+ Test Files  7 passed (7)
+      Tests  80 passed (80)
+   Start at  01:26:47
+   Duration  2.29s (transform 1.91s, setup 1.83s, import 2.47s, tests 2.06s, environment 4.64s)
+
+ % Coverage report from v8
+-------------------|---------|----------|---------|---------|-------------------
+File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
+-------------------|---------|----------|---------|---------|-------------------
+-------------------|---------|----------|---------|---------|-------------------
+
+=============================== Coverage summary ===============================
+Statements   : 100% ( 1096/1096 )
+Branches     : 100% ( 640/640 )
+Functions    : 100% ( 452/452 )
+Lines        : 100% ( 317/317 )
+================================================================================

@@ -1,0 +1,196 @@
+[
+  {
+    "browser": "chromium",
+    "observations": {
+      "initial": "Apple",
+      "selected": "Banana",
+      "form": {
+        "fruit": "Banana"
+      },
+      "reset": ""
+    },
+    "diagnostics": [
+      {
+        "type": "warning",
+        "text": "[STRICT_READ_UNTRACKED] Reactive value read directly in <ComboboxBase> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> › <C.Root> › <ComboboxBase>\n[STRICT_READ_UNTRACKED] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#strict_read_untracked"
+      },
+      {
+        "type": "warning",
+        "text": "[STRICT_READ_UNTRACKED] Reactive value read directly in <ComboboxBase> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> › <C.Root> › <ComboboxBase>"
+      },
+      {
+        "type": "warning",
+        "text": "[STRICT_READ_UNTRACKED] Reactive value read directly in <For> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> › <C.Root> › <ComboboxBase> › <FormControlContext> › computed › <ComboboxContext> › computed › <Popper> › <PopperContext> › computed › <Polymorphic> › <Dynamic> › <Anonymous> › computed › effect › <C.HiddenSelect> › <HiddenSelectBase> › <Show> › value › <For>"
+      },
+      {
+        "type": "warning",
+        "text": "[STRICT_READ_UNTRACKED] Reactive value read directly in <For> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> › <C.Root> › <ComboboxBase> › <FormControlContext> › computed › <ComboboxContext> › computed › <Popper> › <PopperContext> › computed › <Polymorphic> › <Dynamic> › <Anonymous> › computed › effect › <C.HiddenSelect> › <HiddenSelectBase> › <Show> › value › <For>"
+      },
+      {
+        "type": "warning",
+        "text": "[STRICT_READ_UNTRACKED] Reactive value read directly in <For> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> › <C.Root> › <ComboboxBase> › <FormControlContext> › computed › <ComboboxContext> › computed › <Popper> › <PopperContext> › computed › <Polymorphic> › <Dynamic> › <Anonymous> › computed › effect › <C.HiddenSelect> › <HiddenSelectBase> › <Show> › value › <For>"
+      },
+      {
+        "type": "warning",
+        "text": "[STRICT_READ_UNTRACKED] Reactive value read directly in an effect callback will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function)."
+      },
+      {
+        "type": "warning",
+        "text": "[STRICT_READ_UNTRACKED] Reactive value read directly in an effect callback will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function)."
+      },
+      {
+        "type": "warning",
+        "text": "[STRICT_READ_UNTRACKED] Reactive value read directly in an effect callback will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function)."
+      },
+      {
+        "type": "warning",
+        "text": "[STRICT_READ_UNTRACKED] Reactive value read directly in <For> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> › <C.Root> › <ComboboxBase> › <FormControlContext> › computed › <ComboboxContext> › computed › <Popper> › <PopperContext> › computed › <Polymorphic> › <Dynamic> › <Anonymous> › computed › effect › <C.HiddenSelect> › <HiddenSelectBase> › <Show> › value › <For>"
+      },
+      {
+        "type": "warning",
+        "text": "[STRICT_READ_UNTRACKED] Reactive value read directly in an effect callback will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function)."
+      },
+      {
+        "type": "warning",
+        "text": "[EFFECT_RELAY_TEAR] memo \"computed\" ran twice for one write of \"signal\": once in the flush where \"signal\" changed, and again after effect \"effect\" relayed it by writing \"signal\" — the first frame showed the new \"signal\" with the stale \"signal\" (3 times so far). If \"signal\" is computed from what the effect reads, make it a memo so readers get it in the same flush; if the write reads something outside the graph (layout, time), the tear is the cost of measuring.\n  in <Probe> › <C.Root> › <ComboboxBase> › computed\n[EFFECT_RELAY_TEAR] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#effect_relay_tear\n[EFFECT_RELAY_TEAR] deeper evidence: import { attribution } from \"solid-js/attribution\"; attribution.enable() explains every re-run — why-chains, costs(), feedback(), history(\"hold\" | \"waterfall\") — agent loop: node_modules/@solidjs/diagnostics/skills/agent-loops/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/diagnostics/skills/agent-loops/SKILL.md"
+      },
+      {
+        "type": "warning",
+        "text": "[EFFECT_WRITES_OWN_SOURCE] effect \"effect\" re-ran because of its own write: it wrote \"signal\", which fed back into its inputs. Two flushes to settle, and the screen rendered the pre-write value in between. The written value is a function of what the effect reads — compute it in a memo (or normalize where the source is written) instead of correcting it after the fact.\n  in <Probe> › <C.Root> › <ComboboxBase> › effect\n[EFFECT_WRITES_OWN_SOURCE] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#effect_writes_own_source\n[EFFECT_WRITES_OWN_SOURCE] deeper evidence: import { attribution } from \"solid-js/attribution\"; attribution.enable() explains every re-run — why-chains, costs(), feedback(), history(\"hold\" | \"waterfall\") — agent loop: node_modules/@solidjs/diagnostics/skills/agent-loops/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/diagnostics/skills/agent-loops/SKILL.md"
+      },
+      {
+        "type": "warning",
+        "text": "[EFFECT_WRITES_OWN_SOURCE] effect \"effect\" re-ran because of its own write: it wrote \"signal\", which fed back into its inputs. Two flushes to settle, and the screen rendered the pre-write value in between. The written value is a function of what the effect reads — compute it in a memo (or normalize where the source is written) instead of correcting it after the fact.\n  in <Probe> › <C.Root> › <ComboboxBase> › effect"
+      },
+      {
+        "type": "warning",
+        "text": "[EFFECT_RELAY_TEAR] effect \"effect\" ran twice for one write of \"signal\": once in the flush where \"signal\" changed, and again after effect \"effect\" relayed it by writing \"signal\" — the first frame showed the new \"signal\" with the stale \"signal\". The written value is \"signal\" itself: read \"signal\" where \"signal\" is read (or createMemo it if a stable derivation is needed) and delete the effect.\n  in <Probe> › <C.Root> › <ComboboxBase> › effect"
+      },
+      {
+        "type": "warning",
+        "text": "[STRICT_READ_UNTRACKED] Reactive value read directly in <For> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> › <C.Root> › <ComboboxBase> › <FormControlContext> › computed › <ComboboxContext> › computed › <Popper> › <PopperContext> › computed › <Polymorphic> › <Dynamic> › <Anonymous> › computed › effect › <C.HiddenSelect> › <HiddenSelectBase> › <Show> › value › <For>"
+      },
+      {
+        "type": "warning",
+        "text": "[STRICT_READ_UNTRACKED] Reactive value read directly in an effect callback will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function)."
+      },
+      {
+        "type": "warning",
+        "text": "[STRICT_READ_UNTRACKED] Reactive value read directly in an effect callback will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function)."
+      },
+      {
+        "type": "warning",
+        "text": "[STRICT_READ_UNTRACKED] Reactive value read directly in <For> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> › <C.Root> › <ComboboxBase> › <FormControlContext> › computed › <ComboboxContext> › computed › <Popper> › <PopperContext> › computed › <Polymorphic> › <Dynamic> › <Anonymous> › computed › effect › <C.HiddenSelect> › <HiddenSelectBase> › <Show> › value › <For>"
+      },
+      {
+        "type": "warning",
+        "text": "[STRICT_READ_UNTRACKED] Reactive value read directly in an effect callback will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function)."
+      },
+      {
+        "type": "warning",
+        "text": "[STRICT_READ_UNTRACKED] Reactive value read directly in an effect callback will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function)."
+      },
+      {
+        "type": "warning",
+        "text": "[STRICT_READ_UNTRACKED] Reactive value read directly in <For> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> › <C.Root> › <ComboboxBase> › <FormControlContext> › computed › <ComboboxContext> › computed › <Popper> › <PopperContext> › computed › <Polymorphic> › <Dynamic> › <Anonymous> › computed › effect › <C.HiddenSelect> › <HiddenSelectBase> › <Show> › value › <For>"
+      }
+    ]
+  },
+  {
+    "browser": "firefox",
+    "observations": {
+      "initial": "Apple",
+      "selected": "Banana",
+      "form": {
+        "fruit": "Banana"
+      },
+      "reset": ""
+    },
+    "diagnostics": [
+      {
+        "type": "warning",
+        "text": "[STRICT_READ_UNTRACKED] Reactive value read directly in <ComboboxBase> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> › <C.Root> › <ComboboxBase>\n[STRICT_READ_UNTRACKED] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#strict_read_untracked"
+      },
+      {
+        "type": "warning",
+        "text": "[STRICT_READ_UNTRACKED] Reactive value read directly in <ComboboxBase> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> › <C.Root> › <ComboboxBase>"
+      },
+      {
+        "type": "warning",
+        "text": "[STRICT_READ_UNTRACKED] Reactive value read directly in <For> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> › <C.Root> › <ComboboxBase> › <FormControlContext> › computed › <ComboboxContext> › computed › <Popper> › <PopperContext> › computed › <Polymorphic> › <Dynamic> › <Anonymous> › computed › effect › <C.HiddenSelect> › <HiddenSelectBase> › <Show> › value › <For>"
+      },
+      {
+        "type": "warning",
+        "text": "[STRICT_READ_UNTRACKED] Reactive value read directly in <For> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> › <C.Root> › <ComboboxBase> › <FormControlContext> › computed › <ComboboxContext> › computed › <Popper> › <PopperContext> › computed › <Polymorphic> › <Dynamic> › <Anonymous> › computed › effect › <C.HiddenSelect> › <HiddenSelectBase> › <Show> › value › <For>"
+      },
+      {
+        "type": "warning",
+        "text": "[STRICT_READ_UNTRACKED] Reactive value read directly in <For> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> › <C.Root> › <ComboboxBase> › <FormControlContext> › computed › <ComboboxContext> › computed › <Popper> › <PopperContext> › computed › <Polymorphic> › <Dynamic> › <Anonymous> › computed › effect › <C.HiddenSelect> › <HiddenSelectBase> › <Show> › value › <For>"
+      },
+      {
+        "type": "warning",
+        "text": "[STRICT_READ_UNTRACKED] Reactive value read directly in an effect callback will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function)."
+      },
+      {
+        "type": "warning",
+        "text": "[STRICT_READ_UNTRACKED] Reactive value read directly in an effect callback will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function)."
+      },
+      {
+        "type": "warning",
+        "text": "[STRICT_READ_UNTRACKED] Reactive value read directly in an effect callback will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function)."
+      },
+      {
+        "type": "warning",
+        "text": "[STRICT_READ_UNTRACKED] Reactive value read directly in <For> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> › <C.Root> › <ComboboxBase> › <FormControlContext> › computed › <ComboboxContext> › computed › <Popper> › <PopperContext> › computed › <Polymorphic> › <Dynamic> › <Anonymous> › computed › effect › <C.HiddenSelect> › <HiddenSelectBase> › <Show> › value › <For>"
+      },
+      {
+        "type": "warning",
+        "text": "[STRICT_READ_UNTRACKED] Reactive value read directly in an effect callback will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function)."
+      },
+      {
+        "type": "warning",
+        "text": "[EFFECT_RELAY_TEAR] memo \"computed\" ran twice for one write of \"signal\": once in the flush where \"signal\" changed, and again after effect \"effect\" relayed it by writing \"signal\" — the first frame showed the new \"signal\" with the stale \"signal\" (3 times so far). If \"signal\" is computed from what the effect reads, make it a memo so readers get it in the same flush; if the write reads something outside the graph (layout, time), the tear is the cost of measuring.\n  in <Probe> › <C.Root> › <ComboboxBase> › computed\n[EFFECT_RELAY_TEAR] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#effect_relay_tear\n[EFFECT_RELAY_TEAR] deeper evidence: import { attribution } from \"solid-js/attribution\"; attribution.enable() explains every re-run — why-chains, costs(), feedback(), history(\"hold\" | \"waterfall\") — agent loop: node_modules/@solidjs/diagnostics/skills/agent-loops/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/diagnostics/skills/agent-loops/SKILL.md"
+      },
+      {
+        "type": "warning",
+        "text": "[EFFECT_WRITES_OWN_SOURCE] effect \"effect\" re-ran because of its own write: it wrote \"signal\", which fed back into its inputs. Two flushes to settle, and the screen rendered the pre-write value in between. The written value is a function of what the effect reads — compute it in a memo (or normalize where the source is written) instead of correcting it after the fact.\n  in <Probe> › <C.Root> › <ComboboxBase> › effect\n[EFFECT_WRITES_OWN_SOURCE] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#effect_writes_own_source\n[EFFECT_WRITES_OWN_SOURCE] deeper evidence: import { attribution } from \"solid-js/attribution\"; attribution.enable() explains every re-run — why-chains, costs(), feedback(), history(\"hold\" | \"waterfall\") — agent loop: node_modules/@solidjs/diagnostics/skills/agent-loops/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/diagnostics/skills/agent-loops/SKILL.md"
+      },
+      {
+        "type": "warning",
+        "text": "[EFFECT_WRITES_OWN_SOURCE] effect \"effect\" re-ran because of its own write: it wrote \"signal\", which fed back into its inputs. Two flushes to settle, and the screen rendered the pre-write value in between. The written value is a function of what the effect reads — compute it in a memo (or normalize where the source is written) instead of correcting it after the fact.\n  in <Probe> › <C.Root> › <ComboboxBase> › effect"
+      },
+      {
+        "type": "warning",
+        "text": "[EFFECT_RELAY_TEAR] effect \"effect\" ran twice for one write of \"signal\": once in the flush where \"signal\" changed, and again after effect \"effect\" relayed it by writing \"signal\" — the first frame showed the new \"signal\" with the stale \"signal\". The written value is \"signal\" itself: read \"signal\" where \"signal\" is read (or createMemo it if a stable derivation is needed) and delete the effect.\n  in <Probe> › <C.Root> › <ComboboxBase> › effect"
+      },
+      {
+        "type": "warning",
+        "text": "[STRICT_READ_UNTRACKED] Reactive value read directly in <For> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> › <C.Root> › <ComboboxBase> › <FormControlContext> › computed › <ComboboxContext> › computed › <Popper> › <PopperContext> › computed › <Polymorphic> › <Dynamic> › <Anonymous> › computed › effect › <C.HiddenSelect> › <HiddenSelectBase> › <Show> › value › <For>"
+      },
+      {
+        "type": "warning",
+        "text": "[STRICT_READ_UNTRACKED] Reactive value read directly in an effect callback will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function)."
+      },
+      {
+        "type": "warning",
+        "text": "[STRICT_READ_UNTRACKED] Reactive value read directly in an effect callback will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function)."
+      },
+      {
+        "type": "warning",
+        "text": "[STRICT_READ_UNTRACKED] Reactive value read directly in <For> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> › <C.Root> › <ComboboxBase> › <FormControlContext> › computed › <ComboboxContext> › computed › <Popper> › <PopperContext> › computed › <Polymorphic> › <Dynamic> › <Anonymous> › computed › effect › <C.HiddenSelect> › <HiddenSelectBase> › <Show> › value › <For>"
+      },
+      {
+        "type": "warning",
+        "text": "[STRICT_READ_UNTRACKED] Reactive value read directly in an effect callback will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function)."
+      },
+      {
+        "type": "warning",
+        "text": "[STRICT_READ_UNTRACKED] Reactive value read directly in an effect callback will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function)."
+      },
+      {
+        "type": "warning",
+        "text": "[STRICT_READ_UNTRACKED] Reactive value read directly in <For> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> › <C.Root> › <ComboboxBase> › <FormControlContext> › computed › <ComboboxContext> › computed › <Popper> › <PopperContext> › computed › <Polymorphic> › <Dynamic> › <Anonymous> › computed › effect › <C.HiddenSelect> › <HiddenSelectBase> › <Show> › value › <For>"
+      }
+    ]
+  }
+]

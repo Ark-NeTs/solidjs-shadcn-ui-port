@@ -1,0 +1,45 @@
+$ THEME_PRODUCTION=1 playwright test tests/e2e
+[WebServer] $ vite build && tsc -p tsconfig.build.json
+[WebServer] (node:94169) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] $ vite build --config playground/vite.config.ts
+[WebServer] (node:94219) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:94220) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 27 tests using 1 worker
+
+(node:94240) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › tests/e2e/combobox.spec.ts:3:1 › built Combobox searches, commits, resets and recovers a rejected change (927ms)
+  ✓   2 [chromium] › tests/e2e/form-fields.spec.ts:3:1 › native validation preserves drafts and reset restores controlled and uncontrolled fields (503ms)
+  ✓   3 [chromium] › tests/e2e/form-fields.spec.ts:12:1 › long field values, file names and enlarged fonts fit a narrow screen (463ms)
+  ✓   4 [chromium] › tests/e2e/overlays.spec.ts:3:1 › built tabs and popover compose into a keyboard-only confirmation flow (284ms)
+  ✓   5 [chromium] › tests/e2e/overlays.spec.ts:6:1 › built alert preserves rejected drafts and completes only an explicit retry (617ms)
+  ✓   6 [chromium] › tests/e2e/playground.spec.ts:3:1 › form validation, pending submit protection and recovery to ready (372ms)
+  ✓   7 [chromium] › tests/e2e/playground.spec.ts:9:1 › narrow viewport, enlarged text and long input stay usable (510ms)
+  ✓   8 [chromium] › tests/e2e/toggles.spec.ts:3:1 › notification form validates, serializes checked values and restores default-on controls (567ms)
+  ✓   9 [chromium] › tests/e2e/toggles.spec.ts:9:1 › toggles remain usable with enlarged text at mobile width (491ms)
+  ✓  10 [chromium] › tests/e2e/visual.spec.ts:3:45 › light component gallery (653ms)
+  ✓  11 [chromium] › tests/e2e/visual.spec.ts:3:45 › dark component gallery (641ms)
+  ✓  12 [chromium] › tests/e2e/visual.spec.ts:3:45 › mobile component gallery (509ms)
+  ✓  13 [chromium] › tests/e2e/visual.spec.ts:12:45 › light open overlays (592ms)
+  ✓  14 [chromium] › tests/e2e/visual.spec.ts:12:45 › dark open overlays (570ms)
+  ✓  15 [chromium] › tests/e2e/visual.spec.ts:12:45 › mobile open overlays (440ms)
+  ✓  16 [chromium] › tests/e2e/visual.spec.ts:16:45 › light open combobox (283ms)
+  ✓  17 [chromium] › tests/e2e/visual.spec.ts:16:45 › dark open combobox (262ms)
+  ✓  18 [chromium] › tests/e2e/visual.spec.ts:16:45 › mobile open combobox (220ms)
+(node:94413) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  19 [firefox] › tests/e2e/combobox.spec.ts:3:1 › built Combobox searches, commits, resets and recovers a rejected change (1.7s)
+  ✓  20 [firefox] › tests/e2e/form-fields.spec.ts:3:1 › native validation preserves drafts and reset restores controlled and uncontrolled fields (640ms)
+  ✓  21 [firefox] › tests/e2e/form-fields.spec.ts:12:1 › long field values, file names and enlarged fonts fit a narrow screen (639ms)
+  ✓  22 [firefox] › tests/e2e/overlays.spec.ts:3:1 › built tabs and popover compose into a keyboard-only confirmation flow (536ms)
+  ✓  23 [firefox] › tests/e2e/overlays.spec.ts:6:1 › built alert preserves rejected drafts and completes only an explicit retry (812ms)
+  ✓  24 [firefox] › tests/e2e/playground.spec.ts:3:1 › form validation, pending submit protection and recovery to ready (503ms)
+  ✓  25 [firefox] › tests/e2e/playground.spec.ts:9:1 › narrow viewport, enlarged text and long input stay usable (614ms)
+  ✓  26 [firefox] › tests/e2e/toggles.spec.ts:3:1 › notification form validates, serializes checked values and restores default-on controls (631ms)
+  ✓  27 [firefox] › tests/e2e/toggles.spec.ts:9:1 › toggles remain usable with enlarged text at mobile width (605ms)
+
+  27 passed (20.3s)

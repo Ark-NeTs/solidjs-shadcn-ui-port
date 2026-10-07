@@ -26,3 +26,8 @@ it('renders tabs and closed overlay triggers without a browser',()=>{
 it('renders forced overlay structure without opening native layers on the server',()=>{
  const html=renderToString(()=><><Popover><PopoverContent forceMount><PopoverTitle>Server popup</PopoverTitle></PopoverContent></Popover><AlertDialog><AlertDialogContent forceMount><AlertDialogTitle>Server alert</AlertDialogTitle></AlertDialogContent></AlertDialog></>);expect(html).toContain('Server popup');expect(html).toContain('Server alert');expect(html).toContain('popover="auto"');expect(html).toContain('role="alertdialog"');
 });
+
+import { Combobox, ComboboxInput, ComboboxContent, ComboboxList, ComboboxItem } from '../src';
+it('renders the Combobox canonical value and form field without a browser',()=>{
+ const html=renderToString(()=><form><Combobox items={['Apple','Banana']} defaultValue="Apple" name="fruit" required><ComboboxInput aria-label="Fruit"/><ComboboxContent><ComboboxList>{(item:string)=><ComboboxItem value={item}>{item}</ComboboxItem>}</ComboboxList></ComboboxContent></Combobox></form>);expect(html).toContain('role="combobox"');expect(html).toContain('value="Apple"');expect(html).toContain('name="fruit"');expect(html).toContain('aria-expanded="false"');expect(html).not.toContain('role="listbox"');
+});

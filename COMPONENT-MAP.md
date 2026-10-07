@@ -1,8 +1,8 @@
 # shadcn/ui → Solid 2 component map
 
 **Implemented (2026-10-08):** Button, Badge, Card, Separator, Skeleton, Input,
-Textarea, Label, Checkbox, Switch, Tabs, Popover and Alert Dialog now have owned Solid 2 source, documentation and passing unit, browser and built-library tests.
-See [OVERLAYS-DELIVERY.md](OVERLAYS-DELIVERY.md), [TOGGLES-DELIVERY.md](TOGGLES-DELIVERY.md), [FORM-FIELDS-DELIVERY.md](FORM-FIELDS-DELIVERY.md) and the earlier
+Textarea, Label, Checkbox, Switch, Tabs, Popover, Alert Dialog and Combobox now have owned Solid 2 source, documentation and passing unit, browser and built-library tests.
+See [COMBOBOX-DELIVERY.md](COMBOBOX-DELIVERY.md), [OVERLAYS-DELIVERY.md](OVERLAYS-DELIVERY.md), [TOGGLES-DELIVERY.md](TOGGLES-DELIVERY.md), [FORM-FIELDS-DELIVERY.md](FORM-FIELDS-DELIVERY.md) and the earlier
 [FOUNDATION-DELIVERY.md](FOUNDATION-DELIVERY.md). These use native HTML;
 headless-library findings below remain relevant to later primitives.
 
@@ -96,7 +96,7 @@ No row currently selects corvu; alternatives are evaluated below.
 | [Chart](https://ui.shadcn.com/docs/components/chart) | G | No chart engine | Select a Solid 2-compatible or framework-neutral renderer; recreate chart config, tooltip, legend and theme contracts. Recharts is React-specific. |
 | [Checkbox](https://ui.shadcn.com/docs/components/checkbox) | N | `checkbox` evaluated first; native input chosen | Implemented checked/mixed/disabled, controlled rejection, forms/reset and labels. Unpatched Kobalte emits diagnostics; see KOBALTE-TOGGLES.md and TOGGLES-DELIVERY.md. |
 | [Collapsible](https://ui.shadcn.com/docs/components/collapsible) | K | `collapsible` | Controlled expansion, hidden content and animation lifecycle. |
-| [Combobox](https://ui.shadcn.com/docs/components/combobox) | K | `combobox` | Search, grouped/multiple options, selection, empty/loading presentation and keyboard focus. |
+| [Combobox](https://ui.shadcn.com/docs/components/combobox) | C | `combobox` evaluated first; owned composition | Evaluated first; alpha.2/rc.13 reset and diagnostics fail. Owned Input/Popover composition delivers single/multiple selection, search, chips, forms and keyboard access. API limits and evidence: COMBOBOX-DELIVERY.md. No corvu Combobox primitive. |
 | [Command](https://ui.shadcn.com/docs/components/command) | G | `search` / `combobox`, `listbox`, `dialog` candidates | No cmdk equivalent. Own item registration, ranking/filtering, grouped visibility, inline palette and action dispatch; prove focus semantics before selecting composition. |
 | [Context Menu](https://ui.shadcn.com/docs/components/context-menu) | K | `context-menu` | Pointer/keyboard opening, submenus, checkbox/radio items and dismissal. |
 | [Data Table](https://ui.shadcn.com/docs/components/data-table) | G | `checkbox`, `dropdown-menu`, `pagination` for controls | No table model. Evaluate TanStack Table core/compatible adapter for sort, filter, selection and paging; server data stays host-owned. |

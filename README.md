@@ -4,24 +4,25 @@
 
 An owned Solid 2 design system for the future Solid admin, behind the D19 package
 boundary. The implementation contains **Button, Badge, Card, Separator, Skeleton, Input,
-Textarea, Label, Checkbox, Switch, Tabs, Popover and Alert Dialog**. The React admin and Svelte storefront keep their existing themes.
+Textarea, Label, Checkbox, Switch, Tabs, Popover, Alert Dialog and Combobox**. The React admin and Svelte storefront keep their existing themes.
 See [DECISIONS.md](DECISIONS.md) for the owner's 2026-10-07 foundation direction
-and [OVERLAYS-DELIVERY.md](OVERLAYS-DELIVERY.md) for current measured acceptance.
+and [COMBOBOX-DELIVERY.md](COMBOBOX-DELIVERY.md) for current measured acceptance.
 [FOUNDATION-DELIVERY.md](FOUNDATION-DELIVERY.md) retains the earlier five-component results.
 
-These thirteen components use native HTML and Solid 2. Popover positioning uses
+These fourteen components use native HTML and Solid 2. Popover positioning uses
 `@floating-ui/dom@1.8.0`. Kobalte remains the first
 candidate for richer interaction primitives. Neither Kobalte nor corvu, nor the
 experimental validation patches, is a dependency of this implementation.
 Kobalte Checkbox/Switch were browser-tested first; reset and diagnostic failures
 are recorded in [KOBALTE-TOGGLES.md](KOBALTE-TOGGLES.md).
-The new Tabs/Popover/Alert Dialog probe is in [KOBALTE-OVERLAYS.md](KOBALTE-OVERLAYS.md).
+Combobox adoption evidence is in [KOBALTE-COMBOBOX.md](KOBALTE-COMBOBOX.md).
+The Tabs/Popover/Alert Dialog probe is in [KOBALTE-OVERLAYS.md](KOBALTE-OVERLAYS.md).
 
 ## Key files
 
 | File | Purpose |
 | --- | --- |
-| `src/components/ui/*.tsx` | Thirteen components and their compound parts |
+| `src/components/ui/*.tsx` | Fourteen components and their compound parts |
 | `src/lib/utils.ts` | Conditional classes and Tailwind 4 conflict resolution |
 | `src/theme.css` | Shared oklch tokens, Inter, utilities and reduced motion |
 | `src/index.ts` | Public library barrel |

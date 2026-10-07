@@ -127,3 +127,34 @@ Floating UI; source consumers resolve the pinned dependency. There are no networ
 requests or application services. Async confirmation belongs to the owner, which
 prevents default closure, disables duplicate submission, preserves drafts on
 failure, and closes explicitly after success.
+
+## 2026-10-08 — Combobox
+
+Implement the next component, Combobox, with Kobalte evaluated first. The
+unpatched alpha.2 probe on rc.13 records working search/selection, an empty input
+following reset, and 21 diagnostics in each browser (KOBALTE-COMBOBOX.md).
+Corvu's existing catalog has no Combobox primitive; add neither library nor the
+experimental patches. Compose the owned Input/Popover with Solid 2 state.
+
+Keep canonical selection, editable query, active option and open state distinct.
+Controlled null is authoritative. Use explicit labels and unique serialization
+keys for object options. The native select bridge handles form association,
+repeated values and validation; reset restoration runs after the native reset
+operation and is canceled on unmount. Browser testing exposed that a microtask
+can run before the browser finishes its reset default action, so a cancelable
+next-task restoration is necessary even when jsdom's synthetic reset passes.
+
+Reuse the Popover top layer, theme ancestry, placement and controlled dismissal.
+Floating UI now tracks the anchor's geometry with animationFrame enabled and
+ancestorScroll disabled while open. REASONING: Firefox emitted its scroll-linked
+positioning warning during real Combobox navigation; changing coordinate writes
+to translations did not resolve it. Geometry tracking passes both engines
+without suppressing diagnostics and retains resize/position updates and disposal.
+It checks anchor geometry each frame while open; no speed or battery-use claim.
+
+Preserve the admin's seven imported Combobox names and render callback pattern.
+Document the public subset, multiple/chips, form/search contracts, native node
+semantics and unsupported Base UI APIs explicitly. This is the fourteenth
+component; neither the whole catalog nor an admin framework migration is done.
+The latest working agreement requires a codex branch for commit/push, superseding
+the earlier direct-main exception for this task.
