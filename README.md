@@ -3,12 +3,13 @@
 ## Role and decisions
 
 An owned Solid 2 design system for the future Solid admin, behind the D19 package
-boundary. The first implementation contains **Button, Badge, Card, Separator and
-Skeleton**. The React admin and Svelte storefront keep their existing themes.
+boundary. The implementation contains **Button, Badge, Card, Separator, Skeleton, Input,
+Textarea and Label**. The React admin and Svelte storefront keep their existing themes.
 See [DECISIONS.md](DECISIONS.md) for the owner's 2026-10-07 foundation direction
-and [FOUNDATION-DELIVERY.md](FOUNDATION-DELIVERY.md) for measured acceptance.
+and [FORM-FIELDS-DELIVERY.md](FORM-FIELDS-DELIVERY.md) for current measured acceptance.
+[FOUNDATION-DELIVERY.md](FOUNDATION-DELIVERY.md) retains the earlier five-component results.
 
-These five components use native HTML and Solid 2. Kobalte remains the first
+These eight components use native HTML and Solid 2. Kobalte remains the first
 candidate for richer interaction primitives. Neither Kobalte nor corvu, nor the
 experimental validation patches, is a dependency of this implementation.
 
@@ -16,7 +17,7 @@ experimental validation patches, is a dependency of this implementation.
 
 | File | Purpose |
 | --- | --- |
-| `src/components/ui/*.tsx` | Five components and all Card parts |
+| `src/components/ui/*.tsx` | Eight components and all Card parts |
 | `src/lib/utils.ts` | Conditional classes and Tailwind 4 conflict resolution |
 | `src/theme.css` | Shared oklch tokens, Inter, utilities and reduced motion |
 | `src/index.ts` | Public library barrel |
@@ -35,6 +36,9 @@ import { Card, CardHeader, CardTitle, CardDescription,
   CardAction, CardContent, CardFooter } from 'shadcn-solidjs-theme/ui/card';
 import { Separator } from 'shadcn-solidjs-theme/ui/separator';
 import { Skeleton } from 'shadcn-solidjs-theme/ui/skeleton';
+import { Input } from 'shadcn-solidjs-theme/ui/input';
+import { Textarea } from 'shadcn-solidjs-theme/ui/textarea';
+import { Label } from 'shadcn-solidjs-theme/ui/label';
 import { cn } from 'shadcn-solidjs-theme/utils';
 ```
 
@@ -111,6 +115,10 @@ files under `tests/e2e/visual.spec.ts-snapshots`; regenerate deliberately with
   changes. Run tests through Vitest, not `bun test`.
 - Use `class`, lowercase `tabindex`, string ARIA booleans, plain `ref`, and
   `<Loading>` (Solid 2's loading boundary). Native DOM props remain reactive.
+- Input and Textarea preserve native `value`/`defaultValue`, form reset, refs and
+  events. Use `onInput` for live drafts, `readonly` and `maxlength` in Solid JSX,
+  and connect Label `for` to the field `id`. Controlled draft reset belongs to
+  the form owner; see the component guide and playground.
 - Button defaults to `type="button"`; request `type="submit"` explicitly.
   `as="a"` supports links and disabled-link behavior. Badge supports `as="a"`.
   React's `asChild` and arbitrary `as` components are not supported in this batch;

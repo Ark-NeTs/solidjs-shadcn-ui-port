@@ -1,0 +1,230 @@
+bun run check
+$ tsc --noEmit
+
+
+bun run lint
+$ eslint src tests playground scripts *.ts
+
+
+bun run test
+
+ RUN  v4.1.10 /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme
+
+
+ Test Files  3 passed (3)
+      Tests  31 passed (31)
+   Start at  23:01:09
+   Duration  982ms (transform 260ms, setup 440ms, import 275ms, tests 226ms, environment 1.59s)
+
+$ vitest run
+
+
+bun run test:coverage
+
+ RUN  v4.1.10 /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme
+      Coverage enabled with v8
+
+
+ Test Files  3 passed (3)
+      Tests  31 passed (31)
+   Start at  23:01:10
+   Duration  880ms (transform 216ms, setup 390ms, import 236ms, tests 283ms, environment 1.05s)
+
+ % Coverage report from v8
+----------------|---------|----------|---------|---------|-------------------
+File            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
+----------------|---------|----------|---------|---------|-------------------
+----------------|---------|----------|---------|---------|-------------------
+
+=============================== Coverage summary ===============================
+Statements   : 100% ( 114/114 )
+Branches     : 100% ( 50/50 )
+Functions    : 100% ( 52/52 )
+Lines        : 100% ( 62/62 )
+================================================================================
+$ vitest run --coverage
+
+
+bun run test:server
+
+ RUN  v4.1.10 /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme
+
+
+ Test Files  1 passed (1)
+      Tests  2 passed (2)
+   Start at  23:01:12
+   Duration  266ms (transform 137ms, setup 0ms, import 175ms, tests 10ms, environment 0ms)
+
+$ vitest run --config vitest.server.config.ts
+
+
+bun run build
+vite v8.3.3 building client environment for production...
+transforming...
+✓ 13 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/shadcn-solidjs-theme.css  325.84 kB │ gzip: 227.83 kB
+dist/styles.js                   0.00 kB │ gzip:   0.02 kB
+dist/shadcn-solidjs-theme.js    11.41 kB │ gzip:   2.74 kB
+
+✓ built in 139ms
+$ vite build && tsc -p tsconfig.build.json
+
+
+bun run parity:report
+{
+  "scope": "Eight native components only; full admin parity is a later gate.",
+  "subpaths": [
+    {
+      "subpath": "ui/alert-dialog",
+      "requested": [
+        "AlertDialog",
+        "AlertDialogAction",
+        "AlertDialogCancel",
+        "AlertDialogContent",
+        "AlertDialogDescription",
+        "AlertDialogFooter",
+        "AlertDialogHeader",
+        "AlertDialogTitle"
+      ],
+      "missing": [
+        "AlertDialog",
+        "AlertDialogAction",
+        "AlertDialogCancel",
+        "AlertDialogContent",
+        "AlertDialogDescription",
+        "AlertDialogFooter",
+        "AlertDialogHeader",
+        "AlertDialogTitle"
+      ]
+    },
+    {
+      "subpath": "ui/badge",
+      "requested": [
+        "Badge"
+      ],
+      "missing": []
+    },
+    {
+      "subpath": "ui/button",
+      "requested": [
+        "Button"
+      ],
+      "missing": []
+    },
+    {
+      "subpath": "ui/card",
+      "requested": [
+        "Card",
+        "CardContent",
+        "CardDescription",
+        "CardHeader",
+        "CardTitle"
+      ],
+      "missing": []
+    },
+    {
+      "subpath": "ui/checkbox",
+      "requested": [
+        "Checkbox"
+      ],
+      "missing": [
+        "Checkbox"
+      ]
+    },
+    {
+      "subpath": "ui/combobox",
+      "requested": [
+        "Combobox",
+        "ComboboxContent",
+        "ComboboxEmpty",
+        "ComboboxInput",
+        "ComboboxItem",
+        "ComboboxList",
+        "ComboboxTrigger"
+      ],
+      "missing": [
+        "Combobox",
+        "ComboboxContent",
+        "ComboboxEmpty",
+        "ComboboxInput",
+        "ComboboxItem",
+        "ComboboxList",
+        "ComboboxTrigger"
+      ]
+    },
+    {
+      "subpath": "ui/input",
+      "requested": [
+        "Input"
+      ],
+      "missing": []
+    },
+    {
+      "subpath": "ui/label",
+      "requested": [
+        "Label"
+      ],
+      "missing": []
+    },
+    {
+      "subpath": "ui/popover",
+      "requested": [
+        "Popover",
+        "PopoverContent",
+        "PopoverTrigger"
+      ],
+      "missing": [
+        "Popover",
+        "PopoverContent",
+        "PopoverTrigger"
+      ]
+    },
+    {
+      "subpath": "ui/skeleton",
+      "requested": [
+        "Skeleton"
+      ],
+      "missing": []
+    },
+    {
+      "subpath": "ui/switch",
+      "requested": [
+        "Switch"
+      ],
+      "missing": [
+        "Switch"
+      ]
+    },
+    {
+      "subpath": "ui/tabs",
+      "requested": [
+        "Tabs",
+        "TabsList",
+        "TabsTrigger"
+      ],
+      "missing": [
+        "Tabs",
+        "TabsList",
+        "TabsTrigger"
+      ]
+    },
+    {
+      "subpath": "ui/textarea",
+      "requested": [
+        "Textarea"
+      ],
+      "missing": []
+    },
+    {
+      "subpath": "utils",
+      "requested": [
+        "cn"
+      ],
+      "missing": []
+    }
+  ],
+  "complete": false
+}
+$ bun scripts/check-admin-parity.ts

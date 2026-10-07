@@ -6,6 +6,9 @@ import { Badge } from 'shadcn-solidjs-theme/ui/badge';
 import { Card, CardHeader, CardTitle, CardDescription, CardAction, CardContent, CardFooter } from 'shadcn-solidjs-theme/ui/card';
 import { Separator } from 'shadcn-solidjs-theme/ui/separator';
 import { Skeleton } from 'shadcn-solidjs-theme/ui/skeleton';
+import { Input } from 'shadcn-solidjs-theme/ui/input';
+import { Textarea } from 'shadcn-solidjs-theme/ui/textarea';
+import { Label } from 'shadcn-solidjs-theme/ui/label';
 import './index.css';
 const variants = ['default', 'secondary', 'outline', 'ghost', 'destructive', 'link'] as const;
 /** Keep demonstration state in the application, with no data layer in components. */
@@ -29,9 +32,9 @@ function Playground() {
       </header>
       <section id="top" class="py-12">
         <Badge variant="secondary">Solid 2 · First release</Badge>
-        <h1 class="mt-5 max-w-2xl text-4xl font-semibold tracking-tight sm:text-5xl">A shared language,<br />five building blocks.</h1>
+        <h1 class="mt-5 max-w-2xl text-4xl font-semibold tracking-tight sm:text-5xl">A shared language,<br />eight building blocks.</h1>
         <p class="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">Familiar shadcn styling. Reactive Solid components. Shared light and dark tokens, ready to compose into your next screen.</p>
-        <div class="mt-6 samples"><Button as="a" href="#components">Explore components</Button><span class="text-xs text-muted-foreground">Button / Badge / Card / Separator / Skeleton</span></div>
+        <div class="mt-6 samples"><Button as="a" href="#components">Explore components</Button><span class="text-xs text-muted-foreground">Button / Badge / Card / Separator / Skeleton / Input / Textarea / Label</span></div>
       </section>
       <Separator />
       <section id="components" class="demo-section" aria-labelledby="button-heading">
@@ -46,7 +49,7 @@ function Playground() {
           <Card size={compact() ? 'sm' : 'default'} data-testid="example-card">
             <CardHeader><CardTitle><h3>Workspace preferences</h3></CardTitle><CardDescription>Keep your team’s workspace easy to recognize.</CardDescription><CardAction><Badge variant="outline">Preview</Badge></CardAction></CardHeader>
             <CardContent><form id="preferences" onSubmit={event => {event.preventDefault();setPending(true);}}>
-              <label for="workspace-name" class="text-sm font-medium">Workspace name</label><input id="workspace-name" name="workspace" required value="North studio" class="mt-2 w-full min-w-0 rounded-md border bg-background px-3 py-2" />
+              <Label for="workspace-name">Workspace name</Label><Input id="workspace-name" name="workspace" required defaultValue="North studio" class="mt-2" />
               <p class="mt-3 text-xs text-muted-foreground">Preview only. No information leaves this page.</p>
             </form></CardContent>
             <CardFooter class="flex-wrap justify-between gap-3"><span role="status" class="text-xs text-foreground">{pending() ? 'Saving preview…' : `Saved changes: ${saved()}`}</span><Button type="submit" form="preferences" disabled={pending()} aria-busy={pending() ? "true" : "false"}>Save changes</Button></CardFooter>
@@ -56,8 +59,34 @@ function Playground() {
       </section>
       <section class="demo-section" aria-labelledby="separator-heading"><h2 id="separator-heading">04 / Separator</h2><p>Decorative by default; opt into semantic separation when it adds meaning.</p><div class="samples h-16"><span>Overview</span><Separator decorative={false} orientation={vertical() ? 'vertical' : 'horizontal'} class={vertical() ? 'h-6 self-center' : 'max-w-24'} data-testid="live-separator" /><span>Activity</span><Button variant="outline" onClick={() => setVertical(!vertical())}>Change orientation</Button></div></section>
       <section class="demo-section" aria-labelledby="skeleton-heading"><h2 id="skeleton-heading">05 / Skeleton</h2><p>Quiet loading placeholders. Reduced motion is respected automatically.</p><div class="demo-grid"><Card aria-busy={pending() ? "true" : "false"}><CardContent class="pt-4"><Show when={pending()} fallback={<p>Content is ready. Save the preview above to see its loading state.</p>}><div role="status" class="sr-only">Loading preview</div><div class="samples"><Skeleton class="size-12 rounded-full" /><div class="flex-1 space-y-3"><Skeleton class="h-4 w-3/4" /><Skeleton class="h-4 w-1/2" /></div></div></Show></CardContent></Card><div class="snippet m-0"><code>{'<Loading fallback={<Skeleton class="h-24 w-full" />}><Content /></Loading>'}</code></div></div></section>
-      <footer class="mt-16 border-t pt-6 text-xs text-muted-foreground">Five components · Shared semantic tokens · No application services</footer>
+      <section class="demo-section" aria-labelledby="fields-heading"><h2 id="fields-heading">06–08 / Input, Textarea &amp; Label</h2><p>Native fields, explicit labels, and drafts owned by your application.</p><FormExamples /></section>
+      <footer class="mt-16 border-t pt-6 text-xs text-muted-foreground">Eight components · Shared semantic tokens · No application services</footer>
     </main>
+  </div>;
+}
+/** Demonstrate native validation/reset and controlled drafts without application services. */
+function FormExamples() {
+  const [notes, setNotes] = createSignal('Please leave deliveries at reception.');
+  const [submitted, setSubmitted] = createSignal('');
+  const [invalid, setInvalid] = createSignal(false);
+  return <div class="demo-grid">
+    <Card><CardHeader><CardTitle><h3>Delivery instructions</h3></CardTitle><CardDescription>A local form preview. Edit, validate, or reset your draft.</CardDescription></CardHeader>
+      <CardContent><form id="delivery" class="space-y-5" onSubmit={event => {
+        event.preventDefault();
+        const data = new FormData(event.currentTarget);
+        setSubmitted(`Preview saved for ${data.get('email')}: ${data.get('notes')}`);
+      }} onReset={() => {setNotes('Please leave deliveries at reception.');setSubmitted('');}}>
+        <div class="space-y-2"><Label for="contact-email">Contact email (required)</Label><Input id="contact-email" name="email" type="email" autocomplete="email" required defaultValue="hello@example.com" aria-describedby="email-help" /><p id="email-help" class="text-xs text-muted-foreground">Used only in this local preview.</p></div>
+        <div class="space-y-2"><Label for="delivery-notes">Delivery notes (required)</Label><Textarea id="delivery-notes" name="notes" required maxlength={240} rows={3} defaultValue="Please leave deliveries at reception." value={notes()} onInput={event => setNotes(event.currentTarget.value)} aria-describedby="notes-help" /><p id="notes-help" class="text-xs text-muted-foreground">{notes().length}/240 characters. No information leaves this page.</p></div>
+      </form></CardContent><CardFooter class="flex-wrap gap-3"><Button type="submit" form="delivery">Save delivery preview</Button><Button type="reset" form="delivery" variant="outline">Reset delivery draft</Button><p role="status" data-testid="delivery-status" class="w-full break-words text-xs">{submitted()}</p></CardFooter>
+    </Card>
+    <Card><CardHeader><CardTitle><h3>Field states</h3></CardTitle><CardDescription>Errors, read-only values, disabled fields, and file input.</CardDescription></CardHeader><CardContent class="space-y-5">
+      <div class="space-y-2"><Label for="reference-code">Reference code</Label><Input id="reference-code" placeholder="e.g. NORTH-01" aria-invalid={invalid() ? 'true' : 'false'} aria-describedby={invalid() ? 'reference-error' : undefined} /><Show when={invalid()}><p id="reference-error" class="text-xs text-destructive-emphasis">Enter the reference from your confirmation, then clear this preview error.</p></Show><Button variant="outline" size="sm" aria-pressed={invalid() ? 'true' : 'false'} onClick={() => setInvalid(!invalid())}>{invalid() ? 'Clear preview error' : 'Show preview error'}</Button></div>
+      <div class="space-y-2"><Label for="account-id">Account ID (read only)</Label><Input id="account-id" readonly value="NORTH-001" /></div>
+      <div class="space-y-2"><Input id="locked-input" class="peer" disabled value="Managed by your team" /><Label for="locked-input">Managed contact (disabled)</Label></div>
+      <div class="space-y-2"><Textarea id="locked-notes" class="peer" disabled defaultValue="Notes are locked for this example." /><Label for="locked-notes">Locked notes (disabled)</Label></div>
+      <div class="space-y-2"><Label for="attachment">Attachment</Label><Input id="attachment" type="file" accept=".txt" /></div>
+    </CardContent></Card>
   </div>;
 }
 render(() => <Playground />, document.getElementById('app')!);

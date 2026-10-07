@@ -1,0 +1,67 @@
+bun run check
+$ tsc --noEmit
+
+bun run lint
+$ eslint src tests playground scripts *.ts
+
+bun run test
+$ vitest run
+
+ RUN  v4.1.10 /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme
+
+
+ Test Files  2 passed (2)
+      Tests  22 passed (22)
+   Start at  22:04:52
+   Duration  949ms (transform 152ms, setup 265ms, import 135ms, tests 121ms, environment 1.08s)
+
+
+bun run test:coverage
+$ vitest run --coverage
+
+ RUN  v4.1.10 /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme
+      Coverage enabled with v8
+
+
+ Test Files  2 passed (2)
+      Tests  22 passed (22)
+   Start at  22:04:54
+   Duration  857ms (transform 134ms, setup 274ms, import 118ms, tests 144ms, environment 705ms)
+
+ % Coverage report from v8
+----------------|---------|----------|---------|---------|-------------------
+File            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
+----------------|---------|----------|---------|---------|-------------------
+----------------|---------|----------|---------|---------|-------------------
+
+=============================== Coverage summary ===============================
+Statements   : 100% ( 96/96 )
+Branches     : 100% ( 50/50 )
+Functions    : 100% ( 46/46 )
+Lines        : 100% ( 53/53 )
+================================================================================
+
+bun run test:server
+$ vitest run --config vitest.server.config.ts
+
+ RUN  v4.1.10 /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme
+
+
+ Test Files  1 passed (1)
+      Tests  1 passed (1)
+   Start at  22:04:55
+   Duration  258ms (transform 133ms, setup 0ms, import 170ms, tests 10ms, environment 0ms)
+
+
+bun run build
+$ vite build && tsc -p tsconfig.build.json
+vite v8.3.3 building client environment for production...
+transforming...
+✓ 10 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/shadcn-solidjs-theme.css  323.15 kB │ gzip: 227.50 kB
+dist/styles.js                   0.00 kB │ gzip:   0.02 kB
+dist/shadcn-solidjs-theme.js     9.23 kB │ gzip:   2.43 kB
+
+✓ built in 138ms

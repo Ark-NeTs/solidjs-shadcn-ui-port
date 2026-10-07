@@ -1,0 +1,332 @@
+{
+  "stats": {
+    "startTime": "2026-10-07T20:01:24.525Z",
+    "duration": 22648.443,
+    "expected": 20,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "cases": [
+    {
+      "title": "keyboard activation, focus ring, disabled examples and navigation",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 520,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "card size and separator orientation update geometry and semantics",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 511,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "custom theme changes token-driven button colors",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 595,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "loading placeholders are hidden from accessibility tree and stop motion",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1016,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "light examples have no axe accessibility violations",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 771,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "dark examples have no axe accessibility violations",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1175,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "keyboard activation, focus ring, disabled examples and navigation",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 574,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "card size and separator orientation update geometry and semantics",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 582,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "custom theme changes token-driven button colors",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 395,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "loading placeholders are hidden from accessibility tree and stop motion",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 434,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "light examples have no axe accessibility violations",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1069,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "dark examples have no axe accessibility violations",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2111,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "labels focus their controls and keyboard navigation exposes focus rings",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 643,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "read-only, disabled, file and invalid fields retain their native behavior",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 587,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "light invalid field presentation has no axe violations",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1289,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "dark invalid field presentation has no axe violations",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1129,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "labels focus their controls and keyboard navigation exposes focus rings",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1461,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "read-only, disabled, file and invalid fields retain their native behavior",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 551,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "light invalid field presentation has no axe violations",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1167,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "dark invalid field presentation has no axe violations",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1502,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    }
+  ]
+}

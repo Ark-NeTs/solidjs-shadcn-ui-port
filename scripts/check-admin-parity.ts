@@ -26,10 +26,11 @@ while(remaining.length){
 const delivered:Record<string,string[]>={
   'ui/button':['Button','buttonVariants'],'ui/badge':['Badge','badgeVariants'],
   'ui/card':['Card','CardHeader','CardTitle','CardDescription','CardAction','CardContent','CardFooter'],
+  'ui/input':['Input'],'ui/textarea':['Textarea'],'ui/label':['Label'],
   'ui/separator':['Separator'],'ui/skeleton':['Skeleton'],'utils':['cn'],
 };
 const rows=[...imports].sort(([a],[b])=>a.localeCompare(b)).map(([subpath,names])=>({subpath,requested:[...names].sort(),missing:[...names].filter(name=>!delivered[subpath]?.includes(name)).sort()}));
-const report={scope:'First five components only; full admin parity is a later gate.',subpaths:rows,complete:rows.every(row=>row.missing.length===0)};
+const report={scope:'Eight native components only; full admin parity is a later gate.',subpaths:rows,complete:rows.every(row=>row.missing.length===0)};
 writeFileSync(resolve(root,'docs/evidence/admin-parity.json'),JSON.stringify(report,null,2)+'\n');
 console.log(JSON.stringify(report,null,2));
 if(process.argv.includes('--strict')&&!report.complete)process.exitCode=1;

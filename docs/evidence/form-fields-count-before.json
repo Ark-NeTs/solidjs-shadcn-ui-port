@@ -1,0 +1,137 @@
+{
+  "stats": {
+    "startTime": "2026-10-07T20:00:31.244Z",
+    "duration": 22188.367000000002,
+    "expected": 9,
+    "skipped": 0,
+    "unexpected": 2,
+    "flaky": 0
+  },
+  "cases": [
+    {
+      "title": "light component gallery",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "dark component gallery",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "mobile component gallery",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "form validation, pending submit protection and recovery to ready",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "narrow viewport, enlarged text and long input stay usable",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "form validation, pending submit protection and recovery to ready",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "narrow viewport, enlarged text and long input stay usable",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "native validation preserves drafts and reset restores controlled and uncontrolled fields",
+      "project": "chromium",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "failed",
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#notes-help')\nExpected substring: \u001b[32m\"3\u001b[7m6\u001b[27m/240\"\u001b[39m\nReceived string:    \u001b[31m\"3\u001b[7m7\u001b[27m/240\u001b[7m characters. No information leaves this page.\u001b[27m\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" locator('#notes-help') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#notes-help')\u001b[22m\n\u001b[2m    14 \u00d7 locator resolved to <p id=\"notes-help\" class=\"text-xs text-muted-foreground\">37/240 characters. No information leaves this pag\u2026</p>\u001b[22m\n\u001b[2m       - unexpected value \"37/240 characters. No information leaves this page.\"\u001b[22m\n\n\n   6 |   await email.fill('team@example.com');await notes.fill('');await save.click();await expect(notes).toBeFocused();await expect(status).toBeEmpty();\n   7 |   await notes.fill('Call on arrival\\nUse the side entrance.');await save.focus();await page.keyboard.press('Enter');await expect(status).toHaveText('Preview saved for team@example.com: Call on arrival\\nUse the side entrance.');\n>  8 |   await page.getByRole('button',{name:'Reset delivery draft'}).click();await expect(email).toHaveValue('hello@example.com');await expect(notes).toHaveValue('Please leave deliveries at reception.');await expect(page.locator('#notes-help')).toContainText('36/240');await expect(status).toBeEmpty();\n     |                                                                                                                                                                                                                                                ^\n   9 |   await page.getByRole('button',{name:'Reset delivery draft'}).click();await expect(notes).toHaveValue('Please leave deliveries at reception.');\n  10 |   await save.click();await expect(status).toContainText('hello@example.com: Please leave deliveries at reception.');\n  11 | });\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/e2e/form-fields.spec.ts:8:240"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "long field values, file names and enlarged fonts fit a narrow screen",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "native validation preserves drafts and reset restores controlled and uncontrolled fields",
+      "project": "firefox",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "failed",
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#notes-help')\nExpected substring: \u001b[32m\"3\u001b[7m6\u001b[27m/240\"\u001b[39m\nReceived string:    \u001b[31m\"3\u001b[7m7\u001b[27m/240\u001b[7m characters. No information leaves this page.\u001b[27m\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" locator('#notes-help') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#notes-help')\u001b[22m\n\u001b[2m    14 \u00d7 locator resolved to <p id=\"notes-help\" class=\"text-xs text-muted-foreground\">37/240 characters. No information leaves this pag\u2026</p>\u001b[22m\n\u001b[2m       - unexpected value \"37/240 characters. No information leaves this page.\"\u001b[22m\n\n\n   6 |   await email.fill('team@example.com');await notes.fill('');await save.click();await expect(notes).toBeFocused();await expect(status).toBeEmpty();\n   7 |   await notes.fill('Call on arrival\\nUse the side entrance.');await save.focus();await page.keyboard.press('Enter');await expect(status).toHaveText('Preview saved for team@example.com: Call on arrival\\nUse the side entrance.');\n>  8 |   await page.getByRole('button',{name:'Reset delivery draft'}).click();await expect(email).toHaveValue('hello@example.com');await expect(notes).toHaveValue('Please leave deliveries at reception.');await expect(page.locator('#notes-help')).toContainText('36/240');await expect(status).toBeEmpty();\n     |                                                                                                                                                                                                                                                ^\n   9 |   await page.getByRole('button',{name:'Reset delivery draft'}).click();await expect(notes).toHaveValue('Please leave deliveries at reception.');\n  10 |   await save.click();await expect(status).toContainText('hello@example.com: Please leave deliveries at reception.');\n  11 | });\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/e2e/form-fields.spec.ts:8:240"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "long field values, file names and enlarged fonts fit a narrow screen",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "errors": []
+        }
+      ]
+    }
+  ]
+}

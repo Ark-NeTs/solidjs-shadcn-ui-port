@@ -1,8 +1,9 @@
 # shadcn/ui → Solid 2 component map
 
-**Implemented foundation (2026-10-07):** Button, Badge, Card, Separator and
-Skeleton now have owned Solid 2 source, documentation and passing unit, browser and built-library tests.
-See [FOUNDATION-DELIVERY.md](FOUNDATION-DELIVERY.md). These use native HTML;
+**Implemented (2026-10-07):** Button, Badge, Card, Separator, Skeleton, Input,
+Textarea and Label now have owned Solid 2 source, documentation and passing unit, browser and built-library tests.
+See [FORM-FIELDS-DELIVERY.md](FORM-FIELDS-DELIVERY.md) and the earlier
+[FOUNDATION-DELIVERY.md](FOUNDATION-DELIVERY.md). These use native HTML;
 headless-library findings below remain relevant to later primitives.
 
 Assessed 2026-10-07 against `@kobalte/core@2.0.0-alpha.2`.
@@ -106,12 +107,12 @@ No row currently selects corvu; alternatives are evaluated below.
 | [Empty](https://ui.shadcn.com/docs/components/empty) | N | Owned markup/CSS | Media/title/description/content slots; actions use Button. |
 | [Field](https://ui.shadcn.com/docs/components/field) | C | Control-specific Label/Description/ErrorMessage + native fieldset | Generic layout, legends, errors and IDs across all controls; do not put unrelated controls in a TextField context. |
 | [Hover Card](https://ui.shadcn.com/docs/components/hover-card) | K | `hover-card` | Delays, pointer travel, focus behavior, portal and collision placement. |
-| [Input](https://ui.shadcn.com/docs/components/input) | N | Native input; `text-field` evaluated for field composition | Keep standalone input and native type/event/ref behavior; a mandatory TextField.Root would change the sibling contract. |
+| [Input](https://ui.shadcn.com/docs/components/input) | N | Native input; `text-field` evaluated for field composition | Implemented and tested: native input, type/event/ref/reactive props, validation and form reset. See FORM-FIELDS-DELIVERY.md; TextField.Root is not required. |
 | [Input Group](https://ui.shadcn.com/docs/components/input-group) | C | Input/Textarea + `button` | Addons, focus/invalid state, disabled propagation and grouped borders. |
 | [Input OTP](https://ui.shadcn.com/docs/components/input-otp) | K | `otp-field` | Harness patch passes tested editing, label/ARIA, native form and reset contracts; see KOBALTE-OTP.md. Build slots/groups/separators; native paste/autofill/password managers remain unverified. |
 | [Item](https://ui.shadcn.com/docs/components/item) | N | Owned markup/CSS | Media/title/description/actions, links and separators; preserve chosen element semantics. |
 | [Kbd](https://ui.shadcn.com/docs/components/kbd) | N | Native kbd | Key/group styling; display does not register shortcuts. |
-| [Label](https://ui.shadcn.com/docs/components/label) | N | Native label; control-specific Kobalte Label when contextual | Standalone `for` association without requiring a form-control provider. |
+| [Label](https://ui.shadcn.com/docs/components/label) | N | Native label; control-specific Kobalte Label when contextual | Implemented and tested: standalone `for` association, click-to-focus and native refs/events, without a provider. See FORM-FIELDS-DELIVERY.md. |
 | [Marker](https://ui.shadcn.com/docs/components/marker) | N | Owned markup/CSS | Icon/content slots and variants; do not convey state by color alone. |
 | [Menubar](https://ui.shadcn.com/docs/components/menubar) | K | `menubar` | Cross-menu arrow navigation, submenus, item selection and focus retention. |
 | [Message](https://ui.shadcn.com/docs/components/message) | N | Owned markup/CSS | Role/avatar/content/action presentation; streaming transport remains outside UI. |
@@ -135,7 +136,7 @@ No row currently selects corvu; alternatives are evaluated below.
 | [Switch](https://ui.shadcn.com/docs/components/switch) | K | `switch` | Checked/disabled/required, label and hidden form input behavior. |
 | [Table](https://ui.shadcn.com/docs/components/table) | N | Native table elements | Caption/header/body/footer semantics and overflow; data logic belongs to Data Table. |
 | [Tabs](https://ui.shadcn.com/docs/components/tabs) | K | `tabs` | Automatic/manual activation, orientation, disabled tabs and panel mounting. |
-| [Textarea](https://ui.shadcn.com/docs/components/textarea) | N | Native textarea; `text-field` evaluated for field composition | Preserve standalone native API, sizing and field association without mandatory context. |
+| [Textarea](https://ui.shadcn.com/docs/components/textarea) | N | Native textarea; `text-field` evaluated for field composition | Implemented and tested: native multiline editing, controlled drafts, reset, sizing and label association without context. See FORM-FIELDS-DELIVERY.md. |
 | [Toast](https://ui.shadcn.com/docs/components/toast) | K | `toast` | Region/queue, dismiss/actions, duration/pause, announcements, swipe and positioning. |
 | [Toggle](https://ui.shadcn.com/docs/components/toggle) | K | `toggle-button` | Pressed/unpressed/disabled, variants and accessible name. |
 | [Toggle Group](https://ui.shadcn.com/docs/components/toggle-group) | K | `toggle-group` | Single/multiple selection, roving focus, orientation and RTL. |
@@ -231,7 +232,7 @@ Use browser tests for gestures, layout, focus, portals and cleanup; unit tests
 alone cannot certify these. Keep tests for async rejection and stale responses
 at the component/host boundary wherever applicable.
 
-## Delivery report for this mapping
+## Historical delivery report for the initial mapping
 
 This change only records research and implementation routing. State ownership,
 failure recovery, async consistency, cleanup, accessibility, theming and

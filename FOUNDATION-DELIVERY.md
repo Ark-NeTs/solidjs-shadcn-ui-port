@@ -1,5 +1,9 @@
 # Foundation delivery — 2026-10-07
 
+Historical report: this increment was subsequently committed as `b82f86c`.
+Current gallery images and admin inventory include the next batch; its results
+are in [FORM-FIELDS-DELIVERY.md](FORM-FIELDS-DELIVERY.md).
+
 **Implemented:** the Solid 2 package foundation and Button, Badge, Card,
 Separator and Skeleton. This increment includes `cn`, all seven Card exports,
 source subpaths, an ESM/declaration/CSS build, interactive documentation,

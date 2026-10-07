@@ -4,3 +4,6 @@ playground-dist/
 coverage/
 test-results/
 playwright-report/
+
+# Retain measured delivery evidence despite the repository-wide text-file ignore.
+!docs/evidence/*.txt

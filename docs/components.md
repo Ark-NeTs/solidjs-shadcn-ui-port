@@ -1,4 +1,4 @@
-# Foundation component guide
+# Component guide
 
 All components forward native attributes, events, children and refs. Use `class`
 for caller overrides. Import only from `shadcn-solidjs-theme`; dependencies stay
@@ -96,6 +96,73 @@ Skeleton is a decorative div; size it with utilities. Its animation stops under
 `prefers-reduced-motion: reduce`. The application controls readiness and supplies
 status text, recovery, and eventual content. A real async Loading boundary is
 covered by the unit suite.
+
+## Input, Textarea and Label
+
+```tsx
+import { createSignal } from 'solid-js';
+import { Input } from 'shadcn-solidjs-theme/ui/input';
+import { Textarea } from 'shadcn-solidjs-theme/ui/textarea';
+import { Label } from 'shadcn-solidjs-theme/ui/label';
+
+/** The form owns its editable draft and reset behavior. */
+function DeliveryForm() {
+  const [notes, setNotes] = createSignal('Call on arrival.');
+  return <form onReset={() => setNotes('Call on arrival.')}>
+    <Label for="email">Email (required)</Label>
+    <Input id="email" name="email" type="email" required
+      defaultValue="hello@example.com" autocomplete="email" />
+    <Label for="notes">Delivery notes</Label>
+    <Textarea id="notes" name="notes" rows={3} maxlength={240}
+      defaultValue="Call on arrival." value={notes()} onInput={event => setNotes(event.currentTarget.value)}
+      aria-describedby="notes-help" />
+    <p id="notes-help">Include instructions for finding the entrance.</p>
+    <Button type="reset">Reset draft</Button>
+  </form>;
+}
+```
+
+`InputProps`, `TextareaProps` and `LabelProps` extend the corresponding native
+Solid JSX attributes. Refs, `form`, `name`, `required`, `disabled`, `readonly`,
+`value`, `defaultValue`, native input types and events are forwarded. Use `onInput`
+for every edit; `onChange` retains native commit semantics. An uncontrolled field
+uses `defaultValue` and browser form reset; controlled drafts also reset their
+own signals in the form's `onReset` and supply the matching native `defaultValue`
+reset target. In Solid, `value` writes the current DOM property and `defaultValue`
+sets the native reset baseline. Without that baseline, the browser can clear a
+controlled textarea after its reset handler runs.
+
+Input defaults to the native text type. File inputs must remain uncontrolled;
+use their native `files` property in an event handler or ref. This package adds
+no upload, file reading or persistence. Textarea supports `rows`, `cols`, `wrap`
+and native resize; `field-sizing-content` progressively enhances supported
+browsers with content sizing. Override dimensions with `class` when needed.
+
+Connect each Label `for` to a unique control `id`. Placeholder text is not an
+accessible label. Describe errors with text and `aria-describedby`, alongside
+`aria-invalid="true"`; the owner clears the error and preserves the draft during
+recovery. `required` drives native validation, while `aria-invalid` alone does
+not block submission. Read-only fields remain focusable and submit their values;
+disabled fields are skipped by keyboard navigation and native submission.
+
+```tsx
+<Label for="reference">Reference code</Label>
+<Input id="reference" aria-invalid="true" aria-describedby="reference-error" />
+<p id="reference-error" class="text-destructive-emphasis text-sm">
+  Enter the reference from your confirmation.
+</p>
+<div class="space-y-2">
+  <Input id="locked" class="peer" disabled defaultValue="Managed by your team" />
+  <Label for="locked">Managed contact (disabled)</Label>
+</div>
+```
+
+The disabled-label style requires a preceding `.peer` control or a wrapping
+`.group` with `data-disabled="true"`. A native label does not accept `disabled`;
+communicate why its associated field cannot be edited. The three components use
+semantic tokens, caller class overrides and the sibling React class strings.
+They have no variants, providers, generated IDs, `as` or `asChild` API. For a
+future contextual Field composition, evaluate Kobalte TextField first.
 
 ## Themes and screenshots
 

@@ -1,0 +1,66 @@
+RESULTS_FILE=/private/tmp/form-fields-integration.json bun run test:integration
+
+Running 20 tests using 1 worker
+
+  ✓   1 [chromium] › tests/integration/form-fields.spec.ts:5:1 › labels focus their controls and keyboard navigation exposes focus rings (643ms)
+  ✓   2 [chromium] › tests/integration/form-fields.spec.ts:11:1 › read-only, disabled, file and invalid fields retain their native behavior (587ms)
+  ✓   3 [chromium] › tests/integration/form-fields.spec.ts:19:36 › light invalid field presentation has no axe violations (1.3s)
+  ✓   4 [chromium] › tests/integration/form-fields.spec.ts:19:36 › dark invalid field presentation has no axe violations (1.1s)
+  ✓   5 [chromium] › tests/integration/foundation.spec.ts:5:1 › keyboard activation, focus ring, disabled examples and navigation (520ms)
+  ✓   6 [chromium] › tests/integration/foundation.spec.ts:12:1 › card size and separator orientation update geometry and semantics (511ms)
+  ✓   7 [chromium] › tests/integration/foundation.spec.ts:18:1 › custom theme changes token-driven button colors (595ms)
+  ✓   8 [chromium] › tests/integration/foundation.spec.ts:22:1 › loading placeholders are hidden from accessibility tree and stop motion (1.0s)
+  ✓   9 [chromium] › tests/integration/foundation.spec.ts:27:36 › light examples have no axe accessibility violations (771ms)
+  ✓  10 [chromium] › tests/integration/foundation.spec.ts:27:36 › dark examples have no axe accessibility violations (1.2s)
+  ✓  11 [firefox] › tests/integration/form-fields.spec.ts:5:1 › labels focus their controls and keyboard navigation exposes focus rings (1.5s)
+  ✓  12 [firefox] › tests/integration/form-fields.spec.ts:11:1 › read-only, disabled, file and invalid fields retain their native behavior (551ms)
+  ✓  13 [firefox] › tests/integration/form-fields.spec.ts:19:36 › light invalid field presentation has no axe violations (1.2s)
+  ✓  14 [firefox] › tests/integration/form-fields.spec.ts:19:36 › dark invalid field presentation has no axe violations (1.5s)
+  ✓  15 [firefox] › tests/integration/foundation.spec.ts:5:1 › keyboard activation, focus ring, disabled examples and navigation (574ms)
+  ✓  16 [firefox] › tests/integration/foundation.spec.ts:12:1 › card size and separator orientation update geometry and semantics (582ms)
+  ✓  17 [firefox] › tests/integration/foundation.spec.ts:18:1 › custom theme changes token-driven button colors (395ms)
+  ✓  18 [firefox] › tests/integration/foundation.spec.ts:22:1 › loading placeholders are hidden from accessibility tree and stop motion (434ms)
+  ✓  19 [firefox] › tests/integration/foundation.spec.ts:27:36 › light examples have no axe accessibility violations (1.1s)
+  ✓  20 [firefox] › tests/integration/foundation.spec.ts:27:36 › dark examples have no axe accessibility violations (2.1s)
+
+  20 passed (22.6s)
+$ playwright test tests/integration
+[WebServer] $ vite --config playground/vite.config.ts
+[WebServer] (node:99146) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+(node:99184) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:99836) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+RESULTS_FILE=/private/tmp/form-fields-e2e.json bun run test:e2e
+
+Running 11 tests using 1 worker
+
+  ✓   1 [chromium] › tests/e2e/form-fields.spec.ts:3:1 › native validation preserves drafts and reset restores controlled and uncontrolled fields (855ms)
+  ✓   2 [chromium] › tests/e2e/form-fields.spec.ts:12:1 › long field values, file names and enlarged fonts fit a narrow screen (490ms)
+  ✓   3 [chromium] › tests/e2e/playground.spec.ts:3:1 › form validation, pending submit protection and recovery to ready (333ms)
+  ✓   4 [chromium] › tests/e2e/playground.spec.ts:9:1 › narrow viewport, enlarged text and long input stay usable (615ms)
+  ✓   5 [chromium] › tests/e2e/visual.spec.ts:3:45 › light component gallery (591ms)
+  ✓   6 [chromium] › tests/e2e/visual.spec.ts:3:45 › dark component gallery (524ms)
+  ✓   7 [chromium] › tests/e2e/visual.spec.ts:3:45 › mobile component gallery (390ms)
+  ✓   8 [firefox] › tests/e2e/form-fields.spec.ts:3:1 › native validation preserves drafts and reset restores controlled and uncontrolled fields (1.7s)
+  ✓   9 [firefox] › tests/e2e/form-fields.spec.ts:12:1 › long field values, file names and enlarged fonts fit a narrow screen (591ms)
+  ✓  10 [firefox] › tests/e2e/playground.spec.ts:3:1 › form validation, pending submit protection and recovery to ready (451ms)
+  ✓  11 [firefox] › tests/e2e/playground.spec.ts:9:1 › narrow viewport, enlarged text and long input stay usable (637ms)
+
+  11 passed (10.9s)
+$ THEME_PRODUCTION=1 playwright test tests/e2e
+[WebServer] $ vite build && tsc -p tsconfig.build.json
+[WebServer] (node:589) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] $ vite build --config playground/vite.config.ts
+[WebServer] (node:746) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:765) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+(node:789) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:1057) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)

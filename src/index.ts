@@ -5,3 +5,6 @@ export * from './components/ui/card';
 export * from './components/ui/separator';
 export * from './components/ui/skeleton';
 export { cn } from './lib/utils';
+export * from './components/ui/input';
+export * from './components/ui/textarea';
+export * from './components/ui/label';

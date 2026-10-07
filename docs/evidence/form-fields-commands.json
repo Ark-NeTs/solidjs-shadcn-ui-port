@@ -1,0 +1,37 @@
+[
+  {
+    "command": "bun run check",
+    "exitCode": 0,
+    "seconds": 1.398
+  },
+  {
+    "command": "bun run lint",
+    "exitCode": 0,
+    "seconds": 0.741
+  },
+  {
+    "command": "bun run test",
+    "exitCode": 0,
+    "seconds": 1.373
+  },
+  {
+    "command": "bun run test:coverage",
+    "exitCode": 0,
+    "seconds": 1.248
+  },
+  {
+    "command": "bun run test:server",
+    "exitCode": 0,
+    "seconds": 0.62
+  },
+  {
+    "command": "bun run build",
+    "exitCode": 0,
+    "seconds": 1.0
+  },
+  {
+    "command": "bun run parity:report",
+    "exitCode": 0,
+    "seconds": 0.208
+  }
+]

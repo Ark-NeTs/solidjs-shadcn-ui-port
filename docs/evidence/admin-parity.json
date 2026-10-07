@@ -1,5 +1,5 @@
 {
-  "scope": "First five components only; full admin parity is a later gate.",
+  "scope": "Eight native components only; full admin parity is a later gate.",
   "subpaths": [
     {
       "subpath": "ui/alert-dialog",
@@ -84,18 +84,14 @@
       "requested": [
         "Input"
       ],
-      "missing": [
-        "Input"
-      ]
+      "missing": []
     },
     {
       "subpath": "ui/label",
       "requested": [
         "Label"
       ],
-      "missing": [
-        "Label"
-      ]
+      "missing": []
     },
     {
       "subpath": "ui/popover",
@@ -144,9 +140,7 @@
       "requested": [
         "Textarea"
       ],
-      "missing": [
-        "Textarea"
-      ]
+      "missing": []
     },
     {
       "subpath": "utils",

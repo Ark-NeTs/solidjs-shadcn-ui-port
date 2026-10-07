@@ -1,0 +1,188 @@
+{
+  "stats": {
+    "startTime": "2026-10-07T20:01:47.567Z",
+    "duration": 10881.602,
+    "expected": 11,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "cases": [
+    {
+      "title": "light component gallery",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 591,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "dark component gallery",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 524,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "mobile component gallery",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 390,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "form validation, pending submit protection and recovery to ready",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 333,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "narrow viewport, enlarged text and long input stay usable",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 615,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "form validation, pending submit protection and recovery to ready",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 451,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "narrow viewport, enlarged text and long input stay usable",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 637,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "native validation preserves drafts and reset restores controlled and uncontrolled fields",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 855,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "long field values, file names and enlarged fonts fit a narrow screen",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 490,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "native validation preserves drafts and reset restores controlled and uncontrolled fields",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1652,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "long field values, file names and enlarged fonts fit a narrow screen",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 591,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    }
+  ]
+}

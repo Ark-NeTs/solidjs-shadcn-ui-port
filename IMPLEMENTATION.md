@@ -2,14 +2,15 @@
 
 ## Current increment
 
-Foundation and five components authorized 2026-10-07. No bucket number or admin
+Foundation and five components committed as `b82f86c`; the owner then authorized
+Input, Textarea and Label on 2026-10-07. No bucket number or admin
 migration slot is invented. This package-level plan tracks the bounded work;
 application scheduling remains in the repository roadmap.
 
 ## Built — what shipped, and what the build did that the plan didn't say
 
 - **Owned native components:** Button, Badge, all seven Card exports, Separator,
-  Skeleton and `cn` now exist under the React-style subpaths. **REASONING:** this
+  Skeleton, Input, Textarea, Label and `cn` now exist under the React-style subpaths. **REASONING:** this
   batch's behavior is provided by native elements; importing experimental overlay
   patches would add an unrelated acceptance dependency. Kobalte remains first
   for richer primitives. Verified against the source and dependency manifest.
@@ -32,7 +33,7 @@ application scheduling remains in the repository roadmap.
 
 ## Remaining catalog work
 
-This is five components, not the complete Tier 1 or catalog. `useIsMobile`, Input,
-Textarea and Label are natural next work. The existing COMPONENT-MAP.md remains
+Eight components are implemented, not the complete Tier 1 or catalog.
+`useIsMobile` and the remaining form controls are subsequent work. The existing COMPONENT-MAP.md remains
 the full inventory. Full admin-import parity, router/query interoperability,
 headless controls and application integration are not claimed complete.

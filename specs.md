@@ -6,6 +6,11 @@ and `packages/shadcn-svelte-theme/README.md`, before writing a line of code.
 
 ## Current owner direction — 2026-10-07
 
+**Next batch authorized:** “commit and implement Input, Textarea, and Label.”
+The foundation is committed as `b82f86c`. Extend its native-field contract with
+these three components; see [FORM-FIELDS-DELIVERY.md](FORM-FIELDS-DELIVERY.md).
+The earlier broad Gate 0 restriction does not block this explicitly requested batch.
+
 **Implementation checkpoint authorized:** the owner explicitly requested the
 foundation plus Button, Badge, Card, Separator and Skeleton now, instead of
 another diagnostic investigation. This supersedes the original broad Gate 0
