@@ -1,0 +1,331 @@
+bun run check
+$ tsc --noEmit
+
+
+bun run lint
+$ eslint src tests playground scripts *.ts
+
+
+bun run test
+
+ RUN  v4.1.10 /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme
+
+
+ Test Files  4 passed (4)
+      Tests  44 passed (44)
+   Start at  23:41:30
+   Duration  1.05s (transform 452ms, setup 668ms, import 425ms, tests 328ms, environment 2.23s)
+
+$ vitest run
+
+
+bun run test:coverage
+
+ RUN  v4.1.10 /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme
+      Coverage enabled with v8
+
+
+ Test Files  4 passed (4)
+      Tests  44 passed (44)
+   Start at  23:41:31
+   Duration  979ms (transform 386ms, setup 637ms, import 423ms, tests 436ms, environment 1.47s)
+
+ % Coverage report from v8
+----------------|---------|----------|---------|---------|-------------------
+File            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
+----------------|---------|----------|---------|---------|-------------------
+----------------|---------|----------|---------|---------|-------------------
+
+=============================== Coverage summary ===============================
+Statements   : 100% ( 216/216 )
+Branches     : 100% ( 118/118 )
+Functions    : 100% ( 102/102 )
+Lines        : 100% ( 120/120 )
+================================================================================
+$ vitest run --coverage
+
+
+bun run test:server
+
+ RUN  v4.1.10 /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme
+
+
+ Test Files  1 passed (1)
+      Tests  3 passed (3)
+   Start at  23:41:33
+   Duration  328ms (transform 181ms, setup 0ms, import 229ms, tests 13ms, environment 0ms)
+
+$ vitest run --config vitest.server.config.ts
+
+
+bun run build
+vite v8.3.3 building client environment for production...
+transforming...
+✓ 16 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/shadcn-solidjs-theme.css  331.26 kB │ gzip: 228.61 kB
+dist/styles.js                   0.00 kB │ gzip:   0.02 kB
+dist/shadcn-solidjs-theme.js    18.35 kB │ gzip:   4.38 kB
+
+✓ built in 164ms
+$ vite build && tsc -p tsconfig.build.json
+
+
+bun run parity:report
+{
+  "scope": "Ten native components only; full admin parity is a later gate.",
+  "subpaths": [
+    {
+      "subpath": "ui/alert-dialog",
+      "requested": [
+        "AlertDialog",
+        "AlertDialogAction",
+        "AlertDialogCancel",
+        "AlertDialogContent",
+        "AlertDialogDescription",
+        "AlertDialogFooter",
+        "AlertDialogHeader",
+        "AlertDialogTitle"
+      ],
+      "missing": [
+        "AlertDialog",
+        "AlertDialogAction",
+        "AlertDialogCancel",
+        "AlertDialogContent",
+        "AlertDialogDescription",
+        "AlertDialogFooter",
+        "AlertDialogHeader",
+        "AlertDialogTitle"
+      ]
+    },
+    {
+      "subpath": "ui/badge",
+      "requested": [
+        "Badge"
+      ],
+      "missing": []
+    },
+    {
+      "subpath": "ui/button",
+      "requested": [
+        "Button"
+      ],
+      "missing": []
+    },
+    {
+      "subpath": "ui/card",
+      "requested": [
+        "Card",
+        "CardContent",
+        "CardDescription",
+        "CardHeader",
+        "CardTitle"
+      ],
+      "missing": []
+    },
+    {
+      "subpath": "ui/checkbox",
+      "requested": [
+        "Checkbox"
+      ],
+      "missing": []
+    },
+    {
+      "subpath": "ui/combobox",
+      "requested": [
+        "Combobox",
+        "ComboboxContent",
+        "ComboboxEmpty",
+        "ComboboxInput",
+        "ComboboxItem",
+        "ComboboxList",
+        "ComboboxTrigger"
+      ],
+      "missing": [
+        "Combobox",
+        "ComboboxContent",
+        "ComboboxEmpty",
+        "ComboboxInput",
+        "ComboboxItem",
+        "ComboboxList",
+        "ComboboxTrigger"
+      ]
+    },
+    {
+      "subpath": "ui/input",
+      "requested": [
+        "Input"
+      ],
+      "missing": []
+    },
+    {
+      "subpath": "ui/label",
+      "requested": [
+        "Label"
+      ],
+      "missing": []
+    },
+    {
+      "subpath": "ui/popover",
+      "requested": [
+        "Popover",
+        "PopoverContent",
+        "PopoverTrigger"
+      ],
+      "missing": [
+        "Popover",
+        "PopoverContent",
+        "PopoverTrigger"
+      ]
+    },
+    {
+      "subpath": "ui/skeleton",
+      "requested": [
+        "Skeleton"
+      ],
+      "missing": []
+    },
+    {
+      "subpath": "ui/switch",
+      "requested": [
+        "Switch"
+      ],
+      "missing": []
+    },
+    {
+      "subpath": "ui/tabs",
+      "requested": [
+        "Tabs",
+        "TabsList",
+        "TabsTrigger"
+      ],
+      "missing": [
+        "Tabs",
+        "TabsList",
+        "TabsTrigger"
+      ]
+    },
+    {
+      "subpath": "ui/textarea",
+      "requested": [
+        "Textarea"
+      ],
+      "missing": []
+    },
+    {
+      "subpath": "utils",
+      "requested": [
+        "cn"
+      ],
+      "missing": []
+    }
+  ],
+  "complete": false
+}
+$ bun scripts/check-admin-parity.ts
+
+
+RESULTS_FILE=/private/tmp/toggles-integration.json bun run test:integration
+
+Running 30 tests using 1 worker
+
+  ✓   1 [chromium] › tests/integration/form-fields.spec.ts:5:1 › labels focus their controls and keyboard navigation exposes focus rings (503ms)
+  ✓   2 [chromium] › tests/integration/form-fields.spec.ts:11:1 › read-only, disabled, file and invalid fields retain their native behavior (653ms)
+  ✓   3 [chromium] › tests/integration/form-fields.spec.ts:19:36 › light invalid field presentation has no axe violations (1.1s)
+  ✓   4 [chromium] › tests/integration/form-fields.spec.ts:19:36 › dark invalid field presentation has no axe violations (1.1s)
+  ✓   5 [chromium] › tests/integration/foundation.spec.ts:5:1 › keyboard activation, focus ring, disabled examples and navigation (367ms)
+  ✓   6 [chromium] › tests/integration/foundation.spec.ts:12:1 › card size and separator orientation update geometry and semantics (384ms)
+  ✓   7 [chromium] › tests/integration/foundation.spec.ts:18:1 › custom theme changes token-driven button colors (334ms)
+  ✓   8 [chromium] › tests/integration/foundation.spec.ts:22:1 › loading placeholders are hidden from accessibility tree and stop motion (365ms)
+  ✓   9 [chromium] › tests/integration/foundation.spec.ts:27:36 › light examples have no axe accessibility violations (759ms)
+  ✓  10 [chromium] › tests/integration/foundation.spec.ts:27:36 › dark examples have no axe accessibility violations (987ms)
+  ✓  11 [chromium] › tests/integration/toggles.spec.ts:5:1 › labels and Space update checkboxes, mixed selections and switches once (432ms)
+  ✓  12 [chromium] › tests/integration/toggles.spec.ts:10:1 › disabled/read-only and rejected controlled changes preserve the displayed value (516ms)
+  ✓  13 [chromium] › tests/integration/toggles.spec.ts:15:1 › both switch sizes move the thumb correctly in LTR and RTL and respect reduced motion (416ms)
+  ✓  14 [chromium] › tests/integration/toggles.spec.ts:23:36 › light toggles including invalid controls pass axe (964ms)
+  ✓  15 [chromium] › tests/integration/toggles.spec.ts:23:36 › dark toggles including invalid controls pass axe (1.0s)
+  ✓  16 [firefox] › tests/integration/form-fields.spec.ts:5:1 › labels focus their controls and keyboard navigation exposes focus rings (1.3s)
+  ✓  17 [firefox] › tests/integration/form-fields.spec.ts:11:1 › read-only, disabled, file and invalid fields retain their native behavior (520ms)
+  ✓  18 [firefox] › tests/integration/form-fields.spec.ts:19:36 › light invalid field presentation has no axe violations (1.3s)
+  ✓  19 [firefox] › tests/integration/form-fields.spec.ts:19:36 › dark invalid field presentation has no axe violations (1.3s)
+  ✓  20 [firefox] › tests/integration/foundation.spec.ts:5:1 › keyboard activation, focus ring, disabled examples and navigation (467ms)
+  ✓  21 [firefox] › tests/integration/foundation.spec.ts:12:1 › card size and separator orientation update geometry and semantics (439ms)
+  ✓  22 [firefox] › tests/integration/foundation.spec.ts:18:1 › custom theme changes token-driven button colors (382ms)
+  ✓  23 [firefox] › tests/integration/foundation.spec.ts:22:1 › loading placeholders are hidden from accessibility tree and stop motion (449ms)
+  ✓  24 [firefox] › tests/integration/foundation.spec.ts:27:36 › light examples have no axe accessibility violations (1.0s)
+  ✓  25 [firefox] › tests/integration/foundation.spec.ts:27:36 › dark examples have no axe accessibility violations (2.1s)
+  ✓  26 [firefox] › tests/integration/toggles.spec.ts:5:1 › labels and Space update checkboxes, mixed selections and switches once (565ms)
+  ✓  27 [firefox] › tests/integration/toggles.spec.ts:10:1 › disabled/read-only and rejected controlled changes preserve the displayed value (531ms)
+  ✓  28 [firefox] › tests/integration/toggles.spec.ts:15:1 › both switch sizes move the thumb correctly in LTR and RTL and respect reduced motion (506ms)
+  ✓  29 [firefox] › tests/integration/toggles.spec.ts:23:36 › light toggles including invalid controls pass axe (1.2s)
+  ✓  30 [firefox] › tests/integration/toggles.spec.ts:23:36 › dark toggles including invalid controls pass axe (1.3s)
+
+  30 passed (25.7s)
+$ playwright test tests/integration
+[WebServer] $ vite --config playground/vite.config.ts
+[WebServer] (node:30128) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+(node:30133) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:30241) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+THEME_PRODUCTION=1 RESULTS_FILE=/private/tmp/toggles-visuals.json bunx --no-install playwright test tests/e2e/visual.spec.ts --update-snapshots=all
+
+Running 3 tests using 1 worker
+
+  ✓  1 [chromium] › tests/e2e/visual.spec.ts:3:45 › light component gallery (1.0s)
+/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/e2e/visual.spec.ts-snapshots/dark-chromium-darwin.png is re-generated, writing actual.
+/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/e2e/visual.spec.ts-snapshots/dark-chromium-darwin.png is re-generated, writing actual.
+  ✓  2 [chromium] › tests/e2e/visual.spec.ts:3:45 › dark component gallery (801ms)
+  ✓  3 [chromium] › tests/e2e/visual.spec.ts:3:45 › mobile component gallery (671ms)
+
+  3 passed (4.9s)
+[WebServer] $ vite build && tsc -p tsconfig.build.json
+[WebServer] (node:30404) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] $ vite build --config playground/vite.config.ts
+[WebServer] (node:30406) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:30407) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+(node:30425) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+RESULTS_FILE=/private/tmp/toggles-e2e.json bun run test:e2e
+
+Running 15 tests using 1 worker
+
+  ✓   1 [chromium] › tests/e2e/form-fields.spec.ts:3:1 › native validation preserves drafts and reset restores controlled and uncontrolled fields (529ms)
+  ✓   2 [chromium] › tests/e2e/form-fields.spec.ts:12:1 › long field values, file names and enlarged fonts fit a narrow screen (415ms)
+  ✓   3 [chromium] › tests/e2e/playground.spec.ts:3:1 › form validation, pending submit protection and recovery to ready (335ms)
+  ✓   4 [chromium] › tests/e2e/playground.spec.ts:9:1 › narrow viewport, enlarged text and long input stay usable (493ms)
+  ✓   5 [chromium] › tests/e2e/toggles.spec.ts:3:1 › notification form validates, serializes checked values and restores default-on controls (516ms)
+  ✓   6 [chromium] › tests/e2e/toggles.spec.ts:9:1 › toggles remain usable with enlarged text at mobile width (479ms)
+  ✓   7 [chromium] › tests/e2e/visual.spec.ts:3:45 › light component gallery (581ms)
+  ✓   8 [chromium] › tests/e2e/visual.spec.ts:3:45 › dark component gallery (566ms)
+  ✓   9 [chromium] › tests/e2e/visual.spec.ts:3:45 › mobile component gallery (436ms)
+  ✓  10 [firefox] › tests/e2e/form-fields.spec.ts:3:1 › native validation preserves drafts and reset restores controlled and uncontrolled fields (1.4s)
+  ✓  11 [firefox] › tests/e2e/form-fields.spec.ts:12:1 › long field values, file names and enlarged fonts fit a narrow screen (637ms)
+  ✓  12 [firefox] › tests/e2e/playground.spec.ts:3:1 › form validation, pending submit protection and recovery to ready (433ms)
+  ✓  13 [firefox] › tests/e2e/playground.spec.ts:9:1 › narrow viewport, enlarged text and long input stay usable (591ms)
+  ✓  14 [firefox] › tests/e2e/toggles.spec.ts:3:1 › notification form validates, serializes checked values and restores default-on controls (633ms)
+  ✓  15 [firefox] › tests/e2e/toggles.spec.ts:9:1 › toggles remain usable with enlarged text at mobile width (576ms)
+
+  15 passed (12.0s)
+$ THEME_PRODUCTION=1 playwright test tests/e2e
+[WebServer] $ vite build && tsc -p tsconfig.build.json
+[WebServer] (node:30464) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] $ vite build --config playground/vite.config.ts
+[WebServer] (node:30482) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:30483) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+(node:30486) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:30548) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)

@@ -4,20 +4,22 @@
 
 An owned Solid 2 design system for the future Solid admin, behind the D19 package
 boundary. The implementation contains **Button, Badge, Card, Separator, Skeleton, Input,
-Textarea and Label**. The React admin and Svelte storefront keep their existing themes.
+Textarea, Label, Checkbox and Switch**. The React admin and Svelte storefront keep their existing themes.
 See [DECISIONS.md](DECISIONS.md) for the owner's 2026-10-07 foundation direction
-and [FORM-FIELDS-DELIVERY.md](FORM-FIELDS-DELIVERY.md) for current measured acceptance.
+and [TOGGLES-DELIVERY.md](TOGGLES-DELIVERY.md) for current measured acceptance.
 [FOUNDATION-DELIVERY.md](FOUNDATION-DELIVERY.md) retains the earlier five-component results.
 
-These eight components use native HTML and Solid 2. Kobalte remains the first
+These ten components use native HTML and Solid 2. Kobalte remains the first
 candidate for richer interaction primitives. Neither Kobalte nor corvu, nor the
 experimental validation patches, is a dependency of this implementation.
+Kobalte Checkbox/Switch were browser-tested first; reset and diagnostic failures
+are recorded in [KOBALTE-TOGGLES.md](KOBALTE-TOGGLES.md).
 
 ## Key files
 
 | File | Purpose |
 | --- | --- |
-| `src/components/ui/*.tsx` | Eight components and all Card parts |
+| `src/components/ui/*.tsx` | Ten components and all Card parts |
 | `src/lib/utils.ts` | Conditional classes and Tailwind 4 conflict resolution |
 | `src/theme.css` | Shared oklch tokens, Inter, utilities and reduced motion |
 | `src/index.ts` | Public library barrel |
@@ -39,6 +41,8 @@ import { Skeleton } from 'shadcn-solidjs-theme/ui/skeleton';
 import { Input } from 'shadcn-solidjs-theme/ui/input';
 import { Textarea } from 'shadcn-solidjs-theme/ui/textarea';
 import { Label } from 'shadcn-solidjs-theme/ui/label';
+import { Checkbox } from 'shadcn-solidjs-theme/ui/checkbox';
+import { Switch } from 'shadcn-solidjs-theme/ui/switch';
 import { cn } from 'shadcn-solidjs-theme/utils';
 ```
 
@@ -119,6 +123,10 @@ files under `tests/e2e/visual.spec.ts-snapshots`; regenerate deliberately with
   events. Use `onInput` for live drafts, `readonly` and `maxlength` in Solid JSX,
   and connect Label `for` to the field `id`. Controlled draft reset belongs to
   the form owner; see the component guide and playground.
+- Checkbox accepts `boolean | 'indeterminate'`; Switch accepts boolean and
+  `size="sm" | "default"`. Both expose `onCheckedChange`, native input refs,
+  label/form association and controlled rejection. Their visual wrappers are
+  noninteractive; use Label `for` with the native input `id`.
 - Button defaults to `type="button"`; request `type="submit"` explicitly.
   `as="a"` supports links and disabled-link behavior. Badge supports `as="a"`.
   React's `asChild` and arbitrary `as` components are not supported in this batch;

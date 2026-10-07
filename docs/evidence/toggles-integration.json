@@ -1,0 +1,492 @@
+{
+  "stats": {
+    "startTime": "2026-10-07T20:41:35.343Z",
+    "duration": 25665.152,
+    "expected": 30,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "cases": [
+    {
+      "title": "labels and Space update checkboxes, mixed selections and switches once",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 432,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "disabled/read-only and rejected controlled changes preserve the displayed value",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 516,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "both switch sizes move the thumb correctly in LTR and RTL and respect reduced motion",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 416,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "light toggles including invalid controls pass axe",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 964,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "dark toggles including invalid controls pass axe",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1026,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "labels and Space update checkboxes, mixed selections and switches once",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 565,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "disabled/read-only and rejected controlled changes preserve the displayed value",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 531,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "both switch sizes move the thumb correctly in LTR and RTL and respect reduced motion",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 506,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "light toggles including invalid controls pass axe",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1242,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "dark toggles including invalid controls pass axe",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1306,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "keyboard activation, focus ring, disabled examples and navigation",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 367,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "card size and separator orientation update geometry and semantics",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 384,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "custom theme changes token-driven button colors",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 334,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "loading placeholders are hidden from accessibility tree and stop motion",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 365,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "light examples have no axe accessibility violations",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 759,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "dark examples have no axe accessibility violations",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 987,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "keyboard activation, focus ring, disabled examples and navigation",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 467,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "card size and separator orientation update geometry and semantics",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 439,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "custom theme changes token-driven button colors",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 382,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "loading placeholders are hidden from accessibility tree and stop motion",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 449,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "light examples have no axe accessibility violations",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1020,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "dark examples have no axe accessibility violations",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2107,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "labels focus their controls and keyboard navigation exposes focus rings",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 503,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "read-only, disabled, file and invalid fields retain their native behavior",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 653,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "light invalid field presentation has no axe violations",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1087,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "dark invalid field presentation has no axe violations",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1070,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "labels focus their controls and keyboard navigation exposes focus rings",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1290,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "read-only, disabled, file and invalid fields retain their native behavior",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 520,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "light invalid field presentation has no axe violations",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1335,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "dark invalid field presentation has no axe violations",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1279,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    }
+  ]
+}

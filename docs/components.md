@@ -164,6 +164,80 @@ semantic tokens, caller class overrides and the sibling React class strings.
 They have no variants, providers, generated IDs, `as` or `asChild` API. For a
 future contextual Field composition, evaluate Kobalte TextField first.
 
+## Checkbox and Switch
+
+```tsx
+import { createSignal } from 'solid-js';
+import { Checkbox, type CheckedState } from 'shadcn-solidjs-theme/ui/checkbox';
+import { Switch } from 'shadcn-solidjs-theme/ui/switch';
+
+/** The parent owns controlled values and may reject a requested update. */
+function Preferences() {
+  const [selected, setSelected] = createSignal<CheckedState>('indeterminate');
+  const [enabled, setEnabled] = createSignal(true);
+  return <>
+    <div class="flex items-center gap-3">
+      <Checkbox id="categories" checked={selected()} onCheckedChange={setSelected} />
+      <Label for="categories">Select all categories</Label>
+    </div>
+    <div class="flex items-center gap-3">
+      <Switch id="updates" checked={enabled()} onCheckedChange={setEnabled} size="sm" />
+      <Label for="updates">Live updates</Label>
+    </div>
+  </>;
+}
+```
+
+Checkbox accepts `checked` and `defaultChecked` as `boolean | 'indeterminate'`.
+Switch accepts boolean and `size="default" | "sm"`. `onCheckedChange` receives
+the proposed value once per actual change. Controlled parents may accept or
+reject the request; the input and its visual state stay consistent. Mixed
+checkboxes expose `aria-checked="mixed"` and a dash, then become checked when
+activated. The app derives any select-all state from its child selections.
+
+```tsx
+<form>
+  <div class="flex items-center gap-3">
+    <Checkbox id="terms" name="terms" value="accepted" required />
+    <Label for="terms">Accept terms (required)</Label>
+  </div>
+  <div class="flex items-center gap-3">
+    <Switch id="alerts" name="alerts" defaultChecked />
+    <Label for="alerts">Delivery alerts</Label>
+  </div>
+  <Button type="submit">Save</Button>
+  <Button type="reset">Reset</Button>
+</form>
+```
+
+The focusable element and public ref are **HTMLInputElement**, unlike the
+reference React button root. `id`, `name`, `value`, `form`, `required`, `disabled`,
+`readonly`, ARIA props and native events are forwarded. Checked named inputs
+submit `value` (default `"on"`); unchecked, mixed and disabled inputs are omitted.
+Native required validation works. Label activation and Space toggle; disabled
+inputs leave the tab sequence. `readonly` inputs remain focusable but activation
+is cancelled. `onClick` can call `preventDefault()` to cancel an edit; native
+change events are not cancellable in browsers. Use `onCheckedChange` for state.
+
+`defaultChecked` is read once when mounting and supplies the reset baseline.
+After native form reset, uncontrolled state returns to that baseline (including
+mixed state). Controlled owners receive a baseline request; ignored requests
+preserve the current controlled value. Cancelled reset and unmount prevent queued
+updates; external form association via `form="id"` is supported and reactive.
+Do not change a control between controlled and uncontrolled modes during its life.
+
+`data-slot="checkbox"` / `"switch"` and caller `class` are on the input. Decorative
+`checkbox-indicator` / `switch-thumb` spans are hidden from assistive technology.
+The input has an inert positioning wrapper, so use a wrapping `.group` with
+`data-disabled="true"` for disabled Label styling; a sibling Label's peer selector
+cannot cross the wrapper. Input refs still support `.focus()`. There is no
+`asChild`, arbitrary `as`, generated label, hidden duplicate input or form provider.
+Switch thumb movement supports RTL; both controls respect reduced motion.
+
+The components share the sibling class contract and semantic tokens. Kobalte
+was evaluated first and was not adopted for this batch because of measured reset
+and Solid 2 diagnostic failures; see [the evaluation](../KOBALTE-TOGGLES.md).
+
 ## Themes and screenshots
 
 Import `theme.css` once. Add `.dark` to an ancestor for dark mode. Override semantic

@@ -142,3 +142,7 @@
 @media (prefers-reduced-motion: reduce) {
   [data-slot="skeleton"] { animation: none; }
 }
+/* Native toggle inputs share the theme's motion preference. */
+@media (prefers-reduced-motion: reduce) {
+  [data-slot="checkbox"], [data-slot="switch"], [data-slot="switch-thumb"] { transition: none; }
+}

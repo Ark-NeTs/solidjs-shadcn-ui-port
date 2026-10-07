@@ -5,6 +5,7 @@ for(const mode of ['light','dark','mobile'])test(`${mode} component gallery`,asy
   await page.goto(mode==='dark'?'/?dark':'/');await page.evaluate(()=>document.fonts.ready);
   await page.getByRole('button',{name:'Save changes',exact:true}).click();
   await page.getByRole('button',{name:'Show preview error'}).click();
+  await page.getByRole('switch',{name:'Restricted preview setting'}).click();
   await expect(page.locator('[data-slot="skeleton"]')).toHaveCount(3);
   await expect(page).toHaveScreenshot(`${mode}.png`,{fullPage:true,animations:'disabled',maxDiffPixelRatio:0.001});
 });

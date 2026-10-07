@@ -51,3 +51,36 @@ uncontrolled fields use `defaultValue` alone. Browser regression testing caught
 and fixed an example that reset its signal but omitted the textarea's native
 reset baseline. Label is a native label without
 Radix `asChild` or custom pointer-selection suppression.
+
+## 2026-10-07 — Checkbox and Switch after a real Kobalte evaluation
+
+Owner instruction: “implement Checkbox and Switch, evaluating Kobalte first.”
+The standalone unpatched `2.0.0-alpha.2` probe in both Chromium and Firefox
+confirmed initial/toggled state but failed default-on Switch reset and emitted
+STRICT_READ_UNTRACKED, EFFECT_RELAY_TEAR and EFFECT_WRITES_OWN_SOURCE diagnostics.
+Retain the exact probe and output in validation/solid2-toggles. This is evidence
+against adopting the tested composition as-is, not a claim that Kobalte cannot
+be fixed. No existing diagnostic patches are promoted into production.
+
+The native checkbox platform already provides the required labels, keyboard,
+validation and form submission. Implement Checkbox and Switch on native inputs
+with an owned Solid helper for controlled/uncontrolled checked state, mixed
+checkbox state and reset synchronization. Corvu's mapped catalog has neither
+primitive, so no fallback dependency is installed. Kobalte stays the first
+candidate for later components.
+
+Keep the React classes and data slots, add native appearance/indicator positioning,
+explicit indeterminate styling, RTL thumb movement and reduced-motion support.
+Unlike the React button roots, public refs and events target a native input;
+there is one input and no duplicate hidden form control. An inert span positions
+the decorative indicator/thumb. `class` applies to the input; disabled-label
+presentation should use a wrapping group instead of relying on sibling peer
+selectors across this wrapper. Inputs retain native Space operation (Enter is
+not a toggle shortcut). Use explicit associated Labels for a generous click area.
+
+`defaultChecked` is a mount-time reset baseline. Controlled owners receive
+`onCheckedChange` requests and may reject them; native DOM state is reconciled
+without generating a second change event. Form reset waits for the browser's
+reset action and checks cancellation/unmount before restoring state, including
+mixed state and controls linked by a reactive `form` attribute. The listener is
+removed on ownership change or unmount. No backend mutation/retry is built in.

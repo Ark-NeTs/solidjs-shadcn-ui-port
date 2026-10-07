@@ -1,8 +1,8 @@
 # shadcn/ui → Solid 2 component map
 
 **Implemented (2026-10-07):** Button, Badge, Card, Separator, Skeleton, Input,
-Textarea and Label now have owned Solid 2 source, documentation and passing unit, browser and built-library tests.
-See [FORM-FIELDS-DELIVERY.md](FORM-FIELDS-DELIVERY.md) and the earlier
+Textarea, Label, Checkbox and Switch now have owned Solid 2 source, documentation and passing unit, browser and built-library tests.
+See [TOGGLES-DELIVERY.md](TOGGLES-DELIVERY.md), [FORM-FIELDS-DELIVERY.md](FORM-FIELDS-DELIVERY.md) and the earlier
 [FOUNDATION-DELIVERY.md](FOUNDATION-DELIVERY.md). These use native HTML;
 headless-library findings below remain relevant to later primitives.
 
@@ -93,7 +93,7 @@ No row currently selects corvu; alternatives are evaluated below.
 | [Card](https://ui.shadcn.com/docs/components/card) | K | `card` | Map HeaderAction to CardAction, preserve heading/content/footer classes. |
 | [Carousel](https://ui.shadcn.com/docs/components/carousel) | G | `button` only supplies controls | No carousel engine. Evaluate Embla core with an owned Solid lifecycle adapter; drag, loop, resize, plugins and keyboard behavior need tests. |
 | [Chart](https://ui.shadcn.com/docs/components/chart) | G | No chart engine | Select a Solid 2-compatible or framework-neutral renderer; recreate chart config, tooltip, legend and theme contracts. Recharts is React-specific. |
-| [Checkbox](https://ui.shadcn.com/docs/components/checkbox) | K | `checkbox` | Checked/indeterminate/disabled, form submission and label association. |
+| [Checkbox](https://ui.shadcn.com/docs/components/checkbox) | N | `checkbox` evaluated first; native input chosen | Implemented checked/mixed/disabled, controlled rejection, forms/reset and labels. Unpatched Kobalte emits diagnostics; see KOBALTE-TOGGLES.md and TOGGLES-DELIVERY.md. |
 | [Collapsible](https://ui.shadcn.com/docs/components/collapsible) | K | `collapsible` | Controlled expansion, hidden content and animation lifecycle. |
 | [Combobox](https://ui.shadcn.com/docs/components/combobox) | K | `combobox` | Search, grouped/multiple options, selection, empty/loading presentation and keyboard focus. |
 | [Command](https://ui.shadcn.com/docs/components/command) | G | `search` / `combobox`, `listbox`, `dialog` candidates | No cmdk equivalent. Own item registration, ranking/filtering, grouped visibility, inline palette and action dispatch; prove focus semantics before selecting composition. |
@@ -133,7 +133,7 @@ No row currently selects corvu; alternatives are evaluated below.
 | [Skeleton](https://ui.shadcn.com/docs/components/skeleton) | K | `skeleton` | Shape, dimensions, visibility and reduced-motion styling. |
 | [Slider](https://ui.shadcn.com/docs/components/slider) | K | `slider` | Single/multiple thumbs, bounds/step, orientation/RTL and keyboard changes. |
 | [Spinner](https://ui.shadcn.com/docs/components/spinner) | N | SVG/icon + CSS | Reduced motion and accessible busy/status presentation. |
-| [Switch](https://ui.shadcn.com/docs/components/switch) | K | `switch` | Checked/disabled/required, label and hidden form input behavior. |
+| [Switch](https://ui.shadcn.com/docs/components/switch) | N | `switch` evaluated first; native input chosen | Implemented checked/disabled/readonly, sizes, labels, forms/reset and RTL. Unpatched Kobalte default-on reset and diagnostics fail; see KOBALTE-TOGGLES.md and TOGGLES-DELIVERY.md. |
 | [Table](https://ui.shadcn.com/docs/components/table) | N | Native table elements | Caption/header/body/footer semantics and overflow; data logic belongs to Data Table. |
 | [Tabs](https://ui.shadcn.com/docs/components/tabs) | K | `tabs` | Automatic/manual activation, orientation, disabled tabs and panel mounting. |
 | [Textarea](https://ui.shadcn.com/docs/components/textarea) | N | Native textarea; `text-field` evaluated for field composition | Implemented and tested: native multiline editing, controlled drafts, reset, sizing and label association without context. See FORM-FIELDS-DELIVERY.md. |

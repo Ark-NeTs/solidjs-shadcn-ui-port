@@ -9,6 +9,8 @@ import { Skeleton } from 'shadcn-solidjs-theme/ui/skeleton';
 import { Input } from 'shadcn-solidjs-theme/ui/input';
 import { Textarea } from 'shadcn-solidjs-theme/ui/textarea';
 import { Label } from 'shadcn-solidjs-theme/ui/label';
+import { Checkbox, type CheckedState } from 'shadcn-solidjs-theme/ui/checkbox';
+import { Switch } from 'shadcn-solidjs-theme/ui/switch';
 import './index.css';
 const variants = ['default', 'secondary', 'outline', 'ghost', 'destructive', 'link'] as const;
 /** Keep demonstration state in the application, with no data layer in components. */
@@ -32,9 +34,9 @@ function Playground() {
       </header>
       <section id="top" class="py-12">
         <Badge variant="secondary">Solid 2 · First release</Badge>
-        <h1 class="mt-5 max-w-2xl text-4xl font-semibold tracking-tight sm:text-5xl">A shared language,<br />eight building blocks.</h1>
+        <h1 class="mt-5 max-w-2xl text-4xl font-semibold tracking-tight sm:text-5xl">A shared language,<br />ten building blocks.</h1>
         <p class="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">Familiar shadcn styling. Reactive Solid components. Shared light and dark tokens, ready to compose into your next screen.</p>
-        <div class="mt-6 samples"><Button as="a" href="#components">Explore components</Button><span class="text-xs text-muted-foreground">Button / Badge / Card / Separator / Skeleton / Input / Textarea / Label</span></div>
+        <div class="mt-6 samples"><Button as="a" href="#components">Explore components</Button><span class="text-xs text-muted-foreground">Button / Badge / Card / Separator / Skeleton / Input / Textarea / Label / Checkbox / Switch</span></div>
       </section>
       <Separator />
       <section id="components" class="demo-section" aria-labelledby="button-heading">
@@ -60,7 +62,8 @@ function Playground() {
       <section class="demo-section" aria-labelledby="separator-heading"><h2 id="separator-heading">04 / Separator</h2><p>Decorative by default; opt into semantic separation when it adds meaning.</p><div class="samples h-16"><span>Overview</span><Separator decorative={false} orientation={vertical() ? 'vertical' : 'horizontal'} class={vertical() ? 'h-6 self-center' : 'max-w-24'} data-testid="live-separator" /><span>Activity</span><Button variant="outline" onClick={() => setVertical(!vertical())}>Change orientation</Button></div></section>
       <section class="demo-section" aria-labelledby="skeleton-heading"><h2 id="skeleton-heading">05 / Skeleton</h2><p>Quiet loading placeholders. Reduced motion is respected automatically.</p><div class="demo-grid"><Card aria-busy={pending() ? "true" : "false"}><CardContent class="pt-4"><Show when={pending()} fallback={<p>Content is ready. Save the preview above to see its loading state.</p>}><div role="status" class="sr-only">Loading preview</div><div class="samples"><Skeleton class="size-12 rounded-full" /><div class="flex-1 space-y-3"><Skeleton class="h-4 w-3/4" /><Skeleton class="h-4 w-1/2" /></div></div></Show></CardContent></Card><div class="snippet m-0"><code>{'<Loading fallback={<Skeleton class="h-24 w-full" />}><Content /></Loading>'}</code></div></div></section>
       <section class="demo-section" aria-labelledby="fields-heading"><h2 id="fields-heading">06–08 / Input, Textarea &amp; Label</h2><p>Native fields, explicit labels, and drafts owned by your application.</p><FormExamples /></section>
-      <footer class="mt-16 border-t pt-6 text-xs text-muted-foreground">Eight components · Shared semantic tokens · No application services</footer>
+      <section class="demo-section" aria-labelledby="toggles-heading"><h2 id="toggles-heading">09–10 / Checkbox &amp; Switch</h2><p>Selections and settings with native labels, keyboard access, and form behavior.</p><ToggleExamples /></section>
+      <footer class="mt-16 border-t pt-6 text-xs text-muted-foreground">Ten components · Shared semantic tokens · No application services</footer>
     </main>
   </div>;
 }
@@ -86,6 +89,33 @@ function FormExamples() {
       <div class="space-y-2"><Input id="locked-input" class="peer" disabled value="Managed by your team" /><Label for="locked-input">Managed contact (disabled)</Label></div>
       <div class="space-y-2"><Textarea id="locked-notes" class="peer" disabled defaultValue="Notes are locked for this example." /><Label for="locked-notes">Locked notes (disabled)</Label></div>
       <div class="space-y-2"><Label for="attachment">Attachment</Label><Input id="attachment" type="file" accept=".txt" /></div>
+    </CardContent></Card>
+  </div>;
+}
+/** Keep editable settings, rejected requests and submit feedback in the example owner. */
+function ToggleExamples() {
+  const [selection, setSelection] = createSignal<CheckedState>('indeterminate');
+  const [enabled, setEnabled] = createSignal(true);
+  const [locked, setLocked] = createSignal(false);
+  const [result, setResult] = createSignal('');
+  const [rejected, setRejected] = createSignal(false);
+  return <div class="demo-grid">
+    <Card><CardHeader><CardTitle><h3>Notification preferences</h3></CardTitle><CardDescription>Try keyboard controls and native form validation. This preview stores nothing.</CardDescription></CardHeader><CardContent>
+      <form id="notifications" class="space-y-6" onSubmit={event => {event.preventDefault();setResult(JSON.stringify(Object.fromEntries(new FormData(event.currentTarget))));}}>
+        <div class="flex items-start gap-3"><Checkbox id="terms" name="terms" value="accepted" required aria-describedby="terms-help"/><div class="space-y-2"><Label for="terms">Accept notification terms (required)</Label><p id="terms-help" class="text-xs text-muted-foreground">Select before saving these local preferences.</p></div></div>
+        <div class="flex items-center gap-3"><Checkbox id="weekly" name="weekly" defaultChecked/><Label for="weekly">Weekly summary</Label></div>
+        <div class="flex items-center gap-3"><Switch id="alerts" name="alerts" defaultChecked/><Label for="alerts">Delivery alerts</Label></div>
+        <div class="flex items-center gap-3"><Switch id="quiet" name="quiet" size="sm"/><Label for="quiet">Quiet hours</Label></div>
+      </form>
+    </CardContent><CardFooter class="flex-wrap gap-3"><Button type="submit" form="notifications">Save notification preview</Button><Button type="reset" form="notifications" variant="outline" onClick={() => setResult('')}>Reset notifications</Button><p role="status" data-testid="notification-status" class="w-full break-all text-xs">{result()}</p></CardFooter></Card>
+    <Card><CardHeader><CardTitle><h3>Controlled states</h3></CardTitle><CardDescription>Parent-owned values, mixed selection, and an explicit recovery path.</CardDescription></CardHeader><CardContent class="space-y-6">
+      <div class="flex items-center gap-3"><Checkbox id="select-all" checked={selection()} onCheckedChange={setSelection}/><Label for="select-all">Select all categories</Label><Badge variant="secondary">{String(selection())}</Badge></div>
+      <div class="flex items-center gap-3"><Switch id="enabled" checked={enabled()} onCheckedChange={setEnabled} disabled={locked()}/><Label for="enabled">Live updates</Label><Badge variant="secondary">{enabled() ? 'On' : 'Off'}</Badge></div>
+      <div class="samples"><Button variant="outline" size="sm" onClick={() => setSelection('indeterminate')}>Restore mixed selection</Button><Button variant="outline" size="sm" onClick={() => setLocked(!locked())}>{locked() ? 'Unlock live updates' : 'Lock live updates'}</Button></div>
+      <div class="flex items-center gap-3"><Checkbox id="locked-check" disabled defaultChecked/><Label for="locked-check">Required by your team (disabled)</Label></div>
+      <div class="flex items-center gap-3"><Switch id="readonly-switch" readonly defaultChecked/><Label for="readonly-switch">Audit notifications (read only)</Label></div>
+      <div class="space-y-2"><div class="flex items-center gap-3"><Switch id="rejected-switch" checked={false} onCheckedChange={() => setRejected(true)} aria-invalid={rejected() ? 'true' : 'false'} aria-describedby={rejected() ? 'toggle-error' : undefined}/><Label for="rejected-switch">Restricted preview setting</Label></div><Show when={rejected()}><p id="toggle-error" class="text-xs text-destructive-emphasis">This preview rejects the change. Your previous setting is preserved.</p><Button size="sm" variant="outline" onClick={() => setRejected(false)}>Dismiss setting error</Button></Show></div>
+      <div class="flex items-center gap-3" dir="rtl"><Switch id="rtl-switch" defaultChecked/><Label for="rtl-switch">RTL switch example</Label></div>
     </CardContent></Card>
   </div>;
 }

@@ -6,6 +6,12 @@ and `packages/shadcn-svelte-theme/README.md`, before writing a line of code.
 
 ## Current owner direction — 2026-10-07
 
+**Current batch authorized:** “implement Checkbox and Switch, evaluating Kobalte
+first.” The form-field batch is committed as `a916220`. Preserve that priority,
+record measured adoption failures, and deliver this bounded component batch
+with tests and docs. See [KOBALTE-TOGGLES.md](KOBALTE-TOGGLES.md) and
+[TOGGLES-DELIVERY.md](TOGGLES-DELIVERY.md).
+
 **Next batch authorized:** “commit and implement Input, Textarea, and Label.”
 The foundation is committed as `b82f86c`. Extend its native-field contract with
 these three components; see [FORM-FIELDS-DELIVERY.md](FORM-FIELDS-DELIVERY.md).

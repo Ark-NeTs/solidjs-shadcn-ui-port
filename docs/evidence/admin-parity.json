@@ -1,5 +1,5 @@
 {
-  "scope": "Eight native components only; full admin parity is a later gate.",
+  "scope": "Ten native components only; full admin parity is a later gate.",
   "subpaths": [
     {
       "subpath": "ui/alert-dialog",
@@ -54,9 +54,7 @@
       "requested": [
         "Checkbox"
       ],
-      "missing": [
-        "Checkbox"
-      ]
+      "missing": []
     },
     {
       "subpath": "ui/combobox",
@@ -118,9 +116,7 @@
       "requested": [
         "Switch"
       ],
-      "missing": [
-        "Switch"
-      ]
+      "missing": []
     },
     {
       "subpath": "ui/tabs",

@@ -1,0 +1,500 @@
+{
+  "stats": {
+    "startTime": "2026-10-07T20:35:15.731Z",
+    "duration": 89674.464,
+    "expected": 27,
+    "skipped": 0,
+    "unexpected": 3,
+    "flaky": 0
+  },
+  "cases": [
+    {
+      "title": "labels and Space update checkboxes, mixed selections and switches once",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 430,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "disabled/read-only and rejected controlled changes preserve the displayed value",
+      "project": "chromium",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "timedOut",
+          "duration": 30132,
+          "retry": 0,
+          "errors": [
+            "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+            "Error: locator.click: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('label[for=\"enabled\"]')\u001b[22m\n\u001b[2m    - locator resolved to <label for=\"enabled\" data-slot=\"label\" class=\"flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50\">Live updates</label>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 \u00d7 waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not enabled\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 \u00d7 waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not enabled\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    58 \u00d7 waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not enabled\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\n\n   9 | });\n  10 | test('disabled/read-only and rejected controlled changes preserve the displayed value',async({page})=>{\n> 11 |   const live=page.getByRole('switch',{name:'Live updates'});await page.getByRole('button',{name:'Lock live updates'}).click();await expect(live).toBeDisabled();await page.locator('label[for=\"enabled\"]').click();await expect(live).toBeChecked();await page.getByRole('button',{name:'Unlock live updates'}).click();await expect(live).toBeEnabled();\n     |                                                                                                                                                                                                            ^\n  12 |   const readonly=page.getByRole('switch',{name:'Audit notifications (read only)'});await readonly.focus();await page.keyboard.press('Space');await expect(readonly).toBeChecked();\n  13 |   const restricted=page.getByRole('switch',{name:'Restricted preview setting'});await restricted.click();await expect(restricted).not.toBeChecked();await expect(restricted).toHaveAccessibleDescription(/previous setting is preserved/);await page.getByRole('button',{name:'Dismiss setting error'}).click();await expect(restricted).toHaveAttribute('aria-invalid','false');\n  14 | });\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/integration/toggles.spec.ts:11:204"
+          ],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "both switch sizes move the thumb correctly in LTR and RTL and respect reduced motion",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 523,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "light toggles including invalid controls pass axe",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1109,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "dark toggles including invalid controls pass axe",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1007,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "labels and Space update checkboxes, mixed selections and switches once",
+      "project": "firefox",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "failed",
+          "duration": 445,
+          "retry": 0,
+          "errors": [
+            "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: not \u001b[32m\"none\"\u001b[39m\n\n  4 | test.beforeEach(async({page})=>{await page.goto('/');});\n  5 | test('labels and Space update checkboxes, mixed selections and switches once',async({page})=>{\n> 6 |   const weekly=page.getByRole('checkbox',{name:'Weekly summary'});await page.locator('label[for=\"weekly\"]').click();await expect(weekly).not.toBeChecked();await weekly.focus();await page.keyboard.press('Space');await expect(weekly).toBeChecked();expect(await weekly.evaluate(el=>getComputedStyle(el).boxShadow)).not.toBe('none');\n    |                                                                                                                                                                                                                                                                                                                             ^\n  7 |   const mixed=page.getByRole('checkbox',{name:'Select all categories'});await expect(mixed).toBeChecked({indeterminate:true});await mixed.focus();await page.keyboard.press('Space');await expect(mixed).toBeChecked();await expect(mixed).toHaveAttribute('aria-checked','true');await page.getByRole('button',{name:'Restore mixed selection'}).click();await expect(mixed).toBeChecked({indeterminate:true});\n  8 |   const toggle=page.getByRole('switch',{name:'Live updates'});await toggle.focus();await page.keyboard.press('Space');await expect(toggle).not.toBeChecked();expect(await toggle.evaluate(el=>getComputedStyle(el).boxShadow)).not.toBe('none');await page.locator('label[for=\"enabled\"]').click();await expect(toggle).toBeChecked();\n  9 | });\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/integration/toggles.spec.ts:6:317"
+          ],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "disabled/read-only and rejected controlled changes preserve the displayed value",
+      "project": "firefox",
+      "status": "unexpected",
+      "results": [
+        {
+          "status": "timedOut",
+          "duration": 30312,
+          "retry": 0,
+          "errors": [
+            "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+            "Error: locator.click: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('label[for=\"enabled\"]')\u001b[22m\n\u001b[2m    - locator resolved to <label for=\"enabled\" data-slot=\"label\" class=\"flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50\">Live updates</label>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 \u00d7 waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not enabled\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 \u00d7 waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not enabled\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    56 \u00d7 waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not enabled\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\n\n   9 | });\n  10 | test('disabled/read-only and rejected controlled changes preserve the displayed value',async({page})=>{\n> 11 |   const live=page.getByRole('switch',{name:'Live updates'});await page.getByRole('button',{name:'Lock live updates'}).click();await expect(live).toBeDisabled();await page.locator('label[for=\"enabled\"]').click();await expect(live).toBeChecked();await page.getByRole('button',{name:'Unlock live updates'}).click();await expect(live).toBeEnabled();\n     |                                                                                                                                                                                                            ^\n  12 |   const readonly=page.getByRole('switch',{name:'Audit notifications (read only)'});await readonly.focus();await page.keyboard.press('Space');await expect(readonly).toBeChecked();\n  13 |   const restricted=page.getByRole('switch',{name:'Restricted preview setting'});await restricted.click();await expect(restricted).not.toBeChecked();await expect(restricted).toHaveAccessibleDescription(/previous setting is preserved/);await page.getByRole('button',{name:'Dismiss setting error'}).click();await expect(restricted).toHaveAttribute('aria-invalid','false');\n  14 | });\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/integration/toggles.spec.ts:11:204"
+          ],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "both switch sizes move the thumb correctly in LTR and RTL and respect reduced motion",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1332,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "light toggles including invalid controls pass axe",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1271,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "dark toggles including invalid controls pass axe",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1262,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "keyboard activation, focus ring, disabled examples and navigation",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 382,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "card size and separator orientation update geometry and semantics",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 365,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "custom theme changes token-driven button colors",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 329,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "loading placeholders are hidden from accessibility tree and stop motion",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 368,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "light examples have no axe accessibility violations",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 778,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "dark examples have no axe accessibility violations",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 990,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "keyboard activation, focus ring, disabled examples and navigation",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 467,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "card size and separator orientation update geometry and semantics",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 440,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "custom theme changes token-driven button colors",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 373,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "loading placeholders are hidden from accessibility tree and stop motion",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 399,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "light examples have no axe accessibility violations",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1071,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "dark examples have no axe accessibility violations",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1896,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "labels focus their controls and keyboard navigation exposes focus rings",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 739,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "read-only, disabled, file and invalid fields retain their native behavior",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 572,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "light invalid field presentation has no axe violations",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1023,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "dark invalid field presentation has no axe violations",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1026,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "labels focus their controls and keyboard navigation exposes focus rings",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1365,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "read-only, disabled, file and invalid fields retain their native behavior",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 560,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "light invalid field presentation has no axe violations",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1294,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "dark invalid field presentation has no axe violations",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1375,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    }
+  ]
+}

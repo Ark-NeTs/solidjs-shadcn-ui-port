@@ -3,14 +3,14 @@
 ## Current increment
 
 Foundation and five components committed as `b82f86c`; the owner then authorized
-Input, Textarea and Label on 2026-10-07. No bucket number or admin
+Input, Textarea and Label, committed as `a916220`, and then Checkbox and Switch. No bucket number or admin
 migration slot is invented. This package-level plan tracks the bounded work;
 application scheduling remains in the repository roadmap.
 
 ## Built — what shipped, and what the build did that the plan didn't say
 
 - **Owned native components:** Button, Badge, all seven Card exports, Separator,
-  Skeleton, Input, Textarea, Label and `cn` now exist under the React-style subpaths. **REASONING:** this
+  Skeleton, Input, Textarea, Label, Checkbox, Switch and `cn` now exist under the React-style subpaths. **REASONING:** this
   batch's behavior is provided by native elements; importing experimental overlay
   patches would add an unrelated acceptance dependency. Kobalte remains first
   for richer primitives. Verified against the source and dependency manifest.
@@ -31,9 +31,16 @@ application scheduling remains in the repository roadmap.
   **REASONING:** this increment must not repin the monorepo's other frameworks or
   applications. A frozen package-local installation is documented and verified.
 
+- **Checkbox and Switch after Kobalte evaluation:** the owned implementation uses
+  native inputs with a shared Solid toggle helper. **REASONING:** the unmodified
+  Kobalte probe in both browsers showed a default-on Switch resetting off and
+  untracked/effect-feedback diagnostics. The native version passes controlled
+  rejection, mixed state, reset, cleanup, browser and SSR regressions without
+  importing diagnostic harness patches. See KOBALTE-TOGGLES.md and TOGGLES-DELIVERY.md.
+
 ## Remaining catalog work
 
-Eight components are implemented, not the complete Tier 1 or catalog.
+Ten components are implemented, not the complete Tier 1 or catalog.
 `useIsMobile` and the remaining form controls are subsequent work. The existing COMPONENT-MAP.md remains
 the full inventory. Full admin-import parity, router/query interoperability,
 headless controls and application integration are not claimed complete.

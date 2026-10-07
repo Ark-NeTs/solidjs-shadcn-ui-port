@@ -1,0 +1,252 @@
+{
+  "stats": {
+    "startTime": "2026-10-07T20:42:06.610Z",
+    "duration": 12049.461,
+    "expected": 15,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "cases": [
+    {
+      "title": "light component gallery",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 581,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "dark component gallery",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 566,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "mobile component gallery",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 436,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "notification form validates, serializes checked values and restores default-on controls",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 516,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "toggles remain usable with enlarged text at mobile width",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 479,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "notification form validates, serializes checked values and restores default-on controls",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 633,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "toggles remain usable with enlarged text at mobile width",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 576,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "form validation, pending submit protection and recovery to ready",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 335,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "narrow viewport, enlarged text and long input stay usable",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 493,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "form validation, pending submit protection and recovery to ready",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 433,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "narrow viewport, enlarged text and long input stay usable",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 591,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "native validation preserves drafts and reset restores controlled and uncontrolled fields",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 529,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "long field values, file names and enlarged fonts fit a narrow screen",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 415,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "native validation preserves drafts and reset restores controlled and uncontrolled fields",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1423,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "title": "long field values, file names and enlarged fonts fit a narrow screen",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 637,
+          "retry": 0,
+          "errors": [],
+          "diagnostics": [
+            []
+          ]
+        }
+      ]
+    }
+  ]
+}

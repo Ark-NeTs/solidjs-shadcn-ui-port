@@ -1,5 +1,8 @@
 # Input, Textarea and Label delivery — 2026-10-07
 
+Historical report for commit `a916220`. Current screenshots and inventory include
+the next increment; see [TOGGLES-DELIVERY.md](TOGGLES-DELIVERY.md).
+
 Committed the preceding foundation and compatibility evidence as **`b82f86c`**
 (`feat(solid-theme): implement tested component foundation`). This next batch
 implements Input, Textarea and Label. The owner subsequently requested committing

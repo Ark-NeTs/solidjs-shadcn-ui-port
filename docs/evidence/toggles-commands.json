@@ -1,0 +1,52 @@
+[
+  {
+    "command": "bun run check",
+    "exitCode": 0,
+    "seconds": 1.454
+  },
+  {
+    "command": "bun run lint",
+    "exitCode": 0,
+    "seconds": 0.745
+  },
+  {
+    "command": "bun run test",
+    "exitCode": 0,
+    "seconds": 1.425
+  },
+  {
+    "command": "bun run test:coverage",
+    "exitCode": 0,
+    "seconds": 1.363
+  },
+  {
+    "command": "bun run test:server",
+    "exitCode": 0,
+    "seconds": 0.725
+  },
+  {
+    "command": "bun run build",
+    "exitCode": 0,
+    "seconds": 1.271
+  },
+  {
+    "command": "bun run parity:report",
+    "exitCode": 0,
+    "seconds": 0.273
+  },
+  {
+    "command": "RESULTS_FILE=/private/tmp/toggles-integration.json bun run test:integration",
+    "exitCode": 0,
+    "seconds": 26.021
+  },
+  {
+    "command": "THEME_PRODUCTION=1 RESULTS_FILE=/private/tmp/toggles-visuals.json bunx --no-install playwright test tests/e2e/visual.spec.ts --update-snapshots=all",
+    "exitCode": 0,
+    "seconds": 5.256
+  },
+  {
+    "command": "RESULTS_FILE=/private/tmp/toggles-e2e.json bun run test:e2e",
+    "exitCode": 0,
+    "seconds": 12.377
+  }
+]
