@@ -1,0 +1,70 @@
+{
+  "date": "2026-10-07",
+  "mode": "e2e",
+  "stats": {
+    "startTime": "2026-10-07T19:04:23.597Z",
+    "duration": 7256.686,
+    "expected": 7,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "cases": [
+    {
+      "case": "form validation, pending submit protection and recovery to ready",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 443,
+      "diagnostics": [],
+      "errors": []
+    },
+    {
+      "case": "narrow viewport, enlarged text and long input stay usable",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 501,
+      "diagnostics": [],
+      "errors": []
+    },
+    {
+      "case": "form validation, pending submit protection and recovery to ready",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 1298,
+      "diagnostics": [],
+      "errors": []
+    },
+    {
+      "case": "narrow viewport, enlarged text and long input stay usable",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 521,
+      "diagnostics": [],
+      "errors": []
+    },
+    {
+      "case": "light component gallery",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 419,
+      "diagnostics": [],
+      "errors": []
+    },
+    {
+      "case": "dark component gallery",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 384,
+      "diagnostics": [],
+      "errors": []
+    },
+    {
+      "case": "mobile component gallery",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 305,
+      "diagnostics": [],
+      "errors": []
+    }
+  ]
+}

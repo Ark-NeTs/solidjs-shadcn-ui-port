@@ -1,0 +1,160 @@
+{
+  "scope": "First five components only; full admin parity is a later gate.",
+  "subpaths": [
+    {
+      "subpath": "ui/alert-dialog",
+      "requested": [
+        "AlertDialog",
+        "AlertDialogAction",
+        "AlertDialogCancel",
+        "AlertDialogContent",
+        "AlertDialogDescription",
+        "AlertDialogFooter",
+        "AlertDialogHeader",
+        "AlertDialogTitle"
+      ],
+      "missing": [
+        "AlertDialog",
+        "AlertDialogAction",
+        "AlertDialogCancel",
+        "AlertDialogContent",
+        "AlertDialogDescription",
+        "AlertDialogFooter",
+        "AlertDialogHeader",
+        "AlertDialogTitle"
+      ]
+    },
+    {
+      "subpath": "ui/badge",
+      "requested": [
+        "Badge"
+      ],
+      "missing": []
+    },
+    {
+      "subpath": "ui/button",
+      "requested": [
+        "Button"
+      ],
+      "missing": []
+    },
+    {
+      "subpath": "ui/card",
+      "requested": [
+        "Card",
+        "CardContent",
+        "CardDescription",
+        "CardHeader",
+        "CardTitle"
+      ],
+      "missing": []
+    },
+    {
+      "subpath": "ui/checkbox",
+      "requested": [
+        "Checkbox"
+      ],
+      "missing": [
+        "Checkbox"
+      ]
+    },
+    {
+      "subpath": "ui/combobox",
+      "requested": [
+        "Combobox",
+        "ComboboxContent",
+        "ComboboxEmpty",
+        "ComboboxInput",
+        "ComboboxItem",
+        "ComboboxList",
+        "ComboboxTrigger"
+      ],
+      "missing": [
+        "Combobox",
+        "ComboboxContent",
+        "ComboboxEmpty",
+        "ComboboxInput",
+        "ComboboxItem",
+        "ComboboxList",
+        "ComboboxTrigger"
+      ]
+    },
+    {
+      "subpath": "ui/input",
+      "requested": [
+        "Input"
+      ],
+      "missing": [
+        "Input"
+      ]
+    },
+    {
+      "subpath": "ui/label",
+      "requested": [
+        "Label"
+      ],
+      "missing": [
+        "Label"
+      ]
+    },
+    {
+      "subpath": "ui/popover",
+      "requested": [
+        "Popover",
+        "PopoverContent",
+        "PopoverTrigger"
+      ],
+      "missing": [
+        "Popover",
+        "PopoverContent",
+        "PopoverTrigger"
+      ]
+    },
+    {
+      "subpath": "ui/skeleton",
+      "requested": [
+        "Skeleton"
+      ],
+      "missing": []
+    },
+    {
+      "subpath": "ui/switch",
+      "requested": [
+        "Switch"
+      ],
+      "missing": [
+        "Switch"
+      ]
+    },
+    {
+      "subpath": "ui/tabs",
+      "requested": [
+        "Tabs",
+        "TabsList",
+        "TabsTrigger"
+      ],
+      "missing": [
+        "Tabs",
+        "TabsList",
+        "TabsTrigger"
+      ]
+    },
+    {
+      "subpath": "ui/textarea",
+      "requested": [
+        "Textarea"
+      ],
+      "missing": [
+        "Textarea"
+      ]
+    },
+    {
+      "subpath": "utils",
+      "requested": [
+        "cn"
+      ],
+      "missing": []
+    }
+  ],
+  "complete": false
+}

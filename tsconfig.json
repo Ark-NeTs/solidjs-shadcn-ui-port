@@ -1,0 +1,38 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "jsx": "preserve",
+    "jsxImportSource": "@solidjs/web",
+    "lib": [
+      "ESNext",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "types": [
+      "vite/client",
+      "node",
+      "vitest/globals",
+      "@testing-library/jest-dom"
+    ],
+    "paths": {
+      "shadcn-solidjs-theme/ui/*": [
+        "./src/components/ui/*"
+      ],
+      "shadcn-solidjs-theme/utils": [
+        "./src/lib/utils.ts"
+      ]
+    }
+  },
+  "include": [
+    "src",
+    "tests",
+    "playground",
+    "*.ts",
+    "scripts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "validation"
+  ]
+}

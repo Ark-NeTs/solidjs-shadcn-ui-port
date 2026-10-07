@@ -9,6 +9,11 @@ decisions. Evaluate Kobalte first for every primitive, including Drawer and
 Resizable. Consider corvu only for a documented gap in Kobalte, subject to
 the Solid 2 compatibility checks there. Do not add corvu preemptively.
 
+Use [COMPONENT-MAP.md](COMPONENT-MAP.md) for the full catalog, initial Kobalte
+mapping, unresolved behavior gaps, and corvu fallback criteria. Update it when
+implementation or verification changes a mapping; a mapped API is not proof
+that a component has passed its acceptance tests.
+
 Before implementing or modifying UI in this package, read
 [DELIVERY.md](DELIVERY.md) and use its checklist as the acceptance criteria.
 

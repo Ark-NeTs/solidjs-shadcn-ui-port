@@ -1,0 +1,764 @@
+{
+  "mode": "reads-production",
+  "date": "2026-10-07",
+  "durationMs": 69409.79000000001,
+  "totals": {
+    "passed": 67,
+    "failed": 6,
+    "skipped": 1
+  },
+  "cases": [
+    {
+      "case": "drawer: mount without Solid development diagnostics",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 237,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "resizable: mount without Solid development diagnostics",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 179,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "calendar: mount without Solid development diagnostics",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 178,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: mount without Solid development diagnostics",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 160,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "direction: mount without Solid development diagnostics",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 166,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: keyboard focus, Escape and controlled reopen",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 1082,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: mouse drag snaps halfway then dismisses",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 1571,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: scrollable child and portal/scroll-lock cleanup",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 595,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "resizable: keyboard sizing, constraints and collapse/expand",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 178,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "resizable: mouse drag updates controlled sizes and geometry",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 339,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "resizable: vertical keyboard and observer cleanup",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 165,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "calendar: pointer selection, unavailable day and month navigation",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 222,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "calendar: keyboard focus and Enter selection",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 159,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "calendar: range and multiple controlled selection",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 342,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: typing, completion and external controlled value",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 209,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: invalid characters, deletion, length and cleanup",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 191,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "direction: locale RTL, nested LTR and dynamic locale keyboard behavior",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 244,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "direction: explicit DOM RTL must agree with consumer keyboard direction",
+      "browser": "chromium",
+      "status": "failed",
+      "durationMs": 2681,
+      "errors": [
+        "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeFocused\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('explicit-rtl').getByRole('tab', { name: 'Two', exact: true })\nExpected: focused\nReceived: inactive\nTimeout:  2500ms\n\nCall log:\n\u001b[2m  - Expect \"toBeFocused\" getByTestId('explicit-rtl').getByRole('tab', { name: 'Two', exact: true }) with timeout 2500ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('explicit-rtl').getByRole('tab', { name: 'Two', exact: true })\u001b[22m\n\u001b[2m    9 \u00d7 locator resolved to <button role=\"tab\" type=\"button\" tabindex=\"-1\" data-key=\"two\" aria-selected=\"false\" id=\"tabs-cl-1-trigger-two\" data-orientation=\"horizontal\">Two</button>\u001b[22m\n\u001b[2m      - unexpected value \"inactive\"\u001b[22m\n\n\n  142 | test('direction: explicit DOM RTL must agree with consumer keyboard direction',async({page})=>{\n  143 |   await open(page,'direction');const fixture=page.getByTestId('explicit-rtl');expect(await fixture.evaluate(el=>getComputedStyle(el).direction)).toBe('rtl');\n> 144 |   await fixture.getByRole('tab',{name:'One',exact:true}).focus();await page.keyboard.press('ArrowLeft');await expect(fixture.getByRole('tab',{name:'Two',exact:true})).toBeFocused();\n      |                                                                                                                                                                        ^\n  145 | });\n  146 |\n  147 | test('otp: provided Label must associate with its input',async({page})=>{\n    at /private/tmp/solid2-dialog-reads-final/tests/primitives.spec.js:144:168"
+      ],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: provided Label must associate with its input",
+      "browser": "chromium",
+      "status": "failed",
+      "durationMs": 2688,
+      "errors": [
+        "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByLabel('Verification code')\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m\nTimeout:  2500ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" getByLabel('Verification code') with timeout 2500ms\u001b[22m\n\u001b[2m  - waiting for getByLabel('Verification code')\u001b[22m\n\u001b[2m    9 \u00d7 locator resolved to 0 elements\u001b[22m\n\u001b[2m      - unexpected value \"0\"\u001b[22m\n\n\n  146 |\n  147 | test('otp: provided Label must associate with its input',async({page})=>{\n> 148 |   await open(page,'otp');await expect(page.getByLabel('Verification code')).toHaveCount(1);\n      |                                                                             ^\n  149 | });\n  150 |\n  151 | test('otp: Root name must participate in native FormData',async({page})=>{\n    at /private/tmp/solid2-dialog-reads-final/tests/primitives.spec.js:148:77"
+      ],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: Root name must participate in native FormData",
+      "browser": "chromium",
+      "status": "failed",
+      "durationMs": 2739,
+      "errors": [
+        "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('submitted')\nExpected: \u001b[32m\"123456\"\u001b[39m\nReceived: \u001b[31m\"null\"\u001b[39m\nTimeout:  2500ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" getByTestId('submitted') with timeout 2500ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('submitted')\u001b[22m\n\u001b[2m    9 \u00d7 locator resolved to <output data-testid=\"submitted\">null</output>\u001b[22m\n\u001b[2m      - unexpected value \"null\"\u001b[22m\n\n\n  150 |\n  151 | test('otp: Root name must participate in native FormData',async({page})=>{\n> 152 |   await open(page,'otp');await page.locator('[data-kb-otp-field-input]').fill('123456');await page.getByRole('button',{name:'Submit code'}).click();await expect(page.getByTestId('submitted')).toHaveText('123456');\n      |                                                                                                                                                                                                 ^\n  153 | });\n  154 |\n  155 | test('otp: explicit input id/name restores label and form wiring',async({page})=>{\n    at /private/tmp/solid2-dialog-reads-final/tests/primitives.spec.js:152:193"
+      ],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: explicit input id/name restores label and form wiring",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 224,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: browser touch events dismiss the fully opened drawer",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 1079,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: close button restores focus and permits reopening",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 1075,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: Escape dismisses only the topmost nested layer",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 1002,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: prevented Escape keeps its layer registered",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 608,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: repeated Escape and unmount dispose document listeners",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 1522,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "resizable: disposed panels stop resize callbacks and remount cleanly",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 275,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: controlled open, Escape, focus and cleanup",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 407,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: initially open open, Escape, focus and cleanup",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 309,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: uncontrolled open, Escape, focus and cleanup",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 406,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: forceMount keeps closed content until explicitly released",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 220,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: rapid controlled reopen has no delayed disappearance",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 438,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: derived Dialog presence preserves exit animation and interrupted closing",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 2534,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: generated IDs follow a changing root and keep ARIA links",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 313,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: explicit part IDs stay authoritative and can be removed",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 222,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: title and description unregister and restore after root changes",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 258,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: public string ID registration and cleanup remain supported",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 238,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: mount without Solid development diagnostics",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 1027,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "resizable: mount without Solid development diagnostics",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 395,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "calendar: mount without Solid development diagnostics",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 272,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: mount without Solid development diagnostics",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 235,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "direction: mount without Solid development diagnostics",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 264,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: keyboard focus, Escape and controlled reopen",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 1162,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: mouse drag snaps halfway then dismisses",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 1412,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: scrollable child and portal/scroll-lock cleanup",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 508,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "resizable: keyboard sizing, constraints and collapse/expand",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 312,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "resizable: mouse drag updates controlled sizes and geometry",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 883,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "resizable: vertical keyboard and observer cleanup",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 332,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "calendar: pointer selection, unavailable day and month navigation",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 388,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "calendar: keyboard focus and Enter selection",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 308,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "calendar: range and multiple controlled selection",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 544,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: typing, completion and external controlled value",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 635,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: invalid characters, deletion, length and cleanup",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 324,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "direction: locale RTL, nested LTR and dynamic locale keyboard behavior",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 350,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "direction: explicit DOM RTL must agree with consumer keyboard direction",
+      "browser": "firefox",
+      "status": "failed",
+      "durationMs": 2926,
+      "errors": [
+        "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeFocused\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('explicit-rtl').getByRole('tab', { name: 'Two', exact: true })\nExpected: focused\nReceived: inactive\nTimeout:  2500ms\n\nCall log:\n\u001b[2m  - Expect \"toBeFocused\" getByTestId('explicit-rtl').getByRole('tab', { name: 'Two', exact: true }) with timeout 2500ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('explicit-rtl').getByRole('tab', { name: 'Two', exact: true })\u001b[22m\n\u001b[2m    9 \u00d7 locator resolved to <button role=\"tab\" type=\"button\" tabindex=\"-1\" data-key=\"two\" aria-selected=\"false\" id=\"tabs-cl-1-trigger-two\" data-orientation=\"horizontal\">Two</button>\u001b[22m\n\u001b[2m      - unexpected value \"inactive\"\u001b[22m\n\n\n  142 | test('direction: explicit DOM RTL must agree with consumer keyboard direction',async({page})=>{\n  143 |   await open(page,'direction');const fixture=page.getByTestId('explicit-rtl');expect(await fixture.evaluate(el=>getComputedStyle(el).direction)).toBe('rtl');\n> 144 |   await fixture.getByRole('tab',{name:'One',exact:true}).focus();await page.keyboard.press('ArrowLeft');await expect(fixture.getByRole('tab',{name:'Two',exact:true})).toBeFocused();\n      |                                                                                                                                                                        ^\n  145 | });\n  146 |\n  147 | test('otp: provided Label must associate with its input',async({page})=>{\n    at /private/tmp/solid2-dialog-reads-final/tests/primitives.spec.js:144:168"
+      ],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: provided Label must associate with its input",
+      "browser": "firefox",
+      "status": "failed",
+      "durationMs": 3440,
+      "errors": [
+        "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByLabel('Verification code')\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m\nTimeout:  2500ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" getByLabel('Verification code') with timeout 2500ms\u001b[22m\n\u001b[2m  - waiting for getByLabel('Verification code')\u001b[22m\n\u001b[2m    9 \u00d7 locator resolved to 0 elements\u001b[22m\n\u001b[2m      - unexpected value \"0\"\u001b[22m\n\n\n  146 |\n  147 | test('otp: provided Label must associate with its input',async({page})=>{\n> 148 |   await open(page,'otp');await expect(page.getByLabel('Verification code')).toHaveCount(1);\n      |                                                                             ^\n  149 | });\n  150 |\n  151 | test('otp: Root name must participate in native FormData',async({page})=>{\n    at /private/tmp/solid2-dialog-reads-final/tests/primitives.spec.js:148:77"
+      ],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: Root name must participate in native FormData",
+      "browser": "firefox",
+      "status": "failed",
+      "durationMs": 3612,
+      "errors": [
+        "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByTestId('submitted')\nExpected: \u001b[32m\"123456\"\u001b[39m\nReceived: \u001b[31m\"null\"\u001b[39m\nTimeout:  2500ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" getByTestId('submitted') with timeout 2500ms\u001b[22m\n\u001b[2m  - waiting for getByTestId('submitted')\u001b[22m\n\u001b[2m    9 \u00d7 locator resolved to <output data-testid=\"submitted\">null</output>\u001b[22m\n\u001b[2m      - unexpected value \"null\"\u001b[22m\n\n\n  150 |\n  151 | test('otp: Root name must participate in native FormData',async({page})=>{\n> 152 |   await open(page,'otp');await page.locator('[data-kb-otp-field-input]').fill('123456');await page.getByRole('button',{name:'Submit code'}).click();await expect(page.getByTestId('submitted')).toHaveText('123456');\n      |                                                                                                                                                                                                 ^\n  153 | });\n  154 |\n  155 | test('otp: explicit input id/name restores label and form wiring',async({page})=>{\n    at /private/tmp/solid2-dialog-reads-final/tests/primitives.spec.js:152:193"
+      ],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: explicit input id/name restores label and form wiring",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 1814,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: browser touch events dismiss the fully opened drawer",
+      "browser": "firefox",
+      "status": "skipped",
+      "durationMs": 455,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: close button restores focus and permits reopening",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 1588,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: Escape dismisses only the topmost nested layer",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 1521,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: prevented Escape keeps its layer registered",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 1698,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: repeated Escape and unmount dispose document listeners",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 2744,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "resizable: disposed panels stop resize callbacks and remount cleanly",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 615,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: controlled open, Escape, focus and cleanup",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 572,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: initially open open, Escape, focus and cleanup",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 423,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: uncontrolled open, Escape, focus and cleanup",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 866,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: forceMount keeps closed content until explicitly released",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 340,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: rapid controlled reopen has no delayed disappearance",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 688,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: derived Dialog presence preserves exit animation and interrupted closing",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 2570,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: generated IDs follow a changing root and keep ARIA links",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 522,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: explicit part IDs stay authoritative and can be removed",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 437,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: title and description unregister and restore after root changes",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 382,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: public string ID registration and cleanup remain supported",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 335,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    }
+  ]
+}

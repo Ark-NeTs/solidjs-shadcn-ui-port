@@ -1,0 +1,414 @@
+{
+  "mode": "feedback-js",
+  "date": "2026-10-07",
+  "durationMs": 33884.837999999996,
+  "totals": {
+    "passed": 29,
+    "failed": 0,
+    "skipped": 1
+  },
+  "cases": [
+    {
+      "case": "drawer: mount without Solid development diagnostics",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 583,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: keyboard focus, Escape and controlled reopen",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 1258,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: mouse drag snaps halfway then dismisses",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 1854,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: scrollable child and portal/scroll-lock cleanup",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 712,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: browser touch events dismiss the fully opened drawer",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 1243,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: close button restores focus and permits reopening",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 1267,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: Escape dismisses only the topmost nested layer",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 1193,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: prevented Escape keeps its layer registered",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 775,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: repeated Escape and unmount dispose document listeners",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 1673,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: controlled open, Escape, focus and cleanup",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 604,
+      "errors": [],
+      "consoleCodes": [
+        "STRICT_READ_UNTRACKED"
+      ],
+      "consoleMessages": [
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Content> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content>\n[STRICT_READ_UNTRACKED] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md \u2014 https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#strict_read_untracked",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Title> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content> \u203a <Show> \u203a value \u203a <DismissableLayer> \u203a <provider> \u203a computed \u203a effect \u203a <Dialog.Title>",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Description> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content> \u203a <Show> \u203a value \u203a <DismissableLayer> \u203a <provider> \u203a computed \u203a effect \u203a <Dialog.Description>",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Content> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content>",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Title> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content> \u203a <Show> \u203a value \u203a <DismissableLayer> \u203a <provider> \u203a computed \u203a effect \u203a <Dialog.Title>",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Description> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content> \u203a <Show> \u203a value \u203a <DismissableLayer> \u203a <provider> \u203a computed \u203a effect \u203a <Dialog.Description>"
+      ],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: initially open open, Escape, focus and cleanup",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 561,
+      "errors": [],
+      "consoleCodes": [
+        "STRICT_READ_UNTRACKED"
+      ],
+      "consoleMessages": [
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Content> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content>\n[STRICT_READ_UNTRACKED] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md \u2014 https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#strict_read_untracked",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Title> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content> \u203a <Show> \u203a value \u203a <DismissableLayer> \u203a <provider> \u203a computed \u203a effect \u203a <Dialog.Title>",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Description> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content> \u203a <Show> \u203a value \u203a <DismissableLayer> \u203a <provider> \u203a computed \u203a effect \u203a <Dialog.Description>",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Content> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content>",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Title> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content> \u203a <Show> \u203a value \u203a <DismissableLayer> \u203a <provider> \u203a computed \u203a effect \u203a <Dialog.Title>",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Description> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content> \u203a <Show> \u203a value \u203a <DismissableLayer> \u203a <provider> \u203a computed \u203a effect \u203a <Dialog.Description>"
+      ],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: uncontrolled open, Escape, focus and cleanup",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 609,
+      "errors": [],
+      "consoleCodes": [
+        "STRICT_READ_UNTRACKED"
+      ],
+      "consoleMessages": [
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Content> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content>\n[STRICT_READ_UNTRACKED] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md \u2014 https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#strict_read_untracked",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Title> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content> \u203a <Show> \u203a value \u203a <DismissableLayer> \u203a <provider> \u203a computed \u203a effect \u203a <Dialog.Title>",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Description> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content> \u203a <Show> \u203a value \u203a <DismissableLayer> \u203a <provider> \u203a computed \u203a effect \u203a <Dialog.Description>",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Content> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content>",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Title> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content> \u203a <Show> \u203a value \u203a <DismissableLayer> \u203a <provider> \u203a computed \u203a effect \u203a <Dialog.Title>",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Description> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content> \u203a <Show> \u203a value \u203a <DismissableLayer> \u203a <provider> \u203a computed \u203a effect \u203a <Dialog.Description>"
+      ],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: forceMount keeps closed content until explicitly released",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 421,
+      "errors": [],
+      "consoleCodes": [
+        "STRICT_READ_UNTRACKED"
+      ],
+      "consoleMessages": [
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Content> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content>\n[STRICT_READ_UNTRACKED] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md \u2014 https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#strict_read_untracked",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Title> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content> \u203a <Show> \u203a value \u203a <DismissableLayer> \u203a <provider> \u203a computed \u203a effect \u203a <Dialog.Title>",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Description> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content> \u203a <Show> \u203a value \u203a <DismissableLayer> \u203a <provider> \u203a computed \u203a effect \u203a <Dialog.Description>",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Content> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content>",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Title> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content> \u203a <Show> \u203a value \u203a <DismissableLayer> \u203a <provider> \u203a computed \u203a effect \u203a <Dialog.Title>",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Description> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content> \u203a <Show> \u203a value \u203a <DismissableLayer> \u203a <provider> \u203a computed \u203a effect \u203a <Dialog.Description>"
+      ],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: rapid controlled reopen has no delayed disappearance",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 627,
+      "errors": [],
+      "consoleCodes": [
+        "STRICT_READ_UNTRACKED"
+      ],
+      "consoleMessages": [
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Content> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content>\n[STRICT_READ_UNTRACKED] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md \u2014 https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#strict_read_untracked",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Title> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content> \u203a <Show> \u203a value \u203a <DismissableLayer> \u203a <provider> \u203a computed \u203a effect \u203a <Dialog.Title>",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Description> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content> \u203a <Show> \u203a value \u203a <DismissableLayer> \u203a <provider> \u203a computed \u203a effect \u203a <Dialog.Description>",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Content> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content>",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Title> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content> \u203a <Show> \u203a value \u203a <DismissableLayer> \u203a <provider> \u203a computed \u203a effect \u203a <Dialog.Title>",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Description> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content> \u203a <Show> \u203a value \u203a <DismissableLayer> \u203a <provider> \u203a computed \u203a effect \u203a <Dialog.Description>",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Content> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content>",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Title> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content> \u203a <Show> \u203a value \u203a <DismissableLayer> \u203a <provider> \u203a computed \u203a effect \u203a <Dialog.Title>",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Description> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content> \u203a <Show> \u203a value \u203a <DismissableLayer> \u203a <provider> \u203a computed \u203a effect \u203a <Dialog.Description>",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Content> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content>",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Title> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content> \u203a <Show> \u203a value \u203a <DismissableLayer> \u203a <provider> \u203a computed \u203a effect \u203a <Dialog.Title>",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Description> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content> \u203a <Show> \u203a value \u203a <DismissableLayer> \u203a <provider> \u203a computed \u203a effect \u203a <Dialog.Description>"
+      ],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: derived Dialog presence preserves exit animation and interrupted closing",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 2715,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: mount without Solid development diagnostics",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 1129,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: keyboard focus, Escape and controlled reopen",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 1217,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: mouse drag snaps halfway then dismisses",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 1476,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: scrollable child and portal/scroll-lock cleanup",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 743,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: browser touch events dismiss the fully opened drawer",
+      "browser": "firefox",
+      "status": "skipped",
+      "durationMs": 166,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: close button restores focus and permits reopening",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 1406,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: Escape dismisses only the topmost nested layer",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 1260,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: prevented Escape keeps its layer registered",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 838,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: repeated Escape and unmount dispose document listeners",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 1976,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: controlled open, Escape, focus and cleanup",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 872,
+      "errors": [],
+      "consoleCodes": [
+        "STRICT_READ_UNTRACKED"
+      ],
+      "consoleMessages": [
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Content> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content>\n[STRICT_READ_UNTRACKED] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md \u2014 https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#strict_read_untracked",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Title> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content> \u203a <Show> \u203a value \u203a <DismissableLayer> \u203a <provider> \u203a computed \u203a effect \u203a <Dialog.Title>",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Description> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content> \u203a <Show> \u203a value \u203a <DismissableLayer> \u203a <provider> \u203a computed \u203a effect \u203a <Dialog.Description>",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Content> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content>",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Title> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content> \u203a <Show> \u203a value \u203a <DismissableLayer> \u203a <provider> \u203a computed \u203a effect \u203a <Dialog.Title>",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Description> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content> \u203a <Show> \u203a value \u203a <DismissableLayer> \u203a <provider> \u203a computed \u203a effect \u203a <Dialog.Description>"
+      ],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: initially open open, Escape, focus and cleanup",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 529,
+      "errors": [],
+      "consoleCodes": [
+        "STRICT_READ_UNTRACKED"
+      ],
+      "consoleMessages": [
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Content> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content>\n[STRICT_READ_UNTRACKED] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md \u2014 https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#strict_read_untracked",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Title> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content> \u203a <Show> \u203a value \u203a <DismissableLayer> \u203a <provider> \u203a computed \u203a effect \u203a <Dialog.Title>",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Description> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content> \u203a <Show> \u203a value \u203a <DismissableLayer> \u203a <provider> \u203a computed \u203a effect \u203a <Dialog.Description>",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Content> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content>",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Title> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content> \u203a <Show> \u203a value \u203a <DismissableLayer> \u203a <provider> \u203a computed \u203a effect \u203a <Dialog.Title>",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Description> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content> \u203a <Show> \u203a value \u203a <DismissableLayer> \u203a <provider> \u203a computed \u203a effect \u203a <Dialog.Description>"
+      ],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: uncontrolled open, Escape, focus and cleanup",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 496,
+      "errors": [],
+      "consoleCodes": [
+        "STRICT_READ_UNTRACKED"
+      ],
+      "consoleMessages": [
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Content> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content>\n[STRICT_READ_UNTRACKED] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md \u2014 https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#strict_read_untracked",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Title> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content> \u203a <Show> \u203a value \u203a <DismissableLayer> \u203a <provider> \u203a computed \u203a effect \u203a <Dialog.Title>",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Description> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content> \u203a <Show> \u203a value \u203a <DismissableLayer> \u203a <provider> \u203a computed \u203a effect \u203a <Dialog.Description>",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Content> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content>",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Title> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content> \u203a <Show> \u203a value \u203a <DismissableLayer> \u203a <provider> \u203a computed \u203a effect \u203a <Dialog.Title>",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Description> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content> \u203a <Show> \u203a value \u203a <DismissableLayer> \u203a <provider> \u203a computed \u203a effect \u203a <Dialog.Description>"
+      ],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: forceMount keeps closed content until explicitly released",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 379,
+      "errors": [],
+      "consoleCodes": [
+        "STRICT_READ_UNTRACKED"
+      ],
+      "consoleMessages": [
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Content> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content>\n[STRICT_READ_UNTRACKED] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md \u2014 https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#strict_read_untracked",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Title> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content> \u203a <Show> \u203a value \u203a <DismissableLayer> \u203a <provider> \u203a computed \u203a effect \u203a <Dialog.Title>",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Description> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content> \u203a <Show> \u203a value \u203a <DismissableLayer> \u203a <provider> \u203a computed \u203a effect \u203a <Dialog.Description>",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Content> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content>",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Title> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content> \u203a <Show> \u203a value \u203a <DismissableLayer> \u203a <provider> \u203a computed \u203a effect \u203a <Dialog.Title>",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Description> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content> \u203a <Show> \u203a value \u203a <DismissableLayer> \u203a <provider> \u203a computed \u203a effect \u203a <Dialog.Description>"
+      ],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: rapid controlled reopen has no delayed disappearance",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 624,
+      "errors": [],
+      "consoleCodes": [
+        "STRICT_READ_UNTRACKED"
+      ],
+      "consoleMessages": [
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Content> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content>\n[STRICT_READ_UNTRACKED] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md \u2014 https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#strict_read_untracked",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Title> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content> \u203a <Show> \u203a value \u203a <DismissableLayer> \u203a <provider> \u203a computed \u203a effect \u203a <Dialog.Title>",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Description> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content> \u203a <Show> \u203a value \u203a <DismissableLayer> \u203a <provider> \u203a computed \u203a effect \u203a <Dialog.Description>",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Content> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content>",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Title> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content> \u203a <Show> \u203a value \u203a <DismissableLayer> \u203a <provider> \u203a computed \u203a effect \u203a <Dialog.Title>",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Description> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content> \u203a <Show> \u203a value \u203a <DismissableLayer> \u203a <provider> \u203a computed \u203a effect \u203a <Dialog.Description>",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Content> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content>",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Title> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content> \u203a <Show> \u203a value \u203a <DismissableLayer> \u203a <provider> \u203a computed \u203a effect \u203a <Dialog.Title>",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Description> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content> \u203a <Show> \u203a value \u203a <DismissableLayer> \u203a <provider> \u203a computed \u203a effect \u203a <Dialog.Description>",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Content> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content>",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Title> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content> \u203a <Show> \u203a value \u203a <DismissableLayer> \u203a <provider> \u203a computed \u203a effect \u203a <Dialog.Title>",
+        "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Description> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> \u203a <Dialog.Root> \u203a <provider> \u203a computed \u203a <Dialog.Portal> \u203a <Show> \u203a value \u203a <Portal> \u203a computed \u203a <Dialog.Content> \u203a <Show> \u203a value \u203a <DismissableLayer> \u203a <provider> \u203a computed \u203a effect \u203a <Dialog.Description>"
+      ],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: derived Dialog presence preserves exit animation and interrupted closing",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 2676,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    }
+  ]
+}

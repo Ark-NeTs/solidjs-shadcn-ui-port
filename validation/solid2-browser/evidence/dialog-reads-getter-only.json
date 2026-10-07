@@ -1,0 +1,29 @@
+{
+  "before": {
+    "content": "dialog-cl-0-content",
+    "title": "dialog-cl-0-title",
+    "description": "dialog-cl-0-description",
+    "labelledby": "dialog-cl-0-title",
+    "describedby": "dialog-cl-0-description",
+    "controls": "dialog-cl-0-content"
+  },
+  "after": {
+    "content": "renamed-dialog-content",
+    "title": "renamed-dialog-title",
+    "description": "renamed-dialog-description",
+    "labelledby": "renamed-dialog-title",
+    "describedby": "renamed-dialog-description",
+    "controls": "renamed-dialog-content"
+  },
+  "warnings": [
+    {
+      "message": "[STRICT_READ_UNTRACKED] Reactive value read directly in an effect callback will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n[STRICT_READ_UNTRACKED] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#strict_read_untracked",
+      "stack": "Error\n    at console.warn (<anonymous>:7:74)\n    at console.<computed> [as warn] (http://127.0.0.1:4399/@vite/client:357:4)\n    at reportDiagnostic (http://127.0.0.1:4399/node_modules/.vite/deps/dev-shared-DoCLesXK.js?v=9e3fbebb:624:64)\n    at warnStrictReadUntracked (http://127.0.0.1:4399/node_modules/.vite/deps/dev-shared-DoCLesXK.js?v=9e3fbebb:645:2)\n    at read (http://127.0.0.1:4399/node_modules/.vite/deps/dev-shared-DoCLesXK.js?v=9e3fbebb:4218:18)\n    at leafOf (http://127.0.0.1:4399/node_modules/.vite/deps/solid.dev-BBGd8QlZ.js?v=9e3fbebb:2474:27)\n    at mergeLookup (http://127.0.0.1:4399/node_modules/.vite/deps/solid.dev-BBGd8QlZ.js?v=9e3fbebb:2888:14)\n    at mergeLookup (http://127.0.0.1:4399/node_modules/.vite/deps/solid.dev-BBGd8QlZ.js?v=9e3fbebb:2881:19)\n    at mergeGet (http://127.0.0.1:4399/node_modules/.vite/deps/solid.dev-BBGd8QlZ.js?v=9e3fbebb:2895:16)\n    at Object.get (http://127.0.0.1:4399/node_modules/.vite/deps/solid.dev-BBGd8QlZ.js?v=9e3fbebb:2978:29)\n    at Object._effectFn (http://127.0.0.1:4399/node_modules/@kobalte/core/dist/dismissable-layer/RyRdwdaj.jsx:67:19)\n    at runEffect (http://127.0.0.1:4399/node_modules/.vite/deps/solid.dev-BBGd8QlZ.js?v=9e3fbebb:1134:28)\n    at runQueue (http://127.0.0.1:4399/node_modules/.vite/deps/dev-shared-DoCLesXK.js?v=9e3fbebb:2027:49)\n    at GlobalQueue.run (http://127.0.0.1:4399/node_modules/.vite/deps/dev-shared-DoCLesXK.js?v=9e3fbebb:1490:4)\n    at GlobalQueue.flush (http://127.0.0.1:4399/node_modules/.vite/deps/dev-shared-DoCLesXK.js?v=9e3fbebb:1703:9)\n    at flush (http://127.0.0.1:4399/node_modules/.vite/deps/dev-shared-DoCLesXK.js?v=9e3fbebb:2020:15)"
+    },
+    {
+      "message": "[EFFECT_RELAY_TEAR] effect \"div.spread\" ran twice for one write of \"rootId\": once in the flush where \"rootId\" changed, and again after effect \"effect\" relayed it by writing \"signal\" — the first frame showed the new \"rootId\" with the stale \"signal\". The written value is the effect's compute output — by contract a pure function of what it tracks: make \"signal\" a memo of that computation and delete the effect.\n  in <Probe> › <Dialog.Root> › <DialogContext> › computed › <Dialog.Portal> › <Show> › value › <Portal> › computed › <Dialog.Content> › <Show> › value › <DismissableLayer> › <DismissableLayerContext> › computed › div.spread\n[EFFECT_RELAY_TEAR] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#effect_relay_tear\n[EFFECT_RELAY_TEAR] deeper evidence: import { attribution } from \"solid-js/attribution\"; attribution.enable() explains every re-run — why-chains, costs(), feedback(), history(\"hold\" | \"waterfall\") — agent loop: node_modules/@solidjs/diagnostics/skills/agent-loops/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/diagnostics/skills/agent-loops/SKILL.md [object HTMLDivElement]",
+      "stack": "Error\n    at console.warn (<anonymous>:7:74)\n    at console.<computed> [as warn] (http://127.0.0.1:4399/@vite/client:357:4)\n    at reportDiagnostic (http://127.0.0.1:4399/node_modules/.vite/deps/dev-shared-DoCLesXK.js?v=9e3fbebb:624:64)\n    at checkRelayTear (http://127.0.0.1:4399/node_modules/.vite/deps/solid-js_attribution.js?v=28c87aec:1005:27)\n    at recordRerun (http://127.0.0.1:4399/node_modules/.vite/deps/solid-js_attribution.js?v=28c87aec:637:2)\n    at Object.recomputeEnd (http://127.0.0.1:4399/node_modules/.vite/deps/solid-js_attribution.js?v=28c87aec:2226:30)\n    at recompute (http://127.0.0.1:4399/node_modules/.vite/deps/dev-shared-DoCLesXK.js?v=9e3fbebb:3431:36)\n    at GlobalQueue._update (http://127.0.0.1:4399/node_modules/.vite/deps/dev-shared-DoCLesXK.js?v=9e3fbebb:3134:9)\n    at runHeap (http://127.0.0.1:4399/node_modules/.vite/deps/dev-shared-DoCLesXK.js?v=9e3fbebb:2241:38)\n    at GlobalQueue.flush (http://127.0.0.1:4399/node_modules/.vite/deps/dev-shared-DoCLesXK.js?v=9e3fbebb:1641:4)\n    at flush (http://127.0.0.1:4399/node_modules/.vite/deps/dev-shared-DoCLesXK.js?v=9e3fbebb:2020:15)"
+    }
+  ],
+  "errors": []
+}

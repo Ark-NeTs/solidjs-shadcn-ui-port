@@ -1,0 +1,442 @@
+{
+  "mode": "production",
+  "date": "2026-10-07",
+  "durationMs": 54094.029,
+  "totals": {
+    "passed": 37,
+    "failed": 8,
+    "skipped": 1
+  },
+  "cases": [
+    {
+      "case": "drawer: mount without Solid development diagnostics",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 379,
+      "errors": [],
+      "consoleCodes": [],
+      "pageErrors": []
+    },
+    {
+      "case": "resizable: mount without Solid development diagnostics",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 165,
+      "errors": [],
+      "consoleCodes": [],
+      "pageErrors": []
+    },
+    {
+      "case": "calendar: mount without Solid development diagnostics",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 162,
+      "errors": [],
+      "consoleCodes": [],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: mount without Solid development diagnostics",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 170,
+      "errors": [],
+      "consoleCodes": [],
+      "pageErrors": []
+    },
+    {
+      "case": "direction: mount without Solid development diagnostics",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 170,
+      "errors": [],
+      "consoleCodes": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: keyboard focus, Escape and controlled reopen",
+      "browser": "chromium",
+      "status": "failed",
+      "durationMs": 3002,
+      "errors": [
+        "Error: expect(locator).toBeHidden() failed\n\nLocator:  getByRole('dialog', { name: 'Drawer probe' })\nExpected: hidden\nReceived: visible\nTimeout:  2500ms\n\nCall log:\n  - Expect \"toBeHidden\" getByRole('dialog', { name: 'Drawer probe' }) with timeout 2500ms\n  - waiting for getByRole('dialog', { name: 'Drawer probe' })\n    9 \u00d7 locator resolved to <div role=\"dialog\" tabindex=\"-1\" class=\"drawer\" data-expanded=\"\" data-side=\"bottom\" data-testid=\"drawer\" id=\"dialog-cl-0-content\" aria-labelledby=\"dialog-cl-0-title\" aria-describedby=\"dialog-cl-0-description\">\u2026</div>\n      - unexpected value \"visible\"\n\n\n  43 |   await page.getByRole('button',{name:'Dismiss'}).focus();await page.keyboard.press('Tab');\n  44 |   expect(await dialog.evaluate(el=>el.contains(document.activeElement))).toBe(true);\n> 45 |   await page.keyboard.press('Escape');await expect(dialog).toBeHidden();await expect(trigger).toBeFocused();\n     |                                                            ^\n  46 |   await trigger.click();await expect(dialog).toBeVisible();await page.getByRole('button',{name:'Dismiss'}).click();await expect(dialog).toBeHidden();\n  47 | });\n  48 | test('drawer: mouse drag snaps halfway then dismisses',async({page})=>{\n    at /private/tmp/solid2-browser-validation/tests/primitives.spec.js:45:60"
+      ],
+      "consoleCodes": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: mouse drag snaps halfway then dismisses",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 1851,
+      "errors": [],
+      "consoleCodes": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: scrollable child and portal/scroll-lock cleanup",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 571,
+      "errors": [],
+      "consoleCodes": [],
+      "pageErrors": []
+    },
+    {
+      "case": "resizable: keyboard sizing, constraints and collapse/expand",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 266,
+      "errors": [],
+      "consoleCodes": [],
+      "pageErrors": []
+    },
+    {
+      "case": "resizable: mouse drag updates controlled sizes and geometry",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 416,
+      "errors": [],
+      "consoleCodes": [],
+      "pageErrors": []
+    },
+    {
+      "case": "resizable: vertical keyboard and observer cleanup",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 203,
+      "errors": [],
+      "consoleCodes": [],
+      "pageErrors": []
+    },
+    {
+      "case": "calendar: pointer selection, unavailable day and month navigation",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 272,
+      "errors": [],
+      "consoleCodes": [],
+      "pageErrors": []
+    },
+    {
+      "case": "calendar: keyboard focus and Enter selection",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 195,
+      "errors": [],
+      "consoleCodes": [],
+      "pageErrors": []
+    },
+    {
+      "case": "calendar: range and multiple controlled selection",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 349,
+      "errors": [],
+      "consoleCodes": [],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: typing, completion and external controlled value",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 213,
+      "errors": [],
+      "consoleCodes": [],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: invalid characters, deletion, length and cleanup",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 191,
+      "errors": [],
+      "consoleCodes": [],
+      "pageErrors": []
+    },
+    {
+      "case": "direction: locale RTL, nested LTR and dynamic locale keyboard behavior",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 223,
+      "errors": [],
+      "consoleCodes": [],
+      "pageErrors": []
+    },
+    {
+      "case": "direction: explicit DOM RTL must agree with consumer keyboard direction",
+      "browser": "chromium",
+      "status": "failed",
+      "durationMs": 2649,
+      "errors": [
+        "Error: expect(locator).toBeFocused() failed\n\nLocator:  getByTestId('explicit-rtl').getByRole('tab', { name: 'Two', exact: true })\nExpected: focused\nReceived: inactive\nTimeout:  2500ms\n\nCall log:\n  - Expect \"toBeFocused\" getByTestId('explicit-rtl').getByRole('tab', { name: 'Two', exact: true }) with timeout 2500ms\n  - waiting for getByTestId('explicit-rtl').getByRole('tab', { name: 'Two', exact: true })\n    9 \u00d7 locator resolved to <button role=\"tab\" type=\"button\" tabindex=\"-1\" data-key=\"two\" aria-selected=\"false\" id=\"tabs-cl-1-trigger-two\" data-orientation=\"horizontal\">Two</button>\n      - unexpected value \"inactive\"\n\n\n  117 | test('direction: explicit DOM RTL must agree with consumer keyboard direction',async({page})=>{\n  118 |   await open(page,'direction');const fixture=page.getByTestId('explicit-rtl');expect(await fixture.evaluate(el=>getComputedStyle(el).direction)).toBe('rtl');\n> 119 |   await fixture.getByRole('tab',{name:'One',exact:true}).focus();await page.keyboard.press('ArrowLeft');await expect(fixture.getByRole('tab',{name:'Two',exact:true})).toBeFocused();\n      |                                                                                                                                                                        ^\n  120 | });\n  121 |\n  122 | test('otp: provided Label must associate with its input',async({page})=>{\n    at /private/tmp/solid2-browser-validation/tests/primitives.spec.js:119:168"
+      ],
+      "consoleCodes": [],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: provided Label must associate with its input",
+      "browser": "chromium",
+      "status": "failed",
+      "durationMs": 2733,
+      "errors": [
+        "Error: expect(locator).toHaveCount(expected) failed\n\nLocator:  getByLabel('Verification code')\nExpected: 1\nReceived: 0\nTimeout:  2500ms\n\nCall log:\n  - Expect \"toHaveCount\" getByLabel('Verification code') with timeout 2500ms\n  - waiting for getByLabel('Verification code')\n    9 \u00d7 locator resolved to 0 elements\n      - unexpected value \"0\"\n\n\n  121 |\n  122 | test('otp: provided Label must associate with its input',async({page})=>{\n> 123 |   await open(page,'otp');await expect(page.getByLabel('Verification code')).toHaveCount(1);\n      |                                                                             ^\n  124 | });\n  125 |\n  126 | test('otp: Root name must participate in native FormData',async({page})=>{\n    at /private/tmp/solid2-browser-validation/tests/primitives.spec.js:123:77"
+      ],
+      "consoleCodes": [],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: Root name must participate in native FormData",
+      "browser": "chromium",
+      "status": "failed",
+      "durationMs": 2862,
+      "errors": [
+        "Error: expect(locator).toHaveText(expected) failed\n\nLocator:  getByTestId('submitted')\nExpected: \"123456\"\nReceived: \"null\"\nTimeout:  2500ms\n\nCall log:\n  - Expect \"toHaveText\" getByTestId('submitted') with timeout 2500ms\n  - waiting for getByTestId('submitted')\n    9 \u00d7 locator resolved to <output data-testid=\"submitted\">null</output>\n      - unexpected value \"null\"\n\n\n  125 |\n  126 | test('otp: Root name must participate in native FormData',async({page})=>{\n> 127 |   await open(page,'otp');await page.locator('[data-kb-otp-field-input]').fill('123456');await page.getByRole('button',{name:'Submit code'}).click();await expect(page.getByTestId('submitted')).toHaveText('123456');\n      |                                                                                                                                                                                                 ^\n  128 | });\n  129 |\n  130 | test('otp: explicit input id/name restores label and form wiring',async({page})=>{\n    at /private/tmp/solid2-browser-validation/tests/primitives.spec.js:127:193"
+      ],
+      "consoleCodes": [],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: explicit input id/name restores label and form wiring",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 252,
+      "errors": [],
+      "consoleCodes": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: browser touch events dismiss the fully opened drawer",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 1092,
+      "errors": [],
+      "consoleCodes": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: mount without Solid development diagnostics",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 850,
+      "errors": [],
+      "consoleCodes": [],
+      "pageErrors": []
+    },
+    {
+      "case": "resizable: mount without Solid development diagnostics",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 289,
+      "errors": [],
+      "consoleCodes": [],
+      "pageErrors": []
+    },
+    {
+      "case": "calendar: mount without Solid development diagnostics",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 239,
+      "errors": [],
+      "consoleCodes": [],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: mount without Solid development diagnostics",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 236,
+      "errors": [],
+      "consoleCodes": [],
+      "pageErrors": []
+    },
+    {
+      "case": "direction: mount without Solid development diagnostics",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 248,
+      "errors": [],
+      "consoleCodes": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: keyboard focus, Escape and controlled reopen",
+      "browser": "firefox",
+      "status": "failed",
+      "durationMs": 3126,
+      "errors": [
+        "Error: expect(locator).toBeHidden() failed\n\nLocator:  getByRole('dialog', { name: 'Drawer probe' })\nExpected: hidden\nReceived: visible\nTimeout:  2500ms\n\nCall log:\n  - Expect \"toBeHidden\" getByRole('dialog', { name: 'Drawer probe' }) with timeout 2500ms\n  - waiting for getByRole('dialog', { name: 'Drawer probe' })\n    9 \u00d7 locator resolved to <div role=\"dialog\" tabindex=\"-1\" class=\"drawer\" data-expanded=\"\" data-side=\"bottom\" data-testid=\"drawer\" id=\"dialog-cl-0-content\" aria-labelledby=\"dialog-cl-0-title\" aria-describedby=\"dialog-cl-0-description\">\u2026</div>\n      - unexpected value \"visible\"\n\n\n  43 |   await page.getByRole('button',{name:'Dismiss'}).focus();await page.keyboard.press('Tab');\n  44 |   expect(await dialog.evaluate(el=>el.contains(document.activeElement))).toBe(true);\n> 45 |   await page.keyboard.press('Escape');await expect(dialog).toBeHidden();await expect(trigger).toBeFocused();\n     |                                                            ^\n  46 |   await trigger.click();await expect(dialog).toBeVisible();await page.getByRole('button',{name:'Dismiss'}).click();await expect(dialog).toBeHidden();\n  47 | });\n  48 | test('drawer: mouse drag snaps halfway then dismisses',async({page})=>{\n    at /private/tmp/solid2-browser-validation/tests/primitives.spec.js:45:60"
+      ],
+      "consoleCodes": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: mouse drag snaps halfway then dismisses",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 2017,
+      "errors": [],
+      "consoleCodes": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: scrollable child and portal/scroll-lock cleanup",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 504,
+      "errors": [],
+      "consoleCodes": [],
+      "pageErrors": []
+    },
+    {
+      "case": "resizable: keyboard sizing, constraints and collapse/expand",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 311,
+      "errors": [],
+      "consoleCodes": [],
+      "pageErrors": []
+    },
+    {
+      "case": "resizable: mouse drag updates controlled sizes and geometry",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 497,
+      "errors": [],
+      "consoleCodes": [],
+      "pageErrors": []
+    },
+    {
+      "case": "resizable: vertical keyboard and observer cleanup",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 281,
+      "errors": [],
+      "consoleCodes": [],
+      "pageErrors": []
+    },
+    {
+      "case": "calendar: pointer selection, unavailable day and month navigation",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 346,
+      "errors": [],
+      "consoleCodes": [],
+      "pageErrors": []
+    },
+    {
+      "case": "calendar: keyboard focus and Enter selection",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 356,
+      "errors": [],
+      "consoleCodes": [],
+      "pageErrors": []
+    },
+    {
+      "case": "calendar: range and multiple controlled selection",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 466,
+      "errors": [],
+      "consoleCodes": [],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: typing, completion and external controlled value",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 326,
+      "errors": [],
+      "consoleCodes": [],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: invalid characters, deletion, length and cleanup",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 741,
+      "errors": [],
+      "consoleCodes": [],
+      "pageErrors": []
+    },
+    {
+      "case": "direction: locale RTL, nested LTR and dynamic locale keyboard behavior",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 323,
+      "errors": [],
+      "consoleCodes": [],
+      "pageErrors": []
+    },
+    {
+      "case": "direction: explicit DOM RTL must agree with consumer keyboard direction",
+      "browser": "firefox",
+      "status": "failed",
+      "durationMs": 2823,
+      "errors": [
+        "Error: expect(locator).toBeFocused() failed\n\nLocator:  getByTestId('explicit-rtl').getByRole('tab', { name: 'Two', exact: true })\nExpected: focused\nReceived: inactive\nTimeout:  2500ms\n\nCall log:\n  - Expect \"toBeFocused\" getByTestId('explicit-rtl').getByRole('tab', { name: 'Two', exact: true }) with timeout 2500ms\n  - waiting for getByTestId('explicit-rtl').getByRole('tab', { name: 'Two', exact: true })\n    9 \u00d7 locator resolved to <button role=\"tab\" type=\"button\" tabindex=\"-1\" data-key=\"two\" aria-selected=\"false\" id=\"tabs-cl-1-trigger-two\" data-orientation=\"horizontal\">Two</button>\n      - unexpected value \"inactive\"\n\n\n  117 | test('direction: explicit DOM RTL must agree with consumer keyboard direction',async({page})=>{\n  118 |   await open(page,'direction');const fixture=page.getByTestId('explicit-rtl');expect(await fixture.evaluate(el=>getComputedStyle(el).direction)).toBe('rtl');\n> 119 |   await fixture.getByRole('tab',{name:'One',exact:true}).focus();await page.keyboard.press('ArrowLeft');await expect(fixture.getByRole('tab',{name:'Two',exact:true})).toBeFocused();\n      |                                                                                                                                                                        ^\n  120 | });\n  121 |\n  122 | test('otp: provided Label must associate with its input',async({page})=>{\n    at /private/tmp/solid2-browser-validation/tests/primitives.spec.js:119:168"
+      ],
+      "consoleCodes": [],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: provided Label must associate with its input",
+      "browser": "firefox",
+      "status": "failed",
+      "durationMs": 3460,
+      "errors": [
+        "Error: expect(locator).toHaveCount(expected) failed\n\nLocator:  getByLabel('Verification code')\nExpected: 1\nReceived: 0\nTimeout:  2500ms\n\nCall log:\n  - Expect \"toHaveCount\" getByLabel('Verification code') with timeout 2500ms\n  - waiting for getByLabel('Verification code')\n    9 \u00d7 locator resolved to 0 elements\n      - unexpected value \"0\"\n\n\n  121 |\n  122 | test('otp: provided Label must associate with its input',async({page})=>{\n> 123 |   await open(page,'otp');await expect(page.getByLabel('Verification code')).toHaveCount(1);\n      |                                                                             ^\n  124 | });\n  125 |\n  126 | test('otp: Root name must participate in native FormData',async({page})=>{\n    at /private/tmp/solid2-browser-validation/tests/primitives.spec.js:123:77"
+      ],
+      "consoleCodes": [],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: Root name must participate in native FormData",
+      "browser": "firefox",
+      "status": "failed",
+      "durationMs": 3443,
+      "errors": [
+        "Error: expect(locator).toHaveText(expected) failed\n\nLocator:  getByTestId('submitted')\nExpected: \"123456\"\nReceived: \"null\"\nTimeout:  2500ms\n\nCall log:\n  - Expect \"toHaveText\" getByTestId('submitted') with timeout 2500ms\n  - waiting for getByTestId('submitted')\n    9 \u00d7 locator resolved to <output data-testid=\"submitted\">null</output>\n      - unexpected value \"null\"\n\n\n  125 |\n  126 | test('otp: Root name must participate in native FormData',async({page})=>{\n> 127 |   await open(page,'otp');await page.locator('[data-kb-otp-field-input]').fill('123456');await page.getByRole('button',{name:'Submit code'}).click();await expect(page.getByTestId('submitted')).toHaveText('123456');\n      |                                                                                                                                                                                                 ^\n  128 | });\n  129 |\n  130 | test('otp: explicit input id/name restores label and form wiring',async({page})=>{\n    at /private/tmp/solid2-browser-validation/tests/primitives.spec.js:127:193"
+      ],
+      "consoleCodes": [],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: explicit input id/name restores label and form wiring",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 1162,
+      "errors": [],
+      "consoleCodes": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: browser touch events dismiss the fully opened drawer",
+      "browser": "firefox",
+      "status": "skipped",
+      "durationMs": 334,
+      "errors": [],
+      "consoleCodes": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: close button restores focus and permits reopening",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 1104,
+      "errors": [],
+      "consoleCodes": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: close button restores focus and permits reopening",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 2243,
+      "errors": [],
+      "consoleCodes": [],
+      "pageErrors": []
+    }
+  ]
+}

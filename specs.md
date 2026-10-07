@@ -6,6 +6,15 @@ and `packages/shadcn-svelte-theme/README.md`, before writing a line of code.
 
 ## Current owner direction — 2026-10-07
 
+**Implementation checkpoint authorized:** the owner explicitly requested the
+foundation plus Button, Badge, Card, Separator and Skeleton now, instead of
+another diagnostic investigation. This supersedes the original broad Gate 0
+stop-before-code requirement for this limited batch. Use owned native HTML for
+these five components; no experimental Kobalte patch enters production. Keep
+Kobalte first for subsequent interaction primitives. See [DECISIONS.md](DECISIONS.md)
+and [FOUNDATION-DELIVERY.md](FOUNDATION-DELIVERY.md). Full catalog, router/query,
+complex primitives and admin migration remain later increments.
+
 This section takes precedence over the original scope and library alternatives
 below where they differ.
 
@@ -26,6 +35,9 @@ below where they differ.
   evaluation demonstrates a missing capability. Record the gap and the reason
   for the fallback; do not install both libraries for overlapping primitives
   merely because both offer them.
+  See [COMPONENT-MAP.md](COMPONENT-MAP.md) for the complete catalog assessment
+  and unresolved implementation gaps. It currently establishes no required
+  corvu fallback; its API mappings still need runtime and parity verification.
 - A corvu fallback must support the selected Solid 2 runtime. Evaluate the
   existing `@corvu-next/*` fork where relevant; original `@corvu/*` releases
   have failed the compatibility probe. A successful build is not runtime
@@ -50,6 +62,18 @@ below where they differ.
   Do not switch to Solid 1 or add a second Solid runtime to make corvu load.
   A required port or replacement must be made explicit before adoption.
   See [COMPATIBILITY.md](COMPATIBILITY.md) for the current verification result.
+  The five-primitive browser probe and its outstanding acceptance failures are
+  recorded in [BROWSER-VALIDATION.md](BROWSER-VALIDATION.md); it is not a complete
+  Gate 0 or permission to mark the component set delivered.
+  [KOBALTE-LIFECYCLE.md](KOBALTE-LIFECYCLE.md) records the subsequent harness-only
+  patch for Drawer Escape and effect ownership. Its passing scoped regressions
+  do not approve production adoption. [KOBALTE-PRESENCE.md](KOBALTE-PRESENCE.md)
+  subsequently resolves Drawer/DialogRoot feedback and relay diagnostics.
+  [KOBALTE-DIALOG-IDS.md](KOBALTE-DIALOG-IDS.md) resolves plain Dialog untracked
+  ID reads and verifies live ARIA wiring. [KOBALTE-OTP.md](KOBALTE-OTP.md)
+  subsequently resolves tested OTP diagnostics and label/form wiring through
+  harness-only Kobalte and shared a11y patches. Other primitive findings and
+  Gate 0 requirements still block production acceptance.
 
 ## 1. What this is
 

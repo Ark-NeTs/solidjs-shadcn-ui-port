@@ -1,0 +1,13 @@
+/* Documentation layout uses shared semantic theme tokens; D19. */
+@import '../src/theme.css';
+@source './';
+body { margin: 0; }
+main { max-width: 1120px; margin: auto; padding: 64px 28px; }
+.demo-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 24px; }
+.demo-section { margin-top: 48px; }
+.demo-section h2 { font-size: 1.125rem; font-weight: 600; margin-bottom: 8px; }
+.demo-section > p { color: var(--muted-foreground); margin-bottom: 24px; }
+.samples { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; }
+code { font-size: .8rem; overflow-wrap: anywhere; }
+.snippet { margin-top: 20px; padding: 16px; background: var(--muted); border-radius: var(--radius); }
+@media (max-width: 640px) { main { padding: 32px 20px; } .demo-grid { grid-template-columns: minmax(0, 1fr); } }

@@ -1,0 +1,24 @@
+/* Minimal diagnostic layout, not the production theme; supports D19 evaluation. */
+:root { font-family: system-ui; color-scheme: light; }
+body { margin: 24px; color: #202020; background: #fafafa; }
+button, input { font: inherit; margin: 6px; padding: 8px; }
+:focus-visible { outline: 3px solid #005ccc; outline-offset: 2px; }
+output { display: block; margin: 8px; }
+.overlay { position: fixed; inset: 0; background: #0006; }
+.drawer { position: fixed; bottom: 0; left: 0; right: 0; height: 420px; padding: 20px; box-sizing: border-box; background: white; transition: transform 120ms ease; }
+.grip { padding: 15px; background: #eee; touch-action: none; cursor: grab; }
+.scroll { overflow: auto; height: 120px; }
+.resizable { width: 600px; height: 300px; border: 1px solid; }
+.panel { background: #dce9ef; overflow: hidden; }
+.handle { padding: 0; margin: 0; min-width: 12px; min-height: 12px; background: #555; border: 0; }
+[role=button][data-type=day] { padding: 8px; cursor: pointer; }
+[data-selected] { background: #b4dbfc; }
+[data-unavailable] { color: #888; }
+.otp { position: relative; width: 300px; height: 55px; }
+.slots { display: flex; gap: 4px; height: 50px; }
+.slots span { display: grid; place-content: center; width: 40px; border: 1px solid #555; }
+.slots [data-active=true] { outline: 2px solid blue; }
+section { margin: 16px 0; padding: 8px; border: 1px solid #ccc; }
+
+/* A force-mounted Dialog delegates its closed-state visibility to the consumer. */
+.plain-dialog[data-closed], .plain-overlay[data-closed] { display: none; }

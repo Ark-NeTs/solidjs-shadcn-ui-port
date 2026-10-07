@@ -1,0 +1,67 @@
+[
+  {
+    "fixture": "presence",
+    "codes": [
+      "EFFECT_WRITES_OWN_SOURCE",
+      "EFFECT_RELAY_TEAR"
+    ],
+    "messages": [
+      {
+        "phase": "open-0",
+        "type": "warning",
+        "message": "[EFFECT_WRITES_OWN_SOURCE] effect \"effect\" re-ran because of its own write: it wrote \"signal\", which fed back into its inputs. Two flushes to settle, and the screen rendered the pre-write value in between. The written value is a function of what the effect reads — compute it in a memo (or normalize where the source is written) instead of correcting it after the fact.\n  in <Probe> › effect\n[EFFECT_WRITES_OWN_SOURCE] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#effect_writes_own_source\n[EFFECT_WRITES_OWN_SOURCE] deeper evidence: import { attribution } from \"solid-js/attribution\"; attribution.enable() explains every re-run — why-chains, costs(), feedback(), history(\"hold\" | \"waterfall\") — agent loop: node_modules/@solidjs/diagnostics/skills/agent-loops/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/diagnostics/skills/agent-loops/SKILL.md"
+      },
+      {
+        "phase": "open-0",
+        "type": "warning",
+        "message": "[EFFECT_RELAY_TEAR] effect \"effect\" ran twice for one write of \"signal\": once in the flush where \"signal\" changed, and again after effect \"effect\" relayed it by writing \"signal\" — the first frame showed the new \"signal\" with the stale \"signal\". The written value is \"signal\" itself: read \"signal\" where \"signal\" is read (or createMemo it if a stable derivation is needed) and delete the effect.\n  in <Probe> › effect\n[EFFECT_RELAY_TEAR] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#effect_relay_tear\n[EFFECT_RELAY_TEAR] deeper evidence: import { attribution } from \"solid-js/attribution\"; attribution.enable() explains every re-run — why-chains, costs(), feedback(), history(\"hold\" | \"waterfall\") — agent loop: node_modules/@solidjs/diagnostics/skills/agent-loops/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/diagnostics/skills/agent-loops/SKILL.md"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "fixture": "dialog",
+    "codes": [
+      "STRICT_READ_UNTRACKED"
+    ],
+    "messages": [
+      {
+        "phase": "open-0",
+        "type": "warning",
+        "message": "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Content> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> › <Dialog.Root> › <DialogContext> › computed › <Dialog.Portal> › <Show> › value › <Portal> › computed › <Dialog.Content>\n[STRICT_READ_UNTRACKED] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#strict_read_untracked"
+      },
+      {
+        "phase": "open-0",
+        "type": "warning",
+        "message": "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Title> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> › <Dialog.Root> › <DialogContext> › computed › <Dialog.Portal> › <Show> › value › <Portal> › computed › <Dialog.Content> › <Show> › value › <DismissableLayer> › <DismissableLayerContext> › computed › div.children › <Dialog.Title>"
+      },
+      {
+        "phase": "open-0",
+        "type": "warning",
+        "message": "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Description> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> › <Dialog.Root> › <DialogContext> › computed › <Dialog.Portal> › <Show> › value › <Portal> › computed › <Dialog.Content> › <Show> › value › <DismissableLayer> › <DismissableLayerContext> › computed › div.children › <Dialog.Description>"
+      },
+      {
+        "phase": "open-1",
+        "type": "warning",
+        "message": "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Content> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> › <Dialog.Root> › <DialogContext> › computed › <Dialog.Portal> › <Show> › value › <Portal> › computed › <Dialog.Content>"
+      },
+      {
+        "phase": "open-1",
+        "type": "warning",
+        "message": "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Title> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> › <Dialog.Root> › <DialogContext> › computed › <Dialog.Portal> › <Show> › value › <Portal> › computed › <Dialog.Content> › <Show> › value › <DismissableLayer> › <DismissableLayerContext> › computed › div.children › <Dialog.Title>"
+      },
+      {
+        "phase": "open-1",
+        "type": "warning",
+        "message": "[STRICT_READ_UNTRACKED] Reactive value read directly in <Dialog.Description> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> › <Dialog.Root> › <DialogContext> › computed › <Dialog.Portal> › <Show> › value › <Portal> › computed › <Dialog.Content> › <Show> › value › <DismissableLayer> › <DismissableLayerContext> › computed › div.children › <Dialog.Description>"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "fixture": "drawer",
+    "codes": [],
+    "messages": [],
+    "errors": []
+  }
+]

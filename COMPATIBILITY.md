@@ -12,8 +12,21 @@ and corvu-next probes below are fallback research, not adoption decisions.
 **Current finding:** original `@corvu/*` releases fail the Solid 2 linking
 probe, but an existing third-party Solid 2 port, `@corvu-next/*`, was found
 in the expanded search below. Its Drawer and Resizable passed the `rc.13`
-linking probe. Runtime compatibility remains untested; maintaining a new
-in-house port has not been established as necessary.
+linking probe. Corvu-next runtime compatibility remains untested; maintaining
+a new in-house port has not been established as necessary.
+
+**Kobalte browser follow-up:** [BROWSER-VALIDATION.md](BROWSER-VALIDATION.md)
+preserves the unpatched five-primitive results. The subsequent
+[lifecycle investigation](KOBALTE-LIFECYCLE.md) fixes Drawer Escape and observed
+ownerless effects with a pinned harness-only patch, tested in development and
+production in Chromium and Firefox. The [presence follow-up](KOBALTE-PRESENCE.md)
+also removes Drawer/DialogRoot feedback and relay diagnostics. The subsequent
+[ID investigation](KOBALTE-DIALOG-IDS.md) fixes plain Dialog untracked reads,
+with zero diagnostics in its tested Drawer/Dialog interactions. The subsequent
+[OTP repair](KOBALTE-OTP.md) resolves tested Input OTP diagnostics and label/form
+wiring with harness-only Kobalte and shared a11y patches. Explicit Direction,
+other primitive diagnostics and a newly observed Drawer timing warning remain
+open. Gate 0 remains incomplete.
 
 ## Versions tested
 
@@ -142,9 +155,10 @@ has been adopted into the design-system package.
 
 ## Outstanding acceptance checks
 
-Gate 0 remains incomplete. Vite JSX compilation, testing-library cleanup,
-mounted Dialog/Select tests, router/query compatibility, async rendering,
-cross-library overlay behavior, and real-browser interaction are unrun.
+Gate 0 remains incomplete. Vite JSX compilation and the five scoped browser
+fixtures have now run; see BROWSER-VALIDATION.md for exact outcomes and limits.
+Testing-library cleanup, dedicated mounted Dialog/Select tests, router/query
+compatibility, async rendering and cross-library overlay behavior remain unrun.
 
 The package has no implementation or `package.json` yet. Package `check`,
 `lint`, `test`, `test:integration`, `test:server`, and `test:e2e` commands do not

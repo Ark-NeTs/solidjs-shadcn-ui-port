@@ -1,0 +1,75 @@
+diff --git a/dist/form-control.js b/dist/form-control.js
+index 283e46a9fed7221182a83a1229934b4abff5b7db..b1c8551cc70d3f4889bd7620d372ee83445346c4 100644
+--- a/dist/form-control.js
++++ b/dist/form-control.js
+@@ -20,7 +20,7 @@ function useFormControl() {
+ /** Returns a registration function: calling it sets the ID signal; the returned cleanup clears it. */
+ function createRegisterId(setter) {
+ 	return (id) => {
+-		setter(id);
++		setter(() => id);
+ 		return () => setter(void 0);
+ 	};
+ }
+@@ -66,10 +66,14 @@ function createRegisterId(setter) {
+ function createFormControl(props) {
+ 	let _defaultId;
+ 	const id = () => access(props.id) ?? (_defaultId ??= `form-control-${createUniqueId()}`);
+-	const [labelId, setLabelId] = createSignal(void 0, { ownedWrite: true });
+-	const [fieldId, setFieldId] = createSignal(void 0, { ownedWrite: true });
+-	const [descriptionId, setDescriptionId] = createSignal(void 0, { ownedWrite: true });
+-	const [errorMessageId, setErrorMessageId] = createSignal(void 0, { ownedWrite: true });
++	const [labelIdSource, setLabelId] = createSignal(void 0, { ownedWrite: true });
++	const [fieldIdSource, setFieldId] = createSignal(void 0, { ownedWrite: true });
++	const [descriptionIdSource, setDescriptionId] = createSignal(void 0, { ownedWrite: true });
++	const [errorMessageIdSource, setErrorMessageId] = createSignal(void 0, { ownedWrite: true });
++	const labelId = () => access(labelIdSource());
++	const fieldId = () => access(fieldIdSource());
++	const descriptionId = () => access(descriptionIdSource());
++	const errorMessageId = () => access(errorMessageIdSource());
+ 	const generateId = (part) => `${id()}-${part}`;
+ 	const getAriaLabelledBy = (fieldId, fieldAriaLabel, fieldAriaLabelledBy) => {
+ 		const hasAriaLabelledBy = fieldAriaLabelledBy != null || labelId() != null;
+@@ -146,7 +150,7 @@ function createFormControl(props) {
+ function createFormControlInput(props = {}) {
+ 	const context = useFormControl();
+ 	const id = () => access(props.id) ?? context.generateId("field");
+-	createEffect(() => id(), (id) => context.registerField(id));
++	createEffect(() => id, (source) => context.registerField(source));
+ 	return { fieldProps: {
+ 		id,
+ 		ariaLabel: () => access(props["aria-label"]),
+diff --git a/dist/types.d.ts b/dist/types.d.ts
+index 2c9a11a31688b9f40910162c7d20dad8044ae22a..f29d64e99ed1ae1661b5d9fcf13425631a1ebf80 100644
+--- a/dist/types.d.ts
++++ b/dist/types.d.ts
+@@ -98,24 +98,24 @@ type FormControlContextValue = {
+   * pass the return value directly to `onCleanup`.
+   * @example `onCleanup(ctx.registerLabel(labelId))`
+   */
+-  registerLabel: (id: string) => () => void;
++  registerLabel: (id: string | (() => string)) => () => void;
+   /**
+   * Registers the field (input) element by ID. Returns a cleanup function.
+   * Called internally by `createFormControlInput`; you rarely need this directly.
+   */
+-  registerField: (id: string) => () => void;
++  registerField: (id: string | (() => string)) => () => void;
+   /**
+   * Registers a description element by ID. Returns a cleanup function — pass to `onCleanup`.
+   * @example `onCleanup(ctx.registerDescription(descriptionId))`
+   */
+-  registerDescription: (id: string) => () => void;
++  registerDescription: (id: string | (() => string)) => () => void;
+   /**
+   * Registers an error-message element by ID. Returns a cleanup function — pass to `onCleanup`.
+   * Mount this element conditionally (e.g. inside `<Show when={validationState === "invalid"}>`);
+   * the ID will only be in `aria-describedby` while the element is actually in the DOM.
+   * @example `onCleanup(ctx.registerErrorMessage(errorId))`
+   */
+-  registerErrorMessage: (id: string) => () => void;
++  registerErrorMessage: (id: string | (() => string)) => () => void;
+ };
+ //#endregion
+ export { CreateFormControlInputProps, CreateFormControlProps, FormControlContextValue, FormControlDataSet };
+\ No newline at end of file

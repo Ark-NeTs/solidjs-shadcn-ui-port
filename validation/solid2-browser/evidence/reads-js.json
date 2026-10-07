@@ -1,0 +1,392 @@
+{
+  "mode": "reads-js",
+  "date": "2026-10-07",
+  "durationMs": 34975.944,
+  "totals": {
+    "passed": 37,
+    "failed": 0,
+    "skipped": 1
+  },
+  "cases": [
+    {
+      "case": "drawer: mount without Solid development diagnostics",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 549,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: keyboard focus, Escape and controlled reopen",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 1174,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: mouse drag snaps halfway then dismisses",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 1746,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: scrollable child and portal/scroll-lock cleanup",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 608,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: browser touch events dismiss the fully opened drawer",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 1174,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: close button restores focus and permits reopening",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 1202,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: Escape dismisses only the topmost nested layer",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 1088,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: prevented Escape keeps its layer registered",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 690,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: repeated Escape and unmount dispose document listeners",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 1604,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: controlled open, Escape, focus and cleanup",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 520,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: initially open open, Escape, focus and cleanup",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 467,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: uncontrolled open, Escape, focus and cleanup",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 557,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: forceMount keeps closed content until explicitly released",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 338,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: rapid controlled reopen has no delayed disappearance",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 538,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: derived Dialog presence preserves exit animation and interrupted closing",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 2636,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: generated IDs follow a changing root and keep ARIA links",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 392,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: explicit part IDs stay authoritative and can be removed",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 322,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: title and description unregister and restore after root changes",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 338,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: public string ID registration and cleanup remain supported",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 368,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: mount without Solid development diagnostics",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 1094,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: keyboard focus, Escape and controlled reopen",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 1217,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: mouse drag snaps halfway then dismisses",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 1511,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: scrollable child and portal/scroll-lock cleanup",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 644,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: browser touch events dismiss the fully opened drawer",
+      "browser": "firefox",
+      "status": "skipped",
+      "durationMs": 167,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: close button restores focus and permits reopening",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 1232,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: Escape dismisses only the topmost nested layer",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 1235,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: prevented Escape keeps its layer registered",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 759,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: repeated Escape and unmount dispose document listeners",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 1679,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: controlled open, Escape, focus and cleanup",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 770,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: initially open open, Escape, focus and cleanup",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 484,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: uncontrolled open, Escape, focus and cleanup",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 470,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: forceMount keeps closed content until explicitly released",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 374,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: rapid controlled reopen has no delayed disappearance",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 615,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: derived Dialog presence preserves exit animation and interrupted closing",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 2706,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: generated IDs follow a changing root and keep ARIA links",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 465,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: explicit part IDs stay authoritative and can be removed",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 477,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: title and description unregister and restore after root changes",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 395,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: public string ID registration and cleanup remain supported",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 397,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    }
+  ]
+}

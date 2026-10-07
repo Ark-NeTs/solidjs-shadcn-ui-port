@@ -1,0 +1,110 @@
+{
+  "date": "2026-10-07",
+  "mode": "integration",
+  "stats": {
+    "startTime": "2026-10-07T19:05:49.782Z",
+    "duration": 10664.347,
+    "expected": 12,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "cases": [
+    {
+      "case": "keyboard activation, focus ring, disabled examples and navigation",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 625,
+      "diagnostics": [],
+      "errors": []
+    },
+    {
+      "case": "card size and separator orientation update geometry and semantics",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 428,
+      "diagnostics": [],
+      "errors": []
+    },
+    {
+      "case": "custom theme changes token-driven button colors",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 320,
+      "diagnostics": [],
+      "errors": []
+    },
+    {
+      "case": "loading placeholders are hidden from accessibility tree and stop motion",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 332,
+      "diagnostics": [],
+      "errors": []
+    },
+    {
+      "case": "light examples have no axe accessibility violations",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 611,
+      "diagnostics": [],
+      "errors": []
+    },
+    {
+      "case": "dark examples have no axe accessibility violations",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 812,
+      "diagnostics": [],
+      "errors": []
+    },
+    {
+      "case": "keyboard activation, focus ring, disabled examples and navigation",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 1210,
+      "diagnostics": [],
+      "errors": []
+    },
+    {
+      "case": "card size and separator orientation update geometry and semantics",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 472,
+      "diagnostics": [],
+      "errors": []
+    },
+    {
+      "case": "custom theme changes token-driven button colors",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 372,
+      "diagnostics": [],
+      "errors": []
+    },
+    {
+      "case": "loading placeholders are hidden from accessibility tree and stop motion",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 465,
+      "diagnostics": [],
+      "errors": []
+    },
+    {
+      "case": "light examples have no axe accessibility violations",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 903,
+      "diagnostics": [],
+      "errors": []
+    },
+    {
+      "case": "dark examples have no axe accessibility violations",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 1135,
+      "diagnostics": [],
+      "errors": []
+    }
+  ]
+}

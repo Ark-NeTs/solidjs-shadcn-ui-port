@@ -1,0 +1,32 @@
+[
+  {
+    "command": "bun run check",
+    "exitCode": 0,
+    "seconds": 1.311
+  },
+  {
+    "command": "bun run lint",
+    "exitCode": 0,
+    "seconds": 0.711
+  },
+  {
+    "command": "bun run test",
+    "exitCode": 0,
+    "seconds": 1.324
+  },
+  {
+    "command": "bun run test:coverage",
+    "exitCode": 0,
+    "seconds": 1.229
+  },
+  {
+    "command": "bun run test:server",
+    "exitCode": 0,
+    "seconds": 0.632
+  },
+  {
+    "command": "bun run build",
+    "exitCode": 0,
+    "seconds": 0.957
+  }
+]

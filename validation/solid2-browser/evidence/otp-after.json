@@ -1,0 +1,83 @@
+{
+  "mount": {
+    "id": "otpfield-cl-0-field",
+    "name": "code",
+    "value": "",
+    "labelFor": "otpfield-cl-0-field",
+    "labelControl": "otpfield-cl-0-field",
+    "formData": [
+      [
+        "code",
+        ""
+      ]
+    ],
+    "labelledby": "otpfield-cl-0-label",
+    "describedby": null,
+    "warnings": []
+  },
+  "typing": {
+    "id": "otpfield-cl-0-field",
+    "name": "code",
+    "value": "123456",
+    "labelFor": "otpfield-cl-0-field",
+    "labelControl": "otpfield-cl-0-field",
+    "formData": [
+      [
+        "code",
+        "123456"
+      ]
+    ],
+    "labelledby": "otpfield-cl-0-label",
+    "describedby": null,
+    "warnings": []
+  },
+  "external": {
+    "id": "otpfield-cl-0-field",
+    "name": "code",
+    "value": "987654",
+    "labelFor": "otpfield-cl-0-field",
+    "labelControl": "otpfield-cl-0-field",
+    "formData": [
+      [
+        "code",
+        "987654"
+      ]
+    ],
+    "labelledby": "otpfield-cl-0-label",
+    "describedby": null,
+    "warnings": []
+  },
+  "renamed": {
+    "id": "renamed-otp-field",
+    "name": "code",
+    "value": "987654",
+    "labelFor": "renamed-otp-field",
+    "labelControl": "renamed-otp-field",
+    "formData": [
+      [
+        "code",
+        "987654"
+      ]
+    ],
+    "labelledby": "renamed-otp-label",
+    "describedby": "renamed-otp-description renamed-otp-error-message",
+    "warnings": []
+  },
+  "reset": {
+    "id": "renamed-otp-field",
+    "name": "code",
+    "value": "",
+    "labelFor": "renamed-otp-field",
+    "labelControl": "renamed-otp-field",
+    "formData": [
+      [
+        "code",
+        ""
+      ]
+    ],
+    "labelledby": "renamed-otp-label",
+    "describedby": "renamed-otp-description renamed-otp-error-message",
+    "warnings": []
+  },
+  "errors": []
+}

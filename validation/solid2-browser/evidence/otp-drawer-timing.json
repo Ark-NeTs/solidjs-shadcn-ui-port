@@ -1,0 +1,42 @@
+{
+  "mode": "otp-drawer-timing",
+  "date": "2026-10-07",
+  "durationMs": 9989.277,
+  "totals": {
+    "passed": 3,
+    "failed": 0,
+    "skipped": 0
+  },
+  "cases": [
+    {
+      "case": "drawer: mouse drag snaps halfway then dismisses",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 2268,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: mouse drag snaps halfway then dismisses",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 2152,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: mouse drag snaps halfway then dismisses",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 2185,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    }
+  ]
+}

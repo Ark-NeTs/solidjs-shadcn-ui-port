@@ -1,0 +1,652 @@
+{
+  "mode": "otp-js",
+  "date": "2026-10-07",
+  "durationMs": 47188.881,
+  "totals": {
+    "passed": 63,
+    "failed": 0,
+    "skipped": 1
+  },
+  "cases": [
+    {
+      "case": "drawer: mount without Solid development diagnostics",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 550,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: mount without Solid development diagnostics",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 277,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: keyboard focus, Escape and controlled reopen",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 1177,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: mouse drag snaps halfway then dismisses",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 1735,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: scrollable child and portal/scroll-lock cleanup",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 746,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: typing, completion and external controlled value",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 413,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: invalid characters, deletion, length and cleanup",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 390,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: provided Label must associate with its input",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 242,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: Root name must participate in native FormData",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 289,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: explicit input id/name restores label and form wiring",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 309,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: browser touch events dismiss the fully opened drawer",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 1156,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: close button restores focus and permits reopening",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 1189,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: Escape dismisses only the topmost nested layer",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 1139,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: prevented Escape keeps its layer registered",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 671,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: repeated Escape and unmount dispose document listeners",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 1690,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: controlled open, Escape, focus and cleanup",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 554,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: initially open open, Escape, focus and cleanup",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 404,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: uncontrolled open, Escape, focus and cleanup",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 504,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: forceMount keeps closed content until explicitly released",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 339,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: rapid controlled reopen has no delayed disappearance",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 557,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: derived Dialog presence preserves exit animation and interrupted closing",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 2624,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: generated IDs follow a changing root and keep ARIA links",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 403,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: explicit part IDs stay authoritative and can be removed",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 358,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: title and description unregister and restore after root changes",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 363,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: public string ID registration and cleanup remain supported",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 354,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: live IDs, names and explicit ARIA overrides stay associated",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 338,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: required, disabled and readOnly follow native form rules",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 339,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: controlled native reset restores default value",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 389,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: uncontrolled native reset restores default value",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 389,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: cancelled form reset preserves the current code",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 306,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: completion callbacks and document resources respect owner lifetime",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 574,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: shared form context still supports string registration and cleanup",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 288,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: mount without Solid development diagnostics",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 1152,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: mount without Solid development diagnostics",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 360,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: keyboard focus, Escape and controlled reopen",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 1251,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: mouse drag snaps halfway then dismisses",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 1487,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: scrollable child and portal/scroll-lock cleanup",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 672,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: typing, completion and external controlled value",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 525,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: invalid characters, deletion, length and cleanup",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 487,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: provided Label must associate with its input",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 306,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: Root name must participate in native FormData",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 361,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: explicit input id/name restores label and form wiring",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 797,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: browser touch events dismiss the fully opened drawer",
+      "browser": "firefox",
+      "status": "skipped",
+      "durationMs": 218,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: close button restores focus and permits reopening",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 1279,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: Escape dismisses only the topmost nested layer",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 1203,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: prevented Escape keeps its layer registered",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 752,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: repeated Escape and unmount dispose document listeners",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 1679,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: controlled open, Escape, focus and cleanup",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 520,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: initially open open, Escape, focus and cleanup",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 436,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: uncontrolled open, Escape, focus and cleanup",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 461,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: forceMount keeps closed content until explicitly released",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 364,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: rapid controlled reopen has no delayed disappearance",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 1171,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: derived Dialog presence preserves exit animation and interrupted closing",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 2750,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: generated IDs follow a changing root and keep ARIA links",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 559,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: explicit part IDs stay authoritative and can be removed",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 433,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: title and description unregister and restore after root changes",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 396,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "dialog: public string ID registration and cleanup remain supported",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 423,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: live IDs, names and explicit ARIA overrides stay associated",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 464,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: required, disabled and readOnly follow native form rules",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 433,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: controlled native reset restores default value",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 424,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: uncontrolled native reset restores default value",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 449,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: cancelled form reset preserves the current code",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 1003,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: completion callbacks and document resources respect owner lifetime",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 610,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: shared form context still supports string registration and cleanup",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 355,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    }
+  ]
+}

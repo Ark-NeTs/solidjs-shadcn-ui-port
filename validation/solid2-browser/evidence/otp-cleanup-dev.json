@@ -1,0 +1,32 @@
+{
+  "mode": "otp-cleanup-dev",
+  "date": "2026-10-07",
+  "durationMs": 4276.449,
+  "totals": {
+    "passed": 2,
+    "failed": 0,
+    "skipped": 0
+  },
+  "cases": [
+    {
+      "case": "otp: completion callbacks and document resources respect owner lifetime",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 954,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: completion callbacks and document resources respect owner lifetime",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 1538,
+      "errors": [],
+      "consoleCodes": [],
+      "consoleMessages": [],
+      "pageErrors": []
+    }
+  ]
+}

@@ -1,0 +1,577 @@
+{
+  "mode": "dev",
+  "date": "2026-10-07",
+  "durationMs": 69268.979,
+  "totals": {
+    "passed": 31,
+    "failed": 14,
+    "skipped": 1
+  },
+  "cases": [
+    {
+      "case": "drawer: mount without Solid development diagnostics",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 542,
+      "errors": [],
+      "consoleCodes": [],
+      "pageErrors": []
+    },
+    {
+      "case": "resizable: mount without Solid development diagnostics",
+      "browser": "chromium",
+      "status": "failed",
+      "durationMs": 307,
+      "errors": [
+        "Error: warnings/errors emitted during mount\n\nexpect(received).toEqual(expected) // deep equality\n\n- Expected  -  1\n+ Received  + 14\n\n- Array []\n+ Array [\n+   \"[STRICT_READ_UNTRACKED] Reactive value read directly in an effect callback will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n+ [STRICT_READ_UNTRACKED] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md \u2014 https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#strict_read_untracked\",\n+   \"[STRICT_READ_UNTRACKED] Reactive value read directly in an effect callback will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\",\n+   \"[STRICT_READ_UNTRACKED] Reactive value read directly in an effect callback will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\",\n+   \"[NO_OWNER_EFFECT] Effects created outside a reactive context will never be disposed\n+   in effect\n+ [NO_OWNER_EFFECT] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md \u2014 https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#no_owner_effect\",\n+   \"[STRICT_READ_UNTRACKED] Reactive value read directly in an effect callback will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\",\n+   \"[STRICT_READ_UNTRACKED] Reactive value read directly in an effect callback will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\",\n+   \"[STRICT_READ_UNTRACKED] Reactive value read directly in an effect callback will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\",\n+   \"[NO_OWNER_EFFECT] Effects created outside a reactive context will never be disposed\n+   in effect\",\n+ ]\n\n  33 |   test(`${name}: mount without Solid development diagnostics`,async({page})=>{\n  34 |     await open(page,name);await settle(page);\n> 35 |     expect(page.probeWarnings,'warnings/errors emitted during mount').toEqual([]);\n     |                                                                       ^\n  36 |   });\n  37 | }\n  38 | test('drawer: keyboard focus, Escape and controlled reopen',async({page})=>{\n    at /private/tmp/solid2-browser-validation/tests/primitives.spec.js:35:71"
+      ],
+      "consoleCodes": [
+        "NO_OWNER_EFFECT",
+        "STRICT_READ_UNTRACKED"
+      ],
+      "pageErrors": []
+    },
+    {
+      "case": "calendar: mount without Solid development diagnostics",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 324,
+      "errors": [],
+      "consoleCodes": [],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: mount without Solid development diagnostics",
+      "browser": "chromium",
+      "status": "failed",
+      "durationMs": 284,
+      "errors": [
+        "Error: warnings/errors emitted during mount\n\nexpect(received).toEqual(expected) // deep equality\n\n- Expected  - 1\n+ Received  + 8\n\n- Array []\n+ Array [\n+   \"[STRICT_READ_UNTRACKED] Reactive value \\\"value\\\" read directly in <OTP.Root> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n+   in <Probe> \u203a <OTP.Root>\n+ [STRICT_READ_UNTRACKED] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md \u2014 https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#strict_read_untracked\",\n+   \"[STRICT_READ_UNTRACKED] Reactive value read directly in an effect callback will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n+   in <Probe> \u203a <OTP.Root> \u203a <FormControlContext> \u203a computed \u203a <OTPFieldContext> \u203a computed \u203a <Polymorphic> \u203a <Dynamic> \u203a <Anonymous> \u203a computed \u203a effect \u203a <OTP.Input>\",\n+   \"[STRICT_READ_UNTRACKED] Reactive value read directly in an effect callback will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\",\n+ ]\n\n  33 |   test(`${name}: mount without Solid development diagnostics`,async({page})=>{\n  34 |     await open(page,name);await settle(page);\n> 35 |     expect(page.probeWarnings,'warnings/errors emitted during mount').toEqual([]);\n     |                                                                       ^\n  36 |   });\n  37 | }\n  38 | test('drawer: keyboard focus, Escape and controlled reopen',async({page})=>{\n    at /private/tmp/solid2-browser-validation/tests/primitives.spec.js:35:71"
+      ],
+      "consoleCodes": [
+        "STRICT_READ_UNTRACKED"
+      ],
+      "pageErrors": []
+    },
+    {
+      "case": "direction: mount without Solid development diagnostics",
+      "browser": "chromium",
+      "status": "failed",
+      "durationMs": 376,
+      "errors": [
+        "Error: warnings/errors emitted during mount\n\nexpect(received).toEqual(expected) // deep equality\n\n- Expected  -  1\n+ Received  + 12\n\n- Array []\n+ Array [\n+   \"[EFFECT_RELAY_TEAR] memo \\\"computed\\\" ran twice for one write of \\\"signal\\\": once in the flush where \\\"signal\\\" changed, and again after effect \\\"effect\\\" relayed it by writing \\\"signal\\\" \u2014 the first frame showed the new \\\"signal\\\" with the stale \\\"signal\\\" (3 times so far). Nothing else writes \\\"signal\\\" \u2014 it is derived state: make it a memo over what the effect reads and every reader gets it in the same flush.\n+   in <Probe> \u203a <I18nProvider> \u203a <I18nContext> \u203a computed \u203a <DirectionConsumer> \u203a <Tabs.Root> \u203a <DomCollectionProvider> \u203a <provider> \u203a computed \u203a <TabsContext> \u203a computed \u203a <Polymorphic> \u203a <Dynamic> \u203a <Anonymous> \u203a computed \u203a effect \u203a <Tabs.List> \u203a <Polymorphic> \u203a <Dynamic> \u203a <Anonymous> \u203a computed \u203a effect \u203a <Tabs.Trigger> \u203a computed\n+ [EFFECT_RELAY_TEAR] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md \u2014 https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#effect_relay_tear\n+ [EFFECT_RELAY_TEAR] deeper evidence: import { attribution } from \\\"solid-js/attribution\\\"; attribution.enable() explains every re-run \u2014 why-chains, costs(), feedback(), history(\\\"hold\\\" | \\\"waterfall\\\") \u2014 agent loop: node_modules/@solidjs/diagnostics/skills/agent-loops/SKILL.md \u2014 https://github.com/solidjs/solid/blob/main/packages/diagnostics/skills/agent-loops/SKILL.md\",\n+   \"[EFFECT_RELAY_TEAR] memo \\\"computed\\\" ran twice for one write of \\\"signal\\\": once in the flush where \\\"signal\\\" changed, and again after effect \\\"effect\\\" relayed it by writing \\\"signal\\\" \u2014 the first frame showed the new \\\"signal\\\" with the stale \\\"signal\\\" (3 times so far). Nothing else writes \\\"signal\\\" \u2014 it is derived state: make it a memo over what the effect reads and every reader gets it in the same flush.\n+   in <Probe> \u203a <I18nProvider> \u203a <I18nContext> \u203a computed \u203a <DirectionConsumer> \u203a <Tabs.Root> \u203a <DomCollectionProvider> \u203a <provider> \u203a computed \u203a <TabsContext> \u203a computed \u203a <Polymorphic> \u203a <Dynamic> \u203a <Anonymous> \u203a computed \u203a effect \u203a <Tabs.List> \u203a <Polymorphic> \u203a <Dynamic> \u203a <Anonymous> \u203a computed \u203a effect \u203a <Tabs.Trigger> \u203a computed\",\n+   \"[EFFECT_RELAY_TEAR] memo \\\"computed\\\" ran twice for one write of \\\"signal\\\": once in the flush where \\\"signal\\\" changed, and again after effect \\\"effect\\\" relayed it by writing \\\"signal\\\" \u2014 the first frame showed the new \\\"signal\\\" with the stale \\\"signal\\\" (3 times so far). Nothing else writes \\\"signal\\\" \u2014 it is derived state: make it a memo over what the effect reads and every reader gets it in the same flush.\n+   in <Probe> \u203a <I18nProvider> \u203a <I18nContext> \u203a computed \u203a <DirectionConsumer> \u203a <Tabs.Root> \u203a <DomCollectionProvider> \u203a <provider> \u203a computed \u203a <TabsContext> \u203a computed \u203a <Polymorphic> \u203a <Dynamic> \u203a <Anonymous> \u203a computed \u203a effect \u203a <Tabs.List> \u203a <Polymorphic> \u203a <Dynamic> \u203a <Anonymous> \u203a computed \u203a effect \u203a <Tabs.Trigger> \u203a computed\",\n+   \"[EFFECT_RELAY_TEAR] memo \\\"computed\\\" ran twice for one write of \\\"signal\\\": once in the flush where \\\"signal\\\" changed, and again after effect \\\"effect\\\" relayed it by writing \\\"signal\\\" \u2014 the first frame showed the new \\\"signal\\\" with the stale \\\"signal\\\" (3 times so far). Nothing else writes \\\"signal\\\" \u2014 it is derived state: make it a memo over what the effect reads and every reader gets it in the same flush.\n+   in <Probe> \u203a <I18nProvider> \u203a <I18nContext> \u203a computed \u203a <I18nProvider> \u203a <I18nContext> \u203a computed \u203a <DirectionConsumer> \u203a <Tabs.Root> \u203a <DomCollectionProvider> \u203a <provider> \u203a computed \u203a <TabsContext> \u203a computed \u203a <Polymorphic> \u203a <Dynamic> \u203a <Anonymous> \u203a computed \u203a effect \u203a <Tabs.List> \u203a <Polymorphic> \u203a <Dynamic> \u203a <Anonymous> \u203a computed \u203a effect \u203a <Tabs.Trigger> \u203a computed\",\n+ ]\n\n  33 |   test(`${name}: mount without Solid development diagnostics`,async({page})=>{\n  34 |     await open(page,name);await settle(page);\n> 35 |     expect(page.probeWarnings,'warnings/errors emitted during mount').toEqual([]);\n     |                                                                       ^\n  36 |   });\n  37 | }\n  38 | test('drawer: keyboard focus, Escape and controlled reopen',async({page})=>{\n    at /private/tmp/solid2-browser-validation/tests/primitives.spec.js:35:71"
+      ],
+      "consoleCodes": [
+        "EFFECT_RELAY_TEAR"
+      ],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: keyboard focus, Escape and controlled reopen",
+      "browser": "chromium",
+      "status": "failed",
+      "durationMs": 3168,
+      "errors": [
+        "Error: expect(locator).toBeHidden() failed\n\nLocator:  getByRole('dialog', { name: 'Drawer probe' })\nExpected: hidden\nReceived: visible\nTimeout:  2500ms\n\nCall log:\n  - Expect \"toBeHidden\" getByRole('dialog', { name: 'Drawer probe' }) with timeout 2500ms\n  - waiting for getByRole('dialog', { name: 'Drawer probe' })\n    9 \u00d7 locator resolved to <div role=\"dialog\" tabindex=\"-1\" class=\"drawer\" data-expanded=\"\" data-side=\"bottom\" data-testid=\"drawer\" id=\"dialog-cl-0-content\" aria-labelledby=\"dialog-cl-0-title\" aria-describedby=\"dialog-cl-0-description\">\u2026</div>\n      - unexpected value \"visible\"\n\n\n  43 |   await page.getByRole('button',{name:'Dismiss'}).focus();await page.keyboard.press('Tab');\n  44 |   expect(await dialog.evaluate(el=>el.contains(document.activeElement))).toBe(true);\n> 45 |   await page.keyboard.press('Escape');await expect(dialog).toBeHidden();await expect(trigger).toBeFocused();\n     |                                                            ^\n  46 |   await trigger.click();await expect(dialog).toBeVisible();await page.getByRole('button',{name:'Dismiss'}).click();await expect(dialog).toBeHidden();\n  47 | });\n  48 | test('drawer: mouse drag snaps halfway then dismisses',async({page})=>{\n    at /private/tmp/solid2-browser-validation/tests/primitives.spec.js:45:60"
+      ],
+      "consoleCodes": [
+        "EFFECT_RELAY_TEAR",
+        "EFFECT_WRITES_OWN_SOURCE",
+        "NO_OWNER_EFFECT"
+      ],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: mouse drag snaps halfway then dismisses",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 1856,
+      "errors": [],
+      "consoleCodes": [
+        "EFFECT_RELAY_TEAR",
+        "EFFECT_WRITES_OWN_SOURCE",
+        "NO_OWNER_EFFECT"
+      ],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: scrollable child and portal/scroll-lock cleanup",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 730,
+      "errors": [],
+      "consoleCodes": [
+        "EFFECT_RELAY_TEAR",
+        "EFFECT_WRITES_OWN_SOURCE",
+        "NO_OWNER_EFFECT"
+      ],
+      "pageErrors": []
+    },
+    {
+      "case": "resizable: keyboard sizing, constraints and collapse/expand",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 340,
+      "errors": [],
+      "consoleCodes": [
+        "NO_OWNER_EFFECT",
+        "STRICT_READ_UNTRACKED",
+        "UNSTABLE_MEMO_OUTPUT"
+      ],
+      "pageErrors": []
+    },
+    {
+      "case": "resizable: mouse drag updates controlled sizes and geometry",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 544,
+      "errors": [],
+      "consoleCodes": [
+        "NO_OWNER_EFFECT",
+        "STRICT_READ_UNTRACKED"
+      ],
+      "pageErrors": []
+    },
+    {
+      "case": "resizable: vertical keyboard and observer cleanup",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 344,
+      "errors": [],
+      "consoleCodes": [
+        "NO_OWNER_EFFECT",
+        "STRICT_READ_UNTRACKED"
+      ],
+      "pageErrors": []
+    },
+    {
+      "case": "calendar: pointer selection, unavailable day and month navigation",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 456,
+      "errors": [],
+      "consoleCodes": [
+        "EFFECT_RELAY_TEAR",
+        "STRICT_READ_UNTRACKED"
+      ],
+      "pageErrors": []
+    },
+    {
+      "case": "calendar: keyboard focus and Enter selection",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 358,
+      "errors": [],
+      "consoleCodes": [
+        "EFFECT_RELAY_TEAR",
+        "STRICT_READ_UNTRACKED"
+      ],
+      "pageErrors": []
+    },
+    {
+      "case": "calendar: range and multiple controlled selection",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 814,
+      "errors": [],
+      "consoleCodes": [],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: typing, completion and external controlled value",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 421,
+      "errors": [],
+      "consoleCodes": [
+        "EFFECT_RELAY_TEAR",
+        "STRICT_READ_UNTRACKED"
+      ],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: invalid characters, deletion, length and cleanup",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 371,
+      "errors": [],
+      "consoleCodes": [
+        "STRICT_READ_UNTRACKED"
+      ],
+      "pageErrors": []
+    },
+    {
+      "case": "direction: locale RTL, nested LTR and dynamic locale keyboard behavior",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 406,
+      "errors": [],
+      "consoleCodes": [
+        "EFFECT_RELAY_TEAR",
+        "EFFECT_WRITES_OWN_SOURCE",
+        "STRICT_READ_UNTRACKED"
+      ],
+      "pageErrors": []
+    },
+    {
+      "case": "direction: explicit DOM RTL must agree with consumer keyboard direction",
+      "browser": "chromium",
+      "status": "failed",
+      "durationMs": 2878,
+      "errors": [
+        "Error: expect(locator).toBeFocused() failed\n\nLocator:  getByTestId('explicit-rtl').getByRole('tab', { name: 'Two', exact: true })\nExpected: focused\nReceived: inactive\nTimeout:  2500ms\n\nCall log:\n  - Expect \"toBeFocused\" getByTestId('explicit-rtl').getByRole('tab', { name: 'Two', exact: true }) with timeout 2500ms\n  - waiting for getByTestId('explicit-rtl').getByRole('tab', { name: 'Two', exact: true })\n    9 \u00d7 locator resolved to <button role=\"tab\" type=\"button\" tabindex=\"-1\" data-key=\"two\" aria-selected=\"false\" id=\"tabs-cl-1-trigger-two\" data-orientation=\"horizontal\">Two</button>\n      - unexpected value \"inactive\"\n\n\n  117 | test('direction: explicit DOM RTL must agree with consumer keyboard direction',async({page})=>{\n  118 |   await open(page,'direction');const fixture=page.getByTestId('explicit-rtl');expect(await fixture.evaluate(el=>getComputedStyle(el).direction)).toBe('rtl');\n> 119 |   await fixture.getByRole('tab',{name:'One',exact:true}).focus();await page.keyboard.press('ArrowLeft');await expect(fixture.getByRole('tab',{name:'Two',exact:true})).toBeFocused();\n      |                                                                                                                                                                        ^\n  120 | });\n  121 |\n  122 | test('otp: provided Label must associate with its input',async({page})=>{\n    at /private/tmp/solid2-browser-validation/tests/primitives.spec.js:119:168"
+      ],
+      "consoleCodes": [
+        "EFFECT_RELAY_TEAR",
+        "EFFECT_WRITES_OWN_SOURCE",
+        "STRICT_READ_UNTRACKED"
+      ],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: provided Label must associate with its input",
+      "browser": "chromium",
+      "status": "failed",
+      "durationMs": 2801,
+      "errors": [
+        "Error: expect(locator).toHaveCount(expected) failed\n\nLocator:  getByLabel('Verification code')\nExpected: 1\nReceived: 0\nTimeout:  2500ms\n\nCall log:\n  - Expect \"toHaveCount\" getByLabel('Verification code') with timeout 2500ms\n  - waiting for getByLabel('Verification code')\n    9 \u00d7 locator resolved to 0 elements\n      - unexpected value \"0\"\n\n\n  121 |\n  122 | test('otp: provided Label must associate with its input',async({page})=>{\n> 123 |   await open(page,'otp');await expect(page.getByLabel('Verification code')).toHaveCount(1);\n      |                                                                             ^\n  124 | });\n  125 |\n  126 | test('otp: Root name must participate in native FormData',async({page})=>{\n    at /private/tmp/solid2-browser-validation/tests/primitives.spec.js:123:77"
+      ],
+      "consoleCodes": [
+        "STRICT_READ_UNTRACKED"
+      ],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: Root name must participate in native FormData",
+      "browser": "chromium",
+      "status": "failed",
+      "durationMs": 2881,
+      "errors": [
+        "Error: expect(locator).toHaveText(expected) failed\n\nLocator:  getByTestId('submitted')\nExpected: \"123456\"\nReceived: \"null\"\nTimeout:  2500ms\n\nCall log:\n  - Expect \"toHaveText\" getByTestId('submitted') with timeout 2500ms\n  - waiting for getByTestId('submitted')\n    9 \u00d7 locator resolved to <output data-testid=\"submitted\">null</output>\n      - unexpected value \"null\"\n\n\n  125 |\n  126 | test('otp: Root name must participate in native FormData',async({page})=>{\n> 127 |   await open(page,'otp');await page.locator('[data-kb-otp-field-input]').fill('123456');await page.getByRole('button',{name:'Submit code'}).click();await expect(page.getByTestId('submitted')).toHaveText('123456');\n      |                                                                                                                                                                                                 ^\n  128 | });\n  129 |\n  130 | test('otp: explicit input id/name restores label and form wiring',async({page})=>{\n    at /private/tmp/solid2-browser-validation/tests/primitives.spec.js:127:193"
+      ],
+      "consoleCodes": [
+        "STRICT_READ_UNTRACKED"
+      ],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: explicit input id/name restores label and form wiring",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 376,
+      "errors": [],
+      "consoleCodes": [
+        "STRICT_READ_UNTRACKED"
+      ],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: browser touch events dismiss the fully opened drawer",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 1207,
+      "errors": [],
+      "consoleCodes": [
+        "EFFECT_RELAY_TEAR",
+        "EFFECT_WRITES_OWN_SOURCE",
+        "NO_OWNER_EFFECT"
+      ],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: mount without Solid development diagnostics",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 1191,
+      "errors": [],
+      "consoleCodes": [],
+      "pageErrors": []
+    },
+    {
+      "case": "resizable: mount without Solid development diagnostics",
+      "browser": "firefox",
+      "status": "failed",
+      "durationMs": 376,
+      "errors": [
+        "Error: warnings/errors emitted during mount\n\nexpect(received).toEqual(expected) // deep equality\n\n- Expected  -  1\n+ Received  + 14\n\n- Array []\n+ Array [\n+   \"[STRICT_READ_UNTRACKED] Reactive value read directly in an effect callback will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n+ [STRICT_READ_UNTRACKED] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md \u2014 https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#strict_read_untracked\",\n+   \"[STRICT_READ_UNTRACKED] Reactive value read directly in an effect callback will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\",\n+   \"[STRICT_READ_UNTRACKED] Reactive value read directly in an effect callback will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\",\n+   \"[NO_OWNER_EFFECT] Effects created outside a reactive context will never be disposed\n+   in effect\n+ [NO_OWNER_EFFECT] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md \u2014 https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#no_owner_effect\",\n+   \"[STRICT_READ_UNTRACKED] Reactive value read directly in an effect callback will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\",\n+   \"[STRICT_READ_UNTRACKED] Reactive value read directly in an effect callback will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\",\n+   \"[STRICT_READ_UNTRACKED] Reactive value read directly in an effect callback will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\",\n+   \"[NO_OWNER_EFFECT] Effects created outside a reactive context will never be disposed\n+   in effect\",\n+ ]\n\n  33 |   test(`${name}: mount without Solid development diagnostics`,async({page})=>{\n  34 |     await open(page,name);await settle(page);\n> 35 |     expect(page.probeWarnings,'warnings/errors emitted during mount').toEqual([]);\n     |                                                                       ^\n  36 |   });\n  37 | }\n  38 | test('drawer: keyboard focus, Escape and controlled reopen',async({page})=>{\n    at /private/tmp/solid2-browser-validation/tests/primitives.spec.js:35:71"
+      ],
+      "consoleCodes": [
+        "NO_OWNER_EFFECT",
+        "STRICT_READ_UNTRACKED"
+      ],
+      "pageErrors": []
+    },
+    {
+      "case": "calendar: mount without Solid development diagnostics",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 1185,
+      "errors": [],
+      "consoleCodes": [],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: mount without Solid development diagnostics",
+      "browser": "firefox",
+      "status": "failed",
+      "durationMs": 541,
+      "errors": [
+        "Error: warnings/errors emitted during mount\n\nexpect(received).toEqual(expected) // deep equality\n\n- Expected  -  1\n+ Received  + 12\n\n- Array []\n+ Array [\n+   \"[STRICT_READ_UNTRACKED] Reactive value \\\"value\\\" read directly in <OTP.Root> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n+   in <Probe> \u203a <OTP.Root>\n+ [STRICT_READ_UNTRACKED] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md \u2014 https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#strict_read_untracked\",\n+   \"[STRICT_READ_UNTRACKED] Reactive value read directly in <FormControlLabel> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n+   in <Probe> \u203a <OTP.Root> \u203a <FormControlContext> \u203a computed \u203a <OTPFieldContext> \u203a computed \u203a <Polymorphic> \u203a <Dynamic> \u203a <Anonymous> \u203a computed \u203a effect \u203a <OTP.Label> \u203a <FormControlLabel>\",\n+   \"[STRICT_READ_UNTRACKED] Reactive value read directly in an effect callback will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n+   in <Probe> \u203a <OTP.Root> \u203a <FormControlContext> \u203a computed \u203a <OTPFieldContext> \u203a computed \u203a <Polymorphic> \u203a <Dynamic> \u203a <Anonymous> \u203a computed \u203a effect \u203a <OTP.Input>\",\n+   \"[STRICT_READ_UNTRACKED] Reactive value read directly in <OTP.Input> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n+   in <Probe> \u203a <OTP.Root> \u203a <FormControlContext> \u203a computed \u203a <OTPFieldContext> \u203a computed \u203a <Polymorphic> \u203a <Dynamic> \u203a <Anonymous> \u203a computed \u203a effect \u203a <OTP.Input>\",\n+   \"[STRICT_READ_UNTRACKED] Reactive value read directly in an effect callback will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\",\n+ ]\n\n  33 |   test(`${name}: mount without Solid development diagnostics`,async({page})=>{\n  34 |     await open(page,name);await settle(page);\n> 35 |     expect(page.probeWarnings,'warnings/errors emitted during mount').toEqual([]);\n     |                                                                       ^\n  36 |   });\n  37 | }\n  38 | test('drawer: keyboard focus, Escape and controlled reopen',async({page})=>{\n    at /private/tmp/solid2-browser-validation/tests/primitives.spec.js:35:71"
+      ],
+      "consoleCodes": [
+        "STRICT_READ_UNTRACKED"
+      ],
+      "pageErrors": []
+    },
+    {
+      "case": "direction: mount without Solid development diagnostics",
+      "browser": "firefox",
+      "status": "failed",
+      "durationMs": 1064,
+      "errors": [
+        "Error: warnings/errors emitted during mount\n\nexpect(received).toEqual(expected) // deep equality\n\n- Expected  -  1\n+ Received  + 12\n\n- Array []\n+ Array [\n+   \"[EFFECT_RELAY_TEAR] memo \\\"computed\\\" ran twice for one write of \\\"signal\\\": once in the flush where \\\"signal\\\" changed, and again after effect \\\"effect\\\" relayed it by writing \\\"signal\\\" \u2014 the first frame showed the new \\\"signal\\\" with the stale \\\"signal\\\" (3 times so far). Nothing else writes \\\"signal\\\" \u2014 it is derived state: make it a memo over what the effect reads and every reader gets it in the same flush.\n+   in <Probe> \u203a <I18nProvider> \u203a <I18nContext> \u203a computed \u203a <DirectionConsumer> \u203a <Tabs.Root> \u203a <DomCollectionProvider> \u203a <provider> \u203a computed \u203a <TabsContext> \u203a computed \u203a <Polymorphic> \u203a <Dynamic> \u203a <Anonymous> \u203a computed \u203a effect \u203a <Tabs.List> \u203a <Polymorphic> \u203a <Dynamic> \u203a <Anonymous> \u203a computed \u203a effect \u203a <Tabs.Trigger> \u203a computed\n+ [EFFECT_RELAY_TEAR] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md \u2014 https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#effect_relay_tear\n+ [EFFECT_RELAY_TEAR] deeper evidence: import { attribution } from \\\"solid-js/attribution\\\"; attribution.enable() explains every re-run \u2014 why-chains, costs(), feedback(), history(\\\"hold\\\" | \\\"waterfall\\\") \u2014 agent loop: node_modules/@solidjs/diagnostics/skills/agent-loops/SKILL.md \u2014 https://github.com/solidjs/solid/blob/main/packages/diagnostics/skills/agent-loops/SKILL.md\",\n+   \"[EFFECT_RELAY_TEAR] memo \\\"computed\\\" ran twice for one write of \\\"signal\\\": once in the flush where \\\"signal\\\" changed, and again after effect \\\"effect\\\" relayed it by writing \\\"signal\\\" \u2014 the first frame showed the new \\\"signal\\\" with the stale \\\"signal\\\" (3 times so far). Nothing else writes \\\"signal\\\" \u2014 it is derived state: make it a memo over what the effect reads and every reader gets it in the same flush.\n+   in <Probe> \u203a <I18nProvider> \u203a <I18nContext> \u203a computed \u203a <DirectionConsumer> \u203a <Tabs.Root> \u203a <DomCollectionProvider> \u203a <provider> \u203a computed \u203a <TabsContext> \u203a computed \u203a <Polymorphic> \u203a <Dynamic> \u203a <Anonymous> \u203a computed \u203a effect \u203a <Tabs.List> \u203a <Polymorphic> \u203a <Dynamic> \u203a <Anonymous> \u203a computed \u203a effect \u203a <Tabs.Trigger> \u203a computed\",\n+   \"[EFFECT_RELAY_TEAR] memo \\\"computed\\\" ran twice for one write of \\\"signal\\\": once in the flush where \\\"signal\\\" changed, and again after effect \\\"effect\\\" relayed it by writing \\\"signal\\\" \u2014 the first frame showed the new \\\"signal\\\" with the stale \\\"signal\\\" (3 times so far). Nothing else writes \\\"signal\\\" \u2014 it is derived state: make it a memo over what the effect reads and every reader gets it in the same flush.\n+   in <Probe> \u203a <I18nProvider> \u203a <I18nContext> \u203a computed \u203a <DirectionConsumer> \u203a <Tabs.Root> \u203a <DomCollectionProvider> \u203a <provider> \u203a computed \u203a <TabsContext> \u203a computed \u203a <Polymorphic> \u203a <Dynamic> \u203a <Anonymous> \u203a computed \u203a effect \u203a <Tabs.List> \u203a <Polymorphic> \u203a <Dynamic> \u203a <Anonymous> \u203a computed \u203a effect \u203a <Tabs.Trigger> \u203a computed\",\n+   \"[EFFECT_RELAY_TEAR] memo \\\"computed\\\" ran twice for one write of \\\"signal\\\": once in the flush where \\\"signal\\\" changed, and again after effect \\\"effect\\\" relayed it by writing \\\"signal\\\" \u2014 the first frame showed the new \\\"signal\\\" with the stale \\\"signal\\\" (3 times so far). Nothing else writes \\\"signal\\\" \u2014 it is derived state: make it a memo over what the effect reads and every reader gets it in the same flush.\n+   in <Probe> \u203a <I18nProvider> \u203a <I18nContext> \u203a computed \u203a <I18nProvider> \u203a <I18nContext> \u203a computed \u203a <DirectionConsumer> \u203a <Tabs.Root> \u203a <DomCollectionProvider> \u203a <provider> \u203a computed \u203a <TabsContext> \u203a computed \u203a <Polymorphic> \u203a <Dynamic> \u203a <Anonymous> \u203a computed \u203a effect \u203a <Tabs.List> \u203a <Polymorphic> \u203a <Dynamic> \u203a <Anonymous> \u203a computed \u203a effect \u203a <Tabs.Trigger> \u203a computed\",\n+ ]\n\n  33 |   test(`${name}: mount without Solid development diagnostics`,async({page})=>{\n  34 |     await open(page,name);await settle(page);\n> 35 |     expect(page.probeWarnings,'warnings/errors emitted during mount').toEqual([]);\n     |                                                                       ^\n  36 |   });\n  37 | }\n  38 | test('drawer: keyboard focus, Escape and controlled reopen',async({page})=>{\n    at /private/tmp/solid2-browser-validation/tests/primitives.spec.js:35:71"
+      ],
+      "consoleCodes": [
+        "EFFECT_RELAY_TEAR"
+      ],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: keyboard focus, Escape and controlled reopen",
+      "browser": "firefox",
+      "status": "failed",
+      "durationMs": 3774,
+      "errors": [
+        "Error: expect(locator).toBeHidden() failed\n\nLocator:  getByRole('dialog', { name: 'Drawer probe' })\nExpected: hidden\nReceived: visible\nTimeout:  2500ms\n\nCall log:\n  - Expect \"toBeHidden\" getByRole('dialog', { name: 'Drawer probe' }) with timeout 2500ms\n  - waiting for getByRole('dialog', { name: 'Drawer probe' })\n    9 \u00d7 locator resolved to <div role=\"dialog\" tabindex=\"-1\" class=\"drawer\" data-expanded=\"\" data-side=\"bottom\" data-testid=\"drawer\" id=\"dialog-cl-0-content\" aria-labelledby=\"dialog-cl-0-title\" aria-describedby=\"dialog-cl-0-description\">\u2026</div>\n      - unexpected value \"visible\"\n\n\n  43 |   await page.getByRole('button',{name:'Dismiss'}).focus();await page.keyboard.press('Tab');\n  44 |   expect(await dialog.evaluate(el=>el.contains(document.activeElement))).toBe(true);\n> 45 |   await page.keyboard.press('Escape');await expect(dialog).toBeHidden();await expect(trigger).toBeFocused();\n     |                                                            ^\n  46 |   await trigger.click();await expect(dialog).toBeVisible();await page.getByRole('button',{name:'Dismiss'}).click();await expect(dialog).toBeHidden();\n  47 | });\n  48 | test('drawer: mouse drag snaps halfway then dismisses',async({page})=>{\n    at /private/tmp/solid2-browser-validation/tests/primitives.spec.js:45:60"
+      ],
+      "consoleCodes": [
+        "EFFECT_RELAY_TEAR",
+        "EFFECT_WRITES_OWN_SOURCE",
+        "NO_OWNER_EFFECT"
+      ],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: mouse drag snaps halfway then dismisses",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 2153,
+      "errors": [],
+      "consoleCodes": [
+        "EFFECT_RELAY_TEAR",
+        "EFFECT_WRITES_OWN_SOURCE",
+        "NO_OWNER_EFFECT"
+      ],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: scrollable child and portal/scroll-lock cleanup",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 632,
+      "errors": [],
+      "consoleCodes": [
+        "EFFECT_RELAY_TEAR",
+        "EFFECT_WRITES_OWN_SOURCE",
+        "NO_OWNER_EFFECT"
+      ],
+      "pageErrors": []
+    },
+    {
+      "case": "resizable: keyboard sizing, constraints and collapse/expand",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 378,
+      "errors": [],
+      "consoleCodes": [
+        "NO_OWNER_EFFECT",
+        "STRICT_READ_UNTRACKED",
+        "UNSTABLE_MEMO_OUTPUT"
+      ],
+      "pageErrors": []
+    },
+    {
+      "case": "resizable: mouse drag updates controlled sizes and geometry",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 453,
+      "errors": [],
+      "consoleCodes": [
+        "NO_OWNER_EFFECT",
+        "STRICT_READ_UNTRACKED",
+        "UNSTABLE_MEMO_OUTPUT"
+      ],
+      "pageErrors": []
+    },
+    {
+      "case": "resizable: vertical keyboard and observer cleanup",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 400,
+      "errors": [],
+      "consoleCodes": [
+        "NO_OWNER_EFFECT",
+        "STRICT_READ_UNTRACKED"
+      ],
+      "pageErrors": []
+    },
+    {
+      "case": "calendar: pointer selection, unavailable day and month navigation",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 555,
+      "errors": [],
+      "consoleCodes": [
+        "EFFECT_RELAY_TEAR",
+        "STRICT_READ_UNTRACKED"
+      ],
+      "pageErrors": []
+    },
+    {
+      "case": "calendar: keyboard focus and Enter selection",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 446,
+      "errors": [],
+      "consoleCodes": [
+        "EFFECT_RELAY_TEAR",
+        "STRICT_READ_UNTRACKED"
+      ],
+      "pageErrors": []
+    },
+    {
+      "case": "calendar: range and multiple controlled selection",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 922,
+      "errors": [],
+      "consoleCodes": [],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: typing, completion and external controlled value",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 438,
+      "errors": [],
+      "consoleCodes": [
+        "EFFECT_RELAY_TEAR",
+        "STRICT_READ_UNTRACKED"
+      ],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: invalid characters, deletion, length and cleanup",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 751,
+      "errors": [],
+      "consoleCodes": [
+        "STRICT_READ_UNTRACKED"
+      ],
+      "pageErrors": []
+    },
+    {
+      "case": "direction: locale RTL, nested LTR and dynamic locale keyboard behavior",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 448,
+      "errors": [],
+      "consoleCodes": [
+        "EFFECT_RELAY_TEAR",
+        "EFFECT_WRITES_OWN_SOURCE",
+        "STRICT_READ_UNTRACKED"
+      ],
+      "pageErrors": []
+    },
+    {
+      "case": "direction: explicit DOM RTL must agree with consumer keyboard direction",
+      "browser": "firefox",
+      "status": "failed",
+      "durationMs": 2960,
+      "errors": [
+        "Error: expect(locator).toBeFocused() failed\n\nLocator:  getByTestId('explicit-rtl').getByRole('tab', { name: 'Two', exact: true })\nExpected: focused\nReceived: inactive\nTimeout:  2500ms\n\nCall log:\n  - Expect \"toBeFocused\" getByTestId('explicit-rtl').getByRole('tab', { name: 'Two', exact: true }) with timeout 2500ms\n  - waiting for getByTestId('explicit-rtl').getByRole('tab', { name: 'Two', exact: true })\n    9 \u00d7 locator resolved to <button role=\"tab\" type=\"button\" tabindex=\"-1\" data-key=\"two\" aria-selected=\"false\" id=\"tabs-cl-1-trigger-two\" data-orientation=\"horizontal\">Two</button>\n      - unexpected value \"inactive\"\n\n\n  117 | test('direction: explicit DOM RTL must agree with consumer keyboard direction',async({page})=>{\n  118 |   await open(page,'direction');const fixture=page.getByTestId('explicit-rtl');expect(await fixture.evaluate(el=>getComputedStyle(el).direction)).toBe('rtl');\n> 119 |   await fixture.getByRole('tab',{name:'One',exact:true}).focus();await page.keyboard.press('ArrowLeft');await expect(fixture.getByRole('tab',{name:'Two',exact:true})).toBeFocused();\n      |                                                                                                                                                                        ^\n  120 | });\n  121 |\n  122 | test('otp: provided Label must associate with its input',async({page})=>{\n    at /private/tmp/solid2-browser-validation/tests/primitives.spec.js:119:168"
+      ],
+      "consoleCodes": [
+        "EFFECT_RELAY_TEAR",
+        "EFFECT_WRITES_OWN_SOURCE",
+        "STRICT_READ_UNTRACKED"
+      ],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: provided Label must associate with its input",
+      "browser": "firefox",
+      "status": "failed",
+      "durationMs": 3862,
+      "errors": [
+        "Error: expect(locator).toHaveCount(expected) failed\n\nLocator:  getByLabel('Verification code')\nExpected: 1\nReceived: 0\nTimeout:  2500ms\n\nCall log:\n  - Expect \"toHaveCount\" getByLabel('Verification code') with timeout 2500ms\n  - waiting for getByLabel('Verification code')\n    9 \u00d7 locator resolved to 0 elements\n      - unexpected value \"0\"\n\n\n  121 |\n  122 | test('otp: provided Label must associate with its input',async({page})=>{\n> 123 |   await open(page,'otp');await expect(page.getByLabel('Verification code')).toHaveCount(1);\n      |                                                                             ^\n  124 | });\n  125 |\n  126 | test('otp: Root name must participate in native FormData',async({page})=>{\n    at /private/tmp/solid2-browser-validation/tests/primitives.spec.js:123:77"
+      ],
+      "consoleCodes": [
+        "STRICT_READ_UNTRACKED"
+      ],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: Root name must participate in native FormData",
+      "browser": "firefox",
+      "status": "failed",
+      "durationMs": 3785,
+      "errors": [
+        "Error: expect(locator).toHaveText(expected) failed\n\nLocator:  getByTestId('submitted')\nExpected: \"123456\"\nReceived: \"null\"\nTimeout:  2500ms\n\nCall log:\n  - Expect \"toHaveText\" getByTestId('submitted') with timeout 2500ms\n  - waiting for getByTestId('submitted')\n    9 \u00d7 locator resolved to <output data-testid=\"submitted\">null</output>\n      - unexpected value \"null\"\n\n\n  125 |\n  126 | test('otp: Root name must participate in native FormData',async({page})=>{\n> 127 |   await open(page,'otp');await page.locator('[data-kb-otp-field-input]').fill('123456');await page.getByRole('button',{name:'Submit code'}).click();await expect(page.getByTestId('submitted')).toHaveText('123456');\n      |                                                                                                                                                                                                 ^\n  128 | });\n  129 |\n  130 | test('otp: explicit input id/name restores label and form wiring',async({page})=>{\n    at /private/tmp/solid2-browser-validation/tests/primitives.spec.js:127:193"
+      ],
+      "consoleCodes": [
+        "HOT_SCOPE_TIME",
+        "STRICT_READ_UNTRACKED"
+      ],
+      "pageErrors": []
+    },
+    {
+      "case": "otp: explicit input id/name restores label and form wiring",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 1324,
+      "errors": [],
+      "consoleCodes": [
+        "HOT_SCOPE_TIME",
+        "STRICT_READ_UNTRACKED"
+      ],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: browser touch events dismiss the fully opened drawer",
+      "browser": "firefox",
+      "status": "skipped",
+      "durationMs": 181,
+      "errors": [],
+      "consoleCodes": [],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: close button restores focus and permits reopening",
+      "browser": "chromium",
+      "status": "passed",
+      "durationMs": 1731,
+      "errors": [],
+      "consoleCodes": [
+        "EFFECT_RELAY_TEAR",
+        "EFFECT_WRITES_OWN_SOURCE",
+        "NO_OWNER_EFFECT"
+      ],
+      "pageErrors": []
+    },
+    {
+      "case": "drawer: close button restores focus and permits reopening",
+      "browser": "firefox",
+      "status": "passed",
+      "durationMs": 2202,
+      "errors": [],
+      "consoleCodes": [
+        "EFFECT_RELAY_TEAR",
+        "EFFECT_WRITES_OWN_SOURCE",
+        "NO_OWNER_EFFECT"
+      ],
+      "pageErrors": []
+    }
+  ]
+}

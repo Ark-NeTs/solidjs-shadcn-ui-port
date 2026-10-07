@@ -1,0 +1,486 @@
+diff --git a/dist/dialog/BOdIttv5.js b/dist/dialog/BOdIttv5.js
+index 7824ed52c77a7e431f7e5e4c621d1385a257508b..6223f10dd00f9544c294e95535ae7ce90b5f9b63 100644
+--- a/dist/dialog/BOdIttv5.js
++++ b/dist/dialog/BOdIttv5.js
+@@ -6,8 +6,7 @@ import { r as ButtonRoot } from "../button/C_WaGidW.js";
+ import { t as DismissableLayer } from "../dismissable-layer/DXLD03yU.js";
+ import { Portal, createComponent, memo, mergeProps } from "@solidjs/web";
+ import { combineStyle } from "@solid-primitives/props";
+-import { Show, createContext, createEffect, createSignal, createUniqueId, merge, omit, useContext } from "solid-js";
+-import { createPresence } from "@solid-primitives/presence";
++import { Show, createContext, createEffect, createMemo, createSignal, createUniqueId, merge, omit, useContext } from "solid-js";
+ import { callHandler } from "@kobalte/utils";
+ import { createFocusTrap } from "@solid-primitives/focus";
+ import { createHideOutside } from "@solid-primitives/interaction";
+@@ -47,7 +46,7 @@ function DialogCloseButton(props) {
+ function DialogContent(props) {
+ 	const [ref, setRef] = createSignal(void 0, { ownedWrite: true });
+ 	const context = useDialogContext();
+-	const mergedProps = merge({ id: context.generateId("content") }, props);
++	const mergedProps = merge({ get id() { return context.generateId("content"); } }, props);
+ 	const others = omit(mergedProps, "ref", "onOpenAutoFocus", "onCloseAutoFocus", "onPointerDownOutside", "onFocusOutside", "onInteractOutside");
+ 	let hasInteractedOutside = false;
+ 	let hasPointerDownOutside = false;
+@@ -101,7 +100,8 @@ function DialogContent(props) {
+ 		onInitialFocus: mergedProps.onOpenAutoFocus,
+ 		onFinalFocus: onCloseAutoFocus
+ 	});
+-	createEffect(() => others.id, (id) => context.registerContentId(id));
++	// Register the accessor once so DOM IDs and ARIA consumers derive from the same input.
++	createEffect(() => () => others.id, (id) => context.registerContentId(id));
+ 	return createComponent(Show, {
+ 		get when() {
+ 			return context.contentPresent();
+@@ -149,9 +149,10 @@ function DialogContent(props) {
+ */
+ function DialogDescription(props) {
+ 	const context = useDialogContext();
+-	const mergedProps = merge({ id: context.generateId("description") }, props);
++	const mergedProps = merge({ get id() { return context.generateId("description"); } }, props);
+ 	const others = omit(mergedProps, "id");
+-	createEffect(() => mergedProps.id, (id) => context.registerDescriptionId(id));
++	// Register the accessor once so DOM IDs and ARIA consumers derive from the same input.
++	createEffect(() => () => mergedProps.id, (id) => context.registerDescriptionId(id));
+ 	return createComponent(Polymorphic, mergeProps({
+ 		as: "p",
+ 		get id() {
+@@ -225,9 +226,21 @@ function DialogRoot(props) {
+ 		modal: true,
+ 		translations: DIALOG_INTL_TRANSLATIONS
+ 	}, props);
+-	const [contentId, setContentId] = createSignal(void 0, { ownedWrite: true });
+-	const [titleId, setTitleId] = createSignal(void 0, { ownedWrite: true });
+-	const [descriptionId, setDescriptionId] = createSignal(void 0, { ownedWrite: true });
++	const [contentIdSource, setContentIdSource] = createSignal(void 0, { ownedWrite: true });
++	const contentId = () => {
++		const source = contentIdSource();
++		return typeof source === "function" ? source() : source;
++	};
++	const [titleIdSource, setTitleIdSource] = createSignal(void 0, { ownedWrite: true });
++	const titleId = () => {
++		const source = titleIdSource();
++		return typeof source === "function" ? source() : source;
++	};
++	const [descriptionIdSource, setDescriptionIdSource] = createSignal(void 0, { ownedWrite: true });
++	const descriptionId = () => {
++		const source = descriptionIdSource();
++		return typeof source === "function" ? source() : source;
++	};
+ 	const [overlayRef, setOverlayRef] = createSignal(void 0, { ownedWrite: true });
+ 	const [contentRef, setContentRef] = createSignal(void 0, { ownedWrite: true });
+ 	const [triggerRef, setTriggerRef] = createSignal(void 0, { ownedWrite: true });
+@@ -236,9 +249,10 @@ function DialogRoot(props) {
+ 		defaultOpen: () => mergedProps.defaultOpen,
+ 		onOpenChange: (isOpen) => mergedProps.onOpenChange?.(isOpen)
+ 	});
+-	const shouldMount = () => mergedProps.forceMount || disclosureState.isOpen();
+-	const { isMounted: overlayPresent } = createPresence(() => shouldMount() || void 0, { transitionDuration: 0 });
+-	const { isMounted: contentPresent } = createPresence(() => shouldMount() || void 0, { transitionDuration: 0 });
++	// Dialog has no presence duration. Derive mounting directly; Drawer retains its own exit state.
++	const present = createMemo(() => Boolean(mergedProps.forceMount || disclosureState.isOpen()));
++	const overlayPresent = present;
++	const contentPresent = present;
+ 	const context = {
+ 		translations: () => mergedProps.translations ?? DIALOG_INTL_TRANSLATIONS,
+ 		isOpen: disclosureState.isOpen,
+@@ -258,9 +272,9 @@ function DialogRoot(props) {
+ 		toggle: disclosureState.toggle,
+ 		setTriggerRef,
+ 		generateId: (suffix) => `${mergedProps.id}-${suffix}`,
+-		registerContentId: createRegisterId(setContentId),
+-		registerTitleId: createRegisterId(setTitleId),
+-		registerDescriptionId: createRegisterId(setDescriptionId)
++		registerContentId: createRegisterId((source) => setContentIdSource(() => source)),
++		registerTitleId: createRegisterId((source) => setTitleIdSource(() => source)),
++		registerDescriptionId: createRegisterId((source) => setDescriptionIdSource(() => source))
+ 	};
+ 	return createComponent(DialogContext, {
+ 		value: context,
+@@ -276,9 +290,10 @@ function DialogRoot(props) {
+ */
+ function DialogTitle(props) {
+ 	const context = useDialogContext();
+-	const mergedProps = merge({ id: context.generateId("title") }, props);
++	const mergedProps = merge({ get id() { return context.generateId("title"); } }, props);
+ 	const others = omit(mergedProps, "id");
+-	createEffect(() => mergedProps.id, (id) => context.registerTitleId(id));
++	// Register the accessor once so DOM IDs and ARIA consumers derive from the same input.
++	createEffect(() => () => mergedProps.id, (id) => context.registerTitleId(id));
+ 	return createComponent(Polymorphic, mergeProps({
+ 		as: "h2",
+ 		get id() {
+diff --git a/dist/dialog/Dqui1AYx.jsx b/dist/dialog/Dqui1AYx.jsx
+index 7b82e690587a8274154701e325844b16f6679434..364a4b007c4049418a97a24856225b52ee8344ba 100644
+--- a/dist/dialog/Dqui1AYx.jsx
++++ b/dist/dialog/Dqui1AYx.jsx
+@@ -5,8 +5,7 @@ import { t as createRegisterId } from "../create-register-id/BLTiiqMx.jsx";
+ import { n as button_exports } from "../button/Cw4fT4wG.jsx";
+ import { t as DismissableLayer } from "../dismissable-layer/RyRdwdaj.jsx";
+ import { combineStyle } from "@solid-primitives/props";
+-import { Show, createContext, createEffect, createSignal, createUniqueId, merge, omit, useContext } from "solid-js";
+-import { createPresence } from "@solid-primitives/presence";
++import { Show, createContext, createEffect, createMemo, createSignal, createUniqueId, merge, omit, useContext } from "solid-js";
+ import { Portal } from "@solidjs/web";
+ import { callHandler } from "@kobalte/utils";
+ import { createFocusTrap } from "@solid-primitives/focus";
+@@ -42,7 +41,7 @@ function DialogCloseButton(props) {
+ function DialogContent(props) {
+ 	const [ref, setRef] = createSignal(void 0, { ownedWrite: true });
+ 	const context = useDialogContext();
+-	const mergedProps = merge({ id: context.generateId("content") }, props);
++	const mergedProps = merge({ get id() { return context.generateId("content"); } }, props);
+ 	const others = omit(mergedProps, "ref", "onOpenAutoFocus", "onCloseAutoFocus", "onPointerDownOutside", "onFocusOutside", "onInteractOutside");
+ 	let hasInteractedOutside = false;
+ 	let hasPointerDownOutside = false;
+@@ -96,7 +95,8 @@ function DialogContent(props) {
+ 		onInitialFocus: mergedProps.onOpenAutoFocus,
+ 		onFinalFocus: onCloseAutoFocus
+ 	});
+-	createEffect(() => others.id, (id) => context.registerContentId(id));
++	// Register the accessor once so DOM IDs and ARIA consumers derive from the same input.
++	createEffect(() => () => others.id, (id) => context.registerContentId(id));
+ 	return <Show when={context.contentPresent()}>
+ 			<DismissableLayer ref={[(el) => {
+ 		context.setContentRef(el);
+@@ -111,9 +111,10 @@ function DialogContent(props) {
+ */
+ function DialogDescription(props) {
+ 	const context = useDialogContext();
+-	const mergedProps = merge({ id: context.generateId("description") }, props);
++	const mergedProps = merge({ get id() { return context.generateId("description"); } }, props);
+ 	const others = omit(mergedProps, "id");
+-	createEffect(() => mergedProps.id, (id) => context.registerDescriptionId(id));
++	// Register the accessor once so DOM IDs and ARIA consumers derive from the same input.
++	createEffect(() => () => mergedProps.id, (id) => context.registerDescriptionId(id));
+ 	return <Polymorphic as="p" id={mergedProps.id} {...others} />;
+ }
+ //#endregion
+@@ -159,9 +160,21 @@ function DialogRoot(props) {
+ 		modal: true,
+ 		translations: DIALOG_INTL_TRANSLATIONS
+ 	}, props);
+-	const [contentId, setContentId] = createSignal(void 0, { ownedWrite: true });
+-	const [titleId, setTitleId] = createSignal(void 0, { ownedWrite: true });
+-	const [descriptionId, setDescriptionId] = createSignal(void 0, { ownedWrite: true });
++	const [contentIdSource, setContentIdSource] = createSignal(void 0, { ownedWrite: true });
++	const contentId = () => {
++		const source = contentIdSource();
++		return typeof source === "function" ? source() : source;
++	};
++	const [titleIdSource, setTitleIdSource] = createSignal(void 0, { ownedWrite: true });
++	const titleId = () => {
++		const source = titleIdSource();
++		return typeof source === "function" ? source() : source;
++	};
++	const [descriptionIdSource, setDescriptionIdSource] = createSignal(void 0, { ownedWrite: true });
++	const descriptionId = () => {
++		const source = descriptionIdSource();
++		return typeof source === "function" ? source() : source;
++	};
+ 	const [overlayRef, setOverlayRef] = createSignal(void 0, { ownedWrite: true });
+ 	const [contentRef, setContentRef] = createSignal(void 0, { ownedWrite: true });
+ 	const [triggerRef, setTriggerRef] = createSignal(void 0, { ownedWrite: true });
+@@ -170,9 +183,10 @@ function DialogRoot(props) {
+ 		defaultOpen: () => mergedProps.defaultOpen,
+ 		onOpenChange: (isOpen) => mergedProps.onOpenChange?.(isOpen)
+ 	});
+-	const shouldMount = () => mergedProps.forceMount || disclosureState.isOpen();
+-	const { isMounted: overlayPresent } = createPresence(() => shouldMount() || void 0, { transitionDuration: 0 });
+-	const { isMounted: contentPresent } = createPresence(() => shouldMount() || void 0, { transitionDuration: 0 });
++	// Dialog has no presence duration. Derive mounting directly; Drawer retains its own exit state.
++	const present = createMemo(() => Boolean(mergedProps.forceMount || disclosureState.isOpen()));
++	const overlayPresent = present;
++	const contentPresent = present;
+ 	const context = {
+ 		translations: () => mergedProps.translations ?? DIALOG_INTL_TRANSLATIONS,
+ 		isOpen: disclosureState.isOpen,
+@@ -192,9 +206,9 @@ function DialogRoot(props) {
+ 		toggle: disclosureState.toggle,
+ 		setTriggerRef,
+ 		generateId: (suffix) => `${mergedProps.id}-${suffix}`,
+-		registerContentId: createRegisterId(setContentId),
+-		registerTitleId: createRegisterId(setTitleId),
+-		registerDescriptionId: createRegisterId(setDescriptionId)
++		registerContentId: createRegisterId((source) => setContentIdSource(() => source)),
++		registerTitleId: createRegisterId((source) => setTitleIdSource(() => source)),
++		registerDescriptionId: createRegisterId((source) => setDescriptionIdSource(() => source))
+ 	};
+ 	return <DialogContext value={context}>{mergedProps.children}</DialogContext>;
+ }
+@@ -205,9 +219,10 @@ function DialogRoot(props) {
+ */
+ function DialogTitle(props) {
+ 	const context = useDialogContext();
+-	const mergedProps = merge({ id: context.generateId("title") }, props);
++	const mergedProps = merge({ get id() { return context.generateId("title"); } }, props);
+ 	const others = omit(mergedProps, "id");
+-	createEffect(() => mergedProps.id, (id) => context.registerTitleId(id));
++	// Register the accessor once so DOM IDs and ARIA consumers derive from the same input.
++	createEffect(() => () => mergedProps.id, (id) => context.registerTitleId(id));
+ 	return <Polymorphic as="h2" id={mergedProps.id} {...others} />;
+ }
+ //#endregion
+diff --git a/dist/dismissable-layer/DXLD03yU.js b/dist/dismissable-layer/DXLD03yU.js
+index fde40e74ee904abceeb2c1daa3ce86f8dd9e38c8..12f61ccd4a6dc759a8934400983e9896e3949d9d 100644
+--- a/dist/dismissable-layer/DXLD03yU.js
++++ b/dist/dismissable-layer/DXLD03yU.js
+@@ -1,6 +1,6 @@
+ import { n as layerStack } from "../layer-stack/DUp9FXTP.js";
+ import { createComponent, insert, ref, spread, template } from "@solidjs/web";
+-import { createContext, createEffect, createMemo, createSignal, omit, onSettled, useContext } from "solid-js";
++import { createContext, createEffect, createMemo, createSignal, omit, onSettled, untrack, useContext } from "solid-js";
+ import { interactOutside } from "@solid-primitives/interaction";
+ import { createShortcut } from "@solid-primitives/keyboard";
+ //#region src/dismissable-layer/dismissable-layer-context.tsx
+@@ -54,22 +54,18 @@ function DismissableLayer(props) {
+ 			props.onDismiss();
+ 		}
+ 	}, { preventDefault: false });
+-	onSettled(() => {
+-		if (!ref$1()) return;
+-		layerStack.addLayer({
+-			node: ref$1(),
+-			isPointerBlocking: isPointerBlocking(),
+-			dismiss: props.onDismiss
+-		});
+-		const unregisterFromParentLayer = parentContext?.registerNestedLayer(ref$1());
++	// Register only once the ref exists; capture that element for reliable cleanup.
++	createEffect(() => ref$1(), (node) => {
++		if (!node) return;
++		layerStack.addLayer({ node, isPointerBlocking: untrack(isPointerBlocking), dismiss: () => props.onDismiss?.() });
++		const unregisterFromParentLayer = parentContext?.registerNestedLayer(node);
+ 		layerStack.assignPointerEventToLayers();
+-		layerStack.disableBodyPointerEvents(ref$1());
++		layerStack.disableBodyPointerEvents(node);
+ 		return () => {
+-			if (!ref$1()) return;
+-			layerStack.removeLayer(ref$1());
++			layerStack.removeLayer(node);
+ 			unregisterFromParentLayer?.();
+ 			layerStack.assignPointerEventToLayers();
+-			layerStack.restoreBodyPointerEvents(ref$1());
++			layerStack.restoreBodyPointerEvents(node);
+ 		};
+ 	});
+ 	createEffect(() => ({
+diff --git a/dist/dismissable-layer/RyRdwdaj.jsx b/dist/dismissable-layer/RyRdwdaj.jsx
+index 725bd171d1c95781d497718917d1dc3ebd363276..4479f6b4eb3e64083a31df6f5371db8fe7db9710 100644
+--- a/dist/dismissable-layer/RyRdwdaj.jsx
++++ b/dist/dismissable-layer/RyRdwdaj.jsx
+@@ -1,5 +1,5 @@
+ import { n as layerStack } from "../layer-stack/DUp9FXTP.jsx";
+-import { createContext, createEffect, createMemo, createSignal, omit, onSettled, useContext } from "solid-js";
++import { createContext, createEffect, createMemo, createSignal, omit, onSettled, untrack, useContext } from "solid-js";
+ import { interactOutside } from "@solid-primitives/interaction";
+ import { createShortcut } from "@solid-primitives/keyboard";
+ //#region src/dismissable-layer/dismissable-layer-context.tsx
+@@ -52,22 +52,18 @@ function DismissableLayer(props) {
+ 			props.onDismiss();
+ 		}
+ 	}, { preventDefault: false });
+-	onSettled(() => {
+-		if (!ref()) return;
+-		layerStack.addLayer({
+-			node: ref(),
+-			isPointerBlocking: isPointerBlocking(),
+-			dismiss: props.onDismiss
+-		});
+-		const unregisterFromParentLayer = parentContext?.registerNestedLayer(ref());
++	// Register only once the ref exists; capture that element for reliable cleanup.
++	createEffect(() => ref(), (node) => {
++		if (!node) return;
++		layerStack.addLayer({ node, isPointerBlocking: untrack(isPointerBlocking), dismiss: () => props.onDismiss?.() });
++		const unregisterFromParentLayer = parentContext?.registerNestedLayer(node);
+ 		layerStack.assignPointerEventToLayers();
+-		layerStack.disableBodyPointerEvents(ref());
++		layerStack.disableBodyPointerEvents(node);
+ 		return () => {
+-			if (!ref()) return;
+-			layerStack.removeLayer(ref());
++			layerStack.removeLayer(node);
+ 			unregisterFromParentLayer?.();
+ 			layerStack.assignPointerEventToLayers();
+-			layerStack.restoreBodyPointerEvents(ref());
++			layerStack.restoreBodyPointerEvents(node);
+ 		};
+ 	});
+ 	createEffect(() => ({
+diff --git a/dist/drawer/DDnMCpAt.jsx b/dist/drawer/DDnMCpAt.jsx
+index bc9e79950817514b08e1014a24123ee9d71e7d9e..b9686f1321d9cab2b1d315680f709b6e201a8649 100644
+--- a/dist/drawer/DDnMCpAt.jsx
++++ b/dist/drawer/DDnMCpAt.jsx
+@@ -5,7 +5,7 @@ import { a as DialogRoot, c as DialogDescription, d as useDialogContext, i as Di
+ import { combineStyle } from "@solid-primitives/props";
+ import { createContext, createEffect, createMemo, createSignal, merge, omit, untrack, useContext } from "solid-js";
+ import { callHandler, getScrollParent } from "@kobalte/utils";
+-import { createEventListener } from "@solid-primitives/event-listener";
++import { makeEventListener } from "@solid-primitives/event-listener";
+ //#region src/drawer/drawer-context.tsx
+ const DrawerContext = createContext();
+ function useDrawerContext() {
+@@ -119,11 +119,15 @@ function DrawerContent(props) {
+ 	});
+ 	createEffect(() => dialogCtx.isOpen(), (isOpen) => {
+ 		if (!isOpen) return;
+-		createEventListener(document, "pointermove", onPointerMove);
+-		createEventListener(document, "touchmove", onTouchMove, { passive: false });
+-		createEventListener(document, "pointerup", onPointerUp);
+-		createEventListener(document, "touchend", onTouchEnd);
+-		createEventListener(document, "contextmenu", onUp);
++		// Apply callbacks have no owner: install native listeners and return all disposers.
++		const cleanups = [
++			makeEventListener(document, "pointermove", onPointerMove),
++			makeEventListener(document, "touchmove", onTouchMove, { passive: false }),
++			makeEventListener(document, "pointerup", onPointerUp),
++			makeEventListener(document, "touchend", onTouchEnd),
++			makeEventListener(document, "contextmenu", onUp)
++		];
++		return () => { for (const cleanup of cleanups) cleanup(); };
+ 	});
+ 	const transformValue = createMemo(() => {
+ 		if (ctx.drawerSize() === 0) switch (ctx.side()) {
+diff --git a/dist/drawer/MqA1xKyW.js b/dist/drawer/MqA1xKyW.js
+index 5b7fb76c149dff94e2757bb9439e8b0ee441578f..9cdcf4fcc45e61bf896785d88ecc3347e84806dc 100644
+--- a/dist/drawer/MqA1xKyW.js
++++ b/dist/drawer/MqA1xKyW.js
+@@ -6,7 +6,7 @@ import { applyRef, createComponent, mergeProps } from "@solidjs/web";
+ import { combineStyle } from "@solid-primitives/props";
+ import { createContext, createEffect, createMemo, createSignal, merge, omit, untrack, useContext } from "solid-js";
+ import { callHandler, getScrollParent } from "@kobalte/utils";
+-import { createEventListener } from "@solid-primitives/event-listener";
++import { makeEventListener } from "@solid-primitives/event-listener";
+ //#region src/drawer/drawer-context.tsx
+ const DrawerContext = createContext();
+ function useDrawerContext() {
+@@ -120,11 +120,15 @@ function DrawerContent(props) {
+ 	});
+ 	createEffect(() => dialogCtx.isOpen(), (isOpen) => {
+ 		if (!isOpen) return;
+-		createEventListener(document, "pointermove", onPointerMove);
+-		createEventListener(document, "touchmove", onTouchMove, { passive: false });
+-		createEventListener(document, "pointerup", onPointerUp);
+-		createEventListener(document, "touchend", onTouchEnd);
+-		createEventListener(document, "contextmenu", onUp);
++		// Apply callbacks have no owner: install native listeners and return all disposers.
++		const cleanups = [
++			makeEventListener(document, "pointermove", onPointerMove),
++			makeEventListener(document, "touchmove", onTouchMove, { passive: false }),
++			makeEventListener(document, "pointerup", onPointerUp),
++			makeEventListener(document, "touchend", onTouchEnd),
++			makeEventListener(document, "contextmenu", onUp)
++		];
++		return () => { for (const cleanup of cleanups) cleanup(); };
+ 	});
+ 	const transformValue = createMemo(() => {
+ 		if (ctx.drawerSize() === 0) switch (ctx.side()) {
+diff --git a/dist/resizable/index.js b/dist/resizable/index.js
+index c915c9b28928ebc7d8babe6f13ef183baa877714..d672a5e096ffa78524487452f108c7467697aa61 100644
+--- a/dist/resizable/index.js
++++ b/dist/resizable/index.js
+@@ -1,7 +1,7 @@
+ import { t as primitives_exports } from "../primitives/CLOXSc13.js";
+ import { createComponent, effect, insert, memo, mergeProps, ref, setStyleProperty, spread, template } from "@solidjs/web";
+ import { combineStyle } from "@solid-primitives/props";
+-import { Show, createContext, createEffect, createMemo, createSignal, createUniqueId, merge, omit, untrack, useContext } from "solid-js";
++import { Show, createContext, createEffect, createMemo, createRoot, createSignal, createUniqueId, merge, omit, untrack, useContext } from "solid-js";
+ import { callHandler } from "@kobalte/utils";
+ //#region src/resizable/resizable-context.tsx
+ const ResizableContext = createContext();
+@@ -673,7 +673,8 @@ function ResizableHandle(props) {
+ 		};
+ 	});
+ 	createEffect(() => hovered(), (newHovered) => {
+-		globalHandleCallbacks?.onHoveredChange(newHovered);
++		// Hover changes are commands; read other handles as snapshots, not new dependencies.
++		untrack(() => globalHandleCallbacks?.onHoveredChange(newHovered));
+ 	});
+ 	const onMouseEnter = (e) => {
+ 		callHandler(e, p.onMouseEnter);
+@@ -1038,15 +1039,18 @@ function ResizableRoot(props) {
+ 		}
+ 		liveSizes = newSizes;
+ 		setSizes([...newSizes]);
+-		const panelSizeMemo = createMemo(() => {
+-			const index = sizesToIds.indexOf(panelData.id);
+-			return sizes()[index] ?? 0;
+-		});
+-		createEffect(() => panelSizeMemo(), (size) => {
+-			panelData.onResize?.(size);
++		// Own only the computations; registration writes remain in the caller's effect phase.
++		const { panelSizeMemo, dispose } = createRoot((dispose) => {
++			const panelSizeMemo = createMemo(() => {
++				const index = sizesToIds.indexOf(panelData.id);
++				return sizes()[index] ?? 0;
++			});
++			createEffect(() => panelSizeMemo(), (size) => { panelData.onResize?.(size); });
++			return { panelSizeMemo, dispose };
+ 		});
+ 		const panel = {
+ 			data: panelData,
++			dispose,
+ 			size: panelSizeMemo,
+ 			resize: (size, strategy) => resize(sizesToIds.indexOf(panelData.id), size, strategy),
+ 			collapse: (strategy) => collapse(sizesToIds.indexOf(panelData.id), strategy),
+@@ -1061,6 +1065,7 @@ function ResizableRoot(props) {
+ 		return panel;
+ 	};
+ 	const unregisterPanel = (id) => {
++		livePanels.find((panel) => panel.data.id === id)?.dispose();
+ 		livePanels = livePanels.filter((panel) => panel.data.id !== id);
+ 		setPanels((prev) => prev.filter((panel) => panel.data.id !== id));
+ 		const idx = sizesToIds.indexOf(id);
+diff --git a/dist/resizable/index.jsx b/dist/resizable/index.jsx
+index 5a99b163696242b7b1acd962af328292670feb36..7cbc09bb4837a018a6e6d7ac0284c9d01417acdb 100644
+--- a/dist/resizable/index.jsx
++++ b/dist/resizable/index.jsx
+@@ -1,6 +1,6 @@
+ import { t as primitives_exports } from "../primitives/BlSoAAAV.jsx";
+ import { combineStyle } from "@solid-primitives/props";
+-import { Show, createContext, createEffect, createMemo, createSignal, createUniqueId, merge, omit, untrack, useContext } from "solid-js";
++import { Show, createContext, createEffect, createMemo, createRoot, createSignal, createUniqueId, merge, omit, untrack, useContext } from "solid-js";
+ import { callHandler } from "@kobalte/utils";
+ //#region src/resizable/resizable-context.tsx
+ const ResizableContext = createContext();
+@@ -669,7 +669,8 @@ function ResizableHandle(props) {
+ 		};
+ 	});
+ 	createEffect(() => hovered(), (newHovered) => {
+-		globalHandleCallbacks?.onHoveredChange(newHovered);
++		// Hover changes are commands; read other handles as snapshots, not new dependencies.
++		untrack(() => globalHandleCallbacks?.onHoveredChange(newHovered));
+ 	});
+ 	const onMouseEnter = (e) => {
+ 		callHandler(e, p.onMouseEnter);
+@@ -951,15 +952,18 @@ function ResizableRoot(props) {
+ 		}
+ 		liveSizes = newSizes;
+ 		setSizes([...newSizes]);
+-		const panelSizeMemo = createMemo(() => {
+-			const index = sizesToIds.indexOf(panelData.id);
+-			return sizes()[index] ?? 0;
+-		});
+-		createEffect(() => panelSizeMemo(), (size) => {
+-			panelData.onResize?.(size);
++		// Own only the computations; registration writes remain in the caller's effect phase.
++		const { panelSizeMemo, dispose } = createRoot((dispose) => {
++			const panelSizeMemo = createMemo(() => {
++				const index = sizesToIds.indexOf(panelData.id);
++				return sizes()[index] ?? 0;
++			});
++			createEffect(() => panelSizeMemo(), (size) => { panelData.onResize?.(size); });
++			return { panelSizeMemo, dispose };
+ 		});
+ 		const panel = {
+ 			data: panelData,
++			dispose,
+ 			size: panelSizeMemo,
+ 			resize: (size, strategy) => resize(sizesToIds.indexOf(panelData.id), size, strategy),
+ 			collapse: (strategy) => collapse(sizesToIds.indexOf(panelData.id), strategy),
+@@ -974,6 +978,7 @@ function ResizableRoot(props) {
+ 		return panel;
+ 	};
+ 	const unregisterPanel = (id) => {
++		livePanels.find((panel) => panel.data.id === id)?.dispose();
+ 		livePanels = livePanels.filter((panel) => panel.data.id !== id);
+ 		setPanels((prev) => prev.filter((panel) => panel.data.id !== id));
+ 		const idx = sizesToIds.indexOf(id);
