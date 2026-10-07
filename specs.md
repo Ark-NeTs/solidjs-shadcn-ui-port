@@ -4,6 +4,53 @@ Written 2026-09-04 for the agent that will build this package. Read this
 whole file, then the repo's `CLAUDE.md`, then `packages/shadcn-theme/README.md`
 and `packages/shadcn-svelte-theme/README.md`, before writing a line of code.
 
+## Current owner direction — 2026-10-07
+
+This section takes precedence over the original scope and library alternatives
+below where they differ.
+
+- Build an owned SolidJS implementation of the full
+  [shadcn/ui component catalog](https://ui.shadcn.com/docs/components), using
+  Solid signals. The tiers below determine delivery order; they do not remove
+  components from the final goal. Maintain an explicit component inventory
+  against a dated upstream reference.
+- **Kobalte first for every primitive; corvu only for demonstrated gaps.**
+  This is the owner's selected priority. Kobalte `2.0.0-alpha.2` includes
+  `@kobalte/core/drawer` and `@kobalte/core/resizable`; evaluate those first
+  for Drawer and Resizable. Both passed the Solid 2 `rc.13` linking probe,
+  but still require runtime, accessibility, and behavior tests before adoption.
+  Ark UI is no longer an equal candidate. Keep implementation libraries behind
+  this package's public exports (D19).
+- For each shadcn component, record its required behavior and the Kobalte
+  primitive or composition that provides it. Consult corvu only when this
+  evaluation demonstrates a missing capability. Record the gap and the reason
+  for the fallback; do not install both libraries for overlapping primitives
+  merely because both offer them.
+- A corvu fallback must support the selected Solid 2 runtime. Evaluate the
+  existing `@corvu-next/*` fork where relevant; original `@corvu/*` releases
+  have failed the compatibility probe. A successful build is not runtime
+  verification. Do not assume a new in-house port is necessary before checking
+  existing compatible versions and their behavior.
+- Install only the corvu component packages that are actually needed, and use
+  per-component imports. Keep Solid as a shared runtime. Verify interactions
+  between the libraries, especially nested overlays, focus restoration,
+  Escape handling, scroll locking, and cleanup.
+- The selection does not establish complete shadcn coverage. Charts, data-table
+  logic, and higher-level compositions still need explicit implementations or
+  suitable supporting libraries. Track these gaps rather than claiming that
+  installing the two libraries completes the component set.
+- Require unit tests, real-browser UI integration tests, and end-to-end tests
+  for the documented component behavior. Include customizable semantic themes,
+  light/dark examples, accessible keyboard interaction, and visual regression
+  coverage of representative states. Documentation must include usable Solid
+  examples and screenshots of the implemented components. A component counts
+  as delivered only with its implementation, applicable tests, and docs.
+- **Solid 2 remains the target.** The September version table and API recipes
+  below are historical inputs to re-verify, not proof of compatibility.
+  Do not switch to Solid 1 or add a second Solid runtime to make corvu load.
+  A required port or replacement must be made explicit before adoption.
+  See [COMPATIBILITY.md](COMPATIBILITY.md) for the current verification result.
+
 ## 1. What this is
 
 The platform has one look, defined once as oklch tokens, and two design-system

@@ -4,6 +4,11 @@
 
 These instructions apply to this package and its subdirectories.
 
+Read [specs.md](specs.md) for the implementation scope and current owner
+decisions. Evaluate Kobalte first for every primitive, including Drawer and
+Resizable. Consider corvu only for a documented gap in Kobalte, subject to
+the Solid 2 compatibility checks there. Do not add corvu preemptively.
+
 Before implementing or modifying UI in this package, read
 [DELIVERY.md](DELIVERY.md) and use its checklist as the acceptance criteria.
 
@@ -13,3 +18,9 @@ reasons. Disclose checks that were not run.
 
 Keep DELIVERY.md as a reusable checklist; record task-specific results in the
 delivery report.
+
+## User-facing responses
+
+End every response to the user with one concise, natural follow-up suggestion
+for the next course of action. Make it specific to the current task and its
+progress, with a concrete next step that advances the user's goal.
