@@ -1,0 +1,42 @@
+[
+  {
+    "command": "bun run check",
+    "exitCode": 0,
+    "seconds": 3.07
+  },
+  {
+    "command": "bun run lint",
+    "exitCode": 0,
+    "seconds": 1.38
+  },
+  {
+    "command": "bun run test --maxWorkers=2",
+    "exitCode": 0,
+    "seconds": 7.4
+  },
+  {
+    "command": "bun run test:coverage --maxWorkers=2",
+    "exitCode": 0,
+    "seconds": 8.38
+  },
+  {
+    "command": "bun run test:server",
+    "exitCode": 0,
+    "seconds": 0.88
+  },
+  {
+    "command": "RESULTS_FILE=docs/evidence/catalog-native-hydration.json bun run test:hydration --max-failures=1",
+    "exitCode": 0,
+    "seconds": 61.08
+  },
+  {
+    "command": "THEME_PORT=4403 RESULTS_FILE=docs/evidence/catalog-native-integration.json bun run test:integration --max-failures=1",
+    "exitCode": 0,
+    "seconds": 351.2
+  },
+  {
+    "command": "THEME_PORT=4403 RESULTS_FILE=docs/evidence/catalog-native-e2e.json bun run test:e2e --max-failures=1",
+    "exitCode": 0,
+    "seconds": 237.48
+  }
+]

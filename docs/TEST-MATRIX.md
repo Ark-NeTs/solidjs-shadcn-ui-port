@@ -3,7 +3,7 @@
 Initially audited 2026-10-08 against source at `314f27a`; updated with the
 [three-engine browser evidence](WEBKIT-DELIVERY.md) and
 [source hydration regression](HYDRATION-DELIVERY.md), including
-[real Loading boundaries](LOADING-HYDRATION-DELIVERY.md). Covers the **23
+[real Loading boundaries](LOADING-HYDRATION-DELIVERY.md). Covers the **40
 implemented component families**, including their compound parts. The other
 catalog entries in [COMPONENT-MAP.md](../COMPONENT-MAP.md) remain unimplemented;
 their adoption probes are not delivered-component acceptance tests.
@@ -43,14 +43,14 @@ are implementation scope limits, not features that an existing test proves.
 | Diagnostics and cleanup are checked | [Unit setup](../vitest.setup.ts), [browser fixture](../tests/browser-fixture.ts) | Every unit test checks console warn/error after cleanup; every B/E/H test checks console warning/error and page errors. The hydration build also rejects server warnings/errors; ordinary S tests have no equivalent diagnostic fixture. |
 | Whole-gallery accessibility | [B: light/dark examples have no axe accessibility violations](../tests/integration/foundation.spec.ts#L27) | Applies to the rendered, settled gallery state. Axe does not certify screen-reader usability or all dynamic states. |
 | Whole-gallery visual appearance | [V: light/dark/mobile component gallery](../tests/e2e/visual.spec.ts#L3) | Shared gallery plus dedicated disclosure and preview images; not every variant/state combination. |
-| Unit execution coverage | [Coverage configuration](../vitest.config.ts), [measured coverage](evidence/progress-coverage.json) | 100% statements, branches, functions and lines for included component/helper source; not exhaustive behavior coverage. |
+| Unit execution coverage | [Coverage configuration](../vitest.config.ts), [measured coverage](evidence/catalog-native-coverage.json) | 100% statements, branches, functions and lines for included component/helper source; not exhaustive behavior coverage. |
 
-The current Progress delivery records **191 unit tests, 13 grouped SSR tests,
-381 browser integration runs (127 scenarios × 3 engines), 357 E2E runs
-(109 journeys × 3 engines + 30 Chromium visual tests), and 99 hydration runs
-(96 positive assertions + 3 unsafe-pattern characterizations)**. Visual tests compare
-33 images. These totals are package-wide, not per component. See
-[Progress verification](PROGRESS-DELIVERY.md) for current results and the
+The current native catalog delivery records **204 unit tests, 14 grouped SSR tests,
+399 browser integration runs (133 scenarios × 3 engines), 378 E2E runs
+(115 journeys × 3 engines + 33 Chromium visual tests), and 102 hydration runs
+(99 positive assertions + 3 unsafe-pattern characterizations)**. Visual tests compare
+36 images. These totals are package-wide, not per component. See
+[native verification](NATIVE-CATALOG-DELIVERY.md) for current results and the
 [initial matrix verification](TEST-MATRIX-DELIVERY.md) for the original audit.
 
 WebKit runs on macOS with process-scoped button Tab navigation and native
@@ -571,3 +571,36 @@ closing evidence in the delivery report. A new family needs its own section and
 SSR/visual row. Refresh counts from reports, distinguishing scenarios from browser
 runs. Recheck line anchors after test edits. Preserve this matrix's distinction
 between unit adapters, actual browser behavior, grouped evidence and unrun checks.
+
+## Native catalog compositions
+
+Shared examples do not establish every variant or consumer composition. All
+sixteen families below appear in the explicit slot assertions in
+[S: native catalog semantics](../tests/server.test.tsx) and the node-identity
+checks before [H: native catalog hydration and form reset](../tests/hydration/hydration.spec.ts).
+[V: Native catalog compositions](../tests/e2e/visual.spec.ts) compares light,
+dark and mobile layouts, with the precise examples in
+[the fixture](../playground/catalog-native.tsx).
+
+| Family | Acceptance and actual assertions | Remaining limits |
+| --- | --- | --- |
+| Alert | [U](../tests/unit/catalog-native.test.tsx): retry removes error content; [B/E](../tests/catalog-native.ts): retry preserves edited inputs; both themes run axe. | Manual announcement timing; arbitrary long action labels. |
+| Aspect Ratio | [U](../tests/unit/catalog-native.test.tsx): invalid bounds, live ratio, class/ref forwarding and node identity; [B/E](../tests/catalog-native.ts): 16:9 measured geometry. | Media decoding and intrinsic image dimensions belong to caller content. |
+| Attachment | [U](../tests/unit/catalog-native.test.tsx): five owner states, retry callback, native anchor and non-submitting action; [B/E](../tests/catalog-native.ts): retry and preview act independently. | Upload transport, drop zones and backend failures are host-owned; all size/state image combinations remain unverified. |
+| Breadcrumb | [U](../tests/unit/catalog-native.test.tsx): native anchor, navigation name and unfocusable current page; [B/E](../tests/catalog-native.ts): href and current-page state. | Custom router adapters; manual screen-reader navigation. |
+| Bubble | [U](../tests/unit/catalog-native.test.tsx): native polymorphic links/buttons and explicit/default button type; grouped S/H/V. | All seven colors and reaction combinations do not have individual screenshot assertions. |
+| Button Group | [U](../tests/unit/catalog-native.test.tsx): live orientation, separator slot and native action types; [B/E](../tests/catalog-native.ts): vertical state and normal form actions. | Horizontal RTL corner treatment; mixed nested groups. No toolbar keyboard behavior is claimed. |
+| Empty | [U](../tests/unit/catalog-native.test.tsx): default media state; grouped S/H/V and axe. | Individual tests for every child ref/class combination remain open. |
+| Field | [U](../tests/unit/catalog-native.test.tsx): unique messages, explicit children, recovery removes alert; [B/E/H](../tests/catalog-native.ts): labels, fieldset disable, retained draft and reset. | Host must wire IDs/descriptions; mixed checkbox/radio and nested fieldsets need further examples. |
+| Input Group | [U](../tests/unit/catalog-native.test.tsx): canceled addon clicks, link preservation, missing field, default button type; [B/E](../tests/catalog-native.ts): addon input/textarea focus, independent clear, no accidental submission. | IME/voice input and all addon placements individually. |
+| Item | [U](../tests/unit/catalog-native.test.tsx): default variants and native actions; [B/E](../tests/catalog-native.ts): working item action, grouped S/H/V. | Caller supplies listitem semantics inside ItemGroup; all media/size combinations not individually captured. |
+| Kbd | [U](../tests/unit/catalog-native.test.tsx): semantic kbd nodes; [B/E](../tests/catalog-native.ts): contrast in enlarged light/dark examples. | Shortcut registration is explicitly not owned. |
+| Marker | [U](../tests/unit/catalog-native.test.tsx): native actions/default types; grouped S/H/V. | All decorative variants and localized date content. |
+| Message | Grouped S/H/V and [B/E](../tests/catalog-native.ts) enlarged RTL bounds/axe. | Host announcements, streaming and scrolling are not implemented by Message; independent state/prop forwarding tests remain limited. |
+| Native Select | [U](../tests/unit/catalog-native.test.tsx): labels, name, groups, disabled option, ref and FormData; [B/E/H](../tests/catalog-native.ts): choose/reset/submit/fieldset disable. | Multiple selection, dynamic controlled value with SSR, nonfirst default selection and platform popup appearance require dedicated checks. |
+| Spinner | [U](../tests/unit/catalog-native.test.tsx): custom status name and motion class; [B/E](../tests/catalog-native.ts): actual Loading promise resolution, pending unmount and late settlement; reduced-motion computed style. | Manual status announcements; streaming SSR fallback. |
+| Table | [B/E](../tests/catalog-native.ts): caption, columnheaders and rowheader; grouped S/H/V. | Large tables, horizontal keyboard scrolling, sticky headers; Data Table sorting is separate work. |
+
+Native contracts live in shared tests imported by both source integration and
+built E2E suites. None of these limits is closed merely by reaching 100% code
+execution coverage.

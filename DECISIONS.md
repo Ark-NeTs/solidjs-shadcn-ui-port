@@ -487,3 +487,19 @@ must agree with announced values. Unknown work uses a centered 40% segment with
 opacity pulse, reduced to a static segment for reduced motion. There is no timer,
 fetch, form value or automatic live-region announcement; the application owns
 operation status, retries, busy regions and completion messages.
+
+## 2026-10-09 — native catalog compositions
+
+Implement the sixteen native/presentation families under the owner's remaining-
+catalog request. Kobalte Alert and Breadcrumbs are source-evaluated first;
+use explicit native semantics matching the sibling composition API, without
+claiming an upstream incompatibility. Field is a native mixed-control composition,
+not a TextField provider. Existing Button/Input/Textarea/Label/Separator accept an
+explicit `data-slot` so compound wrappers retain their styling contract.
+
+Use Solid native `as` unions with element-specific ref/event types for applicable
+presentation parts. Native buttons default to `type=button`. The host owns upload
+transport, validation, shortcuts and message state. Keep canonical tokens intact;
+use the existing destructive-emphasis token and foreground keyboard text for
+contrast. Logical alert-action placement and bounded example grids address RTL
+and enlarged text. [Delivery and limits](docs/NATIVE-CATALOG-DELIVERY.md).

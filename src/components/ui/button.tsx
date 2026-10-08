@@ -41,7 +41,7 @@ export const buttonVariants = cva(
   }
 )
 
-export type ButtonProps = VariantProps<typeof buttonVariants> & (
+export type ButtonProps = { "data-slot"?: string } & VariantProps<typeof buttonVariants> & (
   | ({ as?: 'button'; href?: never } & JSX.ButtonHTMLAttributes<HTMLButtonElement>)
   | ({ as: 'a'; disabled?: boolean } & JSX.AnchorHTMLAttributes<HTMLAnchorElement>)
 );
@@ -61,6 +61,6 @@ export function Button(props: ButtonProps) {
     disabled={props.as !== 'a' ? props.disabled : undefined}
     aria-disabled={props.as === 'a' && props.disabled ? 'true' : props['aria-disabled']}
     tabindex={props.as === 'a' && props.disabled ? -1 : props.tabindex}
-    onClick={handleClick} data-slot="button" data-variant={props.variant ?? 'default'} data-size={props.size ?? 'default'}
+    onClick={handleClick} data-slot={props["data-slot"] ?? "button"} data-variant={props.variant ?? 'default'} data-size={props.size ?? 'default'}
     class={cn(buttonVariants({ variant: props.variant, size: props.size }), props.class)} />;
 }

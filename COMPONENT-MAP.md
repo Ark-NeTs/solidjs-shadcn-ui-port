@@ -1,8 +1,8 @@
 # shadcn/ui → Solid 2 component map
 
 **Implemented (2026-10-08):** Button, Badge, Card, Separator, Skeleton, Input,
-Textarea, Label, Checkbox, Switch, Tabs, Popover, Alert Dialog, Combobox, Accordion, Collapsible, Tooltip, Hover Card, Radio Group, Toggle, Toggle Group, Select, Slider and Progress now have Solid 2 source, documentation and passing unit, browser and built-library tests.
-See [Progress delivery](docs/PROGRESS-DELIVERY.md), [Slider delivery](docs/SLIDER-DELIVERY.md), [Select delivery](docs/SELECT-DELIVERY.md), [choice delivery](docs/CHOICES-DELIVERY.md), [preview delivery](docs/HINTS-DELIVERY.md), [disclosure delivery](docs/DISCLOSURES-DELIVERY.md), [COMBOBOX-DELIVERY.md](COMBOBOX-DELIVERY.md), [OVERLAYS-DELIVERY.md](OVERLAYS-DELIVERY.md), [TOGGLES-DELIVERY.md](TOGGLES-DELIVERY.md), [FORM-FIELDS-DELIVERY.md](FORM-FIELDS-DELIVERY.md) and the earlier
+Textarea, Label, Checkbox, Switch, Tabs, Popover, Alert Dialog, Combobox, Accordion, Collapsible, Tooltip, Hover Card, Radio Group, Toggle, Toggle Group, Select, Slider, Progress, Alert, Aspect Ratio, Attachment, Breadcrumb, Bubble, Button Group, Empty, Field, Input Group, Item, Kbd, Marker, Message, Native Select, Spinner and Table now have Solid 2 source, documentation and passing unit, browser and built-library tests.
+See [native catalog delivery](docs/NATIVE-CATALOG-DELIVERY.md), [Progress delivery](docs/PROGRESS-DELIVERY.md), [Slider delivery](docs/SLIDER-DELIVERY.md), [Select delivery](docs/SELECT-DELIVERY.md), [choice delivery](docs/CHOICES-DELIVERY.md), [preview delivery](docs/HINTS-DELIVERY.md), [disclosure delivery](docs/DISCLOSURES-DELIVERY.md), [COMBOBOX-DELIVERY.md](COMBOBOX-DELIVERY.md), [OVERLAYS-DELIVERY.md](OVERLAYS-DELIVERY.md), [TOGGLES-DELIVERY.md](TOGGLES-DELIVERY.md), [FORM-FIELDS-DELIVERY.md](FORM-FIELDS-DELIVERY.md) and the earlier
 [FOUNDATION-DELIVERY.md](FOUNDATION-DELIVERY.md). These use native HTML; Toggle wraps Kobalte after its scoped acceptance;
 headless-library findings below remain relevant to later primitives.
 
@@ -74,22 +74,22 @@ No row currently selects corvu; alternatives are evaluated below.
 
 | Route | Entries |
 | --- | ---: |
-| Matching Kobalte primitive | 21 |
+| Matching Kobalte primitive | 19 |
 | Owned composition | 9 |
-| Native markup/CSS | 28 |
+| Native markup/CSS | 30 |
 | Unresolved behavior/engine gap | 7 |
 | Total | 65 |
 
 | shadcn component | Route | Kobalte first / implementation path | Required adaptation or acceptance focus |
 | --- | --- | --- | --- |
 | [Accordion](https://ui.shadcn.com/docs/components/accordion) | N | `accordion` evaluated first; owned signals/native buttons | Single/multiple, heading/region semantics, disabled items, orientation/RTL, controlled selection and mount policy delivered. Alpha.2/rc.13 warns; see KOBALTE-DISCLOSURES.md and docs/DISCLOSURES-DELIVERY.md. |
-| [Alert](https://ui.shadcn.com/docs/components/alert) | K | `alert` | Title/description/icon slots; use alert announcements only when appropriate. |
+| [Alert](https://ui.shadcn.com/docs/components/alert) | N | `alert` evaluated first; native semantic wrapper | Delivered title/description/action slots and destructive variant; see docs/NATIVE-CATALOG-DELIVERY.md. Use alert announcements only when appropriate. |
 | [Alert Dialog](https://ui.shadcn.com/docs/components/alert-dialog) | N | `alert-dialog` evaluated first; native modal chosen | Implemented explicit cancel/action, controlled state, least-destructive focus, nesting and scroll locks. Delayed native close after reopening is guarded; see docs/ALERT-REOPEN-DELIVERY.md. Library routing remains as recorded in KOBALTE-OVERLAYS.md and OVERLAYS-DELIVERY.md. |
 | [Aspect Ratio](https://ui.shadcn.com/docs/components/aspect-ratio) | N | CSS `aspect-ratio` | Ratio prop, sizing and overflow behavior; no headless state needed. |
 | [Attachment](https://ui.shadcn.com/docs/components/attachment) | C | `button` + owned presentation | File preview/metadata/removal slots; uploads and transport remain host-owned. `file-field` is optional only if an upload control is added. |
 | [Avatar](https://ui.shadcn.com/docs/components/avatar) | K | `image` | Image/fallback timing, failures, alt text; add group/badge presentation parts. |
 | [Badge](https://ui.shadcn.com/docs/components/badge) | K | `badge` | Semantic variants, sizing, polymorphic link rendering. |
-| [Breadcrumb](https://ui.shadcn.com/docs/components/breadcrumb) | K | `breadcrumbs` | Ordered links, current page, separators and ellipsis; menus compose separately. |
+| [Breadcrumb](https://ui.shadcn.com/docs/components/breadcrumb) | N | `breadcrumbs` evaluated first; native semantic wrappers | Delivered ordered links, current page, separators and ellipsis; menus compose separately. See docs/NATIVE-CATALOG-DELIVERY.md. |
 | [Bubble](https://ui.shadcn.com/docs/components/bubble) | N | Owned markup/CSS | Grouping, content, reaction slots and variants from the sibling. |
 | [Button](https://ui.shadcn.com/docs/components/button) | K | `button` | Variants, sizes, disabled semantics, submit type and Solid polymorphism. |
 | [Button Group](https://ui.shadcn.com/docs/components/button-group) | C | `button`, `separator` | Group orientation and joined borders; not automatically a toggle group. |

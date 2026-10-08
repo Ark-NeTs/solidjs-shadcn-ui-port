@@ -3,7 +3,7 @@ import { createEffect, createSignal, omit } from 'solid-js';
 import type { JSX } from '@solidjs/web';
 import { cn } from '../../lib/utils';
 
-export type LabelProps = JSX.LabelHTMLAttributes<HTMLLabelElement>;
+export type LabelProps = { "data-slot"?: string } & JSX.LabelHTMLAttributes<HTMLLabelElement>;
 
 /** Preserve native label semantics, refs and events without a required field provider. */
 export function Label(props: LabelProps) {
@@ -26,7 +26,7 @@ export function Label(props: LabelProps) {
     label.append(marker);
     marker.remove();
   });
-  return <label {...rest} ref={node => { setElement(node); if (typeof props.ref === 'function') props.ref(node); }} data-slot="label" class={cn(
+  return <label {...rest} ref={node => { setElement(node); if (typeof props.ref === 'function') props.ref(node); }} data-slot={props["data-slot"] ?? "label"} class={cn(
     'flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50',
     props.class,
   )} />;

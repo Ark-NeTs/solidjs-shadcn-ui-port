@@ -1121,3 +1121,47 @@ unverified. There is no vertical, buffered, segmented or circular mode. See
 
 See the [per-component test matrix](TEST-MATRIX.md) for linked assertions,
 SSR/visual scope, and open acceptance gaps for every implemented family.
+
+## Native catalog compositions
+
+Sixteen native component families share the sibling skin and semantic theme.
+See [the public examples](../playground/catalog-native.tsx), the focused preview
+at `/?catalog-native`, and [delivery evidence](NATIVE-CATALOG-DELIVERY.md).
+
+| Family and subpath | Public composition and behavior |
+| --- | --- |
+| Alert — `ui/alert` | `Alert`, `AlertTitle`, `AlertDescription`, `AlertAction`; default/destructive variants; native alert role, caller-owned recovery. |
+| Aspect Ratio — `ui/aspect-ratio` | `AspectRatio ratio={16/9}` reserves proportional space; invalid or missing ratio means square. Inner content receives native props/ref/class. |
+| Attachment — `ui/attachment` | `Attachment`, `AttachmentGroup`, `AttachmentMedia`, `AttachmentContent`, `AttachmentTitle`, `AttachmentDescription`, `AttachmentActions`, `AttachmentAction`, `AttachmentTrigger`; idle/uploading/processing/error/done states, three sizes, horizontal/vertical layouts. Applications supply preview/retry/upload actions and accessible names. |
+| Breadcrumb — `ui/breadcrumb` | `Breadcrumb`, `BreadcrumbList`, `BreadcrumbItem`, `BreadcrumbLink`, `BreadcrumbPage`, `BreadcrumbSeparator`, `BreadcrumbEllipsis`; native navigation and anchors; current page is unfocusable; decoration is hidden from assistive technology. |
+| Bubble — `ui/bubble` | `BubbleGroup`, `Bubble`, `BubbleContent`, `BubbleReactions`; seven variants, start/end alignment, top/bottom reactions. Reactions are presentation; supply named buttons for interactive reactions. |
+| Button Group — `ui/button-group` | `ButtonGroup`, `ButtonGroupText`, `ButtonGroupSeparator`, `buttonGroupVariants`; horizontal/vertical composition. Each button keeps its native Tab stop; this is not a roving-focus toolbar. |
+| Empty — `ui/empty` | `Empty`, `EmptyHeader`, `EmptyMedia`, `EmptyTitle`, `EmptyDescription`, `EmptyContent`; default/icon media. Supply a real heading and working recovery action when appropriate. |
+| Field — `ui/field` | `Field`, `FieldContent`, `FieldTitle`, `FieldLabel`, `FieldDescription`, `FieldError`, `FieldSet`, `FieldLegend`, `FieldGroup`, `FieldSeparator`; native fieldset/legend/label, vertical/horizontal/responsive layouts, distinct error messages. Explicitly connect labels with `for`/`id` and descriptions/errors with `aria-describedby`; no hidden registration or validation engine. |
+| Input Group — `ui/input-group` | `InputGroup`, `InputGroupInput`, `InputGroupTextarea`, `InputGroupAddon`, `InputGroupButton`, `InputGroupText`; four addon alignments and compact button sizes. Clicking noninteractive addon content focuses the adjacent input/textarea; links/buttons keep their own behavior; preventDefault cancels focus. |
+| Item — `ui/item` | `Item`, `ItemGroup`, `ItemSeparator`, `ItemMedia`, `ItemContent`, `ItemTitle`, `ItemDescription`, `ItemActions`, `ItemHeader`, `ItemFooter`; default/outline/muted variants and three sizes. Inside `ItemGroup` use `role="listitem"` on each item; standalone cards retain their own semantics. |
+| Kbd — `ui/kbd` | `Kbd`, `KbdGroup`; semantic keyboard notation, no global shortcut installation. |
+| Marker — `ui/marker` | `Marker`, `MarkerIcon`, `MarkerContent`, `markerVariants`; default/separator/border treatment. Supply textual status or date; icon alone is decorative. |
+| Message — `ui/message` | `MessageGroup`, `Message`, `MessageAvatar`, `MessageContent`, `MessageHeader`, `MessageFooter`; start/end alignment. Applications own messages, timestamps and announcements; no automatic live region. |
+| Native Select — `ui/native-select` | `NativeSelect`, `NativeSelectOption`, `NativeSelectOptGroup`; native single/multiple selection, names, forms, disabled/required state and events. `size` is visual `sm`/`default`; use option `selected` for an initial selection. Class styles the wrapper, ref targets the select. |
+| Spinner — `ui/spinner` | `Spinner`; named status defaults to “Loading”; customize `aria-label`. Reduced motion stops rotation; applications own pending work. |
+| Table — `ui/table` | `Table`, `TableHeader`, `TableBody`, `TableFooter`, `TableHead`, `TableRow`, `TableCell`, `TableCaption`; native table inside horizontal overflow container. Set `scope` on headers; sorting/filtering belong to Data Table or the host. |
+
+```tsx
+<FieldSet>
+  <FieldLegend>Contact</FieldLegend>
+  <Field>
+    <FieldLabel for="address">Address</FieldLabel>
+    <InputGroup>
+      <InputGroupAddon>@</InputGroupAddon>
+      <InputGroupInput id="address" name="address" aria-describedby="help" />
+    </InputGroup>
+    <FieldDescription id="help">Your draft remains editable.</FieldDescription>
+    <FieldError errors={errors()} />
+  </Field>
+</FieldSet>
+```
+
+These examples provide grouped SSR and hydration coverage and three-browser
+interaction checks. They do not certify every combination of native props,
+manual screen-reader announcements, platform select popups or all visual states.

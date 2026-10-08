@@ -2,11 +2,11 @@
 import { omit } from 'solid-js';
 import type { JSX } from '@solidjs/web';
 import { cn } from '../../lib/utils';
-export type SeparatorProps = JSX.HTMLAttributes<HTMLDivElement> & { orientation?: 'horizontal' | 'vertical'; decorative?: boolean };
+export type SeparatorProps = JSX.HTMLAttributes<HTMLDivElement> & { "data-slot"?: string; orientation?: 'horizontal' | 'vertical'; decorative?: boolean };
 /** Expose separator semantics only when the caller requests a meaningful boundary. */
 export function Separator(props: SeparatorProps) {
   const rest = omit(props, 'class', 'orientation', 'decorative', 'role', 'aria-orientation', 'aria-hidden');
-  return <div {...rest} data-slot="separator" role={props.decorative !== false ? 'none' : 'separator'}
+  return <div {...rest} data-slot={props["data-slot"] ?? "separator"} role={props.decorative !== false ? 'none' : 'separator'}
     aria-hidden={props.decorative !== false ? 'true' : undefined}
     aria-orientation={props.decorative === false ? (props.orientation ?? 'horizontal') : undefined}
     data-orientation={props.orientation ?? 'horizontal'}

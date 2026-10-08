@@ -73,3 +73,9 @@ it('renders Progress values, external names, completed and unknown states on the
  const html=renderToString(()=><><span id="work">Work</span><Progress value={25} max={50} aria-labelledby="work"/><Progress value={50} max={50} aria-label="Done"/><Progress aria-label="Unknown"/></>);
  expect(html.match(/role="progressbar"/g)).toHaveLength(3);expect(html).toContain('aria-labelledby="work"');expect(html).toContain('aria-valuenow="25"');expect(html).toContain('aria-valuemax="50"');expect(html).toContain('aria-valuetext="50%"');expect(html).toContain('data-state="complete"');expect(html).toContain('data-state="indeterminate"');expect(html.match(/aria-valuenow=/g)).toHaveLength(2);
 });
+
+
+import { NativeCatalogContent } from '../playground/catalog-native';
+it('renders native catalog semantics, form defaults and recovery content on the server',()=>{
+ const html=renderToString(()=><NativeCatalogContent/>);for(const text of ['data-slot="alert"','data-slot="aspect-ratio"','data-slot="attachment"','data-slot="breadcrumb"','data-slot="bubble"','data-slot="button-group"','data-slot="empty"','data-slot="field"','data-slot="input-group"','data-slot="item"','data-slot="kbd"','data-slot="marker"','data-slot="message"','data-slot="native-select"','data-slot="spinner"','data-slot="table"','value="hello"','Keep this draft','role="alert"','for="catalog-address"','scope="col"','scope="row"'])expect(html).toContain(text);
+});
