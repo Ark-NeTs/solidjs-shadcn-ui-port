@@ -146,9 +146,36 @@ use their native `files` property in an event handler or ref. This package adds
 no upload, file reading or persistence. Textarea supports `rows`, `cols`, `wrap`
 and native resize; `field-sizing-content` progressively enhances supported
 browsers with content sizing. Override dimensions with `class` when needed.
+For a bounded, vertically resizable editor with internal scrolling, use
+`class="field-sizing-fixed h-28 max-h-72 resize-y overflow-auto"`. The
+[TXT-1 cases](NATIVE-FIELDS-DELIVERY.md) drag the native resize handle in desktop
+and narrow/enlarged layouts and verify real wheel scrolling, read-only editing
+prevention, submission and later unlocking. They do not claim the auto-growing
+default has the same resizing behavior.
+
+The current browser acceptance scope for Input includes `text`, `search`, `tel`,
+`url`, `password`, `email`, `number`, `date`, `time`, `datetime-local`, `range`,
+and the existing `file` example. [INP-1 evidence](NATIVE-FIELDS-DELIVERY.md) records
+which constraints and interactions are asserted per type. Values remain native
+strings; no parsing, locale conversion or picker abstraction is added. Other
+native types remain forwarded but unverified, including `month`, `week`, `color`
+and `hidden`. Use Checkbox/Switch for their documented styled toggle contracts;
+Input is not a substitute for every specialized form control. OS picker dialogs,
+autofill/password managers and physical IME input are unverified.
 
 Connect each Label `for` to a unique control `id`. Placeholder text is not an
-accessible label. Describe errors with text and `aria-describedby`, alongside
+accessible label. Both `for` and the target `id` may update reactively; the
+[LBL-1 cases](NATIVE-FIELDS-DELIVERY.md) move a label between the same Input and
+Textarea, rename the target ID, and preserve their edited drafts and identities.
+A label does not focus a disabled target; enabling the target restores activation.
+
+**Firefox limitation:** live accessible-name reassociation is not accepted yet.
+The tested engine retains previously read native `labels` collections after a
+`for` change, also with plain HTML; Playwright can then report a stale name.
+Native click targeting passes in both engines and updated names pass in Chromium.
+This observation does not establish physical screen-reader behavior.
+
+Describe errors with text and `aria-describedby`, alongside
 `aria-invalid="true"`; the owner clears the error and preserves the draft during
 recovery. `required` drives native validation, while `aria-invalid` alone does
 not block submission. Read-only fields remain focusable and submit their values;

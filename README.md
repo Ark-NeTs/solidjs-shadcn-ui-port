@@ -73,6 +73,10 @@ Open `/?alert-dialog-focus` for Alert Dialog keyboard and nested confirmation
 examples; append `&force-mounted` to keep the child mounted while closed.
 [ALT-1 delivery](docs/ALERT-ALT1-DELIVERY.md) records their focus acceptance.
 
+Open `/?native-fields` for native input types, or append `&textarea` / `&labels`
+for scrolling/resizing and live label examples. [INP-1/TXT-1/LBL-1 delivery](docs/NATIVE-FIELDS-DELIVERY.md)
+records their acceptance scope.
+
 Open `/?link-navigation` (append `&dark` or `&disabled`) for Button/Badge keyboard
 navigation and disabled-anchor examples. [BTN-1/BDG-1 delivery](docs/LINKS-NAVIGATION-DELIVERY.md)
 records their acceptance.

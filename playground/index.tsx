@@ -19,6 +19,7 @@ import { AlertDialogFocus } from './alert-dialog-focus';
 import { TabsLifecycle } from './tabs-lifecycle';
 import { ToggleForms } from './toggle-forms';
 import { LinkNavigation } from './link-navigation';
+import { NativeFields } from './native-fields';
 import { TabsExamples, OverlayExamples } from './overlays';
 const variants = ['default', 'secondary', 'outline', 'ghost', 'destructive', 'link'] as const;
 /** Keep demonstration state in the application, with no data layer in components. */
@@ -133,6 +134,7 @@ function ToggleExamples() {
 /** Select focused acceptance examples without changing the main gallery layout. */
 function Preview() {
   const query = new URLSearchParams(location.search);
+  if (query.has('native-fields')) return <NativeFields/>;
   if (query.has('link-navigation')) return <LinkNavigation/>;
   if (query.has('toggle-forms')) return <ToggleForms/>;
   if (query.has('tabs-lifecycle')) return <TabsLifecycle/>;

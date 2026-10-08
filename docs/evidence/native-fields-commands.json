@@ -1,0 +1,37 @@
+[
+  {
+    "command": "bun run check",
+    "exitCode": 0,
+    "seconds": 2.07
+  },
+  {
+    "command": "bun run lint",
+    "exitCode": 0,
+    "seconds": 1.12
+  },
+  {
+    "command": "bun run test",
+    "exitCode": 0,
+    "seconds": 2.54
+  },
+  {
+    "command": "bun run test:coverage",
+    "exitCode": 0,
+    "seconds": 2.71
+  },
+  {
+    "command": "bun run test:server",
+    "exitCode": 0,
+    "seconds": 0.72
+  },
+  {
+    "command": "THEME_PORT=4403 RESULTS_FILE=docs/evidence/native-fields-integration.json bun run test:integration",
+    "exitCode": 0,
+    "seconds": 118.49
+  },
+  {
+    "command": "THEME_PORT=4403 RESULTS_FILE=docs/evidence/native-fields-e2e.json bun run test:e2e",
+    "exitCode": 0,
+    "seconds": 71.79
+  }
+]
