@@ -32,6 +32,11 @@ mutation itself. Native buttons support Enter/Space and disabled semantics.
 Disabled anchors lose href, leave the tab sequence, expose aria-disabled, and
 block click handlers. `as` accepts `button` or `a`; custom router links can use
 `class={buttonVariants({variant: 'outline'})}` and own navigation semantics.
+A native anchor activates with Enter; Space does not activate it. Disabling a
+focused Button anchor also blocks activation, and re-enabling restores its href
+and normal Tab entry without replacing the DOM node. The
+[BTN-1 browser cases](LINKS-NAVIGATION-DELIVERY.md) verify this in Chromium/Firefox
+against source and built exports, including light/dark focus indicators.
 
 ## Badge
 
@@ -43,6 +48,10 @@ block click handlers. `as` accepts `button` or `a`; custom router links can use
 
 Uses a span by default, without an invented interactive role. The same six
 variants are available. Status meaning must include text, not color alone.
+With `as="a"` and `href`, Badge participates in native Tab/Shift+Tab navigation
+and activates with Enter; Space does not activate it. The default span is skipped
+by sequential keyboard navigation. [BDG-1 browser cases](LINKS-NAVIGATION-DELIVERY.md)
+verify both themes and export modes. Badge has no disabled-link API.
 
 ## Card
 

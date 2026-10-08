@@ -1,7 +1,7 @@
 # Component acceptance and test matrix
 
 Initially audited 2026-10-08 against source at `314f27a`; updated with the
-[CHK-1/SWT-1 browser evidence](TOGGLES-FORMS-DELIVERY.md). Covers the **14
+[BTN-1/BDG-1 browser evidence](LINKS-NAVIGATION-DELIVERY.md). Covers the **14
 implemented component families**, including their compound parts. The other
 catalog entries in [COMPONENT-MAP.md](../COMPONENT-MAP.md) remain unimplemented;
 their adoption probes are not delivered-component acceptance tests.
@@ -9,7 +9,7 @@ their adoption probes are not delivered-component acceptance tests.
 This is a behavior inventory, not a claim that every possible state is tested.
 Read the assertions in the linked tests: a broad test title alone is not evidence
 for every behavior it mentions. Gaps below are unverified acceptance cases, not
-confirmed implementation bugs. The initial audit added no tests; the CMB-1, CMB-2, POP-1, ALT-1, TAB-1 and CHK-1/SWT-1
+confirmed implementation bugs. The initial audit added no tests; the CMB-1, CMB-2, POP-1, ALT-1, TAB-1, CHK-1/SWT-1 and BTN-1/BDG-1
 follow-ups add the browser contracts linked below.
 
 ## Reading the evidence
@@ -38,13 +38,13 @@ are implementation scope limits, not features that an existing test proves.
 | Diagnostics and cleanup are checked | [Unit setup](../vitest.setup.ts), [browser fixture](../tests/browser-fixture.ts) | Every unit test checks console warn/error after cleanup; every B/E test checks console warning/error and page errors. SSR has no equivalent diagnostic fixture. |
 | Whole-gallery accessibility | [B: light/dark examples have no axe accessibility violations](../tests/integration/foundation.spec.ts#L27) | Applies to the rendered, settled gallery state. Axe does not certify screen-reader usability or all dynamic states. |
 | Whole-gallery visual appearance | [V: light/dark/mobile component gallery](../tests/e2e/visual.spec.ts#L3) | Shared images include every family; not every variant/state combination. |
-| Unit execution coverage | [Coverage configuration](../vitest.config.ts), [measured coverage](evidence/toggles-forms-coverage.json) | 100% statements, branches, functions and lines for included component/helper source; not exhaustive behavior coverage. |
+| Unit execution coverage | [Coverage configuration](../vitest.config.ts), [measured coverage](evidence/links-navigation-coverage.json) | 100% statements, branches, functions and lines for included component/helper source; not exhaustive behavior coverage. |
 
-The CHK-1/SWT-1 delivery records **97 unit tests, 6 grouped SSR tests,
-118 browser integration runs (59 scenarios × 2 engines), and 91 E2E runs
-(41 journeys × 2 engines + 9 Chromium visual tests)**. Those visual tests compare
+The BTN-1/BDG-1 delivery records **97 unit tests, 6 grouped SSR tests,
+130 browser integration runs (65 scenarios × 2 engines), and 103 E2E runs
+(47 journeys × 2 engines + 9 Chromium visual tests)**. Those visual tests compare
 12 images. These totals are package-wide, not per component. See the
-[CHK-1/SWT-1 verification](TOGGLES-FORMS-DELIVERY.md) for current results and the
+[BTN-1/BDG-1 verification](LINKS-NAVIGATION-DELIVERY.md) for current results and the
 [initial matrix verification](TEST-MATRIX-DELIVERY.md) for the original audit.
 
 ## Button
@@ -57,9 +57,14 @@ The CHK-1/SWT-1 delivery records **97 unit tests, 6 grouped SSR tests,
 | Keyboard activation, visible focus, disabled state and anchor navigation work in a browser | [B: keyboard activation, focus ring, disabled examples and navigation](../tests/integration/foundation.spec.ts#L5) |
 | Submit action blocks duplicate pending submission and recovers | [E: form validation, pending submit protection and recovery to ready](../tests/e2e/playground.spec.ts#L3); pending state is owned by the example |
 | Variant/size class contract and token customization | [U: reference button classes](../tests/unit/contracts.test.ts#L17), [B: custom theme changes token-driven button colors](../tests/integration/foundation.spec.ts#L18) |
+| Anchor participates in Tab/Shift+Tab order, shows light/dark keyboard focus, navigates on Enter and does not activate on Space | [B/E: native Button link](../tests/link-navigation.ts#L31), parameterized by theme |
+| Initially disabled anchor is skipped in both tab directions and blocks real pointer activation | [B/E: disabled entry and pointer](../tests/link-navigation.ts#L62) |
+| Disabling a focused anchor blocks Enter/Space/pointer and callbacks; re-enabling restores navigation on the same node | [B/E: live availability change](../tests/link-navigation.ts#L78) |
 
-Open **BTN-1**: disabled-anchor behavior is U-only; no dedicated browser check for
-keyboard activation after disabling that anchor. Shared S/V scope is below.
+**BTN-1 closed:** dedicated scenarios run in Chromium and Firefox through source
+and built exports. Native same-document fragment navigation and callback counts
+are covered; external/router navigation and new-tab gestures are untested. See
+[delivery](LINKS-NAVIGATION-DELIVERY.md). Shared S/V scope is below.
 
 ## Badge
 
@@ -67,10 +72,14 @@ keyboard activation after disabling that anchor. Shared S/V scope is below.
 | --- | --- |
 | Default/updated variants, caller class and anchor href render correctly | [U: updates a badge variant and supports links with caller classes](../tests/unit/components.test.tsx#L45), [U: uses the default badge variant](../tests/unit/components.test.tsx#L50) |
 | Variant class contract matches the documented React reference correction | [U: reference badge classes](../tests/unit/contracts.test.ts#L18) |
-| Appearance and accessibility in the gallery | Shared V and whole-gallery B axe only; no Badge-specific interaction assertion |
+| Appearance and accessibility in the gallery | Shared V and whole-gallery B axe; dedicated link behavior below |
+| Native anchor has light/dark keyboard focus, forward/backward Tab order, Enter navigation and no Space activation; a span Badge adds no tab stop | [B/E: native Badge link](../tests/link-navigation.ts#L31), parameterized by theme |
 
-Open **BDG-1**: no dedicated real-browser Badge link navigation/focus test.
-Selection, reset and async recovery are N/A: Badge owns no selection or request.
+**BDG-1 closed:** Badge has independent light/dark scenarios in both engines via
+[source integration](../tests/integration/link-navigation.spec.ts#L3) and
+[built E2E](../tests/e2e/link-navigation.spec.ts#L3). The same navigation limits as
+Button apply. Selection, reset and async recovery are N/A: Badge owns no selection
+or request. Badge has no disabled API.
 
 ## Card
 
@@ -300,8 +309,7 @@ order the next test work; they do not assign bug severity to untested behavior.
 | Priority | ID | Component(s) | Concrete closure condition |
 | --- | --- | --- | --- |
 | Manual follow-up | CMB-2 | Combobox | Browser scrolling/Tab/modal checks pass; record a physical IME composition/commit/cancel session before closing the remaining manual portion. |
-| Next | BTN-1, BDG-1 | Button, Badge | Browser proves focus/navigation of enabled links and disabled Button anchor nonactivation. |
-| Follow-up | INP-1, TXT-1, LBL-1 | Input, Textarea, Label | Define supported native input-type scenarios; add Textarea resize/read-only/scroll checks and live label reassociation in browser. |
+| Next | INP-1, TXT-1, LBL-1 | Input, Textarea, Label | Define supported native input-type scenarios; add Textarea resize/read-only/scroll checks and live label reassociation in browser. |
 | Follow-up | CRD-1, SEP-1 | Card, Separator | Add compact/long-content Card layout assertions and a vertical Separator visual state. |
 | Follow-up | SKL-1 | Skeleton | Actual Solid Loading resolution/unmount is exercised in a browser, separate from the manually toggled preview. |
 | Cross-cutting | ALL-1 | All 14 | Add WebKit runs and inspect differences; a mobile viewport alone does not certify Safari or a touch device. |
@@ -319,6 +327,7 @@ and component guide; it cannot be closed by increasing execution coverage alone.
 
 | ID | Closed | Evidence |
 | --- | --- | --- |
+| BTN-1, BDG-1 | 2026-10-08 | [Delivery](LINKS-NAVIGATION-DELIVERY.md): six link scenarios × two engines × source and built exports. No runtime fix needed. |
 | CHK-1, SWT-1 | 2026-10-08 | [Delivery](TOGGLES-FORMS-DELIVERY.md): seven native form scenarios × two engines × source and built exports. Fixed premature synchronization before reset cancellation. |
 | TAB-1 | 2026-10-08 | [Delivery](TABS-TAB1-DELIVERY.md): six lifecycle scenarios × two engines × source and built exports. Fixed removal/reorder focus loss and Firefox’s extra scrolling-list tab stop. |
 | ALT-1 | 2026-10-08 | [Delivery](ALERT-ALT1-DELIVERY.md): five focus/nesting scenarios × two engines × source and built exports. Fixed parent initial focus selecting a force-mounted child’s hidden Cancel. |
