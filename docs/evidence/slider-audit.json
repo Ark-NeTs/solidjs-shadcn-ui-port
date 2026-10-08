@@ -1,0 +1,55 @@
+{
+  "hydration": {
+    "passed": 96,
+    "emptyDiagnostics": 96,
+    "retries": 0,
+    "skipped": 0
+  },
+  "integration": {
+    "passed": 363,
+    "emptyDiagnostics": 363,
+    "retries": 0,
+    "skipped": 0
+  },
+  "e2e": {
+    "passed": 336,
+    "emptyDiagnostics": 336,
+    "retries": 0,
+    "skipped": 0
+  },
+  "coverage": {
+    "lines": {
+      "total": 689,
+      "covered": 689,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 2521,
+      "covered": 2521,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 996,
+      "covered": 996,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 1652,
+      "covered": 1652,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branchesTrue": {
+      "total": 0,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "visualBaselines": 30,
+  "localDocumentationLinks": 411,
+  "seconds": 0.012
+}

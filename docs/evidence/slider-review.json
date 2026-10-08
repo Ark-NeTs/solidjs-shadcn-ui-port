@@ -1,0 +1,34 @@
+{
+  "scope": "Slider implementation, numeric helper, examples, unit/source/build/SSR/hydration tests, unpatched Kobalte evaluation, documentation and changed visual baselines",
+  "reviewed": [
+    "Controlled and local value ownership; normalized values, gaps and invalid configuration",
+    "Keyboard repeats, accepted-value commits and cancellation",
+    "Pointer capture, nearest thumb, direction and cleanup",
+    "Native repeated form values, canceled resets and changing ownership",
+    "Source/SSR/hydration thumb identity and disposal",
+    "Public exports, semantic styling and unchanged dependencies",
+    "All eight changed visual baselines and their documentation copies",
+    "All eleven DELIVERY criteria, measured test evidence and explicit unverified limits"
+  ],
+  "corrections": [
+    "Memoized thumb count prevents value updates canceling a drag",
+    "Teardown reads DOM registration as an intentional snapshot",
+    "Native focusout finishes keyboard gestures because blur does not bubble",
+    "Explicit thumb labels override shared labelledby",
+    "Numeric normalization preserves integer values and rejects unsafe step grids",
+    "Removed incidental unchanged overlay/mobile Combobox screenshot regeneration",
+    "Narrowed the controlled browser test title to its actual position/value-text assertions; removed an extra blank line"
+  ],
+  "productionChangesOutsideSlider": false,
+  "unrelatedUserChangesStaged": false,
+  "diffCheck": {
+    "command": "git diff --check",
+    "exitCode": 0,
+    "seconds": 0.077
+  },
+  "postReviewLint": {
+    "command": "bun run lint",
+    "exitCode": 0,
+    "seconds": 1.56
+  }
+}

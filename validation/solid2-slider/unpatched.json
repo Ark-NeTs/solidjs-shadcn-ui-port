@@ -1,0 +1,100 @@
+[
+  {
+    "browser": "chromium",
+    "checks": {
+      "arrow": "20",
+      "gap": "20",
+      "form": [
+        [
+          "volume",
+          "20"
+        ],
+        [
+          "volume",
+          "80"
+        ]
+      ],
+      "reset": true,
+      "drag": false
+    },
+    "diagnostics": [
+      {
+        "type": "warning",
+        "text": "[STRICT_READ_UNTRACKED] Reactive value read directly in <Slider.Root> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> › <Slider.Root>\n[STRICT_READ_UNTRACKED] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#strict_read_untracked"
+      },
+      {
+        "type": "warning",
+        "text": "[STRICT_READ_UNTRACKED] Reactive value read directly in <Slider.Root> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> › <Slider.Root>"
+      },
+      {
+        "type": "warning",
+        "text": "[STRICT_READ_UNTRACKED] Reactive value read directly in <Slider.Root> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> › <Slider.Root>"
+      },
+      {
+        "type": "warning",
+        "text": "[EFFECT_WRITES_OWN_SOURCE] effect \"effect\" re-ran because of its own write: it wrote \"signal\", which fed back into its inputs. Two flushes to settle, and the screen rendered the pre-write value in between. The written value is a function of what the effect reads — compute it in a memo (or normalize where the source is written) instead of correcting it after the fact.\n  in <Probe> › <Slider.Root> › <DomCollectionProvider> › <provider> › computed › <FormControlContext> › computed › <SliderContext> › computed › <Polymorphic> › <Dynamic> › <Anonymous> › computed › effect › <Slider.Track> › <Polymorphic> › <Dynamic> › <Anonymous> › computed › effect › <Slider.Thumb> › <ThumbContext> › computed › <Polymorphic> › <Dynamic> › <Anonymous> › computed › effect\n[EFFECT_WRITES_OWN_SOURCE] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#effect_writes_own_source\n[EFFECT_WRITES_OWN_SOURCE] deeper evidence: import { attribution } from \"solid-js/attribution\"; attribution.enable() explains every re-run — why-chains, costs(), feedback(), history(\"hold\" | \"waterfall\") — agent loop: node_modules/@solidjs/diagnostics/skills/agent-loops/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/diagnostics/skills/agent-loops/SKILL.md JSHandle@node"
+      },
+      {
+        "type": "warning",
+        "text": "[EFFECT_WRITES_OWN_SOURCE] effect \"effect\" re-ran because of its own write: it wrote \"signal\", which fed back into its inputs. Two flushes to settle, and the screen rendered the pre-write value in between. The written value is a function of what the effect reads — compute it in a memo (or normalize where the source is written) instead of correcting it after the fact.\n  in <Probe> › <Slider.Root> › <DomCollectionProvider> › <provider> › computed › <FormControlContext> › computed › <SliderContext> › computed › <Polymorphic> › <Dynamic> › <Anonymous> › computed › effect › <Slider.Track> › <Polymorphic> › <Dynamic> › <Anonymous> › computed › effect › <Slider.Thumb> › <ThumbContext> › computed › <Polymorphic> › <Dynamic> › <Anonymous> › computed › effect JSHandle@node"
+      },
+      {
+        "type": "warning",
+        "text": "[EFFECT_RELAY_TEAR] effect \"input.spread\" ran twice for one write of \"signal\": once in the flush where \"signal\" changed, and again after effect \"effect\" relayed it by writing \"signal\" — the first frame showed the new \"signal\" with the stale \"signal\". The written value is the effect's compute output — by contract a pure function of what it tracks: make \"signal\" a memo of that computation and delete the effect.\n  in <Probe> › <Slider.Root> › <DomCollectionProvider> › <provider> › computed › <FormControlContext> › computed › <SliderContext> › computed › <Polymorphic> › <Dynamic> › <Anonymous> › computed › effect › <Slider.Track> › <Polymorphic> › <Dynamic> › <Anonymous> › computed › effect › <Slider.Thumb> › <ThumbContext> › computed › <Polymorphic> › <Dynamic> › <Anonymous> › computed › effect › <Slider.Input> › input.spread\n[EFFECT_RELAY_TEAR] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#effect_relay_tear\n[EFFECT_RELAY_TEAR] deeper evidence: import { attribution } from \"solid-js/attribution\"; attribution.enable() explains every re-run — why-chains, costs(), feedback(), history(\"hold\" | \"waterfall\") — agent loop: node_modules/@solidjs/diagnostics/skills/agent-loops/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/diagnostics/skills/agent-loops/SKILL.md JSHandle@node"
+      },
+      {
+        "type": "warning",
+        "text": "[EFFECT_RELAY_TEAR] effect \"input.spread\" ran twice for one write of \"signal\": once in the flush where \"signal\" changed, and again after effect \"effect\" relayed it by writing \"signal\" — the first frame showed the new \"signal\" with the stale \"signal\". The written value is the effect's compute output — by contract a pure function of what it tracks: make \"signal\" a memo of that computation and delete the effect.\n  in <Probe> › <Slider.Root> › <DomCollectionProvider> › <provider> › computed › <FormControlContext> › computed › <SliderContext> › computed › <Polymorphic> › <Dynamic> › <Anonymous> › computed › effect › <Slider.Track> › <Polymorphic> › <Dynamic> › <Anonymous> › computed › effect › <Slider.Thumb> › <ThumbContext> › computed › <Polymorphic> › <Dynamic> › <Anonymous> › computed › effect › <Slider.Input> › input.spread JSHandle@node"
+      }
+    ]
+  },
+  {
+    "browser": "firefox",
+    "checks": {
+      "arrow": "20",
+      "gap": "20",
+      "form": [
+        [
+          "volume",
+          "20"
+        ],
+        [
+          "volume",
+          "80"
+        ]
+      ],
+      "reset": true,
+      "drag": false
+    },
+    "diagnostics": [
+      {
+        "type": "warning",
+        "text": "[STRICT_READ_UNTRACKED] Reactive value read directly in <Slider.Root> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> › <Slider.Root>\n[STRICT_READ_UNTRACKED] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#strict_read_untracked"
+      },
+      {
+        "type": "warning",
+        "text": "[STRICT_READ_UNTRACKED] Reactive value read directly in <Slider.Root> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> › <Slider.Root>"
+      },
+      {
+        "type": "warning",
+        "text": "[STRICT_READ_UNTRACKED] Reactive value read directly in <Slider.Root> will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n  in <Probe> › <Slider.Root>"
+      },
+      {
+        "type": "warning",
+        "text": "[EFFECT_WRITES_OWN_SOURCE] effect \"effect\" re-ran because of its own write: it wrote \"signal\", which fed back into its inputs. Two flushes to settle, and the screen rendered the pre-write value in between. The written value is a function of what the effect reads — compute it in a memo (or normalize where the source is written) instead of correcting it after the fact.\n  in <Probe> › <Slider.Root> › <DomCollectionProvider> › <provider> › computed › <FormControlContext> › computed › <SliderContext> › computed › <Polymorphic> › <Dynamic> › <Anonymous> › computed › effect › <Slider.Track> › <Polymorphic> › <Dynamic> › <Anonymous> › computed › effect › <Slider.Thumb> › <ThumbContext> › computed › <Polymorphic> › <Dynamic> › <Anonymous> › computed › effect\n[EFFECT_WRITES_OWN_SOURCE] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#effect_writes_own_source\n[EFFECT_WRITES_OWN_SOURCE] deeper evidence: import { attribution } from \"solid-js/attribution\"; attribution.enable() explains every re-run — why-chains, costs(), feedback(), history(\"hold\" | \"waterfall\") — agent loop: node_modules/@solidjs/diagnostics/skills/agent-loops/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/diagnostics/skills/agent-loops/SKILL.md JSHandle@node"
+      },
+      {
+        "type": "warning",
+        "text": "[EFFECT_WRITES_OWN_SOURCE] effect \"effect\" re-ran because of its own write: it wrote \"signal\", which fed back into its inputs. Two flushes to settle, and the screen rendered the pre-write value in between. The written value is a function of what the effect reads — compute it in a memo (or normalize where the source is written) instead of correcting it after the fact.\n  in <Probe> › <Slider.Root> › <DomCollectionProvider> › <provider> › computed › <FormControlContext> › computed › <SliderContext> › computed › <Polymorphic> › <Dynamic> › <Anonymous> › computed › effect › <Slider.Track> › <Polymorphic> › <Dynamic> › <Anonymous> › computed › effect › <Slider.Thumb> › <ThumbContext> › computed › <Polymorphic> › <Dynamic> › <Anonymous> › computed › effect JSHandle@node"
+      },
+      {
+        "type": "warning",
+        "text": "[EFFECT_RELAY_TEAR] effect \"input.spread\" ran twice for one write of \"signal\": once in the flush where \"signal\" changed, and again after effect \"effect\" relayed it by writing \"signal\" — the first frame showed the new \"signal\" with the stale \"signal\". The written value is the effect's compute output — by contract a pure function of what it tracks: make \"signal\" a memo of that computation and delete the effect.\n  in <Probe> › <Slider.Root> › <DomCollectionProvider> › <provider> › computed › <FormControlContext> › computed › <SliderContext> › computed › <Polymorphic> › <Dynamic> › <Anonymous> › computed › effect › <Slider.Track> › <Polymorphic> › <Dynamic> › <Anonymous> › computed › effect › <Slider.Thumb> › <ThumbContext> › computed › <Polymorphic> › <Dynamic> › <Anonymous> › computed › effect › <Slider.Input> › input.spread\n[EFFECT_RELAY_TEAR] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#effect_relay_tear\n[EFFECT_RELAY_TEAR] deeper evidence: import { attribution } from \"solid-js/attribution\"; attribution.enable() explains every re-run — why-chains, costs(), feedback(), history(\"hold\" | \"waterfall\") — agent loop: node_modules/@solidjs/diagnostics/skills/agent-loops/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/diagnostics/skills/agent-loops/SKILL.md JSHandle@node"
+      },
+      {
+        "type": "warning",
+        "text": "[EFFECT_RELAY_TEAR] effect \"input.spread\" ran twice for one write of \"signal\": once in the flush where \"signal\" changed, and again after effect \"effect\" relayed it by writing \"signal\" — the first frame showed the new \"signal\" with the stale \"signal\". The written value is the effect's compute output — by contract a pure function of what it tracks: make \"signal\" a memo of that computation and delete the effect.\n  in <Probe> › <Slider.Root> › <DomCollectionProvider> › <provider> › computed › <FormControlContext> › computed › <SliderContext> › computed › <Polymorphic> › <Dynamic> › <Anonymous> › computed › effect › <Slider.Track> › <Polymorphic> › <Dynamic> › <Anonymous> › computed › effect › <Slider.Thumb> › <ThumbContext> › computed › <Polymorphic> › <Dynamic> › <Anonymous> › computed › effect › <Slider.Input> › input.spread JSHandle@node"
+      }
+    ]
+  }
+]

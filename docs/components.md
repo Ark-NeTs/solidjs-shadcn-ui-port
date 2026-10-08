@@ -972,6 +972,86 @@ touch, published/streaming SSR and application integration remain unverified.
 ![Dark Select examples](screenshots/select-dark.png)
 ![Narrow Select examples](screenshots/select-mobile.png)
 
+## Slider
+
+Open `/?slider` (append `&dark`) for range forms, owner acceptance, decimal steps,
+RTL, inversion, vertical sliders and disabled/readOnly states.
+
+```tsx
+import { createSignal } from 'solid-js';
+import { Slider } from 'shadcn-solidjs-theme/ui/slider';
+
+function PriceRange() {
+  const [range, setRange] = createSignal([20, 80]);
+  return <Slider value={range()} onValueChange={setRange}
+    min={0} max={100} step={1} minStepsBetweenThumbs={10}
+    name="price" aria-label="Price range" thumbLabels={['Minimum price', 'Maximum price']}
+    getValueText={value => `${value} dollars`} />;
+}
+```
+
+| Prop | Contract |
+| --- | --- |
+| value / defaultValue | Number arrays for controlled or local values. Default is `[min, max]`; use `[value]` for a single thumb. An empty array intentionally renders no thumbs. |
+| onValueChange | Requests a fresh sorted array during keyboard/pointer adjustment or an accepted reset. Retaining a controlled prop rejects the request. |
+| onValueCommit | Reports the accepted normalized array once after pointer release, keyup or focusout if the gesture changed it. Runs after Solid's batch; no callback for rejection, canceled gestures, reset or disposal. |
+| min / max / step | Defaults 0 / 100 / 1. Finite ordered bounds and a positive finite step; the step grid must fit safe integer precision. Values are snapped to the grid from min and clamped. If max is off-grid, the highest reachable value is the last grid point below it. |
+| minStepsBetweenThumbs | Nonnegative integer, default 0. Gap in step units. Invalid configuration or insufficient room throws RangeError; an application may recover with an Errored boundary or correct its props. |
+| orientation / inverted | Horizontal (default) or vertical; inverted defaults false. Inherited RTL is read at interaction time and respected by logical positioning. |
+| disabled / readOnly | Disabled removes thumbs from Tab order and form submission; readOnly retains both but prevents user changes. |
+| name / form | Hidden native inputs share the same name, one per thumb. Use FormData.getAll(name) to obtain their values. Reactive form ownership and default reset are supported. |
+| thumbLabels / getValueText | Unique accessible labels per thumb and optional human-readable value text `(value, index) => string`. Otherwise the root aria-label/labelledby is inherited. Explicit thumb labels override shared labelledby. |
+| Native div props | Root id/ref, class/style, direction, ARIA attributes and events are forwarded. No children, polymorphism or compound-part API in this wrapper. |
+
+The root is a named group and each thumb is a native button with slider semantics.
+Supply an accessible root name and distinguish range thumbs with thumbLabels.
+aria-describedby/aria-invalid pass to thumbs; application error/help content stays
+outside the component. No required option is provided: a nonempty range always has
+numeric values, and business validation belongs to the form owner. Reusing name
+submits repeated values without adding brackets automatically.
+
+Each thumb remains the same DOM node when its numeric value changes. Values are
+sorted, snapped and constrained as derived data without mutating the input array.
+A thumb cannot cross its neighbors. Controlled out-of-range data is displayed and
+submitted in normalized form, but the parent array itself is unchanged. Avoid
+extreme floating-point magnitudes that cannot represent your desired resolution.
+Empty data, fixed min=max and dynamic bounds are explicit supported states.
+
+Arrows adjust one step. Shift+Arrow and PageUp/PageDown adjust ten; Home/End reach
+the thumb's allowed neighbor-constrained bounds. Horizontal Left/Right follows RTL
+and inversion; Up/Down follows inversion. Page keys retain numeric increase/decrease.
+Tab uses normal DOM order. A track press picks the nearest thumb (ties retain the
+focused thumb); dragging captures the pointer until release, so it works beyond the
+track bounds. Current geometry is measured on every move. A zero-size track cannot
+start or update a gesture.
+
+Caller pointerdown/move or keydown handlers run first; preventDefault cancels that
+change. Canceling pointerup, keyup or focusout suppresses the commit callback while
+retaining already accepted live values. Pointer cancellation or capture loss also
+retains live values without committing. Disabled/readOnly, axis/bounds/step/gap or
+thumb-count changes cancel an active gesture; unmount releases capture and blocks
+queued commits. No network write or automatic retry is owned by Slider.
+
+Reset restores the initially captured defaults after all bubbling listeners can
+cancel it. Controlled owners may reject reset. Pending resets are canceled when
+form ownership changes or the Slider is disposed. Use an unmatched nonempty form
+ID to detach; remove form to return to the enclosing form. External DOM relocation
+or replacing a form node with another of the same ID is not observed.
+
+The sibling's thin track and small circular thumb are retained, with semantic
+primary/muted/ring/background tokens, enlarged pointer targets, custom class/style,
+light/dark themes and reduced motion. Vertical defaults to 160px tall; override
+height on the root. Keep room around track endpoints for the centered thumbs.
+There is no crossing/swap mode, draggable filled range, per-thumb disabled state,
+marks/ticks, tooltip, wheel gesture or application persistence. Physical touch and
+assistive-technology sessions, published/streaming SSR, native forced-colors mode,
+focus recovery after removing the focused thumb and application/Electron integration
+remain unverified. See [delivery](SLIDER-DELIVERY.md) for exact acceptance evidence.
+
+![Light Slider examples](screenshots/slider-light.png)
+![Dark Slider examples](screenshots/slider-dark.png)
+![Narrow Slider examples](screenshots/slider-mobile.png)
+
 ## Acceptance evidence
 
 See the [per-component test matrix](TEST-MATRIX.md) for linked assertions,

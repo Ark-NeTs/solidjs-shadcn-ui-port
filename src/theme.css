@@ -174,3 +174,7 @@
 @media (prefers-reduced-motion: reduce) {
   [data-slot="select-trigger"] { transition: none; }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  [data-slot="slider-thumb"] { transition: none; }
+}

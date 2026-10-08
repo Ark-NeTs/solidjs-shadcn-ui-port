@@ -61,3 +61,9 @@ it('renders Select labels, native selected values, required state and retained c
  const items=[{value:'apple',label:'Apple'},{value:'cherry',label:'Cherry',disabled:true}];const html=renderToString(()=><Select items={items} name="fruit" defaultValue="apple" required><SelectTrigger aria-label="Fruit"><SelectValue placeholder="Choose"/></SelectTrigger><SelectContent>{item=><SelectItem value={item.value}/>}</SelectContent></Select>);
  expect(html).toContain('role="combobox"');expect(html).toContain('Apple');expect(html).toContain('aria-expanded="false"');expect(html).toContain('name="fruit"');expect(html).toContain('selected');expect(html).toContain('required');expect(html).toContain('disabled');expect(html).toContain('role="listbox"');expect(html).toContain('hidden');expect(html).not.toContain('data-native-open');
 });
+
+import { Slider } from '../src';
+it('renders Slider bounds, thumb values, names and vertical semantics on the server',()=>{
+ const html=renderToString(()=><Slider aria-label="Server range" thumbLabels={['Minimum','Maximum']} defaultValue={[20,80]} name="range" minStepsBetweenThumbs={10} orientation="vertical" disabled/>);
+ expect(html).toContain('role="slider"');expect(html).toContain('aria-label="Minimum"');expect(html).toContain('aria-valuenow="20"');expect(html).toContain('aria-valuenow="80"');expect(html).toContain('aria-valuemax="70"');expect(html).toContain('aria-valuemin="30"');expect(html).toContain('aria-orientation="vertical"');expect(html.match(/name="range"/g)).toHaveLength(2);expect(html).toContain('value="20"');expect(html).toContain('value="80"');expect(html).toContain('disabled');
+});

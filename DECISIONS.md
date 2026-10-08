@@ -428,3 +428,35 @@ focus when it hid. Outside dismissal preserves its new destination. An option re
 function on SelectContent creates layout-neutral row owners; REASONING: returning
 40 components directly from a consumer For widened one parent insertion to 41 reads.
 Separators are decorative because listboxes permit option/group children, not separators.
+
+## Owned Slider state and gesture boundaries (2026-10-08)
+
+Evaluate unpatched Kobalte alpha.2 first on the shared rc.13 runtime. The two-engine
+range probe emits seven internal diagnostics per engine and fails settled arrow,
+End and drag updates. REASONING: implement the requested component without adopting
+those lifecycle failures or a private library patch. Toggle remains on its accepted
+Kobalte path; no corvu or new dependency is added. See [evaluation](KOBALTE-SLIDER.md).
+
+Use an explicit numeric array with stable index-based thumb owners, normalized on
+a min/step grid and constrained by neighbor gaps. REASONING: values, visible fill,
+ARIA bounds and submitted inputs must derive from the same state without correction
+effects. Invalid/nonfinite configuration, unsafe step grids and impossible gaps fail
+explicitly. Native hidden inputs submit one repeated name per thumb; reset requests
+initial values only after bubbling cancellation and follows reactive form ownership.
+Hidden values use a typed reactive spread to serialize strings through the DOM binding.
+
+Pointer capture owns one drag, track clicks choose the closest thumb and direct
+thumb drags preserve their index. Commit callbacks report accepted values after
+Solid's batch, once at release/key completion. Cancellation keeps the latest live
+value without a completion callback; configuration changes and disposal release
+capture. A memoized thumb count isolates that cleanup from ordinary value changes.
+Teardown reads the current DOM registration as an explicit untracked snapshot;
+focusout observes bubbling focus transitions and leaves any caller-owned reactive scope.
+REASONING: native blur does not bubble to the root, and ordinary value updates must
+not cancel their own active drag.
+
+Use logical inline positioning and native computed direction for inherited RTL;
+vertical values grow bottom-to-top unless inverted. The thumb surface uses semantic
+background instead of the sibling's hard-coded white so custom/dark themes inherit.
+Explicit thumb labels take precedence over the root's shared labelledby reference.
+REASONING: the minimum and maximum must remain distinguishable to assistive tools.

@@ -3,7 +3,7 @@
 Initially audited 2026-10-08 against source at `314f27a`; updated with the
 [three-engine browser evidence](WEBKIT-DELIVERY.md) and
 [source hydration regression](HYDRATION-DELIVERY.md), including
-[real Loading boundaries](LOADING-HYDRATION-DELIVERY.md). Covers the **22
+[real Loading boundaries](LOADING-HYDRATION-DELIVERY.md). Covers the **23
 implemented component families**, including their compound parts. The other
 catalog entries in [COMPONENT-MAP.md](../COMPONENT-MAP.md) remain unimplemented;
 their adoption probes are not delivered-component acceptance tests.
@@ -43,14 +43,14 @@ are implementation scope limits, not features that an existing test proves.
 | Diagnostics and cleanup are checked | [Unit setup](../vitest.setup.ts), [browser fixture](../tests/browser-fixture.ts) | Every unit test checks console warn/error after cleanup; every B/E/H test checks console warning/error and page errors. The hydration build also rejects server warnings/errors; ordinary S tests have no equivalent diagnostic fixture. |
 | Whole-gallery accessibility | [B: light/dark examples have no axe accessibility violations](../tests/integration/foundation.spec.ts#L27) | Applies to the rendered, settled gallery state. Axe does not certify screen-reader usability or all dynamic states. |
 | Whole-gallery visual appearance | [V: light/dark/mobile component gallery](../tests/e2e/visual.spec.ts#L3) | Shared gallery plus dedicated disclosure and preview images; not every variant/state combination. |
-| Unit execution coverage | [Coverage configuration](../vitest.config.ts), [measured coverage](evidence/select-coverage.json) | 100% statements, branches, functions and lines for included component/helper source; not exhaustive behavior coverage. |
+| Unit execution coverage | [Coverage configuration](../vitest.config.ts), [measured coverage](evidence/slider-coverage.json) | 100% statements, branches, functions and lines for included component/helper source; not exhaustive behavior coverage. |
 
-The current Select delivery records **167 unit tests, 11 grouped SSR tests,
-339 browser integration runs (113 scenarios × 3 engines), 309 E2E runs
-(95 journeys × 3 engines + 24 Chromium visual tests), and 93 hydration runs
-(90 positive assertions + 3 unsafe-pattern characterizations)**. Visual tests compare
-27 images. These totals are package-wide, not per component. See
-[Select verification](SELECT-DELIVERY.md) for current results and the
+The current Slider delivery records **185 unit tests, 12 grouped SSR tests,
+363 browser integration runs (121 scenarios × 3 engines), 336 E2E runs
+(103 journeys × 3 engines + 27 Chromium visual tests), and 96 hydration runs
+(93 positive assertions + 3 unsafe-pattern characterizations)**. Visual tests compare
+30 images. These totals are package-wide, not per component. See
+[Slider verification](SLIDER-DELIVERY.md) for current results and the
 [initial matrix verification](TEST-MATRIX-DELIVERY.md) for the original audit.
 
 WebKit runs on macOS with process-scoped button Tab navigation and native
@@ -441,6 +441,28 @@ relocation/replacement, item-aligned placement, hover/hold scroll or published S
 claim. Render every enabled item once in root data order. Explicit flat item data
 and source hydration are the accepted composition contract.
 
+## Slider
+
+[Unit assertions](../tests/unit/slider.test.tsx), [shared source/built scenarios](../tests/slider.ts),
+[Kobalte evaluation](../KOBALTE-SLIDER.md), [delivery](SLIDER-DELIVERY.md).
+
+| Acceptance requirement | Existing evidence |
+| --- | --- |
+| Normalized values do not mutate parent arrays; steps, bounds, gaps and explicit invalid configurations | U: decimal/sorted normalization, invalid contracts, three-thumb adjustment and changing bounds; B/E: keyboard steps, range constraints, commit, form submission and reset |
+| Controlled requests may be rejected; commit reports accepted values only | U: preserves canonical controlled values on rejection; B/E: controlled rejection preserves canonical position until accepted |
+| Arrows, Home/End, Shift/Page steps, Tab order and exactly-once commits | U: keyboard/commit/focusout cases; B/E: keyboard steps, range constraints, commit, form submission and reset |
+| Track chooses nearest thumb; capture tracks dragging outside bounds; cancellation and disposal clean up | U: captured drag, canceled events, zero geometry, config/capture loss/disposal; B/E: track clicks and captured dragging; capture cancels on disabled changes and unmount |
+| Native repeated form names, reset cancellation, reassociation/detachment, disabled omission and readOnly protection | U: form/reset/ownership cases; B/E: canceled resets, changing form ownership, disabled, readonly and remount preserve native contracts |
+| Inherited RTL, inversion and vertical placement agree with values | U: direction/vertical/inversion cases; B/E: decimal steps, inherited RTL, inversion and vertical pointer positions agree with values |
+| Names, per-thumb labels, value text, theme overrides, reduced motion and narrow enlarged layouts | U: labels override shared labelledby and refs/classes; B/E: Slider light/dark theme, custom colors, enlarged narrow layout and accessibility; axe checks both modes |
+| Original SSR thumb/input nodes and IDs remain interactive | S12; H: hydrates Slider thumbs and values before keyboard adjustment, form reset and disposal |
+| Representative light/dark/mobile appearance | V: three Slider ranges snapshots; not every orientation/direction/state combination |
+
+Physical AT/touch, forced-colors mode, focused-thumb removal recovery, arbitrary
+DOM form relocation/replacement, published/streaming SSR and app integration remain
+unverified. Three-thumb behavior and invalid configurations have unit coverage;
+browser range scenarios use two thumbs. No crossing/swap mode or draggable fill.
+
 ## SSR and visual scope by component
 
 | Component | Server assertions / presence | Visual scope |
@@ -465,6 +487,7 @@ and source hydration are the accepted composition contract.
 | Radio Group | S10: native name, checked, required and disabled markup | Dedicated light/dark/mobile choices |
 | Toggle | S10: native pressed button through Kobalte | Dedicated light/dark/mobile choices |
 | Toggle Group | S10: pressed/unpressed buttons and grouped state | Dedicated light/dark/mobile choices |
+| Slider | S12: thumb values/names, neighbor bounds, disabled inputs and vertical semantics | Dedicated light/dark/mobile Slider examples |
 | Select | S11: canonical native value/label, combobox, required/disabled and closed retained options | Dedicated open light/dark/mobile Select examples |
 | Hover Card | S9: native href, retained closed body, hidden shell in combined markup | Dedicated open light/dark/mobile previews |
 
@@ -476,7 +499,7 @@ opening native layers on the server”; S6: “renders the Combobox canonical va
 and form field without a browser”. S8: “renders disclosure state, custom ID
 relationships, disabled buttons and mount policy on the server”. None tests
 browser hydration. S9: “renders preview description IDs and native links without
-opening a browser layer”. S10: “renders choice values, names and pressed semantics on the server”. S11: “renders Select labels, native selected values, required state and retained closed options on the server”.
+opening a browser layer”. S10: “renders choice values, names and pressed semantics on the server”. S11: “renders Select labels, native selected values, required state and retained closed options on the server”. S12: “renders Slider bounds, thumb values, names and vertical semantics on the server”.
 
 **ASYNC-ERR-1 closed:** [Errored recovery](ERRORED-HYDRATION-DELIVERY.md) verifies
 explicit retry, repeated activation, draft identity/focus, stale resolve/reject,
@@ -493,9 +516,9 @@ order the next test work; they do not assign bug severity to untested behavior.
 | Priority | ID | Component(s) | Concrete closure condition |
 | --- | --- | --- | --- |
 | Manual follow-up | CMB-2 | Combobox | Browser scrolling/Tab/modal checks pass; record a physical IME composition/commit/cancel session before closing the remaining manual portion. |
-| Extended coverage | ALL-2 | All 22 | [H: real hydration, forms, Tabs and overlays](HYDRATION-DELIVERY.md) passes for the documented source fixtures. [Pending Loading boundary hydration](LOADING-HYDRATION-DELIVERY.md) and [client rejection/retry](ERRORED-HYDRATION-DELIVERY.md) are also covered. Streaming, ready-at-SSR boundaries, multiple roots, every variant and a published SSR build remain unverified. |
+| Extended coverage | ALL-2 | All 23 | [H: real hydration, forms, Tabs and overlays](HYDRATION-DELIVERY.md) passes for the documented source fixtures. [Pending Loading boundary hydration](LOADING-HYDRATION-DELIVERY.md) and [client rejection/retry](ERRORED-HYDRATION-DELIVERY.md) are also covered. Streaming, ready-at-SSR boundaries, multiple roots, every variant and a published SSR build remain unverified. |
 | Cross-cutting | ALL-3 | Interactive controls and semantic content | Record manual assistive-technology navigation/announcements; axe success is only automated evidence. |
-| Cross-cutting | ALL-4 | All 22 | Expand representative state/variant visual cases; isolate assertions currently supported only by shared gallery/SSR markup (notably Badge SSR). |
+| Cross-cutting | ALL-4 | All 23 | Expand representative state/variant visual cases; isolate assertions currently supported only by shared gallery/SSR markup (notably Badge SSR). |
 | Before app adoption | ALL-5 | Full package | Verify real admin composition, router/query integration and application errors; measure representative large-list/overlay performance. Current E2E is the gallery only. |
 
 No claim is made that every supported combination appears above. The matrix maps

@@ -1,4 +1,5 @@
 // Server/client shared acceptance composition through public source exports; D19/D90.
+import { Slider } from 'shadcn-solidjs-theme/ui/slider';
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from 'shadcn-solidjs-theme/ui/select';
 import { createSignal } from 'solid-js';
 import { Button } from 'shadcn-solidjs-theme/ui/button';
@@ -78,6 +79,7 @@ export function HydrationFixture(props: { initiallyOpen: false | 'popover' | 'al
     <Toggle defaultPressed>Hydrated bold</Toggle>
     <ToggleGroup type="multiple" aria-label="Hydrated styles" defaultValue={["a"]}><ToggleGroupItem value="a">Hydrated left</ToggleGroupItem><ToggleGroupItem value="b">Hydrated right</ToggleGroupItem></ToggleGroup>
     <form id="hydrated-select-form"><Select items={[{value:"apple",label:"Apple"},{value:"cherry",label:"Cherry"}]} name="fruit" defaultValue="apple"><SelectTrigger aria-label="Hydrated fruit"><SelectValue/></SelectTrigger><SelectContent>{item=><SelectItem value={item.value}/>}</SelectContent></Select><button type="reset">Reset hydrated fruit</button></form>
+    <form id="hydrated-slider-form"><Slider aria-label="Hydrated range" thumbLabels={["Hydrated minimum","Hydrated maximum"]} name="range" defaultValue={[20,80]} minStepsBetweenThumbs={10}/><button type="reset">Reset hydrated range</button></form>
     <output data-testid="confirmed">{confirmed()}</output>
   </main>;
 }

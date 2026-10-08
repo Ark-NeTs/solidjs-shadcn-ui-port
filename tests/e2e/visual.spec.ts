@@ -36,3 +36,7 @@ for(const mode of ['light','dark','mobile'])test(`${mode} radio and toggle choic
 for(const mode of ['light','dark','mobile'])test(`${mode} Select choices`,async({page})=>{
  if(mode==='mobile')await page.setViewportSize({width:390,height:844});await page.goto(`/?select&visual${mode==='dark'?'&dark':''}`);await page.evaluate(()=>document.fonts.ready);await page.emulateMedia({reducedMotion:'reduce'});await expect(page.getByRole('listbox',{name:'Table fruit options'})).toBeVisible();await expect(page.locator('main')).toHaveScreenshot(`select-${mode}.png`,{animations:'disabled',maxDiffPixelRatio:0.001});
 });
+
+for(const mode of ['light','dark','mobile'])test(`${mode} Slider ranges`,async({page})=>{
+ if(mode==='mobile')await page.setViewportSize({width:390,height:844});await page.goto(`/?slider${mode==='dark'?'&dark':''}`);await page.evaluate(()=>document.fonts.ready);await page.emulateMedia({reducedMotion:'reduce'});await expect(page.locator('main')).toHaveScreenshot(`slider-${mode}.png`,{animations:'disabled',maxDiffPixelRatio:0.001});
+});
