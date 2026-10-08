@@ -89,3 +89,9 @@ it('isolates long list and collection rows while retaining reactive filtering',(
 it('cancels deferred Tab dismissal when a newer interaction reopens the chooser',async()=>{
  render(()=><Combobox items={items}><Parts/></Combobox>);key('ArrowDown');key('Tab');key('ArrowDown');await new Promise(resolve=>setTimeout(resolve,10));flush();expect(screen.getByRole('dialog')).toBeVisible();expect(screen.getByRole('combobox')).toHaveAttribute('aria-expanded','true');
 });
+
+it('reveals the active option again after layout shrinks the list and releases its observer',()=>{
+ const callbacks:ResizeObserverCallback[]=[];const observe=vi.fn();const disconnect=vi.fn();
+ vi.stubGlobal('ResizeObserver',class {constructor(callback:ResizeObserverCallback){callbacks.push(callback);}observe=observe;disconnect=disconnect;});
+ try{const mounted=render(()=><Combobox items={items}><Parts/></Combobox>);key('ArrowDown');const list=screen.getByRole('listbox');expect(observe).toHaveBeenCalledWith(list);vi.spyOn(list,'getBoundingClientRect').mockReturnValue({top:0,bottom:50} as DOMRect);vi.spyOn(screen.getByRole('option',{name:'Apple'}),'getBoundingClientRect').mockReturnValue({top:40,bottom:70} as DOMRect);callbacks.at(-1)!([],{} as ResizeObserver);expect(list.scrollTop).toBe(20);mounted.unmount();expect(disconnect).toHaveBeenCalled();}finally{vi.unstubAllGlobals();}
+});
