@@ -1,0 +1,32 @@
+[
+  {
+    "command": "bun run check",
+    "exitCode": 0,
+    "seconds": 1.94
+  },
+  {
+    "command": "bun run lint",
+    "exitCode": 0,
+    "seconds": 0.97
+  },
+  {
+    "command": "bun run test",
+    "exitCode": 0,
+    "seconds": 2.51
+  },
+  {
+    "command": "bun run test:coverage",
+    "exitCode": 0,
+    "seconds": 2.52
+  },
+  {
+    "command": "bun run test:server",
+    "exitCode": 0,
+    "seconds": 0.7
+  },
+  {
+    "command": "THEME_PORT=4403 RESULTS_FILE=docs/evidence/popover-pop1-integration.json bun run test:integration",
+    "exitCode": 1,
+    "seconds": 86.61
+  }
+]

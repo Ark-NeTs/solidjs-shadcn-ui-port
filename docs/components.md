@@ -342,6 +342,15 @@ Closed content unmounts by default; `forceMount` keeps it hidden and stops its
 positioning observers. There is no delayed exit animation, portal-container API,
 virtual anchor or complete Radix/Kobalte prop compatibility in this release.
 
+The [placement examples](../playground/popover-placement.tsx) run at
+`/?popover-placement&placement-case=scroll` (also `resize`, `motion`, `edge`,
+`clip`). [Browser acceptance](POPOVER-POP1-DELIVERY.md) covers real scrolling,
+viewport/element resizing, transform motion, viewport flipping/shifting and
+clicks outside a transformed clipping ancestor in Chromium and Firefox, against
+source and built exports. Placement coordinates update without CSS transitions;
+the opening animation is retained. Avoid overriding content with `transition-all`,
+which would interpolate `left`/`top` and make the popup trail its anchor.
+
 ## Alert Dialog
 
 ```tsx

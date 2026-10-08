@@ -1,0 +1,226 @@
+bun run check
+$ tsc --noEmit
+
+bun run lint
+$ eslint src tests playground scripts *.ts
+
+bun run test
+$ vitest run
+
+ RUN  v4.1.10 /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme
+
+
+ Test Files  7 passed (7)
+      Tests  85 passed (85)
+   Start at  09:20:37
+   Duration  2.10s (transform 1.34s, setup 1.74s, import 1.63s, tests 1.37s, environment 5.88s)
+
+
+bun run test:coverage
+$ vitest run --coverage
+
+ RUN  v4.1.10 /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme
+      Coverage enabled with v8
+
+
+ Test Files  7 passed (7)
+      Tests  85 passed (85)
+   Start at  09:20:40
+   Duration  2.13s (transform 1.58s, setup 1.51s, import 2.00s, tests 1.98s, environment 3.10s)
+
+ % Coverage report from v8
+-------------------|---------|----------|---------|---------|-------------------
+File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
+-------------------|---------|----------|---------|---------|-------------------
+-------------------|---------|----------|---------|---------|-------------------
+
+=============================== Coverage summary ===============================
+Statements   : 100% ( 1119/1119 )
+Branches     : 100% ( 645/645 )
+Functions    : 100% ( 460/460 )
+Lines        : 100% ( 319/319 )
+================================================================================
+
+bun run test:server
+$ vitest run --config vitest.server.config.ts
+
+ RUN  v4.1.10 /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme
+
+
+ Test Files  1 passed (1)
+      Tests  6 passed (6)
+   Start at  09:20:42
+   Duration  341ms (transform 189ms, setup 0ms, import 237ms, tests 17ms, environment 0ms)
+
+
+THEME_PORT=4403 RESULTS_FILE=docs/evidence/popover-pop1-integration.json bun run test:integration
+$ playwright test tests/integration
+[WebServer] $ vite --config playground/vite.config.ts
+[WebServer] (node:93267) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 82 tests using 1 worker
+
+(node:93277) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › tests/integration/combobox.spec.ts:4:1 › searches with keyboard, submits canonical state, resets and validates required selection (907ms)
+  ✓   2 [chromium] › tests/integration/combobox.spec.ts:7:1 › handles empty, disabled and rejected selections without diagnostics (654ms)
+  ✓   3 [chromium] › tests/integration/combobox.spec.ts:10:1 › searches inside a popup and returns focus to its trigger (449ms)
+  ✓   4 [chromium] › tests/integration/combobox.spec.ts:13:1 › selects multiple chips and clears by explicit remove actions (500ms)
+  ✓   5 [chromium] › tests/integration/combobox.spec.ts:16:1 › keeps open content accessible and within enlarged narrow viewports (773ms)
+  ✓   6 [chromium] › tests/combobox-contracts.ts:7:5 › Uncontrolled multiple values submit, remove, clear and reset to their defaults (678ms)
+  ✓   7 [chromium] › tests/combobox-contracts.ts:7:5 › Controlled multiple values submit, remove, clear and reset to their defaults (679ms)
+  ✓   8 [chromium] › tests/combobox-contracts.ts:40:3 › object result replacement preserves stable-key selection and native form reset (719ms)
+  ✓   9 [chromium] › tests/combobox-contracts.ts:70:3 › rejected controlled opening, query and dismissal retain owner state until an owner update (559ms)
+  ✓  10 [chromium] › tests/combobox-navigation.ts:21:5 › active options stay visible through wrapping and scrolling in desktop layouts (511ms)
+  ✓  11 [chromium] › tests/combobox-navigation.ts:21:5 › active options stay visible through wrapping and scrolling in narrow enlarged layouts (638ms)
+  ✓  12 [chromium] › tests/combobox-navigation.ts:43:3 › inline Tab and Shift+Tab discard drafts and reach native neighboring controls (364ms)
+  ✓  13 [chromium] › tests/combobox-navigation.ts:61:3 › popup search Tab reaches the next control and Shift+Tab returns to its trigger (464ms)
+  ✓  14 [chromium] › tests/combobox-navigation.ts:81:3 › nested chooser selects and dismisses independently while its modal retains focus and scroll lock (763ms)
+  ✓  15 [chromium] › tests/integration/form-fields.spec.ts:5:1 › labels focus their controls and keyboard navigation exposes focus rings (417ms)
+  ✓  16 [chromium] › tests/integration/form-fields.spec.ts:11:1 › read-only, disabled, file and invalid fields retain their native behavior (568ms)
+  ✓  17 [chromium] › tests/integration/form-fields.spec.ts:19:36 › light invalid field presentation has no axe violations (1.2s)
+  ✓  18 [chromium] › tests/integration/form-fields.spec.ts:19:36 › dark invalid field presentation has no axe violations (1.3s)
+  ✓  19 [chromium] › tests/integration/foundation.spec.ts:5:1 › keyboard activation, focus ring, disabled examples and navigation (454ms)
+  ✓  20 [chromium] › tests/integration/foundation.spec.ts:12:1 › card size and separator orientation update geometry and semantics (476ms)
+  ✓  21 [chromium] › tests/integration/foundation.spec.ts:18:1 › custom theme changes token-driven button colors (421ms)
+  ✓  22 [chromium] › tests/integration/foundation.spec.ts:22:1 › loading placeholders are hidden from accessibility tree and stop motion (401ms)
+  ✓  23 [chromium] › tests/integration/foundation.spec.ts:27:36 › light examples have no axe accessibility violations (932ms)
+  ✓  24 [chromium] › tests/integration/foundation.spec.ts:27:36 › dark examples have no axe accessibility violations (1.2s)
+  ✓  25 [chromium] › tests/integration/overlays.spec.ts:5:1 › tabs skip disabled entries and support automatic, manual, vertical and RTL navigation (603ms)
+  ✓  26 [chromium] › tests/integration/overlays.spec.ts:11:1 › popover positions, labels and restores focus on Escape but preserves outside clicks (832ms)
+  ✓  27 [chromium] › tests/integration/overlays.spec.ts:16:1 › nested alert dismissal leaves the popover open and returns focus to its trigger (500ms)
+  ✓  28 [chromium] › tests/integration/overlays.spec.ts:19:1 › modal popover traps focus and releases scroll locking (564ms)
+  ✓  29 [chromium] › tests/integration/overlays.spec.ts:22:1 › alert blocks outside dismissal and preserves a draft through pending failure and retry (684ms)
+  ✓  30 [chromium] › tests/integration/overlays.spec.ts:25:32 › overlays pass axe with light theme and enlarged text (1.8s)
+  ✓  31 [chromium] › tests/integration/overlays.spec.ts:25:32 › overlays pass axe with dark theme and enlarged text (1.7s)
+  ✓  32 [chromium] › tests/popover-placement.ts:37:3 › follows two-axis ancestor scrolling and document scrolling while remaining open (624ms)
+  ✓  33 [chromium] › tests/popover-placement.ts:57:3 › reanchors after viewport, anchor and popup resizing without reopening (976ms)
+  ✓  34 [chromium] › tests/popover-placement.ts:77:3 › tracks a transformed anchor during movement and returns to its original position (1.8s)
+  ✘  35 [chromium] › tests/popover-placement.ts:108:3 › flips and shifts at viewport edges, constrains oversized content and keeps its action reachable (5.2s)
+(node:93602) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  36 [chromium] › tests/popover-placement.ts:130:3 › escapes a transformed paint-clipping ancestor and accepts clicks outside its bounds (618ms)
+  ✓  37 [chromium] › tests/integration/toggles.spec.ts:5:1 › labels and Space update checkboxes, mixed selections and switches once (586ms)
+  ✓  38 [chromium] › tests/integration/toggles.spec.ts:10:1 › disabled/read-only and rejected controlled changes preserve the displayed value (535ms)
+  ✓  39 [chromium] › tests/integration/toggles.spec.ts:15:1 › both switch sizes move the thumb correctly in LTR and RTL and respect reduced motion (500ms)
+  ✓  40 [chromium] › tests/integration/toggles.spec.ts:23:36 › light toggles including invalid controls pass axe (1.2s)
+  ✓  41 [chromium] › tests/integration/toggles.spec.ts:23:36 › dark toggles including invalid controls pass axe (1.3s)
+(node:93661) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  42 [firefox] › tests/integration/combobox.spec.ts:4:1 › searches with keyboard, submits canonical state, resets and validates required selection (1.8s)
+  ✓  43 [firefox] › tests/integration/combobox.spec.ts:7:1 › handles empty, disabled and rejected selections without diagnostics (750ms)
+  ✓  44 [firefox] › tests/integration/combobox.spec.ts:10:1 › searches inside a popup and returns focus to its trigger (553ms)
+  ✓  45 [firefox] › tests/integration/combobox.spec.ts:13:1 › selects multiple chips and clears by explicit remove actions (665ms)
+  ✓  46 [firefox] › tests/integration/combobox.spec.ts:16:1 › keeps open content accessible and within enlarged narrow viewports (1.1s)
+  ✓  47 [firefox] › tests/combobox-contracts.ts:7:5 › Uncontrolled multiple values submit, remove, clear and reset to their defaults (783ms)
+  ✓  48 [firefox] › tests/combobox-contracts.ts:7:5 › Controlled multiple values submit, remove, clear and reset to their defaults (706ms)
+  ✓  49 [firefox] › tests/combobox-contracts.ts:40:3 › object result replacement preserves stable-key selection and native form reset (820ms)
+  ✓  50 [firefox] › tests/combobox-contracts.ts:70:3 › rejected controlled opening, query and dismissal retain owner state until an owner update (688ms)
+  ✓  51 [firefox] › tests/combobox-navigation.ts:21:5 › active options stay visible through wrapping and scrolling in desktop layouts (1.6s)
+  ✓  52 [firefox] › tests/combobox-navigation.ts:21:5 › active options stay visible through wrapping and scrolling in narrow enlarged layouts (867ms)
+  ✓  53 [firefox] › tests/combobox-navigation.ts:43:3 › inline Tab and Shift+Tab discard drafts and reach native neighboring controls (411ms)
+  ✓  54 [firefox] › tests/combobox-navigation.ts:61:3 › popup search Tab reaches the next control and Shift+Tab returns to its trigger (492ms)
+  ✓  55 [firefox] › tests/combobox-navigation.ts:81:3 › nested chooser selects and dismisses independently while its modal retains focus and scroll lock (855ms)
+  ✓  56 [firefox] › tests/integration/form-fields.spec.ts:5:1 › labels focus their controls and keyboard navigation exposes focus rings (501ms)
+  ✓  57 [firefox] › tests/integration/form-fields.spec.ts:11:1 › read-only, disabled, file and invalid fields retain their native behavior (601ms)
+  ✓  58 [firefox] › tests/integration/form-fields.spec.ts:19:36 › light invalid field presentation has no axe violations (1.5s)
+  ✓  59 [firefox] › tests/integration/form-fields.spec.ts:19:36 › dark invalid field presentation has no axe violations (1.6s)
+  ✓  60 [firefox] › tests/integration/foundation.spec.ts:5:1 › keyboard activation, focus ring, disabled examples and navigation (576ms)
+  ✓  61 [firefox] › tests/integration/foundation.spec.ts:12:1 › card size and separator orientation update geometry and semantics (1.1s)
+  ✓  62 [firefox] › tests/integration/foundation.spec.ts:18:1 › custom theme changes token-driven button colors (444ms)
+  ✓  63 [firefox] › tests/integration/foundation.spec.ts:22:1 › loading placeholders are hidden from accessibility tree and stop motion (457ms)
+  ✓  64 [firefox] › tests/integration/foundation.spec.ts:27:36 › light examples have no axe accessibility violations (1.5s)
+  ✓  65 [firefox] › tests/integration/foundation.spec.ts:27:36 › dark examples have no axe accessibility violations (1.6s)
+  ✓  66 [firefox] › tests/integration/overlays.spec.ts:5:1 › tabs skip disabled entries and support automatic, manual, vertical and RTL navigation (749ms)
+  ✓  67 [firefox] › tests/integration/overlays.spec.ts:11:1 › popover positions, labels and restores focus on Escape but preserves outside clicks (805ms)
+  ✓  68 [firefox] › tests/integration/overlays.spec.ts:16:1 › nested alert dismissal leaves the popover open and returns focus to its trigger (691ms)
+  ✓  69 [firefox] › tests/integration/overlays.spec.ts:19:1 › modal popover traps focus and releases scroll locking (540ms)
+  ✓  70 [firefox] › tests/integration/overlays.spec.ts:22:1 › alert blocks outside dismissal and preserves a draft through pending failure and retry (948ms)
+  ✓  71 [firefox] › tests/integration/overlays.spec.ts:25:32 › overlays pass axe with light theme and enlarged text (2.8s)
+  ✓  72 [firefox] › tests/integration/overlays.spec.ts:25:32 › overlays pass axe with dark theme and enlarged text (2.3s)
+  ✓  73 [firefox] › tests/popover-placement.ts:37:3 › follows two-axis ancestor scrolling and document scrolling while remaining open (566ms)
+  ✓  74 [firefox] › tests/popover-placement.ts:57:3 › reanchors after viewport, anchor and popup resizing without reopening (591ms)
+  ✓  75 [firefox] › tests/popover-placement.ts:77:3 › tracks a transformed anchor during movement and returns to its original position (2.0s)
+  ✘  76 [firefox] › tests/popover-placement.ts:108:3 › flips and shifts at viewport edges, constrains oversized content and keeps its action reachable (5.3s)
+(node:94068) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  77 [firefox] › tests/popover-placement.ts:130:3 › escapes a transformed paint-clipping ancestor and accepts clicks outside its bounds (1.2s)
+  ✓  78 [firefox] › tests/integration/toggles.spec.ts:5:1 › labels and Space update checkboxes, mixed selections and switches once (842ms)
+  ✓  79 [firefox] › tests/integration/toggles.spec.ts:10:1 › disabled/read-only and rejected controlled changes preserve the displayed value (619ms)
+  ✓  80 [firefox] › tests/integration/toggles.spec.ts:15:1 › both switch sizes move the thumb correctly in LTR and RTL and respect reduced motion (558ms)
+  ✓  81 [firefox] › tests/integration/toggles.spec.ts:23:36 › light toggles including invalid controls pass axe (1.6s)
+  ✓  82 [firefox] › tests/integration/toggles.spec.ts:23:36 › dark toggles including invalid controls pass axe (1.6s)
+
+
+  1) [chromium] › tests/popover-placement.ts:108:3 › flips and shifts at viewport edges, constrains oversized content and keeps its action reachable
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+    Call Log:
+    - Timeout 5000ms exceeded while waiting on the predicate
+
+      113 |       const { anchor, popup } = await geometry(page);
+      114 |       return Math.abs(anchor.y - popup.y - popup.height - 8) < 1 && Math.abs(popup.x + popup.width - 1188) < 1;
+    > 115 |     }).toBe(true);
+          |        ^
+      116 |     await page.setViewportSize({ width: 320, height: 300 });
+      117 |     await expect.poll(async () => {
+      118 |       const { anchor, popup, side, nativeOpen } = await geometry(page);
+        at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/popover-placement.ts:115:8
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/integration-popover-placem-c6bb0--keeps-its-action-reachable-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/integration-popover-placem-c6bb0--keeps-its-action-reachable-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/integration-popover-placem-c6bb0--keeps-its-action-reachable-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/integration-popover-placem-c6bb0--keeps-its-action-reachable-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [firefox] › tests/popover-placement.ts:108:3 › flips and shifts at viewport edges, constrains oversized content and keeps its action reachable
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+    Call Log:
+    - Timeout 5000ms exceeded while waiting on the predicate
+
+      113 |       const { anchor, popup } = await geometry(page);
+      114 |       return Math.abs(anchor.y - popup.y - popup.height - 8) < 1 && Math.abs(popup.x + popup.width - 1188) < 1;
+    > 115 |     }).toBe(true);
+          |        ^
+      116 |     await page.setViewportSize({ width: 320, height: 300 });
+      117 |     await expect.poll(async () => {
+      118 |       const { anchor, popup, side, nativeOpen } = await geometry(page);
+        at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/popover-placement.ts:115:8
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/integration-popover-placem-c6bb0--keeps-its-action-reachable-firefox/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/integration-popover-placem-c6bb0--keeps-its-action-reachable-firefox/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/integration-popover-placem-c6bb0--keeps-its-action-reachable-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/integration-popover-placem-c6bb0--keeps-its-action-reachable-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2 failed
+    [chromium] › tests/popover-placement.ts:108:3 › flips and shifts at viewport edges, constrains oversized content and keeps its action reachable
+    [firefox] › tests/popover-placement.ts:108:3 › flips and shifts at viewport edges, constrains oversized content and keeps its action reachable
+  80 passed (1.4m)
+error: script "test:integration" exited with code 1

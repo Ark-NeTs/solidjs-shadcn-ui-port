@@ -66,6 +66,9 @@ Open `/?combobox-contracts` for focused native-form, object-result and controlle
 examples; [CMB-1 delivery](docs/COMBOBOX-CMB1-DELIVERY.md) records their browser acceptance.
 The same page includes long-list and modal navigation examples, verified in
 [CMB-2 delivery](docs/COMBOBOX-CMB2-DELIVERY.md).
+Open `/?popover-placement&placement-case=scroll` for placement checks; substitute
+`resize`, `motion`, `edge` or `clip` for the other focused examples.
+[POP-1 delivery](docs/POPOVER-POP1-DELIVERY.md) records their browser acceptance.
 
 ![Light component gallery](docs/screenshots/light.png)
 ![Dark component gallery](docs/screenshots/dark.png)

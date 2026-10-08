@@ -1,0 +1,281 @@
+{
+  "config": {
+    "argv": [
+      "/Users/arktas/.asdf/installs/nodejs/25.3.0/bin/node",
+      "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/node_modules/.bin/playwright",
+      "test",
+      "tests/integration/popover-placement.spec.ts",
+      "--grep",
+      "transformed anchor"
+    ],
+    "configFile": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/playwright.config.ts",
+    "rootDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "integration/**/*.spec.ts",
+          "e2e/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [
+          "**/visual.spec.ts"
+        ],
+        "testMatch": [
+          "integration/**/*.spec.ts",
+          "e2e/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "docs/evidence/popover-pop1-probe.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": {
+      "command": "bun run dev",
+      "url": "http://127.0.0.1:4403",
+      "reuseExistingServer": false,
+      "timeout": 60000
+    }
+  },
+  "suites": [
+    {
+      "title": "integration/popover-placement.spec.ts",
+      "file": "integration/popover-placement.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "tracks a transformed anchor during movement and returns to its original position",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 1175,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: < \u001b[32m12\u001b[39m\nReceived:   \u001b[31m16.935546875\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: < \u001b[32m12\u001b[39m\nReceived:   \u001b[31m16.935546875\u001b[39m\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/popover-placement.ts:99:61",
+                    "location": {
+                      "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/popover-placement.ts",
+                      "column": 61,
+                      "line": 99
+                    },
+                    "snippet": "   97 |     const moving = samples.filter(sample => sample.x > initial.anchor.x + 5 && sample.x < initial.anchor.x + 85);\n   98 |     expect(moving.length).toBeGreaterThan(2);\n>  99 |     expect(Math.max(...moving.map(sample => sample.error))).toBeLessThan(12);\n      |                                                             ^\n  100 |     await expect.poll(async () => (await geometry(page)).anchor.x).toBeCloseTo(initial.anchor.x + 90, 0);\n  101 |     await expect.poll(async () => (await geometry(page)).anchor.y).toBeCloseTo(initial.anchor.y + 60, 0);\n  102 |     await expectAttached(page);"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/popover-placement.ts",
+                        "column": 61,
+                        "line": 99
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: < \u001b[32m12\u001b[39m\nReceived:   \u001b[31m16.935546875\u001b[39m\n\n   97 |     const moving = samples.filter(sample => sample.x > initial.anchor.x + 5 && sample.x < initial.anchor.x + 85);\n   98 |     expect(moving.length).toBeGreaterThan(2);\n>  99 |     expect(Math.max(...moving.map(sample => sample.error))).toBeLessThan(12);\n      |                                                             ^\n  100 |     await expect.poll(async () => (await geometry(page)).anchor.x).toBeCloseTo(initial.anchor.x + 90, 0);\n  101 |     await expect.poll(async () => (await geometry(page)).anchor.y).toBeCloseTo(initial.anchor.y + 60, 0);\n  102 |     await expectAttached(page);\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/popover-placement.ts:99:61"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:18:30.153Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "movement-samples",
+                      "contentType": "application/json",
+                      "body": "W3sidGltZSI6NDM0Ljg5OTk5OTYxODUzMDMsInBvcHVwWCI6NjAsInBvcHVwWSI6MjI4LCJhbmNob3JZIjoxODAsIngiOjYwLCJlcnJvciI6MH0seyJ0aW1lIjo0NTIuNSwicG9wdXBYIjo2MCwicG9wdXBZIjoyMjgsImFuY2hvclkiOjE4Mi40OTg3MDMwMDI5Mjk3LCJ4Ijo2My43NDgwNTA2ODk2OTcyNjYsImVycm9yIjozLjc0ODA1MDY4OTY5NzI2NTZ9LHsidGltZSI6NDY5LjA5OTk5OTkwNDYzMjU3LCJwb3B1cFgiOjYwLjgyODEyNSwicG9wdXBZIjoyMjguNTQ2ODc1LCJhbmNob3JZIjoxODUuMDAzNjkyNjI2OTUzMTIsIngiOjY3LjUwNTU0NjU2OTgyNDIyLCJlcnJvciI6Ni42Nzc0MjE1Njk4MjQyMTl9LHsidGltZSI6NDg1LjU5OTk5OTkwNDYzMjU3LCJwb3B1cFgiOjYyLjI4MTI1LCJwb3B1cFkiOjIyOS41MTU2MjUsImFuY2hvclkiOjE4Ny40OTM2OTgxMjAxMTcyLCJ4Ijo3MS4yNDA1NDcxODAxNzU3OCwiZXJyb3IiOjguOTU5Mjk3MTgwMTc1NzgxfSx7InRpbWUiOjUwMi4zOTk5OTk2MTg1MzAzLCJwb3B1cFgiOjY0LjI2NTYyNSwicG9wdXBZIjoyMzAuODQzNzUsImFuY2hvclkiOjE4OS45OTg3MDMwMDI5Mjk3LCJ4Ijo3NC45OTgwNDY4NzUsImVycm9yIjoxMC43MzI0MjE4NzV9LHsidGltZSI6NTE5LCJwb3B1cFgiOjY2LjY0MDYyNSwicG9wdXBZIjoyMzIuNDIxODc1LCJhbmNob3JZIjoxOTIuNTAzNjkyNjI2OTUzMTIsIngiOjc4Ljc1NTU1NDE5OTIxODc1LCJlcnJvciI6MTIuMTE0OTI5MTk5MjE4NzV9LHsidGltZSI6NTM1LjUsInBvcHVwWCI6NjkuMzI4MTI1LCJwb3B1cFkiOjIzNC4yMTg3NSwiYW5jaG9yWSI6MTk1LjAwODY5NzUwOTc2NTYyLCJ4Ijo4Mi41MTMwNDYyNjQ2NDg0NCwiZXJyb3IiOjEzLjE4NDkyMTI2NDY0ODQzOH0seyJ0aW1lIjo1NTIuMjk5OTk5NzEzODk3NywicG9wdXBYIjo3Mi4yMTg3NSwicG9wdXBZIjoyMzYuMTQwNjI1LCJhbmNob3JZIjoxOTcuNDk4NzAzMDAyOTI5NywieCI6ODYuMjQ4MDQ2ODc1LCJlcnJvciI6MTQuMDI5Mjk2ODc1fSx7InRpbWUiOjU2OSwicG9wdXBYIjo3NS4zMTI1LCJwb3B1cFkiOjIzOC4yMDMxMjUsImFuY2hvclkiOjIwMC4wMDM2OTI2MjY5NTMxMiwieCI6OTAuMDA1NTU0MTk5MjE4NzUsImVycm9yIjoxNC42OTMwNTQxOTkyMTg3NX0seyJ0aW1lIjo1ODUuNTk5OTk5OTA0NjMyNiwicG9wdXBYIjo3OC41NjI1LCJwb3B1cFkiOjI0MC4zNzUsImFuY2hvclkiOjIwMi41MDg2OTc1MDk3NjU2MiwieCI6OTMuNzYzMDQ2MjY0NjQ4NDQsImVycm9yIjoxNS4yMDA1NDYyNjQ2NDg0Mzh9LHsidGltZSI6NjAyLjI5OTk5OTcxMzg5NzcsInBvcHVwWCI6ODEuODkwNjI1LCJwb3B1cFkiOjI0Mi41OTM3NSwiYW5jaG9yWSI6MjA0Ljk5ODcwMzAwMjkyOTcsIngiOjk3LjQ5ODA0Njg3NSwiZXJyb3IiOjE1LjYwNzQyMTg3NX0seyJ0aW1lIjo2MTguODk5OTk5NjE4NTMwMywicG9wdXBYIjo4NS4zMTI1LCJwb3B1cFkiOjI0NC44NzUsImFuY2hvclkiOjIwNy40ODg3MDg0OTYwOTM3NSwieCI6MTAxLjIzMzA0NzQ4NTM1MTU2LCJlcnJvciI6MTUuOTIwNTQ3NDg1MzUxNTYyfSx7InRpbWUiOjYzNS41LCJwb3B1cFgiOjg4Ljg0Mzc1LCJwb3B1cFkiOjI0Ny4yMTg3NSwiYW5jaG9yWSI6MjA5Ljk5MzY5ODEyMDExNzIsIngiOjEwNC45OTA1NTQ4MDk1NzAzMSwiZXJyb3IiOjE2LjE0NjgwNDgwOTU3MDMxMn0seyJ0aW1lIjo2NTIuMjk5OTk5NzEzODk3NywicG9wdXBYIjo5Mi40MDYyNSwicG9wdXBZIjoyNDkuNjA5Mzc1LCJhbmNob3JZIjoyMTIuNDk4NzAzMDAyOTI5NywieCI6MTA4Ljc0ODA0Njg3NSwiZXJyb3IiOjE2LjM0MTc5Njg3NX0seyJ0aW1lIjo2NjguODk5OTk5NjE4NTMwMywicG9wdXBYIjo5Ni4wMzEyNSwicG9wdXBZIjoyNTIuMDE1NjI1LCJhbmNob3JZIjoyMTUuMDAzNjkyNjI2OTUzMTIsIngiOjExMi41MDU1NTQxOTkyMTg3NSwiZXJyb3IiOjE2LjQ3NDMwNDE5OTIxODc1fSx7InRpbWUiOjY4NS4yOTk5OTk3MTM4OTc3LCJwb3B1cFgiOjk5LjY0MDYyNSwicG9wdXBZIjoyNTQuNDIxODc1LCJhbmNob3JZIjoyMTcuNDkzNjk4MTIwMTE3MiwieCI6MTE2LjI0MDU1NDgwOTU3MDMxLCJlcnJvciI6MTYuNTk5OTI5ODA5NTcwMzEyfSx7InRpbWUiOjcwMi4xOTk5OTk4MDkyNjUxLCJwb3B1cFgiOjEwMy4zMTI1LCJwb3B1cFkiOjI1Ni44NzUsImFuY2hvclkiOjIxOS45OTg3MDMwMDI5Mjk3LCJ4IjoxMTkuOTk4MDQ2ODc1LCJlcnJvciI6MTYuNjg1NTQ2ODc1fSx7InRpbWUiOjcxOC43OTk5OTk3MTM4OTc3LCJwb3B1cFgiOjEwNywicG9wdXBZIjoyNTkuMzI4MTI1LCJhbmNob3JZIjoyMjIuNTAzNjkyNjI2OTUzMTIsIngiOjEyMy43NTU1NTQxOTkyMTg3NSwiZXJyb3IiOjE2Ljc1NTU1NDE5OTIxODc1fSx7InRpbWUiOjczNS41LCJwb3B1cFgiOjExMC42NzE4NzUsInBvcHVwWSI6MjYxLjc4MTI1LCJhbmNob3JZIjoyMjQuOTkzNjk4MTIwMTE3MiwieCI6MTI3LjQ5MDU0NzE4MDE3NTc4LCJlcnJvciI6MTYuODE4NjcyMTgwMTc1Nzh9LHsidGltZSI6NzUyLCJwb3B1cFgiOjExNC4zOTA2MjUsInBvcHVwWSI6MjY0LjI2NTYyNSwiYW5jaG9yWSI6MjI3LjQ5ODcwMzAwMjkyOTcsIngiOjEzMS4yNDgwNDY4NzUsImVycm9yIjoxNi44NTc0MjE4NzV9LHsidGltZSI6NzY4Ljc5OTk5OTcxMzg5NzcsInBvcHVwWCI6MTE4LjA5Mzc1LCJwb3B1cFkiOjI2Ni43MTg3NSwiYW5jaG9yWSI6MjI5Ljk4ODcwODQ5NjA5Mzc1LCJ4IjoxMzQuOTgzMDQ3NDg1MzUxNTYsImVycm9yIjoxNi44ODkyOTc0ODUzNTE1NjJ9LHsidGltZSI6Nzg1LjU5OTk5OTkwNDYzMjYsInBvcHVwWCI6MTIxLjg1OTM3NSwicG9wdXBZIjoyNjkuMjM0Mzc1LCJhbmNob3JZIjoyMzIuNTA4Njk3NTA5NzY1NjIsIngiOjEzOC43NjMwNDYyNjQ2NDg0NCwiZXJyb3IiOjE2LjkwMzY3MTI2NDY0ODQzOH0seyJ0aW1lIjo4MDIuMDk5OTk5OTA0NjMyNiwicG9wdXBYIjoxMjUuNTYyNSwicG9wdXBZIjoyNzEuNzAzMTI1LCJhbmNob3JZIjoyMzQuOTk4NzAzMDAyOTI5NywieCI6MTQyLjQ5ODA0Njg3NSwiZXJyb3IiOjE2LjkzNTU0Njg3NX0seyJ0aW1lIjo4MTguODk5OTk5NjE4NTMwMywicG9wdXBYIjoxMjkuMzEyNSwicG9wdXBZIjoyNzQuMjAzMTI1LCJhbmNob3JZIjoyMzcuNTAzNjkyNjI2OTUzMTIsIngiOjE0Ni4yNTU1NTQxOTkyMTg3NSwiZXJyb3IiOjE2Ljk0MzA1NDE5OTIxODc1fSx7InRpbWUiOjgzNS4zOTk5OTk2MTg1MzAzLCJwb3B1cFgiOjEzMy4wNjI1LCJwb3B1cFkiOjI3Ni43MDMxMjUsImFuY2hvclkiOjI0MCwieCI6MTUwLCJlcnJvciI6MTYuOTM3NX0seyJ0aW1lIjo4NTEuNTk5OTk5OTA0NjMyNiwicG9wdXBYIjoxMzYuNzgxMjUsInBvcHVwWSI6Mjc5LjE4NzUsImFuY2hvclkiOjI0MCwieCI6MTUwLCJlcnJvciI6MTMuMjE4NzV9LHsidGltZSI6ODY4LjI5OTk5OTcxMzg5NzcsInBvcHVwWCI6MTQyLjc2NTYyNSwicG9wdXBZIjoyODMuMTcxODc1LCJhbmNob3JZIjoyNDAsIngiOjE1MCwiZXJyb3IiOjcuMjM0Mzc1fSx7InRpbWUiOjg4NC44OTk5OTk2MTg1MzAzLCJwb3B1cFgiOjE0Ni42MjUsInBvcHVwWSI6Mjg1Ljc1LCJhbmNob3JZIjoyNDAsIngiOjE1MCwiZXJyb3IiOjMuMzc1fSx7InRpbWUiOjkwMS42OTk5OTk4MDkyNjUxLCJwb3B1cFgiOjE0OC43MTg3NSwicG9wdXBZIjoyODcuMTQwNjI1LCJhbmNob3JZIjoyNDAsIngiOjE1MCwiZXJyb3IiOjEuMjgxMjV9LHsidGltZSI6OTE4LjI5OTk5OTcxMzg5NzcsInBvcHVwWCI6MTQ5LjcxODc1LCJwb3B1cFkiOjI4Ny44MTI1LCJhbmNob3JZIjoyNDAsIngiOjE1MCwiZXJyb3IiOjAuMjgxMjV9XQ=="
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/integration-popover-placem-248b0-ns-to-its-original-position-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/integration-popover-placem-248b0-ns-to-its-original-position-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/integration-popover-placem-248b0-ns-to-its-original-position-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/popover-placement.ts",
+                    "column": 61,
+                    "line": 99
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "3f790e6f9312b1d7803d-832430513cd5606cdb8a",
+          "file": "popover-placement.ts",
+          "line": 77,
+          "column": 3
+        },
+        {
+          "title": "tracks a transformed anchor during movement and returns to its original position",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 1484,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: < \u001b[32m12\u001b[39m\nReceived:   \u001b[31m20.416671752929688\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: < \u001b[32m12\u001b[39m\nReceived:   \u001b[31m20.416671752929688\u001b[39m\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/popover-placement.ts:99:61",
+                    "location": {
+                      "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/popover-placement.ts",
+                      "column": 61,
+                      "line": 99
+                    },
+                    "snippet": "   97 |     const moving = samples.filter(sample => sample.x > initial.anchor.x + 5 && sample.x < initial.anchor.x + 85);\n   98 |     expect(moving.length).toBeGreaterThan(2);\n>  99 |     expect(Math.max(...moving.map(sample => sample.error))).toBeLessThan(12);\n      |                                                             ^\n  100 |     await expect.poll(async () => (await geometry(page)).anchor.x).toBeCloseTo(initial.anchor.x + 90, 0);\n  101 |     await expect.poll(async () => (await geometry(page)).anchor.y).toBeCloseTo(initial.anchor.y + 60, 0);\n  102 |     await expectAttached(page);"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/popover-placement.ts",
+                        "column": 61,
+                        "line": 99
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: < \u001b[32m12\u001b[39m\nReceived:   \u001b[31m20.416671752929688\u001b[39m\n\n   97 |     const moving = samples.filter(sample => sample.x > initial.anchor.x + 5 && sample.x < initial.anchor.x + 85);\n   98 |     expect(moving.length).toBeGreaterThan(2);\n>  99 |     expect(Math.max(...moving.map(sample => sample.error))).toBeLessThan(12);\n      |                                                             ^\n  100 |     await expect.poll(async () => (await geometry(page)).anchor.x).toBeCloseTo(initial.anchor.x + 90, 0);\n  101 |     await expect.poll(async () => (await geometry(page)).anchor.y).toBeCloseTo(initial.anchor.y + 60, 0);\n  102 |     await expectAttached(page);\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/popover-placement.ts:99:61"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:18:31.850Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "movement-samples",
+                      "contentType": "application/json",
+                      "body": "W3sidGltZSI6NTQxLCJwb3B1cFgiOjYwLjEzMzMzMTI5ODgyODEyNSwicG9wdXBZIjoyMjguMDgzMzI4MjQ3MDcwMywiYW5jaG9yWSI6MTgyLjI1LCJ4Ijo2My4zODMzMzEyOTg4MjgxMjUsImVycm9yIjozLjI1fSx7InRpbWUiOjU0OSwicG9wdXBYIjo2MC4zNjY2Njg3MDExNzE4NzUsInBvcHVwWSI6MjI4LjI1LCJhbmNob3JZIjoxODMuNDQ5OTk2OTQ4MjQyMiwieCI6NjUuMTY2NjcxNzUyOTI5NjksImVycm9yIjo0LjgwMDAwMzA1MTc1NzgxMjV9LHsidGltZSI6NTU0LCJwb3B1cFgiOjYwLjU4MzMyODI0NzA3MDMxLCJwb3B1cFkiOjIyOC4zODMzMzEyOTg4MjgxMiwiYW5jaG9yWSI6MTg0LjEwMDAwNjEwMzUxNTYyLCJ4Ijo2Ni4xNjY2NzE3NTI5Mjk2OSwiZXJyb3IiOjUuNTgzMzQzNTA1ODU5Mzc1fSx7InRpbWUiOjU2NCwicG9wdXBYIjo2MS4yMzMzMzc0MDIzNDM3NSwicG9wdXBZIjoyMjguODE2NjY1NjQ5NDE0MDYsImFuY2hvclkiOjE4NS41ODMzMjgyNDcwNzAzLCJ4Ijo2OC4zODMzMzEyOTg4MjgxMiwiZXJyb3IiOjcuMTQ5OTkzODk2NDg0Mzc1fSx7InRpbWUiOjU3MSwicG9wdXBYIjo2MS43NjY2NjI1OTc2NTYyNSwicG9wdXBZIjoyMjkuMTY2NjcxNzUyOTI5NywiYW5jaG9yWSI6MTg2Ljc1LCJ4Ijo3MC4xMzMzMzEyOTg4MjgxMiwiZXJyb3IiOjguMzY2NjY4NzAxMTcxODc1fSx7InRpbWUiOjU3OCwicG9wdXBYIjo2Mi4zMDAwMDMwNTE3NTc4MSwicG9wdXBZIjoyMjkuNTMzMzQwNDU0MTAxNTYsImFuY2hvclkiOjE4Ny44MTY2NjU2NDk0MTQwNiwieCI6NzEuNzMzMzM3NDAyMzQzNzUsImVycm9yIjo5LjQzMzMzNDM1MDU4NTkzOH0seyJ0aW1lIjo1ODYsInBvcHVwWCI6NjMuMDgzMzI4MjQ3MDcwMzEsInBvcHVwWSI6MjMwLjA1MDAwMzA1MTc1NzgsImFuY2hvclkiOjE4OS4wNjY2NjU2NDk0MTQwNiwieCI6NzMuNjAwMDA2MTAzNTE1NjIsImVycm9yIjoxMC41MTY2Nzc4NTY0NDUzMTJ9LHsidGltZSI6NTkxLCJwb3B1cFgiOjYzLjQ2NjY1OTU0NTg5ODQ0LCJwb3B1cFkiOjIzMC4zMDAwMDMwNTE3NTc4LCJhbmNob3JZIjoxODkuNzUsIngiOjc0LjYzMzMzMTI5ODgyODEyLCJlcnJvciI6MTEuMTY2NjcxNzUyOTI5Njg4fSx7InRpbWUiOjYwMCwicG9wdXBYIjo2NC41NTAwMDMwNTE3NTc4MSwicG9wdXBZIjoyMzEuMDMzMzQwNDU0MTAxNTYsImFuY2hvclkiOjE5MS4xNDk5OTM4OTY0ODQzOCwieCI6NzYuNzE2NjU5NTQ1ODk4NDQsImVycm9yIjoxMi4xNjY2NTY0OTQxNDA2MjV9LHsidGltZSI6NjA3LCJwb3B1cFgiOjY1LjM2NjY2ODcwMTE3MTg4LCJwb3B1cFkiOjIzMS41NjY2NjU2NDk0MTQwNiwiYW5jaG9yWSI6MTkyLjE4MzMzNDM1MDU4NTk0LCJ4Ijo3OC4yODMzNDA0NTQxMDE1NiwiZXJyb3IiOjEyLjkxNjY3MTc1MjkyOTY4OH0seyJ0aW1lIjo2MTUsInBvcHVwWCI6NjYuNDQ5OTk2OTQ4MjQyMTksInBvcHVwWSI6MjMyLjMwMDAwMzA1MTc1NzgsImFuY2hvclkiOjE5My40MzMzMzQzNTA1ODU5NCwieCI6ODAuMTY2NjcxNzUyOTI5NjksImVycm9yIjoxMy43MTY2NzQ4MDQ2ODc1fSx7InRpbWUiOjYyMywicG9wdXBYIjo2Ny4zODMzMzEyOTg4MjgxMiwicG9wdXBZIjoyMzIuOTE2NjcxNzUyOTI5NywiYW5jaG9yWSI6MTk0LjUzMzM0MDQ1NDEwMTU2LCJ4Ijo4MS44MDAwMDMwNTE3NTc4MSwiZXJyb3IiOjE0LjQxNjY3MTc1MjkyOTY4OH0seyJ0aW1lIjo2MzAsInBvcHVwWCI6NjguNTE2NjYyNTk3NjU2MjUsInBvcHVwWSI6MjMzLjY2NjY3MTc1MjkyOTcsImFuY2hvclkiOjE5NS42ODMzMzQzNTA1ODU5NCwieCI6ODMuNTMzMzQwNDU0MTAxNTYsImVycm9yIjoxNS4wMTY2Nzc4NTY0NDUzMTJ9LHsidGltZSI6NjM4LCJwb3B1cFgiOjY5Ljc2NjY2MjU5NzY1NjI1LCJwb3B1cFkiOjIzNC41LCJhbmNob3JZIjoxOTYuOTMzMzM0MzUwNTg1OTQsIngiOjg1LjM5OTk5Mzg5NjQ4NDM4LCJlcnJvciI6MTUuNjMzMzMxMjk4ODI4MTI1fSx7InRpbWUiOjY0NywicG9wdXBYIjo3MS4wMTY2NjI1OTc2NTYyNSwicG9wdXBZIjoyMzUuMzMzMzI4MjQ3MDcwMywiYW5jaG9yWSI6MTk4LjEzMzMzMTI5ODgyODEyLCJ4Ijo4Ny4xOTk5OTY5NDgyNDIxOSwiZXJyb3IiOjE2LjE4MzMzNDM1MDU4NTkzOH0seyJ0aW1lIjo2NTUsInBvcHVwWCI6NzIuMzE2NjY1NjQ5NDE0MDYsInBvcHVwWSI6MjM2LjE5OTk5Njk0ODI0MjIsImFuY2hvclkiOjE5OS4zMzMzMjgyNDcwNzAzLCJ4Ijo4OSwiZXJyb3IiOjE2LjY4MzMzNDM1MDU4NTkzOH0seyJ0aW1lIjo2NjQsInBvcHVwWCI6NzQuMDMzMzQwNDU0MTAxNTYsInBvcHVwWSI6MjM3LjM1MDAwNjEwMzUxNTYyLCJhbmNob3JZIjoyMDAuNzUsIngiOjkxLjExNjY2ODcwMTE3MTg4LCJlcnJvciI6MTcuMDgzMzI4MjQ3MDcwMzEyfSx7InRpbWUiOjY2OSwicG9wdXBYIjo3NC43MzMzMzc0MDIzNDM3NSwicG9wdXBZIjoyMzcuODE2NjY1NjQ5NDE0MDYsImFuY2hvclkiOjIwMS41LCJ4Ijo5Mi4yNSwiZXJyb3IiOjE3LjUxNjY2MjU5NzY1NjI1fSx7InRpbWUiOjY3OCwicG9wdXBYIjo3Ni40ODMzMzc0MDIzNDM3NSwicG9wdXBZIjoyMzguOTgzMzM3NDAyMzQzNzUsImFuY2hvclkiOjIwMi44ODMzMzEyOTg4MjgxMiwieCI6OTQuMzMzMzI4MjQ3MDcwMzEsImVycm9yIjoxNy44NDk5OTA4NDQ3MjY1NjJ9LHsidGltZSI6Njg2LCJwb3B1cFgiOjc3Ljc2NjY2MjU5NzY1NjI1LCJwb3B1cFkiOjIzOS44MzMzMjgyNDcwNzAzLCJhbmNob3JZIjoyMDQsIngiOjk2LCJlcnJvciI6MTguMjMzMzM3NDAyMzQzNzV9LHsidGltZSI6NjkzLCJwb3B1cFgiOjc4Ljk2NjY1OTU0NTg5ODQ0LCJwb3B1cFkiOjI0MC42MzMzMzEyOTg4MjgxMiwiYW5jaG9yWSI6MjA1LjAzMzM0MDQ1NDEwMTU2LCJ4Ijo5Ny41NTAwMDMwNTE3NTc4MSwiZXJyb3IiOjE4LjU4MzM0MzUwNTg1OTM3NX0seyJ0aW1lIjo3MDMsInBvcHVwWCI6ODAuOTMzMzM0MzUwNTg1OTQsInBvcHVwWSI6MjQxLjk0OTk5Njk0ODI0MjIsImFuY2hvclkiOjIwNi40NjY2NTk1NDU4OTg0NCwieCI6OTkuNzE2NjU5NTQ1ODk4NDQsImVycm9yIjoxOC43ODMzMjUxOTUzMTI1fSx7InRpbWUiOjcxMSwicG9wdXBYIjo4Mi41NTAwMDMwNTE3NTc4MSwicG9wdXBZIjoyNDMuMDE2NjYyNTk3NjU2MjUsImFuY2hvclkiOjIwNy43MzMzMzc0MDIzNDM3NSwieCI6MTAxLjYwMDAwNjEwMzUxNTYyLCJlcnJvciI6MTkuMDUwMDAzMDUxNzU3ODEyfSx7InRpbWUiOjcxOSwicG9wdXBYIjo4NC4xMTY2Njg3MDExNzE4OCwicG9wdXBZIjoyNDQuMDY2NjY1NjQ5NDE0MDYsImFuY2hvclkiOjIwOC45MzMzMzQzNTA1ODU5NCwieCI6MTAzLjM5OTk5Mzg5NjQ4NDM4LCJlcnJvciI6MTkuMjgzMzI1MTk1MzEyNX0seyJ0aW1lIjo3MjcsInBvcHVwWCI6ODUuNjY2NjcxNzUyOTI5NjksInBvcHVwWSI6MjQ1LjEwMDAwNjEwMzUxNTYyLCJhbmNob3JZIjoyMTAuMTMzMzMxMjk4ODI4MTIsIngiOjEwNS4yMTY2NTk1NDU4OTg0NCwiZXJyb3IiOjE5LjU0OTk4Nzc5Mjk2ODc1fSx7InRpbWUiOjczMywicG9wdXBYIjo4Ni42NDk5OTM4OTY0ODQzOCwicG9wdXBZIjoyNDUuNzUsImFuY2hvclkiOjIxMS4wMzMzNDA0NTQxMDE1NiwieCI6MTA2LjU1MDAwMzA1MTc1NzgxLCJlcnJvciI6MTkuOTAwMDA5MTU1MjczNDM4fSx7InRpbWUiOjczOSwicG9wdXBYIjo4Ny44MDAwMDMwNTE3NTc4MSwicG9wdXBZIjoyNDYuNTE2NjYyNTk3NjU2MjUsImFuY2hvclkiOjIxMiwieCI6MTA4LCJlcnJvciI6MjAuMTk5OTk2OTQ4MjQyMTg4fSx7InRpbWUiOjc0OCwicG9wdXBYIjo4OS43NSwicG9wdXBZIjoyNDcuODE2NjY1NjQ5NDE0MDYsImFuY2hvclkiOjIxMy4zMTY2NjU2NDk0MTQwNiwieCI6MTA5Ljk4MzMzNzQwMjM0Mzc1LCJlcnJvciI6MjAuMjMzMzM3NDAyMzQzNzV9LHsidGltZSI6NzU2LCJwb3B1cFgiOjkxLjMxNjY2NTY0OTQxNDA2LCJwb3B1cFkiOjI0OC44NjY2Njg3MDExNzE4OCwiYW5jaG9yWSI6MjE0LjQ4MzMzNzQwMjM0Mzc1LCJ4IjoxMTEuNzMzMzM3NDAyMzQzNzUsImVycm9yIjoyMC40MTY2NzE3NTI5Mjk2ODh9LHsidGltZSI6NzY2LCJwb3B1cFgiOjkzLjU2NjY2NTY0OTQxNDA2LCJwb3B1cFkiOjI1MC4zNjY2Njg3MDExNzE4OCwiYW5jaG9yWSI6MjE1Ljg4MzMzMTI5ODgyODEyLCJ4IjoxMTMuODE2NjY1NjQ5NDE0MDYsImVycm9yIjoyMC4yNX1d"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/integration-popover-placem-248b0-ns-to-its-original-position-firefox/test-failed-1.png"
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/integration-popover-placem-248b0-ns-to-its-original-position-firefox/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/integration-popover-placem-248b0-ns-to-its-original-position-firefox/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/popover-placement.ts",
+                    "column": 61,
+                    "line": 99
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "3f790e6f9312b1d7803d-188cb9cc7d392b7f7444",
+          "file": "popover-placement.ts",
+          "line": 77,
+          "column": 3
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-08T06:18:28.921Z",
+    "duration": 5361.129,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 2,
+    "flaky": 0
+  }
+}

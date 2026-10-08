@@ -1,0 +1,521 @@
+{
+  "config": {
+    "argv": [
+      "/Users/arktas/.asdf/installs/nodejs/25.3.0/bin/node",
+      "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/node_modules/.bin/playwright",
+      "test",
+      "tests/integration/popover-placement.spec.ts"
+    ],
+    "configFile": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/playwright.config.ts",
+    "rootDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "integration/**/*.spec.ts",
+          "e2e/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [
+          "**/visual.spec.ts"
+        ],
+        "testMatch": [
+          "integration/**/*.spec.ts",
+          "e2e/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "docs/evidence/popover-pop1-focused.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": {
+      "command": "bun run dev",
+      "url": "http://127.0.0.1:4403",
+      "reuseExistingServer": false,
+      "timeout": 60000
+    }
+  },
+  "suites": [
+    {
+      "title": "integration/popover-placement.spec.ts",
+      "file": "integration/popover-placement.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "follows two-axis ancestor scrolling and document scrolling while remaining open",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1025,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:19:22.652Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3f790e6f9312b1d7803d-b0a1faa946a70aef9806",
+          "file": "popover-placement.ts",
+          "line": 37,
+          "column": 3
+        },
+        {
+          "title": "reanchors after viewport, anchor and popup resizing without reopening",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1021,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:19:23.943Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3f790e6f9312b1d7803d-ca5630f9ed01ae8769c5",
+          "file": "popover-placement.ts",
+          "line": 57,
+          "column": 3
+        },
+        {
+          "title": "tracks a transformed anchor during movement and returns to its original position",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1854,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:19:24.971Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "movement-samples",
+                      "contentType": "application/json",
+                      "body": "W3sidGltZSI6MzcyLjY5OTk5OTgwOTI2NTE0LCJwb3B1cFgiOjYwLCJwb3B1cFkiOjIyOCwiYW5jaG9yWSI6MTgwLCJ4Ijo2MCwiZXJyb3IiOjB9LHsidGltZSI6MzkxLjE5OTk5OTgwOTI2NTE0LCJwb3B1cFgiOjYzLjc1LCJwb3B1cFkiOjIzMC41LCJhbmNob3JZIjoxODIuNTAzNzk5NDM4NDc2NTYsIngiOjYzLjc1NTY5OTE1NzcxNDg0NCwiZXJyb3IiOjAuMDA1Njk5MTU3NzE0ODQzNzV9LHsidGltZSI6NDA3LCJwb3B1cFgiOjY3LjUsInBvcHVwWSI6MjMzLCJhbmNob3JZIjoxODUuMDA4ODA0MzIxMjg5MDYsIngiOjY3LjUxMzE5ODg1MjUzOTA2LCJlcnJvciI6MC4wMTMxOTg4NTI1MzkwNjI1fSx7InRpbWUiOjQyNCwicG9wdXBYIjo3MS4yMzQzNzUsInBvcHVwWSI6MjM1LjQ4NDM3NSwiYW5jaG9yWSI6MTg3LjQ5ODc5NDU1NTY2NDA2LCJ4Ijo3MS4yNDgxOTk0NjI4OTA2MiwiZXJyb3IiOjAuMDE0NDE5NTU1NjY0MDYyNX0seyJ0aW1lIjo0NDAuNzk5OTk5NzEzODk3NywicG9wdXBYIjo3NSwicG9wdXBZIjoyMzgsImFuY2hvclkiOjE5MC4wMDM3OTk0Mzg0NzY1NiwieCI6NzUuMDA1Njk5MTU3NzE0ODQsImVycm9yIjowLjAwNTY5OTE1NzcxNDg0Mzc1fSx7InRpbWUiOjQ1Ni43OTk5OTk3MTM4OTc3LCJwb3B1cFgiOjc4LjczNDM3NSwicG9wdXBZIjoyNDAuNDg0Mzc1LCJhbmNob3JZIjoxOTIuNDkzODA0OTMxNjQwNjIsIngiOjc4Ljc0MDY5OTc2ODA2NjQsImVycm9yIjowLjAwOTQyOTkzMTY0MDYyNX0seyJ0aW1lIjo0NzMuMDk5OTk5OTA0NjMyNTcsInBvcHVwWCI6ODIuNDg0Mzc1LCJwb3B1cFkiOjI0Mi45ODQzNzUsImFuY2hvclkiOjE5NC45OTg3OTQ1NTU2NjQwNiwieCI6ODIuNDk4MTk5NDYyODkwNjIsImVycm9yIjowLjAxNDQzNDgxNDQ1MzEyNX0seyJ0aW1lIjo0ODkuMzk5OTk5NjE4NTMwMywicG9wdXBYIjo4Ni4yNSwicG9wdXBZIjoyNDUuNSwiYW5jaG9yWSI6MTk3LjUwMzc5OTQzODQ3NjU2LCJ4Ijo4Ni4yNTU2OTkxNTc3MTQ4NCwiZXJyb3IiOjAuMDA1Njk5MTU3NzE0ODQzNzV9LHsidGltZSI6NTA2Ljg5OTk5OTYxODUzMDMsInBvcHVwWCI6ODkuOTg0Mzc1LCJwb3B1cFkiOjI0Ny45ODQzNzUsImFuY2hvclkiOjE5OS45OTM4MDQ5MzE2NDA2MiwieCI6ODkuOTkwNjk5NzY4MDY2NCwiZXJyb3IiOjAuMDA5NDI5OTMxNjQwNjI1fSx7InRpbWUiOjUyMi41OTk5OTk5MDQ2MzI2LCJwb3B1cFgiOjkzLjczNDM3NSwicG9wdXBZIjoyNTAuNDg0Mzc1LCJhbmNob3JZIjoyMDIuNDk4Nzk0NTU1NjY0MDYsIngiOjkzLjc0ODE5OTQ2Mjg5MDYyLCJlcnJvciI6MC4wMTQ0MzQ4MTQ0NTMxMjV9LHsidGltZSI6NTQxLjE5OTk5OTgwOTI2NTEsInBvcHVwWCI6OTcuNSwicG9wdXBZIjoyNTMsImFuY2hvclkiOjIwNS4wMDM3OTk0Mzg0NzY1NiwieCI6OTcuNTA1Njk5MTU3NzE0ODQsImVycm9yIjowLjAwNTY5OTE1NzcxNDg0Mzc1fSx7InRpbWUiOjU1Ny4yOTk5OTk3MTM4OTc3LCJwb3B1cFgiOjEwMS4yMzQzNzUsInBvcHVwWSI6MjU1LjQ4NDM3NSwiYW5jaG9yWSI6MjA3LjQ5MzgwNDkzMTY0MDYyLCJ4IjoxMDEuMjQwNjk5NzY4MDY2NCwiZXJyb3IiOjAuMDA5NDI5OTMxNjQwNjI1fSx7InRpbWUiOjU3NCwicG9wdXBYIjoxMDQuOTg0Mzc1LCJwb3B1cFkiOjI1Ny45ODQzNzUsImFuY2hvclkiOjIwOS45OTg3OTQ1NTU2NjQwNiwieCI6MTA0Ljk5ODE5OTQ2Mjg5MDYyLCJlcnJvciI6MC4wMTQ0MzQ4MTQ0NTMxMjV9LHsidGltZSI6NTkwLjg5OTk5OTYxODUzMDMsInBvcHVwWCI6MTA4Ljc1LCJwb3B1cFkiOjI2MC41LCJhbmNob3JZIjoyMTIuNTAzNzk5NDM4NDc2NTYsIngiOjEwOC43NTU2OTkxNTc3MTQ4NCwiZXJyb3IiOjAuMDA1Njk5MTU3NzE0ODQzNzV9LHsidGltZSI6NjA2LjY5OTk5OTgwOTI2NTEsInBvcHVwWCI6MTEyLjUsInBvcHVwWSI6MjYzLCJhbmNob3JZIjoyMTUuMDA4ODA0MzIxMjg5MDYsIngiOjExMi41MTMxOTg4NTI1MzkwNiwiZXJyb3IiOjAuMDEzMTk4ODUyNTM5MDYyNX0seyJ0aW1lIjo2MjQuNSwicG9wdXBYIjoxMTYuMjM0Mzc1LCJwb3B1cFkiOjI2NS40ODQzNzUsImFuY2hvclkiOjIxNy40OTg3OTQ1NTU2NjQwNiwieCI6MTE2LjI0ODE5OTQ2Mjg5MDYyLCJlcnJvciI6MC4wMTQ0MDQyOTY4NzV9LHsidGltZSI6NjQxLCJwb3B1cFgiOjEyMCwicG9wdXBZIjoyNjgsImFuY2hvclkiOjIyMC4wMDM3OTk0Mzg0NzY1NiwieCI6MTIwLjAwNTY5OTE1NzcxNDg0LCJlcnJvciI6MC4wMDU2OTkxNTc3MTQ4NDM3NX0seyJ0aW1lIjo2NTcuODk5OTk5NjE4NTMwMywicG9wdXBYIjoxMjMuNzUsInBvcHVwWSI6MjcwLjUsImFuY2hvclkiOjIyMi41MDg4MDQzMjEyODkwNiwieCI6MTIzLjc2MzE5ODg1MjUzOTA2LCJlcnJvciI6MC4wMTMxOTg4NTI1MzkwNjI1fSx7InRpbWUiOjY3NC4wOTk5OTk5MDQ2MzI2LCJwb3B1cFgiOjEyNy40ODQzNzUsInBvcHVwWSI6MjcyLjk4NDM3NSwiYW5jaG9yWSI6MjI0Ljk5ODc5NDU1NTY2NDA2LCJ4IjoxMjcuNDk4MTk5NDYyODkwNjIsImVycm9yIjowLjAxNDQwNDI5Njg3NX0seyJ0aW1lIjo2ODkuMzk5OTk5NjE4NTMwMywicG9wdXBYIjoxMzEuMjUsInBvcHVwWSI6Mjc1LjUsImFuY2hvclkiOjIyNy41MDM3OTk0Mzg0NzY1NiwieCI6MTMxLjI1NTcwNjc4NzEwOTM4LCJlcnJvciI6MC4wMDU3MDY3ODcxMDkzNzV9LHsidGltZSI6NzA3LjE5OTk5OTgwOTI2NTEsInBvcHVwWCI6MTM0Ljk4NDM3NSwicG9wdXBZIjoyNzcuOTg0Mzc1LCJhbmNob3JZIjoyMjkuOTkzODA0OTMxNjQwNjIsIngiOjEzNC45OTA2OTIxMzg2NzE4OCwiZXJyb3IiOjAuMDA5NDI5OTMxNjQwNjI1fSx7InRpbWUiOjcyNCwicG9wdXBYIjoxMzguNzM0Mzc1LCJwb3B1cFkiOjI4MC40ODQzNzUsImFuY2hvclkiOjIzMi40OTg3OTQ1NTU2NjQwNiwieCI6MTM4Ljc0ODE5OTQ2Mjg5MDYyLCJlcnJvciI6MC4wMTQ0MDQyOTY4NzV9LHsidGltZSI6NzQxLjI5OTk5OTcxMzg5NzcsInBvcHVwWCI6MTQyLjUsInBvcHVwWSI6MjgzLCJhbmNob3JZIjoyMzUuMDAzNzk5NDM4NDc2NTYsIngiOjE0Mi41MDU3MDY3ODcxMDkzOCwiZXJyb3IiOjAuMDA1NzA2Nzg3MTA5Mzc1fSx7InRpbWUiOjc1Ni4xOTk5OTk4MDkyNjUxLCJwb3B1cFgiOjE0Ni4yMzQzNzUsInBvcHVwWSI6Mjg1LjQ4NDM3NSwiYW5jaG9yWSI6MjM3LjQ5MzgwNDkzMTY0MDYyLCJ4IjoxNDYuMjQwNjkyMTM4NjcxODgsImVycm9yIjowLjAwOTQyOTkzMTY0MDYyNX0seyJ0aW1lIjo3NzMuNzk5OTk5NzEzODk3NywicG9wdXBYIjoxNDkuOTg0Mzc1LCJwb3B1cFkiOjI4Ny45ODQzNzUsImFuY2hvclkiOjIzOS45OTg3OTQ1NTU2NjQwNiwieCI6MTQ5Ljk5ODE5OTQ2Mjg5MDYyLCJlcnJvciI6MC4wMTQ0MDQyOTY4NzV9LHsidGltZSI6NzkwLjM5OTk5OTYxODUzMDMsInBvcHVwWCI6MTUwLCJwb3B1cFkiOjI4OCwiYW5jaG9yWSI6MjQwLCJ4IjoxNTAsImVycm9yIjowfSx7InRpbWUiOjgwNi41OTk5OTk5MDQ2MzI2LCJwb3B1cFgiOjE1MCwicG9wdXBZIjoyODgsImFuY2hvclkiOjI0MCwieCI6MTUwLCJlcnJvciI6MH0seyJ0aW1lIjo4MjIuNTk5OTk5OTA0NjMyNiwicG9wdXBYIjoxNTAsInBvcHVwWSI6Mjg4LCJhbmNob3JZIjoyNDAsIngiOjE1MCwiZXJyb3IiOjB9LHsidGltZSI6ODQwLjM5OTk5OTYxODUzMDMsInBvcHVwWCI6MTUwLCJwb3B1cFkiOjI4OCwiYW5jaG9yWSI6MjQwLCJ4IjoxNTAsImVycm9yIjowfSx7InRpbWUiOjg1Ni41OTk5OTk5MDQ2MzI2LCJwb3B1cFgiOjE1MCwicG9wdXBZIjoyODgsImFuY2hvclkiOjI0MCwieCI6MTUwLCJlcnJvciI6MH1d"
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3f790e6f9312b1d7803d-832430513cd5606cdb8a",
+          "file": "popover-placement.ts",
+          "line": 77,
+          "column": 3
+        },
+        {
+          "title": "flips and shifts at viewport edges, constrains oversized content and keeps its action reachable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 550,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:19:26.832Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3f790e6f9312b1d7803d-0471acc8f3fb18f16efe",
+          "file": "popover-placement.ts",
+          "line": 108,
+          "column": 3
+        },
+        {
+          "title": "escapes a transformed paint-clipping ancestor and accepts clicks outside its bounds",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 557,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:19:27.388Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3f790e6f9312b1d7803d-33fea5eba0e46f976557",
+          "file": "popover-placement.ts",
+          "line": 129,
+          "column": 3
+        },
+        {
+          "title": "follows two-axis ancestor scrolling and document scrolling while remaining open",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1226,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:19:28.226Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3f790e6f9312b1d7803d-6aa00860496652ed6ce9",
+          "file": "popover-placement.ts",
+          "line": 37,
+          "column": 3
+        },
+        {
+          "title": "reanchors after viewport, anchor and popup resizing without reopening",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 621,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:19:30.088Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3f790e6f9312b1d7803d-b6cb28c91a0a658fff2f",
+          "file": "popover-placement.ts",
+          "line": 57,
+          "column": 3
+        },
+        {
+          "title": "tracks a transformed anchor during movement and returns to its original position",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1958,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:19:30.715Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "movement-samples",
+                      "contentType": "application/json",
+                      "body": "W3sidGltZSI6MjkwLCJwb3B1cFgiOjYxLjg4MzMzMTI5ODgyODEyNSwicG9wdXBZIjoyMjkuMjUsImFuY2hvclkiOjE4MS4yNSwieCI6NjEuODgzMzMxMjk4ODI4MTI1LCJlcnJvciI6MH0seyJ0aW1lIjoyOTgsInBvcHVwWCI6NjMuNzUsInBvcHVwWSI6MjMwLjUsImFuY2hvclkiOjE4Mi41LCJ4Ijo2My43NSwiZXJyb3IiOjB9LHsidGltZSI6MzA2LCJwb3B1cFgiOjY1LjYzMzMzMTI5ODgyODEyLCJwb3B1cFkiOjIzMS43NSwiYW5jaG9yWSI6MTgzLjc1LCJ4Ijo2NS42MzMzMzEyOTg4MjgxMiwiZXJyb3IiOjB9LHsidGltZSI6MzE2LCJwb3B1cFgiOjY3LjUxNjY2MjU5NzY1NjI1LCJwb3B1cFkiOjIzMywiYW5jaG9yWSI6MTg1LCJ4Ijo2Ny41MTY2NjI1OTc2NTYyNSwiZXJyb3IiOjB9LHsidGltZSI6MzIzLCJwb3B1cFgiOjY5LjA1MDAwMzA1MTc1NzgxLCJwb3B1cFkiOjIzNC4wMzMzNDA0NTQxMDE1NiwiYW5jaG9yWSI6MTg2LjAzMzM0MDQ1NDEwMTU2LCJ4Ijo2OS4wNTAwMDMwNTE3NTc4MSwiZXJyb3IiOjB9LHsidGltZSI6MzMyLCJwb3B1cFgiOjcxLjE4MzMzNDM1MDU4NTk0LCJwb3B1cFkiOjIzNS40NDk5OTY5NDgyNDIyLCJhbmNob3JZIjoxODcuNDQ5OTk2OTQ4MjQyMiwieCI6NzEuMTgzMzM0MzUwNTg1OTQsImVycm9yIjowfSx7InRpbWUiOjMzOSwicG9wdXBYIjo3Mi44MTY2NjU2NDk0MTQwNiwicG9wdXBZIjoyMzYuNTUwMDAzMDUxNzU3OCwiYW5jaG9yWSI6MTg4LjU1MDAwMzA1MTc1NzgsIngiOjcyLjgxNjY2NTY0OTQxNDA2LCJlcnJvciI6MH0seyJ0aW1lIjozNDgsInBvcHVwWCI6NzQuODUwMDA2MTAzNTE1NjIsInBvcHVwWSI6MjM3Ljg5OTk5Mzg5NjQ4NDM4LCJhbmNob3JZIjoxODkuODk5OTkzODk2NDg0MzgsIngiOjc0Ljg1MDAwNjEwMzUxNTYyLCJlcnJvciI6MH0seyJ0aW1lIjozNTUsInBvcHVwWCI6NzYuNTE2NjYyNTk3NjU2MjUsInBvcHVwWSI6MjM5LjAxNjY2MjU5NzY1NjI1LCJhbmNob3JZIjoxOTEuMDE2NjYyNTk3NjU2MjUsIngiOjc2LjUxNjY2MjU5NzY1NjI1LCJlcnJvciI6MH0seyJ0aW1lIjozNjQsInBvcHVwWCI6NzguNTY2NjY1NjQ5NDE0MDYsInBvcHVwWSI6MjQwLjM4MzMzMTI5ODgyODEyLCJhbmNob3JZIjoxOTIuMzgzMzMxMjk4ODI4MTIsIngiOjc4LjU2NjY2NTY0OTQxNDA2LCJlcnJvciI6MH0seyJ0aW1lIjozNzEsInBvcHVwWCI6ODAuMjMzMzM3NDAyMzQzNzUsInBvcHVwWSI6MjQxLjQ4MzMzNzQwMjM0Mzc1LCJhbmNob3JZIjoxOTMuNDgzMzM3NDAyMzQzNzUsIngiOjgwLjIzMzMzNzQwMjM0Mzc1LCJlcnJvciI6MH0seyJ0aW1lIjozNzksInBvcHVwWCI6ODEuNzE2NjU5NTQ1ODk4NDQsInBvcHVwWSI6MjQyLjQ4MzMzNzQwMjM0Mzc1LCJhbmNob3JZIjoxOTQuNDgzMzM3NDAyMzQzNzUsIngiOjgxLjcxNjY1OTU0NTg5ODQ0LCJlcnJvciI6MH0seyJ0aW1lIjozODcsInBvcHVwWCI6ODMuNTUwMDAzMDUxNzU3ODEsInBvcHVwWSI6MjQzLjY5OTk5Njk0ODI0MjIsImFuY2hvclkiOjE5NS42OTk5OTY5NDgyNDIyLCJ4Ijo4My41NTAwMDMwNTE3NTc4MSwiZXJyb3IiOjB9LHsidGltZSI6Mzk1LCJwb3B1cFgiOjg1LjM2NjY2ODcwMTE3MTg4LCJwb3B1cFkiOjI0NC45MTY2NzE3NTI5Mjk3LCJhbmNob3JZIjoxOTYuOTE2NjcxNzUyOTI5NywieCI6ODUuMzY2NjY4NzAxMTcxODgsImVycm9yIjowfSx7InRpbWUiOjQwMywicG9wdXBYIjo4Ny4yMzMzMzc0MDIzNDM3NSwicG9wdXBZIjoyNDYuMTQ5OTkzODk2NDg0MzgsImFuY2hvclkiOjE5OC4xNDk5OTM4OTY0ODQzOCwieCI6ODcuMjMzMzM3NDAyMzQzNzUsImVycm9yIjowfSx7InRpbWUiOjQxMSwicG9wdXBYIjo4OS4xMDAwMDYxMDM1MTU2MiwicG9wdXBZIjoyNDcuMzk5OTkzODk2NDg0MzgsImFuY2hvclkiOjE5OS4zOTk5OTM4OTY0ODQzOCwieCI6ODkuMTAwMDA2MTAzNTE1NjIsImVycm9yIjowfSx7InRpbWUiOjQxOCwicG9wdXBYIjo5MC44MTY2NjU2NDk0MTQwNiwicG9wdXBZIjoyNDguNTMzMzQwNDU0MTAxNTYsImFuY2hvclkiOjIwMC41MzMzNDA0NTQxMDE1NiwieCI6OTAuODE2NjY1NjQ5NDE0MDYsImVycm9yIjowfSx7InRpbWUiOjQyNywicG9wdXBYIjo5Mi43MTY2NTk1NDU4OTg0NCwicG9wdXBZIjoyNDkuODE2NjY1NjQ5NDE0MDYsImFuY2hvclkiOjIwMS44MTY2NjU2NDk0MTQwNiwieCI6OTIuNzE2NjU5NTQ1ODk4NDQsImVycm9yIjowfSx7InRpbWUiOjQzNSwicG9wdXBYIjo5NC41ODMzMjgyNDcwNzAzMSwicG9wdXBZIjoyNTEuMDUwMDAzMDUxNzU3OCwiYW5jaG9yWSI6MjAzLjA1MDAwMzA1MTc1NzgsIngiOjk0LjU4MzMyODI0NzA3MDMxLCJlcnJvciI6MH0seyJ0aW1lIjo0NDMsInBvcHVwWCI6OTYuMzAwMDAzMDUxNzU3ODEsInBvcHVwWSI6MjUyLjE5OTk5Njk0ODI0MjIsImFuY2hvclkiOjIwNC4xOTk5OTY5NDgyNDIyLCJ4Ijo5Ni4zMDAwMDMwNTE3NTc4MSwiZXJyb3IiOjB9LHsidGltZSI6NDQ5LCJwb3B1cFgiOjk3LjY5OTk5Njk0ODI0MjE5LCJwb3B1cFkiOjI1My4xMzMzMzEyOTg4MjgxMiwiYW5jaG9yWSI6MjA1LjEzMzMzMTI5ODgyODEyLCJ4Ijo5Ny42OTk5OTY5NDgyNDIxOSwiZXJyb3IiOjB9LHsidGltZSI6NDU4LCJwb3B1cFgiOjk5LjUzMzM0MDQ1NDEwMTU2LCJwb3B1cFkiOjI1NC4zNTAwMDYxMDM1MTU2MiwiYW5jaG9yWSI6MjA2LjM1MDAwNjEwMzUxNTYyLCJ4Ijo5OS41MzMzNDA0NTQxMDE1NiwiZXJyb3IiOjB9LHsidGltZSI6NDY0LCJwb3B1cFgiOjEwMS4xNDk5OTM4OTY0ODQzOCwicG9wdXBZIjoyNTUuNDMzMzM0MzUwNTg1OTQsImFuY2hvclkiOjIwNy40MzMzMzQzNTA1ODU5NCwieCI6MTAxLjE0OTk5Mzg5NjQ4NDM4LCJlcnJvciI6MH0seyJ0aW1lIjo0NzQsInBvcHVwWCI6MTAzLjIzMzMzNzQwMjM0Mzc1LCJwb3B1cFkiOjI1Ni44MTY2NTAzOTA2MjUsImFuY2hvclkiOjIwOC44MTY2NjU2NDk0MTQwNiwieCI6MTAzLjIzMzMzNzQwMjM0Mzc1LCJlcnJvciI6MC4wMDAwMTUyNTg3ODkwNjI1fSx7InRpbWUiOjQ4MSwicG9wdXBYIjoxMDQuNzUsInBvcHVwWSI6MjU3LjgzMzMxMjk4ODI4MTI1LCJhbmNob3JZIjoyMDkuODMzMzI4MjQ3MDcwMywieCI6MTA0Ljc1LCJlcnJvciI6MC4wMDAwMTUyNTg3ODkwNjI1fSx7InRpbWUiOjQ4NywicG9wdXBYIjoxMDYuMjMzMzM3NDAyMzQzNzUsInBvcHVwWSI6MjU4LjgxNjY1MDM5MDYyNSwiYW5jaG9yWSI6MjEwLjgxNjY2NTY0OTQxNDA2LCJ4IjoxMDYuMjMzMzM3NDAyMzQzNzUsImVycm9yIjowLjAwMDAxNTI1ODc4OTA2MjV9LHsidGltZSI6NDk1LCJwb3B1cFgiOjEwNy45ODMzMzc0MDIzNDM3NSwicG9wdXBZIjoyNTkuOTgzMzM3NDAyMzQzNzUsImFuY2hvclkiOjIxMS45ODMzMzc0MDIzNDM3NSwieCI6MTA3Ljk4MzMzNzQwMjM0Mzc1LCJlcnJvciI6MH0seyJ0aW1lIjo1MDMsInBvcHVwWCI6MTA5Ljc4MzM0MDQ1NDEwMTU2LCJwb3B1cFkiOjI2MS4xODMzNDk2MDkzNzUsImFuY2hvclkiOjIxMy4xODMzMzQzNTA1ODU5NCwieCI6MTA5Ljc4MzM0MDQ1NDEwMTU2LCJlcnJvciI6MC4wMDAwMTUyNTg3ODkwNjI1fSx7InRpbWUiOjUxMSwicG9wdXBYIjoxMTEuNTE2NjYyNTk3NjU2MjUsInBvcHVwWSI6MjYyLjMzMzMxMjk4ODI4MTI1LCJhbmNob3JZIjoyMTQuMzMzMzI4MjQ3MDcwMywieCI6MTExLjUxNjY2MjU5NzY1NjI1LCJlcnJvciI6MC4wMDAwMTUyNTg3ODkwNjI1fSx7InRpbWUiOjUxOSwicG9wdXBYIjoxMTMuMzY2NjY4NzAxMTcxODgsInBvcHVwWSI6MjYzLjU4MzMxMjk4ODI4MTI1LCJhbmNob3JZIjoyMTUuNTgzMzI4MjQ3MDcwMywieCI6MTEzLjM2NjY2ODcwMTE3MTg4LCJlcnJvciI6MC4wMDAwMTUyNTg3ODkwNjI1fV0="
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3f790e6f9312b1d7803d-188cb9cc7d392b7f7444",
+          "file": "popover-placement.ts",
+          "line": 77,
+          "column": 3
+        },
+        {
+          "title": "flips and shifts at viewport edges, constrains oversized content and keeps its action reachable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 524,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:19:32.679Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3f790e6f9312b1d7803d-65e67d523f86b4bd20b8",
+          "file": "popover-placement.ts",
+          "line": 108,
+          "column": 3
+        },
+        {
+          "title": "escapes a transformed paint-clipping ancestor and accepts clicks outside its bounds",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 618,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:19:33.209Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3f790e6f9312b1d7803d-352ec12ea41f4de075ba",
+          "file": "popover-placement.ts",
+          "line": 129,
+          "column": 3
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-08T06:19:21.471Z",
+    "duration": 12622.838,
+    "expected": 10,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

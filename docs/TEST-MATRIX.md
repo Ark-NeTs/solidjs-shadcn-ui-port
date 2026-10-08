@@ -1,7 +1,7 @@
 # Component acceptance and test matrix
 
 Initially audited 2026-10-08 against source at `314f27a`; updated with the
-[CMB-2 browser evidence](COMBOBOX-CMB2-DELIVERY.md). Covers the **14
+[POP-1 browser evidence](POPOVER-POP1-DELIVERY.md). Covers the **14
 implemented component families**, including their compound parts. The other
 catalog entries in [COMPONENT-MAP.md](../COMPONENT-MAP.md) remain unimplemented;
 their adoption probes are not delivered-component acceptance tests.
@@ -9,7 +9,7 @@ their adoption probes are not delivered-component acceptance tests.
 This is a behavior inventory, not a claim that every possible state is tested.
 Read the assertions in the linked tests: a broad test title alone is not evidence
 for every behavior it mentions. Gaps below are unverified acceptance cases, not
-confirmed implementation bugs. The initial audit added no tests; the CMB-1 and CMB-2
+confirmed implementation bugs. The initial audit added no tests; the CMB-1, CMB-2 and POP-1
 follow-ups add the browser contracts linked below.
 
 ## Reading the evidence
@@ -38,13 +38,13 @@ are implementation scope limits, not features that an existing test proves.
 | Diagnostics and cleanup are checked | [Unit setup](../vitest.setup.ts), [browser fixture](../tests/browser-fixture.ts) | Every unit test checks console warn/error after cleanup; every B/E test checks console warning/error and page errors. SSR has no equivalent diagnostic fixture. |
 | Whole-gallery accessibility | [B: light/dark examples have no axe accessibility violations](../tests/integration/foundation.spec.ts#L27) | Applies to the rendered, settled gallery state. Axe does not certify screen-reader usability or all dynamic states. |
 | Whole-gallery visual appearance | [V: light/dark/mobile component gallery](../tests/e2e/visual.spec.ts#L3) | Shared images include every family; not every variant/state combination. |
-| Unit execution coverage | [Coverage configuration](../vitest.config.ts), [measured coverage](evidence/combobox-cmb2-coverage.json) | 100% statements, branches, functions and lines for included component/helper source; not exhaustive behavior coverage. |
+| Unit execution coverage | [Coverage configuration](../vitest.config.ts), [measured coverage](evidence/popover-pop1-coverage.json) | 100% statements, branches, functions and lines for included component/helper source; not exhaustive behavior coverage. |
 
-The CMB-2 delivery records **85 unit tests, 6 grouped SSR tests,
-72 browser integration runs (36 scenarios × 2 engines), and 45 E2E runs
-(18 journeys × 2 engines + 9 Chromium visual tests)**. Those visual tests compare
+The POP-1 delivery records **85 unit tests, 6 grouped SSR tests,
+82 browser integration runs (41 scenarios × 2 engines), and 55 E2E runs
+(23 journeys × 2 engines + 9 Chromium visual tests)**. Those visual tests compare
 12 images. These totals are package-wide, not per component. See the
-[CMB-2 verification](COMBOBOX-CMB2-DELIVERY.md) for current results and the
+[POP-1 verification](POPOVER-POP1-DELIVERY.md) for current results and the
 [initial matrix verification](TEST-MATRIX-DELIVERY.md) for the original audit.
 
 ## Button
@@ -193,10 +193,17 @@ visibility; it does not prove every focus or draft-preservation case.
 | Real open/naming/initial placement, Escape focus return and outside-click focus retention | [B: popover positions, labels and restores focus on Escape but preserves outside clicks](../tests/integration/overlays.spec.ts#L11) |
 | Modal focus containment/scroll release and nested alert focus return | [B: modal popover traps focus and releases scroll locking](../tests/integration/overlays.spec.ts#L19), [B: nested alert dismissal](../tests/integration/overlays.spec.ts#L16), [E: built keyboard confirmation](../tests/e2e/overlays.spec.ts#L3) |
 | Open light/dark/enlarged-mobile accessibility and visual appearance | [B: open overlay axe/viewport checks](../tests/integration/overlays.spec.ts#L25), [V: open overlays](../tests/e2e/visual.spec.ts#L12) |
+| Two-axis ancestor and document scrolling retain the declared gap/alignment | [B/E: scroll forward/back and Escape](../tests/popover-placement.ts#L37) |
+| Viewport, anchor and content resizing recompute placement without reopening | [B/E: resize each geometry source and restore it](../tests/popover-placement.ts#L57) |
+| Transformed anchor movement stays attached in motion and at rest | [B/E: sampled animation and return](../tests/popover-placement.ts#L77); transient lag bounded to 12px, settled alignment/gap within 1px; not a frame-rate guarantee |
+| Viewport collisions flip/shift and constrain oversized content without losing its close action | [B/E: edge collision and 320×300 viewport](../tests/popover-placement.ts#L108) |
+| A transformed paint-clipping ancestor does not clip or intercept the popup | [B/E: outside-boundary hit test, real click, reopen and Escape](../tests/popover-placement.ts#L130) |
 
-Open **POP-1**: no targeted browser assertion follows the anchor through scroll,
-resize, movement, collision flipping and clipping containers. Initial viewport
-bounds and mocked unit coordinates do not establish all those cases.
+**POP-1 closed:** five shared scenarios pass in Chromium and Firefox through
+[source integration](../tests/integration/popover-placement.spec.ts#L3) and
+[built E2E](../tests/e2e/popover-placement.spec.ts#L3). The tests use actual browser
+layout and native top layers. They do not certify every transform, continuous
+scroll frame, occluded/offscreen anchor policy or mobile visual viewport behavior.
 
 ## Alert Dialog
 
@@ -275,7 +282,6 @@ order the next test work; they do not assign bug severity to untested behavior.
 | Priority | ID | Component(s) | Concrete closure condition |
 | --- | --- | --- | --- |
 | Manual follow-up | CMB-2 | Combobox | Browser scrolling/Tab/modal checks pass; record a physical IME composition/commit/cancel session before closing the remaining manual portion. |
-| Next | POP-1 | Popover | Browser asserts placement after scrolling/resizing/moving its anchor, collision flipping and a clipped ancestor. |
 | Next | ALT-1 | Alert Dialog | Browser loops Tab/Shift+Tab across both boundaries, then verifies a nested dialog returns focus without escaping the parent. |
 | Follow-up | TAB-1 | Tabs | Browser removes/reorders the focused trigger and verifies focus/selection; a force-mounted panel retains its edited draft. |
 | Follow-up | CHK-1, SWT-1 | Checkbox, Switch | Each control passes canceled reset and changing explicit form ownership in both browsers, including unmount before pending reset work. |
@@ -298,6 +304,7 @@ and component guide; it cannot be closed by increasing execution coverage alone.
 
 | ID | Closed | Evidence |
 | --- | --- | --- |
+| POP-1 | 2026-10-08 | [Delivery](POPOVER-POP1-DELIVERY.md): scrolling, resize, transform movement, collision and clipping; five scenarios × two engines × source and built exports. Fixed unintended coordinate transitions. |
 | CMB-2 browser portion | 2026-10-08 | [Delivery](COMBOBOX-CMB2-DELIVERY.md): five navigation/geometry/modal scenarios × two engines × source and built exports. Physical IME remains open above. |
 | CMB-1 | 2026-10-08 | [Delivery](COMBOBOX-CMB1-DELIVERY.md): four form/object/owner scenarios × two engines × source and built exports. No runtime fix was needed. |
 

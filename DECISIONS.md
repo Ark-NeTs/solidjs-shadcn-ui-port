@@ -173,3 +173,15 @@ restoration for that dismissal only; cancel queued closure on disposal or a newe
 request. Popup Shift+Tab returns to the trigger, following native DOM order.
 No focusable-element enumeration, forced clicks, diagnostic filters or library
 pin changes are introduced. See [CMB-2 delivery](docs/COMBOBOX-CMB2-DELIVERY.md).
+
+## Popover placement follow-up — 2026-10-08 (D19/D90)
+
+Keep Floating UI's position updates immediate: PopoverContent now defaults to
+`transition-none` while retaining `duration-100` for its opening keyframe animation.
+REASONING: the duration utility sets transition-duration too. With the default
+transition-property of all, each left/top update restarted a CSS transition;
+real-browser sampling measured roughly 17–21px lag behind a moving anchor.
+Do not hide the defect by disabling motion in the test or widening its tolerance.
+The regression samples intermediate frames, then requires subpixel attachment
+at rest. No placement engine, observer lifecycle or public prop API changes.
+See [POP-1 delivery](docs/POPOVER-POP1-DELIVERY.md).
