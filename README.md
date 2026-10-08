@@ -188,5 +188,10 @@ files under `tests/e2e/visual.spec.ts-snapshots`; regenerate deliberately with
 
 Source hydration now has [node-identity and interaction regressions](docs/HYDRATION-DELIVERY.md),
 including the two-tab/one-input registration reproduction and
-[real Loading boundary resolution/disposal](docs/LOADING-HYDRATION-DELIVERY.md).
+[real Loading boundary resolution/disposal](docs/LOADING-HYDRATION-DELIVERY.md), and
+[client rejection/retry with preserved drafts](docs/ERRORED-HYDRATION-DELIVERY.md).
+During a pending retry, Solid 2 rc.13 can retain the previous error view until the
+new promise settles. Test settlement controls must remain available independently
+of that pending transaction; expecting an immediate Loading fallback can deadlock
+a manually settled fixture.
 The harness compiles public source exports with SSR enabled; the existing `dist` bundle is for client rendering.

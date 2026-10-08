@@ -4,7 +4,7 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises';
 const configFile = new URL('../hydration.vite.config.ts', import.meta.url).pathname;
 await build({ configFile, build: { ssr: 'tests/hydration/server.tsx', outDir: 'hydration-dist/server', manifest: false, rolldownOptions: { input: 'tests/hydration/server.tsx', output: { entryFileNames: 'server.js' } } } });
 await build({ configFile });
-const { renderFixture, bootstrap, renderTabsProbe, probeModes, renderLoading } = await import('../hydration-dist/server/server.js');
+const { renderFixture, bootstrap, renderTabsProbe, probeModes, renderLoading, renderErrored, renderRetry, retryModes } = await import('../hydration-dist/server/server.js');
 // Keep server diagnostics fatal, including warnings that renderToString's error hook does not receive.
 console.warn = (...messages) => { throw new Error(messages.join(' ')); };
 console.error = (...messages) => { throw new Error(messages.join(' ')); };
@@ -30,4 +30,15 @@ for (const native of [false, true]) {
   await mkdir(loadingDirectory, { recursive: true });
   const loadingStyles = (entry.css ?? []).map(file => `<link rel="stylesheet" href="/${file}">`).join('');
   await writeFile(new URL('index.html', loadingDirectory), `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Loading hydration</title>${loadingStyles}${bootstrap}</head><body><button id="hydrate">Hydrate components</button><button id="dispose" disabled>Dispose components</button><button id="resolve-detached">Resolve detached request</button><div id="hydration-root" data-loading="${native ? 'native' : 'skeleton'}">${renderLoading(native)}</div><script type="module" src="/${entry.file}"></script></body></html>`);
+}
+
+const erroredDirectory = new URL('../hydration-dist/client/errored/', import.meta.url);
+await mkdir(erroredDirectory, { recursive: true });
+const erroredStyles = (entry.css ?? []).map(file => `<link rel="stylesheet" href="/${file}">`).join('');
+await writeFile(new URL('index.html', erroredDirectory), `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Error recovery hydration</title>${erroredStyles}${bootstrap}</head><body><button id="hydrate">Hydrate components</button><button id="dispose" disabled>Dispose components</button><button id="reject-detached">Reject detached request</button><div id="hydration-root" data-errored="true">${renderErrored()}</div><script type="module" src="/${entry.file}"></script></body></html>`);
+
+for (const mode of retryModes) {
+  const directory = new URL(`../hydration-dist/client/retry-${mode}/`, import.meta.url);
+  await mkdir(directory, { recursive: true });
+  await writeFile(new URL('index.html', directory), `<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Plain retry ${mode}</title>${bootstrap}</head><body><button id="hydrate">Hydrate components</button><button id="dispose" disabled>Dispose components</button><div id="hydration-root" data-retry="${mode}">${renderRetry(mode)}</div><script type="module" src="/${entry.file}"></script></body></html>`);
 }

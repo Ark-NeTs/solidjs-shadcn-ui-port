@@ -1,0 +1,27 @@
+[
+  {
+    "command": "bun run check",
+    "exitCode": 0,
+    "seconds": 2.3
+  },
+  {
+    "command": "bun run lint",
+    "exitCode": 0,
+    "seconds": 1.1
+  },
+  {
+    "command": "bun run test",
+    "exitCode": 0,
+    "seconds": 2.81
+  },
+  {
+    "command": "bun run test:server",
+    "exitCode": 0,
+    "seconds": 0.67
+  },
+  {
+    "command": "RESULTS_FILE=docs/evidence/errored-hydration-final.json bun run test:hydration tests/hydration/errored.spec.ts --project=chromium",
+    "exitCode": 1,
+    "seconds": 51.34
+  }
+]

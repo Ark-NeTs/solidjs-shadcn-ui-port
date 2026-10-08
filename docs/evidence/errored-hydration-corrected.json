@@ -1,0 +1,478 @@
+{
+  "config": {
+    "argv": [
+      "/Users/arktas/.asdf/installs/nodejs/25.3.0/bin/node",
+      "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/node_modules/.bin/playwright",
+      "test",
+      "--config",
+      "playwright.hydration.config.ts",
+      "tests/hydration/errored.spec.ts",
+      "--project=chromium"
+    ],
+    "configFile": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/playwright.hydration.config.ts",
+    "rootDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "hydration/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [
+          "**/visual.spec.ts"
+        ],
+        "testMatch": [
+          "hydration/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [
+          "**/visual.spec.ts"
+        ],
+        "testMatch": [
+          "hydration/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "docs/evidence/errored-hydration-corrected.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": {
+      "command": "bun run build:hydration && bunx --no-install vite preview --config hydration.vite.config.ts --host 127.0.0.1 --port 4403 --strictPort",
+      "url": "http://127.0.0.1:4403",
+      "reuseExistingServer": false,
+      "timeout": 60000
+    }
+  },
+  "suites": [
+    {
+      "title": "hydration/errored.spec.ts",
+      "file": "hydration/errored.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "rejected hydrated data preserves drafts and explicit Errored resets recover without duplicate requests",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5598,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('status')\nExpected: \u001b[32m\"Loading profile 2\"\u001b[39m\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" getByRole('status') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('status')\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('status')\nExpected: \u001b[32m\"Loading profile 2\"\u001b[39m\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" getByRole('status') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('status')\u001b[22m\n\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/errored.spec.ts:41:42",
+                    "location": {
+                      "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/errored.spec.ts",
+                      "column": 42,
+                      "line": 41
+                    },
+                    "snippet": "  39 |   expect(await draft.evaluate((node, original) => node === original, draftNode)).toBe(true);\n  40 |   await page.getByRole('button', { name: 'Retry profile' }).focus();await page.keyboard.press('Enter');\n> 41 |   await expect(page.getByRole('status')).toHaveText('Loading profile 2');await expect(draft).toBeFocused();\n     |                                          ^\n  42 |   await expect(page.getByRole('alert')).toHaveCount(0);await expect(page.getByTestId('request-count')).toHaveText('2');\n  43 |   await page.getByRole('button', { name: 'Reject request 2', exact: true }).click();\n  44 |   await expect(page.getByRole('alert')).toContainText('Profile 2 failed');"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/errored.spec.ts",
+                        "column": 42,
+                        "line": 41
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('status')\nExpected: \u001b[32m\"Loading profile 2\"\u001b[39m\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" getByRole('status') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('status')\u001b[22m\n\n\n  39 |   expect(await draft.evaluate((node, original) => node === original, draftNode)).toBe(true);\n  40 |   await page.getByRole('button', { name: 'Retry profile' }).focus();await page.keyboard.press('Enter');\n> 41 |   await expect(page.getByRole('status')).toHaveText('Loading profile 2');await expect(draft).toBeFocused();\n     |                                          ^\n  42 |   await expect(page.getByRole('alert')).toHaveCount(0);await expect(page.getByTestId('request-count')).toHaveText('2');\n  43 |   await page.getByRole('button', { name: 'Reject request 2', exact: true }).click();\n  44 |   await expect(page.getByRole('alert')).toContainText('Profile 2 failed');\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/errored.spec.ts:41:42"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T13:38:33.018Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-errored-rejected-65d9a--without-duplicate-requests-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-errored-rejected-65d9a--without-duplicate-requests-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-errored-rejected-65d9a--without-duplicate-requests-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/errored.spec.ts",
+                    "column": 42,
+                    "line": 41
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "012116da4a5bfa5a5640-13cb4399fbbde5078da4",
+          "file": "hydration/errored.spec.ts",
+          "line": 30,
+          "column": 1
+        },
+        {
+          "title": "a stale retry's resolve cannot overwrite a newer successful request",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5397,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('status')\nExpected: \u001b[32m\"Loading profile 2\"\u001b[39m\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" getByRole('status') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('status')\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('status')\nExpected: \u001b[32m\"Loading profile 2\"\u001b[39m\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" getByRole('status') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('status')\u001b[22m\n\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/errored.spec.ts:60:42",
+                    "location": {
+                      "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/errored.spec.ts",
+                      "column": 42,
+                      "line": 60
+                    },
+                    "snippet": "  58 |   await page.getByRole('button', { name: 'Reject request 1', exact: true }).click();\n  59 |   await page.getByRole('button', { name: 'Retry profile' }).click();\n> 60 |   await expect(page.getByRole('status')).toHaveText('Loading profile 2');\n     |                                          ^\n  61 |   await page.getByRole('button', { name: 'Start newer request' }).click();\n  62 |   await expect(page.getByRole('status')).toHaveText('Loading profile 3');\n  63 |   await page.getByRole('button', { name: 'Resolve request 3', exact: true }).click();"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/errored.spec.ts",
+                        "column": 42,
+                        "line": 60
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('status')\nExpected: \u001b[32m\"Loading profile 2\"\u001b[39m\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" getByRole('status') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('status')\u001b[22m\n\n\n  58 |   await page.getByRole('button', { name: 'Reject request 1', exact: true }).click();\n  59 |   await page.getByRole('button', { name: 'Retry profile' }).click();\n> 60 |   await expect(page.getByRole('status')).toHaveText('Loading profile 2');\n     |                                          ^\n  61 |   await page.getByRole('button', { name: 'Start newer request' }).click();\n  62 |   await expect(page.getByRole('status')).toHaveText('Loading profile 3');\n  63 |   await page.getByRole('button', { name: 'Resolve request 3', exact: true }).click();\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/errored.spec.ts:60:42"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T13:38:39.193Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-errored-a-stale--40102--a-newer-successful-request-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-errored-a-stale--40102--a-newer-successful-request-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-errored-a-stale--40102--a-newer-successful-request-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/errored.spec.ts",
+                    "column": 42,
+                    "line": 60
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "012116da4a5bfa5a5640-ebe27bd9b2b0137688ab",
+          "file": "hydration/errored.spec.ts",
+          "line": 56,
+          "column": 54
+        },
+        {
+          "title": "a stale retry's reject cannot overwrite a newer successful request",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5354,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('status')\nExpected: \u001b[32m\"Loading profile 2\"\u001b[39m\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" getByRole('status') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('status')\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('status')\nExpected: \u001b[32m\"Loading profile 2\"\u001b[39m\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" getByRole('status') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('status')\u001b[22m\n\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/errored.spec.ts:60:42",
+                    "location": {
+                      "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/errored.spec.ts",
+                      "column": 42,
+                      "line": 60
+                    },
+                    "snippet": "  58 |   await page.getByRole('button', { name: 'Reject request 1', exact: true }).click();\n  59 |   await page.getByRole('button', { name: 'Retry profile' }).click();\n> 60 |   await expect(page.getByRole('status')).toHaveText('Loading profile 2');\n     |                                          ^\n  61 |   await page.getByRole('button', { name: 'Start newer request' }).click();\n  62 |   await expect(page.getByRole('status')).toHaveText('Loading profile 3');\n  63 |   await page.getByRole('button', { name: 'Resolve request 3', exact: true }).click();"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/errored.spec.ts",
+                        "column": 42,
+                        "line": 60
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('status')\nExpected: \u001b[32m\"Loading profile 2\"\u001b[39m\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" getByRole('status') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('status')\u001b[22m\n\n\n  58 |   await page.getByRole('button', { name: 'Reject request 1', exact: true }).click();\n  59 |   await page.getByRole('button', { name: 'Retry profile' }).click();\n> 60 |   await expect(page.getByRole('status')).toHaveText('Loading profile 2');\n     |                                          ^\n  61 |   await page.getByRole('button', { name: 'Start newer request' }).click();\n  62 |   await expect(page.getByRole('status')).toHaveText('Loading profile 3');\n  63 |   await page.getByRole('button', { name: 'Resolve request 3', exact: true }).click();\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/errored.spec.ts:60:42"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T13:38:45.004Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-errored-a-stale--61ade--a-newer-successful-request-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-errored-a-stale--61ade--a-newer-successful-request-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-errored-a-stale--61ade--a-newer-successful-request-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/errored.spec.ts",
+                    "column": 42,
+                    "line": 60
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "012116da4a5bfa5a5640-b6de15b0b23c9d01eee5",
+          "file": "hydration/errored.spec.ts",
+          "line": 56,
+          "column": 54
+        },
+        {
+          "title": "late rejection after pending unmount stays contained and a fresh boundary can recover",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "timedOut",
+                  "duration": 30168,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/errored.spec.ts",
+                        "column": 78,
+                        "line": 86
+                      },
+                      "message": "Error: locator.click: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Resolve request 3', exact: true })\u001b[22m\n\n\n  84 |   await expect(page.getByRole('alert')).toContainText('Profile 2 failed');\n  85 |   await page.getByRole('button', { name: 'Retry profile' }).click();\n> 86 |   await page.getByRole('button', { name: 'Resolve request 3', exact: true }).click();\n     |                                                                              ^\n  87 |   await expect(page.getByTestId('ready-profile')).toHaveText('Profile 3 is ready');\n  88 |   await expect(page.getByLabel('Profile draft')).toHaveValue('Draft before hydration');\n  89 | });\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/errored.spec.ts:86:78"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T13:38:50.780Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-errored-late-rej-5dbd6--fresh-boundary-can-recover-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-errored-late-rej-5dbd6--fresh-boundary-can-recover-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-errored-late-rej-5dbd6--fresh-boundary-can-recover-chromium/trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "012116da4a5bfa5a5640-d7efb7e1dee0e66cfd57",
+          "file": "hydration/errored.spec.ts",
+          "line": 75,
+          "column": 1
+        },
+        {
+          "title": "late rejection after disposing the hydrated root does not restore an error or content",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 359,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T13:39:21.436Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "012116da4a5bfa5a5640-5e154f30ae500e3a34fc",
+          "file": "hydration/errored.spec.ts",
+          "line": 91,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-08T13:38:30.793Z",
+    "duration": 51184.748999999996,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 4,
+    "flaky": 0
+  }
+}

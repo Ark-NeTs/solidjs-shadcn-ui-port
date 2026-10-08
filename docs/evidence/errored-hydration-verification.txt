@@ -1,0 +1,207 @@
+bun run check
+$ tsc --noEmit
+
+bun run lint
+$ eslint src tests playground scripts *.ts
+
+bun run test
+$ vitest run
+
+ RUN  v4.1.10 /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme
+
+
+ Test Files  9 passed (9)
+      Tests  104 passed (104)
+   Start at  16:47:21
+   Duration  2.38s (transform 2.34s, setup 3.10s, import 2.61s, tests 1.63s, environment 8.31s)
+
+
+bun run test:server
+$ vitest run --config vitest.server.config.ts
+
+ RUN  v4.1.10 /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme
+
+
+ Test Files  1 passed (1)
+      Tests  7 passed (7)
+   Start at  16:47:23
+   Duration  334ms (transform 190ms, setup 0ms, import 238ms, tests 16ms, environment 0ms)
+
+
+RESULTS_FILE=docs/evidence/errored-hydration-final.json bun run test:hydration tests/hydration/errored.spec.ts --project=chromium
+$ playwright test --config playwright.hydration.config.ts tests/hydration/errored.spec.ts "--project=chromium"
+[WebServer] $ node --conditions=development scripts/build-hydration.mjs
+[WebServer] (node:1528) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:1529) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 5 tests using 1 worker
+
+(node:1559) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 [chromium] › tests/hydration/errored.spec.ts:30:1 › rejected hydrated data preserves drafts and explicit Errored resets recover without duplicate requests (5.4s)
+(node:1616) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  2 [chromium] › tests/hydration/errored.spec.ts:56:54 › a stale retry's resolve cannot overwrite a newer successful request (5.4s)
+(node:1678) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  3 [chromium] › tests/hydration/errored.spec.ts:56:54 › a stale retry's reject cannot overwrite a newer successful request (5.4s)
+(node:1734) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  4 [chromium] › tests/hydration/errored.spec.ts:75:1 › late rejection after pending unmount stays contained and a fresh boundary can recover (30.2s)
+(node:2040) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  5 [chromium] › tests/hydration/errored.spec.ts:91:1 › late rejection after disposing the hydrated root does not restore an error or content (376ms)
+
+
+  1) [chromium] › tests/hydration/errored.spec.ts:30:1 › rejected hydrated data preserves drafts and explicit Errored resets recover without duplicate requests
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator: getByRole('status')
+    Expected: "Loading profile 2"
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toHaveText" getByRole('status') with timeout 5000ms
+      - waiting for getByRole('status')
+
+
+      39 |   expect(await draft.evaluate((node, original) => node === original, draftNode)).toBe(true);
+      40 |   await page.getByRole('button', { name: 'Retry profile' }).focus();await page.keyboard.press('Enter');
+    > 41 |   await expect(page.getByRole('status')).toHaveText('Loading profile 2');await expect(draft).toBeFocused();
+         |                                          ^
+      42 |   await expect(page.getByRole('alert')).toHaveCount(0);await expect(page.getByTestId('request-count')).toHaveText('2');
+      43 |   await page.getByRole('button', { name: 'Reject request 2', exact: true }).click();
+      44 |   await expect(page.getByRole('alert')).toContainText('Profile 2 failed');
+        at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/errored.spec.ts:41:42
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/hydration-errored-rejected-65d9a--without-duplicate-requests-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/hydration-errored-rejected-65d9a--without-duplicate-requests-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/hydration-errored-rejected-65d9a--without-duplicate-requests-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/hydration-errored-rejected-65d9a--without-duplicate-requests-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › tests/hydration/errored.spec.ts:56:54 › a stale retry's resolve cannot overwrite a newer successful request
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator: getByRole('status')
+    Expected: "Loading profile 2"
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toHaveText" getByRole('status') with timeout 5000ms
+      - waiting for getByRole('status')
+
+
+      58 |   await page.getByRole('button', { name: 'Reject request 1', exact: true }).click();
+      59 |   await page.getByRole('button', { name: 'Retry profile' }).click();
+    > 60 |   await expect(page.getByRole('status')).toHaveText('Loading profile 2');
+         |                                          ^
+      61 |   await page.getByRole('button', { name: 'Start newer request' }).click();
+      62 |   await expect(page.getByRole('status')).toHaveText('Loading profile 3');
+      63 |   await page.getByRole('button', { name: 'Resolve request 3', exact: true }).click();
+        at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/errored.spec.ts:60:42
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/hydration-errored-a-stale--40102--a-newer-successful-request-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/hydration-errored-a-stale--40102--a-newer-successful-request-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/hydration-errored-a-stale--40102--a-newer-successful-request-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/hydration-errored-a-stale--40102--a-newer-successful-request-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [chromium] › tests/hydration/errored.spec.ts:56:54 › a stale retry's reject cannot overwrite a newer successful request
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator: getByRole('status')
+    Expected: "Loading profile 2"
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toHaveText" getByRole('status') with timeout 5000ms
+      - waiting for getByRole('status')
+
+
+      58 |   await page.getByRole('button', { name: 'Reject request 1', exact: true }).click();
+      59 |   await page.getByRole('button', { name: 'Retry profile' }).click();
+    > 60 |   await expect(page.getByRole('status')).toHaveText('Loading profile 2');
+         |                                          ^
+      61 |   await page.getByRole('button', { name: 'Start newer request' }).click();
+      62 |   await expect(page.getByRole('status')).toHaveText('Loading profile 3');
+      63 |   await page.getByRole('button', { name: 'Resolve request 3', exact: true }).click();
+        at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/errored.spec.ts:60:42
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/hydration-errored-a-stale--61ade--a-newer-successful-request-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/hydration-errored-a-stale--61ade--a-newer-successful-request-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/hydration-errored-a-stale--61ade--a-newer-successful-request-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/hydration-errored-a-stale--61ade--a-newer-successful-request-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [chromium] › tests/hydration/errored.spec.ts:75:1 › late rejection after pending unmount stays contained and a fresh boundary can recover
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('button', { name: 'Resolve request 3', exact: true })
+
+
+      84 |   await expect(page.getByRole('alert')).toContainText('Profile 2 failed');
+      85 |   await page.getByRole('button', { name: 'Retry profile' }).click();
+    > 86 |   await page.getByRole('button', { name: 'Resolve request 3', exact: true }).click();
+         |                                                                              ^
+      87 |   await expect(page.getByTestId('ready-profile')).toHaveText('Profile 3 is ready');
+      88 |   await expect(page.getByLabel('Profile draft')).toHaveValue('Draft before hydration');
+      89 | });
+        at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/errored.spec.ts:86:78
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/hydration-errored-late-rej-5dbd6--fresh-boundary-can-recover-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/hydration-errored-late-rej-5dbd6--fresh-boundary-can-recover-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/hydration-errored-late-rej-5dbd6--fresh-boundary-can-recover-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/hydration-errored-late-rej-5dbd6--fresh-boundary-can-recover-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4 failed
+    [chromium] › tests/hydration/errored.spec.ts:30:1 › rejected hydrated data preserves drafts and explicit Errored resets recover without duplicate requests
+    [chromium] › tests/hydration/errored.spec.ts:56:54 › a stale retry's resolve cannot overwrite a newer successful request
+    [chromium] › tests/hydration/errored.spec.ts:56:54 › a stale retry's reject cannot overwrite a newer successful request
+    [chromium] › tests/hydration/errored.spec.ts:75:1 › late rejection after pending unmount stays contained and a fresh boundary can recover
+  1 passed (51.0s)
+error: script "test:hydration" exited with code 1

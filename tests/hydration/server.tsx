@@ -3,6 +3,9 @@ import { generateHydrationScript, renderToString } from '@solidjs/web';
 import { HydrationFixture } from './fixture';
 import { MinimalTabs, type ProbeMode } from './tabs-minimal';
 import { createLoadingRequest, HydrationLoading } from './loading';
+import { createErroredRequest, HydrationErrored } from './errored';
+import { MinimalRetry, type RetryMode } from './retry-minimal';
+export { retryModes } from './retry-minimal';
 export { probeModes } from './tabs-minimal';
 export const bootstrap = generateHydrationScript();
 /** Render one request variant and fail on server render/serialization errors. */
@@ -18,4 +21,14 @@ export function renderTabsProbe(mode: ProbeMode) {
 /** Emit an actual pending Loading fallback; the browser owns subsequent promise completion. */
 export function renderLoading(native = false) {
   return renderToString(() => <HydrationLoading request={createLoadingRequest(1)} native={native}/>, { renderId: 'acceptance', onError: error => { throw error; } });
+}
+
+/** Render pending content before client-owned rejection and explicit recovery. */
+export function renderErrored() {
+  return renderToString(() => <HydrationErrored request={createErroredRequest(1)}/>, { renderId: 'acceptance', onError: error => { throw error; } });
+}
+
+/** Render the plain Solid retry comparison with the same deterministic hydration namespace. */
+export function renderRetry(mode: RetryMode) {
+  return renderToString(() => <MinimalRetry mode={mode}/>, { renderId: 'acceptance', onError: error => { throw error; } });
 }

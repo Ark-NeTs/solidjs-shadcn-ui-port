@@ -1,0 +1,27 @@
+[
+  {
+    "command": "bun run check",
+    "exitCode": 0,
+    "seconds": 2.67
+  },
+  {
+    "command": "bun run lint",
+    "exitCode": 0,
+    "seconds": 1.26
+  },
+  {
+    "command": "THEME_PORT=4403 RESULTS_FILE=docs/evidence/retry-recovery-alert-repeat.json bun run test:e2e tests/e2e/alert-dialog-focus.spec.ts --project=chromium --grep 'force-mounted' --repeat-each=5",
+    "exitCode": 0,
+    "seconds": 11.79
+  },
+  {
+    "command": "RESULTS_FILE=docs/evidence/retry-recovery-hydration-final.json bun run test:hydration",
+    "exitCode": 0,
+    "seconds": 51.4
+  },
+  {
+    "command": "THEME_PORT=4403 RESULTS_FILE=docs/evidence/retry-recovery-e2e-final.json bun run test:e2e",
+    "exitCode": 0,
+    "seconds": 139.67
+  }
+]
