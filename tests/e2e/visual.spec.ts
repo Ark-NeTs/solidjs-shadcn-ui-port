@@ -53,3 +53,7 @@ for(const mode of ['light','dark','mobile'])test(`${mode} Native catalog composi
 for(const mode of ['light','dark','mobile'])test(`${mode} Display catalog compositions`,async({page})=>{
  if(mode==='mobile')await page.setViewportSize({width:390,height:844});await page.goto(`/?catalog-display${mode==='dark'?'&dark':''}`);await page.evaluate(()=>document.fonts.ready);await page.emulateMedia({reducedMotion:'reduce'});await expect(page.locator('main')).toHaveScreenshot(`catalog-display-${mode}.png`,{animations:'disabled',maxDiffPixelRatio:0.001});
 });
+for(const mode of ['light','dark','mobile'])test(`${mode} Modal catalog compositions`,async({page})=>{
+ if(mode==='mobile')await page.setViewportSize({width:390,height:844});await page.goto(`/?catalog-modal${mode==='dark'?'&dark':''}`);await page.evaluate(()=>document.fonts.ready);await page.emulateMedia({reducedMotion:'reduce'});
+ for(const [name,opener,title] of [['dialog','Open editor dialog','Profile editor'],['sheet','Open detail sheet','Detail sheet'],['drawer','Open workspace drawer','Workspace drawer']]){await page.getByRole('button',{name:opener!,exact:true}).click();await expect(page.getByRole('dialog',{name:title!,exact:true})).toBeVisible();if(name==='drawer')await expect.poll(async()=>Number(await page.getByRole('slider',{name:'Drawer size'}).getAttribute('aria-valuemax'))).toBeGreaterThan(100);await expect(page).toHaveScreenshot(`${name}-${mode}.png`,{animations:'disabled',maxDiffPixelRatio:0.001});await page.keyboard.press('Escape');}
+});

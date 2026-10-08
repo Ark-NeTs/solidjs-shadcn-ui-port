@@ -21,6 +21,7 @@ import { ToggleForms } from './toggle-forms';
 import { LinkNavigation } from './link-navigation';
 import { NativeFields } from './native-fields';
 import { CardLayout } from './card-layout';
+import { ModalCatalogExamples } from './catalog-modal';
 import { DisplayCatalogExamples } from './catalog-display';
 import { NativeCatalogExamples } from './catalog-native';
 import { ProgressExamples } from './progress';
@@ -145,6 +146,7 @@ function ToggleExamples() {
 /** Select focused acceptance examples without changing the main gallery layout. */
 function Preview() {
   const query = new URLSearchParams(location.search);
+  if (query.has('catalog-modal')) return <ModalCatalogExamples/>;
   if (query.has('catalog-display')) return <DisplayCatalogExamples/>;
   if (query.has('catalog-native')) return <NativeCatalogExamples/>;
   if (query.has('progress')) return <ProgressExamples/>;

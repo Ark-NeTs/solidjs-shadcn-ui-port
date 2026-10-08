@@ -3,7 +3,7 @@
 Initially audited 2026-10-08 against source at `314f27a`; updated with the
 [three-engine browser evidence](WEBKIT-DELIVERY.md) and
 [source hydration regression](HYDRATION-DELIVERY.md), including
-[real Loading boundaries](LOADING-HYDRATION-DELIVERY.md). Covers the **44
+[real Loading boundaries](LOADING-HYDRATION-DELIVERY.md). Covers the **47
 implemented component families**, including their compound parts. The other
 catalog entries in [COMPONENT-MAP.md](../COMPONENT-MAP.md) remain unimplemented;
 their adoption probes are not delivered-component acceptance tests.
@@ -43,13 +43,13 @@ are implementation scope limits, not features that an existing test proves.
 | Diagnostics and cleanup are checked | [Unit setup](../vitest.setup.ts), [browser fixture](../tests/browser-fixture.ts) | Every unit test checks console warn/error after cleanup; every B/E/H test checks console warning/error and page errors. The hydration build also rejects server warnings/errors; ordinary S tests have no equivalent diagnostic fixture. |
 | Whole-gallery accessibility | [B: light/dark examples have no axe accessibility violations](../tests/integration/foundation.spec.ts#L27) | Applies to the rendered, settled gallery state. Axe does not certify screen-reader usability or all dynamic states. |
 | Whole-gallery visual appearance | [V: light/dark/mobile component gallery](../tests/e2e/visual.spec.ts#L3) | Shared gallery plus dedicated disclosure and preview images; not every variant/state combination. |
-| Unit execution coverage | [Coverage configuration](../vitest.config.ts), [measured coverage](evidence/catalog-display-coverage.json) | 100% statements, branches, functions and lines for included component/helper source; not exhaustive behavior coverage. |
+| Unit execution coverage | [Coverage configuration](../vitest.config.ts), [measured coverage](evidence/catalog-modal-coverage.json) | 100% statements, branches, functions and lines for included component/helper source; not exhaustive behavior coverage. |
 
-The current display catalog delivery records **213 unit tests, 15 grouped SSR tests,
-105 hydration runs
-(102 positive assertions + 3 unsafe-pattern characterizations)**. Visual tests compare
-39 images. These totals are package-wide, not per component. See
-[display verification](DISPLAY-CATALOG-DELIVERY.md) for full pre-callback regression results (417 source / 399 built), final affected-component reruns (18 source / 21 built/visual), and the
+The current modal delivery records **229 unit tests, 16 grouped SSR tests,
+108 hydration runs (105 positive assertions + 3 unsafe-pattern characterizations),
+447 source integration runs and 432 built E2E/visual runs**. Visual tests compare
+48 images. These totals are package-wide, not per component. See
+[modal verification](MODAL-CATALOG-DELIVERY.md) and the
 [initial matrix verification](TEST-MATRIX-DELIVERY.md) for the original audit.
 
 WebKit runs on macOS with process-scoped button Tab navigation and native
@@ -614,3 +614,17 @@ execution coverage.
 | Typography | [U](../tests/unit/catalog-display.test.tsx): hierarchy, ref, text escaping and semantic elements; [B/E](../tests/catalog-display.ts): mobile/enlarged light/dark axe and native prose link; grouped S/H slot identity and V. | Not a Markdown parser or full upstream Typeset CSS implementation. All HTML element permutations and manual screen readers unverified. |
 
 All four appear in [three focused visual baselines](../tests/e2e/visual.spec.ts).
+
+## Dialog, Sheet and Drawer
+
+| Family / acceptance requirement | Evidence and limits |
+| --- | --- |
+| All: root ownership, live content/title/description IDs, refs, canceled actions, retained drafts, unmount and reopening | [U: modal families](../tests/unit/catalog-modal.test.tsx), [B/E: modal contracts](../tests/catalog-modal.ts); compound exports in contracts.test.ts |
+| Dialog: nested focus containment, return to opener, scroll locking, failed-save recovery and controlled close rejection | [B/E: Dialog scenarios](../tests/catalog-modal.ts); save behavior belongs to the fixture, not a transport API |
+| Dialog: nonmodal page interaction | [U/B/E: companion example](../tests/catalog-modal.ts); native outside-dismiss, no modal focus trap |
+| Sheet: all physical sides and retained draft | [U/B/E: side changes](../tests/catalog-modal.ts), light/dark/mobile open images; long content uses panel overflow |
+| Drawer: all four directions, snap keyboard, pointer dismissal, content scrolling | [U/B/E: directional scenarios](../tests/catalog-modal.ts); synthetic pointer coverage in U, real mouse capture in B/E |
+| Drawer: controlled rejection, pixel sizes, invalid points, cancellation and observer teardown | [U: controlled and lifecycle cases](../tests/unit/catalog-modal.test.tsx); no physical touch-device claim |
+| All: server semantics and client continuity | [S: retained modal HTML](../tests/server.test.tsx), [H: modal journey](../tests/hydration/hydration.spec.ts); initial closed forceMount nodes, nested focus, draft edits, drawer size and disposal |
+| All: customization and access | Light/dark/mobile [V: modal images](../tests/e2e/visual.spec.ts); enlarged mobile axe/geometry in B/E; no manual screen-reader certification |
+| Open / scope boundaries | Real mobile touch/virtual keyboard, open modality changes and manual assistive technology unverified. No delayed exit presence, background scaling, momentum, arbitrary-content swipe or Vaul viewport-fraction semantics. See [guide](components.md). |

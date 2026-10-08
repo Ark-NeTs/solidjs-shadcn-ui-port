@@ -514,3 +514,23 @@ of locale; `display: contents` does not establish inline layout direction.
 Typography provides semantic recipes without a Markdown parser or a claim to
 upstream Typeset's complete CSS API. No new dependency or shared-token changes.
 [Acceptance and limits](docs/DISPLAY-CATALOG-DELIVERY.md).
+
+## 2026-10-09 — Dialog, Sheet and Drawer
+
+Reuse the accepted native layer lifecycle after the pinned Kobalte Dialog/Drawer
+probes and isolated diagnostic repairs. Kobalte has the required APIs; the choice
+is about acceptance at alpha.2/rc.13, not missing exports. Share modal state, live
+IDs, focus return and native top-layer rendering; retain DOM theme ancestry.
+Drawer owns bounded snap selection and handle-only dragging so scrollable content
+keeps native gestures. Numeric snaps refer to panel size; pixel snaps are explicit.
+No Vaul momentum/background scaling or delayed exit-presence claim. A plain
+accessor for the shell popover mode avoids the observed nested-getter hydration
+memo mismatch. [Delivery](docs/MODAL-CATALOG-DELIVERY.md).
+
+Full modal regression exposed two existing wasted-recomputation diagnostics.
+Tabs now places an equality boundary at each panel's active value, after trigger
+registration; a root memo would snapshot incomplete SSR metadata. Slider iterates
+count-derived stable thumb indices while each thumb reads its current value.
+Both changes keep registration and input values reactive without repeated
+collection/visibility work. They are included because they blocked acceptance,
+not as unrelated feature work; no diagnostic suppression is used.

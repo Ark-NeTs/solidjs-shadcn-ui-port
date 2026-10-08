@@ -44,3 +44,6 @@ export * from './components/ui/avatar';
 export * from './components/ui/pagination';
 export * from './components/ui/typography';
 export * from './components/ui/direction';
+export * from './components/ui/dialog';
+export * from './components/ui/sheet';
+export * from './components/ui/drawer';

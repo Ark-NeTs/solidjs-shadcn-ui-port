@@ -1,4 +1,5 @@
 // Server/client shared acceptance composition through public source exports; D19/D90.
+import { ModalCatalogContent } from '../../playground/catalog-modal';
 import { DisplayCatalogContent } from '../../playground/catalog-display';
 import { NativeCatalogContent } from '../../playground/catalog-native';
 import { Progress } from 'shadcn-solidjs-theme/ui/progress';
@@ -85,6 +86,6 @@ export function HydrationFixture(props: { initiallyOpen: false | 'popover' | 'al
     <form id="hydrated-select-form"><Select items={[{value:"apple",label:"Apple"},{value:"cherry",label:"Cherry"}]} name="fruit" defaultValue="apple"><SelectTrigger aria-label="Hydrated fruit"><SelectValue/></SelectTrigger><SelectContent>{item=><SelectItem value={item.value}/>}</SelectContent></Select><button type="reset">Reset hydrated fruit</button></form>
     <form id="hydrated-slider-form"><Slider aria-label="Hydrated range" thumbLabels={["Hydrated minimum","Hydrated maximum"]} name="range" defaultValue={[20,80]} minStepsBetweenThumbs={10}/><button type="reset">Reset hydrated range</button></form>
     <span id={`progress-label-${suffix()}`}>Hydrated progress</span><Progress aria-labelledby={`progress-label-${suffix()}`} value={progress()}/><Button onClick={()=>setProgress(100)}>Complete hydrated progress</Button><Button onClick={()=>setProgress(null)}>Unknown hydrated progress</Button>
-    <NativeCatalogContent/><DisplayCatalogContent/><output data-testid="confirmed">{confirmed()}</output>
+    <NativeCatalogContent/><DisplayCatalogContent/><ModalCatalogContent/><output data-testid="confirmed">{confirmed()}</output>
   </main>;
 }

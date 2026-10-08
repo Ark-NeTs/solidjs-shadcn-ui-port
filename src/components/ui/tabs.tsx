@@ -1,5 +1,5 @@
 // Accessible signal-driven tabs with sibling styles and native buttons; D19/D90.
-import { createContext, createEffect, createSignal, createUniqueId, onCleanup, omit, Show, useContext, type Accessor } from 'solid-js';
+import { createContext, createEffect, createMemo, createSignal, createUniqueId, onCleanup, omit, Show, useContext, type Accessor } from 'solid-js';
 import type { JSX } from '@solidjs/web';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '../../lib/utils';
@@ -108,6 +108,7 @@ export type TabsContentProps=JSX.HTMLAttributes<HTMLDivElement> & {value:string;
 export function TabsContent(props: TabsContentProps) {
   const context=useTabs();const id=()=>props.id||`${context.id()}-${encodeURIComponent(props.value)}-content`;
   context.register({value:()=>props.value,id},true);
-  const active=()=>context.value()===props.value;const rest=omit(props,'id','class','value','forceMount','children');
+  // Narrow visibility after trigger registration; a root memo would snapshot empty SSR metadata.
+  const active=createMemo(()=>context.value()===props.value);const rest=omit(props,'id','class','value','forceMount','children');
   return <div {...rest} id={id()} role="tabpanel" data-slot="tabs-content" data-state={active()?'active':'inactive'} hidden={!active()} tabindex={0} aria-labelledby={context.entries().find(entry=>entry.value()===props.value)?.id()} class={cn('min-w-0 flex-1 text-sm outline-none',props.class)}><Show when={active()||props.forceMount}>{props.children}</Show></div>;
 }

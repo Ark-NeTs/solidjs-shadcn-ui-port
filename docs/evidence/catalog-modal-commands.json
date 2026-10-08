@@ -1,0 +1,42 @@
+[
+  {
+    "command": "bun run check",
+    "exitCode": 0,
+    "seconds": 3.52
+  },
+  {
+    "command": "bun run lint",
+    "exitCode": 0,
+    "seconds": 1.65
+  },
+  {
+    "command": "bun run test --maxWorkers=2",
+    "exitCode": 0,
+    "seconds": 8.39
+  },
+  {
+    "command": "bun run test:coverage --maxWorkers=2",
+    "exitCode": 0,
+    "seconds": 9.73
+  },
+  {
+    "command": "bun run test:server",
+    "exitCode": 0,
+    "seconds": 1.0
+  },
+  {
+    "command": "RESULTS_FILE=docs/evidence/catalog-modal-hydration.json bun run test:hydration --max-failures=1",
+    "exitCode": 0,
+    "seconds": 70.55
+  },
+  {
+    "command": "THEME_PORT=4403 RESULTS_FILE=docs/evidence/catalog-modal-integration.json bun run test:integration --max-failures=1",
+    "exitCode": 0,
+    "seconds": 372.17
+  },
+  {
+    "command": "THEME_PORT=4403 RESULTS_FILE=docs/evidence/catalog-modal-e2e.json bun run test:e2e --max-failures=1",
+    "exitCode": 0,
+    "seconds": 271.73
+  }
+]

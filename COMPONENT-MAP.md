@@ -1,8 +1,8 @@
 # shadcn/ui → Solid 2 component map
 
-**Implemented (2026-10-08):** Button, Badge, Card, Separator, Skeleton, Input,
-Textarea, Label, Checkbox, Switch, Tabs, Popover, Alert Dialog, Combobox, Accordion, Collapsible, Tooltip, Hover Card, Radio Group, Toggle, Toggle Group, Select, Slider, Progress, Alert, Aspect Ratio, Attachment, Breadcrumb, Bubble, Button Group, Empty, Field, Input Group, Item, Kbd, Marker, Message, Native Select, Spinner, Table, Avatar, Pagination, Direction and Typography now have Solid 2 source, documentation and passing unit, browser and built-library tests.
-See [display catalog delivery](docs/DISPLAY-CATALOG-DELIVERY.md), [native catalog delivery](docs/NATIVE-CATALOG-DELIVERY.md), [Progress delivery](docs/PROGRESS-DELIVERY.md), [Slider delivery](docs/SLIDER-DELIVERY.md), [Select delivery](docs/SELECT-DELIVERY.md), [choice delivery](docs/CHOICES-DELIVERY.md), [preview delivery](docs/HINTS-DELIVERY.md), [disclosure delivery](docs/DISCLOSURES-DELIVERY.md), [COMBOBOX-DELIVERY.md](COMBOBOX-DELIVERY.md), [OVERLAYS-DELIVERY.md](OVERLAYS-DELIVERY.md), [TOGGLES-DELIVERY.md](TOGGLES-DELIVERY.md), [FORM-FIELDS-DELIVERY.md](FORM-FIELDS-DELIVERY.md) and the earlier
+**Implemented (through 2026-10-09):** Button, Badge, Card, Separator, Skeleton, Input,
+Textarea, Label, Checkbox, Switch, Tabs, Popover, Alert Dialog, Combobox, Accordion, Collapsible, Tooltip, Hover Card, Radio Group, Toggle, Toggle Group, Select, Slider, Progress, Alert, Aspect Ratio, Attachment, Breadcrumb, Bubble, Button Group, Empty, Field, Input Group, Item, Kbd, Marker, Message, Native Select, Spinner, Table, Avatar, Pagination, Direction, Typography, Dialog, Sheet and Drawer now have Solid 2 source, documentation and passing unit, browser and built-library tests.
+See [modal catalog delivery](docs/MODAL-CATALOG-DELIVERY.md), [display catalog delivery](docs/DISPLAY-CATALOG-DELIVERY.md), [native catalog delivery](docs/NATIVE-CATALOG-DELIVERY.md), [Progress delivery](docs/PROGRESS-DELIVERY.md), [Slider delivery](docs/SLIDER-DELIVERY.md), [Select delivery](docs/SELECT-DELIVERY.md), [choice delivery](docs/CHOICES-DELIVERY.md), [preview delivery](docs/HINTS-DELIVERY.md), [disclosure delivery](docs/DISCLOSURES-DELIVERY.md), [COMBOBOX-DELIVERY.md](COMBOBOX-DELIVERY.md), [OVERLAYS-DELIVERY.md](OVERLAYS-DELIVERY.md), [TOGGLES-DELIVERY.md](TOGGLES-DELIVERY.md), [FORM-FIELDS-DELIVERY.md](FORM-FIELDS-DELIVERY.md) and the earlier
 [FOUNDATION-DELIVERY.md](FOUNDATION-DELIVERY.md). These use native HTML; Toggle wraps Kobalte after its scoped acceptance;
 headless-library findings below remain relevant to later primitives.
 
@@ -74,8 +74,8 @@ No row currently selects corvu; alternatives are evaluated below.
 
 | Route | Entries |
 | --- | ---: |
-| Matching Kobalte primitive | 17 |
-| Owned composition | 11 |
+| Matching Kobalte primitive | 15 |
+| Owned composition | 13 |
 | Native markup/CSS | 31 |
 | Unresolved behavior/engine gap | 6 |
 | Total | 65 |
@@ -104,9 +104,9 @@ No row currently selects corvu; alternatives are evaluated below.
 | [Context Menu](https://ui.shadcn.com/docs/components/context-menu) | K | `context-menu` | Pointer/keyboard opening, submenus, checkbox/radio items and dismissal. |
 | [Data Table](https://ui.shadcn.com/docs/components/data-table) | G | `checkbox`, `dropdown-menu`, `pagination` for controls | No table model. Evaluate TanStack Table core/compatible adapter for sort, filter, selection and paging; server data stays host-owned. |
 | [Date Picker](https://ui.shadcn.com/docs/components/date-picker) | K | `date-picker` (or `calendar` + `popover`) | Trigger/value formatting, range/multiple modes, bounds and Date adapter; time examples compose `time-field` where needed. |
-| [Dialog](https://ui.shadcn.com/docs/components/dialog) | K | `dialog` | Modal/nonmodal, portal, accessible naming, nested layers, Escape and focus restoration. |
+| [Dialog](https://ui.shadcn.com/docs/components/dialog) | C | `dialog` evaluated first; shared native modal | Delivered names, nested focus, canceled dismissal, controlled state and hydration; see docs/MODAL-CATALOG-DELIVERY.md. |
 | [Direction](https://ui.shadcn.com/docs/components/direction) | C | `i18n` evaluated; owned explicit direction | Delivered nested reactive provider with native div boundary, Tabs keyboard direction and Popover alignment; not an external Kobalte context bridge. See docs/DISPLAY-CATALOG-DELIVERY.md. |
-| [Drawer](https://ui.shadcn.com/docs/components/drawer) | K | `drawer` | Gestures, snap points and four sides exist. Adapt direction→side, state attributes, scroll interactions and Vaul-facing props. |
+| [Drawer](https://ui.shadcn.com/docs/components/drawer) | C | `drawer` evaluated first; native modal and owned handle | Delivered four sides, panel-fraction/pixel snaps, keyboard and handle drag, native content scrolling. Not full Vaul physics/API; see docs/MODAL-CATALOG-DELIVERY.md. |
 | [Dropdown Menu](https://ui.shadcn.com/docs/components/dropdown-menu) | K | `dropdown-menu` | Submenus, typeahead, groups, checkbox/radio items, disabled items and close behavior. |
 | [Empty](https://ui.shadcn.com/docs/components/empty) | N | Owned markup/CSS | Media/title/description/content slots; actions use Button. |
 | [Field](https://ui.shadcn.com/docs/components/field) | C | Control-specific Label/Description/ErrorMessage + native fieldset | Generic layout, legends, errors and IDs across all controls; do not put unrelated controls in a TextField context. |
@@ -132,7 +132,7 @@ No row currently selects corvu; alternatives are evaluated below.
 | [Scroll Area](https://ui.shadcn.com/docs/components/scroll-area) | G | No custom scrollbar primitive | Need viewport/track/thumb/corner behavior, both axes, dragging, RTL and resize observation. Native overflow alone is not full parity. |
 | [Select](https://ui.shadcn.com/docs/components/select) | N | Owned native select + combobox/listbox | Delivered keyboard/typeahead, controlled state, form/reset, groups and top-layer placement. Kobalte alpha.2 passes basic interaction but emits 25 diagnostics in each tested engine; [evaluation](KOBALTE-SELECT.md), [delivery](docs/SELECT-DELIVERY.md). Explicit item data; no Radix item-aligned mode or portal API. |
 | [Separator](https://ui.shadcn.com/docs/components/separator) | K | `separator` | Horizontal/vertical and decorative versus semantic separator. |
-| [Sheet](https://ui.shadcn.com/docs/components/sheet) | C | `dialog` | Side-panel layout and transitions; Drawer is not necessary for a nongestural sheet. |
+| [Sheet](https://ui.shadcn.com/docs/components/sheet) | C | `dialog` evaluated; shared native modal | Delivered four physical sides, long-content scrolling, retained drafts and hydration. Immediate closure, no delayed exit-presence claim. |
 | [Sidebar](https://ui.shadcn.com/docs/components/sidebar) | C | Sheet/`dialog`, `collapsible`, `tooltip`, `button` | Own responsive and controlled/collapsed state, shortcut and persistence boundary. |
 | [Skeleton](https://ui.shadcn.com/docs/components/skeleton) | K | `skeleton` | Shape, dimensions, visibility and reduced-motion styling. |
 | [Slider](https://ui.shadcn.com/docs/components/slider) | N | Owned Solid values + ARIA slider buttons/native form inputs | Single/multiple thumbs, bounds/step/gap, keyboard/pointer capture, commits, native reset and SSR/hydration. Kobalte alpha.2 emits seven diagnostics per tested engine; [evaluation](KOBALTE-SLIDER.md), [delivery](docs/SLIDER-DELIVERY.md). |

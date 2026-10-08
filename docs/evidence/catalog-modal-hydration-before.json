@@ -1,0 +1,262 @@
+{
+  "config": {
+    "argv": [
+      "/Users/arktas/.asdf/installs/nodejs/25.3.0/bin/node",
+      "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/node_modules/.bin/playwright",
+      "test",
+      "--config",
+      "playwright.hydration.config.ts",
+      "--grep",
+      "hydrates retained modal",
+      "--max-failures=1"
+    ],
+    "configFile": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/playwright.hydration.config.ts",
+    "rootDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 1,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "hydration/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [
+          "**/visual.spec.ts"
+        ],
+        "testMatch": [
+          "hydration/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [
+          "**/visual.spec.ts"
+        ],
+        "testMatch": [
+          "hydration/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "docs/evidence/catalog-modal-hydration-focused.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": {
+      "command": "bun run build:hydration && bunx --no-install vite preview --config hydration.vite.config.ts --host 127.0.0.1 --port 4403 --strictPort",
+      "url": "http://127.0.0.1:4403",
+      "reuseExistingServer": false,
+      "timeout": 60000
+    }
+  },
+  "suites": [
+    {
+      "title": "hydration/hydration.spec.ts",
+      "file": "hydration/hydration.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "hydrates retained modal nodes before nested focus, sheet edits and drawer resizing",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5684,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#hydration-root')\nExpected: \u001b[32m\"true\"\u001b[39m\nReceived: \u001b[31m\"\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('#hydration-root') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#hydration-root')\u001b[22m\n\u001b[2m    14 × locator resolved to <div data-open=\"false\" id=\"hydration-root\">…</div>\u001b[22m\n\u001b[2m       - unexpected value \"null\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#hydration-root')\nExpected: \u001b[32m\"true\"\u001b[39m\nReceived: \u001b[31m\"\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('#hydration-root') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#hydration-root')\u001b[22m\n\u001b[2m    14 × locator resolved to <div data-open=\"false\" id=\"hydration-root\">…</div>\u001b[22m\n\u001b[2m       - unexpected value \"null\"\u001b[22m\n\n    at hydratePage (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/hydration.spec.ts:18:49)\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/hydration.spec.ts:204:2",
+                    "location": {
+                      "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/hydration.spec.ts",
+                      "column": 49,
+                      "line": 18
+                    },
+                    "snippet": "  16 |   expect(new Set(ids).size).toBe(ids.length);\n  17 |   await page.getByRole('button', { name: 'Hydrate components', exact: true }).click();\n> 18 |   await expect(page.locator('#hydration-root')).toHaveAttribute('data-hydrated', 'true');\n     |                                                 ^\n  19 |   expect(await nodes.evaluate(elements => elements.length)).toBeGreaterThan(30);\n  20 |   expect(await nodes.evaluate(elements => elements.filter(element => !element.isConnected).map(element => element.outerHTML.slice(0, 200)))).toEqual([]);\n  21 |   expect(await page.locator('#hydration-root [id]').evaluateAll(elements => elements.map(element => element.id))).toEqual(ids);"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/hydration.spec.ts",
+                        "column": 49,
+                        "line": 18
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#hydration-root')\nExpected: \u001b[32m\"true\"\u001b[39m\nReceived: \u001b[31m\"\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('#hydration-root') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#hydration-root')\u001b[22m\n\u001b[2m    14 × locator resolved to <div data-open=\"false\" id=\"hydration-root\">…</div>\u001b[22m\n\u001b[2m       - unexpected value \"null\"\u001b[22m\n\n\n  16 |   expect(new Set(ids).size).toBe(ids.length);\n  17 |   await page.getByRole('button', { name: 'Hydrate components', exact: true }).click();\n> 18 |   await expect(page.locator('#hydration-root')).toHaveAttribute('data-hydrated', 'true');\n     |                                                 ^\n  19 |   expect(await nodes.evaluate(elements => elements.length)).toBeGreaterThan(30);\n  20 |   expect(await nodes.evaluate(elements => elements.filter(element => !element.isConnected).map(element => element.outerHTML.slice(0, 200)))).toEqual([]);\n  21 |   expect(await page.locator('#hydration-root [id]').evaluateAll(elements => elements.map(element => element.id))).toEqual(ids);\n    at hydratePage (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/hydration.spec.ts:18:49)\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/hydration.spec.ts:204:2"
+                    },
+                    {
+                      "location": {
+                        "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/browser-fixture.ts",
+                        "column": 69,
+                        "line": 10
+                      },
+                      "message": "Error: No browser errors or development diagnostics\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  -  1\u001b[39m\n\u001b[31m+ Received  + 94\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Hydration key miss for \\\"acceptanceA9c0331\\\": no server-rendered element carries this key (template: <div>). A detached element was created instead; its subtree will not appear in the document or become interactive. This usually means the server and client hydration id namespaces are misaligned — when hydrating a subtree of a larger server render, wrap the document shell in <NoHydration> and re-enter with <Hydration> around the hydrated subtree (or pass hydrate() a renderId matching the server's <Hydration id>).\",\u001b[39m\n\u001b[31m+   \"[REACTIVITY_HALTED] An uncaught error halted the reactive system. No further updates will be processed. Handle errors with <Errored> or treat this as a crash.\",\u001b[39m\n\u001b[31m+   \"TypeError: Cannot read properties of null (reading 'nextSibling')\u001b[39m\n\u001b[31m+     at http://127.0.0.1:4403/client.js:13523:46\u001b[39m\n\u001b[31m+     at get children (http://127.0.0.1:4403/client.js:13577:6)\u001b[39m\n\u001b[31m+     at Object.get (http://127.0.0.1:4403/client.js:5950:26)\u001b[39m\n\u001b[31m+     at http://127.0.0.1:4403/client.js:8750:35\u001b[39m\n\u001b[31m+     at http://127.0.0.1:4403/client.js:8962:27\u001b[39m\n\u001b[31m+     at Object.outer [as _fn] (http://127.0.0.1:4403/client.js:8300:11)\u001b[39m\n\u001b[31m+     at recompute (http://127.0.0.1:4403/client.js:3062:24)\u001b[39m\n\u001b[31m+     at effect$1 (http://127.0.0.1:4403/client.js:5033:2)\u001b[39m\n\u001b[31m+     at createRenderEffect$1 (http://127.0.0.1:4403/client.js:5373:2)\u001b[39m\n\u001b[31m+     at hydratedEffect (http://127.0.0.1:4403/client.js:7497:83)\",\u001b[39m\n\u001b[31m+   \"[REACTIVITY_HALTED] Update ignored: the reactive system was halted by an earlier uncaught error.\",\u001b[39m\n\u001b[31m+   \"StatusError: Cannot read properties of null (reading 'nextSibling')\u001b[39m\n\u001b[31m+     at notifyStatus (http://127.0.0.1:4403/client.js:2840:100)\u001b[39m\n\u001b[31m+     at recompute (http://127.0.0.1:4403/client.js:3083:4)\u001b[39m\n\u001b[31m+     at effect$1 (http://127.0.0.1:4403/client.js:5033:2)\u001b[39m\n\u001b[31m+     at createRenderEffect$1 (http://127.0.0.1:4403/client.js:5373:2)\u001b[39m\n\u001b[31m+     at hydratedEffect (http://127.0.0.1:4403/client.js:7497:83)\u001b[39m\n\u001b[31m+     at hydratedCreateRenderEffect (http://127.0.0.1:4403/client.js:7514:9)\u001b[39m\n\u001b[31m+     at createRenderEffect (http://127.0.0.1:4403/client.js:7594:84)\u001b[39m\n\u001b[31m+     at effect (http://127.0.0.1:4403/client.js:8298:3)\u001b[39m\n\u001b[31m+     at insert (http://127.0.0.1:4403/client.js:8959:2)\u001b[39m\n\u001b[31m+     at spread (http://127.0.0.1:4403/client.js:8750:10)\",\u001b[39m\n\u001b[31m+   \"[REACTIVITY_HALTED] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#reactivity_halted\",\u001b[39m\n\u001b[31m+   \"Hydration completed with 65 unclaimed server-rendered node(s):\u001b[39m\n\u001b[31m+   <div _hk=\\\"acceptanceA9c0333\\\" id=\\\"editor-initial\\\" tabindex=\\\"-1\\\" data-layer-content=\\\"\\\" data-slot=\\\"dial\u001b[39m\n\u001b[31m+   <div _hk=\\\"acceptanceA9c03340\\\" data-slot=\\\"dialog-header\\\" class=\\\"flex flex-col gap-2\\\"><h2 _hk=\\\"accepta\u001b[39m\n\u001b[31m+   <h2 _hk=\\\"acceptanceA9c03341\\\" class=\\\"font-heading text-base leading-none font-medium\\\" id=\\\"editor-titl\u001b[39m\n\u001b[31m+   <p _hk=\\\"acceptanceA9c03342\\\" class=\\\"text-sm text-muted-foreground *:[a]:underline *:[a]:underline-off\u001b[39m\n\u001b[31m+   <label _hk=\\\"acceptanceA9c03344\\\" for=\\\"modal-draft\\\" data-slot=\\\"label\\\" class=\\\"flex items-center gap-2 t\u001b[39m\n\u001b[31m+   <input _hk=\\\"acceptanceA9c03345\\\" id=\\\"modal-draft\\\" value=\\\"Keep this draft\\\" data-slot=\\\"input\\\" class=\\\"h-\u001b[39m\n\u001b[31m+   <div _hk=\\\"acceptanceA9c03349\\\" class=\\\"samples\\\"><!--$--><button _hk=\\\"acceptanceA9c0334c0\\\" type=\\\"button\u001b[39m\n\u001b[31m+   <button _hk=\\\"acceptanceA9c0334c0\\\" type=\\\"button\\\" data-slot=\\\"button\\\" data-variant=\\\"outline\\\" data-size=\u001b[39m\n\u001b[31m+   <button _hk=\\\"acceptanceA9c0334f0\\\" type=\\\"button\\\" data-slot=\\\"button\\\" data-variant=\\\"outline\\\" data-size=\u001b[39m\n\u001b[31m+   <button _hk=\\\"acceptanceA9c0334i00\\\" class=\\\"group/button inline-flex shrink-0 items-center justify-cen\u001b[39m\n\u001b[31m+   <dialog _hk=\\\"acceptanceA9c0334i0330\\\" role=\\\"dialog\\\" aria-modal=\\\"true\\\" data-slot=\\\"dialog-shell\\\" class=\u001b[39m\n\u001b[31m+   <div _hk=\\\"acceptanceA9c0334i0332\\\" aria-hidden=\\\"true\\\" hidden=\\\"\\\" data-slot=\\\"dialog-overlay\\\" class=\\\"poi\u001b[39m\n\u001b[31m+   <div _hk=\\\"acceptanceA9c0334i0333\\\" id=\\\"dialog-acceptanceA9c0334g\\\" tabindex=\\\"-1\\\" data-layer-content=\\\"\\\"\u001b[39m\n\u001b[31m+   <h2 _hk=\\\"acceptanceA9c0334i03340\\\" class=\\\"font-heading text-base leading-none font-medium\\\" id=\\\"dialog\u001b[39m\n\u001b[31m+   <p _hk=\\\"acceptanceA9c0334i03341\\\" class=\\\"text-sm text-muted-foreground *:[a]:underline *:[a]:underlin\u001b[39m\n\u001b[31m+   <button _hk=\\\"acceptanceA9c0334i03342\\\" class=\\\"group/button inline-flex shrink-0 items-center justify-\u001b[39m\n\u001b[31m+   <button _hk=\\\"acceptanceA9c0334i03370\\\" class=\\\"group/button inline-flex shrink-0 items-center justify-\u001b[39m\n\u001b[31m+   <svg _hk=\\\"acceptanceA9c0334i03371\\\" aria-hidden=\\\"true\\\" viewBox=\\\"0 0 24 24\\\" fill=\\\"none\\\" stroke=\\\"curren\u001b[39m\n\u001b[31m+   <div _hk=\\\"acceptanceA9c0334j\\\" data-slot=\\\"dialog-footer\\\" class=\\\"-mx-4 -mb-4 flex flex-col-reverse gap\u001b[39m\n\u001b[31m+   <button _hk=\\\"acceptanceA9c0334k20\\\" type=\\\"button\\\" data-slot=\\\"button\\\" data-variant=\\\"default\\\" data-size\u001b[39m\n\u001b[31m+   <button _hk=\\\"acceptanceA9c0334k3\\\" class=\\\"group/button inline-flex shrink-0 items-center justify-cent\u001b[39m\n\u001b[31m+   <button _hk=\\\"acceptanceA9c03370\\\" class=\\\"group/button inline-flex shrink-0 items-center justify-cente\u001b[39m\n\u001b[31m+   <svg _hk=\\\"acceptanceA9c03371\\\" aria-hidden=\\\"true\\\" viewBox=\\\"0 0 24 24\\\" fill=\\\"none\\\" stroke=\\\"currentColo\u001b[39m\n\u001b[31m+   <button _hk=\\\"acceptanceA9f0\\\" type=\\\"button\\\" data-slot=\\\"button\\\" data-variant=\\\"default\\\" data-size=\\\"defa\u001b[39m\n\u001b[31m+   <button _hk=\\\"acceptanceA9l00\\\" class=\\\"group/button inline-flex shrink-0 items-center justify-center r\u001b[39m\n\u001b[31m+   <dialog _hk=\\\"acceptanceA9l0330\\\" role=\\\"dialog\\\" aria-modal=\\\"true\\\" data-slot=\\\"sheet-shell\\\" class=\\\"point\u001b[39m\n\u001b[31m+   <div _hk=\\\"acceptanceA9l0332\\\" aria-hidden=\\\"true\\\" hidden=\\\"\\\" data-slot=\\\"sheet-overlay\\\" class=\\\"pointer-e\u001b[39m\n\u001b[31m+   <div _hk=\\\"acceptanceA9l0333\\\" data-side=\\\"right\\\" id=\\\"sheet-acceptanceA9j\\\" tabindex=\\\"-1\\\" data-layer-con\u001b[39m\n\u001b[31m+   <div _hk=\\\"acceptanceA9l03340\\\" data-slot=\\\"sheet-header\\\" class=\\\"flex flex-col gap-0.5 p-4\\\"><h2 _hk=\\\"ac\u001b[39m\n\u001b[31m+   <h2 _hk=\\\"acceptanceA9l03341\\\" class=\\\"font-heading text-base font-medium text-foreground\\\" id=\\\"sheet-ac\u001b[39m\n\u001b[31m+   <p _hk=\\\"acceptanceA9l03342\\\" class=\\\"text-sm text-muted-foreground\\\" id=\\\"sheet-acceptanceA9j-descriptio\u001b[39m\n\u001b[31m+   <div _hk=\\\"acceptanceA9l03343\\\" class=\\\"px-4 space-y-4\\\"><div class=\\\"samples\\\"><button _hk=\\\"acceptanceA9l\u001b[39m\n\u001b[31m+   <button _hk=\\\"acceptanceA9l0334420\\\" type=\\\"button\\\" data-slot=\\\"button\\\" data-variant=\\\"outline\\\" data-size\u001b[39m\n\u001b[31m+   <button _hk=\\\"acceptanceA9l0334450\\\" type=\\\"button\\\" data-slot=\\\"button\\\" data-variant=\\\"outline\\\" data-size\u001b[39m\n\u001b[31m+   <button _hk=\\\"acceptanceA9l0334480\\\" type=\\\"button\\\" data-slot=\\\"button\\\" data-variant=\\\"outline\\\" data-size\u001b[39m\n\u001b[31m+   <button _hk=\\\"acceptanceA9l03344b0\\\" type=\\\"button\\\" data-slot=\\\"button\\\" data-variant=\\\"outline\\\" data-size\u001b[39m\n\u001b[31m+   <label _hk=\\\"acceptanceA9l03346\\\" for=\\\"sheet-draft\\\" data-slot=\\\"label\\\" class=\\\"flex items-center gap-2 t\u001b[39m\n\u001b[31m+   <input _hk=\\\"acceptanceA9l03347\\\" id=\\\"sheet-draft\\\" value=\\\"Local panel notes\\\" data-slot=\\\"input\\\" class=\\\"\u001b[39m\n\u001b[31m+   <div _hk=\\\"acceptanceA9l03349\\\" data-slot=\\\"sheet-footer\\\" class=\\\"mt-auto flex flex-col gap-2 p-4\\\"><butt\u001b[39m\n\u001b[31m+   <button _hk=\\\"acceptanceA9l0334a\\\" class=\\\"group/button inline-flex shrink-0 items-center justify-cente\u001b[39m\n\u001b[31m+   <button _hk=\\\"acceptanceA9l03370\\\" class=\\\"group/button inline-flex shrink-0 items-center justify-cente\u001b[39m\n\u001b[31m+   <svg _hk=\\\"acceptanceA9l03371\\\" aria-hidden=\\\"true\\\" viewBox=\\\"0 0 24 24\\\" fill=\\\"none\\\" stroke=\\\"currentColo\u001b[39m\n\u001b[31m+   <button _hk=\\\"acceptanceA9m20\\\" type=\\\"button\\\" data-slot=\\\"button\\\" data-variant=\\\"outline\\\" data-size=\\\"sm\\\"\u001b[39m\n\u001b[31m+   <button _hk=\\\"acceptanceA9m50\\\" type=\\\"button\\\" data-slot=\\\"button\\\" data-variant=\\\"outline\\\" data-size=\\\"sm\\\"\u001b[39m\n\u001b[31m+   <button _hk=\\\"acceptanceA9m80\\\" type=\\\"button\\\" data-slot=\\\"button\\\" data-variant=\\\"outline\\\" data-size=\\\"sm\\\"\u001b[39m\n\u001b[31m+   <button _hk=\\\"acceptanceA9mb0\\\" type=\\\"button\\\" data-slot=\\\"button\\\" data-variant=\\\"outline\\\" data-size=\\\"sm\\\"\u001b[39m\n\u001b[31m+   <button _hk=\\\"acceptanceA9p0\\\" type=\\\"button\\\" data-slot=\\\"button\\\" data-variant=\\\"outline\\\" data-size=\\\"defa\u001b[39m\n\u001b[31m+   <button _hk=\\\"acceptanceA9s10200\\\" class=\\\"group/button inline-flex shrink-0 items-center justify-cente\u001b[39m\n\u001b[31m+   <dialog _hk=\\\"acceptanceA9s1020430\\\" role=\\\"dialog\\\" aria-modal=\\\"true\\\" data-slot=\\\"drawer-shell\\\" class=\\\"p\u001b[39m\n\u001b[31m+   <div _hk=\\\"acceptanceA9s1020432\\\" aria-hidden=\\\"true\\\" hidden=\\\"\\\" data-slot=\\\"drawer-overlay\\\" class=\\\"point\u001b[39m\n\u001b[31m+   <div _hk=\\\"acceptanceA9s1020433\\\" data-vaul-drawer-direction=\\\"bottom\\\" style=\\\"transform:translateY(0px)\u001b[39m\n\u001b[31m+   <div _hk=\\\"acceptanceA9s10204350\\\" role=\\\"slider\\\" tabindex=\\\"0\\\" aria-label=\\\"Drawer size\\\" aria-orientatio\u001b[39m\n\u001b[31m+   <div _hk=\\\"acceptanceA9s10204351\\\" class=\\\"min-h-0 min-w-0 overflow-auto max-h-[calc(var(--drawer-visib\u001b[39m\n\u001b[31m+   <div _hk=\\\"acceptanceA9s102043520\\\" data-slot=\\\"drawer-header\\\" class=\\\"flex flex-col gap-0.5 p-4 group-d\u001b[39m\n\u001b[31m+   <h2 _hk=\\\"acceptanceA9s102043521\\\" class=\\\"font-heading text-base font-medium text-foreground\\\" id=\\\"draw\u001b[39m\n\u001b[31m+   <p _hk=\\\"acceptanceA9s102043522\\\" class=\\\"text-sm text-muted-foreground\\\" id=\\\"drawer-acceptanceA9s100-de\u001b[39m\n\u001b[31m+   <div _hk=\\\"acceptanceA9s102043523\\\" class=\\\"space-y-3 px-4\\\"><div class=\\\"samples\\\"><!--$--><button _hk=\\\"a\u001b[39m\n\u001b[31m+   <button _hk=\\\"acceptanceA9s1020435260\\\" type=\\\"button\\\" data-slot=\\\"button\\\" data-variant=\\\"default\\\" data-s\u001b[39m\n\u001b[31m+   <button _hk=\\\"acceptanceA9s1020435290\\\" type=\\\"button\\\" data-slot=\\\"button\\\" data-variant=\\\"default\\\" data-s\u001b[39m\n\u001b[31m+   <label _hk=\\\"acceptanceA9s10204352b\\\" for=\\\"drawer-draft\\\" data-slot=\\\"label\\\" class=\\\"flex items-center ga\u001b[39m\n\u001b[31m+   <input _hk=\\\"acceptanceA9s10204352c\\\" id=\\\"drawer-draft\\\" value=\\\"Keep workspace notes\\\" data-slot=\\\"input\\\"\u001b[39m\n\u001b[31m+   <div _hk=\\\"acceptanceA9s10204352e\\\" data-slot=\\\"drawer-footer\\\" class=\\\"mt-auto flex flex-col gap-2 p-4\\\">\u001b[39m\n\u001b[31m+   <button _hk=\\\"acceptanceA9s10204352f\\\" class=\\\"group/button inline-flex shrink-0 items-center justify-c\u001b[39m\n\u001b[31m+   <button _hk=\\\"acceptanceA9v00\\\" class=\\\"group/button inline-flex shrink-0 items-center justify-center r\u001b[39m\n\u001b[31m+   <button _hk=\\\"acceptanceA9y0\\\" type=\\\"button\\\" data-slot=\\\"button\\\" data-variant=\\\"outline\\\" data-size=\\\"defa\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n   at browser-fixture.ts:10\n\n   8 |     await use(messages);\n   9 |     await testInfo.attach('browser-diagnostics',{body:JSON.stringify(messages),contentType:'application/json'});\n> 10 |     expect(messages,'No browser errors or development diagnostics').toEqual([]);\n     |                                                                     ^\n  11 |   },{auto:true}],\n  12 | });\n  13 | export { expect };\n    at Object.base.extend.diagnostics.auto (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/browser-fixture.ts:10:69)"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T21:54:37.089Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-hydration-hydrat-70570-t-edits-and-drawer-resizing-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "WyJIeWRyYXRpb24ga2V5IG1pc3MgZm9yIFwiYWNjZXB0YW5jZUE5YzAzMzFcIjogbm8gc2VydmVyLXJlbmRlcmVkIGVsZW1lbnQgY2FycmllcyB0aGlzIGtleSAodGVtcGxhdGU6IDxkaXY+KS4gQSBkZXRhY2hlZCBlbGVtZW50IHdhcyBjcmVhdGVkIGluc3RlYWQ7IGl0cyBzdWJ0cmVlIHdpbGwgbm90IGFwcGVhciBpbiB0aGUgZG9jdW1lbnQgb3IgYmVjb21lIGludGVyYWN0aXZlLiBUaGlzIHVzdWFsbHkgbWVhbnMgdGhlIHNlcnZlciBhbmQgY2xpZW50IGh5ZHJhdGlvbiBpZCBuYW1lc3BhY2VzIGFyZSBtaXNhbGlnbmVkIOKAlCB3aGVuIGh5ZHJhdGluZyBhIHN1YnRyZWUgb2YgYSBsYXJnZXIgc2VydmVyIHJlbmRlciwgd3JhcCB0aGUgZG9jdW1lbnQgc2hlbGwgaW4gPE5vSHlkcmF0aW9uPiBhbmQgcmUtZW50ZXIgd2l0aCA8SHlkcmF0aW9uPiBhcm91bmQgdGhlIGh5ZHJhdGVkIHN1YnRyZWUgKG9yIHBhc3MgaHlkcmF0ZSgpIGEgcmVuZGVySWQgbWF0Y2hpbmcgdGhlIHNlcnZlcidzIDxIeWRyYXRpb24gaWQ+KS4iLCJbUkVBQ1RJVklUWV9IQUxURURdIEFuIHVuY2F1Z2h0IGVycm9yIGhhbHRlZCB0aGUgcmVhY3RpdmUgc3lzdGVtLiBObyBmdXJ0aGVyIHVwZGF0ZXMgd2lsbCBiZSBwcm9jZXNzZWQuIEhhbmRsZSBlcnJvcnMgd2l0aCA8RXJyb3JlZD4gb3IgdHJlYXQgdGhpcyBhcyBhIGNyYXNoLiIsIlR5cGVFcnJvcjogQ2Fubm90IHJlYWQgcHJvcGVydGllcyBvZiBudWxsIChyZWFkaW5nICduZXh0U2libGluZycpXG4gICAgYXQgaHR0cDovLzEyNy4wLjAuMTo0NDAzL2NsaWVudC5qczoxMzUyMzo0NlxuICAgIGF0IGdldCBjaGlsZHJlbiAoaHR0cDovLzEyNy4wLjAuMTo0NDAzL2NsaWVudC5qczoxMzU3Nzo2KVxuICAgIGF0IE9iamVjdC5nZXQgKGh0dHA6Ly8xMjcuMC4wLjE6NDQwMy9jbGllbnQuanM6NTk1MDoyNilcbiAgICBhdCBodHRwOi8vMTI3LjAuMC4xOjQ0MDMvY2xpZW50LmpzOjg3NTA6MzVcbiAgICBhdCBodHRwOi8vMTI3LjAuMC4xOjQ0MDMvY2xpZW50LmpzOjg5NjI6MjdcbiAgICBhdCBPYmplY3Qub3V0ZXIgW2FzIF9mbl0gKGh0dHA6Ly8xMjcuMC4wLjE6NDQwMy9jbGllbnQuanM6ODMwMDoxMSlcbiAgICBhdCByZWNvbXB1dGUgKGh0dHA6Ly8xMjcuMC4wLjE6NDQwMy9jbGllbnQuanM6MzA2MjoyNClcbiAgICBhdCBlZmZlY3QkMSAoaHR0cDovLzEyNy4wLjAuMTo0NDAzL2NsaWVudC5qczo1MDMzOjIpXG4gICAgYXQgY3JlYXRlUmVuZGVyRWZmZWN0JDEgKGh0dHA6Ly8xMjcuMC4wLjE6NDQwMy9jbGllbnQuanM6NTM3MzoyKVxuICAgIGF0IGh5ZHJhdGVkRWZmZWN0IChodHRwOi8vMTI3LjAuMC4xOjQ0MDMvY2xpZW50LmpzOjc0OTc6ODMpIiwiW1JFQUNUSVZJVFlfSEFMVEVEXSBVcGRhdGUgaWdub3JlZDogdGhlIHJlYWN0aXZlIHN5c3RlbSB3YXMgaGFsdGVkIGJ5IGFuIGVhcmxpZXIgdW5jYXVnaHQgZXJyb3IuIiwiU3RhdHVzRXJyb3I6IENhbm5vdCByZWFkIHByb3BlcnRpZXMgb2YgbnVsbCAocmVhZGluZyAnbmV4dFNpYmxpbmcnKVxuICAgIGF0IG5vdGlmeVN0YXR1cyAoaHR0cDovLzEyNy4wLjAuMTo0NDAzL2NsaWVudC5qczoyODQwOjEwMClcbiAgICBhdCByZWNvbXB1dGUgKGh0dHA6Ly8xMjcuMC4wLjE6NDQwMy9jbGllbnQuanM6MzA4Mzo0KVxuICAgIGF0IGVmZmVjdCQxIChodHRwOi8vMTI3LjAuMC4xOjQ0MDMvY2xpZW50LmpzOjUwMzM6MilcbiAgICBhdCBjcmVhdGVSZW5kZXJFZmZlY3QkMSAoaHR0cDovLzEyNy4wLjAuMTo0NDAzL2NsaWVudC5qczo1MzczOjIpXG4gICAgYXQgaHlkcmF0ZWRFZmZlY3QgKGh0dHA6Ly8xMjcuMC4wLjE6NDQwMy9jbGllbnQuanM6NzQ5Nzo4MylcbiAgICBhdCBoeWRyYXRlZENyZWF0ZVJlbmRlckVmZmVjdCAoaHR0cDovLzEyNy4wLjAuMTo0NDAzL2NsaWVudC5qczo3NTE0OjkpXG4gICAgYXQgY3JlYXRlUmVuZGVyRWZmZWN0IChodHRwOi8vMTI3LjAuMC4xOjQ0MDMvY2xpZW50LmpzOjc1OTQ6ODQpXG4gICAgYXQgZWZmZWN0IChodHRwOi8vMTI3LjAuMC4xOjQ0MDMvY2xpZW50LmpzOjgyOTg6MylcbiAgICBhdCBpbnNlcnQgKGh0dHA6Ly8xMjcuMC4wLjE6NDQwMy9jbGllbnQuanM6ODk1OToyKVxuICAgIGF0IHNwcmVhZCAoaHR0cDovLzEyNy4wLjAuMTo0NDAzL2NsaWVudC5qczo4NzUwOjEwKSIsIltSRUFDVElWSVRZX0hBTFRFRF0gcmVwYWlyIGd1aWRlOiBub2RlX21vZHVsZXMvc29saWQtanMvc2tpbGxzL3JlYWN0aXZpdHktZGlhZ25vc3RpY3MvU0tJTEwubWQg4oCUIGh0dHBzOi8vZ2l0aHViLmNvbS9zb2xpZGpzL3NvbGlkL2Jsb2IvbWFpbi9wYWNrYWdlcy9zb2xpZC9za2lsbHMvcmVhY3Rpdml0eS1kaWFnbm9zdGljcy9TS0lMTC5tZCNyZWFjdGl2aXR5X2hhbHRlZCIsIkh5ZHJhdGlvbiBjb21wbGV0ZWQgd2l0aCA2NSB1bmNsYWltZWQgc2VydmVyLXJlbmRlcmVkIG5vZGUocyk6XG4gIDxkaXYgX2hrPVwiYWNjZXB0YW5jZUE5YzAzMzNcIiBpZD1cImVkaXRvci1pbml0aWFsXCIgdGFiaW5kZXg9XCItMVwiIGRhdGEtbGF5ZXItY29udGVudD1cIlwiIGRhdGEtc2xvdD1cImRpYWxcbiAgPGRpdiBfaGs9XCJhY2NlcHRhbmNlQTljMDMzNDBcIiBkYXRhLXNsb3Q9XCJkaWFsb2ctaGVhZGVyXCIgY2xhc3M9XCJmbGV4IGZsZXgtY29sIGdhcC0yXCI+PGgyIF9oaz1cImFjY2VwdGFcbiAgPGgyIF9oaz1cImFjY2VwdGFuY2VBOWMwMzM0MVwiIGNsYXNzPVwiZm9udC1oZWFkaW5nIHRleHQtYmFzZSBsZWFkaW5nLW5vbmUgZm9udC1tZWRpdW1cIiBpZD1cImVkaXRvci10aXRsXG4gIDxwIF9oaz1cImFjY2VwdGFuY2VBOWMwMzM0MlwiIGNsYXNzPVwidGV4dC1zbSB0ZXh0LW11dGVkLWZvcmVncm91bmQgKjpbYV06dW5kZXJsaW5lICo6W2FdOnVuZGVybGluZS1vZmZcbiAgPGxhYmVsIF9oaz1cImFjY2VwdGFuY2VBOWMwMzM0NFwiIGZvcj1cIm1vZGFsLWRyYWZ0XCIgZGF0YS1zbG90PVwibGFiZWxcIiBjbGFzcz1cImZsZXggaXRlbXMtY2VudGVyIGdhcC0yIHRcbiAgPGlucHV0IF9oaz1cImFjY2VwdGFuY2VBOWMwMzM0NVwiIGlkPVwibW9kYWwtZHJhZnRcIiB2YWx1ZT1cIktlZXAgdGhpcyBkcmFmdFwiIGRhdGEtc2xvdD1cImlucHV0XCIgY2xhc3M9XCJoLVxuICA8ZGl2IF9oaz1cImFjY2VwdGFuY2VBOWMwMzM0OVwiIGNsYXNzPVwic2FtcGxlc1wiPjwhLS0kLS0+PGJ1dHRvbiBfaGs9XCJhY2NlcHRhbmNlQTljMDMzNGMwXCIgdHlwZT1cImJ1dHRvblxuICA8YnV0dG9uIF9oaz1cImFjY2VwdGFuY2VBOWMwMzM0YzBcIiB0eXBlPVwiYnV0dG9uXCIgZGF0YS1zbG90PVwiYnV0dG9uXCIgZGF0YS12YXJpYW50PVwib3V0bGluZVwiIGRhdGEtc2l6ZT1cbiAgPGJ1dHRvbiBfaGs9XCJhY2NlcHRhbmNlQTljMDMzNGYwXCIgdHlwZT1cImJ1dHRvblwiIGRhdGEtc2xvdD1cImJ1dHRvblwiIGRhdGEtdmFyaWFudD1cIm91dGxpbmVcIiBkYXRhLXNpemU9XG4gIDxidXR0b24gX2hrPVwiYWNjZXB0YW5jZUE5YzAzMzRpMDBcIiBjbGFzcz1cImdyb3VwL2J1dHRvbiBpbmxpbmUtZmxleCBzaHJpbmstMCBpdGVtcy1jZW50ZXIganVzdGlmeS1jZW5cbiAgPGRpYWxvZyBfaGs9XCJhY2NlcHRhbmNlQTljMDMzNGkwMzMwXCIgcm9sZT1cImRpYWxvZ1wiIGFyaWEtbW9kYWw9XCJ0cnVlXCIgZGF0YS1zbG90PVwiZGlhbG9nLXNoZWxsXCIgY2xhc3M9XG4gIDxkaXYgX2hrPVwiYWNjZXB0YW5jZUE5YzAzMzRpMDMzMlwiIGFyaWEtaGlkZGVuPVwidHJ1ZVwiIGhpZGRlbj1cIlwiIGRhdGEtc2xvdD1cImRpYWxvZy1vdmVybGF5XCIgY2xhc3M9XCJwb2lcbiAgPGRpdiBfaGs9XCJhY2NlcHRhbmNlQTljMDMzNGkwMzMzXCIgaWQ9XCJkaWFsb2ctYWNjZXB0YW5jZUE5YzAzMzRnXCIgdGFiaW5kZXg9XCItMVwiIGRhdGEtbGF5ZXItY29udGVudD1cIlwiXG4gIDxoMiBfaGs9XCJhY2NlcHRhbmNlQTljMDMzNGkwMzM0MFwiIGNsYXNzPVwiZm9udC1oZWFkaW5nIHRleHQtYmFzZSBsZWFkaW5nLW5vbmUgZm9udC1tZWRpdW1cIiBpZD1cImRpYWxvZ1xuICA8cCBfaGs9XCJhY2NlcHRhbmNlQTljMDMzNGkwMzM0MVwiIGNsYXNzPVwidGV4dC1zbSB0ZXh0LW11dGVkLWZvcmVncm91bmQgKjpbYV06dW5kZXJsaW5lICo6W2FdOnVuZGVybGluXG4gIDxidXR0b24gX2hrPVwiYWNjZXB0YW5jZUE5YzAzMzRpMDMzNDJcIiBjbGFzcz1cImdyb3VwL2J1dHRvbiBpbmxpbmUtZmxleCBzaHJpbmstMCBpdGVtcy1jZW50ZXIganVzdGlmeS1cbiAgPGJ1dHRvbiBfaGs9XCJhY2NlcHRhbmNlQTljMDMzNGkwMzM3MFwiIGNsYXNzPVwiZ3JvdXAvYnV0dG9uIGlubGluZS1mbGV4IHNocmluay0wIGl0ZW1zLWNlbnRlciBqdXN0aWZ5LVxuICA8c3ZnIF9oaz1cImFjY2VwdGFuY2VBOWMwMzM0aTAzMzcxXCIgYXJpYS1oaWRkZW49XCJ0cnVlXCIgdmlld0JveD1cIjAgMCAyNCAyNFwiIGZpbGw9XCJub25lXCIgc3Ryb2tlPVwiY3VycmVuXG4gIDxkaXYgX2hrPVwiYWNjZXB0YW5jZUE5YzAzMzRqXCIgZGF0YS1zbG90PVwiZGlhbG9nLWZvb3RlclwiIGNsYXNzPVwiLW14LTQgLW1iLTQgZmxleCBmbGV4LWNvbC1yZXZlcnNlIGdhcFxuICA8YnV0dG9uIF9oaz1cImFjY2VwdGFuY2VBOWMwMzM0azIwXCIgdHlwZT1cImJ1dHRvblwiIGRhdGEtc2xvdD1cImJ1dHRvblwiIGRhdGEtdmFyaWFudD1cImRlZmF1bHRcIiBkYXRhLXNpemVcbiAgPGJ1dHRvbiBfaGs9XCJhY2NlcHRhbmNlQTljMDMzNGszXCIgY2xhc3M9XCJncm91cC9idXR0b24gaW5saW5lLWZsZXggc2hyaW5rLTAgaXRlbXMtY2VudGVyIGp1c3RpZnktY2VudFxuICA8YnV0dG9uIF9oaz1cImFjY2VwdGFuY2VBOWMwMzM3MFwiIGNsYXNzPVwiZ3JvdXAvYnV0dG9uIGlubGluZS1mbGV4IHNocmluay0wIGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWNlbnRlXG4gIDxzdmcgX2hrPVwiYWNjZXB0YW5jZUE5YzAzMzcxXCIgYXJpYS1oaWRkZW49XCJ0cnVlXCIgdmlld0JveD1cIjAgMCAyNCAyNFwiIGZpbGw9XCJub25lXCIgc3Ryb2tlPVwiY3VycmVudENvbG9cbiAgPGJ1dHRvbiBfaGs9XCJhY2NlcHRhbmNlQTlmMFwiIHR5cGU9XCJidXR0b25cIiBkYXRhLXNsb3Q9XCJidXR0b25cIiBkYXRhLXZhcmlhbnQ9XCJkZWZhdWx0XCIgZGF0YS1zaXplPVwiZGVmYVxuICA8YnV0dG9uIF9oaz1cImFjY2VwdGFuY2VBOWwwMFwiIGNsYXNzPVwiZ3JvdXAvYnV0dG9uIGlubGluZS1mbGV4IHNocmluay0wIGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWNlbnRlciByXG4gIDxkaWFsb2cgX2hrPVwiYWNjZXB0YW5jZUE5bDAzMzBcIiByb2xlPVwiZGlhbG9nXCIgYXJpYS1tb2RhbD1cInRydWVcIiBkYXRhLXNsb3Q9XCJzaGVldC1zaGVsbFwiIGNsYXNzPVwicG9pbnRcbiAgPGRpdiBfaGs9XCJhY2NlcHRhbmNlQTlsMDMzMlwiIGFyaWEtaGlkZGVuPVwidHJ1ZVwiIGhpZGRlbj1cIlwiIGRhdGEtc2xvdD1cInNoZWV0LW92ZXJsYXlcIiBjbGFzcz1cInBvaW50ZXItZVxuICA8ZGl2IF9oaz1cImFjY2VwdGFuY2VBOWwwMzMzXCIgZGF0YS1zaWRlPVwicmlnaHRcIiBpZD1cInNoZWV0LWFjY2VwdGFuY2VBOWpcIiB0YWJpbmRleD1cIi0xXCIgZGF0YS1sYXllci1jb25cbiAgPGRpdiBfaGs9XCJhY2NlcHRhbmNlQTlsMDMzNDBcIiBkYXRhLXNsb3Q9XCJzaGVldC1oZWFkZXJcIiBjbGFzcz1cImZsZXggZmxleC1jb2wgZ2FwLTAuNSBwLTRcIj48aDIgX2hrPVwiYWNcbiAgPGgyIF9oaz1cImFjY2VwdGFuY2VBOWwwMzM0MVwiIGNsYXNzPVwiZm9udC1oZWFkaW5nIHRleHQtYmFzZSBmb250LW1lZGl1bSB0ZXh0LWZvcmVncm91bmRcIiBpZD1cInNoZWV0LWFjXG4gIDxwIF9oaz1cImFjY2VwdGFuY2VBOWwwMzM0MlwiIGNsYXNzPVwidGV4dC1zbSB0ZXh0LW11dGVkLWZvcmVncm91bmRcIiBpZD1cInNoZWV0LWFjY2VwdGFuY2VBOWotZGVzY3JpcHRpb1xuICA8ZGl2IF9oaz1cImFjY2VwdGFuY2VBOWwwMzM0M1wiIGNsYXNzPVwicHgtNCBzcGFjZS15LTRcIj48ZGl2IGNsYXNzPVwic2FtcGxlc1wiPjxidXR0b24gX2hrPVwiYWNjZXB0YW5jZUE5bFxuICA8YnV0dG9uIF9oaz1cImFjY2VwdGFuY2VBOWwwMzM0NDIwXCIgdHlwZT1cImJ1dHRvblwiIGRhdGEtc2xvdD1cImJ1dHRvblwiIGRhdGEtdmFyaWFudD1cIm91dGxpbmVcIiBkYXRhLXNpemVcbiAgPGJ1dHRvbiBfaGs9XCJhY2NlcHRhbmNlQTlsMDMzNDQ1MFwiIHR5cGU9XCJidXR0b25cIiBkYXRhLXNsb3Q9XCJidXR0b25cIiBkYXRhLXZhcmlhbnQ9XCJvdXRsaW5lXCIgZGF0YS1zaXplXG4gIDxidXR0b24gX2hrPVwiYWNjZXB0YW5jZUE5bDAzMzQ0ODBcIiB0eXBlPVwiYnV0dG9uXCIgZGF0YS1zbG90PVwiYnV0dG9uXCIgZGF0YS12YXJpYW50PVwib3V0bGluZVwiIGRhdGEtc2l6ZVxuICA8YnV0dG9uIF9oaz1cImFjY2VwdGFuY2VBOWwwMzM0NGIwXCIgdHlwZT1cImJ1dHRvblwiIGRhdGEtc2xvdD1cImJ1dHRvblwiIGRhdGEtdmFyaWFudD1cIm91dGxpbmVcIiBkYXRhLXNpemVcbiAgPGxhYmVsIF9oaz1cImFjY2VwdGFuY2VBOWwwMzM0NlwiIGZvcj1cInNoZWV0LWRyYWZ0XCIgZGF0YS1zbG90PVwibGFiZWxcIiBjbGFzcz1cImZsZXggaXRlbXMtY2VudGVyIGdhcC0yIHRcbiAgPGlucHV0IF9oaz1cImFjY2VwdGFuY2VBOWwwMzM0N1wiIGlkPVwic2hlZXQtZHJhZnRcIiB2YWx1ZT1cIkxvY2FsIHBhbmVsIG5vdGVzXCIgZGF0YS1zbG90PVwiaW5wdXRcIiBjbGFzcz1cIlxuICA8ZGl2IF9oaz1cImFjY2VwdGFuY2VBOWwwMzM0OVwiIGRhdGEtc2xvdD1cInNoZWV0LWZvb3RlclwiIGNsYXNzPVwibXQtYXV0byBmbGV4IGZsZXgtY29sIGdhcC0yIHAtNFwiPjxidXR0XG4gIDxidXR0b24gX2hrPVwiYWNjZXB0YW5jZUE5bDAzMzRhXCIgY2xhc3M9XCJncm91cC9idXR0b24gaW5saW5lLWZsZXggc2hyaW5rLTAgaXRlbXMtY2VudGVyIGp1c3RpZnktY2VudGVcbiAgPGJ1dHRvbiBfaGs9XCJhY2NlcHRhbmNlQTlsMDMzNzBcIiBjbGFzcz1cImdyb3VwL2J1dHRvbiBpbmxpbmUtZmxleCBzaHJpbmstMCBpdGVtcy1jZW50ZXIganVzdGlmeS1jZW50ZVxuICA8c3ZnIF9oaz1cImFjY2VwdGFuY2VBOWwwMzM3MVwiIGFyaWEtaGlkZGVuPVwidHJ1ZVwiIHZpZXdCb3g9XCIwIDAgMjQgMjRcIiBmaWxsPVwibm9uZVwiIHN0cm9rZT1cImN1cnJlbnRDb2xvXG4gIDxidXR0b24gX2hrPVwiYWNjZXB0YW5jZUE5bTIwXCIgdHlwZT1cImJ1dHRvblwiIGRhdGEtc2xvdD1cImJ1dHRvblwiIGRhdGEtdmFyaWFudD1cIm91dGxpbmVcIiBkYXRhLXNpemU9XCJzbVwiXG4gIDxidXR0b24gX2hrPVwiYWNjZXB0YW5jZUE5bTUwXCIgdHlwZT1cImJ1dHRvblwiIGRhdGEtc2xvdD1cImJ1dHRvblwiIGRhdGEtdmFyaWFudD1cIm91dGxpbmVcIiBkYXRhLXNpemU9XCJzbVwiXG4gIDxidXR0b24gX2hrPVwiYWNjZXB0YW5jZUE5bTgwXCIgdHlwZT1cImJ1dHRvblwiIGRhdGEtc2xvdD1cImJ1dHRvblwiIGRhdGEtdmFyaWFudD1cIm91dGxpbmVcIiBkYXRhLXNpemU9XCJzbVwiXG4gIDxidXR0b24gX2hrPVwiYWNjZXB0YW5jZUE5bWIwXCIgdHlwZT1cImJ1dHRvblwiIGRhdGEtc2xvdD1cImJ1dHRvblwiIGRhdGEtdmFyaWFudD1cIm91dGxpbmVcIiBkYXRhLXNpemU9XCJzbVwiXG4gIDxidXR0b24gX2hrPVwiYWNjZXB0YW5jZUE5cDBcIiB0eXBlPVwiYnV0dG9uXCIgZGF0YS1zbG90PVwiYnV0dG9uXCIgZGF0YS12YXJpYW50PVwib3V0bGluZVwiIGRhdGEtc2l6ZT1cImRlZmFcbiAgPGJ1dHRvbiBfaGs9XCJhY2NlcHRhbmNlQTlzMTAyMDBcIiBjbGFzcz1cImdyb3VwL2J1dHRvbiBpbmxpbmUtZmxleCBzaHJpbmstMCBpdGVtcy1jZW50ZXIganVzdGlmeS1jZW50ZVxuICA8ZGlhbG9nIF9oaz1cImFjY2VwdGFuY2VBOXMxMDIwNDMwXCIgcm9sZT1cImRpYWxvZ1wiIGFyaWEtbW9kYWw9XCJ0cnVlXCIgZGF0YS1zbG90PVwiZHJhd2VyLXNoZWxsXCIgY2xhc3M9XCJwXG4gIDxkaXYgX2hrPVwiYWNjZXB0YW5jZUE5czEwMjA0MzJcIiBhcmlhLWhpZGRlbj1cInRydWVcIiBoaWRkZW49XCJcIiBkYXRhLXNsb3Q9XCJkcmF3ZXItb3ZlcmxheVwiIGNsYXNzPVwicG9pbnRcbiAgPGRpdiBfaGs9XCJhY2NlcHRhbmNlQTlzMTAyMDQzM1wiIGRhdGEtdmF1bC1kcmF3ZXItZGlyZWN0aW9uPVwiYm90dG9tXCIgc3R5bGU9XCJ0cmFuc2Zvcm06dHJhbnNsYXRlWSgwcHgpXG4gIDxkaXYgX2hrPVwiYWNjZXB0YW5jZUE5czEwMjA0MzUwXCIgcm9sZT1cInNsaWRlclwiIHRhYmluZGV4PVwiMFwiIGFyaWEtbGFiZWw9XCJEcmF3ZXIgc2l6ZVwiIGFyaWEtb3JpZW50YXRpb1xuICA8ZGl2IF9oaz1cImFjY2VwdGFuY2VBOXMxMDIwNDM1MVwiIGNsYXNzPVwibWluLWgtMCBtaW4tdy0wIG92ZXJmbG93LWF1dG8gbWF4LWgtW2NhbGModmFyKC0tZHJhd2VyLXZpc2liXG4gIDxkaXYgX2hrPVwiYWNjZXB0YW5jZUE5czEwMjA0MzUyMFwiIGRhdGEtc2xvdD1cImRyYXdlci1oZWFkZXJcIiBjbGFzcz1cImZsZXggZmxleC1jb2wgZ2FwLTAuNSBwLTQgZ3JvdXAtZFxuICA8aDIgX2hrPVwiYWNjZXB0YW5jZUE5czEwMjA0MzUyMVwiIGNsYXNzPVwiZm9udC1oZWFkaW5nIHRleHQtYmFzZSBmb250LW1lZGl1bSB0ZXh0LWZvcmVncm91bmRcIiBpZD1cImRyYXdcbiAgPHAgX2hrPVwiYWNjZXB0YW5jZUE5czEwMjA0MzUyMlwiIGNsYXNzPVwidGV4dC1zbSB0ZXh0LW11dGVkLWZvcmVncm91bmRcIiBpZD1cImRyYXdlci1hY2NlcHRhbmNlQTlzMTAwLWRlXG4gIDxkaXYgX2hrPVwiYWNjZXB0YW5jZUE5czEwMjA0MzUyM1wiIGNsYXNzPVwic3BhY2UteS0zIHB4LTRcIj48ZGl2IGNsYXNzPVwic2FtcGxlc1wiPjwhLS0kLS0+PGJ1dHRvbiBfaGs9XCJhXG4gIDxidXR0b24gX2hrPVwiYWNjZXB0YW5jZUE5czEwMjA0MzUyNjBcIiB0eXBlPVwiYnV0dG9uXCIgZGF0YS1zbG90PVwiYnV0dG9uXCIgZGF0YS12YXJpYW50PVwiZGVmYXVsdFwiIGRhdGEtc1xuICA8YnV0dG9uIF9oaz1cImFjY2VwdGFuY2VBOXMxMDIwNDM1MjkwXCIgdHlwZT1cImJ1dHRvblwiIGRhdGEtc2xvdD1cImJ1dHRvblwiIGRhdGEtdmFyaWFudD1cImRlZmF1bHRcIiBkYXRhLXNcbiAgPGxhYmVsIF9oaz1cImFjY2VwdGFuY2VBOXMxMDIwNDM1MmJcIiBmb3I9XCJkcmF3ZXItZHJhZnRcIiBkYXRhLXNsb3Q9XCJsYWJlbFwiIGNsYXNzPVwiZmxleCBpdGVtcy1jZW50ZXIgZ2FcbiAgPGlucHV0IF9oaz1cImFjY2VwdGFuY2VBOXMxMDIwNDM1MmNcIiBpZD1cImRyYXdlci1kcmFmdFwiIHZhbHVlPVwiS2VlcCB3b3Jrc3BhY2Ugbm90ZXNcIiBkYXRhLXNsb3Q9XCJpbnB1dFwiXG4gIDxkaXYgX2hrPVwiYWNjZXB0YW5jZUE5czEwMjA0MzUyZVwiIGRhdGEtc2xvdD1cImRyYXdlci1mb290ZXJcIiBjbGFzcz1cIm10LWF1dG8gZmxleCBmbGV4LWNvbCBnYXAtMiBwLTRcIj5cbiAgPGJ1dHRvbiBfaGs9XCJhY2NlcHRhbmNlQTlzMTAyMDQzNTJmXCIgY2xhc3M9XCJncm91cC9idXR0b24gaW5saW5lLWZsZXggc2hyaW5rLTAgaXRlbXMtY2VudGVyIGp1c3RpZnktY1xuICA8YnV0dG9uIF9oaz1cImFjY2VwdGFuY2VBOXYwMFwiIGNsYXNzPVwiZ3JvdXAvYnV0dG9uIGlubGluZS1mbGV4IHNocmluay0wIGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWNlbnRlciByXG4gIDxidXR0b24gX2hrPVwiYWNjZXB0YW5jZUE5eTBcIiB0eXBlPVwiYnV0dG9uXCIgZGF0YS1zbG90PVwiYnV0dG9uXCIgZGF0YS12YXJpYW50PVwib3V0bGluZVwiIGRhdGEtc2l6ZT1cImRlZmEiXQ=="
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-hydration-hydrat-70570-t-edits-and-drawer-resizing-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-hydration-hydrat-70570-t-edits-and-drawer-resizing-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/hydration.spec.ts",
+                    "column": 49,
+                    "line": 18
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "1b38abd37014569c5914-91dabffe196173832a38",
+          "file": "hydration/hydration.spec.ts",
+          "line": 203,
+          "column": 1
+        },
+        {
+          "title": "hydrates retained modal nodes before nested focus, sheet edits and drawer resizing",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "1b38abd37014569c5914-2d5f4e4bc6e2766d4458",
+          "file": "hydration/hydration.spec.ts",
+          "line": 203,
+          "column": 1
+        },
+        {
+          "title": "hydrates retained modal nodes before nested focus, sheet edits and drawer resizing",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "1b38abd37014569c5914-fa7edcd3c9fd68ee601c",
+          "file": "hydration/hydration.spec.ts",
+          "line": 203,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "message": "\u001b[31mTesting stopped early after 1 maximum allowed failures.\u001b[39m"
+    }
+  ],
+  "stats": {
+    "startTime": "2026-10-08T21:54:34.816Z",
+    "duration": 8333.314,
+    "expected": 0,
+    "skipped": 2,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

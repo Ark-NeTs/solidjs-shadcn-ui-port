@@ -1223,3 +1223,43 @@ checks preserve server nodes before a user starts loading an image. Initially
 valid image loading during hydration, responsive image selection on actual
 high-DPI devices, manual assistive-technology announcements and router adapters
 remain unverified. See [display delivery](DISPLAY-CATALOG-DELIVERY.md).
+
+## Dialog, Sheet and Drawer
+
+Each root accepts `open`, `defaultOpen`, `onOpenChange`, `modal` (default true)
+and `dismissible` (default true). Trigger and Close are native non-submitting
+buttons. Content has `forceMount`, cancelable open/close autofocus and Escape
+callbacks, modal outside-pointer callbacks, `showCloseButton` and `closeLabel`.
+Title/Description register live IDs; supply an accessible name when omitting Title.
+Force-mounted content preserves drafts through closing. By default content
+unmounts; host signals can preserve values independently.
+
+`DialogContent` is centered and scrollable. `DialogFooter showCloseButton` adds a
+close action. `SheetContent side` supports top/right/bottom/left. Drawer offers
+`direction`, `snapPoints`, controlled `activeSnapPoint` or `defaultActiveSnapPoint`,
+and `onActiveSnapPointChange` (`setActiveSnapPoint` alias). Numeric points describe
+a fraction of the full panel, not the viewport; `'240px'` specifies pixels. The
+focusable handle accepts arrow keys/Home/End and captured pointer dragging.
+`DrawerContent handleLabel` localizes its accessible name. Content scrolling is
+native; drag gestures start only on the handle.
+
+```tsx
+<Dialog>
+  <DialogTrigger>Edit profile</DialogTrigger>
+  <DialogContent>
+    <DialogHeader>
+      <DialogTitle>Edit profile</DialogTitle>
+      <DialogDescription>Changes remain local until saved.</DialogDescription>
+    </DialogHeader>
+    <Label for="profile-name">Name</Label>
+    <Input id="profile-name" value={draft()} onInput={event => setDraft(event.currentTarget.value)} />
+    <DialogFooter><DialogClose>Keep draft and close</DialogClose></DialogFooter>
+  </DialogContent>
+</Dialog>
+```
+
+Portal parts retain DOM ancestry and Content generates its overlay. Avoid adding
+an extra overlay unless intentionally decorating. Native nonmodal light-dismiss
+does not use the modal outside cancellation hooks. Exit-animation retention,
+Vaul momentum/background scaling, content-wide swipe and React `asChild` are not
+implemented. See [modal delivery](MODAL-CATALOG-DELIVERY.md) for evidence and limits.

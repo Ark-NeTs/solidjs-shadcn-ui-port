@@ -90,7 +90,7 @@ export function useNativeLayer(context:LayerContext, element:Accessor<HTMLElemen
       if(!isModal&&event.key==='Escape'){context.restoreFocus=true;untrack(()=>props.onEscapeKeyDown?.(event));}
       if(isModal&&event.key==='Tab'&&!event.defaultPrevented){
         const targets=Array.from(node!.querySelectorAll<HTMLElement>('button,input,select,textarea,a[href],[tabindex]')).filter(item=>item.tabIndex>=0&&!item.matches(':disabled')&&item.getClientRects().length>0);
-        const fallback=node!.querySelector<HTMLElement>('[data-slot=alert-dialog-content]')??node!;
+        const fallback=node!.querySelector<HTMLElement>('[data-slot=alert-dialog-content],[data-layer-content]')??node!;
         const first=targets[0]??fallback;const last=targets.at(-1)??fallback;
         if(event.shiftKey&&(document.activeElement===first||document.activeElement===node)){event.preventDefault();last.focus();}
         else if(!event.shiftKey&&(document.activeElement===last||document.activeElement===node)){event.preventDefault();first.focus();}
@@ -99,7 +99,7 @@ export function useNativeLayer(context:LayerContext, element:Accessor<HTMLElemen
     if(isModal){node.addEventListener('cancel',cancel);node.addEventListener('close',closed);(node as HTMLDialogElement).showModal();}
     else {node.addEventListener('toggle',toggled);document.addEventListener('pointerdown',pointer,true);node.showPopover();}
     node.addEventListener('keydown',keydown);
-    untrack(()=>{if(!notify(props.onOpenAutoFocus)){const focus=findOwnedTarget(node,'[autofocus],button:not(:disabled),input:not(:disabled),[tabindex="0"]');(findOwnedTarget(node,'[data-slot="alert-dialog-cancel"]:not(:disabled)')??focus??findOwnedTarget(node,'[data-slot=alert-dialog-content]')??node).focus();}});
+    untrack(()=>{if(!notify(props.onOpenAutoFocus)){const focus=findOwnedTarget(node,'[autofocus],button:not(:disabled),input:not(:disabled),[tabindex="0"]');(findOwnedTarget(node,'[data-slot="alert-dialog-cancel"]:not(:disabled)')??focus??findOwnedTarget(node,'[data-slot=alert-dialog-content],[data-layer-content]')??node).focus();}});
     return ()=>{
       active=false;releaseFocus();
       node.removeEventListener('cancel',cancel);node.removeEventListener('close',closed);node.removeEventListener('toggle',toggled);node.removeEventListener('keydown',keydown);document.removeEventListener('pointerdown',pointer,true);

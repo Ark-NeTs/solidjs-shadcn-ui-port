@@ -82,3 +82,6 @@ it('renders native catalog semantics, form defaults and recovery content on the 
 
 import {DisplayCatalogContent} from '../playground/catalog-display';
 it('renders Avatar fallback, Pagination current page, nested Direction and semantic prose on the server',()=>{const html=renderToString(()=><DisplayCatalogContent/>);for(const text of ['data-slot="avatar"','data-slot="avatar-fallback"','AL','aria-current="page"','aria-disabled="true"','data-slot="direction-provider"','dir="ltr"','data-slot="typography"','<blockquote','<code'])expect(html).toContain(text);expect(html).not.toContain('data-slot="avatar-image"');});
+
+import {ModalCatalogContent} from '../playground/catalog-modal';
+it('renders retained Dialog Sheet and Drawer names, closed state and drafts on the server',()=>{const html=renderToString(()=><ModalCatalogContent/>);for(const text of ['data-slot="dialog-content"','data-slot="sheet-content"','data-slot="drawer-content"','data-slot="drawer-handle"','data-state="closed"','aria-expanded="false"','editor-title-initial','Keep this draft','data-side="right"','data-vaul-drawer-direction="bottom"'])expect(html).toContain(text);});

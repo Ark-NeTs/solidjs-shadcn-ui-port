@@ -4,13 +4,13 @@
 
 An owned Solid 2 design system for the future Solid admin, behind the D19 package
 boundary. The implementation contains **Button, Badge, Card, Separator, Skeleton, Input,
-Textarea, Label, Checkbox, Switch, Tabs, Popover, Alert Dialog, Combobox, Accordion, Collapsible, Tooltip, Hover Card, Radio Group, Toggle, Toggle Group, Select, Slider, Progress, Alert, Aspect Ratio, Attachment, Breadcrumb, Bubble, Button Group, Empty, Field, Input Group, Item, Kbd, Marker, Message, Native Select, Spinner, Table, Avatar, Pagination, Direction and Typography**. The React admin and Svelte storefront keep their existing themes.
+Textarea, Label, Checkbox, Switch, Tabs, Popover, Alert Dialog, Combobox, Accordion, Collapsible, Tooltip, Hover Card, Radio Group, Toggle, Toggle Group, Select, Slider, Progress, Alert, Aspect Ratio, Attachment, Breadcrumb, Bubble, Button Group, Empty, Field, Input Group, Item, Kbd, Marker, Message, Native Select, Spinner, Table, Avatar, Pagination, Direction, Typography, Dialog, Sheet and Drawer**. The React admin and Svelte storefront keep their existing themes.
 See [DECISIONS.md](DECISIONS.md) for the owner's 2026-10-07 foundation direction
-and [display catalog delivery](docs/DISPLAY-CATALOG-DELIVERY.md) for current verification status.
+and [modal catalog delivery](docs/MODAL-CATALOG-DELIVERY.md) for current verification status.
 [FOUNDATION-DELIVERY.md](FOUNDATION-DELIVERY.md) retains the earlier five-component results.
 
-These forty-four components use Solid 2 and native HTML. Toggle wraps Kobalte; the
-other forty-three component families use owned behavior. Overlay and preview positioning use
+These forty-seven components use Solid 2 and native HTML. Toggle wraps Kobalte; the
+other forty-six component families use owned behavior. Overlay and preview positioning use
 `@floating-ui/dom@1.8.0`. Kobalte remains the first
 candidate for richer interaction primitives. Standalone Toggle uses `@kobalte/core@2.0.0-alpha.2` behind a cancellation adapter;
 see [Kobalte selection evaluation](KOBALTE-CHOICES.md). No corvu or experimental
@@ -230,3 +230,5 @@ The harness compiles public source exports with SSR enabled; the existing `dist`
 The [native catalog guide](docs/components.md#native-catalog-compositions) adds sixteen
 families with a focused preview at `/?catalog-native`. The full remaining catalog
 continues in [the implementation ledger](docs/CATALOG-DELIVERY.md).
+
+Open `/?catalog-modal` for Dialog, Sheet and Drawer examples in light/dark modes.
