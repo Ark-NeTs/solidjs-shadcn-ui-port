@@ -4,15 +4,17 @@
 
 An owned Solid 2 design system for the future Solid admin, behind the D19 package
 boundary. The implementation contains **Button, Badge, Card, Separator, Skeleton, Input,
-Textarea, Label, Checkbox, Switch, Tabs, Popover, Alert Dialog, Combobox, Accordion, Collapsible, Tooltip and Hover Card**. The React admin and Svelte storefront keep their existing themes.
+Textarea, Label, Checkbox, Switch, Tabs, Popover, Alert Dialog, Combobox, Accordion, Collapsible, Tooltip, Hover Card, Radio Group, Toggle and Toggle Group**. The React admin and Svelte storefront keep their existing themes.
 See [DECISIONS.md](DECISIONS.md) for the owner's 2026-10-07 foundation direction
-and [preview delivery](docs/HINTS-DELIVERY.md) for current measured acceptance.
+and [choice delivery](docs/CHOICES-DELIVERY.md) for current measured acceptance.
 [FOUNDATION-DELIVERY.md](FOUNDATION-DELIVERY.md) retains the earlier five-component results.
 
-These eighteen components use native HTML and Solid 2. Overlay and preview positioning use
+These twenty-one components use Solid 2 and native HTML. Toggle wraps Kobalte; the
+other twenty component families use owned behavior. Overlay and preview positioning use
 `@floating-ui/dom@1.8.0`. Kobalte remains the first
-candidate for richer interaction primitives. Neither Kobalte nor corvu, nor the
-experimental validation patches, is a dependency of this implementation.
+candidate for richer interaction primitives. Standalone Toggle uses `@kobalte/core@2.0.0-alpha.2` behind a cancellation adapter;
+see [Kobalte selection evaluation](KOBALTE-CHOICES.md). No corvu or experimental
+validation patch is a production dependency.
 Kobalte Checkbox/Switch were browser-tested first; reset and diagnostic failures
 are recorded in [KOBALTE-TOGGLES.md](KOBALTE-TOGGLES.md).
 Tooltip/Hover Card adoption evidence is in [KOBALTE-HINTS.md](KOBALTE-HINTS.md).
@@ -24,7 +26,7 @@ The Tabs/Popover/Alert Dialog probe is in [KOBALTE-OVERLAYS.md](KOBALTE-OVERLAYS
 
 | File | Purpose |
 | --- | --- |
-| `src/components/ui/*.tsx` | Eighteen components and their compound parts |
+| `src/components/ui/*.tsx` | Twenty-one components and their compound parts |
 | `src/lib/utils.ts` | Conditional classes and Tailwind 4 conflict resolution |
 | `src/theme.css` | Shared oklch tokens, Inter, utilities and reduced motion |
 | `src/index.ts` | Public library barrel |
@@ -52,6 +54,9 @@ import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from 'sh
 import { Collapsible, CollapsibleTrigger, CollapsibleContent } from 'shadcn-solidjs-theme/ui/collapsible';
 import { Tooltip, TooltipProvider, TooltipTrigger, TooltipContent } from 'shadcn-solidjs-theme/ui/tooltip';
 import { HoverCard, HoverCardTrigger, HoverCardContent } from 'shadcn-solidjs-theme/ui/hover-card';
+import { RadioGroup, RadioGroupItem } from 'shadcn-solidjs-theme/ui/radio-group';
+import { Toggle } from 'shadcn-solidjs-theme/ui/toggle';
+import { ToggleGroup, ToggleGroupItem } from 'shadcn-solidjs-theme/ui/toggle-group';
 import { cn } from 'shadcn-solidjs-theme/utils';
 ```
 
@@ -68,6 +73,8 @@ Detailed examples, every variant/size, accessibility notes and customization:
 [Component guide](docs/components.md).
 [Per-component acceptance matrix](docs/TEST-MATRIX.md) links requirements to tests
 and tracks browser, SSR, visual and accessibility gaps. Run `bun run dev` for the live gallery.
+Open `/?choices` (append `&dark`) for native radio forms, pressed buttons,
+controlled acceptance, grouped focus, RTL and inherited styles.
 Open `/?hints` (append `&dark`) for hover/focus descriptions, link previews,
 controlled rejection, clipping/movement and a Tooltip inside a modal.
 Open `/?disclosures` (append `&dark`) for single/multiple Accordion, nested

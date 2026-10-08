@@ -3,7 +3,7 @@
 Initially audited 2026-10-08 against source at `314f27a`; updated with the
 [three-engine browser evidence](WEBKIT-DELIVERY.md) and
 [source hydration regression](HYDRATION-DELIVERY.md), including
-[real Loading boundaries](LOADING-HYDRATION-DELIVERY.md). Covers the **18
+[real Loading boundaries](LOADING-HYDRATION-DELIVERY.md). Covers the **21
 implemented component families**, including their compound parts. The other
 catalog entries in [COMPONENT-MAP.md](../COMPONENT-MAP.md) remain unimplemented;
 their adoption probes are not delivered-component acceptance tests.
@@ -43,14 +43,14 @@ are implementation scope limits, not features that an existing test proves.
 | Diagnostics and cleanup are checked | [Unit setup](../vitest.setup.ts), [browser fixture](../tests/browser-fixture.ts) | Every unit test checks console warn/error after cleanup; every B/E/H test checks console warning/error and page errors. The hydration build also rejects server warnings/errors; ordinary S tests have no equivalent diagnostic fixture. |
 | Whole-gallery accessibility | [B: light/dark examples have no axe accessibility violations](../tests/integration/foundation.spec.ts#L27) | Applies to the rendered, settled gallery state. Axe does not certify screen-reader usability or all dynamic states. |
 | Whole-gallery visual appearance | [V: light/dark/mobile component gallery](../tests/e2e/visual.spec.ts#L3) | Shared gallery plus dedicated disclosure and preview images; not every variant/state combination. |
-| Unit execution coverage | [Coverage configuration](../vitest.config.ts), [measured coverage](evidence/hints-coverage.json) | 100% statements, branches, functions and lines for included component/helper source; not exhaustive behavior coverage. |
+| Unit execution coverage | [Coverage configuration](../vitest.config.ts), [measured coverage](evidence/choices-coverage.json) | 100% statements, branches, functions and lines for included component/helper source; not exhaustive behavior coverage. |
 
-The current preview delivery records **130 unit tests, 9 grouped SSR tests,
-291 browser integration runs (97 scenarios × 3 engines), and 255 E2E runs
-(79 journeys × 3 engines + 18 Chromium visual tests), and 87 hydration runs
-(84 positive assertions + 3 unsafe-pattern characterizations)**. Those visual tests compare
-21 images. These totals are package-wide, not per component. See the
-[Tooltip/Hover Card verification](HINTS-DELIVERY.md) for current results and the
+The current choice delivery records **147 unit tests, 10 grouped SSR tests,
+312 browser integration runs (104 scenarios × 3 engines), and 279 E2E runs
+(86 journeys × 3 engines + 21 Chromium visual tests), and 90 hydration runs
+(87 positive assertions + 3 unsafe-pattern characterizations)**. Those visual tests compare
+24 images. These totals are package-wide, not per component. See the
+[Radio/Toggle verification](CHOICES-DELIVERY.md) for current results and the
 [initial matrix verification](TEST-MATRIX-DELIVERY.md) for the original audit.
 
 WebKit runs on macOS with process-scoped button Tab navigation and native
@@ -315,7 +315,7 @@ and nested scroll locks. Controlled rejection/disposal remains covered in units.
 | Multiple selection, chip removal, repeated FormData entries and reset | [U: supports multiple chips, clear, repeated values and removing selected options](../tests/unit/combobox.test.tsx#L28); [B: original chip UI scenario](../tests/integration/combobox.spec.ts#L13), [B/E: controlled and uncontrolled native submission, removal, clear and reset](../tests/combobox-contracts.ts#L7) |
 | Disabled skipping, empty search, popup search focus/return and required error | [B: empty/disabled/rejected](../tests/integration/combobox.spec.ts#L7), [B: searches inside a popup and returns focus to its trigger](../tests/integration/combobox.spec.ts#L10), [B: required error](../tests/integration/combobox.spec.ts#L4) |
 | Composition Enter does not commit | [U: synthetic isComposing event](../tests/unit/combobox.test.tsx#L19); physical IME remains open |
-| Active options stay visible during opening animation, wrapping and scrolling | [U: transformed geometry](../tests/unit/combobox.test.tsx#L64), [B/E: 40 options at desktop and narrow/enlarged sizes](../tests/combobox-navigation.ts#L21) |
+| Active options stay visible during opening animation, list resizing, wrapping and scrolling | [U: transformed geometry and resize observer disposal](../tests/unit/combobox.test.tsx), [B/E: 40 options at desktop and narrow/enlarged sizes](../tests/combobox-navigation.ts#L21) |
 | Tab preserves the native destination and closes an uncommitted search | [B/E: inline Tab/Shift+Tab](../tests/combobox-navigation.ts#L44), [B/E: popup next control/previous trigger](../tests/combobox-navigation.ts#L62); the default inline trigger remains a native tab stop |
 | Nested chooser selection/Escape/Tab preserve its parent modal, focus containment and scroll locking | [B/E: modal composition](../tests/combobox-navigation.ts#L82); tested with modal Popover, not every possible dialog implementation |
 | Canceled/deferred reset and input work are disposed on unmount | [U: disabled/reset disposal](../tests/unit/combobox.test.tsx#L34), [U: deferred input disposal](../tests/unit/combobox.test.tsx#L46), [U: reset-owner unmount](../tests/unit/combobox.test.tsx#L58) |
@@ -384,6 +384,41 @@ exit, asChild and portal-container APIs. Pointer drag-selection persistence, ext
 hidePopover calls, physical AT/touch devices and arbitrary cross-library nesting
 remain unverified. Shared coverage percentages do not close those gaps.
 
+## Radio Group
+
+| Acceptance requirement | Existing evidence |
+| --- | --- |
+| Native label, single checked input, form value, default reset and controlled rejection | [U: choices](../tests/unit/choices.test.tsx); [B/E: radio labels/forms and controlled owner](../tests/choices.ts) |
+| Later reset cancellation, reactive external ownership, detach/return, disposal and remount | U reset ownership/disposal; B/E external form journey (nonempty unmatched ID). External DOM relocation and form-node replacement are unverified. |
+| Required/readonly/native disabled semantics, canceled item handlers and refs | U required/ref/readonly/cancellation; B/E disabled serialization. Native validation-message UI and assistive announcements remain unverified. |
+| Arrow axes, direction, disabled skipping, Home/End and loop boundary | U navigation and owning-effect focus cases; B/E radio arrows, shared group navigation and RTL. Readonly arrow focus is asserted in U. |
+| SSR name/value/checked/required; hydrated original inputs and keyboard selection | [S10](../tests/server.test.tsx); [H: choice hydration](../tests/hydration/hydration.spec.ts) |
+
+## Toggle
+
+| Acceptance requirement | Existing evidence |
+| --- | --- |
+| Kobalte adapter keeps default/controlled state, data-bound handlers and refs | U Kobalte adapter/local state cases; [adoption probe](../KOBALTE-CHOICES.md) |
+| Space/Enter/click, canceled activation, disabled semantics, owner rejection then acceptance | B/E standalone and controlled Toggle scenarios; U adapter assertions |
+| Native type button, variants, sizes, class overrides | U variants/attrs; B/E actual 28/32/36 px height; V light/dark/mobile |
+| SSR and hydration of pressed state, no replacement or diagnostics | S10; H choice interaction/disposal |
+
+## Toggle Group
+
+| Acceptance requirement | Existing evidence |
+| --- | --- |
+| Single clear/rejected owner request; multiple add/remove without mutating initial arrays | U single/multiple owner cases; B/E single clear and multiple accumulation |
+| Roving focus independent of selection; current DOM order, nested isolation, disabled skipping, orientation and RTL | U navigation/nested/roving opt-out/removal/owning-effect focus; B/E arrows, orientation, reorder/removal and keyboard activation |
+| Root/item variant/size defaults, zero spacing, logical borders, disabled inheritance and refs | U presentation/ref/default cases; B/E computed spacing and theme checks; three V screenshots |
+| Server pressed markup, hydrated nodes/selection and unmount | S10; H choice scenario |
+
+All three share [B/E narrow enlarged light/dark axe and custom-token checks](../tests/choices.ts)
+and [V choice screenshots](../tests/e2e/visual.spec.ts). Radio is a native form control;
+pressed buttons intentionally have no form value/reset contract. Physical AT/touch,
+automatic focus recovery after removing the focused DOM node, toolbar-specific radio
+navigation, runtime ToggleGroup type changes and arbitrary polymorphism remain open
+or outside this increment. Coverage is for owned source/adapter execution, not Kobalte internals.
+
 ## SSR and visual scope by component
 
 | Component | Server assertions / presence | Visual scope |
@@ -405,6 +440,9 @@ remain unverified. Shared coverage percentages do not close those gaps.
 | Accordion | S8: expanded/required state, custom controls/labelledby, region, visible/absent body | Dedicated light/dark/mobile disclosure page |
 | Collapsible | S8: closed forced body and hidden shell in combined markup | Dedicated light/dark/mobile disclosure page |
 | Tooltip | S9: role, custom and existing description IDs, manual popover attribute | Dedicated open light/dark/mobile previews |
+| Radio Group | S10: native name, checked, required and disabled markup | Dedicated light/dark/mobile choices |
+| Toggle | S10: native pressed button through Kobalte | Dedicated light/dark/mobile choices |
+| Toggle Group | S10: pressed/unpressed buttons and grouped state | Dedicated light/dark/mobile choices |
 | Hover Card | S9: native href, retained closed body, hidden shell in combined markup | Dedicated open light/dark/mobile previews |
 
 S1 title: “renders semantic foundation markup on the server”; S2: “renders named
@@ -415,7 +453,7 @@ opening native layers on the server”; S6: “renders the Combobox canonical va
 and form field without a browser”. S8: “renders disclosure state, custom ID
 relationships, disabled buttons and mount policy on the server”. None tests
 browser hydration. S9: “renders preview description IDs and native links without
-opening a browser layer”.
+opening a browser layer”. S10: “renders choice values, names and pressed semantics on the server”.
 
 **ASYNC-ERR-1 closed:** [Errored recovery](ERRORED-HYDRATION-DELIVERY.md) verifies
 explicit retry, repeated activation, draft identity/focus, stale resolve/reject,
@@ -432,9 +470,9 @@ order the next test work; they do not assign bug severity to untested behavior.
 | Priority | ID | Component(s) | Concrete closure condition |
 | --- | --- | --- | --- |
 | Manual follow-up | CMB-2 | Combobox | Browser scrolling/Tab/modal checks pass; record a physical IME composition/commit/cancel session before closing the remaining manual portion. |
-| Extended coverage | ALL-2 | All 18 | [H: real hydration, forms, Tabs and overlays](HYDRATION-DELIVERY.md) passes for the documented source fixtures. [Pending Loading boundary hydration](LOADING-HYDRATION-DELIVERY.md) and [client rejection/retry](ERRORED-HYDRATION-DELIVERY.md) are also covered. Streaming, ready-at-SSR boundaries, multiple roots, every variant and a published SSR build remain unverified. |
+| Extended coverage | ALL-2 | All 21 | [H: real hydration, forms, Tabs and overlays](HYDRATION-DELIVERY.md) passes for the documented source fixtures. [Pending Loading boundary hydration](LOADING-HYDRATION-DELIVERY.md) and [client rejection/retry](ERRORED-HYDRATION-DELIVERY.md) are also covered. Streaming, ready-at-SSR boundaries, multiple roots, every variant and a published SSR build remain unverified. |
 | Cross-cutting | ALL-3 | Interactive controls and semantic content | Record manual assistive-technology navigation/announcements; axe success is only automated evidence. |
-| Cross-cutting | ALL-4 | All 18 | Expand representative state/variant visual cases; isolate assertions currently supported only by shared gallery/SSR markup (notably Badge SSR). |
+| Cross-cutting | ALL-4 | All 21 | Expand representative state/variant visual cases; isolate assertions currently supported only by shared gallery/SSR markup (notably Badge SSR). |
 | Before app adoption | ALL-5 | Full package | Verify real admin composition, router/query integration and application errors; measure representative large-list/overlay performance. Current E2E is the gallery only. |
 
 No claim is made that every supported combination appears above. The matrix maps

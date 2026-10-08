@@ -1,0 +1,65 @@
+{
+  "initial": {
+    "stats": {
+      "startTime": "2026-10-08T18:13:14.396Z",
+      "duration": 258695.016,
+      "expected": 310,
+      "skipped": 0,
+      "unexpected": 2,
+      "flaky": 0
+    },
+    "failures": [
+      {
+        "title": "active options stay visible through wrapping and scrolling in narrow enlarged layouts",
+        "project": "webkit",
+        "errors": [
+          "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate\n\n  13 |     const popup = node.closest('[data-slot=\"popover-content\"]')!.getBoundingClientRect();\n  14 |     return item.top >= Math.max(list.top, popup.top, 0) - 1 && item.bottom <= Math.min(list.bottom, popup.bottom, innerHeight) + 1;\n> 15 |   })).toBe(true);\n     |       ^\n  16 | }\n  17 |\n  18 | /** Exercise long lists, real sequential focus and nested modal dismissal. */\n    at expectActiveVisible (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/combobox-navigation.ts:15:7)\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/combobox-navigation.ts:27:7"
+        ]
+      },
+      {
+        "title": "a queued native close event cannot dismiss a reopened force-mounted Alert Dialog",
+        "project": "webkit",
+        "errors": [
+          "Error: No browser errors or development diagnostics\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"[WASTED_RECOMPUTE] memo \\\"condition value\\\" re-ran 5 times in 1000ms and 5 of those produced the same value \u2014 2.0ms of compute the equality gate then discarded. Its inputs change without changing its result: put an equality boundary upstream (a memo over the part of the input it reads, or an `equals` on the source), or read a narrower slice (the property, not the object). Latest cause: \\\"createControllable.local\\\" (write)\u001b[39m\n\u001b[31m+   in <Preview> \u203a <AlertDialogFocus> \u203a <AlertDialog> \u203a <Context> \u203a computed \u203a <AlertDialogContent> \u203a <Show> \u203a value \u203a <AlertView> \u203a div.children \u203a <AlertDialog> \u203a <Context> \u203a computed \u203a <AlertDialogContent> \u203a <Show> \u203a condition value\u001b[39m\n\u001b[31m+ [WASTED_RECOMPUTE] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md \u2014 https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#wasted_recompute\u001b[39m\n\u001b[31m+ [WASTED_RECOMPUTE] deeper evidence: import { attribution } from \\\"solid-js/attribution\\\"; attribution.enable() explains every re-run \u2014 why-chains, costs(), feedback(), history(\\\"hold\\\" | \\\"waterfall\\\") \u2014 agent loop: node_modules/@solidjs/diagnostics/skills/agent-loops/SKILL.md \u2014 https://github.com/solidjs/solid/blob/main/packages/diagnostics/skills/agent-loops/SKILL.md\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n   at browser-fixture.ts:10\n\n   8 |     await use(messages);\n   9 |     await testInfo.attach('browser-diagnostics',{body:JSON.stringify(messages),contentType:'application/json'});\n> 10 |     expect(messages,'No browser errors or development diagnostics').toEqual([]);\n     |                                                                     ^\n  11 |   },{auto:true}],\n  12 | });\n  13 | export { expect };\n    at Object.base.extend.diagnostics.auto (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/browser-fixture.ts:10:69)"
+        ]
+      }
+    ]
+  },
+  "isolation": {
+    "stats": {
+      "startTime": "2026-10-08T18:18:24.740Z",
+      "duration": 13245.771,
+      "expected": 4,
+      "skipped": 0,
+      "unexpected": 2,
+      "flaky": 0
+    },
+    "failures": [
+      {
+        "title": "active options stay visible through wrapping and scrolling in narrow enlarged layouts",
+        "project": "webkit",
+        "errors": [
+          "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate\n\n  13 |     const popup = node.closest('[data-slot=\"popover-content\"]')!.getBoundingClientRect();\n  14 |     return item.top >= Math.max(list.top, popup.top, 0) - 1 && item.bottom <= Math.min(list.bottom, popup.bottom, innerHeight) + 1;\n> 15 |   })).toBe(true);\n     |       ^\n  16 | }\n  17 |\n  18 | /** Exercise long lists, real sequential focus and nested modal dismissal. */\n    at expectActiveVisible (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/combobox-navigation.ts:15:7)\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/combobox-navigation.ts:27:7"
+        ]
+      },
+      {
+        "title": "a queued native close event cannot dismiss a reopened force-mounted Alert Dialog",
+        "project": "webkit",
+        "errors": [
+          "Error: No browser errors or development diagnostics\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"[WASTED_RECOMPUTE] memo \\\"condition value\\\" re-ran 5 times in 1000ms and 5 of those produced the same value \u2014 2.0ms of compute the equality gate then discarded. Its inputs change without changing its result: put an equality boundary upstream (a memo over the part of the input it reads, or an `equals` on the source), or read a narrower slice (the property, not the object). Latest cause: \\\"createControllable.local\\\" (write)\u001b[39m\n\u001b[31m+   in <Preview> \u203a <AlertDialogFocus> \u203a <AlertDialog> \u203a <Context> \u203a computed \u203a <AlertDialogContent> \u203a <Show> \u203a value \u203a <AlertView> \u203a div.children \u203a <AlertDialog> \u203a <Context> \u203a computed \u203a <AlertDialogContent> \u203a <Show> \u203a condition value\u001b[39m\n\u001b[31m+ [WASTED_RECOMPUTE] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md \u2014 https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#wasted_recompute\u001b[39m\n\u001b[31m+ [WASTED_RECOMPUTE] deeper evidence: import { attribution } from \\\"solid-js/attribution\\\"; attribution.enable() explains every re-run \u2014 why-chains, costs(), feedback(), history(\\\"hold\\\" | \\\"waterfall\\\") \u2014 agent loop: node_modules/@solidjs/diagnostics/skills/agent-loops/SKILL.md \u2014 https://github.com/solidjs/solid/blob/main/packages/diagnostics/skills/agent-loops/SKILL.md\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n   at browser-fixture.ts:10\n\n   8 |     await use(messages);\n   9 |     await testInfo.attach('browser-diagnostics',{body:JSON.stringify(messages),contentType:'application/json'});\n> 10 |     expect(messages,'No browser errors or development diagnostics').toEqual([]);\n     |                                                                     ^\n  11 |   },{auto:true}],\n  12 | });\n  13 | export { expect };\n    at Object.base.extend.diagnostics.auto (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/browser-fixture.ts:10:69)"
+        ]
+      }
+    ]
+  },
+  "fixed": {
+    "stats": {
+      "startTime": "2026-10-08T18:19:24.527Z",
+      "duration": 7348.721,
+      "expected": 6,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "failures": []
+  }
+}

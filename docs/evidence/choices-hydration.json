@@ -1,0 +1,4150 @@
+{
+  "config": {
+    "argv": [
+      "/Users/arktas/.asdf/installs/nodejs/25.3.0/bin/node",
+      "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/node_modules/.bin/playwright",
+      "test",
+      "--config",
+      "playwright.hydration.config.ts"
+    ],
+    "configFile": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/playwright.hydration.config.ts",
+    "rootDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "hydration/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [
+          "**/visual.spec.ts"
+        ],
+        "testMatch": [
+          "hydration/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [
+          "**/visual.spec.ts"
+        ],
+        "testMatch": [
+          "hydration/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "docs/evidence/choices-hydration.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": {
+      "command": "bun run build:hydration && bunx --no-install vite preview --config hydration.vite.config.ts --host 127.0.0.1 --port 4403 --strictPort",
+      "url": "http://127.0.0.1:4403",
+      "reuseExistingServer": false,
+      "timeout": 60000
+    }
+  },
+  "suites": [
+    {
+      "title": "hydration/errored.spec.ts",
+      "file": "hydration/errored.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "rejected hydrated data preserves drafts and explicit Errored resets recover without duplicate requests",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 588,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:19:57.196Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "012116da4a5bfa5a5640-13cb4399fbbde5078da4",
+          "file": "hydration/errored.spec.ts",
+          "line": 30,
+          "column": 1
+        },
+        {
+          "title": "a stale retry's resolve cannot overwrite a newer successful request",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 460,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:19:58.038Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "012116da4a5bfa5a5640-ebe27bd9b2b0137688ab",
+          "file": "hydration/errored.spec.ts",
+          "line": 59,
+          "column": 54
+        },
+        {
+          "title": "a stale retry's reject cannot overwrite a newer successful request",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 481,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:19:58.504Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "012116da4a5bfa5a5640-b6de15b0b23c9d01eee5",
+          "file": "hydration/errored.spec.ts",
+          "line": 59,
+          "column": 54
+        },
+        {
+          "title": "late rejection after pending unmount stays contained and a fresh boundary can recover",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 493,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:19:58.989Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "012116da4a5bfa5a5640-d7efb7e1dee0e66cfd57",
+          "file": "hydration/errored.spec.ts",
+          "line": 77,
+          "column": 1
+        },
+        {
+          "title": "late rejection after disposing the hydrated root does not restore an error or content",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 271,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:19:59.487Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "012116da4a5bfa5a5640-5e154f30ae500e3a34fc",
+          "file": "hydration/errored.spec.ts",
+          "line": 93,
+          "column": 1
+        },
+        {
+          "title": "rejected hydrated data preserves drafts and explicit Errored resets recover without duplicate requests",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1242,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:08.742Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "012116da4a5bfa5a5640-9c97e5d2cad6cac938a7",
+          "file": "hydration/errored.spec.ts",
+          "line": 30,
+          "column": 1
+        },
+        {
+          "title": "a stale retry's resolve cannot overwrite a newer successful request",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 579,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:10.710Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "012116da4a5bfa5a5640-d90c8ee4a6ee85047366",
+          "file": "hydration/errored.spec.ts",
+          "line": 59,
+          "column": 54
+        },
+        {
+          "title": "a stale retry's reject cannot overwrite a newer successful request",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 574,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:11.295Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "012116da4a5bfa5a5640-f01c3d344b73526987c2",
+          "file": "hydration/errored.spec.ts",
+          "line": 59,
+          "column": 54
+        },
+        {
+          "title": "late rejection after pending unmount stays contained and a fresh boundary can recover",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 530,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:11.874Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "012116da4a5bfa5a5640-12b0d3bdf3688f152d4b",
+          "file": "hydration/errored.spec.ts",
+          "line": 77,
+          "column": 1
+        },
+        {
+          "title": "late rejection after disposing the hydrated root does not restore an error or content",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 379,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:12.409Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "012116da4a5bfa5a5640-ad9ce1d2dfed27df3e02",
+          "file": "hydration/errored.spec.ts",
+          "line": 93,
+          "column": 1
+        },
+        {
+          "title": "rejected hydrated data preserves drafts and explicit Errored resets recover without duplicate requests",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 867,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:27.077Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "012116da4a5bfa5a5640-250a3fd48505b7bde92c",
+          "file": "hydration/errored.spec.ts",
+          "line": 30,
+          "column": 1
+        },
+        {
+          "title": "a stale retry's resolve cannot overwrite a newer successful request",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 659,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:28.169Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "012116da4a5bfa5a5640-85e2631d7afe90f4e7b3",
+          "file": "hydration/errored.spec.ts",
+          "line": 59,
+          "column": 54
+        },
+        {
+          "title": "a stale retry's reject cannot overwrite a newer successful request",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 616,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:28.834Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "012116da4a5bfa5a5640-ac223db2cd92704d9c5b",
+          "file": "hydration/errored.spec.ts",
+          "line": 59,
+          "column": 54
+        },
+        {
+          "title": "late rejection after pending unmount stays contained and a fresh boundary can recover",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 592,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:29.455Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "012116da4a5bfa5a5640-14e97ca0726a4c1d5fc8",
+          "file": "hydration/errored.spec.ts",
+          "line": 77,
+          "column": 1
+        },
+        {
+          "title": "late rejection after disposing the hydrated root does not restore an error or content",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 492,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:30.051Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "012116da4a5bfa5a5640-c0fa490988192792e5bc",
+          "file": "hydration/errored.spec.ts",
+          "line": 93,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "hydration/hydration.spec.ts",
+      "file": "hydration/hydration.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "hydrates server nodes, edits native forms, rewires labels and resets canonical values",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 628,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:19:59.769Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1b38abd37014569c5914-781411c99a5ce3a2fa16",
+          "file": "hydration/hydration.spec.ts",
+          "line": 33,
+          "column": 1
+        },
+        {
+          "title": "hydrates selected Tabs, preserves mounted drafts and updates both sides of live IDs",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 344,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:00.402Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1b38abd37014569c5914-9b5c5f6c65142624573e",
+          "file": "hydration/hydration.spec.ts",
+          "line": 66,
+          "column": 1
+        },
+        {
+          "title": "hydrates closed overlays, updates naming, dismisses and restores focus without duplicate actions",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 675,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:00.751Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1b38abd37014569c5914-ce2835e94caf6a9ba0ed",
+          "file": "hydration/hydration.spec.ts",
+          "line": 84,
+          "column": 1
+        },
+        {
+          "title": "hydrates initially open popover and disposes active ownership",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 339,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:01.430Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1b38abd37014569c5914-74279c3e8ac5699666b3",
+          "file": "hydration/hydration.spec.ts",
+          "line": 110,
+          "column": 51
+        },
+        {
+          "title": "hydrates initially open alert and disposes active ownership",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 353,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:01.774Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1b38abd37014569c5914-d6b31ba7e3bbb4e1c5d3",
+          "file": "hydration/hydration.spec.ts",
+          "line": 110,
+          "column": 51
+        },
+        {
+          "title": "hydrates disclosures with stable owner IDs, retained drafts and ordinary remounts",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 369,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:02.131Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1b38abd37014569c5914-014a46cc53655fda244c",
+          "file": "hydration/hydration.spec.ts",
+          "line": 135,
+          "column": 1
+        },
+        {
+          "title": "hydrates preview shells and IDs before focus, dismissal, link navigation and disposal",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 365,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:02.504Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1b38abd37014569c5914-d19467216e77c1213e85",
+          "file": "hydration/hydration.spec.ts",
+          "line": 158,
+          "column": 1
+        },
+        {
+          "title": "hydrates radios and pressed buttons before keyboard selection, owner updates and disposal",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 346,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:02.874Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1b38abd37014569c5914-76ac4a26d3d8ad31817a",
+          "file": "hydration/hydration.spec.ts",
+          "line": 175,
+          "column": 1
+        },
+        {
+          "title": "hydrates server nodes, edits native forms, rewires labels and resets canonical values",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1160,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:12.800Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1b38abd37014569c5914-3f1c598269c78ffb4b0c",
+          "file": "hydration/hydration.spec.ts",
+          "line": 33,
+          "column": 1
+        },
+        {
+          "title": "hydrates selected Tabs, preserves mounted drafts and updates both sides of live IDs",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 546,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:13.965Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1b38abd37014569c5914-b106faee4e70776ba3ea",
+          "file": "hydration/hydration.spec.ts",
+          "line": 66,
+          "column": 1
+        },
+        {
+          "title": "hydrates closed overlays, updates naming, dismisses and restores focus without duplicate actions",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 881,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:14.515Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1b38abd37014569c5914-b9370d05f011a69ab786",
+          "file": "hydration/hydration.spec.ts",
+          "line": 84,
+          "column": 1
+        },
+        {
+          "title": "hydrates initially open popover and disposes active ownership",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 424,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:15.401Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1b38abd37014569c5914-81336ad4f14df07e0c8f",
+          "file": "hydration/hydration.spec.ts",
+          "line": 110,
+          "column": 51
+        },
+        {
+          "title": "hydrates initially open alert and disposes active ownership",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1019,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:15.830Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1b38abd37014569c5914-ec48a764d04885d177f3",
+          "file": "hydration/hydration.spec.ts",
+          "line": 110,
+          "column": 51
+        },
+        {
+          "title": "hydrates disclosures with stable owner IDs, retained drafts and ordinary remounts",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 553,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:16.853Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1b38abd37014569c5914-8b47b0395469c99cef31",
+          "file": "hydration/hydration.spec.ts",
+          "line": 135,
+          "column": 1
+        },
+        {
+          "title": "hydrates preview shells and IDs before focus, dismissal, link navigation and disposal",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 539,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:17.411Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1b38abd37014569c5914-2303502117fc6256d27e",
+          "file": "hydration/hydration.spec.ts",
+          "line": 158,
+          "column": 1
+        },
+        {
+          "title": "hydrates radios and pressed buttons before keyboard selection, owner updates and disposal",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 489,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:17.955Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1b38abd37014569c5914-ba3239c78f8e4cda3b08",
+          "file": "hydration/hydration.spec.ts",
+          "line": 175,
+          "column": 1
+        },
+        {
+          "title": "hydrates server nodes, edits native forms, rewires labels and resets canonical values",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 779,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:30.555Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1b38abd37014569c5914-0535731a4bab49e37b0e",
+          "file": "hydration/hydration.spec.ts",
+          "line": 33,
+          "column": 1
+        },
+        {
+          "title": "hydrates selected Tabs, preserves mounted drafts and updates both sides of live IDs",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 483,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:31.339Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1b38abd37014569c5914-fe44a699b784dc2787af",
+          "file": "hydration/hydration.spec.ts",
+          "line": 66,
+          "column": 1
+        },
+        {
+          "title": "hydrates closed overlays, updates naming, dismisses and restores focus without duplicate actions",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 887,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:31.827Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1b38abd37014569c5914-3747e7db8c7e6d120b78",
+          "file": "hydration/hydration.spec.ts",
+          "line": 84,
+          "column": 1
+        },
+        {
+          "title": "hydrates initially open popover and disposes active ownership",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 500,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:32.718Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1b38abd37014569c5914-81b09a5692ee88522381",
+          "file": "hydration/hydration.spec.ts",
+          "line": 110,
+          "column": 51
+        },
+        {
+          "title": "hydrates initially open alert and disposes active ownership",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 483,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:33.222Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1b38abd37014569c5914-c01ecaf4c1aaa7b31c8f",
+          "file": "hydration/hydration.spec.ts",
+          "line": 110,
+          "column": 51
+        },
+        {
+          "title": "hydrates disclosures with stable owner IDs, retained drafts and ordinary remounts",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 589,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:33.710Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1b38abd37014569c5914-f2a3271b4801471695a7",
+          "file": "hydration/hydration.spec.ts",
+          "line": 135,
+          "column": 1
+        },
+        {
+          "title": "hydrates preview shells and IDs before focus, dismissal, link navigation and disposal",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 532,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:34.304Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1b38abd37014569c5914-39ee6d5c3b99831f4762",
+          "file": "hydration/hydration.spec.ts",
+          "line": 158,
+          "column": 1
+        },
+        {
+          "title": "hydrates radios and pressed buttons before keyboard selection, owner updates and disposal",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 486,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:34.840Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1b38abd37014569c5914-184760b303a99fd6aeb6",
+          "file": "hydration/hydration.spec.ts",
+          "line": 175,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "hydration/loading.spec.ts",
+      "file": "hydration/loading.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "compares native placeholders during the pending boundary handoff",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 250,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:03.230Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "fallback-handoff",
+                      "contentType": "application/json",
+                      "body": "eyJuYXRpdmUiOnRydWUsImR1cmluZ0NsYWltIjpbXSwicmVwbGFjZWQiOlsiPGRpdiBfaGs9XCJhY2NlcHRhbmNlZDAwXCIgZGF0YS10ZXN0aWQ9XCJwcm9maWxlLWZhbGxiYWNrXCIgYXJpYS1idXN5PVwidHJ1ZVwiPjxwIHJvbGU9XCJzdGF0dXNcIj5Mb2FkaW5nIHByb2ZpbGUgPCEtLSQtLT4xPCEtLS8tLT48L3A+PCEtLSQtLT48ZGl2IF9oaz1cImFjY2VwdGFuY2VkMDMwXCIgZGF0YS1zbG90PVwic2tlbGV0b25cIiBhcmlhLWhpZGRlbj1cInRydWVcIj48L2Rpdj48ZGl2IF9oaz1cImFjY2VwdGFuY2VkMDMxXCIgZGF0YS1zbG90PVwic2tlbGV0b25cIiBhcmlhLWhpZGRlbj1cInRydWVcIj48L2Rpdj48IS0tLy0tPjwvZGl2PiIsIjxwIHJvbGU9XCJzdGF0dXNcIj5Mb2FkaW5nIHByb2ZpbGUgPCEtLSQtLT4xPCEtLS8tLT48L3A+IiwiPGRpdiBfaGs9XCJhY2NlcHRhbmNlZDAzMFwiIGRhdGEtc2xvdD1cInNrZWxldG9uXCIgYXJpYS1oaWRkZW49XCJ0cnVlXCI+PC9kaXY+IiwiPGRpdiBfaGs9XCJhY2NlcHRhbmNlZDAzMVwiIGRhdGEtc2xvdD1cInNrZWxldG9uXCIgYXJpYS1oaWRkZW49XCJ0cnVlXCI+PC9kaXY+Il19"
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f735e0d8cfd7bad5de53-859fb64897776ea772a6",
+          "file": "hydration/loading.spec.ts",
+          "line": 46,
+          "column": 1
+        },
+        {
+          "title": "hydrates pending Skeleton nodes, resolves the real boundary and unmounts ready content",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 221,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:03.485Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "fallback-handoff",
+                      "contentType": "application/json",
+                      "body": "eyJuYXRpdmUiOmZhbHNlLCJkdXJpbmdDbGFpbSI6W10sInJlcGxhY2VkIjpbIjxkaXYgX2hrPVwiYWNjZXB0YW5jZWQwMFwiIGRhdGEtdGVzdGlkPVwicHJvZmlsZS1mYWxsYmFja1wiIGFyaWEtYnVzeT1cInRydWVcIj48cCByb2xlPVwic3RhdHVzXCI+TG9hZGluZyBwcm9maWxlIDwhLS0kLS0+MTwhLS0vLS0+PC9wPjwhLS0kLS0+PGRpdiBfaGs9XCJhY2NlcHRhbmNlZDAzMFwiIGRhdGEtc2xvdD1cInNrZWxldG9uXCIgYXJpYS1oaWRkZW49XCJ0cnVlXCIgY2xhc3M9XCJhbmltYXRlLXB1bHNlIHJvdW5kZWQtbWQgYmctbXV0ZWQgaC04IHctMzJcIj48L2Rpdj48ZGl2IF9oaz1cImFjY2VwdGFuY2VkMDMxXCIgZGF0YS1zbG90PVwic2tlbGV0b25cIiBhcmlhLWhpZGRlbj1cInRydWVcIiBjbGFzcz1cImFuaW1hdGUtcHVsc2Ugcm91bmRlZC1tZCBiZy1tdXRlZCBtdC0yIGgtNCB3LWZ1bGxcIj48L2Rpdj48IS0tLy0tPjwvZGl2PiIsIjxwIHJvbGU9XCJzdGF0dXNcIj5Mb2FkaW5nIHByb2ZpbGUgPCEtLSQtLT4xPCEtLS8tLT48L3A+IiwiPGRpdiBfaGs9XCJhY2NlcHRhbmNlZDAzMFwiIGRhdGEtc2xvdD1cInNrZWxldG9uXCIgYXJpYS1oaWRkZW49XCJ0cnVlXCIgY2xhc3M9XCJhbmltYXRlLXB1bHNlIHJvdW5kZWQtbWQgYmctbXV0ZWQgaC04IHctMzJcIj48L2Rpdj4iLCI8ZGl2IF9oaz1cImFjY2VwdGFuY2VkMDMxXCIgZGF0YS1zbG90PVwic2tlbGV0b25cIiBhcmlhLWhpZGRlbj1cInRydWVcIiBjbGFzcz1cImFuaW1hdGUtcHVsc2Ugcm91bmRlZC1tZCBiZy1tdXRlZCBtdC0yIGgtNCB3LWZ1bGxcIj48L2Rpdj4iXX0="
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f735e0d8cfd7bad5de53-2fc2bee85d32f3849c23",
+          "file": "hydration/loading.spec.ts",
+          "line": 53,
+          "column": 1
+        },
+        {
+          "title": "unmounts hydrated pending boundaries and ignores old resolutions after a fresh mount",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 521,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:03.710Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "fallback-handoff",
+                      "contentType": "application/json",
+                      "body": "eyJuYXRpdmUiOmZhbHNlLCJkdXJpbmdDbGFpbSI6W10sInJlcGxhY2VkIjpbIjxkaXYgX2hrPVwiYWNjZXB0YW5jZWQwMFwiIGRhdGEtdGVzdGlkPVwicHJvZmlsZS1mYWxsYmFja1wiIGFyaWEtYnVzeT1cInRydWVcIj48cCByb2xlPVwic3RhdHVzXCI+TG9hZGluZyBwcm9maWxlIDwhLS0kLS0+MTwhLS0vLS0+PC9wPjwhLS0kLS0+PGRpdiBfaGs9XCJhY2NlcHRhbmNlZDAzMFwiIGRhdGEtc2xvdD1cInNrZWxldG9uXCIgYXJpYS1oaWRkZW49XCJ0cnVlXCIgY2xhc3M9XCJhbmltYXRlLXB1bHNlIHJvdW5kZWQtbWQgYmctbXV0ZWQgaC04IHctMzJcIj48L2Rpdj48ZGl2IF9oaz1cImFjY2VwdGFuY2VkMDMxXCIgZGF0YS1zbG90PVwic2tlbGV0b25cIiBhcmlhLWhpZGRlbj1cInRydWVcIiBjbGFzcz1cImFuaW1hdGUtcHVsc2Ugcm91bmRlZC1tZCBiZy1tdXRlZCBtdC0yIGgtNCB3LWZ1bGxcIj48L2Rpdj48IS0tLy0tPjwvZGl2PiIsIjxwIHJvbGU9XCJzdGF0dXNcIj5Mb2FkaW5nIHByb2ZpbGUgPCEtLSQtLT4xPCEtLS8tLT48L3A+IiwiPGRpdiBfaGs9XCJhY2NlcHRhbmNlZDAzMFwiIGRhdGEtc2xvdD1cInNrZWxldG9uXCIgYXJpYS1oaWRkZW49XCJ0cnVlXCIgY2xhc3M9XCJhbmltYXRlLXB1bHNlIHJvdW5kZWQtbWQgYmctbXV0ZWQgaC04IHctMzJcIj48L2Rpdj4iLCI8ZGl2IF9oaz1cImFjY2VwdGFuY2VkMDMxXCIgZGF0YS1zbG90PVwic2tlbGV0b25cIiBhcmlhLWhpZGRlbj1cInRydWVcIiBjbGFzcz1cImFuaW1hdGUtcHVsc2Ugcm91bmRlZC1tZCBiZy1tdXRlZCBtdC0yIGgtNCB3LWZ1bGxcIj48L2Rpdj4iXX0="
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f735e0d8cfd7bad5de53-4847a358fcc1ae739f4e",
+          "file": "hydration/loading.spec.ts",
+          "line": 71,
+          "column": 1
+        },
+        {
+          "title": "disposing the hydrated root prevents late promise completion from restoring content",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 285,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:04.235Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "fallback-handoff",
+                      "contentType": "application/json",
+                      "body": "eyJuYXRpdmUiOmZhbHNlLCJkdXJpbmdDbGFpbSI6W10sInJlcGxhY2VkIjpbIjxkaXYgX2hrPVwiYWNjZXB0YW5jZWQwMFwiIGRhdGEtdGVzdGlkPVwicHJvZmlsZS1mYWxsYmFja1wiIGFyaWEtYnVzeT1cInRydWVcIj48cCByb2xlPVwic3RhdHVzXCI+TG9hZGluZyBwcm9maWxlIDwhLS0kLS0+MTwhLS0vLS0+PC9wPjwhLS0kLS0+PGRpdiBfaGs9XCJhY2NlcHRhbmNlZDAzMFwiIGRhdGEtc2xvdD1cInNrZWxldG9uXCIgYXJpYS1oaWRkZW49XCJ0cnVlXCIgY2xhc3M9XCJhbmltYXRlLXB1bHNlIHJvdW5kZWQtbWQgYmctbXV0ZWQgaC04IHctMzJcIj48L2Rpdj48ZGl2IF9oaz1cImFjY2VwdGFuY2VkMDMxXCIgZGF0YS1zbG90PVwic2tlbGV0b25cIiBhcmlhLWhpZGRlbj1cInRydWVcIiBjbGFzcz1cImFuaW1hdGUtcHVsc2Ugcm91bmRlZC1tZCBiZy1tdXRlZCBtdC0yIGgtNCB3LWZ1bGxcIj48L2Rpdj48IS0tLy0tPjwvZGl2PiIsIjxwIHJvbGU9XCJzdGF0dXNcIj5Mb2FkaW5nIHByb2ZpbGUgPCEtLSQtLT4xPCEtLS8tLT48L3A+IiwiPGRpdiBfaGs9XCJhY2NlcHRhbmNlZDAzMFwiIGRhdGEtc2xvdD1cInNrZWxldG9uXCIgYXJpYS1oaWRkZW49XCJ0cnVlXCIgY2xhc3M9XCJhbmltYXRlLXB1bHNlIHJvdW5kZWQtbWQgYmctbXV0ZWQgaC04IHctMzJcIj48L2Rpdj4iLCI8ZGl2IF9oaz1cImFjY2VwdGFuY2VkMDMxXCIgZGF0YS1zbG90PVwic2tlbGV0b25cIiBhcmlhLWhpZGRlbj1cInRydWVcIiBjbGFzcz1cImFuaW1hdGUtcHVsc2Ugcm91bmRlZC1tZCBiZy1tdXRlZCBtdC0yIGgtNCB3LWZ1bGxcIj48L2Rpdj4iXX0="
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f735e0d8cfd7bad5de53-6946937930bfc494f97f",
+          "file": "hydration/loading.spec.ts",
+          "line": 92,
+          "column": 1
+        },
+        {
+          "title": "compares native placeholders during the pending boundary handoff",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 367,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:18.454Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "fallback-handoff",
+                      "contentType": "application/json",
+                      "body": "eyJuYXRpdmUiOnRydWUsImR1cmluZ0NsYWltIjpbXSwicmVwbGFjZWQiOlsiPGRpdiBfaGs9XCJhY2NlcHRhbmNlZDAwXCIgZGF0YS10ZXN0aWQ9XCJwcm9maWxlLWZhbGxiYWNrXCIgYXJpYS1idXN5PVwidHJ1ZVwiPjxwIHJvbGU9XCJzdGF0dXNcIj5Mb2FkaW5nIHByb2ZpbGUgPCEtLSQtLT4xPCEtLS8tLT48L3A+PCEtLSQtLT48ZGl2IF9oaz1cImFjY2VwdGFuY2VkMDMwXCIgZGF0YS1zbG90PVwic2tlbGV0b25cIiBhcmlhLWhpZGRlbj1cInRydWVcIj48L2Rpdj48ZGl2IF9oaz1cImFjY2VwdGFuY2VkMDMxXCIgZGF0YS1zbG90PVwic2tlbGV0b25cIiBhcmlhLWhpZGRlbj1cInRydWVcIj48L2Rpdj48IS0tLy0tPjwvZGl2PiIsIjxwIHJvbGU9XCJzdGF0dXNcIj5Mb2FkaW5nIHByb2ZpbGUgPCEtLSQtLT4xPCEtLS8tLT48L3A+IiwiPGRpdiBfaGs9XCJhY2NlcHRhbmNlZDAzMFwiIGRhdGEtc2xvdD1cInNrZWxldG9uXCIgYXJpYS1oaWRkZW49XCJ0cnVlXCI+PC9kaXY+IiwiPGRpdiBfaGs9XCJhY2NlcHRhbmNlZDAzMVwiIGRhdGEtc2xvdD1cInNrZWxldG9uXCIgYXJpYS1oaWRkZW49XCJ0cnVlXCI+PC9kaXY+Il19"
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f735e0d8cfd7bad5de53-3a020003cbe233d3fcff",
+          "file": "hydration/loading.spec.ts",
+          "line": 46,
+          "column": 1
+        },
+        {
+          "title": "hydrates pending Skeleton nodes, resolves the real boundary and unmounts ready content",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 373,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:18.826Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "fallback-handoff",
+                      "contentType": "application/json",
+                      "body": "eyJuYXRpdmUiOmZhbHNlLCJkdXJpbmdDbGFpbSI6W10sInJlcGxhY2VkIjpbIjxkaXYgX2hrPVwiYWNjZXB0YW5jZWQwMFwiIGRhdGEtdGVzdGlkPVwicHJvZmlsZS1mYWxsYmFja1wiIGFyaWEtYnVzeT1cInRydWVcIj48cCByb2xlPVwic3RhdHVzXCI+TG9hZGluZyBwcm9maWxlIDwhLS0kLS0+MTwhLS0vLS0+PC9wPjwhLS0kLS0+PGRpdiBfaGs9XCJhY2NlcHRhbmNlZDAzMFwiIGRhdGEtc2xvdD1cInNrZWxldG9uXCIgYXJpYS1oaWRkZW49XCJ0cnVlXCIgY2xhc3M9XCJhbmltYXRlLXB1bHNlIHJvdW5kZWQtbWQgYmctbXV0ZWQgaC04IHctMzJcIj48L2Rpdj48ZGl2IF9oaz1cImFjY2VwdGFuY2VkMDMxXCIgZGF0YS1zbG90PVwic2tlbGV0b25cIiBhcmlhLWhpZGRlbj1cInRydWVcIiBjbGFzcz1cImFuaW1hdGUtcHVsc2Ugcm91bmRlZC1tZCBiZy1tdXRlZCBtdC0yIGgtNCB3LWZ1bGxcIj48L2Rpdj48IS0tLy0tPjwvZGl2PiIsIjxwIHJvbGU9XCJzdGF0dXNcIj5Mb2FkaW5nIHByb2ZpbGUgPCEtLSQtLT4xPCEtLS8tLT48L3A+IiwiPGRpdiBfaGs9XCJhY2NlcHRhbmNlZDAzMFwiIGRhdGEtc2xvdD1cInNrZWxldG9uXCIgYXJpYS1oaWRkZW49XCJ0cnVlXCIgY2xhc3M9XCJhbmltYXRlLXB1bHNlIHJvdW5kZWQtbWQgYmctbXV0ZWQgaC04IHctMzJcIj48L2Rpdj4iLCI8ZGl2IF9oaz1cImFjY2VwdGFuY2VkMDMxXCIgZGF0YS1zbG90PVwic2tlbGV0b25cIiBhcmlhLWhpZGRlbj1cInRydWVcIiBjbGFzcz1cImFuaW1hdGUtcHVsc2Ugcm91bmRlZC1tZCBiZy1tdXRlZCBtdC0yIGgtNCB3LWZ1bGxcIj48L2Rpdj4iXX0="
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f735e0d8cfd7bad5de53-c57e6e58b39b5d28ee75",
+          "file": "hydration/loading.spec.ts",
+          "line": 53,
+          "column": 1
+        },
+        {
+          "title": "unmounts hydrated pending boundaries and ignores old resolutions after a fresh mount",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 699,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:19.203Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "fallback-handoff",
+                      "contentType": "application/json",
+                      "body": "eyJuYXRpdmUiOmZhbHNlLCJkdXJpbmdDbGFpbSI6W10sInJlcGxhY2VkIjpbIjxkaXYgX2hrPVwiYWNjZXB0YW5jZWQwMFwiIGRhdGEtdGVzdGlkPVwicHJvZmlsZS1mYWxsYmFja1wiIGFyaWEtYnVzeT1cInRydWVcIj48cCByb2xlPVwic3RhdHVzXCI+TG9hZGluZyBwcm9maWxlIDwhLS0kLS0+MTwhLS0vLS0+PC9wPjwhLS0kLS0+PGRpdiBfaGs9XCJhY2NlcHRhbmNlZDAzMFwiIGRhdGEtc2xvdD1cInNrZWxldG9uXCIgYXJpYS1oaWRkZW49XCJ0cnVlXCIgY2xhc3M9XCJhbmltYXRlLXB1bHNlIHJvdW5kZWQtbWQgYmctbXV0ZWQgaC04IHctMzJcIj48L2Rpdj48ZGl2IF9oaz1cImFjY2VwdGFuY2VkMDMxXCIgZGF0YS1zbG90PVwic2tlbGV0b25cIiBhcmlhLWhpZGRlbj1cInRydWVcIiBjbGFzcz1cImFuaW1hdGUtcHVsc2Ugcm91bmRlZC1tZCBiZy1tdXRlZCBtdC0yIGgtNCB3LWZ1bGxcIj48L2Rpdj48IS0tLy0tPjwvZGl2PiIsIjxwIHJvbGU9XCJzdGF0dXNcIj5Mb2FkaW5nIHByb2ZpbGUgPCEtLSQtLT4xPCEtLS8tLT48L3A+IiwiPGRpdiBfaGs9XCJhY2NlcHRhbmNlZDAzMFwiIGRhdGEtc2xvdD1cInNrZWxldG9uXCIgYXJpYS1oaWRkZW49XCJ0cnVlXCIgY2xhc3M9XCJhbmltYXRlLXB1bHNlIHJvdW5kZWQtbWQgYmctbXV0ZWQgaC04IHctMzJcIj48L2Rpdj4iLCI8ZGl2IF9oaz1cImFjY2VwdGFuY2VkMDMxXCIgZGF0YS1zbG90PVwic2tlbGV0b25cIiBhcmlhLWhpZGRlbj1cInRydWVcIiBjbGFzcz1cImFuaW1hdGUtcHVsc2Ugcm91bmRlZC1tZCBiZy1tdXRlZCBtdC0yIGgtNCB3LWZ1bGxcIj48L2Rpdj4iXX0="
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f735e0d8cfd7bad5de53-c2be748f149caa28c39f",
+          "file": "hydration/loading.spec.ts",
+          "line": 71,
+          "column": 1
+        },
+        {
+          "title": "disposing the hydrated root prevents late promise completion from restoring content",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 444,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:19.908Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "fallback-handoff",
+                      "contentType": "application/json",
+                      "body": "eyJuYXRpdmUiOmZhbHNlLCJkdXJpbmdDbGFpbSI6W10sInJlcGxhY2VkIjpbIjxkaXYgX2hrPVwiYWNjZXB0YW5jZWQwMFwiIGRhdGEtdGVzdGlkPVwicHJvZmlsZS1mYWxsYmFja1wiIGFyaWEtYnVzeT1cInRydWVcIj48cCByb2xlPVwic3RhdHVzXCI+TG9hZGluZyBwcm9maWxlIDwhLS0kLS0+MTwhLS0vLS0+PC9wPjwhLS0kLS0+PGRpdiBfaGs9XCJhY2NlcHRhbmNlZDAzMFwiIGRhdGEtc2xvdD1cInNrZWxldG9uXCIgYXJpYS1oaWRkZW49XCJ0cnVlXCIgY2xhc3M9XCJhbmltYXRlLXB1bHNlIHJvdW5kZWQtbWQgYmctbXV0ZWQgaC04IHctMzJcIj48L2Rpdj48ZGl2IF9oaz1cImFjY2VwdGFuY2VkMDMxXCIgZGF0YS1zbG90PVwic2tlbGV0b25cIiBhcmlhLWhpZGRlbj1cInRydWVcIiBjbGFzcz1cImFuaW1hdGUtcHVsc2Ugcm91bmRlZC1tZCBiZy1tdXRlZCBtdC0yIGgtNCB3LWZ1bGxcIj48L2Rpdj48IS0tLy0tPjwvZGl2PiIsIjxwIHJvbGU9XCJzdGF0dXNcIj5Mb2FkaW5nIHByb2ZpbGUgPCEtLSQtLT4xPCEtLS8tLT48L3A+IiwiPGRpdiBfaGs9XCJhY2NlcHRhbmNlZDAzMFwiIGRhdGEtc2xvdD1cInNrZWxldG9uXCIgYXJpYS1oaWRkZW49XCJ0cnVlXCIgY2xhc3M9XCJhbmltYXRlLXB1bHNlIHJvdW5kZWQtbWQgYmctbXV0ZWQgaC04IHctMzJcIj48L2Rpdj4iLCI8ZGl2IF9oaz1cImFjY2VwdGFuY2VkMDMxXCIgZGF0YS1zbG90PVwic2tlbGV0b25cIiBhcmlhLWhpZGRlbj1cInRydWVcIiBjbGFzcz1cImFuaW1hdGUtcHVsc2Ugcm91bmRlZC1tZCBiZy1tdXRlZCBtdC0yIGgtNCB3LWZ1bGxcIj48L2Rpdj4iXX0="
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f735e0d8cfd7bad5de53-eec173d07ac8dd14ee35",
+          "file": "hydration/loading.spec.ts",
+          "line": 92,
+          "column": 1
+        },
+        {
+          "title": "compares native placeholders during the pending boundary handoff",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 400,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:35.335Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "fallback-handoff",
+                      "contentType": "application/json",
+                      "body": "eyJuYXRpdmUiOnRydWUsImR1cmluZ0NsYWltIjpbXSwicmVwbGFjZWQiOlsiPGRpdiBfaGs9XCJhY2NlcHRhbmNlZDAwXCIgZGF0YS10ZXN0aWQ9XCJwcm9maWxlLWZhbGxiYWNrXCIgYXJpYS1idXN5PVwidHJ1ZVwiPjxwIHJvbGU9XCJzdGF0dXNcIj5Mb2FkaW5nIHByb2ZpbGUgPCEtLSQtLT4xPCEtLS8tLT48L3A+PCEtLSQtLT48ZGl2IF9oaz1cImFjY2VwdGFuY2VkMDMwXCIgZGF0YS1zbG90PVwic2tlbGV0b25cIiBhcmlhLWhpZGRlbj1cInRydWVcIj48L2Rpdj48ZGl2IF9oaz1cImFjY2VwdGFuY2VkMDMxXCIgZGF0YS1zbG90PVwic2tlbGV0b25cIiBhcmlhLWhpZGRlbj1cInRydWVcIj48L2Rpdj48IS0tLy0tPjwvZGl2PiIsIjxwIHJvbGU9XCJzdGF0dXNcIj5Mb2FkaW5nIHByb2ZpbGUgPCEtLSQtLT4xPCEtLS8tLT48L3A+IiwiPGRpdiBfaGs9XCJhY2NlcHRhbmNlZDAzMFwiIGRhdGEtc2xvdD1cInNrZWxldG9uXCIgYXJpYS1oaWRkZW49XCJ0cnVlXCI+PC9kaXY+IiwiPGRpdiBfaGs9XCJhY2NlcHRhbmNlZDAzMVwiIGRhdGEtc2xvdD1cInNrZWxldG9uXCIgYXJpYS1oaWRkZW49XCJ0cnVlXCI+PC9kaXY+Il19"
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f735e0d8cfd7bad5de53-00fe3388f335d8074853",
+          "file": "hydration/loading.spec.ts",
+          "line": 46,
+          "column": 1
+        },
+        {
+          "title": "hydrates pending Skeleton nodes, resolves the real boundary and unmounts ready content",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 454,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:35.740Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "fallback-handoff",
+                      "contentType": "application/json",
+                      "body": "eyJuYXRpdmUiOmZhbHNlLCJkdXJpbmdDbGFpbSI6W10sInJlcGxhY2VkIjpbIjxkaXYgX2hrPVwiYWNjZXB0YW5jZWQwMFwiIGRhdGEtdGVzdGlkPVwicHJvZmlsZS1mYWxsYmFja1wiIGFyaWEtYnVzeT1cInRydWVcIj48cCByb2xlPVwic3RhdHVzXCI+TG9hZGluZyBwcm9maWxlIDwhLS0kLS0+MTwhLS0vLS0+PC9wPjwhLS0kLS0+PGRpdiBfaGs9XCJhY2NlcHRhbmNlZDAzMFwiIGRhdGEtc2xvdD1cInNrZWxldG9uXCIgYXJpYS1oaWRkZW49XCJ0cnVlXCIgY2xhc3M9XCJhbmltYXRlLXB1bHNlIHJvdW5kZWQtbWQgYmctbXV0ZWQgaC04IHctMzJcIj48L2Rpdj48ZGl2IF9oaz1cImFjY2VwdGFuY2VkMDMxXCIgZGF0YS1zbG90PVwic2tlbGV0b25cIiBhcmlhLWhpZGRlbj1cInRydWVcIiBjbGFzcz1cImFuaW1hdGUtcHVsc2Ugcm91bmRlZC1tZCBiZy1tdXRlZCBtdC0yIGgtNCB3LWZ1bGxcIj48L2Rpdj48IS0tLy0tPjwvZGl2PiIsIjxwIHJvbGU9XCJzdGF0dXNcIj5Mb2FkaW5nIHByb2ZpbGUgPCEtLSQtLT4xPCEtLS8tLT48L3A+IiwiPGRpdiBfaGs9XCJhY2NlcHRhbmNlZDAzMFwiIGRhdGEtc2xvdD1cInNrZWxldG9uXCIgYXJpYS1oaWRkZW49XCJ0cnVlXCIgY2xhc3M9XCJhbmltYXRlLXB1bHNlIHJvdW5kZWQtbWQgYmctbXV0ZWQgaC04IHctMzJcIj48L2Rpdj4iLCI8ZGl2IF9oaz1cImFjY2VwdGFuY2VkMDMxXCIgZGF0YS1zbG90PVwic2tlbGV0b25cIiBhcmlhLWhpZGRlbj1cInRydWVcIiBjbGFzcz1cImFuaW1hdGUtcHVsc2Ugcm91bmRlZC1tZCBiZy1tdXRlZCBtdC0yIGgtNCB3LWZ1bGxcIj48L2Rpdj4iXX0="
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f735e0d8cfd7bad5de53-7d9101079629ef17c65f",
+          "file": "hydration/loading.spec.ts",
+          "line": 53,
+          "column": 1
+        },
+        {
+          "title": "unmounts hydrated pending boundaries and ignores old resolutions after a fresh mount",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 822,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:36.199Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "fallback-handoff",
+                      "contentType": "application/json",
+                      "body": "eyJuYXRpdmUiOmZhbHNlLCJkdXJpbmdDbGFpbSI6W10sInJlcGxhY2VkIjpbIjxkaXYgX2hrPVwiYWNjZXB0YW5jZWQwMFwiIGRhdGEtdGVzdGlkPVwicHJvZmlsZS1mYWxsYmFja1wiIGFyaWEtYnVzeT1cInRydWVcIj48cCByb2xlPVwic3RhdHVzXCI+TG9hZGluZyBwcm9maWxlIDwhLS0kLS0+MTwhLS0vLS0+PC9wPjwhLS0kLS0+PGRpdiBfaGs9XCJhY2NlcHRhbmNlZDAzMFwiIGRhdGEtc2xvdD1cInNrZWxldG9uXCIgYXJpYS1oaWRkZW49XCJ0cnVlXCIgY2xhc3M9XCJhbmltYXRlLXB1bHNlIHJvdW5kZWQtbWQgYmctbXV0ZWQgaC04IHctMzJcIj48L2Rpdj48ZGl2IF9oaz1cImFjY2VwdGFuY2VkMDMxXCIgZGF0YS1zbG90PVwic2tlbGV0b25cIiBhcmlhLWhpZGRlbj1cInRydWVcIiBjbGFzcz1cImFuaW1hdGUtcHVsc2Ugcm91bmRlZC1tZCBiZy1tdXRlZCBtdC0yIGgtNCB3LWZ1bGxcIj48L2Rpdj48IS0tLy0tPjwvZGl2PiIsIjxwIHJvbGU9XCJzdGF0dXNcIj5Mb2FkaW5nIHByb2ZpbGUgPCEtLSQtLT4xPCEtLS8tLT48L3A+IiwiPGRpdiBfaGs9XCJhY2NlcHRhbmNlZDAzMFwiIGRhdGEtc2xvdD1cInNrZWxldG9uXCIgYXJpYS1oaWRkZW49XCJ0cnVlXCIgY2xhc3M9XCJhbmltYXRlLXB1bHNlIHJvdW5kZWQtbWQgYmctbXV0ZWQgaC04IHctMzJcIj48L2Rpdj4iLCI8ZGl2IF9oaz1cImFjY2VwdGFuY2VkMDMxXCIgZGF0YS1zbG90PVwic2tlbGV0b25cIiBhcmlhLWhpZGRlbj1cInRydWVcIiBjbGFzcz1cImFuaW1hdGUtcHVsc2Ugcm91bmRlZC1tZCBiZy1tdXRlZCBtdC0yIGgtNCB3LWZ1bGxcIj48L2Rpdj4iXX0="
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f735e0d8cfd7bad5de53-fb52fa0897dfd3cfc6f8",
+          "file": "hydration/loading.spec.ts",
+          "line": 71,
+          "column": 1
+        },
+        {
+          "title": "disposing the hydrated root prevents late promise completion from restoring content",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 474,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:37.025Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "fallback-handoff",
+                      "contentType": "application/json",
+                      "body": "eyJuYXRpdmUiOmZhbHNlLCJkdXJpbmdDbGFpbSI6W10sInJlcGxhY2VkIjpbIjxkaXYgX2hrPVwiYWNjZXB0YW5jZWQwMFwiIGRhdGEtdGVzdGlkPVwicHJvZmlsZS1mYWxsYmFja1wiIGFyaWEtYnVzeT1cInRydWVcIj48cCByb2xlPVwic3RhdHVzXCI+TG9hZGluZyBwcm9maWxlIDwhLS0kLS0+MTwhLS0vLS0+PC9wPjwhLS0kLS0+PGRpdiBfaGs9XCJhY2NlcHRhbmNlZDAzMFwiIGRhdGEtc2xvdD1cInNrZWxldG9uXCIgYXJpYS1oaWRkZW49XCJ0cnVlXCIgY2xhc3M9XCJhbmltYXRlLXB1bHNlIHJvdW5kZWQtbWQgYmctbXV0ZWQgaC04IHctMzJcIj48L2Rpdj48ZGl2IF9oaz1cImFjY2VwdGFuY2VkMDMxXCIgZGF0YS1zbG90PVwic2tlbGV0b25cIiBhcmlhLWhpZGRlbj1cInRydWVcIiBjbGFzcz1cImFuaW1hdGUtcHVsc2Ugcm91bmRlZC1tZCBiZy1tdXRlZCBtdC0yIGgtNCB3LWZ1bGxcIj48L2Rpdj48IS0tLy0tPjwvZGl2PiIsIjxwIHJvbGU9XCJzdGF0dXNcIj5Mb2FkaW5nIHByb2ZpbGUgPCEtLSQtLT4xPCEtLS8tLT48L3A+IiwiPGRpdiBfaGs9XCJhY2NlcHRhbmNlZDAzMFwiIGRhdGEtc2xvdD1cInNrZWxldG9uXCIgYXJpYS1oaWRkZW49XCJ0cnVlXCIgY2xhc3M9XCJhbmltYXRlLXB1bHNlIHJvdW5kZWQtbWQgYmctbXV0ZWQgaC04IHctMzJcIj48L2Rpdj4iLCI8ZGl2IF9oaz1cImFjY2VwdGFuY2VkMDMxXCIgZGF0YS1zbG90PVwic2tlbGV0b25cIiBhcmlhLWhpZGRlbj1cInRydWVcIiBjbGFzcz1cImFuaW1hdGUtcHVsc2Ugcm91bmRlZC1tZCBiZy1tdXRlZCBtdC0yIGgtNCB3LWZ1bGxcIj48L2Rpdj4iXX0="
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f735e0d8cfd7bad5de53-450569f5cbcfc5b47b03",
+          "file": "hydration/loading.spec.ts",
+          "line": 92,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "hydration/retry-minimal.spec.ts",
+      "file": "hydration/retry-minimal.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "plain Solid retry: replace-reset",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 338,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:04.528Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "after-retry",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicmVwbGFjZS1yZXNldCIsInJlcXVlc3QiOiIxIiwiZXJyb3IiOlsiRXJyb3I6IEZhaWxlZCAxIl0sInBlbmRpbmciOltdfQ=="
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9357cb28a4d0c0b47b06-2e4d22d36f3ede5655d4",
+          "file": "hydration/retry-minimal.spec.ts",
+          "line": 3,
+          "column": 71
+        },
+        {
+          "title": "plain Solid retry: replace-only",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 320,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:04.870Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "after-retry",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicmVwbGFjZS1vbmx5IiwicmVxdWVzdCI6IjEiLCJlcnJvciI6WyJFcnJvcjogRmFpbGVkIDEiXSwicGVuZGluZyI6W119"
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9357cb28a4d0c0b47b06-db0d0914f63a5dcdad80",
+          "file": "hydration/retry-minimal.spec.ts",
+          "line": 3,
+          "column": 71
+        },
+        {
+          "title": "plain Solid retry: source-reset",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 319,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:05.194Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "after-retry",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoic291cmNlLXJlc2V0IiwicmVxdWVzdCI6IjEiLCJlcnJvciI6WyJFcnJvcjogRmFpbGVkIDEiXSwicGVuZGluZyI6W119"
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9357cb28a4d0c0b47b06-8fcb9a47f0fae82912de",
+          "file": "hydration/retry-minimal.spec.ts",
+          "line": 3,
+          "column": 71
+        },
+        {
+          "title": "plain Solid retry: replace-reset",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 408,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:20.359Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "after-retry",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicmVwbGFjZS1yZXNldCIsInJlcXVlc3QiOiIxIiwiZXJyb3IiOlsiRXJyb3I6IEZhaWxlZCAxIl0sInBlbmRpbmciOltdfQ=="
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9357cb28a4d0c0b47b06-45657745dbed2fc77cec",
+          "file": "hydration/retry-minimal.spec.ts",
+          "line": 3,
+          "column": 71
+        },
+        {
+          "title": "plain Solid retry: replace-only",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 402,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:20.772Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "after-retry",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicmVwbGFjZS1vbmx5IiwicmVxdWVzdCI6IjEiLCJlcnJvciI6WyJFcnJvcjogRmFpbGVkIDEiXSwicGVuZGluZyI6W119"
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9357cb28a4d0c0b47b06-ec4763e79b3677993af6",
+          "file": "hydration/retry-minimal.spec.ts",
+          "line": 3,
+          "column": 71
+        },
+        {
+          "title": "plain Solid retry: source-reset",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 870,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:21.178Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "after-retry",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoic291cmNlLXJlc2V0IiwicmVxdWVzdCI6IjEiLCJlcnJvciI6WyJFcnJvcjogRmFpbGVkIDEiXSwicGVuZGluZyI6W119"
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9357cb28a4d0c0b47b06-6327f39c4aa6dd3f7328",
+          "file": "hydration/retry-minimal.spec.ts",
+          "line": 3,
+          "column": 71
+        },
+        {
+          "title": "plain Solid retry: replace-reset",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 500,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:37.508Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "after-retry",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicmVwbGFjZS1yZXNldCIsInJlcXVlc3QiOiIxIiwiZXJyb3IiOlsiRXJyb3I6IEZhaWxlZCAxIl0sInBlbmRpbmciOltdfQ=="
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9357cb28a4d0c0b47b06-e111d9108cd967780bde",
+          "file": "hydration/retry-minimal.spec.ts",
+          "line": 3,
+          "column": 71
+        },
+        {
+          "title": "plain Solid retry: replace-only",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 476,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:38.012Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "after-retry",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicmVwbGFjZS1vbmx5IiwicmVxdWVzdCI6IjEiLCJlcnJvciI6WyJFcnJvcjogRmFpbGVkIDEiXSwicGVuZGluZyI6W119"
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9357cb28a4d0c0b47b06-0015907061086bbd375b",
+          "file": "hydration/retry-minimal.spec.ts",
+          "line": 3,
+          "column": 71
+        },
+        {
+          "title": "plain Solid retry: source-reset",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 456,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:38.492Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "after-retry",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoic291cmNlLXJlc2V0IiwicmVxdWVzdCI6IjEiLCJlcnJvciI6WyJFcnJvcjogRmFpbGVkIDEiXSwicGVuZGluZyI6W119"
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9357cb28a4d0c0b47b06-d19d3f8e78ff4dd2afce",
+          "file": "hydration/retry-minimal.spec.ts",
+          "line": 3,
+          "column": 71
+        }
+      ]
+    },
+    {
+      "title": "hydration/tabs-minimal.spec.ts",
+      "file": "hydration/tabs-minimal.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "minimal hydration: plain",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 286,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:05.521Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "minimal-before-interaction",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicGxhaW4iLCJyZXBsYWNlZCI6W10sImRyYWZ0IjoiRHJhZnQgYmVmb3JlIGh5ZHJhdGlvbiJ9"
+                    },
+                    {
+                      "name": "minimal-hydration",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicGxhaW4iLCJyZXBsYWNlZCI6W10sImRyYWZ0IjoiRHJhZnQgYmVmb3JlIGh5ZHJhdGlvbiIsImludGVyYWN0aW9uIjoicGFzc2VkIn0="
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "26504aa0d361cf9ed912-dd4d50193b17027c5b3f",
+          "file": "hydration/tabs-minimal.spec.ts",
+          "line": 4,
+          "column": 27
+        },
+        {
+          "title": "minimal hydration: context",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 287,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:05.811Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "minimal-before-interaction",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoiY29udGV4dCIsInJlcGxhY2VkIjpbXSwiZHJhZnQiOiJEcmFmdCBiZWZvcmUgaHlkcmF0aW9uIn0="
+                    },
+                    {
+                      "name": "minimal-hydration",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoiY29udGV4dCIsInJlcGxhY2VkIjpbXSwiZHJhZnQiOiJEcmFmdCBiZWZvcmUgaHlkcmF0aW9uIiwiaW50ZXJhY3Rpb24iOiJwYXNzZWQifQ=="
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "26504aa0d361cf9ed912-675d71cb6f3333218490",
+          "file": "hydration/tabs-minimal.spec.ts",
+          "line": 4,
+          "column": 27
+        },
+        {
+          "title": "minimal hydration: registration",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 318,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:06.104Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "minimal-before-interaction",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicmVnaXN0cmF0aW9uIiwicmVwbGFjZWQiOltdLCJkcmFmdCI6IkRyYWZ0IGJlZm9yZSBoeWRyYXRpb24ifQ=="
+                    },
+                    {
+                      "name": "minimal-hydration",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicmVnaXN0cmF0aW9uIiwicmVwbGFjZWQiOltdLCJkcmFmdCI6IkRyYWZ0IGJlZm9yZSBoeWRyYXRpb24iLCJpbnRlcmFjdGlvbiI6InBhc3NlZCJ9"
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "26504aa0d361cf9ed912-f282955f798c9b6feb8a",
+          "file": "hydration/tabs-minimal.spec.ts",
+          "line": 4,
+          "column": 27
+        },
+        {
+          "title": "minimal hydration: registration-spread",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 269,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:06.426Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "minimal-before-interaction",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicmVnaXN0cmF0aW9uLXNwcmVhZCIsInJlcGxhY2VkIjpbXSwiZHJhZnQiOiJEcmFmdCBiZWZvcmUgaHlkcmF0aW9uIn0="
+                    },
+                    {
+                      "name": "minimal-hydration",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicmVnaXN0cmF0aW9uLXNwcmVhZCIsInJlcGxhY2VkIjpbXSwiZHJhZnQiOiJEcmFmdCBiZWZvcmUgaHlkcmF0aW9uIiwiaW50ZXJhY3Rpb24iOiJwYXNzZWQifQ=="
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "26504aa0d361cf9ed912-0745cdf657afacc295eb",
+          "file": "hydration/tabs-minimal.spec.ts",
+          "line": 4,
+          "column": 27
+        },
+        {
+          "title": "minimal hydration: registration-read (unsafe-pattern characterization)",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 198,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:06.700Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "minimal-before-interaction",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicmVnaXN0cmF0aW9uLXJlYWQiLCJyZXBsYWNlZCI6W3sidGFnIjoiRElWIiwicm9sZSI6InRhYmxpc3QiLCJzbG90IjpudWxsfSx7InRhZyI6IkJVVFRPTiIsInJvbGUiOiJ0YWIiLCJzbG90IjpudWxsfSx7InRhZyI6IkJVVFRPTiIsInJvbGUiOiJ0YWIiLCJzbG90IjpudWxsfSx7InRhZyI6IkRJViIsInJvbGUiOiJ0YWJwYW5lbCIsInNsb3QiOm51bGx9LHsidGFnIjoiSU5QVVQiLCJyb2xlIjpudWxsLCJzbG90IjpudWxsfSx7InRhZyI6IkRJViIsInJvbGUiOiJ0YWJwYW5lbCIsInNsb3QiOm51bGx9XSwiZHJhZnQiOiJTZXJ2ZXIgZHJhZnQifQ=="
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "26504aa0d361cf9ed912-fc38c5426aac74f045c0",
+          "file": "hydration/tabs-minimal.spec.ts",
+          "line": 4,
+          "column": 27
+        },
+        {
+          "title": "minimal hydration: package-shell",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 303,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:06.902Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "minimal-before-interaction",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicGFja2FnZS1zaGVsbCIsInJlcGxhY2VkIjpbXSwiZHJhZnQiOiJEcmFmdCBiZWZvcmUgaHlkcmF0aW9uIn0="
+                    },
+                    {
+                      "name": "minimal-hydration",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicGFja2FnZS1zaGVsbCIsInJlcGxhY2VkIjpbXSwiZHJhZnQiOiJEcmFmdCBiZWZvcmUgaHlkcmF0aW9uIiwiaW50ZXJhY3Rpb24iOiJwYXNzZWQifQ=="
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "26504aa0d361cf9ed912-f0c51af69dd49ecef85b",
+          "file": "hydration/tabs-minimal.spec.ts",
+          "line": 4,
+          "column": 27
+        },
+        {
+          "title": "minimal hydration: package-triggers",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 305,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:07.209Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "minimal-before-interaction",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicGFja2FnZS10cmlnZ2VycyIsInJlcGxhY2VkIjpbXSwiZHJhZnQiOiJEcmFmdCBiZWZvcmUgaHlkcmF0aW9uIn0="
+                    },
+                    {
+                      "name": "minimal-hydration",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicGFja2FnZS10cmlnZ2VycyIsInJlcGxhY2VkIjpbXSwiZHJhZnQiOiJEcmFmdCBiZWZvcmUgaHlkcmF0aW9uIiwiaW50ZXJhY3Rpb24iOiJwYXNzZWQifQ=="
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "26504aa0d361cf9ed912-e7fa124a8727305d4623",
+          "file": "hydration/tabs-minimal.spec.ts",
+          "line": 4,
+          "column": 27
+        },
+        {
+          "title": "minimal hydration: package-panels",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 298,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:07.518Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "minimal-before-interaction",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicGFja2FnZS1wYW5lbHMiLCJyZXBsYWNlZCI6W10sImRyYWZ0IjoiRHJhZnQgYmVmb3JlIGh5ZHJhdGlvbiJ9"
+                    },
+                    {
+                      "name": "minimal-hydration",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicGFja2FnZS1wYW5lbHMiLCJyZXBsYWNlZCI6W10sImRyYWZ0IjoiRHJhZnQgYmVmb3JlIGh5ZHJhdGlvbiIsImludGVyYWN0aW9uIjoicGFzc2VkIn0="
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "26504aa0d361cf9ed912-a328460358df5925b39c",
+          "file": "hydration/tabs-minimal.spec.ts",
+          "line": 4,
+          "column": 27
+        },
+        {
+          "title": "minimal hydration: package-controlled",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 307,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:07.820Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "minimal-before-interaction",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicGFja2FnZS1jb250cm9sbGVkIiwicmVwbGFjZWQiOltdLCJkcmFmdCI6IkRyYWZ0IGJlZm9yZSBoeWRyYXRpb24ifQ=="
+                    },
+                    {
+                      "name": "minimal-hydration",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicGFja2FnZS1jb250cm9sbGVkIiwicmVwbGFjZWQiOltdLCJkcmFmdCI6IkRyYWZ0IGJlZm9yZSBoeWRyYXRpb24iLCJpbnRlcmFjdGlvbiI6InBhc3NlZCJ9"
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "26504aa0d361cf9ed912-fa9257e3f876038f558e",
+          "file": "hydration/tabs-minimal.spec.ts",
+          "line": 4,
+          "column": 27
+        },
+        {
+          "title": "minimal hydration: package-uncontrolled",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 303,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:08.132Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "minimal-before-interaction",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicGFja2FnZS11bmNvbnRyb2xsZWQiLCJyZXBsYWNlZCI6W10sImRyYWZ0IjoiRHJhZnQgYmVmb3JlIGh5ZHJhdGlvbiJ9"
+                    },
+                    {
+                      "name": "minimal-hydration",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicGFja2FnZS11bmNvbnRyb2xsZWQiLCJyZXBsYWNlZCI6W10sImRyYWZ0IjoiRHJhZnQgYmVmb3JlIGh5ZHJhdGlvbiIsImludGVyYWN0aW9uIjoicGFzc2VkIn0="
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "26504aa0d361cf9ed912-a2e1aa919e9176c570c6",
+          "file": "hydration/tabs-minimal.spec.ts",
+          "line": 4,
+          "column": 27
+        },
+        {
+          "title": "minimal hydration: plain",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 404,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:22.058Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "minimal-before-interaction",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicGxhaW4iLCJyZXBsYWNlZCI6W10sImRyYWZ0IjoiRHJhZnQgYmVmb3JlIGh5ZHJhdGlvbiJ9"
+                    },
+                    {
+                      "name": "minimal-hydration",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicGxhaW4iLCJyZXBsYWNlZCI6W10sImRyYWZ0IjoiRHJhZnQgYmVmb3JlIGh5ZHJhdGlvbiIsImludGVyYWN0aW9uIjoicGFzc2VkIn0="
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "26504aa0d361cf9ed912-27457d261b5cab9c0e4b",
+          "file": "hydration/tabs-minimal.spec.ts",
+          "line": 4,
+          "column": 27
+        },
+        {
+          "title": "minimal hydration: context",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 389,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:22.466Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "minimal-before-interaction",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoiY29udGV4dCIsInJlcGxhY2VkIjpbXSwiZHJhZnQiOiJEcmFmdCBiZWZvcmUgaHlkcmF0aW9uIn0="
+                    },
+                    {
+                      "name": "minimal-hydration",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoiY29udGV4dCIsInJlcGxhY2VkIjpbXSwiZHJhZnQiOiJEcmFmdCBiZWZvcmUgaHlkcmF0aW9uIiwiaW50ZXJhY3Rpb24iOiJwYXNzZWQifQ=="
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "26504aa0d361cf9ed912-cc7c43fbf6ade22137d8",
+          "file": "hydration/tabs-minimal.spec.ts",
+          "line": 4,
+          "column": 27
+        },
+        {
+          "title": "minimal hydration: registration",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 420,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:22.860Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "minimal-before-interaction",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicmVnaXN0cmF0aW9uIiwicmVwbGFjZWQiOltdLCJkcmFmdCI6IkRyYWZ0IGJlZm9yZSBoeWRyYXRpb24ifQ=="
+                    },
+                    {
+                      "name": "minimal-hydration",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicmVnaXN0cmF0aW9uIiwicmVwbGFjZWQiOltdLCJkcmFmdCI6IkRyYWZ0IGJlZm9yZSBoeWRyYXRpb24iLCJpbnRlcmFjdGlvbiI6InBhc3NlZCJ9"
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "26504aa0d361cf9ed912-5e4ad590149768b1ed39",
+          "file": "hydration/tabs-minimal.spec.ts",
+          "line": 4,
+          "column": 27
+        },
+        {
+          "title": "minimal hydration: registration-spread",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 387,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:23.285Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "minimal-before-interaction",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicmVnaXN0cmF0aW9uLXNwcmVhZCIsInJlcGxhY2VkIjpbXSwiZHJhZnQiOiJEcmFmdCBiZWZvcmUgaHlkcmF0aW9uIn0="
+                    },
+                    {
+                      "name": "minimal-hydration",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicmVnaXN0cmF0aW9uLXNwcmVhZCIsInJlcGxhY2VkIjpbXSwiZHJhZnQiOiJEcmFmdCBiZWZvcmUgaHlkcmF0aW9uIiwiaW50ZXJhY3Rpb24iOiJwYXNzZWQifQ=="
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "26504aa0d361cf9ed912-107f7c868b20d140c70f",
+          "file": "hydration/tabs-minimal.spec.ts",
+          "line": 4,
+          "column": 27
+        },
+        {
+          "title": "minimal hydration: registration-read (unsafe-pattern characterization)",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 299,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:23.676Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "minimal-before-interaction",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicmVnaXN0cmF0aW9uLXJlYWQiLCJyZXBsYWNlZCI6W3sidGFnIjoiRElWIiwicm9sZSI6InRhYmxpc3QiLCJzbG90IjpudWxsfSx7InRhZyI6IkJVVFRPTiIsInJvbGUiOiJ0YWIiLCJzbG90IjpudWxsfSx7InRhZyI6IkJVVFRPTiIsInJvbGUiOiJ0YWIiLCJzbG90IjpudWxsfSx7InRhZyI6IkRJViIsInJvbGUiOiJ0YWJwYW5lbCIsInNsb3QiOm51bGx9LHsidGFnIjoiSU5QVVQiLCJyb2xlIjpudWxsLCJzbG90IjpudWxsfSx7InRhZyI6IkRJViIsInJvbGUiOiJ0YWJwYW5lbCIsInNsb3QiOm51bGx9XSwiZHJhZnQiOiJTZXJ2ZXIgZHJhZnQifQ=="
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "26504aa0d361cf9ed912-dbee8d55863cb29b9d0f",
+          "file": "hydration/tabs-minimal.spec.ts",
+          "line": 4,
+          "column": 27
+        },
+        {
+          "title": "minimal hydration: package-shell",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 400,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:23.980Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "minimal-before-interaction",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicGFja2FnZS1zaGVsbCIsInJlcGxhY2VkIjpbXSwiZHJhZnQiOiJEcmFmdCBiZWZvcmUgaHlkcmF0aW9uIn0="
+                    },
+                    {
+                      "name": "minimal-hydration",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicGFja2FnZS1zaGVsbCIsInJlcGxhY2VkIjpbXSwiZHJhZnQiOiJEcmFmdCBiZWZvcmUgaHlkcmF0aW9uIiwiaW50ZXJhY3Rpb24iOiJwYXNzZWQifQ=="
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "26504aa0d361cf9ed912-bc0893d2954fa9a831f2",
+          "file": "hydration/tabs-minimal.spec.ts",
+          "line": 4,
+          "column": 27
+        },
+        {
+          "title": "minimal hydration: package-triggers",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 433,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:24.384Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "minimal-before-interaction",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicGFja2FnZS10cmlnZ2VycyIsInJlcGxhY2VkIjpbXSwiZHJhZnQiOiJEcmFmdCBiZWZvcmUgaHlkcmF0aW9uIn0="
+                    },
+                    {
+                      "name": "minimal-hydration",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicGFja2FnZS10cmlnZ2VycyIsInJlcGxhY2VkIjpbXSwiZHJhZnQiOiJEcmFmdCBiZWZvcmUgaHlkcmF0aW9uIiwiaW50ZXJhY3Rpb24iOiJwYXNzZWQifQ=="
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "26504aa0d361cf9ed912-c01eff75c6740af75b94",
+          "file": "hydration/tabs-minimal.spec.ts",
+          "line": 4,
+          "column": 27
+        },
+        {
+          "title": "minimal hydration: package-panels",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 451,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:24.822Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "minimal-before-interaction",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicGFja2FnZS1wYW5lbHMiLCJyZXBsYWNlZCI6W10sImRyYWZ0IjoiRHJhZnQgYmVmb3JlIGh5ZHJhdGlvbiJ9"
+                    },
+                    {
+                      "name": "minimal-hydration",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicGFja2FnZS1wYW5lbHMiLCJyZXBsYWNlZCI6W10sImRyYWZ0IjoiRHJhZnQgYmVmb3JlIGh5ZHJhdGlvbiIsImludGVyYWN0aW9uIjoicGFzc2VkIn0="
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "26504aa0d361cf9ed912-60b0f1809498aa918454",
+          "file": "hydration/tabs-minimal.spec.ts",
+          "line": 4,
+          "column": 27
+        },
+        {
+          "title": "minimal hydration: package-controlled",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 412,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:25.278Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "minimal-before-interaction",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicGFja2FnZS1jb250cm9sbGVkIiwicmVwbGFjZWQiOltdLCJkcmFmdCI6IkRyYWZ0IGJlZm9yZSBoeWRyYXRpb24ifQ=="
+                    },
+                    {
+                      "name": "minimal-hydration",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicGFja2FnZS1jb250cm9sbGVkIiwicmVwbGFjZWQiOltdLCJkcmFmdCI6IkRyYWZ0IGJlZm9yZSBoeWRyYXRpb24iLCJpbnRlcmFjdGlvbiI6InBhc3NlZCJ9"
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "26504aa0d361cf9ed912-b7b28475219616e52c96",
+          "file": "hydration/tabs-minimal.spec.ts",
+          "line": 4,
+          "column": 27
+        },
+        {
+          "title": "minimal hydration: package-uncontrolled",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 901,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:25.694Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "minimal-before-interaction",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicGFja2FnZS11bmNvbnRyb2xsZWQiLCJyZXBsYWNlZCI6W10sImRyYWZ0IjoiRHJhZnQgYmVmb3JlIGh5ZHJhdGlvbiJ9"
+                    },
+                    {
+                      "name": "minimal-hydration",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicGFja2FnZS11bmNvbnRyb2xsZWQiLCJyZXBsYWNlZCI6W10sImRyYWZ0IjoiRHJhZnQgYmVmb3JlIGh5ZHJhdGlvbiIsImludGVyYWN0aW9uIjoicGFzc2VkIn0="
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "26504aa0d361cf9ed912-d9ba9ea82e191c85b13e",
+          "file": "hydration/tabs-minimal.spec.ts",
+          "line": 4,
+          "column": 27
+        },
+        {
+          "title": "minimal hydration: plain",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 459,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:38.956Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "minimal-before-interaction",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicGxhaW4iLCJyZXBsYWNlZCI6W10sImRyYWZ0IjoiRHJhZnQgYmVmb3JlIGh5ZHJhdGlvbiJ9"
+                    },
+                    {
+                      "name": "minimal-hydration",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicGxhaW4iLCJyZXBsYWNlZCI6W10sImRyYWZ0IjoiRHJhZnQgYmVmb3JlIGh5ZHJhdGlvbiIsImludGVyYWN0aW9uIjoicGFzc2VkIn0="
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "26504aa0d361cf9ed912-556eba06dc1e0d96e373",
+          "file": "hydration/tabs-minimal.spec.ts",
+          "line": 4,
+          "column": 27
+        },
+        {
+          "title": "minimal hydration: context",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 447,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:39.419Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "minimal-before-interaction",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoiY29udGV4dCIsInJlcGxhY2VkIjpbXSwiZHJhZnQiOiJEcmFmdCBiZWZvcmUgaHlkcmF0aW9uIn0="
+                    },
+                    {
+                      "name": "minimal-hydration",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoiY29udGV4dCIsInJlcGxhY2VkIjpbXSwiZHJhZnQiOiJEcmFmdCBiZWZvcmUgaHlkcmF0aW9uIiwiaW50ZXJhY3Rpb24iOiJwYXNzZWQifQ=="
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "26504aa0d361cf9ed912-80e0e7fade84eb94774a",
+          "file": "hydration/tabs-minimal.spec.ts",
+          "line": 4,
+          "column": 27
+        },
+        {
+          "title": "minimal hydration: registration",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 460,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:39.871Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "minimal-before-interaction",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicmVnaXN0cmF0aW9uIiwicmVwbGFjZWQiOltdLCJkcmFmdCI6IkRyYWZ0IGJlZm9yZSBoeWRyYXRpb24ifQ=="
+                    },
+                    {
+                      "name": "minimal-hydration",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicmVnaXN0cmF0aW9uIiwicmVwbGFjZWQiOltdLCJkcmFmdCI6IkRyYWZ0IGJlZm9yZSBoeWRyYXRpb24iLCJpbnRlcmFjdGlvbiI6InBhc3NlZCJ9"
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "26504aa0d361cf9ed912-635b1982e435fd1d49bd",
+          "file": "hydration/tabs-minimal.spec.ts",
+          "line": 4,
+          "column": 27
+        },
+        {
+          "title": "minimal hydration: registration-spread",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 435,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:40.336Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "minimal-before-interaction",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicmVnaXN0cmF0aW9uLXNwcmVhZCIsInJlcGxhY2VkIjpbXSwiZHJhZnQiOiJEcmFmdCBiZWZvcmUgaHlkcmF0aW9uIn0="
+                    },
+                    {
+                      "name": "minimal-hydration",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicmVnaXN0cmF0aW9uLXNwcmVhZCIsInJlcGxhY2VkIjpbXSwiZHJhZnQiOiJEcmFmdCBiZWZvcmUgaHlkcmF0aW9uIiwiaW50ZXJhY3Rpb24iOiJwYXNzZWQifQ=="
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "26504aa0d361cf9ed912-06cef77d1a9fe28e18fd",
+          "file": "hydration/tabs-minimal.spec.ts",
+          "line": 4,
+          "column": 27
+        },
+        {
+          "title": "minimal hydration: registration-read (unsafe-pattern characterization)",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 374,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:40.776Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "minimal-before-interaction",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicmVnaXN0cmF0aW9uLXJlYWQiLCJyZXBsYWNlZCI6W3sidGFnIjoiRElWIiwicm9sZSI6InRhYmxpc3QiLCJzbG90IjpudWxsfSx7InRhZyI6IkJVVFRPTiIsInJvbGUiOiJ0YWIiLCJzbG90IjpudWxsfSx7InRhZyI6IkJVVFRPTiIsInJvbGUiOiJ0YWIiLCJzbG90IjpudWxsfSx7InRhZyI6IkRJViIsInJvbGUiOiJ0YWJwYW5lbCIsInNsb3QiOm51bGx9LHsidGFnIjoiSU5QVVQiLCJyb2xlIjpudWxsLCJzbG90IjpudWxsfSx7InRhZyI6IkRJViIsInJvbGUiOiJ0YWJwYW5lbCIsInNsb3QiOm51bGx9XSwiZHJhZnQiOiJTZXJ2ZXIgZHJhZnQifQ=="
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "26504aa0d361cf9ed912-370766ffd32638452a5b",
+          "file": "hydration/tabs-minimal.spec.ts",
+          "line": 4,
+          "column": 27
+        },
+        {
+          "title": "minimal hydration: package-shell",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 502,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:41.154Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "minimal-before-interaction",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicGFja2FnZS1zaGVsbCIsInJlcGxhY2VkIjpbXSwiZHJhZnQiOiJEcmFmdCBiZWZvcmUgaHlkcmF0aW9uIn0="
+                    },
+                    {
+                      "name": "minimal-hydration",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicGFja2FnZS1zaGVsbCIsInJlcGxhY2VkIjpbXSwiZHJhZnQiOiJEcmFmdCBiZWZvcmUgaHlkcmF0aW9uIiwiaW50ZXJhY3Rpb24iOiJwYXNzZWQifQ=="
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "26504aa0d361cf9ed912-438db5ca19a9c5e4ccc4",
+          "file": "hydration/tabs-minimal.spec.ts",
+          "line": 4,
+          "column": 27
+        },
+        {
+          "title": "minimal hydration: package-triggers",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 491,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:41.661Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "minimal-before-interaction",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicGFja2FnZS10cmlnZ2VycyIsInJlcGxhY2VkIjpbXSwiZHJhZnQiOiJEcmFmdCBiZWZvcmUgaHlkcmF0aW9uIn0="
+                    },
+                    {
+                      "name": "minimal-hydration",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicGFja2FnZS10cmlnZ2VycyIsInJlcGxhY2VkIjpbXSwiZHJhZnQiOiJEcmFmdCBiZWZvcmUgaHlkcmF0aW9uIiwiaW50ZXJhY3Rpb24iOiJwYXNzZWQifQ=="
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "26504aa0d361cf9ed912-5845350dd210b0e618b0",
+          "file": "hydration/tabs-minimal.spec.ts",
+          "line": 4,
+          "column": 27
+        },
+        {
+          "title": "minimal hydration: package-panels",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 464,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:42.157Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "minimal-before-interaction",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicGFja2FnZS1wYW5lbHMiLCJyZXBsYWNlZCI6W10sImRyYWZ0IjoiRHJhZnQgYmVmb3JlIGh5ZHJhdGlvbiJ9"
+                    },
+                    {
+                      "name": "minimal-hydration",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicGFja2FnZS1wYW5lbHMiLCJyZXBsYWNlZCI6W10sImRyYWZ0IjoiRHJhZnQgYmVmb3JlIGh5ZHJhdGlvbiIsImludGVyYWN0aW9uIjoicGFzc2VkIn0="
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "26504aa0d361cf9ed912-1cdc97e1b03d07b0662f",
+          "file": "hydration/tabs-minimal.spec.ts",
+          "line": 4,
+          "column": 27
+        },
+        {
+          "title": "minimal hydration: package-controlled",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 463,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:42.626Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "minimal-before-interaction",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicGFja2FnZS1jb250cm9sbGVkIiwicmVwbGFjZWQiOltdLCJkcmFmdCI6IkRyYWZ0IGJlZm9yZSBoeWRyYXRpb24ifQ=="
+                    },
+                    {
+                      "name": "minimal-hydration",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicGFja2FnZS1jb250cm9sbGVkIiwicmVwbGFjZWQiOltdLCJkcmFmdCI6IkRyYWZ0IGJlZm9yZSBoeWRyYXRpb24iLCJpbnRlcmFjdGlvbiI6InBhc3NlZCJ9"
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "26504aa0d361cf9ed912-346d45c1cfe72935c6d7",
+          "file": "hydration/tabs-minimal.spec.ts",
+          "line": 4,
+          "column": 27
+        },
+        {
+          "title": "minimal hydration: package-uncontrolled",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 470,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T18:20:43.093Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "minimal-before-interaction",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicGFja2FnZS11bmNvbnRyb2xsZWQiLCJyZXBsYWNlZCI6W10sImRyYWZ0IjoiRHJhZnQgYmVmb3JlIGh5ZHJhdGlvbiJ9"
+                    },
+                    {
+                      "name": "minimal-hydration",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicGFja2FnZS11bmNvbnRyb2xsZWQiLCJyZXBsYWNlZCI6W10sImRyYWZ0IjoiRHJhZnQgYmVmb3JlIGh5ZHJhdGlvbiIsImludGVyYWN0aW9uIjoicGFzc2VkIn0="
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "26504aa0d361cf9ed912-090c3d8c3771f1e65b5d",
+          "file": "hydration/tabs-minimal.spec.ts",
+          "line": 4,
+          "column": 27
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-08T18:19:55.037Z",
+    "duration": 48594.911,
+    "expected": 90,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "command": "bun run check",
+    "exitCode": 0,
+    "seconds": 2.94
+  },
+  {
+    "command": "bun run lint",
+    "exitCode": 0,
+    "seconds": 1.3
+  },
+  {
+    "command": "bun run test",
+    "exitCode": 0,
+    "seconds": 3.13
+  },
+  {
+    "command": "bun run test:coverage",
+    "exitCode": 0,
+    "seconds": 3.55
+  },
+  {
+    "command": "bun run test:server",
+    "exitCode": 0,
+    "seconds": 0.73
+  },
+  {
+    "command": "RESULTS_FILE=docs/evidence/choices-hydration.json bun run test:hydration",
+    "exitCode": 0,
+    "seconds": 48.92
+  },
+  {
+    "command": "THEME_PORT=4403 RESULTS_FILE=docs/evidence/choices-integration.json bun run test:integration",
+    "exitCode": 0,
+    "seconds": 235.8
+  },
+  {
+    "command": "THEME_PORT=4403 RESULTS_FILE=docs/evidence/choices-e2e.json bun run test:e2e",
+    "exitCode": 0,
+    "seconds": 163.12
+  }
+]

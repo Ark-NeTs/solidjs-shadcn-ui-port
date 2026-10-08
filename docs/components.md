@@ -802,6 +802,100 @@ preview as the only way to reach important content.
 ![Dark Tooltip and Hover Card](screenshots/hints-dark.png)
 ![Narrow Tooltip and Hover Card](screenshots/hints-mobile.png)
 
+## Radio Group, Toggle and Toggle Group
+
+Open `/?choices` (append `&dark`) for native radio forms, canceled resets, external
+form ownership, controlled acceptance, pressed buttons and grouped focus.
+
+```tsx
+import { RadioGroup, RadioGroupItem } from 'shadcn-solidjs-theme/ui/radio-group';
+import { Toggle } from 'shadcn-solidjs-theme/ui/toggle';
+import { ToggleGroup, ToggleGroupItem } from 'shadcn-solidjs-theme/ui/toggle-group';
+
+function Choices() {
+  return <>
+    <RadioGroup name="delivery" defaultValue="pickup" aria-label="Delivery method" required>
+      <label><RadioGroupItem value="pickup" /> Collect in person</label>
+      <label><RadioGroupItem value="shipping" /> Ship to my address</label>
+    </RadioGroup>
+    <Toggle aria-label="Bold" variant="outline">B</Toggle>
+    <ToggleGroup type="multiple" defaultValue={['bold']} aria-label="Text styles">
+      <ToggleGroupItem value="bold">Bold</ToggleGroupItem>
+      <ToggleGroupItem value="italic">Italic</ToggleGroupItem>
+    </ToggleGroup>
+  </>;
+}
+```
+
+| Component | Contract |
+| --- | --- |
+| RadioGroup | `value`, initial `defaultValue`, `onValueChange`; `name`, `form`, `required`, `disabled`, `readonly`; optional `orientation`, `loop` (true); native div attributes/ref/class/style. Supply a group name with aria-label or aria-labelledby. |
+| RadioGroupItem | Required unique string `value`; native input attributes, `id`, ref, events, class, item disabled and aria-invalid. Wrap in a label or use Label with for/id. Group owns name/form/required/readonly/checked state. Ref targets the visible native radio. |
+| Toggle | `pressed`, initial `defaultPressed`, `onPressedChange`; native button attributes/ref/events (onChange is reserved internally); `variant` default/outline, `size` sm/default/lg. Always type button. Exported `toggleVariants` provides the same style recipe. |
+| ToggleGroup | Required `type` single/multiple; string or string-array `value`, `defaultValue`, `onValueChange` matching that type; disabled, orientation (horizontal), loop (true), rovingFocus (true), spacing (2), shared variant/size, native div attributes/ref/style/class. |
+| ToggleGroupItem | Required unique string `value`; native button attributes/ref/events, item disabled, variant/size fallback when the root does not set them. Always type button; aria-pressed exposes state in both selection modes. |
+
+All controlled callbacks request a change; the caller can reject it by retaining
+its value. Native radio activation may temporarily uncheck the old input before
+change fires, so the component restores every input to the canonical value after
+the request. Uncontrolled state starts from the initial default. Use nonempty,
+unique item values; an empty string represents no single selection. Changing a
+ToggleGroup's selection type while mounted is outside the contract.
+
+Radio Group uses real native inputs for labels, focus, required validation,
+submission and reset. Only the selected enabled input is a successful control.
+A generated name groups unnamed radios; set an explicit unique name for submitted
+fields, and do not reuse it across independent groups in the same form. Root
+disabled leaves the value intact. A missing/disabled selected item is not silently
+replaced; the host decides the new value. Readonly prevents user changes but keeps
+selection available to the form. Required does not force the owner to choose a value.
+
+Reset requests the original default after every bubbling listener can cancel it.
+Controlled rejection restores canonical inputs. The reset listener follows reactive
+`form` changes; pending work is canceled on reassociation or unmount. A nonempty
+unmatched form ID detaches the inputs; remove the prop to return to the enclosing
+form. Firefox emits a native warning for an empty form attribute, so use an unmatched
+ID for quiet detachment. Moving the root to a different form through external DOM
+operations or replacing a form with another node of the same ID is not observed.
+
+Radio arrows move focus and select, skipping disabled items. With no orientation,
+both arrow axes work; horizontal follows inherited direction and vertical uses
+Up/Down. Home/End target the first/last enabled item. Readonly arrows only move focus.
+Toggle Group arrows/Home/End move focus without selecting; Space/Enter toggles the
+focused button. Single selection can clear to an empty string; multiple selection
+uses fresh arrays. Both use the current DOM order and ignore nested groups. A removed
+item no longer owns a Tab stop, but restoring focus after removal of the actual
+focused DOM node is not implemented. `rovingFocus={false}` gives each enabled grouped
+button its ordinary Tab stop and disables group arrow handling.
+
+Caller handlers run before internal behavior; preventDefault on click or keydown
+cancels selection or navigation. Native focus/change events are normally not
+cancelable; use click cancellation or controlled ownership to reject a change.
+Kobalte Toggle ignores click cancellation internally, so this package
+supplies controlled state and rejects that library request in its adapter. No
+headless internals are exposed or patched. Toggle and Toggle Group are action-state
+buttons, not successful form controls; form reset does not reset their pressed state.
+Use Checkbox or Radio Group when native submitted selection is required.
+
+The shared semantic tokens, outline/default variants, three sizes and joined group
+borders match the sibling's core presentation. Spacing is in theme spacing units;
+zero joins adjacent borders. Logical start/end edges support RTL, and a long group
+can scroll within its available width. Classes and style override defaults;
+custom color examples preserve light/dark contrast. Reduced motion removes pressed
+button transitions. Input indicators are decorative; selection remains available
+through native/ARIA checked or pressed state. Custom invalid styling requires
+aria-invalid on the affected item.
+
+SSR and source hydration cover native values and original element reuse. No asChild,
+polymorphic rendering, toolbar-specific radio behavior, drag interaction, automatic
+focus recovery after removal, dynamic root type switching, or app data layer is
+provided. Physical assistive-technology sessions, touch devices, arbitrary
+cross-library composition and published/streaming SSR remain unverified.
+
+![Light choice controls](screenshots/choices-light.png)
+![Dark choice controls](screenshots/choices-dark.png)
+![Narrow choice controls](screenshots/choices-mobile.png)
+
 ## Acceptance evidence
 
 See the [per-component test matrix](TEST-MATRIX.md) for linked assertions,

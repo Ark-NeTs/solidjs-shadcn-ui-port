@@ -49,3 +49,9 @@ it('renders preview description IDs and native links without opening a browser l
  const html=renderToString(()=><><TooltipProvider><Tooltip defaultOpen contentId="tip-server"><TooltipTrigger aria-describedby="help">Save</TooltipTrigger><TooltipContent>Supplement</TooltipContent></Tooltip></TooltipProvider><HoverCard><HoverCardTrigger href="/profile">Profile</HoverCardTrigger><HoverCardContent forceMount>Retained profile</HoverCardContent></HoverCard></>);
  expect(html).toContain('aria-describedby="help tip-server"');expect(html).toContain('id="tip-server"');expect(html).toContain('role="tooltip"');expect(html).toContain('popover="manual"');expect(html).toContain('href="/profile"');expect(html).toContain('Retained profile');expect(html).toContain('hidden');expect(html).not.toContain('data-native-open');
 });
+
+import { RadioGroup, RadioGroupItem, Toggle, ToggleGroup, ToggleGroupItem } from '../src';
+it('renders choice values, names and pressed semantics on the server',()=>{
+ const html=renderToString(()=><><RadioGroup name="delivery" defaultValue="a" required><RadioGroupItem value="a" aria-label="Pickup"/><RadioGroupItem value="b" disabled aria-label="Shipping"/></RadioGroup><Toggle defaultPressed>Bold</Toggle><ToggleGroup type="multiple" defaultValue={['a']}><ToggleGroupItem value="a">Left</ToggleGroupItem><ToggleGroupItem value="b">Right</ToggleGroupItem></ToggleGroup></>);
+ expect(html).toContain('role="radiogroup"');expect(html).toContain('name="delivery"');expect(html).toContain('aria-checked="true"');expect(html).toContain('required');expect(html).toContain('disabled');expect(html).toContain('aria-pressed="true"');expect(html).toContain('aria-pressed="false"');expect(html).toContain('data-state="on"');
+});

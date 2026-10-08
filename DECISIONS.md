@@ -360,3 +360,44 @@ missing compiled preview colors and widths; real-browser assertions now cover th
 This increment intentionally omits the React tooltip arrow, transform-origin CSS
 variables, portal-container APIs, asChild and exit animation; the guide records
 these scope limits. No runtime dependency, patch or diagnostic suppression is added.
+
+
+## Radio and pressed-button choices (2026-10-08)
+
+Evaluate Kobalte first. Radio Group fails native default reset and emits 14
+warnings in each tested engine; Toggle Group emits five. Own these two
+implementations, but adopt the quiet standalone Toggle through its public
+per-component entry. REASONING: the library priority applies per primitive;
+rejection of other components does not justify replacing a usable Toggle.
+Its canceled-click defect is contained by supplying canonical controlled state
+and declining the library change request after a canceled caller event. No
+library patch or diagnostic filter is used. See [evaluation](KOBALTE-CHOICES.md).
+
+Native radios provide the actual label/focus/form/validity targets. One root
+owns selection and one reset subscription. REASONING: native radio activation
+may uncheck a sibling before a controlled owner accepts, so restore the entire
+group after the request. Reset waits for bubbling cancellation, and queued work
+is canceled on reassociation/disposal. Bind from the requested form ID or
+nearest enclosing form: Firefox can expose the old input.form association
+while the form attribute is being removed. Use an unmatched nonempty form ID
+to detach without Firefox's native empty-form-attribute warning.
+
+Share DOM-order navigation between radios and Toggle Group, keeping focus apart
+from selection. Radio arrows activate; grouped toggle arrows only focus.
+Root state remains canonical when an item disappears or becomes disabled.
+Toggle Group uses pressed buttons for both modes; it is not a radio form control.
+Its joined borders use logical start/end edges for RTL. Long groups can scroll
+inside their available width. No data layer, toolbar mode, asChild, library
+patch, focus restoration after focused-node removal or runtime selection-type
+switching is promised by this increment. [Guide](docs/components.md#radio-group-toggle-and-toggle-group).
+
+Focus callbacks explicitly leave the caller's reactive scope before inspecting
+item metadata. REASONING: a parent effect may focus a native item synchronously;
+those event reads must not become untracked effect reads in Solid 2.
+
+Two existing regressions blocked this batch's required checks. Forced Alert Dialog
+content checks forceMount before open state, avoiding useless subscriptions while
+always mounted. Combobox re-reveals its active option when ResizeObserver reports
+list shrinkage after floating placement, and disposes that observer with the
+active-item effect. REASONING: the original one-shot scroll could leave the last
+option below the resized viewport. No warning suppression or test relaxation.

@@ -170,3 +170,10 @@ test('hydrates preview shells and IDs before focus, dismissal, link navigation a
   await link.press('Enter');await expect(page).toHaveURL(/#hydrated-profile$/);
   await page.getByRole('button', { name: 'Dispose components' }).click();await expect(page.locator('#hydration-root')).toBeEmpty();
 });
+
+
+test('hydrates radios and pressed buttons before keyboard selection, owner updates and disposal',async({page})=>{
+ await hydratePage(page);const pickup=page.getByRole('radio',{name:'Hydrated pickup'});const shipping=page.getByRole('radio',{name:'Hydrated shipping'});await expect(pickup).toBeChecked();await pickup.focus();await pickup.press('ArrowDown');await expect(shipping).toBeFocused();await expect(shipping).toBeChecked();
+ const bold=page.getByRole('button',{name:'Hydrated bold'});await expect(bold).toHaveAttribute('aria-pressed','true');await bold.press('Space');await expect(bold).toHaveAttribute('aria-pressed','false');
+ const left=page.getByRole('button',{name:'Hydrated left'});const right=page.getByRole('button',{name:'Hydrated right'});await left.focus();await left.press('ArrowRight');await expect(right).toBeFocused();await expect(right).toHaveAttribute('aria-pressed','false');await right.press('Enter');await expect(left).toHaveAttribute('aria-pressed','true');await expect(right).toHaveAttribute('aria-pressed','true');await page.getByRole('button',{name:'Dispose components'}).click();await expect(page.locator('#hydration-root')).toBeEmpty();
+});

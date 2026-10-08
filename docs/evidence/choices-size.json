@@ -1,0 +1,15 @@
+{
+  "scope": "Whole library JS before/after this batch; includes all three components and the Kobalte adapter and the two verification-blocking fixes, not isolated Kobalte transfer cost. Excludes external peer runtime, CSS and fonts.",
+  "before": {
+    "bytes": 99109,
+    "gzip": 25557
+  },
+  "after": {
+    "bytes": 116807,
+    "gzip": 29433
+  },
+  "delta": {
+    "bytes": 17698,
+    "gzip": 3876
+  }
+}

@@ -1,9 +1,9 @@
 # shadcn/ui → Solid 2 component map
 
 **Implemented (2026-10-08):** Button, Badge, Card, Separator, Skeleton, Input,
-Textarea, Label, Checkbox, Switch, Tabs, Popover, Alert Dialog, Combobox, Accordion, Collapsible, Tooltip and Hover Card now have owned Solid 2 source, documentation and passing unit, browser and built-library tests.
-See [preview delivery](docs/HINTS-DELIVERY.md), [disclosure delivery](docs/DISCLOSURES-DELIVERY.md), [COMBOBOX-DELIVERY.md](COMBOBOX-DELIVERY.md), [OVERLAYS-DELIVERY.md](OVERLAYS-DELIVERY.md), [TOGGLES-DELIVERY.md](TOGGLES-DELIVERY.md), [FORM-FIELDS-DELIVERY.md](FORM-FIELDS-DELIVERY.md) and the earlier
-[FOUNDATION-DELIVERY.md](FOUNDATION-DELIVERY.md). These use native HTML;
+Textarea, Label, Checkbox, Switch, Tabs, Popover, Alert Dialog, Combobox, Accordion, Collapsible, Tooltip, Hover Card, Radio Group, Toggle and Toggle Group now have Solid 2 source, documentation and passing unit, browser and built-library tests.
+See [choice delivery](docs/CHOICES-DELIVERY.md), [preview delivery](docs/HINTS-DELIVERY.md), [disclosure delivery](docs/DISCLOSURES-DELIVERY.md), [COMBOBOX-DELIVERY.md](COMBOBOX-DELIVERY.md), [OVERLAYS-DELIVERY.md](OVERLAYS-DELIVERY.md), [TOGGLES-DELIVERY.md](TOGGLES-DELIVERY.md), [FORM-FIELDS-DELIVERY.md](FORM-FIELDS-DELIVERY.md) and the earlier
+[FOUNDATION-DELIVERY.md](FOUNDATION-DELIVERY.md). These use native HTML; Toggle wraps Kobalte after its scoped acceptance;
 headless-library findings below remain relevant to later primitives.
 
 Assessed 2026-10-07 against `@kobalte/core@2.0.0-alpha.2`.
@@ -74,9 +74,9 @@ No row currently selects corvu; alternatives are evaluated below.
 
 | Route | Entries |
 | --- | ---: |
-| Matching Kobalte primitive | 26 |
+| Matching Kobalte primitive | 24 |
 | Owned composition | 9 |
-| Native markup/CSS | 23 |
+| Native markup/CSS | 25 |
 | Unresolved behavior/engine gap | 7 |
 | Total | 65 |
 
@@ -127,7 +127,7 @@ No row currently selects corvu; alternatives are evaluated below.
 | [Popover](https://ui.shadcn.com/docs/components/popover) | N | `popover` evaluated first; native top layer + Floating UI chosen | Implemented trigger/anchor/content, modal choice, collision placement, controlled rejection and focus restoration. See KOBALTE-OVERLAYS.md and OVERLAYS-DELIVERY.md. |
 | [Progress](https://ui.shadcn.com/docs/components/progress) | K | `progress` | Determinate/indeterminate values, accessible text and themed indicator. |
 | [Questionnaire](https://ui.shadcn.com/docs/components/questionnaire) | C | `radio-group`, `checkbox`, `text-field`, `button`, `progress`; evaluate `steps` | Own ordered answers/navigation/validation, freeform and skipped answers, reset/resume, shortcuts and controlled state. No ready-made questionnaire exists. |
-| [Radio Group](https://ui.shadcn.com/docs/components/radio-group) | K | `radio-group` | Arrow navigation, required/disabled, controlled value and form submission. |
+| [Radio Group](https://ui.shadcn.com/docs/components/radio-group) | N | `radio-group` evaluated first; owned native radios | Default reset and diagnostics fail on alpha.2/rc.13. Native forms, controlled rejection, required/disabled/readonly, reset ownership, arrows and SSR/hydration delivered. See KOBALTE-CHOICES.md and docs/CHOICES-DELIVERY.md. |
 | [Resizable](https://ui.shadcn.com/docs/components/resizable) | K | `resizable` | Drag/keyboard sizing, intersections and collapse exist; adapt units, public refs and persisted layouts. |
 | [Scroll Area](https://ui.shadcn.com/docs/components/scroll-area) | G | No custom scrollbar primitive | Need viewport/track/thumb/corner behavior, both axes, dragging, RTL and resize observation. Native overflow alone is not full parity. |
 | [Select](https://ui.shadcn.com/docs/components/select) | K | `select` | Trigger/value/options, groups, portal, keyboard/typeahead and native form integration. |
@@ -142,8 +142,8 @@ No row currently selects corvu; alternatives are evaluated below.
 | [Tabs](https://ui.shadcn.com/docs/components/tabs) | N | `tabs` evaluated first; owned signal/native button composition | Implemented automatic/manual activation, RTL/orientation, disabled tabs, controlled selection and panel mounting. See KOBALTE-OVERLAYS.md and OVERLAYS-DELIVERY.md. |
 | [Textarea](https://ui.shadcn.com/docs/components/textarea) | N | Native textarea; `text-field` evaluated for field composition | Implemented and tested: native multiline editing, controlled drafts, reset, sizing and label association without context. See FORM-FIELDS-DELIVERY.md. |
 | [Toast](https://ui.shadcn.com/docs/components/toast) | K | `toast` | Region/queue, dismiss/actions, duration/pause, announcements, swipe and positioning. |
-| [Toggle](https://ui.shadcn.com/docs/components/toggle) | K | `toggle-button` | Pressed/unpressed/disabled, variants and accessible name. |
-| [Toggle Group](https://ui.shadcn.com/docs/components/toggle-group) | K | `toggle-group` | Single/multiple selection, roving focus, orientation and RTL. |
+| [Toggle](https://ui.shadcn.com/docs/components/toggle) | K | `toggle-button` adopted with public-API adapter | Quiet activation/SSR on alpha.2/rc.13. Adapter preserves canceled clicks and canonical pressed state; variants, keyboard, refs and hydration verified. See KOBALTE-CHOICES.md and docs/CHOICES-DELIVERY.md. |
+| [Toggle Group](https://ui.shadcn.com/docs/components/toggle-group) | N | `toggle-group` evaluated first; owned native buttons | Alpha.2/rc.13 emits diagnostics. Single/multiple selection, roving focus, DOM order, orientation/RTL, disabled state and shared styling delivered. See KOBALTE-CHOICES.md and docs/CHOICES-DELIVERY.md. |
 | [Tooltip](https://ui.shadcn.com/docs/components/tooltip) | N | `tooltip` evaluated first; owned native preview | Alpha.2/rc.13 emits diagnostics. Delivered provider delay/skip window, hover/focus, Escape, description IDs and collision placement; see KOBALTE-HINTS.md and docs/HINTS-DELIVERY.md. |
 | [Typography](https://ui.shadcn.com/docs/components/typography) | N | Semantic elements + classes | Heading/list/prose/code styles, hierarchy, long content and theme tokens. |
 | [Sonner](https://ui.shadcn.com/docs/components/radix/sonner) | C | `toast` + owned imperative facade | Preserve Toaster/notification use cases, promise updates, IDs, variants and stacking; no claim of automatic Sonner API equivalence. |

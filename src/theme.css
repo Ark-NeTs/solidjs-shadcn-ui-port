@@ -165,3 +165,7 @@
 
 /* Native previews must remain hidden even when display utility classes are applied. */
 [data-slot="tooltip-content"][hidden], [data-slot="hover-card-content"][hidden] { display: none; }
+/* Pressed buttons respect reduced motion without changing their selection semantics. */
+@media (prefers-reduced-motion: reduce) {
+  [data-slot="toggle"], [data-slot="toggle-group-item"] { transition: none; }
+}

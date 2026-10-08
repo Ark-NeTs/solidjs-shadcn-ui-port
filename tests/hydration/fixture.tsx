@@ -18,6 +18,9 @@ import { Combobox, ComboboxInput, ComboboxContent, ComboboxList, ComboboxItem } 
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from 'shadcn-solidjs-theme/ui/accordion';
 import { Collapsible, CollapsibleTrigger, CollapsibleContent } from 'shadcn-solidjs-theme/ui/collapsible';
 
+import { RadioGroup, RadioGroupItem } from 'shadcn-solidjs-theme/ui/radio-group';
+import { Toggle } from 'shadcn-solidjs-theme/ui/toggle';
+import { ToggleGroup, ToggleGroupItem } from 'shadcn-solidjs-theme/ui/toggle-group';
 import { Tooltip, TooltipTrigger, TooltipContent } from 'shadcn-solidjs-theme/ui/tooltip';
 import { HoverCard, HoverCardTrigger, HoverCardContent } from 'shadcn-solidjs-theme/ui/hover-card';
 
@@ -70,6 +73,9 @@ export function HydrationFixture(props: { initiallyOpen: false | 'popover' | 'al
     <Tooltip contentId={`hydrated-tip-${suffix()}`}><TooltipTrigger>Hydrated help</TooltipTrigger><TooltipContent forceMount>Hydrated description</TooltipContent></Tooltip>
     <HoverCard contentId={`hydrated-card-${suffix()}`} openDelay={0}><HoverCardTrigger href="#hydrated-profile">Hydrated profile</HoverCardTrigger><HoverCardContent forceMount><a href="#hydrated-profile">View hydrated profile</a></HoverCardContent></HoverCard>
     <p id="hydrated-profile">Hydrated destination</p>
+    <RadioGroup aria-label="Hydrated delivery" defaultValue="a"><label><RadioGroupItem value="a"/>Hydrated pickup</label><label><RadioGroupItem value="b"/>Hydrated shipping</label></RadioGroup>
+    <Toggle defaultPressed>Hydrated bold</Toggle>
+    <ToggleGroup type="multiple" aria-label="Hydrated styles" defaultValue={["a"]}><ToggleGroupItem value="a">Hydrated left</ToggleGroupItem><ToggleGroupItem value="b">Hydrated right</ToggleGroupItem></ToggleGroup>
     <output data-testid="confirmed">{confirmed()}</output>
   </main>;
 }
