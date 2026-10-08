@@ -1,0 +1,601 @@
+{
+  "config": {
+    "argv": [
+      "/Users/arktas/.asdf/installs/nodejs/25.3.0/bin/node",
+      "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/node_modules/.bin/playwright",
+      "test",
+      "tests/integration/tabs-lifecycle.spec.ts"
+    ],
+    "configFile": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/playwright.config.ts",
+    "rootDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "integration/**/*.spec.ts",
+          "e2e/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [
+          "**/visual.spec.ts"
+        ],
+        "testMatch": [
+          "integration/**/*.spec.ts",
+          "e2e/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "docs/evidence/tabs-tab1-focused.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": {
+      "command": "bun run dev",
+      "url": "http://127.0.0.1:4403",
+      "reuseExistingServer": false,
+      "timeout": 60000
+    }
+  },
+  "suites": [
+    {
+      "title": "integration/tabs-lifecycle.spec.ts",
+      "file": "integration/tabs-lifecycle.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "automatic Tabs recover focus when the focused trigger is removed",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 606,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T08:06:26.439Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9d481056cb3fa0b463a7-2d08639776fa20a66b5b",
+          "file": "tabs-lifecycle.ts",
+          "line": 25,
+          "column": 5
+        },
+        {
+          "title": "automatic Tabs preserve the focused node across keyed reordering and navigate the new DOM order",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 345,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T08:06:27.330Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9d481056cb3fa0b463a7-f2e11579c86f3725d011",
+          "file": "tabs-lifecycle.ts",
+          "line": 41,
+          "column": 5
+        },
+        {
+          "title": "manual Tabs recover focus when the focused trigger is removed",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 306,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T08:06:27.680Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9d481056cb3fa0b463a7-a833be659b62a6558003",
+          "file": "tabs-lifecycle.ts",
+          "line": 25,
+          "column": 5
+        },
+        {
+          "title": "manual Tabs preserve the focused node across keyed reordering and navigate the new DOM order",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 357,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T08:06:27.992Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9d481056cb3fa0b463a7-0a76273c6f2c48edcf9a",
+          "file": "tabs-lifecycle.ts",
+          "line": 41,
+          "column": 5
+        },
+        {
+          "title": "force-mounted panels preserve draft nodes while hidden and lazy panels dispose their drafts",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 543,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T08:06:28.358Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9d481056cb3fa0b463a7-52dd056aa58a43f1b70f",
+          "file": "tabs-lifecycle.ts",
+          "line": 65,
+          "column": 3
+        },
+        {
+          "title": "external removal and reordering preserve focus outside the tablist",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 407,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T08:06:28.910Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "external-focus",
+                      "contentType": "application/json",
+                      "body": "eyJhY3RpdmUiOiI8YnV0dG9uIGRhdGEtdmFsdWU9XCJvdmVydmlld1wiIGlkPVwidGFicy1jbC0wLW92ZXJ2aWV3LXRyaWdnZXJcIiB0eXBlPVwiYnV0dG9uXCIgcm9sZT1cInRhYlwiIGRhdGEtc2xvdD1cInRhYnMtdHJpZ2dlclwiIGRhdGEtc3RhdGU9XCJhY3RpdmVcIiBhcmlhLXNlbGVjdGVkPVwidHJ1ZVwiIHRhYmluZGV4PVwiMFwiIGNsYXNzPVwicmVsYXRpdmUgaW5saW5lLWZsZXggaC1bY2FsYygxMDAlLTFweCldIGZsZXgtMSBpdGVtcy1jZW50ZXIganVzdGlmeS1jZW50ZXIgZ2FwLTEuNSByb3VuZGVkLW1kIGJvcmRlciBib3JkZXItdHJhbnNwYXJlbnQgcHgtMS41IHB5LTAuNSB0ZXh0LXNtIGZvbnQtbWVkaXVtIHdoaXRlc3BhY2Utbm93cmFwIHRleHQtZm9yZWdyb3VuZC82MCB0cmFuc2l0aW9uLWFsbCBncm91cC1kYXRhLXZlcnRpY2FsL3RhYnM6dy1mdWxsIGdyb3VwLWRhdGEtdmVydGljYWwvdGFiczpqdXN0aWZ5LXN0YXJ0IGhvdmVyOnRleHQtZm9yZWdyb3VuZCBmb2N1cy12aXNpYmxlOmJvcmRlci1yaW5nIGZvY3VzLXZpc2libGU6cmluZy1bM3B4XSBmb2N1cy12aXNpYmxlOnJpbmctcmluZy81MCBmb2N1cy12aXNpYmxlOm91dGxpbmUtMSBmb2N1cy12aXNpYmxlOm91dGxpbmUtcmluZyBkaXNhYmxlZDpwb2ludGVyLWV2ZW50cy1ub25lIGRpc2FibGVkOm9wYWNpdHktNTAgaGFzLWRhdGEtW2ljb249aW5saW5lLWVuZF06cHItMSBoYXMtZGF0YS1baWNvbj1pbmxpbmUtc3RhcnRdOnBsLTEgZGFyazp0ZXh0LW11dGVkLWZvcmVncm91bmQgZGFyazpob3Zlcjp0ZXh0LWZvcmVncm91bmQgZ3JvdXAtZGF0YS1bdmFyaWFudD1kZWZhdWx0XS90YWJzLWxpc3Q6ZGF0YS1hY3RpdmU6c2hhZG93LXNtIGdyb3VwLWRhdGEtW3ZhcmlhbnQ9bGluZV0vdGFicy1saXN0OmRhdGEtYWN0aXZlOnNoYWRvdy1ub25lIFsmYW1wO19zdmddOnBvaW50ZXItZXZlbnRzLW5vbmUgWyZhbXA7X3N2Z106c2hyaW5rLTAgWyZhbXA7X3N2Zzpub3QoW2NsYXNzKj0nc2l6ZS0nXSldOnNpemUtNCBncm91cC1kYXRhLVt2YXJpYW50PWxpbmVdL3RhYnMtbGlzdDpiZy10cmFuc3BhcmVudCBncm91cC1kYXRhLVt2YXJpYW50PWxpbmVdL3RhYnMtbGlzdDpkYXRhLWFjdGl2ZTpiZy10cmFuc3BhcmVudCBkYXJrOmdyb3VwLWRhdGEtW3ZhcmlhbnQ9bGluZV0vdGFicy1saXN0OmRhdGEtYWN0aXZlOmJvcmRlci10cmFuc3BhcmVudCBkYXJrOmdyb3VwLWRhdGEtW3ZhcmlhbnQ9bGluZV0vdGFicy1saXN0OmRhdGEtYWN0aXZlOmJnLXRyYW5zcGFyZW50IGRhdGEtYWN0aXZlOmJnLWJhY2tncm91bmQgZGF0YS1hY3RpdmU6dGV4dC1mb3JlZ3JvdW5kIGRhcms6ZGF0YS1hY3RpdmU6Ym9yZGVyLWlucHV0IGRhcms6ZGF0YS1hY3RpdmU6YmctaW5wdXQvMzAgZGFyazpkYXRhLWFjdGl2ZTp0ZXh0LWZvcmVncm91bmQgYWZ0ZXI6YWJzb2x1dGUgYWZ0ZXI6YmctZm9yZWdyb3VuZCBhZnRlcjpvcGFjaXR5LTAgYWZ0ZXI6dHJhbnNpdGlvbi1vcGFjaXR5IGdyb3VwLWRhdGEtaG9yaXpvbnRhbC90YWJzOmFmdGVyOmluc2V0LXgtMCBncm91cC1kYXRhLWhvcml6b250YWwvdGFiczphZnRlcjpib3R0b20tWy01cHhdIGdyb3VwLWRhdGEtaG9yaXpvbnRhbC90YWJzOmFmdGVyOmgtMC41IGdyb3VwLWRhdGEtdmVydGljYWwvdGFiczphZnRlcjppbnNldC15LTAgZ3JvdXAtZGF0YS12ZXJ0aWNhbC90YWJzOmFmdGVyOi1yaWdodC0xIGdyb3VwLWRhdGEtdmVydGljYWwvdGFiczphZnRlcjp3LTAuNSBncm91cC1kYXRhLVt2YXJpYW50PWxpbmVdL3RhYnMtbGlzdDpkYXRhLWFjdGl2ZTphZnRlcjpvcGFjaXR5LTEwMFwiIGFyaWEtY29udHJvbHM9XCJ0YWJzLWNsLTAtb3ZlcnZpZXctY29udGVudFwiIGRhdGEtYWN0aXZlPVwiXCI+T3ZlcnZpZXc8L2J1dHRvbj4iLCJmb2N1c2VkIjp0cnVlLCJ0YWJzIjpbIjxidXR0b24gZGF0YS12YWx1ZT1cInNldHRpbmdzXCIgaWQ9XCJ0YWJzLWNsLTAtc2V0dGluZ3MtdHJpZ2dlclwiIHR5cGU9XCJidXR0b25cIiByb2xlPVwidGFiXCIgZGF0YS1zbG90PVwidGFicy10cmlnZ2VyXCIgZGF0YS1zdGF0ZT1cImluYWN0aXZlXCIgYXJpYS1zZWxlY3RlZD1cImZhbHNlXCIgdGFiaW5kZXg9XCItMVwiIGNsYXNzPVwicmVsYXRpdmUgaW5saW5lLWZsZXggaC1bY2FsYygxMDAlLTFweCldIGZsZXgtMSBpdGVtcy1jZW50ZXIganVzdGlmeS1jZW50ZXIgZ2FwLTEuNSByb3VuZGVkLW1kIGJvcmRlciBib3JkZXItdHJhbnNwYXJlbnQgcHgtMS41IHB5LTAuNSB0ZXh0LXNtIGZvbnQtbWVkaXVtIHdoaXRlc3BhY2Utbm93cmFwIHRleHQtZm9yZWdyb3VuZC82MCB0cmFuc2l0aW9uLWFsbCBncm91cC1kYXRhLXZlcnRpY2FsL3RhYnM6dy1mdWxsIGdyb3VwLWRhdGEtdmVydGljYWwvdGFiczpqdXN0aWZ5LXN0YXJ0IGhvdmVyOnRleHQtZm9yZWdyb3VuZCBmb2N1cy12aXNpYmxlOmJvcmRlci1yaW5nIGZvY3VzLXZpc2libGU6cmluZy1bM3B4XSBmb2N1cy12aXNpYmxlOnJpbmctcmluZy81MCBmb2N1cy12aXNpYmxlOm91dGxpbmUtMSBmb2N1cy12aXNpYmxlOm91dGxpbmUtcmluZyBkaXNhYmxlZDpwb2ludGVyLWV2ZW50cy1ub25lIGRpc2FibGVkOm9wYWNpdHktNTAgaGFzLWRhdGEtW2ljb249aW5saW5lLWVuZF06cHItMSBoYXMtZGF0YS1baWNvbj1pbmxpbmUtc3RhcnRdOnBsLTEgZGFyazp0ZXh0LW11dGVkLWZvcmVncm91bmQgZGFyazpob3Zlcjp0ZXh0LWZvcmVncm91bmQgZ3JvdXAtZGF0YS1bdmFyaWFudD1kZWZhdWx0XS90YWJzLWxpc3Q6ZGF0YS1hY3RpdmU6c2hhZG93LXNtIGdyb3VwLWRhdGEtW3ZhcmlhbnQ9bGluZV0vdGFicy1saXN0OmRhdGEtYWN0aXZlOnNoYWRvdy1ub25lIFsmYW1wO19zdmddOnBvaW50ZXItZXZlbnRzLW5vbmUgWyZhbXA7X3N2Z106c2hyaW5rLTAgWyZhbXA7X3N2Zzpub3QoW2NsYXNzKj0nc2l6ZS0nXSldOnNpemUtNCBncm91cC1kYXRhLVt2YXJpYW50PWxpbmVdL3RhYnMtbGlzdDpiZy10cmFuc3BhcmVudCBncm91cC1kYXRhLVt2YXJpYW50PWxpbmVdL3RhYnMtbGlzdDpkYXRhLWFjdGl2ZTpiZy10cmFuc3BhcmVudCBkYXJrOmdyb3VwLWRhdGEtW3ZhcmlhbnQ9bGluZV0vdGFicy1saXN0OmRhdGEtYWN0aXZlOmJvcmRlci10cmFuc3BhcmVudCBkYXJrOmdyb3VwLWRhdGEtW3ZhcmlhbnQ9bGluZV0vdGFicy1saXN0OmRhdGEtYWN0aXZlOmJnLXRyYW5zcGFyZW50IGRhdGEtYWN0aXZlOmJnLWJhY2tncm91bmQgZGF0YS1hY3RpdmU6dGV4dC1mb3JlZ3JvdW5kIGRhcms6ZGF0YS1hY3RpdmU6Ym9yZGVyLWlucHV0IGRhcms6ZGF0YS1hY3RpdmU6YmctaW5wdXQvMzAgZGFyazpkYXRhLWFjdGl2ZTp0ZXh0LWZvcmVncm91bmQgYWZ0ZXI6YWJzb2x1dGUgYWZ0ZXI6YmctZm9yZWdyb3VuZCBhZnRlcjpvcGFjaXR5LTAgYWZ0ZXI6dHJhbnNpdGlvbi1vcGFjaXR5IGdyb3VwLWRhdGEtaG9yaXpvbnRhbC90YWJzOmFmdGVyOmluc2V0LXgtMCBncm91cC1kYXRhLWhvcml6b250YWwvdGFiczphZnRlcjpib3R0b20tWy01cHhdIGdyb3VwLWRhdGEtaG9yaXpvbnRhbC90YWJzOmFmdGVyOmgtMC41IGdyb3VwLWRhdGEtdmVydGljYWwvdGFiczphZnRlcjppbnNldC15LTAgZ3JvdXAtZGF0YS12ZXJ0aWNhbC90YWJzOmFmdGVyOi1yaWdodC0xIGdyb3VwLWRhdGEtdmVydGljYWwvdGFiczphZnRlcjp3LTAuNSBncm91cC1kYXRhLVt2YXJpYW50PWxpbmVdL3RhYnMtbGlzdDpkYXRhLWFjdGl2ZTphZnRlcjpvcGFjaXR5LTEwMFwiIGFyaWEtY29udHJvbHM9XCJ0YWJzLWNsLTAtc2V0dGluZ3MtY29udGVudFwiPlNldHRpbmdzPC9idXR0b24+IiwiPGJ1dHRvbiBkYXRhLXZhbHVlPVwibG9ja2VkXCIgZGlzYWJsZWQ9XCJcIiBpZD1cInRhYnMtY2wtMC1sb2NrZWQtdHJpZ2dlclwiIHR5cGU9XCJidXR0b25cIiByb2xlPVwidGFiXCIgZGF0YS1zbG90PVwidGFicy10cmlnZ2VyXCIgZGF0YS1zdGF0ZT1cImluYWN0aXZlXCIgYXJpYS1zZWxlY3RlZD1cImZhbHNlXCIgdGFiaW5kZXg9XCItMVwiIGNsYXNzPVwicmVsYXRpdmUgaW5saW5lLWZsZXggaC1bY2FsYygxMDAlLTFweCldIGZsZXgtMSBpdGVtcy1jZW50ZXIganVzdGlmeS1jZW50ZXIgZ2FwLTEuNSByb3VuZGVkLW1kIGJvcmRlciBib3JkZXItdHJhbnNwYXJlbnQgcHgtMS41IHB5LTAuNSB0ZXh0LXNtIGZvbnQtbWVkaXVtIHdoaXRlc3BhY2Utbm93cmFwIHRleHQtZm9yZWdyb3VuZC82MCB0cmFuc2l0aW9uLWFsbCBncm91cC1kYXRhLXZlcnRpY2FsL3RhYnM6dy1mdWxsIGdyb3VwLWRhdGEtdmVydGljYWwvdGFiczpqdXN0aWZ5LXN0YXJ0IGhvdmVyOnRleHQtZm9yZWdyb3VuZCBmb2N1cy12aXNpYmxlOmJvcmRlci1yaW5nIGZvY3VzLXZpc2libGU6cmluZy1bM3B4XSBmb2N1cy12aXNpYmxlOnJpbmctcmluZy81MCBmb2N1cy12aXNpYmxlOm91dGxpbmUtMSBmb2N1cy12aXNpYmxlOm91dGxpbmUtcmluZyBkaXNhYmxlZDpwb2ludGVyLWV2ZW50cy1ub25lIGRpc2FibGVkOm9wYWNpdHktNTAgaGFzLWRhdGEtW2ljb249aW5saW5lLWVuZF06cHItMSBoYXMtZGF0YS1baWNvbj1pbmxpbmUtc3RhcnRdOnBsLTEgZGFyazp0ZXh0LW11dGVkLWZvcmVncm91bmQgZGFyazpob3Zlcjp0ZXh0LWZvcmVncm91bmQgZ3JvdXAtZGF0YS1bdmFyaWFudD1kZWZhdWx0XS90YWJzLWxpc3Q6ZGF0YS1hY3RpdmU6c2hhZG93LXNtIGdyb3VwLWRhdGEtW3ZhcmlhbnQ9bGluZV0vdGFicy1saXN0OmRhdGEtYWN0aXZlOnNoYWRvdy1ub25lIFsmYW1wO19zdmddOnBvaW50ZXItZXZlbnRzLW5vbmUgWyZhbXA7X3N2Z106c2hyaW5rLTAgWyZhbXA7X3N2Zzpub3QoW2NsYXNzKj0nc2l6ZS0nXSldOnNpemUtNCBncm91cC1kYXRhLVt2YXJpYW50PWxpbmVdL3RhYnMtbGlzdDpiZy10cmFuc3BhcmVudCBncm91cC1kYXRhLVt2YXJpYW50PWxpbmVdL3RhYnMtbGlzdDpkYXRhLWFjdGl2ZTpiZy10cmFuc3BhcmVudCBkYXJrOmdyb3VwLWRhdGEtW3ZhcmlhbnQ9bGluZV0vdGFicy1saXN0OmRhdGEtYWN0aXZlOmJvcmRlci10cmFuc3BhcmVudCBkYXJrOmdyb3VwLWRhdGEtW3ZhcmlhbnQ9bGluZV0vdGFicy1saXN0OmRhdGEtYWN0aXZlOmJnLXRyYW5zcGFyZW50IGRhdGEtYWN0aXZlOmJnLWJhY2tncm91bmQgZGF0YS1hY3RpdmU6dGV4dC1mb3JlZ3JvdW5kIGRhcms6ZGF0YS1hY3RpdmU6Ym9yZGVyLWlucHV0IGRhcms6ZGF0YS1hY3RpdmU6YmctaW5wdXQvMzAgZGFyazpkYXRhLWFjdGl2ZTp0ZXh0LWZvcmVncm91bmQgYWZ0ZXI6YWJzb2x1dGUgYWZ0ZXI6YmctZm9yZWdyb3VuZCBhZnRlcjpvcGFjaXR5LTAgYWZ0ZXI6dHJhbnNpdGlvbi1vcGFjaXR5IGdyb3VwLWRhdGEtaG9yaXpvbnRhbC90YWJzOmFmdGVyOmluc2V0LXgtMCBncm91cC1kYXRhLWhvcml6b250YWwvdGFiczphZnRlcjpib3R0b20tWy01cHhdIGdyb3VwLWRhdGEtaG9yaXpvbnRhbC90YWJzOmFmdGVyOmgtMC41IGdyb3VwLWRhdGEtdmVydGljYWwvdGFiczphZnRlcjppbnNldC15LTAgZ3JvdXAtZGF0YS12ZXJ0aWNhbC90YWJzOmFmdGVyOi1yaWdodC0xIGdyb3VwLWRhdGEtdmVydGljYWwvdGFiczphZnRlcjp3LTAuNSBncm91cC1kYXRhLVt2YXJpYW50PWxpbmVdL3RhYnMtbGlzdDpkYXRhLWFjdGl2ZTphZnRlcjpvcGFjaXR5LTEwMFwiPkxvY2tlZDwvYnV0dG9uPiIsIjxidXR0b24gZGF0YS12YWx1ZT1cIm92ZXJ2aWV3XCIgaWQ9XCJ0YWJzLWNsLTAtb3ZlcnZpZXctdHJpZ2dlclwiIHR5cGU9XCJidXR0b25cIiByb2xlPVwidGFiXCIgZGF0YS1zbG90PVwidGFicy10cmlnZ2VyXCIgZGF0YS1zdGF0ZT1cImFjdGl2ZVwiIGFyaWEtc2VsZWN0ZWQ9XCJ0cnVlXCIgdGFiaW5kZXg9XCIwXCIgY2xhc3M9XCJyZWxhdGl2ZSBpbmxpbmUtZmxleCBoLVtjYWxjKDEwMCUtMXB4KV0gZmxleC0xIGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWNlbnRlciBnYXAtMS41IHJvdW5kZWQtbWQgYm9yZGVyIGJvcmRlci10cmFuc3BhcmVudCBweC0xLjUgcHktMC41IHRleHQtc20gZm9udC1tZWRpdW0gd2hpdGVzcGFjZS1ub3dyYXAgdGV4dC1mb3JlZ3JvdW5kLzYwIHRyYW5zaXRpb24tYWxsIGdyb3VwLWRhdGEtdmVydGljYWwvdGFiczp3LWZ1bGwgZ3JvdXAtZGF0YS12ZXJ0aWNhbC90YWJzOmp1c3RpZnktc3RhcnQgaG92ZXI6dGV4dC1mb3JlZ3JvdW5kIGZvY3VzLXZpc2libGU6Ym9yZGVyLXJpbmcgZm9jdXMtdmlzaWJsZTpyaW5nLVszcHhdIGZvY3VzLXZpc2libGU6cmluZy1yaW5nLzUwIGZvY3VzLXZpc2libGU6b3V0bGluZS0xIGZvY3VzLXZpc2libGU6b3V0bGluZS1yaW5nIGRpc2FibGVkOnBvaW50ZXItZXZlbnRzLW5vbmUgZGlzYWJsZWQ6b3BhY2l0eS01MCBoYXMtZGF0YS1baWNvbj1pbmxpbmUtZW5kXTpwci0xIGhhcy1kYXRhLVtpY29uPWlubGluZS1zdGFydF06cGwtMSBkYXJrOnRleHQtbXV0ZWQtZm9yZWdyb3VuZCBkYXJrOmhvdmVyOnRleHQtZm9yZWdyb3VuZCBncm91cC1kYXRhLVt2YXJpYW50PWRlZmF1bHRdL3RhYnMtbGlzdDpkYXRhLWFjdGl2ZTpzaGFkb3ctc20gZ3JvdXAtZGF0YS1bdmFyaWFudD1saW5lXS90YWJzLWxpc3Q6ZGF0YS1hY3RpdmU6c2hhZG93LW5vbmUgWyZhbXA7X3N2Z106cG9pbnRlci1ldmVudHMtbm9uZSBbJmFtcDtfc3ZnXTpzaHJpbmstMCBbJmFtcDtfc3ZnOm5vdChbY2xhc3MqPSdzaXplLSddKV06c2l6ZS00IGdyb3VwLWRhdGEtW3ZhcmlhbnQ9bGluZV0vdGFicy1saXN0OmJnLXRyYW5zcGFyZW50IGdyb3VwLWRhdGEtW3ZhcmlhbnQ9bGluZV0vdGFicy1saXN0OmRhdGEtYWN0aXZlOmJnLXRyYW5zcGFyZW50IGRhcms6Z3JvdXAtZGF0YS1bdmFyaWFudD1saW5lXS90YWJzLWxpc3Q6ZGF0YS1hY3RpdmU6Ym9yZGVyLXRyYW5zcGFyZW50IGRhcms6Z3JvdXAtZGF0YS1bdmFyaWFudD1saW5lXS90YWJzLWxpc3Q6ZGF0YS1hY3RpdmU6YmctdHJhbnNwYXJlbnQgZGF0YS1hY3RpdmU6YmctYmFja2dyb3VuZCBkYXRhLWFjdGl2ZTp0ZXh0LWZvcmVncm91bmQgZGFyazpkYXRhLWFjdGl2ZTpib3JkZXItaW5wdXQgZGFyazpkYXRhLWFjdGl2ZTpiZy1pbnB1dC8zMCBkYXJrOmRhdGEtYWN0aXZlOnRleHQtZm9yZWdyb3VuZCBhZnRlcjphYnNvbHV0ZSBhZnRlcjpiZy1mb3JlZ3JvdW5kIGFmdGVyOm9wYWNpdHktMCBhZnRlcjp0cmFuc2l0aW9uLW9wYWNpdHkgZ3JvdXAtZGF0YS1ob3Jpem9udGFsL3RhYnM6YWZ0ZXI6aW5zZXQteC0wIGdyb3VwLWRhdGEtaG9yaXpvbnRhbC90YWJzOmFmdGVyOmJvdHRvbS1bLTVweF0gZ3JvdXAtZGF0YS1ob3Jpem9udGFsL3RhYnM6YWZ0ZXI6aC0wLjUgZ3JvdXAtZGF0YS12ZXJ0aWNhbC90YWJzOmFmdGVyOmluc2V0LXktMCBncm91cC1kYXRhLXZlcnRpY2FsL3RhYnM6YWZ0ZXI6LXJpZ2h0LTEgZ3JvdXAtZGF0YS12ZXJ0aWNhbC90YWJzOmFmdGVyOnctMC41IGdyb3VwLWRhdGEtW3ZhcmlhbnQ9bGluZV0vdGFicy1saXN0OmRhdGEtYWN0aXZlOmFmdGVyOm9wYWNpdHktMTAwXCIgYXJpYS1jb250cm9scz1cInRhYnMtY2wtMC1vdmVydmlldy1jb250ZW50XCIgZGF0YS1hY3RpdmU9XCJcIj5PdmVydmlldzwvYnV0dG9uPiJdfQ=="
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9d481056cb3fa0b463a7-2230c9d54eebf3e8ad68",
+          "file": "tabs-lifecycle.ts",
+          "line": 93,
+          "column": 3
+        },
+        {
+          "title": "automatic Tabs recover focus when the focused trigger is removed",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1139,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T08:06:29.582Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9d481056cb3fa0b463a7-41670fdb191ad54d3d1d",
+          "file": "tabs-lifecycle.ts",
+          "line": 25,
+          "column": 5
+        },
+        {
+          "title": "automatic Tabs preserve the focused node across keyed reordering and navigate the new DOM order",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 557,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T08:06:31.387Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9d481056cb3fa0b463a7-b904eb45c9a3270cb79c",
+          "file": "tabs-lifecycle.ts",
+          "line": 41,
+          "column": 5
+        },
+        {
+          "title": "manual Tabs recover focus when the focused trigger is removed",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 519,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T08:06:31.950Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9d481056cb3fa0b463a7-f7fba4fb7da8789b2180",
+          "file": "tabs-lifecycle.ts",
+          "line": 25,
+          "column": 5
+        },
+        {
+          "title": "manual Tabs preserve the focused node across keyed reordering and navigate the new DOM order",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 541,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T08:06:32.475Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9d481056cb3fa0b463a7-ad8e4b4ee37070aa9ebd",
+          "file": "tabs-lifecycle.ts",
+          "line": 41,
+          "column": 5
+        },
+        {
+          "title": "force-mounted panels preserve draft nodes while hidden and lazy panels dispose their drafts",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 705,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T08:06:33.021Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9d481056cb3fa0b463a7-9cd0f34ce335ea0e7ecd",
+          "file": "tabs-lifecycle.ts",
+          "line": 65,
+          "column": 3
+        },
+        {
+          "title": "external removal and reordering preserve focus outside the tablist",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 526,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T08:06:33.731Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "external-focus",
+                      "contentType": "application/json",
+                      "body": "eyJhY3RpdmUiOiI8YnV0dG9uIGRhdGEtdmFsdWU9XCJvdmVydmlld1wiIGlkPVwidGFicy1jbC0wLW92ZXJ2aWV3LXRyaWdnZXJcIiB0eXBlPVwiYnV0dG9uXCIgcm9sZT1cInRhYlwiIGRhdGEtc2xvdD1cInRhYnMtdHJpZ2dlclwiIGRhdGEtc3RhdGU9XCJhY3RpdmVcIiBhcmlhLXNlbGVjdGVkPVwidHJ1ZVwiIHRhYmluZGV4PVwiMFwiIGNsYXNzPVwicmVsYXRpdmUgaW5saW5lLWZsZXggaC1bY2FsYygxMDAlLTFweCldIGZsZXgtMSBpdGVtcy1jZW50ZXIganVzdGlmeS1jZW50ZXIgZ2FwLTEuNSByb3VuZGVkLW1kIGJvcmRlciBib3JkZXItdHJhbnNwYXJlbnQgcHgtMS41IHB5LTAuNSB0ZXh0LXNtIGZvbnQtbWVkaXVtIHdoaXRlc3BhY2Utbm93cmFwIHRleHQtZm9yZWdyb3VuZC82MCB0cmFuc2l0aW9uLWFsbCBncm91cC1kYXRhLXZlcnRpY2FsL3RhYnM6dy1mdWxsIGdyb3VwLWRhdGEtdmVydGljYWwvdGFiczpqdXN0aWZ5LXN0YXJ0IGhvdmVyOnRleHQtZm9yZWdyb3VuZCBmb2N1cy12aXNpYmxlOmJvcmRlci1yaW5nIGZvY3VzLXZpc2libGU6cmluZy1bM3B4XSBmb2N1cy12aXNpYmxlOnJpbmctcmluZy81MCBmb2N1cy12aXNpYmxlOm91dGxpbmUtMSBmb2N1cy12aXNpYmxlOm91dGxpbmUtcmluZyBkaXNhYmxlZDpwb2ludGVyLWV2ZW50cy1ub25lIGRpc2FibGVkOm9wYWNpdHktNTAgaGFzLWRhdGEtW2ljb249aW5saW5lLWVuZF06cHItMSBoYXMtZGF0YS1baWNvbj1pbmxpbmUtc3RhcnRdOnBsLTEgZGFyazp0ZXh0LW11dGVkLWZvcmVncm91bmQgZGFyazpob3Zlcjp0ZXh0LWZvcmVncm91bmQgZ3JvdXAtZGF0YS1bdmFyaWFudD1kZWZhdWx0XS90YWJzLWxpc3Q6ZGF0YS1hY3RpdmU6c2hhZG93LXNtIGdyb3VwLWRhdGEtW3ZhcmlhbnQ9bGluZV0vdGFicy1saXN0OmRhdGEtYWN0aXZlOnNoYWRvdy1ub25lIFsmYW1wO19zdmddOnBvaW50ZXItZXZlbnRzLW5vbmUgWyZhbXA7X3N2Z106c2hyaW5rLTAgWyZhbXA7X3N2Zzpub3QoW2NsYXNzKj0nc2l6ZS0nXSldOnNpemUtNCBncm91cC1kYXRhLVt2YXJpYW50PWxpbmVdL3RhYnMtbGlzdDpiZy10cmFuc3BhcmVudCBncm91cC1kYXRhLVt2YXJpYW50PWxpbmVdL3RhYnMtbGlzdDpkYXRhLWFjdGl2ZTpiZy10cmFuc3BhcmVudCBkYXJrOmdyb3VwLWRhdGEtW3ZhcmlhbnQ9bGluZV0vdGFicy1saXN0OmRhdGEtYWN0aXZlOmJvcmRlci10cmFuc3BhcmVudCBkYXJrOmdyb3VwLWRhdGEtW3ZhcmlhbnQ9bGluZV0vdGFicy1saXN0OmRhdGEtYWN0aXZlOmJnLXRyYW5zcGFyZW50IGRhdGEtYWN0aXZlOmJnLWJhY2tncm91bmQgZGF0YS1hY3RpdmU6dGV4dC1mb3JlZ3JvdW5kIGRhcms6ZGF0YS1hY3RpdmU6Ym9yZGVyLWlucHV0IGRhcms6ZGF0YS1hY3RpdmU6YmctaW5wdXQvMzAgZGFyazpkYXRhLWFjdGl2ZTp0ZXh0LWZvcmVncm91bmQgYWZ0ZXI6YWJzb2x1dGUgYWZ0ZXI6YmctZm9yZWdyb3VuZCBhZnRlcjpvcGFjaXR5LTAgYWZ0ZXI6dHJhbnNpdGlvbi1vcGFjaXR5IGdyb3VwLWRhdGEtaG9yaXpvbnRhbC90YWJzOmFmdGVyOmluc2V0LXgtMCBncm91cC1kYXRhLWhvcml6b250YWwvdGFiczphZnRlcjpib3R0b20tWy01cHhdIGdyb3VwLWRhdGEtaG9yaXpvbnRhbC90YWJzOmFmdGVyOmgtMC41IGdyb3VwLWRhdGEtdmVydGljYWwvdGFiczphZnRlcjppbnNldC15LTAgZ3JvdXAtZGF0YS12ZXJ0aWNhbC90YWJzOmFmdGVyOi1yaWdodC0xIGdyb3VwLWRhdGEtdmVydGljYWwvdGFiczphZnRlcjp3LTAuNSBncm91cC1kYXRhLVt2YXJpYW50PWxpbmVdL3RhYnMtbGlzdDpkYXRhLWFjdGl2ZTphZnRlcjpvcGFjaXR5LTEwMFwiIGFyaWEtY29udHJvbHM9XCJ0YWJzLWNsLTAtb3ZlcnZpZXctY29udGVudFwiIGRhdGEtYWN0aXZlPVwiXCI+T3ZlcnZpZXc8L2J1dHRvbj4iLCJmb2N1c2VkIjp0cnVlLCJ0YWJzIjpbIjxidXR0b24gZGF0YS12YWx1ZT1cInNldHRpbmdzXCIgaWQ9XCJ0YWJzLWNsLTAtc2V0dGluZ3MtdHJpZ2dlclwiIHR5cGU9XCJidXR0b25cIiByb2xlPVwidGFiXCIgZGF0YS1zbG90PVwidGFicy10cmlnZ2VyXCIgZGF0YS1zdGF0ZT1cImluYWN0aXZlXCIgYXJpYS1zZWxlY3RlZD1cImZhbHNlXCIgdGFiaW5kZXg9XCItMVwiIGNsYXNzPVwicmVsYXRpdmUgaW5saW5lLWZsZXggaC1bY2FsYygxMDAlLTFweCldIGZsZXgtMSBpdGVtcy1jZW50ZXIganVzdGlmeS1jZW50ZXIgZ2FwLTEuNSByb3VuZGVkLW1kIGJvcmRlciBib3JkZXItdHJhbnNwYXJlbnQgcHgtMS41IHB5LTAuNSB0ZXh0LXNtIGZvbnQtbWVkaXVtIHdoaXRlc3BhY2Utbm93cmFwIHRleHQtZm9yZWdyb3VuZC82MCB0cmFuc2l0aW9uLWFsbCBncm91cC1kYXRhLXZlcnRpY2FsL3RhYnM6dy1mdWxsIGdyb3VwLWRhdGEtdmVydGljYWwvdGFiczpqdXN0aWZ5LXN0YXJ0IGhvdmVyOnRleHQtZm9yZWdyb3VuZCBmb2N1cy12aXNpYmxlOmJvcmRlci1yaW5nIGZvY3VzLXZpc2libGU6cmluZy1bM3B4XSBmb2N1cy12aXNpYmxlOnJpbmctcmluZy81MCBmb2N1cy12aXNpYmxlOm91dGxpbmUtMSBmb2N1cy12aXNpYmxlOm91dGxpbmUtcmluZyBkaXNhYmxlZDpwb2ludGVyLWV2ZW50cy1ub25lIGRpc2FibGVkOm9wYWNpdHktNTAgaGFzLWRhdGEtW2ljb249aW5saW5lLWVuZF06cHItMSBoYXMtZGF0YS1baWNvbj1pbmxpbmUtc3RhcnRdOnBsLTEgZGFyazp0ZXh0LW11dGVkLWZvcmVncm91bmQgZGFyazpob3Zlcjp0ZXh0LWZvcmVncm91bmQgZ3JvdXAtZGF0YS1bdmFyaWFudD1kZWZhdWx0XS90YWJzLWxpc3Q6ZGF0YS1hY3RpdmU6c2hhZG93LXNtIGdyb3VwLWRhdGEtW3ZhcmlhbnQ9bGluZV0vdGFicy1saXN0OmRhdGEtYWN0aXZlOnNoYWRvdy1ub25lIFsmYW1wO19zdmddOnBvaW50ZXItZXZlbnRzLW5vbmUgWyZhbXA7X3N2Z106c2hyaW5rLTAgWyZhbXA7X3N2Zzpub3QoW2NsYXNzKj0nc2l6ZS0nXSldOnNpemUtNCBncm91cC1kYXRhLVt2YXJpYW50PWxpbmVdL3RhYnMtbGlzdDpiZy10cmFuc3BhcmVudCBncm91cC1kYXRhLVt2YXJpYW50PWxpbmVdL3RhYnMtbGlzdDpkYXRhLWFjdGl2ZTpiZy10cmFuc3BhcmVudCBkYXJrOmdyb3VwLWRhdGEtW3ZhcmlhbnQ9bGluZV0vdGFicy1saXN0OmRhdGEtYWN0aXZlOmJvcmRlci10cmFuc3BhcmVudCBkYXJrOmdyb3VwLWRhdGEtW3ZhcmlhbnQ9bGluZV0vdGFicy1saXN0OmRhdGEtYWN0aXZlOmJnLXRyYW5zcGFyZW50IGRhdGEtYWN0aXZlOmJnLWJhY2tncm91bmQgZGF0YS1hY3RpdmU6dGV4dC1mb3JlZ3JvdW5kIGRhcms6ZGF0YS1hY3RpdmU6Ym9yZGVyLWlucHV0IGRhcms6ZGF0YS1hY3RpdmU6YmctaW5wdXQvMzAgZGFyazpkYXRhLWFjdGl2ZTp0ZXh0LWZvcmVncm91bmQgYWZ0ZXI6YWJzb2x1dGUgYWZ0ZXI6YmctZm9yZWdyb3VuZCBhZnRlcjpvcGFjaXR5LTAgYWZ0ZXI6dHJhbnNpdGlvbi1vcGFjaXR5IGdyb3VwLWRhdGEtaG9yaXpvbnRhbC90YWJzOmFmdGVyOmluc2V0LXgtMCBncm91cC1kYXRhLWhvcml6b250YWwvdGFiczphZnRlcjpib3R0b20tWy01cHhdIGdyb3VwLWRhdGEtaG9yaXpvbnRhbC90YWJzOmFmdGVyOmgtMC41IGdyb3VwLWRhdGEtdmVydGljYWwvdGFiczphZnRlcjppbnNldC15LTAgZ3JvdXAtZGF0YS12ZXJ0aWNhbC90YWJzOmFmdGVyOi1yaWdodC0xIGdyb3VwLWRhdGEtdmVydGljYWwvdGFiczphZnRlcjp3LTAuNSBncm91cC1kYXRhLVt2YXJpYW50PWxpbmVdL3RhYnMtbGlzdDpkYXRhLWFjdGl2ZTphZnRlcjpvcGFjaXR5LTEwMFwiIGFyaWEtY29udHJvbHM9XCJ0YWJzLWNsLTAtc2V0dGluZ3MtY29udGVudFwiPlNldHRpbmdzPC9idXR0b24+IiwiPGJ1dHRvbiBkYXRhLXZhbHVlPVwibG9ja2VkXCIgZGlzYWJsZWQ9XCJcIiBpZD1cInRhYnMtY2wtMC1sb2NrZWQtdHJpZ2dlclwiIHR5cGU9XCJidXR0b25cIiByb2xlPVwidGFiXCIgZGF0YS1zbG90PVwidGFicy10cmlnZ2VyXCIgZGF0YS1zdGF0ZT1cImluYWN0aXZlXCIgYXJpYS1zZWxlY3RlZD1cImZhbHNlXCIgdGFiaW5kZXg9XCItMVwiIGNsYXNzPVwicmVsYXRpdmUgaW5saW5lLWZsZXggaC1bY2FsYygxMDAlLTFweCldIGZsZXgtMSBpdGVtcy1jZW50ZXIganVzdGlmeS1jZW50ZXIgZ2FwLTEuNSByb3VuZGVkLW1kIGJvcmRlciBib3JkZXItdHJhbnNwYXJlbnQgcHgtMS41IHB5LTAuNSB0ZXh0LXNtIGZvbnQtbWVkaXVtIHdoaXRlc3BhY2Utbm93cmFwIHRleHQtZm9yZWdyb3VuZC82MCB0cmFuc2l0aW9uLWFsbCBncm91cC1kYXRhLXZlcnRpY2FsL3RhYnM6dy1mdWxsIGdyb3VwLWRhdGEtdmVydGljYWwvdGFiczpqdXN0aWZ5LXN0YXJ0IGhvdmVyOnRleHQtZm9yZWdyb3VuZCBmb2N1cy12aXNpYmxlOmJvcmRlci1yaW5nIGZvY3VzLXZpc2libGU6cmluZy1bM3B4XSBmb2N1cy12aXNpYmxlOnJpbmctcmluZy81MCBmb2N1cy12aXNpYmxlOm91dGxpbmUtMSBmb2N1cy12aXNpYmxlOm91dGxpbmUtcmluZyBkaXNhYmxlZDpwb2ludGVyLWV2ZW50cy1ub25lIGRpc2FibGVkOm9wYWNpdHktNTAgaGFzLWRhdGEtW2ljb249aW5saW5lLWVuZF06cHItMSBoYXMtZGF0YS1baWNvbj1pbmxpbmUtc3RhcnRdOnBsLTEgZGFyazp0ZXh0LW11dGVkLWZvcmVncm91bmQgZGFyazpob3Zlcjp0ZXh0LWZvcmVncm91bmQgZ3JvdXAtZGF0YS1bdmFyaWFudD1kZWZhdWx0XS90YWJzLWxpc3Q6ZGF0YS1hY3RpdmU6c2hhZG93LXNtIGdyb3VwLWRhdGEtW3ZhcmlhbnQ9bGluZV0vdGFicy1saXN0OmRhdGEtYWN0aXZlOnNoYWRvdy1ub25lIFsmYW1wO19zdmddOnBvaW50ZXItZXZlbnRzLW5vbmUgWyZhbXA7X3N2Z106c2hyaW5rLTAgWyZhbXA7X3N2Zzpub3QoW2NsYXNzKj0nc2l6ZS0nXSldOnNpemUtNCBncm91cC1kYXRhLVt2YXJpYW50PWxpbmVdL3RhYnMtbGlzdDpiZy10cmFuc3BhcmVudCBncm91cC1kYXRhLVt2YXJpYW50PWxpbmVdL3RhYnMtbGlzdDpkYXRhLWFjdGl2ZTpiZy10cmFuc3BhcmVudCBkYXJrOmdyb3VwLWRhdGEtW3ZhcmlhbnQ9bGluZV0vdGFicy1saXN0OmRhdGEtYWN0aXZlOmJvcmRlci10cmFuc3BhcmVudCBkYXJrOmdyb3VwLWRhdGEtW3ZhcmlhbnQ9bGluZV0vdGFicy1saXN0OmRhdGEtYWN0aXZlOmJnLXRyYW5zcGFyZW50IGRhdGEtYWN0aXZlOmJnLWJhY2tncm91bmQgZGF0YS1hY3RpdmU6dGV4dC1mb3JlZ3JvdW5kIGRhcms6ZGF0YS1hY3RpdmU6Ym9yZGVyLWlucHV0IGRhcms6ZGF0YS1hY3RpdmU6YmctaW5wdXQvMzAgZGFyazpkYXRhLWFjdGl2ZTp0ZXh0LWZvcmVncm91bmQgYWZ0ZXI6YWJzb2x1dGUgYWZ0ZXI6YmctZm9yZWdyb3VuZCBhZnRlcjpvcGFjaXR5LTAgYWZ0ZXI6dHJhbnNpdGlvbi1vcGFjaXR5IGdyb3VwLWRhdGEtaG9yaXpvbnRhbC90YWJzOmFmdGVyOmluc2V0LXgtMCBncm91cC1kYXRhLWhvcml6b250YWwvdGFiczphZnRlcjpib3R0b20tWy01cHhdIGdyb3VwLWRhdGEtaG9yaXpvbnRhbC90YWJzOmFmdGVyOmgtMC41IGdyb3VwLWRhdGEtdmVydGljYWwvdGFiczphZnRlcjppbnNldC15LTAgZ3JvdXAtZGF0YS12ZXJ0aWNhbC90YWJzOmFmdGVyOi1yaWdodC0xIGdyb3VwLWRhdGEtdmVydGljYWwvdGFiczphZnRlcjp3LTAuNSBncm91cC1kYXRhLVt2YXJpYW50PWxpbmVdL3RhYnMtbGlzdDpkYXRhLWFjdGl2ZTphZnRlcjpvcGFjaXR5LTEwMFwiPkxvY2tlZDwvYnV0dG9uPiIsIjxidXR0b24gZGF0YS12YWx1ZT1cIm92ZXJ2aWV3XCIgaWQ9XCJ0YWJzLWNsLTAtb3ZlcnZpZXctdHJpZ2dlclwiIHR5cGU9XCJidXR0b25cIiByb2xlPVwidGFiXCIgZGF0YS1zbG90PVwidGFicy10cmlnZ2VyXCIgZGF0YS1zdGF0ZT1cImFjdGl2ZVwiIGFyaWEtc2VsZWN0ZWQ9XCJ0cnVlXCIgdGFiaW5kZXg9XCIwXCIgY2xhc3M9XCJyZWxhdGl2ZSBpbmxpbmUtZmxleCBoLVtjYWxjKDEwMCUtMXB4KV0gZmxleC0xIGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWNlbnRlciBnYXAtMS41IHJvdW5kZWQtbWQgYm9yZGVyIGJvcmRlci10cmFuc3BhcmVudCBweC0xLjUgcHktMC41IHRleHQtc20gZm9udC1tZWRpdW0gd2hpdGVzcGFjZS1ub3dyYXAgdGV4dC1mb3JlZ3JvdW5kLzYwIHRyYW5zaXRpb24tYWxsIGdyb3VwLWRhdGEtdmVydGljYWwvdGFiczp3LWZ1bGwgZ3JvdXAtZGF0YS12ZXJ0aWNhbC90YWJzOmp1c3RpZnktc3RhcnQgaG92ZXI6dGV4dC1mb3JlZ3JvdW5kIGZvY3VzLXZpc2libGU6Ym9yZGVyLXJpbmcgZm9jdXMtdmlzaWJsZTpyaW5nLVszcHhdIGZvY3VzLXZpc2libGU6cmluZy1yaW5nLzUwIGZvY3VzLXZpc2libGU6b3V0bGluZS0xIGZvY3VzLXZpc2libGU6b3V0bGluZS1yaW5nIGRpc2FibGVkOnBvaW50ZXItZXZlbnRzLW5vbmUgZGlzYWJsZWQ6b3BhY2l0eS01MCBoYXMtZGF0YS1baWNvbj1pbmxpbmUtZW5kXTpwci0xIGhhcy1kYXRhLVtpY29uPWlubGluZS1zdGFydF06cGwtMSBkYXJrOnRleHQtbXV0ZWQtZm9yZWdyb3VuZCBkYXJrOmhvdmVyOnRleHQtZm9yZWdyb3VuZCBncm91cC1kYXRhLVt2YXJpYW50PWRlZmF1bHRdL3RhYnMtbGlzdDpkYXRhLWFjdGl2ZTpzaGFkb3ctc20gZ3JvdXAtZGF0YS1bdmFyaWFudD1saW5lXS90YWJzLWxpc3Q6ZGF0YS1hY3RpdmU6c2hhZG93LW5vbmUgWyZhbXA7X3N2Z106cG9pbnRlci1ldmVudHMtbm9uZSBbJmFtcDtfc3ZnXTpzaHJpbmstMCBbJmFtcDtfc3ZnOm5vdChbY2xhc3MqPSdzaXplLSddKV06c2l6ZS00IGdyb3VwLWRhdGEtW3ZhcmlhbnQ9bGluZV0vdGFicy1saXN0OmJnLXRyYW5zcGFyZW50IGdyb3VwLWRhdGEtW3ZhcmlhbnQ9bGluZV0vdGFicy1saXN0OmRhdGEtYWN0aXZlOmJnLXRyYW5zcGFyZW50IGRhcms6Z3JvdXAtZGF0YS1bdmFyaWFudD1saW5lXS90YWJzLWxpc3Q6ZGF0YS1hY3RpdmU6Ym9yZGVyLXRyYW5zcGFyZW50IGRhcms6Z3JvdXAtZGF0YS1bdmFyaWFudD1saW5lXS90YWJzLWxpc3Q6ZGF0YS1hY3RpdmU6YmctdHJhbnNwYXJlbnQgZGF0YS1hY3RpdmU6YmctYmFja2dyb3VuZCBkYXRhLWFjdGl2ZTp0ZXh0LWZvcmVncm91bmQgZGFyazpkYXRhLWFjdGl2ZTpib3JkZXItaW5wdXQgZGFyazpkYXRhLWFjdGl2ZTpiZy1pbnB1dC8zMCBkYXJrOmRhdGEtYWN0aXZlOnRleHQtZm9yZWdyb3VuZCBhZnRlcjphYnNvbHV0ZSBhZnRlcjpiZy1mb3JlZ3JvdW5kIGFmdGVyOm9wYWNpdHktMCBhZnRlcjp0cmFuc2l0aW9uLW9wYWNpdHkgZ3JvdXAtZGF0YS1ob3Jpem9udGFsL3RhYnM6YWZ0ZXI6aW5zZXQteC0wIGdyb3VwLWRhdGEtaG9yaXpvbnRhbC90YWJzOmFmdGVyOmJvdHRvbS1bLTVweF0gZ3JvdXAtZGF0YS1ob3Jpem9udGFsL3RhYnM6YWZ0ZXI6aC0wLjUgZ3JvdXAtZGF0YS12ZXJ0aWNhbC90YWJzOmFmdGVyOmluc2V0LXktMCBncm91cC1kYXRhLXZlcnRpY2FsL3RhYnM6YWZ0ZXI6LXJpZ2h0LTEgZ3JvdXAtZGF0YS12ZXJ0aWNhbC90YWJzOmFmdGVyOnctMC41IGdyb3VwLWRhdGEtW3ZhcmlhbnQ9bGluZV0vdGFicy1saXN0OmRhdGEtYWN0aXZlOmFmdGVyOm9wYWNpdHktMTAwXCIgYXJpYS1jb250cm9scz1cInRhYnMtY2wtMC1vdmVydmlldy1jb250ZW50XCIgZGF0YS1hY3RpdmU9XCJcIj5PdmVydmlldzwvYnV0dG9uPiJdfQ=="
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9d481056cb3fa0b463a7-d64845df792efe181887",
+          "file": "tabs-lifecycle.ts",
+          "line": 93,
+          "column": 3
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-08T08:06:25.263Z",
+    "duration": 9220.942000000001,
+    "expected": 12,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

@@ -1,5 +1,5 @@
 // Accessible signal-driven tabs with sibling styles and native buttons; D19/D90.
-import { createContext, createSignal, createUniqueId, onCleanup, omit, Show, useContext, type Accessor } from 'solid-js';
+import { createContext, createEffect, createSignal, createUniqueId, onCleanup, omit, Show, useContext, type Accessor } from 'solid-js';
 import type { JSX } from '@solidjs/web';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '../../lib/utils';
@@ -46,9 +46,33 @@ export const tabsListVariants = cva(
 )
 
 export type TabsListProps=JSX.HTMLAttributes<HTMLDivElement> & VariantProps<typeof tabsListVariants> & {loop?: boolean};
+/** Restore only focus lost when this list's focused node is removed or moved by reconciliation. */
+function observeTabFocus(node:HTMLDivElement){
+  const document=node.ownerDocument;let focused:HTMLElement|undefined;
+  /** A newer focus destination relinquishes this list's right to restore focus. */
+  function remember(event:FocusEvent){
+    const target=event.target as HTMLElement;
+    focused=target.matches('[role="tab"]')&&target.closest('[role="tablist"]')===node?target:undefined;
+  }
+  const observer=new MutationObserver(records=>{
+    const previous=focused;
+    if(!previous||!node.isConnected||document.activeElement!==document.body)return;
+    const removed=records.some(record=>Array.from(record.removedNodes).some(item=>item.contains(previous)));
+    if(!removed)return;
+    // Reconciliation may detach and reinsert the same node; use settled roving state.
+    const target=Array.from(node.querySelectorAll<HTMLElement>('[role="tab"][tabindex="0"]:not(:disabled)')).find(tab=>tab.closest('[role="tablist"]')===node);
+    (target??node).focus();
+  });
+  document.addEventListener('focusin',remember);
+  observer.observe(node,{childList:true,subtree:true});
+  return()=>{observer.disconnect();document.removeEventListener('focusin',remember);};
+}
 /** Move focus in DOM order, skipping disabled tabs and respecting computed direction. */
 export function TabsList(props: TabsListProps) {
-  const context=useTabs();const rest=omit(props,'class','variant','onKeyDown','loop');
+  const context=useTabs();const rest=omit(props,'class','variant','onKeyDown','loop','ref');
+  const [element,setElement]=createSignal<HTMLDivElement|undefined>(undefined,{ownedWrite:true});
+  // This static ref is assigned before DOM effects commit; SSR never runs the observer.
+  createEffect(()=>element()!,observeTabFocus);
   /** Process only this list’s navigation keys and allow caller cancellation. */
   function onKeyDown(event: KeyboardEvent & {currentTarget: HTMLDivElement; target: Element}) {
     callHandler(props.onKeyDown,event);if(event.defaultPrevented)return;
@@ -62,7 +86,7 @@ export function TabsList(props: TabsListProps) {
     index=props.loop===false?Math.max(0,Math.min(index,tabs.length-1)):(index+tabs.length)%tabs.length;
     event.preventDefault();tabs[index]?.focus();
   }
-  return <div {...rest} role="tablist" aria-orientation={context.orientation()} data-slot="tabs-list" data-variant={props.variant??'default'} onKeyDown={onKeyDown} class={cn(tabsListVariants({variant:props.variant}),'max-w-full justify-start overflow-x-auto data-[variant=line]:pb-1.5',props.class)}/>;
+  return <div {...rest} ref={node=>{setElement(node);if(typeof props.ref==='function')props.ref(node);}} tabindex={props.tabindex??-1} role="tablist" aria-orientation={context.orientation()} data-slot="tabs-list" data-variant={props.variant??'default'} onKeyDown={onKeyDown} class={cn(tabsListVariants({variant:props.variant}),'max-w-full justify-start overflow-x-auto data-[variant=line]:pb-1.5',props.class)}/>;
 }
 export type TabsTriggerProps=Omit<JSX.ButtonHTMLAttributes<HTMLButtonElement>,'value'> & {value:string};
 /** A roving native button selects immediately or on activation, according to the root. */

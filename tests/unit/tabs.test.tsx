@@ -21,3 +21,36 @@ it('provides a tab stop for invalid controlled values and no selection with ever
  render(()=><><Tabs value="missing"><TabsList><TabsTrigger value="one">Available</TabsTrigger></TabsList></Tabs><Tabs><TabsList><TabsTrigger value="off" disabled>Only disabled</TabsTrigger></TabsList></Tabs></>);expect(screen.getByRole('tab',{name:'Available'})).toHaveAttribute('tabindex','0');expect(screen.getByRole('tab',{name:'Only disabled'})).toHaveAttribute('aria-selected','false');
 });
 it('rejects parts outside a root',()=>{render(()=><Errored fallback={error=><p>{(error() as Error).message}</p>}><TabsList/></Errored>);expect(screen.getByText('Tabs parts must be inside Tabs.')).toBeVisible();});
+
+for(const manual of [false,true])it(`recovers removed trigger focus after registration settles in ${manual?'manual':'automatic'} mode`,async()=>{
+ const [visible,setVisible]=createSignal(true);
+ render(()=><Tabs defaultValue="one" activationMode={manual?'manual':'automatic'}><TabsList aria-label="Removal"><TabsTrigger value="one">Remain</TabsTrigger><TabsTrigger value="off" disabled>Skip</TabsTrigger><Show when={visible()}><TabsTrigger value="two">Remove focused</TabsTrigger></Show></TabsList><TabsContent value="one">First panel</TabsContent><TabsContent value="two">Second panel</TabsContent></Tabs>);
+ screen.getByText('Remove focused').focus();flush();setVisible(false);flush();await Promise.resolve();flush();
+ expect(screen.getByText('Remain')).toHaveFocus();expect(screen.getByText('Remain')).toHaveAttribute('aria-selected','true');expect(screen.getByText('Remain')).toHaveAttribute('tabindex','0');
+});
+it('keeps the empty enabled collection focused on its list and honors an explicit list tab stop',async()=>{
+ const [visible,setVisible]=createSignal(true);
+ render(()=><Tabs><TabsList aria-label="Empty fallback" tabindex={0}><TabsTrigger value="off" disabled>Disabled survivor</TabsTrigger><Show when={visible()}><TabsTrigger value="only">Last enabled</TabsTrigger></Show></TabsList></Tabs>);
+ const list=screen.getByRole('tablist');expect(list).toHaveAttribute('tabindex','0');screen.getByText('Last enabled').focus();flush();setVisible(false);flush();await Promise.resolve();expect(list).toHaveFocus();
+});
+it('does not replace a newer focus destination while removal recovery is queued',async()=>{
+ const [visible,setVisible]=createSignal(true);
+ render(()=><><button>Outside destination</button><Tabs><TabsList><TabsTrigger value="one">Remaining choice</TabsTrigger><Show when={visible()}><TabsTrigger value="two">Departing choice</TabsTrigger></Show></TabsList></Tabs></>);
+ screen.getByText('Departing choice').focus();flush();setVisible(false);flush();screen.getByText('Outside destination').focus();await Promise.resolve();expect(screen.getByText('Outside destination')).toHaveFocus();
+});
+it('disconnects recovery when the complete root unmounts and safely disposes a trigger without a list',async()=>{
+ const first=render(()=><Tabs><TabsList><TabsTrigger value="one">Unmount root</TabsTrigger></TabsList></Tabs>);
+ screen.getByText('Unmount root').focus();flush();first.unmount();await Promise.resolve();expect(document.activeElement).toBe(document.body);
+ const [visible,setVisible]=createSignal(true);render(()=><Tabs><Show when={visible()}><TabsTrigger value="one">No list</TabsTrigger></Show></Tabs>);
+ screen.getByText('No list').focus();flush();setVisible(false);flush();await Promise.resolve();expect(document.activeElement).toBe(document.body);
+});
+
+it('restores a moved node without changing manual selection and ignores unrelated DOM mutations',async()=>{
+ let ref:HTMLDivElement|undefined;
+ render(()=><Tabs defaultValue="two" activationMode="manual"><TabsList aria-label="Reorder" ref={node=>{ref=node;}}><TabsTrigger value="one">Moving node</TabsTrigger><TabsTrigger value="two">Selected node</TabsTrigger></TabsList></Tabs>);
+ const list=screen.getByRole('tablist');expect(ref).toBe(list);const moving=screen.getByText('Moving node');
+ moving.focus();flush();moving.blur();list.append(document.createElement('span'));await Promise.resolve();expect(document.activeElement).toBe(document.body);
+ moving.focus();flush();list.append(moving);await Promise.resolve();expect(moving).toHaveFocus();expect(screen.getByText('Selected node')).toHaveAttribute('aria-selected','true');
+ // A detached list cannot reclaim page focus even when child mutations are still queued.
+ list.remove();list.append(moving);await Promise.resolve();expect(document.activeElement).toBe(document.body);
+});

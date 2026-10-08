@@ -292,7 +292,19 @@ reactive; caller-cancelled click/keydown handlers prevent internal actions.
 Panel refs target divs and trigger refs target buttons. Selection changes
 unmount inactive children; `TabsContent forceMount` preserves local drafts under
 `hidden`. Store drafts above Tabs when they must survive ordinary panel switches.
-The scrolling tablist prevents narrow layouts from overflowing the page.
+The scrolling tablist prevents narrow layouts from overflowing the page. Its
+default `tabindex="-1"` prevents an extra native scroll-container Tab stop; the
+roving trigger remains the entry point. A removed or reinserted focused trigger
+recovers focus to the remaining roving tab after DOM reconciliation. If no
+enabled tab remains, the list receives focus so Tab can leave it. Recovery does
+not override a newer focus destination and stops when the list unmounts.
+
+The [dynamic collection example](../playground/tabs-lifecycle.tsx) runs at
+`/?tabs-lifecycle` (append `&manual` for manual activation). Delete and Alt+End
+are example-owned commands for removal/reordering, not new Tabs keyboard APIs.
+[TAB-1 acceptance](TABS-TAB1-DELIVERY.md) verifies focused removal, adjacent and
+nonadjacent keyed moves, outside-focus preservation and both panel lifetimes in
+Chromium and Firefox, using source and built exports.
 
 ## Popover
 

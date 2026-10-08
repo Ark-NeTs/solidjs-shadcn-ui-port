@@ -197,3 +197,21 @@ receive initial focus in either browser. Preserve Cancel priority, consumer canc
 hooks, native modality, Tab handling and scroll-lock cleanup. No new library,
 observer or delayed focus task is needed. See
 [ALT-1 delivery](docs/ALERT-ALT1-DELIVERY.md).
+
+## Tabs lifecycle follow-up — 2026-10-08 (D19/D90)
+
+Observe child-list changes within each mounted TabsList after its DOM ref has
+committed. Track the most recent document focus destination. If reconciliation
+removed the list's focused node and focus has fallen to body, restore the settled
+roving tab, or the list when no enabled tab remains. REASONING: removing a trigger
+loses browser focus; keyed nonadjacent moves can also detach/reinsert a node
+without disposing its component, so trigger cleanup alone is insufficient.
+Do not restore during unrelated mutations or after a newer focus destination.
+Dispose the observer and document listener with the list's effect.
+
+Default TabsList to tabindex=-1 while honoring explicit caller overrides.
+REASONING: Firefox exposed the overflow container as an additional Tab stop,
+before the intended roving trigger. Preserve existing registration-based fallback
+selection and manual activation; no collection state or draft mirror is added.
+Force-mounted panels already preserve their draft nodes; lazy panels already
+dispose children. See [TAB-1 delivery](docs/TABS-TAB1-DELIVERY.md).

@@ -16,6 +16,7 @@ import { ComboboxExamples } from './combobox';
 import { ComboboxContracts } from './combobox-contracts';
 import { PopoverPlacement } from './popover-placement';
 import { AlertDialogFocus } from './alert-dialog-focus';
+import { TabsLifecycle } from './tabs-lifecycle';
 import { TabsExamples, OverlayExamples } from './overlays';
 const variants = ['default', 'secondary', 'outline', 'ghost', 'destructive', 'link'] as const;
 /** Keep demonstration state in the application, with no data layer in components. */
@@ -130,6 +131,7 @@ function ToggleExamples() {
 /** Select focused acceptance examples without changing the main gallery layout. */
 function Preview() {
   const query = new URLSearchParams(location.search);
+  if (query.has('tabs-lifecycle')) return <TabsLifecycle/>;
   if (query.has('alert-dialog-focus')) return <AlertDialogFocus/>;
   if (query.has('popover-placement')) return <PopoverPlacement/>;
   if (query.has('combobox-contracts')) return <ComboboxContracts/>;

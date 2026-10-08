@@ -72,6 +72,8 @@ Open `/?popover-placement&placement-case=scroll` for placement checks; substitut
 Open `/?alert-dialog-focus` for Alert Dialog keyboard and nested confirmation
 examples; append `&force-mounted` to keep the child mounted while closed.
 [ALT-1 delivery](docs/ALERT-ALT1-DELIVERY.md) records their focus acceptance.
+Open `/?tabs-lifecycle` (or append `&manual`) for dynamic trigger and draft-lifetime
+examples. [TAB-1 delivery](docs/TABS-TAB1-DELIVERY.md) records their acceptance.
 
 ![Light component gallery](docs/screenshots/light.png)
 ![Dark component gallery](docs/screenshots/dark.png)

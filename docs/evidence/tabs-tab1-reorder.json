@@ -1,0 +1,429 @@
+{
+  "config": {
+    "argv": [
+      "/Users/arktas/.asdf/installs/nodejs/25.3.0/bin/node",
+      "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/node_modules/.bin/playwright",
+      "test",
+      "tests/integration/tabs-lifecycle.spec.ts",
+      "--grep",
+      "keyed reordering"
+    ],
+    "configFile": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/playwright.config.ts",
+    "rootDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "integration/**/*.spec.ts",
+          "e2e/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [
+          "**/visual.spec.ts"
+        ],
+        "testMatch": [
+          "integration/**/*.spec.ts",
+          "e2e/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "docs/evidence/tabs-tab1-reorder.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": {
+      "command": "bun run dev",
+      "url": "http://127.0.0.1:4403",
+      "reuseExistingServer": false,
+      "timeout": 60000
+    }
+  },
+  "suites": [
+    {
+      "title": "integration/tabs-lifecycle.spec.ts",
+      "file": "integration/tabs-lifecycle.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "automatic Tabs preserve the focused node across keyed reordering and navigate the new DOM order",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5768,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeFocused\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('tablist', { name: 'Dynamic sections' }).getByRole('tab', { name: 'Overview', exact: true })\nExpected: focused\nReceived: inactive\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeFocused\" getByRole('tablist', { name: 'Dynamic sections' }).getByRole('tab', { name: 'Overview', exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('tablist', { name: 'Dynamic sections' }).getByRole('tab', { name: 'Overview', exact: true })\u001b[22m\n\u001b[2m    14 × locator resolved to <button role=\"tab\" tabindex=\"0\" type=\"button\" data-active=\"\" data-state=\"active\" aria-selected=\"true\" data-value=\"overview\" data-slot=\"tabs-trigger\" id=\"tabs-cl-0-overview-trigger\" aria-controls=\"tabs-cl-0-overview-content\" class=\"relative inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1.5 rounded-md border border-transparent px-1.5 py-0.5 text-sm font-medium whitespace-nowrap text-foreground/60 transition-all group-data-vertical/tabs:w-full group-data-vertical/tabs:justify-star…>Overview</button>\u001b[22m\n\u001b[2m       - unexpected value \"inactive\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeFocused\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('tablist', { name: 'Dynamic sections' }).getByRole('tab', { name: 'Overview', exact: true })\nExpected: focused\nReceived: inactive\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeFocused\" getByRole('tablist', { name: 'Dynamic sections' }).getByRole('tab', { name: 'Overview', exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('tablist', { name: 'Dynamic sections' }).getByRole('tab', { name: 'Overview', exact: true })\u001b[22m\n\u001b[2m    14 × locator resolved to <button role=\"tab\" tabindex=\"0\" type=\"button\" data-active=\"\" data-state=\"active\" aria-selected=\"true\" data-value=\"overview\" data-slot=\"tabs-trigger\" id=\"tabs-cl-0-overview-trigger\" aria-controls=\"tabs-cl-0-overview-content\" class=\"relative inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1.5 rounded-md border border-transparent px-1.5 py-0.5 text-sm font-medium whitespace-nowrap text-foreground/60 transition-all group-data-vertical/tabs:w-full group-data-vertical/tabs:justify-star…>Overview</button>\u001b[22m\n\u001b[2m       - unexpected value \"inactive\"\u001b[22m\n\n    at expectTabState (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/tabs-lifecycle.ts:9:21)\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/tabs-lifecycle.ts:75:13",
+                    "location": {
+                      "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/tabs-lifecycle.ts",
+                      "column": 21,
+                      "line": 9
+                    },
+                    "snippet": "   7 |   const list = page.getByRole('tablist', { name: 'Dynamic sections' });\n   8 |   const tab = list.getByRole('tab', { name: focused, exact: true });\n>  9 |   await expect(tab).toBeFocused();\n     |                     ^\n  10 |   await expect(list.locator('[role=\"tab\"][tabindex=\"0\"]')).toHaveCount(1);\n  11 |   await expect(tab).toHaveAttribute('tabindex', '0');\n  12 |   const active = list.getByRole('tab', { name: selected, exact: true });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/tabs-lifecycle.ts",
+                        "column": 21,
+                        "line": 9
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeFocused\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('tablist', { name: 'Dynamic sections' }).getByRole('tab', { name: 'Overview', exact: true })\nExpected: focused\nReceived: inactive\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeFocused\" getByRole('tablist', { name: 'Dynamic sections' }).getByRole('tab', { name: 'Overview', exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('tablist', { name: 'Dynamic sections' }).getByRole('tab', { name: 'Overview', exact: true })\u001b[22m\n\u001b[2m    14 × locator resolved to <button role=\"tab\" tabindex=\"0\" type=\"button\" data-active=\"\" data-state=\"active\" aria-selected=\"true\" data-value=\"overview\" data-slot=\"tabs-trigger\" id=\"tabs-cl-0-overview-trigger\" aria-controls=\"tabs-cl-0-overview-content\" class=\"relative inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1.5 rounded-md border border-transparent px-1.5 py-0.5 text-sm font-medium whitespace-nowrap text-foreground/60 transition-all group-data-vertical/tabs:w-full group-data-vertical/tabs:justify-star…>Overview</button>\u001b[22m\n\u001b[2m       - unexpected value \"inactive\"\u001b[22m\n\n\n   7 |   const list = page.getByRole('tablist', { name: 'Dynamic sections' });\n   8 |   const tab = list.getByRole('tab', { name: focused, exact: true });\n>  9 |   await expect(tab).toBeFocused();\n     |                     ^\n  10 |   await expect(list.locator('[role=\"tab\"][tabindex=\"0\"]')).toHaveCount(1);\n  11 |   await expect(tab).toHaveAttribute('tabindex', '0');\n  12 |   const active = list.getByRole('tab', { name: selected, exact: true });\n    at expectTabState (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/tabs-lifecycle.ts:9:21)\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/tabs-lifecycle.ts:75:13"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T08:12:40.491Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/integration-tabs-lifecycle-88b6d--navigate-the-new-DOM-order-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/integration-tabs-lifecycle-88b6d--navigate-the-new-DOM-order-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/integration-tabs-lifecycle-88b6d--navigate-the-new-DOM-order-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/tabs-lifecycle.ts",
+                    "column": 21,
+                    "line": 9
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "9d481056cb3fa0b463a7-f2e11579c86f3725d011",
+          "file": "tabs-lifecycle.ts",
+          "line": 47,
+          "column": 5
+        },
+        {
+          "title": "manual Tabs preserve the focused node across keyed reordering and navigate the new DOM order",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5601,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeFocused\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('tablist', { name: 'Dynamic sections' }).getByRole('tab', { name: 'Overview', exact: true })\nExpected: focused\nReceived: inactive\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeFocused\" getByRole('tablist', { name: 'Dynamic sections' }).getByRole('tab', { name: 'Overview', exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('tablist', { name: 'Dynamic sections' }).getByRole('tab', { name: 'Overview', exact: true })\u001b[22m\n\u001b[2m    14 × locator resolved to <button role=\"tab\" tabindex=\"0\" type=\"button\" data-value=\"overview\" data-state=\"inactive\" aria-selected=\"false\" data-slot=\"tabs-trigger\" id=\"tabs-cl-0-overview-trigger\" aria-controls=\"tabs-cl-0-overview-content\" class=\"relative inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1.5 rounded-md border border-transparent px-1.5 py-0.5 text-sm font-medium whitespace-nowrap text-foreground/60 transition-all group-data-vertical/tabs:w-full group-data-vertical/tabs:justify-start hover:text…>Overview</button>\u001b[22m\n\u001b[2m       - unexpected value \"inactive\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeFocused\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('tablist', { name: 'Dynamic sections' }).getByRole('tab', { name: 'Overview', exact: true })\nExpected: focused\nReceived: inactive\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeFocused\" getByRole('tablist', { name: 'Dynamic sections' }).getByRole('tab', { name: 'Overview', exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('tablist', { name: 'Dynamic sections' }).getByRole('tab', { name: 'Overview', exact: true })\u001b[22m\n\u001b[2m    14 × locator resolved to <button role=\"tab\" tabindex=\"0\" type=\"button\" data-value=\"overview\" data-state=\"inactive\" aria-selected=\"false\" data-slot=\"tabs-trigger\" id=\"tabs-cl-0-overview-trigger\" aria-controls=\"tabs-cl-0-overview-content\" class=\"relative inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1.5 rounded-md border border-transparent px-1.5 py-0.5 text-sm font-medium whitespace-nowrap text-foreground/60 transition-all group-data-vertical/tabs:w-full group-data-vertical/tabs:justify-start hover:text…>Overview</button>\u001b[22m\n\u001b[2m       - unexpected value \"inactive\"\u001b[22m\n\n    at expectTabState (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/tabs-lifecycle.ts:9:21)\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/tabs-lifecycle.ts:75:13",
+                    "location": {
+                      "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/tabs-lifecycle.ts",
+                      "column": 21,
+                      "line": 9
+                    },
+                    "snippet": "   7 |   const list = page.getByRole('tablist', { name: 'Dynamic sections' });\n   8 |   const tab = list.getByRole('tab', { name: focused, exact: true });\n>  9 |   await expect(tab).toBeFocused();\n     |                     ^\n  10 |   await expect(list.locator('[role=\"tab\"][tabindex=\"0\"]')).toHaveCount(1);\n  11 |   await expect(tab).toHaveAttribute('tabindex', '0');\n  12 |   const active = list.getByRole('tab', { name: selected, exact: true });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/tabs-lifecycle.ts",
+                        "column": 21,
+                        "line": 9
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeFocused\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('tablist', { name: 'Dynamic sections' }).getByRole('tab', { name: 'Overview', exact: true })\nExpected: focused\nReceived: inactive\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeFocused\" getByRole('tablist', { name: 'Dynamic sections' }).getByRole('tab', { name: 'Overview', exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('tablist', { name: 'Dynamic sections' }).getByRole('tab', { name: 'Overview', exact: true })\u001b[22m\n\u001b[2m    14 × locator resolved to <button role=\"tab\" tabindex=\"0\" type=\"button\" data-value=\"overview\" data-state=\"inactive\" aria-selected=\"false\" data-slot=\"tabs-trigger\" id=\"tabs-cl-0-overview-trigger\" aria-controls=\"tabs-cl-0-overview-content\" class=\"relative inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1.5 rounded-md border border-transparent px-1.5 py-0.5 text-sm font-medium whitespace-nowrap text-foreground/60 transition-all group-data-vertical/tabs:w-full group-data-vertical/tabs:justify-start hover:text…>Overview</button>\u001b[22m\n\u001b[2m       - unexpected value \"inactive\"\u001b[22m\n\n\n   7 |   const list = page.getByRole('tablist', { name: 'Dynamic sections' });\n   8 |   const tab = list.getByRole('tab', { name: focused, exact: true });\n>  9 |   await expect(tab).toBeFocused();\n     |                     ^\n  10 |   await expect(list.locator('[role=\"tab\"][tabindex=\"0\"]')).toHaveCount(1);\n  11 |   await expect(tab).toHaveAttribute('tabindex', '0');\n  12 |   const active = list.getByRole('tab', { name: selected, exact: true });\n    at expectTabState (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/tabs-lifecycle.ts:9:21)\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/tabs-lifecycle.ts:75:13"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T08:12:46.834Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/integration-tabs-lifecycle-abbd3--navigate-the-new-DOM-order-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/integration-tabs-lifecycle-abbd3--navigate-the-new-DOM-order-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/integration-tabs-lifecycle-abbd3--navigate-the-new-DOM-order-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/tabs-lifecycle.ts",
+                    "column": 21,
+                    "line": 9
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "9d481056cb3fa0b463a7-0a76273c6f2c48edcf9a",
+          "file": "tabs-lifecycle.ts",
+          "line": 47,
+          "column": 5
+        },
+        {
+          "title": "automatic Tabs preserve the focused node across keyed reordering and navigate the new DOM order",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 6782,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeFocused\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('tablist', { name: 'Dynamic sections' }).getByRole('tab', { name: 'Overview', exact: true })\nExpected: focused\nReceived: inactive\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeFocused\" getByRole('tablist', { name: 'Dynamic sections' }).getByRole('tab', { name: 'Overview', exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('tablist', { name: 'Dynamic sections' }).getByRole('tab', { name: 'Overview', exact: true })\u001b[22m\n\u001b[2m    14 × locator resolved to <button role=\"tab\" tabindex=\"0\" type=\"button\" data-active=\"\" data-state=\"active\" aria-selected=\"true\" data-value=\"overview\" data-slot=\"tabs-trigger\" id=\"tabs-cl-0-overview-trigger\" aria-controls=\"tabs-cl-0-overview-content\" class=\"relative inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1.5 rounded-md border border-transparent px-1.5 py-0.5 text-sm font-medium whitespace-nowrap text-foreground/60 transition-all group-data-vertical/tabs:w-full group-data-vertical/tabs:justify-star…>Overview</button>\u001b[22m\n\u001b[2m       - unexpected value \"inactive\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeFocused\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('tablist', { name: 'Dynamic sections' }).getByRole('tab', { name: 'Overview', exact: true })\nExpected: focused\nReceived: inactive\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeFocused\" getByRole('tablist', { name: 'Dynamic sections' }).getByRole('tab', { name: 'Overview', exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('tablist', { name: 'Dynamic sections' }).getByRole('tab', { name: 'Overview', exact: true })\u001b[22m\n\u001b[2m    14 × locator resolved to <button role=\"tab\" tabindex=\"0\" type=\"button\" data-active=\"\" data-state=\"active\" aria-selected=\"true\" data-value=\"overview\" data-slot=\"tabs-trigger\" id=\"tabs-cl-0-overview-trigger\" aria-controls=\"tabs-cl-0-overview-content\" class=\"relative inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1.5 rounded-md border border-transparent px-1.5 py-0.5 text-sm font-medium whitespace-nowrap text-foreground/60 transition-all group-data-vertical/tabs:w-full group-data-vertical/tabs:justify-star…>Overview</button>\u001b[22m\n\u001b[2m       - unexpected value \"inactive\"\u001b[22m\n\n    at expectTabState (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/tabs-lifecycle.ts:9:21)\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/tabs-lifecycle.ts:75:13",
+                    "location": {
+                      "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/tabs-lifecycle.ts",
+                      "column": 21,
+                      "line": 9
+                    },
+                    "snippet": "   7 |   const list = page.getByRole('tablist', { name: 'Dynamic sections' });\n   8 |   const tab = list.getByRole('tab', { name: focused, exact: true });\n>  9 |   await expect(tab).toBeFocused();\n     |                     ^\n  10 |   await expect(list.locator('[role=\"tab\"][tabindex=\"0\"]')).toHaveCount(1);\n  11 |   await expect(tab).toHaveAttribute('tabindex', '0');\n  12 |   const active = list.getByRole('tab', { name: selected, exact: true });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/tabs-lifecycle.ts",
+                        "column": 21,
+                        "line": 9
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeFocused\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('tablist', { name: 'Dynamic sections' }).getByRole('tab', { name: 'Overview', exact: true })\nExpected: focused\nReceived: inactive\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeFocused\" getByRole('tablist', { name: 'Dynamic sections' }).getByRole('tab', { name: 'Overview', exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('tablist', { name: 'Dynamic sections' }).getByRole('tab', { name: 'Overview', exact: true })\u001b[22m\n\u001b[2m    14 × locator resolved to <button role=\"tab\" tabindex=\"0\" type=\"button\" data-active=\"\" data-state=\"active\" aria-selected=\"true\" data-value=\"overview\" data-slot=\"tabs-trigger\" id=\"tabs-cl-0-overview-trigger\" aria-controls=\"tabs-cl-0-overview-content\" class=\"relative inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1.5 rounded-md border border-transparent px-1.5 py-0.5 text-sm font-medium whitespace-nowrap text-foreground/60 transition-all group-data-vertical/tabs:w-full group-data-vertical/tabs:justify-star…>Overview</button>\u001b[22m\n\u001b[2m       - unexpected value \"inactive\"\u001b[22m\n\n\n   7 |   const list = page.getByRole('tablist', { name: 'Dynamic sections' });\n   8 |   const tab = list.getByRole('tab', { name: focused, exact: true });\n>  9 |   await expect(tab).toBeFocused();\n     |                     ^\n  10 |   await expect(list.locator('[role=\"tab\"][tabindex=\"0\"]')).toHaveCount(1);\n  11 |   await expect(tab).toHaveAttribute('tabindex', '0');\n  12 |   const active = list.getByRole('tab', { name: selected, exact: true });\n    at expectTabState (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/tabs-lifecycle.ts:9:21)\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/tabs-lifecycle.ts:75:13"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T08:12:52.970Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/integration-tabs-lifecycle-88b6d--navigate-the-new-DOM-order-firefox/test-failed-1.png"
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/integration-tabs-lifecycle-88b6d--navigate-the-new-DOM-order-firefox/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/integration-tabs-lifecycle-88b6d--navigate-the-new-DOM-order-firefox/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/tabs-lifecycle.ts",
+                    "column": 21,
+                    "line": 9
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "9d481056cb3fa0b463a7-b904eb45c9a3270cb79c",
+          "file": "tabs-lifecycle.ts",
+          "line": 47,
+          "column": 5
+        },
+        {
+          "title": "manual Tabs preserve the focused node across keyed reordering and navigate the new DOM order",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 6500,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeFocused\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('tablist', { name: 'Dynamic sections' }).getByRole('tab', { name: 'Overview', exact: true })\nExpected: focused\nReceived: inactive\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeFocused\" getByRole('tablist', { name: 'Dynamic sections' }).getByRole('tab', { name: 'Overview', exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('tablist', { name: 'Dynamic sections' }).getByRole('tab', { name: 'Overview', exact: true })\u001b[22m\n\u001b[2m    14 × locator resolved to <button role=\"tab\" tabindex=\"0\" type=\"button\" data-value=\"overview\" data-state=\"inactive\" aria-selected=\"false\" data-slot=\"tabs-trigger\" id=\"tabs-cl-0-overview-trigger\" aria-controls=\"tabs-cl-0-overview-content\" class=\"relative inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1.5 rounded-md border border-transparent px-1.5 py-0.5 text-sm font-medium whitespace-nowrap text-foreground/60 transition-all group-data-vertical/tabs:w-full group-data-vertical/tabs:justify-start hover:text…>Overview</button>\u001b[22m\n\u001b[2m       - unexpected value \"inactive\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeFocused\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('tablist', { name: 'Dynamic sections' }).getByRole('tab', { name: 'Overview', exact: true })\nExpected: focused\nReceived: inactive\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeFocused\" getByRole('tablist', { name: 'Dynamic sections' }).getByRole('tab', { name: 'Overview', exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('tablist', { name: 'Dynamic sections' }).getByRole('tab', { name: 'Overview', exact: true })\u001b[22m\n\u001b[2m    14 × locator resolved to <button role=\"tab\" tabindex=\"0\" type=\"button\" data-value=\"overview\" data-state=\"inactive\" aria-selected=\"false\" data-slot=\"tabs-trigger\" id=\"tabs-cl-0-overview-trigger\" aria-controls=\"tabs-cl-0-overview-content\" class=\"relative inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1.5 rounded-md border border-transparent px-1.5 py-0.5 text-sm font-medium whitespace-nowrap text-foreground/60 transition-all group-data-vertical/tabs:w-full group-data-vertical/tabs:justify-start hover:text…>Overview</button>\u001b[22m\n\u001b[2m       - unexpected value \"inactive\"\u001b[22m\n\n    at expectTabState (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/tabs-lifecycle.ts:9:21)\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/tabs-lifecycle.ts:75:13",
+                    "location": {
+                      "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/tabs-lifecycle.ts",
+                      "column": 21,
+                      "line": 9
+                    },
+                    "snippet": "   7 |   const list = page.getByRole('tablist', { name: 'Dynamic sections' });\n   8 |   const tab = list.getByRole('tab', { name: focused, exact: true });\n>  9 |   await expect(tab).toBeFocused();\n     |                     ^\n  10 |   await expect(list.locator('[role=\"tab\"][tabindex=\"0\"]')).toHaveCount(1);\n  11 |   await expect(tab).toHaveAttribute('tabindex', '0');\n  12 |   const active = list.getByRole('tab', { name: selected, exact: true });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/tabs-lifecycle.ts",
+                        "column": 21,
+                        "line": 9
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeFocused\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('tablist', { name: 'Dynamic sections' }).getByRole('tab', { name: 'Overview', exact: true })\nExpected: focused\nReceived: inactive\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeFocused\" getByRole('tablist', { name: 'Dynamic sections' }).getByRole('tab', { name: 'Overview', exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('tablist', { name: 'Dynamic sections' }).getByRole('tab', { name: 'Overview', exact: true })\u001b[22m\n\u001b[2m    14 × locator resolved to <button role=\"tab\" tabindex=\"0\" type=\"button\" data-value=\"overview\" data-state=\"inactive\" aria-selected=\"false\" data-slot=\"tabs-trigger\" id=\"tabs-cl-0-overview-trigger\" aria-controls=\"tabs-cl-0-overview-content\" class=\"relative inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1.5 rounded-md border border-transparent px-1.5 py-0.5 text-sm font-medium whitespace-nowrap text-foreground/60 transition-all group-data-vertical/tabs:w-full group-data-vertical/tabs:justify-start hover:text…>Overview</button>\u001b[22m\n\u001b[2m       - unexpected value \"inactive\"\u001b[22m\n\n\n   7 |   const list = page.getByRole('tablist', { name: 'Dynamic sections' });\n   8 |   const tab = list.getByRole('tab', { name: focused, exact: true });\n>  9 |   await expect(tab).toBeFocused();\n     |                     ^\n  10 |   await expect(list.locator('[role=\"tab\"][tabindex=\"0\"]')).toHaveCount(1);\n  11 |   await expect(tab).toHaveAttribute('tabindex', '0');\n  12 |   const active = list.getByRole('tab', { name: selected, exact: true });\n    at expectTabState (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/tabs-lifecycle.ts:9:21)\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/tabs-lifecycle.ts:75:13"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T08:13:01.148Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/integration-tabs-lifecycle-abbd3--navigate-the-new-DOM-order-firefox/test-failed-1.png"
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/integration-tabs-lifecycle-abbd3--navigate-the-new-DOM-order-firefox/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/integration-tabs-lifecycle-abbd3--navigate-the-new-DOM-order-firefox/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/tabs-lifecycle.ts",
+                    "column": 21,
+                    "line": 9
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "9d481056cb3fa0b463a7-ad8e4b4ee37070aa9ebd",
+          "file": "tabs-lifecycle.ts",
+          "line": 47,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-08T08:12:39.243Z",
+    "duration": 29455.311,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 4,
+    "flaky": 0
+  }
+}

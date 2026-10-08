@@ -1,7 +1,7 @@
 # Component acceptance and test matrix
 
 Initially audited 2026-10-08 against source at `314f27a`; updated with the
-[ALT-1 browser evidence](ALERT-ALT1-DELIVERY.md). Covers the **14
+[TAB-1 browser evidence](TABS-TAB1-DELIVERY.md). Covers the **14
 implemented component families**, including their compound parts. The other
 catalog entries in [COMPONENT-MAP.md](../COMPONENT-MAP.md) remain unimplemented;
 their adoption probes are not delivered-component acceptance tests.
@@ -9,7 +9,7 @@ their adoption probes are not delivered-component acceptance tests.
 This is a behavior inventory, not a claim that every possible state is tested.
 Read the assertions in the linked tests: a broad test title alone is not evidence
 for every behavior it mentions. Gaps below are unverified acceptance cases, not
-confirmed implementation bugs. The initial audit added no tests; the CMB-1, CMB-2, POP-1 and ALT-1
+confirmed implementation bugs. The initial audit added no tests; the CMB-1, CMB-2, POP-1, ALT-1 and TAB-1
 follow-ups add the browser contracts linked below.
 
 ## Reading the evidence
@@ -38,13 +38,13 @@ are implementation scope limits, not features that an existing test proves.
 | Diagnostics and cleanup are checked | [Unit setup](../vitest.setup.ts), [browser fixture](../tests/browser-fixture.ts) | Every unit test checks console warn/error after cleanup; every B/E test checks console warning/error and page errors. SSR has no equivalent diagnostic fixture. |
 | Whole-gallery accessibility | [B: light/dark examples have no axe accessibility violations](../tests/integration/foundation.spec.ts#L27) | Applies to the rendered, settled gallery state. Axe does not certify screen-reader usability or all dynamic states. |
 | Whole-gallery visual appearance | [V: light/dark/mobile component gallery](../tests/e2e/visual.spec.ts#L3) | Shared images include every family; not every variant/state combination. |
-| Unit execution coverage | [Coverage configuration](../vitest.config.ts), [measured coverage](evidence/alert-alt1-coverage.json) | 100% statements, branches, functions and lines for included component/helper source; not exhaustive behavior coverage. |
+| Unit execution coverage | [Coverage configuration](../vitest.config.ts), [measured coverage](evidence/tabs-tab1-coverage.json) | 100% statements, branches, functions and lines for included component/helper source; not exhaustive behavior coverage. |
 
-The ALT-1 delivery records **87 unit tests, 6 grouped SSR tests,
-92 browser integration runs (46 scenarios × 2 engines), and 65 E2E runs
-(28 journeys × 2 engines + 9 Chromium visual tests)**. Those visual tests compare
+The TAB-1 delivery records **93 unit tests, 6 grouped SSR tests,
+104 browser integration runs (52 scenarios × 2 engines), and 77 E2E runs
+(34 journeys × 2 engines + 9 Chromium visual tests)**. Those visual tests compare
 12 images. These totals are package-wide, not per component. See the
-[ALT-1 verification](ALERT-ALT1-DELIVERY.md) for current results and the
+[TAB-1 verification](TABS-TAB1-DELIVERY.md) for current results and the
 [initial matrix verification](TEST-MATRIX-DELIVERY.md) for the original audit.
 
 ## Button
@@ -179,10 +179,17 @@ evidence, not an independent Switch acceptance run for that case.
 | Keyboard navigation skips disabled entries and supports automatic/manual, vertical and RTL modes | [B: tabs skip disabled entries and support automatic, manual, vertical and RTL navigation](../tests/integration/overlays.spec.ts#L5) |
 | Invalid controlled value/all-disabled list retains defined semantics | [U: provides a tab stop for invalid controlled values and no selection with every tab disabled](../tests/unit/tabs.test.tsx#L20) |
 | Built selected panel accepts a draft and composes with a confirmation workflow | [E: built tabs and popover compose into a keyboard-only confirmation flow](../tests/e2e/overlays.spec.ts#L3) |
+| Focused removal recovers the remaining roving tab, or the list when none remain | [U: automatic/manual removal](../tests/unit/tabs.test.tsx#L25), [U: empty collection](../tests/unit/tabs.test.tsx#L31), [B/E: removal and exit after the last enabled tab](../tests/tabs-lifecycle.ts#L25) |
+| Keyed reordering retains the focused node and navigates the new DOM order in both activation modes | [B/E: adjacent and nonadjacent moves](../tests/tabs-lifecycle.ts#L47), [U: moved node and unrelated mutations](../tests/unit/tabs.test.tsx#L48) |
+| A force-mounted draft keeps its DOM identity/value while hidden; default lazy content is disposed | [B/E: native draft lifetime and hidden Tab exclusion](../tests/tabs-lifecycle.ts#L81) |
+| External updates preserve outside focus; disposal cancels recovery and releases listeners | [B/E: external removal/reorder and Tab entry](../tests/tabs-lifecycle.ts#L109), [U: newer destination](../tests/unit/tabs.test.tsx#L36), [U: root disposal](../tests/unit/tabs.test.tsx#L41) |
 
-Open **TAB-1**: focused-trigger removal/reordering and forceMount draft preservation
-need browser scenarios. Existing U verifies selection after removal and hidden
-visibility; it does not prove every focus or draft-preservation case.
+**TAB-1 closed:** six scenarios run through
+[source integration](../tests/integration/tabs-lifecycle.spec.ts#L3) and
+[built E2E](../tests/e2e/tabs-lifecycle.spec.ts#L3) in Chromium and Firefox.
+These verify uncontrolled dynamic collections in automatic/manual activation;
+controlled-owner rejection remains covered by the earlier tests, not every
+combination of rejection and collection mutation.
 
 ## Popover
 
@@ -286,8 +293,7 @@ order the next test work; they do not assign bug severity to untested behavior.
 | Priority | ID | Component(s) | Concrete closure condition |
 | --- | --- | --- | --- |
 | Manual follow-up | CMB-2 | Combobox | Browser scrolling/Tab/modal checks pass; record a physical IME composition/commit/cancel session before closing the remaining manual portion. |
-| Next | TAB-1 | Tabs | Browser removes/reorders the focused trigger and verifies focus/selection; a force-mounted panel retains its edited draft. |
-| Follow-up | CHK-1, SWT-1 | Checkbox, Switch | Each control passes canceled reset and changing explicit form ownership in both browsers, including unmount before pending reset work. |
+| Next | CHK-1, SWT-1 | Checkbox, Switch | Each control passes canceled reset and changing explicit form ownership in both browsers, including unmount before pending reset work. |
 | Follow-up | BTN-1, BDG-1 | Button, Badge | Browser proves focus/navigation of enabled links and disabled Button anchor nonactivation. |
 | Follow-up | INP-1, TXT-1, LBL-1 | Input, Textarea, Label | Define supported native input-type scenarios; add Textarea resize/read-only/scroll checks and live label reassociation in browser. |
 | Follow-up | CRD-1, SEP-1 | Card, Separator | Add compact/long-content Card layout assertions and a vertical Separator visual state. |
@@ -307,6 +313,7 @@ and component guide; it cannot be closed by increasing execution coverage alone.
 
 | ID | Closed | Evidence |
 | --- | --- | --- |
+| TAB-1 | 2026-10-08 | [Delivery](TABS-TAB1-DELIVERY.md): six lifecycle scenarios × two engines × source and built exports. Fixed removal/reorder focus loss and Firefox’s extra scrolling-list tab stop. |
 | ALT-1 | 2026-10-08 | [Delivery](ALERT-ALT1-DELIVERY.md): five focus/nesting scenarios × two engines × source and built exports. Fixed parent initial focus selecting a force-mounted child’s hidden Cancel. |
 | POP-1 | 2026-10-08 | [Delivery](POPOVER-POP1-DELIVERY.md): scrolling, resize, transform movement, collision and clipping; five scenarios × two engines × source and built exports. Fixed unintended coordinate transitions. |
 | CMB-2 browser portion | 2026-10-08 | [Delivery](COMBOBOX-CMB2-DELIVERY.md): five navigation/geometry/modal scenarios × two engines × source and built exports. Physical IME remains open above. |
