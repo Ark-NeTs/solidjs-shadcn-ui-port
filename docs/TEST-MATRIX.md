@@ -1,7 +1,7 @@
 # Component acceptance and test matrix
 
 Initially audited 2026-10-08 against source at `314f27a`; updated with the
-[Card/Separator layout evidence](CARD-LAYOUT-DELIVERY.md). Covers the **14
+[Skeleton Loading evidence](SKELETON-LOADING-DELIVERY.md). Covers the **14
 implemented component families**, including their compound parts. The other
 catalog entries in [COMPONENT-MAP.md](../COMPONENT-MAP.md) remain unimplemented;
 their adoption probes are not delivered-component acceptance tests.
@@ -9,7 +9,7 @@ their adoption probes are not delivered-component acceptance tests.
 This is a behavior inventory, not a claim that every possible state is tested.
 Read the assertions in the linked tests: a broad test title alone is not evidence
 for every behavior it mentions. Gaps below are unverified acceptance cases, not
-confirmed implementation bugs. The initial audit added no tests; the CMB-1, CMB-2, POP-1, ALT-1, TAB-1, CHK-1/SWT-1, BTN-1/BDG-1 and native field/Label/Card/Separator
+confirmed implementation bugs. The initial audit added no tests; the CMB-1, CMB-2, POP-1, ALT-1, TAB-1, CHK-1/SWT-1, BTN-1/BDG-1 and native field/Label/Card/Separator/Skeleton
 follow-ups add the browser contracts linked below.
 
 ## Reading the evidence
@@ -38,13 +38,13 @@ are implementation scope limits, not features that an existing test proves.
 | Diagnostics and cleanup are checked | [Unit setup](../vitest.setup.ts), [browser fixture](../tests/browser-fixture.ts) | Every unit test checks console warn/error after cleanup; every B/E test checks console warning/error and page errors. SSR has no equivalent diagnostic fixture. |
 | Whole-gallery accessibility | [B: light/dark examples have no axe accessibility violations](../tests/integration/foundation.spec.ts#L27) | Applies to the rendered, settled gallery state. Axe does not certify screen-reader usability or all dynamic states. |
 | Whole-gallery visual appearance | [V: light/dark/mobile component gallery](../tests/e2e/visual.spec.ts#L3) | Shared images include every family; not every variant/state combination. |
-| Unit execution coverage | [Coverage configuration](../vitest.config.ts), [measured coverage](evidence/card-layout-coverage.json) | 100% statements, branches, functions and lines for included component/helper source; not exhaustive behavior coverage. |
+| Unit execution coverage | [Coverage configuration](../vitest.config.ts), [measured coverage](evidence/skeleton-loading-coverage.json) | 100% statements, branches, functions and lines for included component/helper source; not exhaustive behavior coverage. |
 
-The Card/Separator delivery records **100 unit tests, 6 grouped SSR tests,
-164 browser integration runs (82 scenarios × 2 engines), and 140 E2E runs
-(64 journeys × 2 engines + 12 Chromium visual tests)**. Those visual tests compare
+The Skeleton Loading delivery records **100 unit tests, 6 grouped SSR tests,
+170 browser integration runs (85 scenarios × 2 engines), and 146 E2E runs
+(67 journeys × 2 engines + 12 Chromium visual tests)**. Those visual tests compare
 15 images. These totals are package-wide, not per component. See the
-[Card/Separator verification](CARD-LAYOUT-DELIVERY.md) for current results and the
+[Skeleton Loading verification](SKELETON-LOADING-DELIVERY.md) for current results and the
 [initial matrix verification](TEST-MATRIX-DELIVERY.md) for the original audit.
 
 ## Button
@@ -119,9 +119,12 @@ state are N/A for this noninteractive boundary.
 | A real Solid Loading boundary replaces the fallback when data resolves | [U: works as a Solid 2 Loading fallback and releases it when content resolves](../tests/unit/components.test.tsx#L69) |
 | Browser reduced-motion preference stops animation | [B: loading placeholders are hidden from accessibility tree and stop motion](../tests/integration/foundation.spec.ts#L22) |
 | Application pending state adds/removes placeholders through a complete workflow | [E: form validation, pending submit protection and recovery to ready](../tests/e2e/playground.spec.ts#L3), shared pending-state V |
+| Real Loading replaces the fallback, preserves shell editing and releases ready content on unmount | [B/E: light desktop and dark narrow/enlarged](../tests/skeleton-loading.ts#L24) |
+| Pending disposal survives late resolution before/after a fresh mount; old requests cannot replace the fresh fallback | [B/E: late settlement and remount](../tests/skeleton-loading.ts#L61) |
 
-Open **SKL-1**: the actual Solid async boundary is tested only in U; the browser
-example uses manually controlled pending state. Skeleton-owned retry is N/A.
+**SKL-1 closed:** [real promise-driven browser fixture](SKELETON-LOADING-DELIVERY.md)
+exercises resolution and unmounting in both engines and export modes. Skeleton-owned
+retry is N/A; request rejection, refetch transitions and hydration remain unverified.
 
 ## Input
 
@@ -334,8 +337,7 @@ order the next test work; they do not assign bug severity to untested behavior.
 | Priority | ID | Component(s) | Concrete closure condition |
 | --- | --- | --- | --- |
 | Manual follow-up | CMB-2 | Combobox | Browser scrolling/Tab/modal checks pass; record a physical IME composition/commit/cancel session before closing the remaining manual portion. |
-| Next | SKL-1 | Skeleton | Actual Solid Loading resolution/unmount is exercised in a browser, separate from the manually toggled preview. |
-| Cross-cutting | ALL-1 | All 14 | Add WebKit runs and inspect differences; a mobile viewport alone does not certify Safari or a touch device. |
+| Next | ALL-1 | All 14 | Add WebKit runs and inspect differences; a mobile viewport alone does not certify Safari or a touch device. |
 | Cross-cutting | ALL-2 | All 14 | Add hydrate-then-interact scenarios, including live IDs, form values, selected panels and open/closed overlays. |
 | Cross-cutting | ALL-3 | Interactive controls and semantic content | Record manual assistive-technology navigation/announcements; axe success is only automated evidence. |
 | Cross-cutting | ALL-4 | All 14 | Expand representative state/variant visual cases; isolate assertions currently supported only by shared gallery/SSR markup (notably Badge SSR). |
@@ -350,6 +352,7 @@ and component guide; it cannot be closed by increasing execution coverage alone.
 
 | ID | Closed | Evidence |
 | --- | --- | --- |
+| SKL-1 | 2026-10-08 | [Delivery](SKELETON-LOADING-DELIVERY.md): three real Loading scenarios × two engines × source and built exports; resolution, pending/ready disposal, late settlement and remounts. No component change. |
 | CRD-1, SEP-1 | 2026-10-08 | [Delivery](CARD-LAYOUT-DELIVERY.md): six geometry/interaction scenarios × two engines × source and built exports, plus three new reviewed visual baselines. No component fix needed. |
 | LBL-1 | 2026-10-08 | [Delivery](LABEL-REFRESH-DELIVERY.md): native cache refresh, restored Firefox name assertions and repeated editing checks in both export modes/engines. |
 | INP-1, TXT-1; LBL-1 targeting portion | 2026-10-08 | [Delivery](NATIVE-FIELDS-DELIVERY.md): ten field scenarios × two engines × source and built exports. Firefox names were deferred here and closed in the follow-up above. |

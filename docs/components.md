@@ -114,14 +114,31 @@ import { Loading } from 'solid-js';
     <Skeleton class="mt-3 h-4 w-48" />
   </div>
 }>
-  <Profile />
+  <Profile promise={profilePromise} />
 </Loading>
 ```
 
 Skeleton is a decorative div; size it with utilities. Its animation stops under
 `prefers-reduced-motion: reduce`. The application controls readiness and supplies
 status text, recovery, and eventual content. A real async Loading boundary is
-covered by the unit suite.
+covered in unit tests and in Chromium/Firefox using source and built exports.
+Here `profilePromise` comes from the application. Read its asynchronous value
+underneath the boundary:
+
+```tsx
+import { createMemo } from 'solid-js';
+function Profile(props: { promise: Promise<string> }) {
+  const profile = createMemo(() => props.promise);
+  return <p>{profile()}</p>;
+}
+```
+
+The [SKL-1 fixture](SKELETON-LOADING-DELIVERY.md) uses explicit promise completion
+controls, not a manually toggled loading flag. It verifies fallback removal,
+unmounting while pending or ready, late resolution after disposal, fresh remounts,
+and preservation of an editable shell outside Loading. No request or cache logic
+is added to Skeleton. Error recovery belongs to the application and is outside
+this lifecycle verification.
 
 ## Input, Textarea and Label
 
