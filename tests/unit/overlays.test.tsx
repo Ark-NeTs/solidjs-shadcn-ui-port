@@ -89,3 +89,18 @@ for(const withCancel of [false,true])it(`keeps parent initial focus out of a for
  expect(screen.getByRole('alertdialog',{name:'Parent owner'})).toHaveAttribute('open');
  expect(child).toBeInTheDocument();expect(child).not.toHaveAttribute('open');
 });
+
+it('contains focus in the newest modal and releases ownership when it closes or unmounts',()=>{
+ const [preferred,setPreferred]=createSignal(true);
+ const {unmount}=render(()=><><button>Outside modal owners</button><AlertDialog defaultOpen><AlertDialogContent aria-label="Parent guard">
+  <input aria-label="Parent guard input"/>
+  <AlertDialog><AlertDialogTrigger>Open guard child</AlertDialogTrigger><AlertDialogContent aria-label="Child guard"><Show when={preferred()}><AlertDialogCancel>Guard child cancel</AlertDialogCancel></Show></AlertDialogContent></AlertDialog>
+ </AlertDialogContent></AlertDialog></>);
+ const parentInput=screen.getByRole('textbox',{name:'Parent guard input'});
+ fireEvent.click(screen.getByText('Open guard child'));flush();const child=screen.getByRole('alertdialog',{name:'Child guard'});
+ parentInput.focus();expect(screen.getByText('Guard child cancel')).toHaveFocus();
+ setPreferred(false);flush();child.tabIndex=-1;parentInput.focus();expect(child).toHaveFocus();
+ child.dispatchEvent(new Event('cancel',{cancelable:true}));flush();expect(screen.getByText('Open guard child')).toHaveFocus();
+ parentInput.focus();screen.getByText('Outside modal owners').focus();expect(parentInput).toHaveFocus();
+ unmount();const outside=document.createElement('button');document.body.append(outside);outside.focus();expect(outside).toHaveFocus();outside.remove();
+});

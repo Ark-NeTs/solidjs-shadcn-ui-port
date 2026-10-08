@@ -1,7 +1,7 @@
 # Component acceptance and test matrix
 
 Initially audited 2026-10-08 against source at `314f27a`; updated with the
-[Skeleton Loading evidence](SKELETON-LOADING-DELIVERY.md). Covers the **14
+[three-engine browser evidence](WEBKIT-DELIVERY.md). Covers the **14
 implemented component families**, including their compound parts. The other
 catalog entries in [COMPONENT-MAP.md](../COMPONENT-MAP.md) remain unimplemented;
 their adoption probes are not delivered-component acceptance tests.
@@ -17,8 +17,8 @@ follow-ups add the browser contracts linked below.
 | Mark | Meaning |
 | --- | --- |
 | U | Vitest + Testing Library in jsdom. Events can be synthetic; overlay APIs and geometry may be mocked. |
-| B | Playwright against source components in the development gallery and focused examples, in Chromium and Firefox. |
-| E | Playwright against a freshly built package/gallery, in Chromium and Firefox. This is not an admin application E2E test. |
+| B | Playwright against source components in the development gallery and focused examples, in Chromium, Firefox and WebKit. |
+| E | Playwright against a freshly built package/gallery, in Chromium, Firefox and WebKit. This is not an admin application E2E test. |
 | S | Server-rendered HTML assertions in Node. This is not hydration verification. |
 | V | Chromium screenshot comparison. A shared gallery image is not a separate assertion for every component/state. |
 | Open | No sufficient assertion at the specified layer; tracked in the gap register. |
@@ -38,14 +38,19 @@ are implementation scope limits, not features that an existing test proves.
 | Diagnostics and cleanup are checked | [Unit setup](../vitest.setup.ts), [browser fixture](../tests/browser-fixture.ts) | Every unit test checks console warn/error after cleanup; every B/E test checks console warning/error and page errors. SSR has no equivalent diagnostic fixture. |
 | Whole-gallery accessibility | [B: light/dark examples have no axe accessibility violations](../tests/integration/foundation.spec.ts#L27) | Applies to the rendered, settled gallery state. Axe does not certify screen-reader usability or all dynamic states. |
 | Whole-gallery visual appearance | [V: light/dark/mobile component gallery](../tests/e2e/visual.spec.ts#L3) | Shared images include every family; not every variant/state combination. |
-| Unit execution coverage | [Coverage configuration](../vitest.config.ts), [measured coverage](evidence/skeleton-loading-coverage.json) | 100% statements, branches, functions and lines for included component/helper source; not exhaustive behavior coverage. |
+| Unit execution coverage | [Coverage configuration](../vitest.config.ts), [measured coverage](evidence/webkit-coverage.json) | 100% statements, branches, functions and lines for included component/helper source; not exhaustive behavior coverage. |
 
-The Skeleton Loading delivery records **100 unit tests, 6 grouped SSR tests,
-170 browser integration runs (85 scenarios × 2 engines), and 146 E2E runs
-(67 journeys × 2 engines + 12 Chromium visual tests)**. Those visual tests compare
+The WebKit delivery records **101 unit tests, 6 grouped SSR tests,
+255 browser integration runs (85 scenarios × 3 engines), and 213 E2E runs
+(67 journeys × 3 engines + 12 Chromium visual tests)**. Those visual tests compare
 15 images. These totals are package-wide, not per component. See the
-[Skeleton Loading verification](SKELETON-LOADING-DELIVERY.md) for current results and the
+[WebKit verification](WEBKIT-DELIVERY.md) for current results and the
 [initial matrix verification](TEST-MATRIX-DELIVERY.md) for the original audit.
+
+WebKit runs on macOS with process-scoped button Tab navigation and native
+Option-Tab/Option-Shift-Tab for links. Pointer activation does not focus native
+buttons there; keyboard-focused mutation scenarios use Enter, and outside-click
+checks retain native focus behavior. [Differences and limits](WEBKIT-DELIVERY.md).
 
 ## Button
 
@@ -57,11 +62,11 @@ The Skeleton Loading delivery records **100 unit tests, 6 grouped SSR tests,
 | Keyboard activation, visible focus, disabled state and anchor navigation work in a browser | [B: keyboard activation, focus ring, disabled examples and navigation](../tests/integration/foundation.spec.ts#L5) |
 | Submit action blocks duplicate pending submission and recovers | [E: form validation, pending submit protection and recovery to ready](../tests/e2e/playground.spec.ts#L3); pending state is owned by the example |
 | Variant/size class contract and token customization | [U: reference button classes](../tests/unit/contracts.test.ts#L17), [B: custom theme changes token-driven button colors](../tests/integration/foundation.spec.ts#L18) |
-| Anchor participates in Tab/Shift+Tab order, shows light/dark keyboard focus, navigates on Enter and does not activate on Space | [B/E: native Button link](../tests/link-navigation.ts#L31), parameterized by theme |
-| Initially disabled anchor is skipped in both tab directions and blocks real pointer activation | [B/E: disabled entry and pointer](../tests/link-navigation.ts#L62) |
-| Disabling a focused anchor blocks Enter/Space/pointer and callbacks; re-enabling restores navigation on the same node | [B/E: live availability change](../tests/link-navigation.ts#L78) |
+| Anchor participates in Tab/Shift+Tab order, shows light/dark keyboard focus, navigates on Enter and does not activate on Space | [B/E: native Button link](../tests/link-navigation.ts#L37), parameterized by theme |
+| Initially disabled anchor is skipped in both tab directions and blocks real pointer activation | [B/E: disabled entry and pointer](../tests/link-navigation.ts#L68) |
+| Disabling a focused anchor blocks Enter/Space/pointer and callbacks; re-enabling restores navigation on the same node | [B/E: live availability change](../tests/link-navigation.ts#L84) |
 
-**BTN-1 closed:** dedicated scenarios run in Chromium and Firefox through source
+**BTN-1 closed:** dedicated scenarios run in Chromium, Firefox and WebKit through source
 and built exports. Native same-document fragment navigation and callback counts
 are covered; external/router navigation and new-tab gestures are untested. See
 [delivery](LINKS-NAVIGATION-DELIVERY.md). Shared S/V scope is below.
@@ -73,9 +78,9 @@ are covered; external/router navigation and new-tab gestures are untested. See
 | Default/updated variants, caller class and anchor href render correctly | [U: updates a badge variant and supports links with caller classes](../tests/unit/components.test.tsx#L45), [U: uses the default badge variant](../tests/unit/components.test.tsx#L50) |
 | Variant class contract matches the documented React reference correction | [U: reference badge classes](../tests/unit/contracts.test.ts#L18) |
 | Appearance and accessibility in the gallery | Shared V and whole-gallery B axe; dedicated link behavior below |
-| Native anchor has light/dark keyboard focus, forward/backward Tab order, Enter navigation and no Space activation; a span Badge adds no tab stop | [B/E: native Badge link](../tests/link-navigation.ts#L31), parameterized by theme |
+| Native anchor has light/dark keyboard focus, forward/backward Tab order, Enter navigation and no Space activation; a span Badge adds no tab stop | [B/E: native Badge link](../tests/link-navigation.ts#L37), parameterized by theme |
 
-**BDG-1 closed:** Badge has independent light/dark scenarios in both engines via
+**BDG-1 closed:** Badge has independent light/dark scenarios in all three engines via
 [source integration](../tests/integration/link-navigation.spec.ts#L3) and
 [built E2E](../tests/e2e/link-navigation.spec.ts#L3). The same navigation limits as
 Button apply. Selection, reset and async recovery are N/A: Badge owns no selection
@@ -106,7 +111,7 @@ or unstyled unbroken content. Card-owned keyboard/selection/reset are N/A.
 | Vertical semantic/decorative separators stretch, custom width/height/color/alignment work, Tab skips them and orientation updates geometry | [B/E: separator contracts](../tests/card-layout.ts#L70) |
 | Stretched and custom vertical lines appear in light/dark/mobile | [V: focused Card/Separator baselines](../tests/e2e/visual.spec.ts#L19) |
 
-**SEP-1 closed:** both engines verify geometry/semantics and Chromium captures
+**SEP-1 closed:** all three engines verify geometry/semantics and Chromium captures
 three dedicated visual states. Override orientation dimensions with the matching
 `data-vertical:` class hook; see [guide](components.md#separator). Form and request
 state are N/A for this noninteractive boundary.
@@ -123,7 +128,7 @@ state are N/A for this noninteractive boundary.
 | Pending disposal survives late resolution before/after a fresh mount; old requests cannot replace the fresh fallback | [B/E: late settlement and remount](../tests/skeleton-loading.ts#L61) |
 
 **SKL-1 closed:** [real promise-driven browser fixture](SKELETON-LOADING-DELIVERY.md)
-exercises resolution and unmounting in both engines and export modes. Skeleton-owned
+exercises resolution and unmounting in all three engines and export modes. Skeleton-owned
 retry is N/A; request rejection, refetch transitions and hydration remain unverified.
 
 ## Input
@@ -157,7 +162,7 @@ forwarding attributes does not certify every type.
 | Read-only textarea rejects typing, receives label focus, scrolls by wheel, submits and accepts edits after unlocking | [B/E: read-only/scroll/submission](../tests/native-fields.ts#L101) |
 | Native resize-handle drag changes height while preserving width/value; narrow enlarged layout stays usable | [B/E: desktop and narrow/enlarged resizing](../tests/native-fields.ts#L122) |
 
-**TXT-1 closed:** both engines and export modes verify an explicitly bounded
+**TXT-1 closed:** all three engines and export modes verify an explicitly bounded
 `field-sizing-fixed resize-y` composition. This is not a claim about resizing
 all auto-growing default configurations; see [delivery](NATIVE-FIELDS-DELIVERY.md).
 
@@ -169,8 +174,8 @@ all auto-growing default configurations; see [delivery](NATIVE-FIELDS-DELIVERY.m
 | Updated for/ID wiring preserves an accessible field name | [U: updates controlled values, native states, label association and classes without replacing the node](../tests/unit/form-fields.test.tsx#L19) |
 | Clicking the label focuses its actual input/textarea | [B: labels focus their controls and keyboard navigation exposes focus rings](../tests/integration/form-fields.spec.ts#L5) |
 | Clicking associated toggle labels changes the corresponding control | [B: labels and Space update checkboxes, mixed selections and switches once](../tests/integration/toggles.spec.ts#L5) |
-| Live for/ID reassociation targets the correct Input/Textarea, preserves nodes/drafts and respects disabled targets | [B/E: live native targeting](../tests/native-fields.ts#L144), both engines |
-| Accessible names follow reassociation and a target ID change | [B/E: both-engine name assertions](../tests/native-fields.ts#L144) |
+| Live for/ID reassociation targets the correct Input/Textarea, preserves nodes/drafts and respects disabled targets | [B/E: live native targeting](../tests/native-fields.ts#L144), all three engines |
+| Accessible names follow reassociation and a target ID change | [B/E: three-engine name assertions](../tests/native-fields.ts#L144) |
 | Repeated association changes during editing preserve label/content identity, focus, selection and draft | [B/E: editing lifetime](../tests/native-fields.ts#L195) |
 | Refresh only stale old/new collections, leave healthy/missing targets alone, and stop on disposal | [U: stale collections](../tests/unit/form-fields.test.tsx#L38), [U: removed association](../tests/unit/form-fields.test.tsx#L63) |
 
@@ -230,7 +235,7 @@ DOM mutation limits as Checkbox apply; see [delivery](TOGGLES-FORMS-DELIVERY.md)
 
 **TAB-1 closed:** six scenarios run through
 [source integration](../tests/integration/tabs-lifecycle.spec.ts#L3) and
-[built E2E](../tests/e2e/tabs-lifecycle.spec.ts#L3) in Chromium and Firefox.
+[built E2E](../tests/e2e/tabs-lifecycle.spec.ts#L3) in Chromium, Firefox and WebKit.
 These verify uncontrolled dynamic collections in automatic/manual activation;
 controlled-owner rejection remains covered by the earlier tests, not every
 combination of rejection and collection mutation.
@@ -242,15 +247,15 @@ combination of rejection and collection mutation.
 | Live naming IDs, refs, positioning, observer cleanup and stale-result rejection | [U: live IDs/lifetime](../tests/unit/overlays.test.tsx#L19), [U: disposes placement observers, follows anchors and rejects stale async positions after changes or unmount](../tests/unit/overlays.test.tsx#L58); geometry engine mocked |
 | Controlled close rejection and cancellable callbacks | [U: keeps controlled dismissal subject to the owner and cancels consumer actions](../tests/unit/overlays.test.tsx#L22), [B: controlled popup remains open](../tests/integration/overlays.spec.ts#L11) |
 | Real open/naming/initial placement, Escape focus return and outside-click focus retention | [B: popover positions, labels and restores focus on Escape but preserves outside clicks](../tests/integration/overlays.spec.ts#L11) |
-| Modal focus containment/scroll release and nested alert focus return | [B: modal popover traps focus and releases scroll locking](../tests/integration/overlays.spec.ts#L19), [B: nested alert dismissal](../tests/integration/overlays.spec.ts#L16), [E: built keyboard confirmation](../tests/e2e/overlays.spec.ts#L3) |
-| Open light/dark/enlarged-mobile accessibility and visual appearance | [B: open overlay axe/viewport checks](../tests/integration/overlays.spec.ts#L25), [V: open overlays](../tests/e2e/visual.spec.ts#L12) |
+| Modal focus containment/scroll release and nested alert focus return | [B: modal popover traps focus and releases scroll locking](../tests/integration/overlays.spec.ts#L20), [B: nested alert dismissal](../tests/integration/overlays.spec.ts#L17), [E: built keyboard confirmation](../tests/e2e/overlays.spec.ts#L3) |
+| Open light/dark/enlarged-mobile accessibility and visual appearance | [B: open overlay axe/viewport checks](../tests/integration/overlays.spec.ts#L26), [V: open overlays](../tests/e2e/visual.spec.ts#L12) |
 | Two-axis ancestor and document scrolling retain the declared gap/alignment | [B/E: scroll forward/back and Escape](../tests/popover-placement.ts#L37) |
 | Viewport, anchor and content resizing recompute placement without reopening | [B/E: resize each geometry source and restore it](../tests/popover-placement.ts#L57) |
 | Transformed anchor movement stays attached in motion and at rest | [B/E: sampled animation and return](../tests/popover-placement.ts#L77); transient lag bounded to 12px, settled alignment/gap within 1px; not a frame-rate guarantee |
 | Viewport collisions flip/shift and constrain oversized content without losing its close action | [B/E: edge collision and 320×300 viewport](../tests/popover-placement.ts#L108) |
 | A transformed paint-clipping ancestor does not clip or intercept the popup | [B/E: outside-boundary hit test, real click, reopen and Escape](../tests/popover-placement.ts#L130) |
 
-**POP-1 closed:** five shared scenarios pass in Chromium and Firefox through
+**POP-1 closed:** five shared scenarios pass in Chromium, Firefox and WebKit through
 [source integration](../tests/integration/popover-placement.spec.ts#L3) and
 [built E2E](../tests/e2e/popover-placement.spec.ts#L3). The tests use actual browser
 layout and native top layers. They do not certify every transform, continuous
@@ -260,18 +265,19 @@ scroll frame, occluded/offscreen anchor policy or mobile visual viewport behavio
 
 | Acceptance requirement | Existing evidence |
 | --- | --- |
+| Newest modal contains escaped programmatic focus, falls back when a target is removed and releases listeners on close/unmount | [U: modal owner guard](../tests/unit/overlays.test.tsx#L93), [B/E: nested parent focus attempts](../tests/alert-dialog-focus.ts#L59) |
 | Native modality, live naming, cancellable Escape and explicit actions | [U: uses native modality, ref callbacks and cancellable Escape with explicit alert actions](../tests/unit/overlays.test.tsx#L28); native dialog methods adapted in jsdom |
 | External close rejection, disposal and nested scroll-lock balancing | [U: external close and unmount](../tests/unit/overlays.test.tsx#L33), [U: balances nested scroll locks and releases only the final owner](../tests/unit/overlays.test.tsx#L39) |
-| Cancel receives focus; outside click does not close; pending failure retains draft and retry can complete | [B: alert blocks outside dismissal and preserves a draft through pending failure and retry](../tests/integration/overlays.spec.ts#L22), [E: built alert preserves rejected drafts and completes only an explicit retry](../tests/e2e/overlays.spec.ts#L6) |
-| Nested keyboard confirmation returns focus to the right owner | [B: nested alert dismissal](../tests/integration/overlays.spec.ts#L16), [E: built keyboard confirmation](../tests/e2e/overlays.spec.ts#L3) |
-| Open light/dark/enlarged-mobile accessibility and appearance | [B: open overlay axe/viewport checks](../tests/integration/overlays.spec.ts#L25), [V: open overlays](../tests/e2e/visual.spec.ts#L12) |
+| Cancel receives focus; outside click does not close; pending failure retains draft and retry can complete | [B: alert blocks outside dismissal and preserves a draft through pending failure and retry](../tests/integration/overlays.spec.ts#L23), [E: built alert preserves rejected drafts and completes only an explicit retry](../tests/e2e/overlays.spec.ts#L6) |
+| Nested keyboard confirmation returns focus to the right owner | [B: nested alert dismissal](../tests/integration/overlays.spec.ts#L17), [E: built keyboard confirmation](../tests/e2e/overlays.spec.ts#L3) |
+| Open light/dark/enlarged-mobile accessibility and appearance | [B: open overlay axe/viewport checks](../tests/integration/overlays.spec.ts#L26), [V: open overlays](../tests/e2e/visual.spec.ts#L12) |
 | Own Tab/Shift+Tab boundaries wrap, skip excluded controls, reject background focus and restore native page order on close | [B/E: exact Alert Dialog focus destinations](../tests/alert-dialog-focus.ts#L28) |
 | Nested alerts contain focus, preserve the parent draft/scroll lock, and restore focus on Escape, Cancel and Confirm | [B/E: nested dismissal paths and reopen](../tests/alert-dialog-focus.ts#L59), parameterized by dismissal and forceMount |
 | A hidden, mounted child cannot supply the parent's initial focus target | [U: parents with/without Cancel](../tests/unit/overlays.test.tsx#L80), [B/E: force-mounted child](../tests/alert-dialog-focus.ts#L59) |
 
 **ALT-1 closed:** five scenarios run through
 [source integration](../tests/integration/alert-dialog-focus.spec.ts#L3) and
-[built E2E](../tests/e2e/alert-dialog-focus.spec.ts#L3) in Chromium and Firefox.
+[built E2E](../tests/e2e/alert-dialog-focus.spec.ts#L3) in Chromium, Firefox and WebKit.
 This proves the named parent/child composition, not arbitrary depth, every
 focusable element type or custom focus-hook behavior. Pending/failure examples
 remain simulated application state, not backend fault-injection tests.
@@ -292,13 +298,13 @@ remain simulated application state, not backend fault-injection tests.
 | Canceled/deferred reset and input work are disposed on unmount | [U: disabled/reset disposal](../tests/unit/combobox.test.tsx#L34), [U: deferred input disposal](../tests/unit/combobox.test.tsx#L46), [U: reset-owner unmount](../tests/unit/combobox.test.tsx#L58) |
 | Open dark/enlarged-mobile accessibility and light/dark/mobile appearance | [B: keeps open content accessible and within enlarged narrow viewports](../tests/integration/combobox.spec.ts#L16), [V: open combobox](../tests/e2e/visual.spec.ts#L16) |
 
-**CMB-1 closed:** four shared scenarios run in both Chromium and Firefox through
+**CMB-1 closed:** four shared scenarios run in Chromium, Firefox and WebKit through
 [source integration](../tests/integration/combobox.spec.ts#L21) and
 [built E2E](../tests/e2e/combobox.spec.ts#L8), covering native repeated form values,
 reset, fresh object identities and rejected controlled requests.
 
 **CMB-2 automated checks complete:** long-list visibility, native Tab destinations
-and nesting inside modal Popover pass in both engines against source and built
+and nesting inside modal Popover pass in all three engines against source and built
 exports. **CMB-2 remains open for a physical IME session only.** The synthetic Home key in U is not an assertion
 about the native text caret. Complete Base UI API parity remains an implementation
 limit documented in [the guide](components.md#combobox).
@@ -337,8 +343,7 @@ order the next test work; they do not assign bug severity to untested behavior.
 | Priority | ID | Component(s) | Concrete closure condition |
 | --- | --- | --- | --- |
 | Manual follow-up | CMB-2 | Combobox | Browser scrolling/Tab/modal checks pass; record a physical IME composition/commit/cancel session before closing the remaining manual portion. |
-| Next | ALL-1 | All 14 | Add WebKit runs and inspect differences; a mobile viewport alone does not certify Safari or a touch device. |
-| Cross-cutting | ALL-2 | All 14 | Add hydrate-then-interact scenarios, including live IDs, form values, selected panels and open/closed overlays. |
+| Next | ALL-2 | All 14 | Add hydrate-then-interact scenarios, including live IDs, form values, selected panels and open/closed overlays. |
 | Cross-cutting | ALL-3 | Interactive controls and semantic content | Record manual assistive-technology navigation/announcements; axe success is only automated evidence. |
 | Cross-cutting | ALL-4 | All 14 | Expand representative state/variant visual cases; isolate assertions currently supported only by shared gallery/SSR markup (notably Badge SSR). |
 | Before app adoption | ALL-5 | Full package | Verify real admin composition, router/query integration and application errors; measure representative large-list/overlay performance. Current E2E is the gallery only. |
@@ -352,6 +357,7 @@ and component guide; it cannot be closed by increasing execution coverage alone.
 
 | ID | Closed | Evidence |
 | --- | --- | --- |
+| ALL-1 | 2026-10-08 | [Delivery](WEBKIT-DELIVERY.md): all 85 source scenarios and 67 built journeys run in WebKit 26.6 on macOS; nested modal focus fixed, native navigation differences documented. Packaged Safari, devices and WebKit screenshot baselines remain outside this claim. |
 | SKL-1 | 2026-10-08 | [Delivery](SKELETON-LOADING-DELIVERY.md): three real Loading scenarios × two engines × source and built exports; resolution, pending/ready disposal, late settlement and remounts. No component change. |
 | CRD-1, SEP-1 | 2026-10-08 | [Delivery](CARD-LAYOUT-DELIVERY.md): six geometry/interaction scenarios × two engines × source and built exports, plus three new reviewed visual baselines. No component fix needed. |
 | LBL-1 | 2026-10-08 | [Delivery](LABEL-REFRESH-DELIVERY.md): native cache refresh, restored Firefox name assertions and repeated editing checks in both export modes/engines. |

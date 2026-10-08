@@ -248,3 +248,25 @@ observer, global registry or external-DOM mutation monitoring is added. SSR rema
 native markup. Consumers observing label child-list mutations can see the temporary
 comment insertion/removal. [Delivery](docs/LABEL-REFRESH-DELIVERY.md) records the
 probe, repeated focus/selection/identity tests and restored both-engine assertions.
+
+## WebKit coverage and newest-modal focus containment (2026-10-08)
+
+Run source integration and built journeys in Chromium, Firefox and WebKit.
+On macOS launch the bundled WebKit through a small wrapper that supplies
+AppleKeyboardUIMode=2 as process arguments. Preserve Playwright's transport,
+headless/headed and profile arguments; leave system/Safari settings untouched.
+Link tests use native Option-Tab, and pointer tests retain native button focus
+behavior rather than adding tabindex or focus handlers to production controls.
+
+WebKit 26.6 allowed a programmatic focus attempt into the parent of a nested
+modal. Add a document-scoped modal-owner stack and focusin guard: only the most
+recently opened modal remembers/reclaims focus. Restore the last connected,
+enabled target, or the modal itself when that target has gone away. Guard
+reentrancy and remove the listener/stack entry before native close and trigger
+restoration. No user-agent branch enters component code.
+
+REASONING: native showModal still owns top-layer display, inertness and dismissal;
+the guard supplies the tested focus-containment contract where native behavior
+falls short. Existing exact nested-focus tests now run in three engines; a unit
+regression verifies target removal and disposal. [Delivery](docs/WEBKIT-DELIVERY.md)
+records scope, native probes and remaining browser/device gaps.

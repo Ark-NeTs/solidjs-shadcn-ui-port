@@ -32,6 +32,30 @@ function lockScroll(document:Document){
 function findOwnedTarget(node:HTMLElement,selector:string){
   return Array.from(node.querySelectorAll<HTMLElement>(selector)).find(target=>target.closest('[role=dialog],[role=alertdialog]')===node);
 }
+const modalOwners=new WeakMap<Document,HTMLElement[]>();
+/** Guard native modal focus when an engine allows focus into an underlying modal. */
+function containModalFocus(node:HTMLElement){
+  const document=node.ownerDocument;
+  const owners=modalOwners.get(document)??[];
+  owners.push(node);modalOwners.set(document,owners);
+  let previous:HTMLElement=node;
+  let restoring=false;
+  /** Only the most recently opened modal may recover an escaped focus target. */
+  function remember(event:FocusEvent){
+    if(owners.at(-1)!==node||restoring)return;
+    const target=event.target as HTMLElement;
+    if(node.contains(target)){previous=target;return;}
+    const destination=previous.isConnected&&!previous.matches(':disabled')?previous:node;
+    restoring=true;
+    try{destination.focus({preventScroll:true});}finally{restoring=false;}
+  }
+  document.addEventListener('focusin',remember,true);
+  return()=>{
+    document.removeEventListener('focusin',remember,true);
+    owners.splice(owners.indexOf(node),1);
+    if(!owners.length)modalOwners.delete(document);
+  };
+}
 /** Let the browser own modality and dismissal; synchronize only accepted state changes. */
 export function useNativeLayer(context:LayerContext, element:Accessor<HTMLElement|undefined>, modal:Accessor<boolean>, props:FocusProps){
   createEffect(()=>[element(),context.open(),modal()] as const,([node,open,isModal])=>{
@@ -39,6 +63,7 @@ export function useNativeLayer(context:LayerContext, element:Accessor<HTMLElemen
     let active=true;
     const document=node.ownerDocument;
     const unlock=isModal?lockScroll(document):()=>undefined;
+    const releaseFocus=isModal?containModalFocus(node):()=>undefined;
     /** Native Escape requests are cancellable for dialogs and controlled owners. */
     function cancel(event:Event){event.preventDefault();
       // The native cancel was prevented above; use a separate event for the public cancellation contract.
@@ -70,7 +95,7 @@ export function useNativeLayer(context:LayerContext, element:Accessor<HTMLElemen
     node.addEventListener('keydown',keydown);
     untrack(()=>{if(!notify(props.onOpenAutoFocus)){const focus=findOwnedTarget(node,'[autofocus],button:not(:disabled),input:not(:disabled),[tabindex="0"]');(findOwnedTarget(node,'[data-slot="alert-dialog-cancel"]:not(:disabled)')??focus??findOwnedTarget(node,'[data-slot=alert-dialog-content]')??node).focus();}});
     return ()=>{
-      active=false;
+      active=false;releaseFocus();
       node.removeEventListener('cancel',cancel);node.removeEventListener('close',closed);node.removeEventListener('toggle',toggled);node.removeEventListener('keydown',keydown);document.removeEventListener('pointerdown',pointer,true);
       if(isModal)(node as HTMLDialogElement).close();else if(node.matches(':popover-open'))node.hidePopover();
       unlock();untrack(()=>{if(!notify(props.onCloseAutoFocus)&&context.restoreFocus&&context.trigger()?.isConnected)context.trigger()?.focus();});

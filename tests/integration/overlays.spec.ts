@@ -8,9 +8,10 @@ test('tabs skip disabled entries and support automatic, manual, vertical and RTL
  await page.getByRole('button',{name:'Toggle tab orientation'}).click();await activity.focus();await page.keyboard.press('ArrowUp');await expect(overview).toBeFocused();await page.getByRole('button',{name:'Toggle tab orientation'}).click();await page.getByRole('button',{name:'Toggle tab direction'}).click();await overview.focus();await page.keyboard.press('ArrowLeft');await expect(activity).toBeFocused();
  await page.getByRole('tab',{name:'Restricted plan'}).click();await expect(page.getByRole('tab',{name:'Current plan'})).toHaveAttribute('aria-selected','true');
 });
-test('popover positions, labels and restores focus on Escape but preserves outside clicks',async({page})=>{
+test('popover positions, labels and restores focus on Escape but preserves outside clicks',async({page,browserName})=>{
  const trigger=page.getByRole('button',{name:'Workspace details',exact:true});await trigger.click();const popup=page.getByRole('dialog',{name:'Workspace details'});await expect(popup).toBeVisible();await expect(popup).toHaveAccessibleDescription('Local preview preferences.');await expect(page.getByRole('textbox',{name:'Display name'})).toBeFocused();const box=await popup.boundingBox();expect(box!.x).toBeGreaterThanOrEqual(0);expect(box!.x+box!.width).toBeLessThanOrEqual(1200);await page.keyboard.press('Escape');await expect(popup).toHaveCount(0);await expect(trigger).toBeFocused();
- await trigger.click();await page.getByTestId('outside-control').click();await expect(popup).toHaveCount(0);await expect(page.getByTestId('outside-control')).toBeFocused();
+ await trigger.click();await page.getByTestId('outside-control').click();await expect(popup).toHaveCount(0);if(browserName==='webkit'&&process.platform==='darwin')await expect(page.locator('body')).toBeFocused();else await expect(page.getByTestId('outside-control')).toBeFocused();
+ await trigger.click();const outsideInput=page.getByLabel('Contact email (required)');await outsideInput.click();await expect(popup).toHaveCount(0);await expect(outsideInput).toBeFocused();
  await page.getByRole('button',{name:'Controlled popover',exact:true}).click();const controlled=page.getByRole('dialog',{name:'Owner keeps this open'});await page.keyboard.press('Escape');await expect(controlled).toBeVisible();await page.getByRole('button',{name:'Release popover'}).click();await expect(controlled).toHaveCount(0);
 });
 test('nested alert dismissal leaves the popover open and returns focus to its trigger',async({page})=>{

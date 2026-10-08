@@ -110,11 +110,13 @@ export function tabsLifecycle() {
     await page.goto('/?tabs-lifecycle');
     await page.getByRole('tab', { name: 'Activity', exact: true }).click();
     const remove = page.getByRole('button', { name: 'Remove Activity externally' });
-    await remove.click();
+    await remove.focus();
+    await page.keyboard.press('Enter');
     await expect(remove).toBeFocused();
     await expect(page.getByRole('tab', { name: 'Overview', exact: true })).toHaveAttribute('aria-selected', 'true');
     const reverse = page.getByRole('button', { name: 'Reverse tabs externally' });
-    await reverse.click();
+    await reverse.focus();
+    await page.keyboard.press('Enter');
     await expect(reverse).toBeFocused();
     await expect(page.getByRole('tablist').getByRole('tab')).toHaveText(['Settings', 'Locked', 'Overview']);
     await page.keyboard.press('Tab');

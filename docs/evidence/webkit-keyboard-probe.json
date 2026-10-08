@@ -1,0 +1,31 @@
+[
+  {
+    "version": "26.6",
+    "args": [],
+    "afterTab": "",
+    "afterOptionTab": "link",
+    "afterClick": ""
+  },
+  {
+    "version": "26.6",
+    "args": [
+      "-AppleKeyboardUIMode",
+      "2"
+    ],
+    "afterTab": "second",
+    "afterOptionTab": "link",
+    "afterClick": ""
+  },
+  {
+    "version": "26.6",
+    "args": [
+      "-AppleKeyboardUIMode",
+      "2",
+      "-WebKit2TabsToLinks",
+      "YES"
+    ],
+    "afterTab": "second",
+    "afterOptionTab": "link",
+    "afterClick": ""
+  }
+]

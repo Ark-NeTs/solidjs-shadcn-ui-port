@@ -100,7 +100,7 @@ or an explicit height. To customize width/alignment, override the same orientati
 hooks: `class="h-8 data-vertical:w-0.5 data-vertical:self-center bg-primary"`.
 A plain `w-0.5` is less specific than the default `data-vertical:w-px` rule.
 [SEP-1 checks](CARD-LAYOUT-DELIVERY.md) verify stretched and explicit dimensions,
-centering, token colors, semantics and Tab skipping in both engines; dedicated
+centering, token colors, semantics and Tab skipping in all three engines; dedicated
 light/dark/mobile screenshots record vertical appearance.
 
 ## Skeleton
@@ -209,7 +209,7 @@ adds/removes a comment child to invalidate the stale browser cache. It preserves
 the label, its content, refs, editing focus and selection, and leaves healthy
 collections untouched. No user-agent check or ARIA override is used.
 [LBL-1 follow-up](LABEL-REFRESH-DELIVERY.md) restores accessible-name assertions in
-both Chromium and Firefox, including repeated reassociation during editing.
+Chromium, Firefox and WebKit, including repeated reassociation during editing.
 This does not certify physical screen-reader behavior or arbitrary external DOM
 rewrites that bypass reactive `for` updates.
 
@@ -386,7 +386,7 @@ The [dynamic collection example](../playground/tabs-lifecycle.tsx) runs at
 are example-owned commands for removal/reordering, not new Tabs keyboard APIs.
 [TAB-1 acceptance](TABS-TAB1-DELIVERY.md) verifies focused removal, adjacent and
 nonadjacent keyed moves, outside-focus preservation and both panel lifetimes in
-Chromium and Firefox, using source and built exports.
+Chromium, Firefox and WebKit, using source and built exports.
 
 ## Popover
 
@@ -422,7 +422,7 @@ Provide Title or an explicit `aria-label`/`aria-labelledby`; Description wires
 dialog in modal mode; Header is a div, Title an h2 and Description a p. The browser
 renders content above clipping ancestors while keeping inherited theme variables.
 Nonmodal Escape and outside pointer clicks dismiss. Outside clicks preserve the
-new focus target; explicit close/Escape returns focus to the trigger. Modal mode
+browser’s native focus outcome; explicit close/Escape returns focus to the trigger. Modal mode
 blocks background interaction, locks document scrolling and wraps Tab focus.
 Choose modality before opening. Native auto popovers are exclusive unless nested;
 coordinate controlled owners rather than forcing unrelated auto popovers open.
@@ -440,7 +440,7 @@ The [placement examples](../playground/popover-placement.tsx) run at
 `/?popover-placement&placement-case=scroll` (also `resize`, `motion`, `edge`,
 `clip`). [Browser acceptance](POPOVER-POP1-DELIVERY.md) covers real scrolling,
 viewport/element resizing, transform motion, viewport flipping/shifting and
-clicks outside a transformed clipping ancestor in Chromium and Firefox, against
+clicks outside a transformed clipping ancestor in Chromium, Firefox and WebKit, against
 source and built exports. Placement coordinates update without CSS transitions;
 the opening animation is retained. Avoid overriding content with `transition-all`,
 which would interpolate `left`/`top` and make the popup trail its anchor.
@@ -472,7 +472,10 @@ above. Always provide a title or explicit accessible name; description is
 optional. Native modal behavior makes the background inert; outside clicks do
 not dismiss. Cancel receives initial focus; Escape and accepted action/cancel
 requests close and restore the trigger. Keyboard Tab/Shift+Tab wrap inside the
-active modal. Scroll locks remain until the last nested modal closes. Initial
+active modal. A document-scoped guard returns escaped focus to the newest open
+modal, including when WebKit accepts a focus attempt into an underlying dialog.
+It releases its listener and stack entry before close/restoration. Scroll locks
+remain until the last nested modal closes. Initial
 focus candidates belong to the opening layer; controls inside a nested dialog
 are excluded even when its content is kept mounted while closed.
 
@@ -499,15 +502,20 @@ The [focused keyboard example](../playground/alert-dialog-focus.tsx) runs at
 `/?alert-dialog-focus`; append `&force-mounted` to keep the closed child mounted.
 [ALT-1 acceptance](ALERT-ALT1-DELIVERY.md) verifies exact forward/reverse Tab
 boundaries, nested Escape/Cancel/Confirm, draft preservation, background inertness,
-scroll-lock release and focus return in Chromium and Firefox, against both
+scroll-lock release and focus return in Chromium, Firefox and WebKit, against both
 source and built exports.
 
 ![Light popover](screenshots/popover-light.png)
 ![Dark alert dialog](screenshots/alert-dark.png)
 ![Mobile alert dialog](screenshots/alert-mobile.png)
 
-The new components require modern HTML popover/dialog APIs. Chromium and Firefox
-are tested; older browsers, WebKit, hydration and physical assistive-technology
+[WebKit coverage](WEBKIT-DELIVERY.md) uses WebKit 26.6 on macOS, with native
+Option-Tab for links and process-scoped button keyboard navigation. A pointer
+click need not focus a native button in WebKit; outside dismissal preserves that
+browser behavior. Packaged Safari and iOS devices remain untested.
+
+The new components require modern HTML popover/dialog APIs. Chromium, Firefox and WebKit
+are tested; older browsers, hydration and physical assistive-technology
 sessions are not certified by this batch. See [delivery evidence](../OVERLAYS-DELIVERY.md).
 
 ## Combobox
@@ -568,7 +576,7 @@ For controlled forms, provide `defaultValue` as the reset baseline and accept
 the reset request in `onValueChange` when the owner permits it.
 The [form and ownership examples](../playground/combobox-contracts.tsx) run at
 `/?combobox-contracts`; their [browser contracts](../tests/combobox-contracts.ts)
-exercise both source and built exports in Chromium and Firefox.
+exercise both source and built exports in Chromium, Firefox and WebKit.
 Rejected controlled changes preserve canonical values. Reset waits until the
 browser finishes resetting fields, respects cancellation, and cancels pending
 restoration on unmount. Invalid submission exposes a named error and opens the

@@ -134,16 +134,19 @@ bun run test                # Vitest + Solid 2 testing-library + jsdom
 bun run test:coverage       # 100% thresholds on all components and library helpers
 bun run test:server         # server rendering without DOM globals
 bun run build               # ESM, declarations and compiled CSS
-bun run test:integration    # source JSX in Chromium and Firefox, including axe
-bun run test:e2e            # fresh builds; journeys in both browsers; Chromium visuals
+bun run test:integration    # source JSX in Chromium, Firefox and WebKit, including axe
+bun run test:e2e            # fresh builds; journeys in all three browsers; Chromium visuals
 bun run build:playground    # static documentation in playground-dist/
 bun run parity:report       # update the remaining admin import inventory
 bun run parity:admin        # strict full-admin gate; still fails for later components
 ```
 
 Playwright browsers must be installed (`bunx --no-install playwright install
-chromium firefox`). Tests own their local server and do not reuse a running one.
-Use `RESULTS_FILE` to retain a browser JSON report. Visual baselines are committed
+chromium firefox webkit`). Tests own their local server and do not reuse a running one.
+On macOS the WebKit launcher enables button Tab navigation for that process only;
+link tests use native Option-Tab. It does not change system/Safari preferences.
+[WebKit delivery](docs/WEBKIT-DELIVERY.md) records the native differences and the
+nested-modal focus fix. Use `RESULTS_FILE` to retain a browser JSON report. Visual baselines are committed
 files under `tests/e2e/visual.spec.ts-snapshots`; regenerate deliberately with
 `bun run test:e2e --update-snapshots=all` and review the images before accepting them.
 
