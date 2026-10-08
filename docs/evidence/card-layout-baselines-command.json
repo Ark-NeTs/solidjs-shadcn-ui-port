@@ -1,0 +1,5 @@
+{
+  "command": "THEME_PRODUCTION=1 THEME_PORT=4403 RESULTS_FILE=docs/evidence/card-layout-baselines.json bunx --no-install playwright test tests/e2e/visual.spec.ts --project=chromium --grep 'compact cards and vertical separators' --update-snapshots=missing",
+  "exitCode": 1,
+  "seconds": 6.39
+}

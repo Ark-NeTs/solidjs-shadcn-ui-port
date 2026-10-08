@@ -16,3 +16,10 @@ for(const mode of ['light','dark','mobile'])test(`${mode} open overlays`,async({
 for(const mode of ['light','dark','mobile'])test(`${mode} open combobox`,async({page})=>{
  if(mode==='mobile')await page.setViewportSize({width:390,height:844});await page.goto(mode==='dark'?'/?dark':'/');await page.evaluate(()=>document.fonts.ready);await page.emulateMedia({reducedMotion:'reduce'});await page.getByRole('combobox',{name:'Favorite fruit'}).press('ArrowDown');await expect(page.getByRole('listbox')).toBeVisible();await expect(page).toHaveScreenshot(`combobox-${mode}.png`,{animations:'disabled',maxDiffPixelRatio:0.001});
 });
+for (const mode of ['light', 'dark', 'mobile']) test(`${mode} compact cards and vertical separators`, async ({ page }) => {
+  if (mode === 'mobile') await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto(`/?card-layout${mode === 'dark' ? '&dark' : ''}`);
+  if (mode === 'mobile') await page.evaluate(() => { document.documentElement.style.fontSize = '24px'; });
+  await page.evaluate(() => document.fonts.ready);
+  await expect(page.locator('main')).toHaveScreenshot(`card-layout-${mode}.png`, { animations: 'disabled', maxDiffPixelRatio: 0.001 });
+});

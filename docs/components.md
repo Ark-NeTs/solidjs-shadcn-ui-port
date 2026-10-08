@@ -70,7 +70,17 @@ verify both themes and export modes. Badge has no disabled-link API.
 Card has `size="default" | "sm"`; its six child parts are native divs. Supply a
 heading at the appropriate document level inside CardTitle. No implicit section,
 landmark or heading level is imposed. Use `class="min-w-0 break-words"` on content
-that may contain long unbroken identifiers.
+that may contain long unbroken identifiers. Apply the same wrapping classes to
+CardTitle and CardDescription when their text can be long. For a footer with
+long copy beside a button, use `CardFooter class="flex-wrap gap-3"` and
+`class="min-w-0 flex-1 break-words"` on the copy. Wrapping is a caller composition
+choice; Card retains the reference slot styles. Use `items-start` on a containing
+grid when cards should keep their natural height rather than stretching to match.
+
+[CRD-1 checks](CARD-LAYOUT-DELIVERY.md) compare default/compact padding and title
+sizes, ensure titles/actions do not overlap, detect clipped text inside the Card,
+and exercise Edit/Review actions in light/dark desktop and narrow enlarged layouts.
+The focused preview also has dedicated Chromium screenshots.
 
 ## Separator
 
@@ -85,6 +95,13 @@ that may contain long unbroken identifiers.
 Default decorative separators are hidden from assistive technology. Meaningful
 separators use `decorative={false}`, expose `role="separator"` and the correct
 aria-orientation. Both orientation and decorative state can be reactive.
+A vertical Separator stretches within a row whose height is set by its content
+or an explicit height. To customize width/alignment, override the same orientation
+hooks: `class="h-8 data-vertical:w-0.5 data-vertical:self-center bg-primary"`.
+A plain `w-0.5` is less specific than the default `data-vertical:w-px` rule.
+[SEP-1 checks](CARD-LAYOUT-DELIVERY.md) verify stretched and explicit dimensions,
+centering, token colors, semantics and Tab skipping in both engines; dedicated
+light/dark/mobile screenshots record vertical appearance.
 
 ## Skeleton
 

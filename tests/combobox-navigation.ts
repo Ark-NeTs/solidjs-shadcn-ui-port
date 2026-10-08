@@ -29,7 +29,8 @@ export function comboboxNavigation() {
       await expect.poll(() => list.evaluate(node => node.scrollTop)).toBeGreaterThan(0);
       await input.press('ArrowDown');
       await expectActiveVisible(page, input, 'Option 01');
-      await expect.poll(() => list.evaluate(node => node.scrollTop)).toBe(0);
+      // Transformed opening geometry can leave subpixel scroll rounding in Firefox.
+      await expect.poll(() => list.evaluate(node => Math.abs(node.scrollTop))).toBeLessThan(1);
       for (let i = 0; i < 15; i++) await input.press('ArrowDown');
       await expectActiveVisible(page, input, 'Option 16');
       for (let i = 0; i < 10; i++) await input.press('ArrowUp');

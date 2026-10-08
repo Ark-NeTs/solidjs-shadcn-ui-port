@@ -1,0 +1,32 @@
+[
+  {
+    "command": "bun run check",
+    "exitCode": 0,
+    "seconds": 2.16
+  },
+  {
+    "command": "bun run lint",
+    "exitCode": 0,
+    "seconds": 1.02
+  },
+  {
+    "command": "bun run test",
+    "exitCode": 0,
+    "seconds": 2.43
+  },
+  {
+    "command": "bun run test:coverage",
+    "exitCode": 0,
+    "seconds": 2.49
+  },
+  {
+    "command": "bun run test:server",
+    "exitCode": 0,
+    "seconds": 0.71
+  },
+  {
+    "command": "THEME_PORT=4403 RESULTS_FILE=docs/evidence/card-layout-integration.json bun run test:integration",
+    "exitCode": 1,
+    "seconds": 127.19
+  }
+]

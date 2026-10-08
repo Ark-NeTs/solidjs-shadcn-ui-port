@@ -73,6 +73,10 @@ Open `/?alert-dialog-focus` for Alert Dialog keyboard and nested confirmation
 examples; append `&force-mounted` to keep the child mounted while closed.
 [ALT-1 delivery](docs/ALERT-ALT1-DELIVERY.md) records their focus acceptance.
 
+Open `/?card-layout` (append `&dark`) for compact/long-content Cards and vertical
+Separator variants. [CRD-1/SEP-1 delivery](docs/CARD-LAYOUT-DELIVERY.md) includes
+geometry checks and dedicated visual baselines.
+
 Open `/?native-fields` for native input types, or append `&textarea` / `&labels`
 for scrolling/resizing and live label examples. [INP-1/TXT-1/LBL-1 delivery](docs/NATIVE-FIELDS-DELIVERY.md)
 records their acceptance scope. [Label cache refresh](docs/LABEL-REFRESH-DELIVERY.md)

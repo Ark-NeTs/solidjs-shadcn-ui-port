@@ -1,0 +1,119 @@
+
+Running 3 tests using 1 worker
+
+  ✘  1 [chromium] › tests/e2e/visual.spec.ts:19:49 › light compact cards and vertical separators (704ms)
+  ✘  2 [chromium] › tests/e2e/visual.spec.ts:19:49 › dark compact cards and vertical separators (466ms)
+  ✘  3 [chromium] › tests/e2e/visual.spec.ts:19:49 › mobile compact cards and vertical separators (503ms)
+
+
+  1) [chromium] › tests/e2e/visual.spec.ts:19:49 › light compact cards and vertical separators ─────
+
+    Error: A snapshot doesn't exist at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/e2e/visual.spec.ts-snapshots/card-layout-light-chromium-darwin.png, writing actual.
+
+      22 |   if (mode === 'mobile') await page.evaluate(() => { document.documentElement.style.fontSize = '24px'; });
+      23 |   await page.evaluate(() => document.fonts.ready);
+    > 24 |   await expect(page.locator('main')).toHaveScreenshot(`card-layout-${mode}.png`, { animations: 'disabled', maxDiffPixelRatio: 0.001 });
+         |   ^
+      25 | });
+      26 |
+        at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/e2e/visual.spec.ts:24:3
+
+    attachment #1: card-layout-light (image/png) ───────────────────────────────────────────────────
+    Expected: tests/e2e/visual.spec.ts-snapshots/card-layout-light-chromium-darwin.png
+    Received: test-results/e2e-visual-light-compact-cards-and-vertical-separators-chromium/card-layout-light-actual.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-visual-light-compact-cards-and-vertical-separators-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/e2e-visual-light-compact-cards-and-vertical-separators-chromium/error-context.md
+
+    attachment #5: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/e2e-visual-light-compact-cards-and-vertical-separators-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/e2e-visual-light-compact-cards-and-vertical-separators-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › tests/e2e/visual.spec.ts:19:49 › dark compact cards and vertical separators ──────
+
+    Error: A snapshot doesn't exist at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/e2e/visual.spec.ts-snapshots/card-layout-dark-chromium-darwin.png, writing actual.
+
+      22 |   if (mode === 'mobile') await page.evaluate(() => { document.documentElement.style.fontSize = '24px'; });
+      23 |   await page.evaluate(() => document.fonts.ready);
+    > 24 |   await expect(page.locator('main')).toHaveScreenshot(`card-layout-${mode}.png`, { animations: 'disabled', maxDiffPixelRatio: 0.001 });
+         |   ^
+      25 | });
+      26 |
+        at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/e2e/visual.spec.ts:24:3
+
+    attachment #1: card-layout-dark (image/png) ────────────────────────────────────────────────────
+    Expected: tests/e2e/visual.spec.ts-snapshots/card-layout-dark-chromium-darwin.png
+    Received: test-results/e2e-visual-dark-compact-cards-and-vertical-separators-chromium/card-layout-dark-actual.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-visual-dark-compact-cards-and-vertical-separators-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/e2e-visual-dark-compact-cards-and-vertical-separators-chromium/error-context.md
+
+    attachment #5: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/e2e-visual-dark-compact-cards-and-vertical-separators-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/e2e-visual-dark-compact-cards-and-vertical-separators-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [chromium] › tests/e2e/visual.spec.ts:19:49 › mobile compact cards and vertical separators ────
+
+    Error: A snapshot doesn't exist at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/e2e/visual.spec.ts-snapshots/card-layout-mobile-chromium-darwin.png, writing actual.
+
+      22 |   if (mode === 'mobile') await page.evaluate(() => { document.documentElement.style.fontSize = '24px'; });
+      23 |   await page.evaluate(() => document.fonts.ready);
+    > 24 |   await expect(page.locator('main')).toHaveScreenshot(`card-layout-${mode}.png`, { animations: 'disabled', maxDiffPixelRatio: 0.001 });
+         |   ^
+      25 | });
+      26 |
+        at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/e2e/visual.spec.ts:24:3
+
+    attachment #1: card-layout-mobile (image/png) ──────────────────────────────────────────────────
+    Expected: tests/e2e/visual.spec.ts-snapshots/card-layout-mobile-chromium-darwin.png
+    Received: test-results/e2e-visual-mobile-compact-cards-and-vertical-separators-chromium/card-layout-mobile-actual.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-visual-mobile-compact-cards-and-vertical-separators-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/e2e-visual-mobile-compact-cards-and-vertical-separators-chromium/error-context.md
+
+    attachment #5: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/e2e-visual-mobile-compact-cards-and-vertical-separators-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/e2e-visual-mobile-compact-cards-and-vertical-separators-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3 failed
+    [chromium] › tests/e2e/visual.spec.ts:19:49 › light compact cards and vertical separators ──────
+    [chromium] › tests/e2e/visual.spec.ts:19:49 › dark compact cards and vertical separators ───────
+    [chromium] › tests/e2e/visual.spec.ts:19:49 › mobile compact cards and vertical separators ─────
+[WebServer] $ vite build && tsc -p tsconfig.build.json
+[WebServer] (node:57288) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] $ vite build --config playground/vite.config.ts
+[WebServer] (node:57318) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:57322) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+(node:57340) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:57354) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:57382) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)

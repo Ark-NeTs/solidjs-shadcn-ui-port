@@ -1,7 +1,7 @@
 # Component acceptance and test matrix
 
 Initially audited 2026-10-08 against source at `314f27a`; updated with the
-[Label reassociation follow-up](LABEL-REFRESH-DELIVERY.md). Covers the **14
+[Card/Separator layout evidence](CARD-LAYOUT-DELIVERY.md). Covers the **14
 implemented component families**, including their compound parts. The other
 catalog entries in [COMPONENT-MAP.md](../COMPONENT-MAP.md) remain unimplemented;
 their adoption probes are not delivered-component acceptance tests.
@@ -9,7 +9,7 @@ their adoption probes are not delivered-component acceptance tests.
 This is a behavior inventory, not a claim that every possible state is tested.
 Read the assertions in the linked tests: a broad test title alone is not evidence
 for every behavior it mentions. Gaps below are unverified acceptance cases, not
-confirmed implementation bugs. The initial audit added no tests; the CMB-1, CMB-2, POP-1, ALT-1, TAB-1, CHK-1/SWT-1, BTN-1/BDG-1 and native field/Label
+confirmed implementation bugs. The initial audit added no tests; the CMB-1, CMB-2, POP-1, ALT-1, TAB-1, CHK-1/SWT-1, BTN-1/BDG-1 and native field/Label/Card/Separator
 follow-ups add the browser contracts linked below.
 
 ## Reading the evidence
@@ -38,13 +38,13 @@ are implementation scope limits, not features that an existing test proves.
 | Diagnostics and cleanup are checked | [Unit setup](../vitest.setup.ts), [browser fixture](../tests/browser-fixture.ts) | Every unit test checks console warn/error after cleanup; every B/E test checks console warning/error and page errors. SSR has no equivalent diagnostic fixture. |
 | Whole-gallery accessibility | [B: light/dark examples have no axe accessibility violations](../tests/integration/foundation.spec.ts#L27) | Applies to the rendered, settled gallery state. Axe does not certify screen-reader usability or all dynamic states. |
 | Whole-gallery visual appearance | [V: light/dark/mobile component gallery](../tests/e2e/visual.spec.ts#L3) | Shared images include every family; not every variant/state combination. |
-| Unit execution coverage | [Coverage configuration](../vitest.config.ts), [measured coverage](evidence/label-refresh-coverage.json) | 100% statements, branches, functions and lines for included component/helper source; not exhaustive behavior coverage. |
+| Unit execution coverage | [Coverage configuration](../vitest.config.ts), [measured coverage](evidence/card-layout-coverage.json) | 100% statements, branches, functions and lines for included component/helper source; not exhaustive behavior coverage. |
 
-The Label follow-up records **100 unit tests, 6 grouped SSR tests,
-152 browser integration runs (76 scenarios × 2 engines), and 125 E2E runs
-(58 journeys × 2 engines + 9 Chromium visual tests)**. Those visual tests compare
-12 images. These totals are package-wide, not per component. See the
-[Label follow-up verification](LABEL-REFRESH-DELIVERY.md) for current results and the
+The Card/Separator delivery records **100 unit tests, 6 grouped SSR tests,
+164 browser integration runs (82 scenarios × 2 engines), and 140 E2E runs
+(64 journeys × 2 engines + 12 Chromium visual tests)**. Those visual tests compare
+15 images. These totals are package-wide, not per component. See the
+[Card/Separator verification](CARD-LAYOUT-DELIVERY.md) for current results and the
 [initial matrix verification](TEST-MATRIX-DELIVERY.md) for the original audit.
 
 ## Button
@@ -88,9 +88,13 @@ or request. Badge has no disabled API.
 | All six child slots, caller classes, children and reactive size compose correctly | [U: composes every card slot and preserves reactive size, native props and children](../tests/unit/components.test.tsx#L51) |
 | Compact size changes actual rendered padding | [B: card size and separator orientation update geometry and semantics](../tests/integration/foundation.spec.ts#L12) |
 | A form inside the card remains usable at narrow width/enlarged text | [E: narrow viewport, enlarged text and long input stay usable](../tests/e2e/playground.spec.ts#L9); this is a composition test, not Card-owned submission logic |
+| Default/compact padding and title size scale correctly, long content stays inside slots, titles/actions do not overlap, and actions remain usable | [B/E: light/dark desktop and narrow/enlarged geometry](../tests/card-layout.ts#L35) |
+| Long-title/filename compositions and both sizes have dedicated visual evidence | [V: three focused Card/Separator baselines](../tests/e2e/visual.spec.ts#L19) |
 
-Open **CRD-1**: no dedicated compact-card screenshot or long-title/action-collision
-assertion. Card-owned keyboard/selection/reset are N/A; descendants own them.
+**CRD-1 closed for the tested composition:** caller wrapping classes handle long
+unbroken content and flexible footer copy; see [guide](components.md#card) and
+[delivery](CARD-LAYOUT-DELIVERY.md). This does not certify arbitrary action widths
+or unstyled unbroken content. Card-owned keyboard/selection/reset are N/A.
 
 ## Separator
 
@@ -98,10 +102,14 @@ assertion. Card-owned keyboard/selection/reset are N/A; descendants own them.
 | --- | --- |
 | Decorative default is hidden; semantic mode has a role and live orientation | [U: switches orientation and decorative semantics reactively](../tests/unit/components.test.tsx#L60) |
 | Changing orientation changes browser semantics and vertical geometry | [B: card size and separator orientation update geometry and semantics](../tests/integration/foundation.spec.ts#L12) |
-| Initial example appears in light/dark/mobile layouts | Shared V; the orientation-toggle state has no dedicated screenshot |
+| Initial example appears in light/dark/mobile layouts | Shared V |
+| Vertical semantic/decorative separators stretch, custom width/height/color/alignment work, Tab skips them and orientation updates geometry | [B/E: separator contracts](../tests/card-layout.ts#L70) |
+| Stretched and custom vertical lines appear in light/dark/mobile | [V: focused Card/Separator baselines](../tests/e2e/visual.spec.ts#L19) |
 
-Open **SEP-1**: vertical orientation has browser geometry coverage but no explicit
-visual baseline. Keyboard, forms and requests are N/A for this noninteractive line.
+**SEP-1 closed:** both engines verify geometry/semantics and Chromium captures
+three dedicated visual states. Override orientation dimensions with the matching
+`data-vertical:` class hook; see [guide](components.md#separator). Form and request
+state are N/A for this noninteractive boundary.
 
 ## Skeleton
 
@@ -276,8 +284,8 @@ remain simulated application state, not backend fault-injection tests.
 | Disabled skipping, empty search, popup search focus/return and required error | [B: empty/disabled/rejected](../tests/integration/combobox.spec.ts#L7), [B: searches inside a popup and returns focus to its trigger](../tests/integration/combobox.spec.ts#L10), [B: required error](../tests/integration/combobox.spec.ts#L4) |
 | Composition Enter does not commit | [U: synthetic isComposing event](../tests/unit/combobox.test.tsx#L19); physical IME remains open |
 | Active options stay visible during opening animation, wrapping and scrolling | [U: transformed geometry](../tests/unit/combobox.test.tsx#L64), [B/E: 40 options at desktop and narrow/enlarged sizes](../tests/combobox-navigation.ts#L21) |
-| Tab preserves the native destination and closes an uncommitted search | [B/E: inline Tab/Shift+Tab](../tests/combobox-navigation.ts#L43), [B/E: popup next control/previous trigger](../tests/combobox-navigation.ts#L61); the default inline trigger remains a native tab stop |
-| Nested chooser selection/Escape/Tab preserve its parent modal, focus containment and scroll locking | [B/E: modal composition](../tests/combobox-navigation.ts#L81); tested with modal Popover, not every possible dialog implementation |
+| Tab preserves the native destination and closes an uncommitted search | [B/E: inline Tab/Shift+Tab](../tests/combobox-navigation.ts#L44), [B/E: popup next control/previous trigger](../tests/combobox-navigation.ts#L62); the default inline trigger remains a native tab stop |
+| Nested chooser selection/Escape/Tab preserve its parent modal, focus containment and scroll locking | [B/E: modal composition](../tests/combobox-navigation.ts#L82); tested with modal Popover, not every possible dialog implementation |
 | Canceled/deferred reset and input work are disposed on unmount | [U: disabled/reset disposal](../tests/unit/combobox.test.tsx#L34), [U: deferred input disposal](../tests/unit/combobox.test.tsx#L46), [U: reset-owner unmount](../tests/unit/combobox.test.tsx#L58) |
 | Open dark/enlarged-mobile accessibility and light/dark/mobile appearance | [B: keeps open content accessible and within enlarged narrow viewports](../tests/integration/combobox.spec.ts#L16), [V: open combobox](../tests/e2e/visual.spec.ts#L16) |
 
@@ -298,8 +306,8 @@ limit documented in [the guide](components.md#combobox).
 | --- | --- | --- |
 | Button | [S1](../tests/server.test.tsx#L5): native button type and anchor href | Shared gallery variants and example sizes |
 | Badge | S1 includes Badge, but has no Badge-specific output assertion | Shared gallery variants |
-| Card | S1 asserts contained title text; no assertion for every slot | Shared default-card compositions |
-| Separator | S1 asserts semantic role and vertical orientation | Shared initial gallery orientation |
+| Card | S1 asserts contained title text; no assertion for every slot | Shared gallery plus dedicated default/compact long-content layouts |
+| Separator | S1 asserts semantic role and vertical orientation | Shared gallery plus dedicated stretched/custom vertical states |
 | Skeleton | S1 asserts its data-slot | Shared pending gallery placeholders |
 | Input | [S2](../tests/server.test.tsx#L10): type/name/default value/required | Shared normal, disabled, read-only, invalid and file examples |
 | Textarea | S2 asserts default text and help association; no Textarea-name assertion | Shared normal and disabled examples |
@@ -326,8 +334,7 @@ order the next test work; they do not assign bug severity to untested behavior.
 | Priority | ID | Component(s) | Concrete closure condition |
 | --- | --- | --- | --- |
 | Manual follow-up | CMB-2 | Combobox | Browser scrolling/Tab/modal checks pass; record a physical IME composition/commit/cancel session before closing the remaining manual portion. |
-| Next | CRD-1, SEP-1 | Card, Separator | Add compact/long-content Card layout assertions and a vertical Separator visual state. |
-| Follow-up | SKL-1 | Skeleton | Actual Solid Loading resolution/unmount is exercised in a browser, separate from the manually toggled preview. |
+| Next | SKL-1 | Skeleton | Actual Solid Loading resolution/unmount is exercised in a browser, separate from the manually toggled preview. |
 | Cross-cutting | ALL-1 | All 14 | Add WebKit runs and inspect differences; a mobile viewport alone does not certify Safari or a touch device. |
 | Cross-cutting | ALL-2 | All 14 | Add hydrate-then-interact scenarios, including live IDs, form values, selected panels and open/closed overlays. |
 | Cross-cutting | ALL-3 | Interactive controls and semantic content | Record manual assistive-technology navigation/announcements; axe success is only automated evidence. |
@@ -343,6 +350,7 @@ and component guide; it cannot be closed by increasing execution coverage alone.
 
 | ID | Closed | Evidence |
 | --- | --- | --- |
+| CRD-1, SEP-1 | 2026-10-08 | [Delivery](CARD-LAYOUT-DELIVERY.md): six geometry/interaction scenarios × two engines × source and built exports, plus three new reviewed visual baselines. No component fix needed. |
 | LBL-1 | 2026-10-08 | [Delivery](LABEL-REFRESH-DELIVERY.md): native cache refresh, restored Firefox name assertions and repeated editing checks in both export modes/engines. |
 | INP-1, TXT-1; LBL-1 targeting portion | 2026-10-08 | [Delivery](NATIVE-FIELDS-DELIVERY.md): ten field scenarios × two engines × source and built exports. Firefox names were deferred here and closed in the follow-up above. |
 | BTN-1, BDG-1 | 2026-10-08 | [Delivery](LINKS-NAVIGATION-DELIVERY.md): six link scenarios × two engines × source and built exports. No runtime fix needed. |
