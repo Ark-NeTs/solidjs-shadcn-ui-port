@@ -1,0 +1,3833 @@
+{
+  "config": {
+    "argv": [
+      "/Users/arktas/.asdf/installs/nodejs/25.3.0/bin/node",
+      "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/node_modules/.bin/playwright",
+      "test",
+      "tests/e2e"
+    ],
+    "configFile": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/playwright.config.ts",
+    "rootDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "integration/**/*.spec.ts",
+          "e2e/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [
+          "**/visual.spec.ts"
+        ],
+        "testMatch": [
+          "integration/**/*.spec.ts",
+          "e2e/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "docs/evidence/toggles-forms-e2e.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": {
+      "command": "bun run build && THEME_BUILT=1 bun run build:playground && bunx --no-install vite preview --config playground/vite.config.ts --host 127.0.0.1 --port 4403 --strictPort",
+      "url": "http://127.0.0.1:4403",
+      "reuseExistingServer": false,
+      "timeout": 60000
+    }
+  },
+  "suites": [
+    {
+      "title": "e2e/alert-dialog-focus.spec.ts",
+      "file": "e2e/alert-dialog-focus.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Alert Dialog wraps both Tab boundaries and skips disabled, hidden and negative-tabindex controls",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 437,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:18:47.334Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e8f0e20d2abb8e252620-ff28fec42ea605e25253",
+          "file": "alert-dialog-focus.ts",
+          "line": 28,
+          "column": 3
+        },
+        {
+          "title": "nested Alert Dialog wraps focus and Escape restores its parent",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 274,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:18:48.006Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e8f0e20d2abb8e252620-dda0da99f51919ea06b6",
+          "file": "alert-dialog-focus.ts",
+          "line": 59,
+          "column": 5
+        },
+        {
+          "title": "nested Alert Dialog wraps focus and Cancel restores its parent",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 260,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:18:48.286Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e8f0e20d2abb8e252620-fc3778f3bb77fb211888",
+          "file": "alert-dialog-focus.ts",
+          "line": 59,
+          "column": 5
+        },
+        {
+          "title": "nested Alert Dialog wraps focus and Confirm restores its parent",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 237,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:18:48.551Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e8f0e20d2abb8e252620-32047d3062ded3a258b1",
+          "file": "alert-dialog-focus.ts",
+          "line": 59,
+          "column": 5
+        },
+        {
+          "title": "nested Alert Dialog wraps focus and Escape restores its parent with force-mounted content",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 239,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:18:48.793Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e8f0e20d2abb8e252620-3a67d57f314d6bfdf7c2",
+          "file": "alert-dialog-focus.ts",
+          "line": 59,
+          "column": 5
+        },
+        {
+          "title": "Alert Dialog wraps both Tab boundaries and skips disabled, hidden and negative-tabindex controls",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1125,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:11.851Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e8f0e20d2abb8e252620-aab1fa3bca294a18f28c",
+          "file": "alert-dialog-focus.ts",
+          "line": 28,
+          "column": 3
+        },
+        {
+          "title": "nested Alert Dialog wraps focus and Escape restores its parent",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 616,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:13.642Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e8f0e20d2abb8e252620-c6756c21ba4d14c0e111",
+          "file": "alert-dialog-focus.ts",
+          "line": 59,
+          "column": 5
+        },
+        {
+          "title": "nested Alert Dialog wraps focus and Cancel restores its parent",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 495,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:14.265Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e8f0e20d2abb8e252620-4480943545bad946fdcc",
+          "file": "alert-dialog-focus.ts",
+          "line": 59,
+          "column": 5
+        },
+        {
+          "title": "nested Alert Dialog wraps focus and Confirm restores its parent",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 486,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:14.766Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e8f0e20d2abb8e252620-004adc2027d7587bfb90",
+          "file": "alert-dialog-focus.ts",
+          "line": 59,
+          "column": 5
+        },
+        {
+          "title": "nested Alert Dialog wraps focus and Escape restores its parent with force-mounted content",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 494,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:15.257Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e8f0e20d2abb8e252620-ffa8367c358037158a1a",
+          "file": "alert-dialog-focus.ts",
+          "line": 59,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "e2e/combobox.spec.ts",
+      "file": "e2e/combobox.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "built Combobox searches, commits, resets and recovers a rejected change",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 581,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:18:49.048Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fe3abb55fe46d0d92bd6-7d86d6df84e4e83aefbf",
+          "file": "e2e/combobox.spec.ts",
+          "line": 3,
+          "column": 1
+        },
+        {
+          "title": "Uncontrolled multiple values submit, remove, clear and reset to their defaults",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 562,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:18:49.633Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fe3abb55fe46d0d92bd6-17c049a9bc6ce5a1736c",
+          "file": "combobox-contracts.ts",
+          "line": 7,
+          "column": 5
+        },
+        {
+          "title": "Controlled multiple values submit, remove, clear and reset to their defaults",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 561,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:18:50.200Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fe3abb55fe46d0d92bd6-44213bd8dc064631c566",
+          "file": "combobox-contracts.ts",
+          "line": 7,
+          "column": 5
+        },
+        {
+          "title": "object result replacement preserves stable-key selection and native form reset",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 595,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:18:50.765Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fe3abb55fe46d0d92bd6-e7cab0599a058cc892da",
+          "file": "combobox-contracts.ts",
+          "line": 40,
+          "column": 3
+        },
+        {
+          "title": "rejected controlled opening, query and dismissal retain owner state until an owner update",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 413,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:18:51.365Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fe3abb55fe46d0d92bd6-3335f2bddba054d7c854",
+          "file": "combobox-contracts.ts",
+          "line": 70,
+          "column": 3
+        },
+        {
+          "title": "active options stay visible through wrapping and scrolling in desktop layouts",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 328,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:18:51.782Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fe3abb55fe46d0d92bd6-084e391c52401fc251f5",
+          "file": "combobox-navigation.ts",
+          "line": 21,
+          "column": 5
+        },
+        {
+          "title": "active options stay visible through wrapping and scrolling in narrow enlarged layouts",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 436,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:18:52.114Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fe3abb55fe46d0d92bd6-3867a41d64f85ba2d9d0",
+          "file": "combobox-navigation.ts",
+          "line": 21,
+          "column": 5
+        },
+        {
+          "title": "inline Tab and Shift+Tab discard drafts and reach native neighboring controls",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 199,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:18:52.554Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fe3abb55fe46d0d92bd6-3728c09294e7d7e3a768",
+          "file": "combobox-navigation.ts",
+          "line": 43,
+          "column": 3
+        },
+        {
+          "title": "popup search Tab reaches the next control and Shift+Tab returns to its trigger",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 278,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:18:52.757Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fe3abb55fe46d0d92bd6-0c4604d18a14f9c203ec",
+          "file": "combobox-navigation.ts",
+          "line": 61,
+          "column": 3
+        },
+        {
+          "title": "nested chooser selects and dismisses independently while its modal retains focus and scroll lock",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 593,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:18:53.039Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fe3abb55fe46d0d92bd6-273a551b50d31ebbb59f",
+          "file": "combobox-navigation.ts",
+          "line": 81,
+          "column": 3
+        },
+        {
+          "title": "built Combobox searches, commits, resets and recovers a rejected change",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 871,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:15.770Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fe3abb55fe46d0d92bd6-a1f11988bec76977d27f",
+          "file": "e2e/combobox.spec.ts",
+          "line": 3,
+          "column": 1
+        },
+        {
+          "title": "Uncontrolled multiple values submit, remove, clear and reset to their defaults",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 601,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:16.646Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fe3abb55fe46d0d92bd6-9ff0bc9176bcec0110d9",
+          "file": "combobox-contracts.ts",
+          "line": 7,
+          "column": 5
+        },
+        {
+          "title": "Controlled multiple values submit, remove, clear and reset to their defaults",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 611,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:17.252Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fe3abb55fe46d0d92bd6-424064e0d7dea90b74a1",
+          "file": "combobox-contracts.ts",
+          "line": 7,
+          "column": 5
+        },
+        {
+          "title": "object result replacement preserves stable-key selection and native form reset",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 776,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:17.868Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fe3abb55fe46d0d92bd6-df151680f48e7a087e8e",
+          "file": "combobox-contracts.ts",
+          "line": 40,
+          "column": 3
+        },
+        {
+          "title": "rejected controlled opening, query and dismissal retain owner state until an owner update",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1019,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:18.649Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fe3abb55fe46d0d92bd6-765accb025727a05a6e8",
+          "file": "combobox-contracts.ts",
+          "line": 70,
+          "column": 3
+        },
+        {
+          "title": "active options stay visible through wrapping and scrolling in desktop layouts",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 670,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:19.674Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fe3abb55fe46d0d92bd6-f92d98409da9022427a7",
+          "file": "combobox-navigation.ts",
+          "line": 21,
+          "column": 5
+        },
+        {
+          "title": "active options stay visible through wrapping and scrolling in narrow enlarged layouts",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 779,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:20.348Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fe3abb55fe46d0d92bd6-cd75874305060a460494",
+          "file": "combobox-navigation.ts",
+          "line": 21,
+          "column": 5
+        },
+        {
+          "title": "inline Tab and Shift+Tab discard drafts and reach native neighboring controls",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 324,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:21.132Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fe3abb55fe46d0d92bd6-a01ffb4ceaefa7b795e3",
+          "file": "combobox-navigation.ts",
+          "line": 43,
+          "column": 3
+        },
+        {
+          "title": "popup search Tab reaches the next control and Shift+Tab returns to its trigger",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 372,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:21.461Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fe3abb55fe46d0d92bd6-1192c8c183ed8c459913",
+          "file": "combobox-navigation.ts",
+          "line": 61,
+          "column": 3
+        },
+        {
+          "title": "nested chooser selects and dismisses independently while its modal retains focus and scroll lock",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 713,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:21.837Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fe3abb55fe46d0d92bd6-8d92e4d193f7b01c72ef",
+          "file": "combobox-navigation.ts",
+          "line": 81,
+          "column": 3
+        }
+      ]
+    },
+    {
+      "title": "e2e/form-fields.spec.ts",
+      "file": "e2e/form-fields.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "native validation preserves drafts and reset restores controlled and uncontrolled fields",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 531,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:18:53.641Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "abbd686312fd2f0ed9d3-8a77d20fd87739a13aac",
+          "file": "e2e/form-fields.spec.ts",
+          "line": 3,
+          "column": 1
+        },
+        {
+          "title": "long field values, file names and enlarged fonts fit a narrow screen",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 462,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:18:54.178Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "abbd686312fd2f0ed9d3-16f26c7c2aaccb1ca560",
+          "file": "e2e/form-fields.spec.ts",
+          "line": 12,
+          "column": 1
+        },
+        {
+          "title": "native validation preserves drafts and reset restores controlled and uncontrolled fields",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 674,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:22.559Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "abbd686312fd2f0ed9d3-aaaa297a43a741180d4a",
+          "file": "e2e/form-fields.spec.ts",
+          "line": 3,
+          "column": 1
+        },
+        {
+          "title": "long field values, file names and enlarged fonts fit a narrow screen",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 576,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:23.241Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "abbd686312fd2f0ed9d3-d56e574fa9aeee389da1",
+          "file": "e2e/form-fields.spec.ts",
+          "line": 12,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "e2e/overlays.spec.ts",
+      "file": "e2e/overlays.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "built tabs and popover compose into a keyboard-only confirmation flow",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 248,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:18:54.648Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4ae4212699a90627f175-3b02e6aa8d905e3a93b2",
+          "file": "e2e/overlays.spec.ts",
+          "line": 3,
+          "column": 1
+        },
+        {
+          "title": "built alert preserves rejected drafts and completes only an explicit retry",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 530,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:18:54.900Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4ae4212699a90627f175-50e020d977a547ab6dbc",
+          "file": "e2e/overlays.spec.ts",
+          "line": 6,
+          "column": 1
+        },
+        {
+          "title": "built tabs and popover compose into a keyboard-only confirmation flow",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 561,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:23.828Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4ae4212699a90627f175-f55fde0b9fe36cd57ac1",
+          "file": "e2e/overlays.spec.ts",
+          "line": 3,
+          "column": 1
+        },
+        {
+          "title": "built alert preserves rejected drafts and completes only an explicit retry",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 856,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:24.395Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4ae4212699a90627f175-20f918fb693b76c7f02b",
+          "file": "e2e/overlays.spec.ts",
+          "line": 6,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "e2e/playground.spec.ts",
+      "file": "e2e/playground.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "form validation, pending submit protection and recovery to ready",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 332,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:18:55.439Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4aec84ea3d5df406aac5-ca9f0d35e69820df657c",
+          "file": "e2e/playground.spec.ts",
+          "line": 3,
+          "column": 1
+        },
+        {
+          "title": "narrow viewport, enlarged text and long input stay usable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 519,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:18:55.775Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4aec84ea3d5df406aac5-141434697a6b5f26a1fd",
+          "file": "e2e/playground.spec.ts",
+          "line": 9,
+          "column": 1
+        },
+        {
+          "title": "form validation, pending submit protection and recovery to ready",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1046,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:25.275Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4aec84ea3d5df406aac5-8a206181971741dc493f",
+          "file": "e2e/playground.spec.ts",
+          "line": 3,
+          "column": 1
+        },
+        {
+          "title": "narrow viewport, enlarged text and long input stay usable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 645,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:26.328Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4aec84ea3d5df406aac5-3ac343fb544b298ee4cf",
+          "file": "e2e/playground.spec.ts",
+          "line": 9,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "e2e/popover-placement.spec.ts",
+      "file": "e2e/popover-placement.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "follows two-axis ancestor scrolling and document scrolling while remaining open",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 639,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:18:56.304Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f8031584f8427747b23b-f4e19026fb398603d1dc",
+          "file": "popover-placement.ts",
+          "line": 37,
+          "column": 3
+        },
+        {
+          "title": "reanchors after viewport, anchor and popup resizing without reopening",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 777,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:18:56.948Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f8031584f8427747b23b-df409c9bb2da24ae4d47",
+          "file": "popover-placement.ts",
+          "line": 57,
+          "column": 3
+        },
+        {
+          "title": "tracks a transformed anchor during movement and returns to its original position",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1735,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:18:57.729Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "movement-samples",
+                      "contentType": "application/json",
+                      "body": "W3sidGltZSI6MjcxLjU5OTk5OTkwNDYzMjU3LCJwb3B1cFgiOjYwLCJwb3B1cFkiOjIyOCwiYW5jaG9yWSI6MTgwLCJ4Ijo2MCwiZXJyb3IiOjB9LHsidGltZSI6MjkwLjUsInBvcHVwWCI6NjMuNzM0Mzc1LCJwb3B1cFkiOjIzMC40ODQzNzUsImFuY2hvclkiOjE4Mi40OTgyNDUyMzkyNTc4LCJ4Ijo2My43NDczNzU0ODgyODEyNSwiZXJyb3IiOjAuMDEzODcwMjM5MjU3ODEyNX0seyJ0aW1lIjozMDYuMDk5OTk5OTA0NjMyNTcsInBvcHVwWCI6NjcuNSwicG9wdXBZIjoyMzMsImFuY2hvclkiOjE4NS4wMDMyNTAxMjIwNzAzLCJ4Ijo2Ny41MDQ4NzUxODMxMDU0NywiZXJyb3IiOjAuMDA0ODc1MTgzMTA1NDY4NzV9LHsidGltZSI6MzIyLCJwb3B1cFgiOjcxLjI1LCJwb3B1cFkiOjIzNS41LCJhbmNob3JZIjoxODcuNTA4MjU1MDA0ODgyOCwieCI6NzEuMjYyMzc0ODc3OTI5NjksImVycm9yIjowLjAxMjM3NDg3NzkyOTY4NzV9LHsidGltZSI6MzM5LjUsInBvcHVwWCI6NzQuOTg0Mzc1LCJwb3B1cFkiOjIzNy45ODQzNzUsImFuY2hvclkiOjE4OS45OTgyNDUyMzkyNTc4LCJ4Ijo3NC45OTczNzU0ODgyODEyNSwiZXJyb3IiOjAuMDEzODcwMjM5MjU3ODEyNX0seyJ0aW1lIjozNTUuMzAwMDAwMTkwNzM0ODYsInBvcHVwWCI6NzguNzE4NzUsInBvcHVwWSI6MjQwLjQ4NDM3NSwiYW5jaG9yWSI6MTkyLjQ4ODI1MDczMjQyMTg4LCJ4Ijo3OC43MzIzNzYwOTg2MzI4MSwiZXJyb3IiOjAuMDEzNjI2MDk4NjMyODEyNX0seyJ0aW1lIjozNzMuODAwMDAwMTkwNzM0ODYsInBvcHVwWCI6ODIuNSwicG9wdXBZIjoyNDMsImFuY2hvclkiOjE5NS4wMDgyNTUwMDQ4ODI4LCJ4Ijo4Mi41MTIzNzQ4Nzc5Mjk2OSwiZXJyb3IiOjAuMDEyMzc0ODc3OTI5Njg3NX0seyJ0aW1lIjozODguNTk5OTk5OTA0NjMyNTcsInBvcHVwWCI6ODYuMjM0Mzc1LCJwb3B1cFkiOjI0NS40ODQzNzUsImFuY2hvclkiOjE5Ny40OTgyNDUyMzkyNTc4LCJ4Ijo4Ni4yNDczNzU0ODgyODEyNSwiZXJyb3IiOjAuMDEzODg1NDk4MDQ2ODc1fSx7InRpbWUiOjQwNS40MDAwMDAwOTUzNjc0MywicG9wdXBYIjo4OS45Njg3NSwicG9wdXBZIjoyNDcuOTg0Mzc1LCJhbmNob3JZIjoxOTkuOTg4MjUwNzMyNDIxODgsIngiOjg5Ljk4MjM3NjA5ODYzMjgxLCJlcnJvciI6MC4wMTM2MjYwOTg2MzI4MTI1fSx7InRpbWUiOjQyMiwicG9wdXBYIjo5My43MzQzNzUsInBvcHVwWSI6MjUwLjQ4NDM3NSwiYW5jaG9yWSI6MjAyLjQ5MzI1NTYxNTIzNDM4LCJ4Ijo5My43Mzk4NzU3OTM0NTcwMywiZXJyb3IiOjAuMDA4ODgwNjE1MjM0Mzc1fSx7InRpbWUiOjQ0MC40MDAwMDAwOTUzNjc0MywicG9wdXBYIjo5Ny40ODQzNzUsInBvcHVwWSI6MjUyLjk4NDM3NSwiYW5jaG9yWSI6MjA0Ljk5ODI0NTIzOTI1NzgsIngiOjk3LjQ5NzM3NTQ4ODI4MTI1LCJlcnJvciI6MC4wMTM4ODU0OTgwNDY4NzV9LHsidGltZSI6NDU2LjQwMDAwMDA5NTM2NzQzLCJwb3B1cFgiOjEwMS4yNSwicG9wdXBZIjoyNTUuNSwiYW5jaG9yWSI6MjA3LjUwMzI1MDEyMjA3MDMsIngiOjEwMS4yNTQ4NzUxODMxMDU0NywiZXJyb3IiOjAuMDA0ODc1MTgzMTA1NDY4NzV9LHsidGltZSI6NDcyLjkwMDAwMDA5NTM2NzQzLCJwb3B1cFgiOjEwNC45ODQzNzUsInBvcHVwWSI6MjU3Ljk4NDM3NSwiYW5jaG9yWSI6MjA5Ljk5MzI1NTYxNTIzNDM4LCJ4IjoxMDQuOTg5ODc1NzkzNDU3MDMsImVycm9yIjowLjAwODg4MDYxNTIzNDM3NX0seyJ0aW1lIjo0ODguNzAwMDAwMjg2MTAyMywicG9wdXBYIjoxMDguNzM0Mzc1LCJwb3B1cFkiOjI2MC40ODQzNzUsImFuY2hvclkiOjIxMi40OTgyNDUyMzkyNTc4LCJ4IjoxMDguNzQ3Mzc1NDg4MjgxMjUsImVycm9yIjowLjAxMzg3MDIzOTI1NzgxMjV9LHsidGltZSI6NTA2LjcwMDAwMDI4NjEwMjMsInBvcHVwWCI6MTEyLjQ2ODc1LCJwb3B1cFkiOjI2Mi45ODQzNzUsImFuY2hvclkiOjIxNC45ODgyNTA3MzI0MjE4OCwieCI6MTEyLjQ4MjM3NjA5ODYzMjgxLCJlcnJvciI6MC4wMTM2MjYwOTg2MzI4MTI1fSx7InRpbWUiOjUyMiwicG9wdXBYIjoxMTYuMjM0Mzc1LCJwb3B1cFkiOjI2NS40ODQzNzUsImFuY2hvclkiOjIxNy40OTMyNTU2MTUyMzQzOCwieCI6MTE2LjIzOTg3NTc5MzQ1NzAzLCJlcnJvciI6MC4wMDg4ODA2MTUyMzQzNzV9LHsidGltZSI6NTM5LjcwMDAwMDI4NjEwMjMsInBvcHVwWCI6MTE5Ljk4NDM3NSwicG9wdXBZIjoyNjcuOTg0Mzc1LCJhbmNob3JZIjoyMTkuOTk4MjQ1MjM5MjU3OCwieCI6MTE5Ljk5NzM3NTQ4ODI4MTI1LCJlcnJvciI6MC4wMTM4NTQ5ODA0Njg3NX0seyJ0aW1lIjo1NTcuMjAwMDAwMjg2MTAyMywicG9wdXBYIjoxMjMuNzE4NzUsInBvcHVwWSI6MjcwLjQ4NDM3NSwiYW5jaG9yWSI6MjIyLjQ4ODI1MDczMjQyMTg4LCJ4IjoxMjMuNzMyMzc2MDk4NjMyODEsImVycm9yIjowLjAxMzYyNjA5ODYzMjgxMjV9LHsidGltZSI6NTc0LCJwb3B1cFgiOjEyNy40ODQzNzUsInBvcHVwWSI6MjcyLjk4NDM3NSwiYW5jaG9yWSI6MjI0Ljk5MzI1NTYxNTIzNDM4LCJ4IjoxMjcuNDg5ODc1NzkzNDU3MDMsImVycm9yIjowLjAwODg4MDYxNTIzNDM3NX0seyJ0aW1lIjo1ODguNSwicG9wdXBYIjoxMzEuMjM0Mzc1LCJwb3B1cFkiOjI3NS40ODQzNzUsImFuY2hvclkiOjIyNy40OTgyNDUyMzkyNTc4LCJ4IjoxMzEuMjQ3Mzc1NDg4MjgxMjUsImVycm9yIjowLjAxMzg1NDk4MDQ2ODc1fSx7InRpbWUiOjYwNi45MDAwMDAwOTUzNjc0LCJwb3B1cFgiOjEzNSwicG9wdXBZIjoyNzgsImFuY2hvclkiOjIzMC4wMDMyNTAxMjIwNzAzLCJ4IjoxMzUuMDA0ODgyODEyNSwiZXJyb3IiOjAuMDA0ODgyODEyNX0seyJ0aW1lIjo2MjIsInBvcHVwWCI6MTM4Ljc1LCJwb3B1cFkiOjI4MC41LCJhbmNob3JZIjoyMzIuNTA4MjU1MDA0ODgyOCwieCI6MTM4Ljc2MjM3NDg3NzkyOTcsImVycm9yIjowLjAxMjM3NDg3NzkyOTY4NzV9LHsidGltZSI6NjM5LjIwMDAwMDI4NjEwMjMsInBvcHVwWCI6MTQyLjQ4NDM3NSwicG9wdXBZIjoyODIuOTg0Mzc1LCJhbmNob3JZIjoyMzQuOTk4MjQ1MjM5MjU3OCwieCI6MTQyLjQ5NzM3NTQ4ODI4MTI1LCJlcnJvciI6MC4wMTM4NTQ5ODA0Njg3NX0seyJ0aW1lIjo2NTYuMDk5OTk5OTA0NjMyNiwicG9wdXBYIjoxNDYuMjUsInBvcHVwWSI6Mjg1LjUsImFuY2hvclkiOjIzNy41MDMyNTAxMjIwNzAzLCJ4IjoxNDYuMjU0ODgyODEyNSwiZXJyb3IiOjAuMDA0ODgyODEyNX0seyJ0aW1lIjo2NzIuMDk5OTk5OTA0NjMyNiwicG9wdXBYIjoxNTAsInBvcHVwWSI6Mjg4LCJhbmNob3JZIjoyNDAsIngiOjE1MCwiZXJyb3IiOjB9LHsidGltZSI6Njg4LjIwMDAwMDI4NjEwMjMsInBvcHVwWCI6MTUwLCJwb3B1cFkiOjI4OCwiYW5jaG9yWSI6MjQwLCJ4IjoxNTAsImVycm9yIjowfSx7InRpbWUiOjcwNiwicG9wdXBYIjoxNTAsInBvcHVwWSI6Mjg4LCJhbmNob3JZIjoyNDAsIngiOjE1MCwiZXJyb3IiOjB9LHsidGltZSI6NzIxLjMwMDAwMDE5MDczNDksInBvcHVwWCI6MTUwLCJwb3B1cFkiOjI4OCwiYW5jaG9yWSI6MjQwLCJ4IjoxNTAsImVycm9yIjowfSx7InRpbWUiOjczOS4wOTk5OTk5MDQ2MzI2LCJwb3B1cFgiOjE1MCwicG9wdXBZIjoyODgsImFuY2hvclkiOjI0MCwieCI6MTUwLCJlcnJvciI6MH0seyJ0aW1lIjo3NTQuNTk5OTk5OTA0NjMyNiwicG9wdXBYIjoxNTAsInBvcHVwWSI6Mjg4LCJhbmNob3JZIjoyNDAsIngiOjE1MCwiZXJyb3IiOjB9XQ=="
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f8031584f8427747b23b-8afc4c1b4a24bef7755b",
+          "file": "popover-placement.ts",
+          "line": 77,
+          "column": 3
+        },
+        {
+          "title": "flips and shifts at viewport edges, constrains oversized content and keeps its action reachable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 451,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:18:59.468Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f8031584f8427747b23b-fb68eee106e05bcc3b76",
+          "file": "popover-placement.ts",
+          "line": 108,
+          "column": 3
+        },
+        {
+          "title": "escapes a transformed paint-clipping ancestor and accepts clicks outside its bounds",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 440,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:18:59.925Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f8031584f8427747b23b-131da66a71bd474840d3",
+          "file": "popover-placement.ts",
+          "line": 130,
+          "column": 3
+        },
+        {
+          "title": "follows two-axis ancestor scrolling and document scrolling while remaining open",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 512,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:26.983Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f8031584f8427747b23b-314bfcfa97c7ed2726bc",
+          "file": "popover-placement.ts",
+          "line": 37,
+          "column": 3
+        },
+        {
+          "title": "reanchors after viewport, anchor and popup resizing without reopening",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 530,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:27.499Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f8031584f8427747b23b-4d841a420ac78a8364d6",
+          "file": "popover-placement.ts",
+          "line": 57,
+          "column": 3
+        },
+        {
+          "title": "tracks a transformed anchor during movement and returns to its original position",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1911,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:28.034Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "movement-samples",
+                      "contentType": "application/json",
+                      "body": "W3sidGltZSI6MjY4LCJwb3B1cFgiOjYyLjE0OTk5Mzg5NjQ4NDM3NSwicG9wdXBZIjoyMjkuNDMzMzM0MzUwNTg1OTQsImFuY2hvclkiOjE4MS40MzMzMzQzNTA1ODU5NCwieCI6NjIuMTQ5OTkzODk2NDg0Mzc1LCJlcnJvciI6MH0seyJ0aW1lIjoyNzQsInBvcHVwWCI6NjMuMzE2NjY1NjQ5NDE0MDYsInBvcHVwWSI6MjMwLjIxNjY1OTU0NTg5ODQ0LCJhbmNob3JZIjoxODIuMjE2NjU5NTQ1ODk4NDQsIngiOjYzLjMxNjY2NTY0OTQxNDA2LCJlcnJvciI6MH0seyJ0aW1lIjoyODIsInBvcHVwWCI6NjUuMjUsInBvcHVwWSI6MjMxLjUsImFuY2hvclkiOjE4My41LCJ4Ijo2NS4yNSwiZXJyb3IiOjB9LHsidGltZSI6Mjg5LCJwb3B1cFgiOjY2LjgzMzMyODI0NzA3MDMxLCJwb3B1cFkiOjIzMi41NTAwMDMwNTE3NTc4LCJhbmNob3JZIjoxODQuNTUwMDAzMDUxNzU3OCwieCI6NjYuODMzMzI4MjQ3MDcwMzEsImVycm9yIjowfSx7InRpbWUiOjI5NywicG9wdXBYIjo2OC42MzMzMzEyOTg4MjgxMiwicG9wdXBZIjoyMzMuNzY2NjYyNTk3NjU2MjUsImFuY2hvclkiOjE4NS43NjY2NjI1OTc2NTYyNSwieCI6NjguNjMzMzMxMjk4ODI4MTIsImVycm9yIjowfSx7InRpbWUiOjMwNSwicG9wdXBYIjo3MC40NjY2NTk1NDU4OTg0NCwicG9wdXBZIjoyMzQuOTgzMzM3NDAyMzQzNzUsImFuY2hvclkiOjE4Ni45ODMzMzc0MDIzNDM3NSwieCI6NzAuNDY2NjU5NTQ1ODk4NDQsImVycm9yIjowfSx7InRpbWUiOjMxNCwicG9wdXBYIjo3Mi4zMTY2NjU2NDk0MTQwNiwicG9wdXBZIjoyMzYuMjE2NjU5NTQ1ODk4NDQsImFuY2hvclkiOjE4OC4yMTY2NTk1NDU4OTg0NCwieCI6NzIuMzE2NjY1NjQ5NDE0MDYsImVycm9yIjowfSx7InRpbWUiOjMyMiwicG9wdXBYIjo3NC4xODMzMzQzNTA1ODU5NCwicG9wdXBZIjoyMzcuNDQ5OTk2OTQ4MjQyMiwiYW5jaG9yWSI6MTg5LjQ0OTk5Njk0ODI0MjIsIngiOjc0LjE4MzMzNDM1MDU4NTk0LCJlcnJvciI6MH0seyJ0aW1lIjozMzAsInBvcHVwWCI6NzUuOTMzMzM0MzUwNTg1OTQsInBvcHVwWSI6MjM4LjYxNjY2ODcwMTE3MTg4LCJhbmNob3JZIjoxOTAuNjE2NjY4NzAxMTcxODgsIngiOjc1LjkzMzMzNDM1MDU4NTk0LCJlcnJvciI6MH0seyJ0aW1lIjozMzgsInBvcHVwWCI6NzcuODMzMzI4MjQ3MDcwMzEsInBvcHVwWSI6MjM5Ljg4MzMzMTI5ODgyODEyLCJhbmNob3JZIjoxOTEuODgzMzMxMjk4ODI4MTIsIngiOjc3LjgzMzMyODI0NzA3MDMxLCJlcnJvciI6MH0seyJ0aW1lIjozNDUsInBvcHVwWCI6NzkuNTgzMzI4MjQ3MDcwMzEsInBvcHVwWSI6MjQxLjA1MDAwMzA1MTc1NzgsImFuY2hvclkiOjE5My4wNTAwMDMwNTE3NTc4LCJ4Ijo3OS41ODMzMjgyNDcwNzAzMSwiZXJyb3IiOjB9LHsidGltZSI6MzUyLCJwb3B1cFgiOjgwLjk0OTk5Njk0ODI0MjE5LCJwb3B1cFkiOjI0MS45NjY2NTk1NDU4OTg0NCwiYW5jaG9yWSI6MTkzLjk2NjY1OTU0NTg5ODQ0LCJ4Ijo4MC45NDk5OTY5NDgyNDIxOSwiZXJyb3IiOjB9LHsidGltZSI6MzYwLCJwb3B1cFgiOjgyLjc1LCJwb3B1cFkiOjI0My4xNjY2NzE3NTI5Mjk3LCJhbmNob3JZIjoxOTUuMTY2NjcxNzUyOTI5NywieCI6ODIuNzUsImVycm9yIjowfSx7InRpbWUiOjM2NywicG9wdXBYIjo4NC4yMzMzMzc0MDIzNDM3NSwicG9wdXBZIjoyNDQuMTY2NjcxNzUyOTI5NywiYW5jaG9yWSI6MTk2LjE2NjY3MTc1MjkyOTcsIngiOjg0LjIzMzMzNzQwMjM0Mzc1LCJlcnJvciI6MH0seyJ0aW1lIjozNzYsInBvcHVwWCI6ODYuMzY2NjY4NzAxMTcxODgsInBvcHVwWSI6MjQ1LjU4MzMyODI0NzA3MDMsImFuY2hvclkiOjE5Ny41ODMzMjgyNDcwNzAzLCJ4Ijo4Ni4zNjY2Njg3MDExNzE4OCwiZXJyb3IiOjB9LHsidGltZSI6MzgxLCJwb3B1cFgiOjg3LjU1MDAwMzA1MTc1NzgxLCJwb3B1cFkiOjI0Ni4zNjY2Njg3MDExNzE4OCwiYW5jaG9yWSI6MTk4LjM2NjY2ODcwMTE3MTg4LCJ4Ijo4Ny41NTAwMDMwNTE3NTc4MSwiZXJyb3IiOjB9LHsidGltZSI6Mzg5LCJwb3B1cFgiOjg5LjM1MDAwNjEwMzUxNTYyLCJwb3B1cFkiOjI0Ny41NjY2NjU2NDk0MTQwNiwiYW5jaG9yWSI6MTk5LjU2NjY2NTY0OTQxNDA2LCJ4Ijo4OS4zNTAwMDYxMDM1MTU2MiwiZXJyb3IiOjB9LHsidGltZSI6Mzk0LCJwb3B1cFgiOjkwLjU4MzMyODI0NzA3MDMxLCJwb3B1cFkiOjI0OC4zOTk5OTM4OTY0ODQzOCwiYW5jaG9yWSI6MjAwLjM5OTk5Mzg5NjQ4NDM4LCJ4Ijo5MC41ODMzMjgyNDcwNzAzMSwiZXJyb3IiOjB9LHsidGltZSI6NDAxLCJwb3B1cFgiOjkyLjE0OTk5Mzg5NjQ4NDM4LCJwb3B1cFkiOjI0OS40MzMzMzQzNTA1ODU5NCwiYW5jaG9yWSI6MjAxLjQzMzMzNDM1MDU4NTk0LCJ4Ijo5Mi4xNDk5OTM4OTY0ODQzOCwiZXJyb3IiOjB9LHsidGltZSI6NDEyLCJwb3B1cFgiOjk0LjMxNjY2NTY0OTQxNDA2LCJwb3B1cFkiOjI1MC44ODMzMzEyOTg4MjgxMiwiYW5jaG9yWSI6MjAyLjg4MzMzMTI5ODgyODEyLCJ4Ijo5NC4zMTY2NjU2NDk0MTQwNiwiZXJyb3IiOjB9LHsidGltZSI6NDE2LCJwb3B1cFgiOjk1LjUzMzM0MDQ1NDEwMTU2LCJwb3B1cFkiOjI1MS42ODMzMzQzNTA1ODU5NCwiYW5jaG9yWSI6MjAzLjY4MzMzNDM1MDU4NTk0LCJ4Ijo5NS41MzMzNDA0NTQxMDE1NiwiZXJyb3IiOjB9LHsidGltZSI6NDI2LCJwb3B1cFgiOjk3LjcxNjY1OTU0NTg5ODQ0LCJwb3B1cFkiOjI1My4xMzMzMzEyOTg4MjgxMiwiYW5jaG9yWSI6MjA1LjEzMzMzMTI5ODgyODEyLCJ4Ijo5Ny43MTY2NTk1NDU4OTg0NCwiZXJyb3IiOjB9LHsidGltZSI6NDMzLCJwb3B1cFgiOjk5LjEzMzMzMTI5ODgyODEyLCJwb3B1cFkiOjI1NC4wODMzMjgyNDcwNzAzLCJhbmNob3JZIjoyMDYuMDgzMzI4MjQ3MDcwMywieCI6OTkuMTMzMzMxMjk4ODI4MTIsImVycm9yIjowfSx7InRpbWUiOjQ0MiwicG9wdXBYIjoxMDEuMjY2NjYyNTk3NjU2MjUsInBvcHVwWSI6MjU1LjUxNjY2MjU5NzY1NjI1LCJhbmNob3JZIjoyMDcuNTE2NjYyNTk3NjU2MjUsIngiOjEwMS4yNjY2NjI1OTc2NTYyNSwiZXJyb3IiOjB9LHsidGltZSI6NDQ3LCJwb3B1cFgiOjEwMi41LCJwb3B1cFkiOjI1Ni4zMzMzMTI5ODgyODEyNSwiYW5jaG9yWSI6MjA4LjMzMzMyODI0NzA3MDMsIngiOjEwMi41LCJlcnJvciI6MC4wMDAwMTUyNTg3ODkwNjI1fSx7InRpbWUiOjQ1NiwicG9wdXBYIjoxMDQuNDE2NjcxNzUyOTI5NjksInBvcHVwWSI6MjU3LjYxNjY2ODcwMTE3MTksImFuY2hvclkiOjIwOS42MTY2Njg3MDExNzE4OCwieCI6MTA0LjQxNjY3MTc1MjkyOTY5LCJlcnJvciI6MH0seyJ0aW1lIjo0NjIsInBvcHVwWCI6MTA1Ljc2NjY2MjU5NzY1NjI1LCJwb3B1cFkiOjI1OC41LCJhbmNob3JZIjoyMTAuNSwieCI6MTA1Ljc2NjY2MjU5NzY1NjI1LCJlcnJvciI6MH0seyJ0aW1lIjo0NzIsInBvcHVwWCI6MTA3LjkzMzMzNDM1MDU4NTk0LCJwb3B1cFkiOjI1OS45NjY2NzQ4MDQ2ODc1LCJhbmNob3JZIjoyMTEuOTY2NjU5NTQ1ODk4NDQsIngiOjEwNy45MzMzMzQzNTA1ODU5NCwiZXJyb3IiOjAuMDAwMDE1MjU4Nzg5MDYyNX0seyJ0aW1lIjo0NzksInBvcHVwWCI6MTA5LjYwMDAwNjEwMzUxNTYyLCJwb3B1cFkiOjI2MS4wNjY2NTAzOTA2MjUsImFuY2hvclkiOjIxMy4wNjY2NjU2NDk0MTQwNiwieCI6MTA5LjYwMDAwNjEwMzUxNTYyLCJlcnJvciI6MC4wMDAwMTUyNTg3ODkwNjI1fSx7InRpbWUiOjQ4NSwicG9wdXBYIjoxMTAuOTY2NjU5NTQ1ODk4NDQsInBvcHVwWSI6MjYxLjk4MzMzNzQwMjM0Mzc1LCJhbmNob3JZIjoyMTMuOTgzMzM3NDAyMzQzNzUsIngiOjExMC45NjY2NTk1NDU4OTg0NCwiZXJyb3IiOjB9XQ=="
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f8031584f8427747b23b-db7a1950772d8683712b",
+          "file": "popover-placement.ts",
+          "line": 77,
+          "column": 3
+        },
+        {
+          "title": "flips and shifts at viewport edges, constrains oversized content and keeps its action reachable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 484,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:29.952Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f8031584f8427747b23b-b5a0dee77bf2f3c847f8",
+          "file": "popover-placement.ts",
+          "line": 108,
+          "column": 3
+        },
+        {
+          "title": "escapes a transformed paint-clipping ancestor and accepts clicks outside its bounds",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 519,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:30.443Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f8031584f8427747b23b-ec65e11905a397644934",
+          "file": "popover-placement.ts",
+          "line": 130,
+          "column": 3
+        }
+      ]
+    },
+    {
+      "title": "e2e/tabs-lifecycle.spec.ts",
+      "file": "e2e/tabs-lifecycle.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "automatic Tabs recover focus when the focused trigger is removed",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 204,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:00.374Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "944501c56484e055839e-a6f1dc91dcaa86c0bb3f",
+          "file": "tabs-lifecycle.ts",
+          "line": 25,
+          "column": 5
+        },
+        {
+          "title": "automatic Tabs preserve the focused node across keyed reordering and navigate the new DOM order",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 256,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:00.583Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "944501c56484e055839e-fc5c752829f61331a97a",
+          "file": "tabs-lifecycle.ts",
+          "line": 47,
+          "column": 5
+        },
+        {
+          "title": "manual Tabs recover focus when the focused trigger is removed",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 206,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:00.843Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "944501c56484e055839e-b79aff70a7fc6e4e6a42",
+          "file": "tabs-lifecycle.ts",
+          "line": 25,
+          "column": 5
+        },
+        {
+          "title": "manual Tabs preserve the focused node across keyed reordering and navigate the new DOM order",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 273,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:01.054Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "944501c56484e055839e-7823552c4e329d71a473",
+          "file": "tabs-lifecycle.ts",
+          "line": 47,
+          "column": 5
+        },
+        {
+          "title": "force-mounted panels preserve draft nodes while hidden and lazy panels dispose their drafts",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 411,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:01.331Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "944501c56484e055839e-3a47665661791ae042fb",
+          "file": "tabs-lifecycle.ts",
+          "line": 81,
+          "column": 3
+        },
+        {
+          "title": "external removal and reordering preserve focus outside the tablist",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 309,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:01.746Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "944501c56484e055839e-b5a9036cd80a45a66c2c",
+          "file": "tabs-lifecycle.ts",
+          "line": 109,
+          "column": 3
+        },
+        {
+          "title": "automatic Tabs recover focus when the focused trigger is removed",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 423,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:30.974Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "944501c56484e055839e-48adcef1f9d853f04df6",
+          "file": "tabs-lifecycle.ts",
+          "line": 25,
+          "column": 5
+        },
+        {
+          "title": "automatic Tabs preserve the focused node across keyed reordering and navigate the new DOM order",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 501,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:31.402Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "944501c56484e055839e-904d3c93765bc0a092d6",
+          "file": "tabs-lifecycle.ts",
+          "line": 47,
+          "column": 5
+        },
+        {
+          "title": "manual Tabs recover focus when the focused trigger is removed",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 402,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:31.908Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "944501c56484e055839e-a6e9d0a53439e0bdad74",
+          "file": "tabs-lifecycle.ts",
+          "line": 25,
+          "column": 5
+        },
+        {
+          "title": "manual Tabs preserve the focused node across keyed reordering and navigate the new DOM order",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1059,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:32.315Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "944501c56484e055839e-9fb590c33cd63e8ee6a5",
+          "file": "tabs-lifecycle.ts",
+          "line": 47,
+          "column": 5
+        },
+        {
+          "title": "force-mounted panels preserve draft nodes while hidden and lazy panels dispose their drafts",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 531,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:33.379Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "944501c56484e055839e-624e51b64ff824b1c2c5",
+          "file": "tabs-lifecycle.ts",
+          "line": 81,
+          "column": 3
+        },
+        {
+          "title": "external removal and reordering preserve focus outside the tablist",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 454,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:33.914Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "944501c56484e055839e-462c00746887c7df3113",
+          "file": "tabs-lifecycle.ts",
+          "line": 109,
+          "column": 3
+        }
+      ]
+    },
+    {
+      "title": "e2e/toggle-forms.spec.ts",
+      "file": "e2e/toggle-forms.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Checkbox honors bubbling reset cancellation and recovers on an allowed reset",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 408,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:02.065Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "bdf9f9b2f28c80ef82b3-1bacf9fe1f9663292aab",
+          "file": "toggle-forms.ts",
+          "line": 27,
+          "column": 5
+        },
+        {
+          "title": "Checkbox rebinds explicit ownership, detaches and returns to its ancestor without remounting",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 747,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:02.478Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "bdf9f9b2f28c80ef82b3-37e629415ac27f5b80c4",
+          "file": "toggle-forms.ts",
+          "line": 46,
+          "column": 5
+        },
+        {
+          "title": "Checkbox discards queued reset work after reassociation or unmount and remounts cleanly",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 549,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:03.230Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "bdf9f9b2f28c80ef82b3-b64225d61154b0318ae4",
+          "file": "toggle-forms.ts",
+          "line": 79,
+          "column": 5
+        },
+        {
+          "title": "Switch honors bubbling reset cancellation and recovers on an allowed reset",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 426,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:03.784Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "bdf9f9b2f28c80ef82b3-8ad9a7e810cc546babca",
+          "file": "toggle-forms.ts",
+          "line": 27,
+          "column": 5
+        },
+        {
+          "title": "Switch rebinds explicit ownership, detaches and returns to its ancestor without remounting",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 711,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:04.215Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "bdf9f9b2f28c80ef82b3-4a9e3f67cb00389e1d54",
+          "file": "toggle-forms.ts",
+          "line": 46,
+          "column": 5
+        },
+        {
+          "title": "Switch discards queued reset work after reassociation or unmount and remounts cleanly",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 529,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:04.930Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "bdf9f9b2f28c80ef82b3-98215ac20a1cdd66b0f5",
+          "file": "toggle-forms.ts",
+          "line": 79,
+          "column": 5
+        },
+        {
+          "title": "Checkbox preserves mixed semantics on canceled reset and restores them on allowed reset",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 356,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:05.464Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "bdf9f9b2f28c80ef82b3-d68ec6650b0dc61cf918",
+          "file": "toggle-forms.ts",
+          "line": 105,
+          "column": 3
+        },
+        {
+          "title": "Checkbox honors bubbling reset cancellation and recovers on an allowed reset",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 440,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:34.379Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "bdf9f9b2f28c80ef82b3-3dbfc1d2255d66e39f48",
+          "file": "toggle-forms.ts",
+          "line": 27,
+          "column": 5
+        },
+        {
+          "title": "Checkbox rebinds explicit ownership, detaches and returns to its ancestor without remounting",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 769,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:34.823Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "bdf9f9b2f28c80ef82b3-f7996552394038896736",
+          "file": "toggle-forms.ts",
+          "line": 46,
+          "column": 5
+        },
+        {
+          "title": "Checkbox discards queued reset work after reassociation or unmount and remounts cleanly",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 592,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:35.597Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "bdf9f9b2f28c80ef82b3-1b38630eede5b0660182",
+          "file": "toggle-forms.ts",
+          "line": 79,
+          "column": 5
+        },
+        {
+          "title": "Switch honors bubbling reset cancellation and recovers on an allowed reset",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 511,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:36.193Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "bdf9f9b2f28c80ef82b3-81e66cb6b0ad3bb3cd82",
+          "file": "toggle-forms.ts",
+          "line": 27,
+          "column": 5
+        },
+        {
+          "title": "Switch rebinds explicit ownership, detaches and returns to its ancestor without remounting",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 802,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:36.709Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "bdf9f9b2f28c80ef82b3-e9213c6f99a2ffda75c3",
+          "file": "toggle-forms.ts",
+          "line": 46,
+          "column": 5
+        },
+        {
+          "title": "Switch discards queued reset work after reassociation or unmount and remounts cleanly",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 592,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:37.515Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "bdf9f9b2f28c80ef82b3-40c514f5c789063b1c9a",
+          "file": "toggle-forms.ts",
+          "line": 79,
+          "column": 5
+        },
+        {
+          "title": "Checkbox preserves mixed semantics on canceled reset and restores them on allowed reset",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 428,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:38.112Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "bdf9f9b2f28c80ef82b3-7f85928c6ed84e651a73",
+          "file": "toggle-forms.ts",
+          "line": 105,
+          "column": 3
+        }
+      ]
+    },
+    {
+      "title": "e2e/toggles.spec.ts",
+      "file": "e2e/toggles.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "notification form validates, serializes checked values and restores default-on controls",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 848,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:05.828Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8af7137d7b61de68cf09-33aab5cf4ea109074f5a",
+          "file": "e2e/toggles.spec.ts",
+          "line": 3,
+          "column": 1
+        },
+        {
+          "title": "toggles remain usable with enlarged text at mobile width",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 539,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:06.680Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8af7137d7b61de68cf09-a8e3fa53713b3855b126",
+          "file": "e2e/toggles.spec.ts",
+          "line": 9,
+          "column": 1
+        },
+        {
+          "title": "notification form validates, serializes checked values and restores default-on controls",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1140,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:38.547Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8af7137d7b61de68cf09-b510b79fd65ec175ab67",
+          "file": "e2e/toggles.spec.ts",
+          "line": 3,
+          "column": 1
+        },
+        {
+          "title": "toggles remain usable with enlarged text at mobile width",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 607,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:39.692Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8af7137d7b61de68cf09-53a7f9db3e118f54ed36",
+          "file": "e2e/toggles.spec.ts",
+          "line": 9,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "e2e/visual.spec.ts",
+      "file": "e2e/visual.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "light component gallery",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 719,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:07.227Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "51b4790f4568975de141-01094c1888dbbc03c786",
+          "file": "e2e/visual.spec.ts",
+          "line": 3,
+          "column": 45
+        },
+        {
+          "title": "dark component gallery",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 678,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:07.951Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "51b4790f4568975de141-6593f8f48102edd0ae72",
+          "file": "e2e/visual.spec.ts",
+          "line": 3,
+          "column": 45
+        },
+        {
+          "title": "mobile component gallery",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 538,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:08.633Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "51b4790f4568975de141-e46a7766857d2d374327",
+          "file": "e2e/visual.spec.ts",
+          "line": 3,
+          "column": 45
+        },
+        {
+          "title": "light open overlays",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 566,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:09.175Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "51b4790f4568975de141-e38bf9ebb67d6359558f",
+          "file": "e2e/visual.spec.ts",
+          "line": 12,
+          "column": 45
+        },
+        {
+          "title": "dark open overlays",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 579,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:09.746Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "51b4790f4568975de141-62868571b9888c758a9b",
+          "file": "e2e/visual.spec.ts",
+          "line": 12,
+          "column": 45
+        },
+        {
+          "title": "mobile open overlays",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 409,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:10.330Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "51b4790f4568975de141-34bcb704e732384c1b54",
+          "file": "e2e/visual.spec.ts",
+          "line": 12,
+          "column": 45
+        },
+        {
+          "title": "light open combobox",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 263,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:10.744Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "51b4790f4568975de141-c9b8d44825a12495e87b",
+          "file": "e2e/visual.spec.ts",
+          "line": 16,
+          "column": 45
+        },
+        {
+          "title": "dark open combobox",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 265,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:11.011Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "51b4790f4568975de141-04f335f213cbebcaf472",
+          "file": "e2e/visual.spec.ts",
+          "line": 16,
+          "column": 45
+        },
+        {
+          "title": "mobile open combobox",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 223,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T09:19:11.280Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "51b4790f4568975de141-b580e99f379be6a9cfe0",
+          "file": "e2e/visual.spec.ts",
+          "line": 16,
+          "column": 45
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-08T09:18:44.092Z",
+    "duration": 56479.499,
+    "expected": 91,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

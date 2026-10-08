@@ -52,17 +52,23 @@ export function createNativeToggle(props: ToggleProps) {
   createEffect(() => [element(), props.form] as const, ([input]) => {
     const form = input?.form;
     if (!form) return;
-    let active = true;
-    /** Wait until all reset listeners and the browser default action have finished. */
+    const pending = new Set<ReturnType<typeof setTimeout>>();
+    /** A task boundary lets later native listeners cancel before state is restored. */
     function onReset(event: Event) {
-      queueMicrotask(() => {
-        if (!active || event.defaultPrevented) return;
+      const timer = setTimeout(() => {
+        pending.delete(timer);
+        if (event.defaultPrevented) return;
         request(initial);
         synchronize(input!);
-      });
+      }, 0);
+      pending.add(timer);
     }
     form.addEventListener('reset', onReset);
-    return () => {active = false; form.removeEventListener('reset', onReset);};
+    return () => {
+      form.removeEventListener('reset', onReset);
+      for (const timer of pending) clearTimeout(timer);
+      pending.clear();
+    };
   });
   return {current, initial, ref, onClick, onChange};
 }

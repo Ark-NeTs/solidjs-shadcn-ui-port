@@ -1,7 +1,7 @@
 # Component acceptance and test matrix
 
 Initially audited 2026-10-08 against source at `314f27a`; updated with the
-[TAB-1 browser evidence](TABS-TAB1-DELIVERY.md). Covers the **14
+[CHK-1/SWT-1 browser evidence](TOGGLES-FORMS-DELIVERY.md). Covers the **14
 implemented component families**, including their compound parts. The other
 catalog entries in [COMPONENT-MAP.md](../COMPONENT-MAP.md) remain unimplemented;
 their adoption probes are not delivered-component acceptance tests.
@@ -9,7 +9,7 @@ their adoption probes are not delivered-component acceptance tests.
 This is a behavior inventory, not a claim that every possible state is tested.
 Read the assertions in the linked tests: a broad test title alone is not evidence
 for every behavior it mentions. Gaps below are unverified acceptance cases, not
-confirmed implementation bugs. The initial audit added no tests; the CMB-1, CMB-2, POP-1, ALT-1 and TAB-1
+confirmed implementation bugs. The initial audit added no tests; the CMB-1, CMB-2, POP-1, ALT-1, TAB-1 and CHK-1/SWT-1
 follow-ups add the browser contracts linked below.
 
 ## Reading the evidence
@@ -38,13 +38,13 @@ are implementation scope limits, not features that an existing test proves.
 | Diagnostics and cleanup are checked | [Unit setup](../vitest.setup.ts), [browser fixture](../tests/browser-fixture.ts) | Every unit test checks console warn/error after cleanup; every B/E test checks console warning/error and page errors. SSR has no equivalent diagnostic fixture. |
 | Whole-gallery accessibility | [B: light/dark examples have no axe accessibility violations](../tests/integration/foundation.spec.ts#L27) | Applies to the rendered, settled gallery state. Axe does not certify screen-reader usability or all dynamic states. |
 | Whole-gallery visual appearance | [V: light/dark/mobile component gallery](../tests/e2e/visual.spec.ts#L3) | Shared images include every family; not every variant/state combination. |
-| Unit execution coverage | [Coverage configuration](../vitest.config.ts), [measured coverage](evidence/tabs-tab1-coverage.json) | 100% statements, branches, functions and lines for included component/helper source; not exhaustive behavior coverage. |
+| Unit execution coverage | [Coverage configuration](../vitest.config.ts), [measured coverage](evidence/toggles-forms-coverage.json) | 100% statements, branches, functions and lines for included component/helper source; not exhaustive behavior coverage. |
 
-The TAB-1 delivery records **93 unit tests, 6 grouped SSR tests,
-104 browser integration runs (52 scenarios × 2 engines), and 77 E2E runs
-(34 journeys × 2 engines + 9 Chromium visual tests)**. Those visual tests compare
+The CHK-1/SWT-1 delivery records **97 unit tests, 6 grouped SSR tests,
+118 browser integration runs (59 scenarios × 2 engines), and 91 E2E runs
+(41 journeys × 2 engines + 9 Chromium visual tests)**. Those visual tests compare
 12 images. These totals are package-wide, not per component. See the
-[TAB-1 verification](TABS-TAB1-DELIVERY.md) for current results and the
+[CHK-1/SWT-1 verification](TOGGLES-FORMS-DELIVERY.md) for current results and the
 [initial matrix verification](TEST-MATRIX-DELIVERY.md) for the original audit.
 
 ## Button
@@ -153,9 +153,13 @@ validation and request recovery are N/A; it names a separate control.
 | Canceled reset, disabled submission exclusion, explicit form reassociation and disposal | [U: reset/form values](../tests/unit/toggles.test.tsx#L32), [U: rebinds explicit form ownership, cancels queued resets after unmount, and cleans listeners](../tests/unit/toggles.test.tsx#L38) |
 | Required validation, checked-value serialization and default restoration | [E: notification form validates, serializes checked values and restores default-on controls](../tests/e2e/toggles.spec.ts#L3) |
 | Light/dark mixed indicator and accessibility; enlarged mobile label interaction | [B: toggles including invalid controls pass axe](../tests/integration/toggles.spec.ts#L23), [E: enlarged toggles](../tests/e2e/toggles.spec.ts#L9) |
+| A canceled native reset preserves state, callbacks and submitted values; a later allowed reset recovers | [B/E: Checkbox cancellation](../tests/toggle-forms.ts#L27), [B/E: mixed reset](../tests/toggle-forms.ts#L105) |
+| Live form reassociation preserves node identity, resets only from the current form, and supports detachment/ancestor fallback | [B/E: Checkbox ownership](../tests/toggle-forms.ts#L46) |
+| Reassociation/unmount cancels pending reset work; remount restores a single functional listener | [U: queued reassociation](../tests/unit/toggles.test.tsx#L54), [B/E: Checkbox pending work](../tests/toggle-forms.ts#L79) |
 
-Open **CHK-1**: canceled reset and live external-form reassociation need real-browser
-assertions; current browser reset checks cover the normal in-form path.
+**CHK-1 closed:** Checkbox runs its own source/built scenarios in Chromium and
+Firefox; see [delivery](TOGGLES-FORMS-DELIVERY.md). This covers reactive `form`
+props, not arbitrary DOM reparenting or replacement/renaming of the target form.
 
 ## Switch
 
@@ -165,10 +169,13 @@ assertions; current browser reset checks cover the normal in-form path.
 | Disabled/read-only/owner-rejected changes preserve displayed state, with error recovery | [B: disabled/read-only and rejected controlled changes preserve the displayed value](../tests/integration/toggles.spec.ts#L10) |
 | Both sizes position the thumb in LTR/RTL and honor reduced motion | [B: both switch sizes move the thumb correctly in LTR and RTL and respect reduced motion](../tests/integration/toggles.spec.ts#L15) |
 | Form serialization and default-on/default-off reset work in the built package | [E: notification form validates, serializes checked values and restores default-on controls](../tests/e2e/toggles.spec.ts#L3) |
+| A canceled native reset preserves state/callbacks/FormData; an allowed reset recovers without duplicate requests | [B/E: Switch cancellation](../tests/toggle-forms.ts#L27) |
+| Explicit ownership, detachment, ancestor fallback, stale reset disposal and clean remount work independently | [U: Switch reset/reassociation parameterization](../tests/unit/toggles.test.tsx#L32), [B/E: Switch ownership](../tests/toggle-forms.ts#L46), [B/E: Switch pending work](../tests/toggle-forms.ts#L79) |
 
-Open **SWT-1**: explicit form reassociation/disposal is exercised via Checkbox's
-shared helper, not a Switch-specific browser scenario. Shared logic is supporting
-evidence, not an independent Switch acceptance run for that case.
+**SWT-1 closed:** Switch independently runs all three binary scenarios through
+[source integration](../tests/integration/toggle-forms.spec.ts#L3) and
+[built E2E](../tests/e2e/toggle-forms.spec.ts#L3), in both browsers. The same external
+DOM mutation limits as Checkbox apply; see [delivery](TOGGLES-FORMS-DELIVERY.md).
 
 ## Tabs
 
@@ -293,8 +300,7 @@ order the next test work; they do not assign bug severity to untested behavior.
 | Priority | ID | Component(s) | Concrete closure condition |
 | --- | --- | --- | --- |
 | Manual follow-up | CMB-2 | Combobox | Browser scrolling/Tab/modal checks pass; record a physical IME composition/commit/cancel session before closing the remaining manual portion. |
-| Next | CHK-1, SWT-1 | Checkbox, Switch | Each control passes canceled reset and changing explicit form ownership in both browsers, including unmount before pending reset work. |
-| Follow-up | BTN-1, BDG-1 | Button, Badge | Browser proves focus/navigation of enabled links and disabled Button anchor nonactivation. |
+| Next | BTN-1, BDG-1 | Button, Badge | Browser proves focus/navigation of enabled links and disabled Button anchor nonactivation. |
 | Follow-up | INP-1, TXT-1, LBL-1 | Input, Textarea, Label | Define supported native input-type scenarios; add Textarea resize/read-only/scroll checks and live label reassociation in browser. |
 | Follow-up | CRD-1, SEP-1 | Card, Separator | Add compact/long-content Card layout assertions and a vertical Separator visual state. |
 | Follow-up | SKL-1 | Skeleton | Actual Solid Loading resolution/unmount is exercised in a browser, separate from the manually toggled preview. |
@@ -313,6 +319,7 @@ and component guide; it cannot be closed by increasing execution coverage alone.
 
 | ID | Closed | Evidence |
 | --- | --- | --- |
+| CHK-1, SWT-1 | 2026-10-08 | [Delivery](TOGGLES-FORMS-DELIVERY.md): seven native form scenarios × two engines × source and built exports. Fixed premature synchronization before reset cancellation. |
 | TAB-1 | 2026-10-08 | [Delivery](TABS-TAB1-DELIVERY.md): six lifecycle scenarios × two engines × source and built exports. Fixed removal/reorder focus loss and Firefox’s extra scrolling-list tab stop. |
 | ALT-1 | 2026-10-08 | [Delivery](ALERT-ALT1-DELIVERY.md): five focus/nesting scenarios × two engines × source and built exports. Fixed parent initial focus selecting a force-mounted child’s hidden Cancel. |
 | POP-1 | 2026-10-08 | [Delivery](POPOVER-POP1-DELIVERY.md): scrolling, resize, transform movement, collision and clipping; five scenarios × two engines × source and built exports. Fixed unintended coordinate transitions. |

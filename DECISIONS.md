@@ -215,3 +215,18 @@ before the intended roving trigger. Preserve existing registration-based fallbac
 selection and manual activation; no collection state or draft mirror is added.
 Force-mounted panels already preserve their draft nodes; lazy panels already
 dispose children. See [TAB-1 delivery](docs/TABS-TAB1-DELIVERY.md).
+
+## Toggle reset cancellation after native event propagation (2026-10-08)
+
+CHK-1/SWT-1 browser checks exposed a shared reset scheduling bug: a reset-button
+activation runs the helper's microtask before a later ancestor listener cancels
+the event. Both Checkbox and Switch changed state and called onCheckedChange for
+a canceled reset; mixed Checkbox state was also reset prematurely.
+
+Use a zero-delay task for reset synchronization, tracking pending timers in the
+form-association effect. Remove the listener and clear every pending timer on
+reassociation or unmount. REASONING: a microtask is not an end-of-propagation
+boundary for browser-generated events. Cancellation must be checked after all
+native listeners and the reset default action. No API, theme or headless-library
+choice changes. [Delivery evidence](docs/TOGGLES-FORMS-DELIVERY.md) covers source
+and built exports in Chromium and Firefox.

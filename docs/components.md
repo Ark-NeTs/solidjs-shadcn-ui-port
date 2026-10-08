@@ -224,6 +224,14 @@ After native form reset, uncontrolled state returns to that baseline (including
 mixed state). Controlled owners receive a baseline request; ignored requests
 preserve the current controlled value. Cancelled reset and unmount prevent queued
 updates; external form association via `form="id"` is supported and reactive.
+
+Reset synchronization uses a cancelable next-task timer: a browser can run a
+microtask between native event listeners, before an ancestor cancels the reset.
+Changing the `form` prop or unmounting removes the old listener and cancels its
+pending timers. A missing target ID detaches the control; removing `form` restores
+its enclosing form. [CHK-1/SWT-1 browser checks](TOGGLES-FORMS-DELIVERY.md) verify
+these transitions independently for Checkbox and Switch, native FormData, node
+identity, queued-work disposal and mixed Checkbox restoration.
 Do not change a control between controlled and uncontrolled modes during its life.
 
 `data-slot="checkbox"` / `"switch"` and caller `class` are on the input. Decorative
