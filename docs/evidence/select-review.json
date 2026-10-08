@@ -1,0 +1,27 @@
+{
+  "scope": "Select implementation, examples, unit/source/build/SSR/hydration tests, Kobalte evaluation, public docs and changed visual baselines",
+  "reviewed": [
+    "Controlled and uncontrolled value/open ownership",
+    "Native serialization/validity, cancelable reset and dynamic ownership",
+    "Keyboard/typeahead/Tab and active descendant semantics",
+    "Pointer dismissal and modal composition",
+    "Position result sequencing, timers, observers and listener cleanup",
+    "Source and hydration node identity; long-list insertion scopes",
+    "Imports/exports, semantic CSS, dependency boundary",
+    "All changed screenshots, documentation API limits and evidence counts"
+  ],
+  "corrections": [
+    "Strengthened stale-position regression with distinct coordinates and post-disposal assertions",
+    "Removed redundant item comment",
+    "Exact Fruit locator avoids matching new Hydrated fruit in pre-existing hydration case",
+    "Restored incidental unchanged overlay/mobile Combobox baselines after screenshot regeneration",
+    "Use logical inline padding for the Select trigger/options; add RTL text/checkmark non-overlap geometry assertion"
+  ],
+  "productionChangesOutsideSelect": false,
+  "unrelatedUserChangesStaged": false,
+  "diffCheck": {
+    "command": "git diff --check",
+    "exitCode": 0,
+    "seconds": 0.081
+  }
+}

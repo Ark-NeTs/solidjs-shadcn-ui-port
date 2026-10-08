@@ -1,0 +1,42 @@
+[
+  {
+    "command": "bun run check",
+    "exitCode": 0,
+    "seconds": 3.51
+  },
+  {
+    "command": "bun run lint",
+    "exitCode": 0,
+    "seconds": 1.4
+  },
+  {
+    "command": "bun run test --maxWorkers=2",
+    "exitCode": 0,
+    "seconds": 6.81
+  },
+  {
+    "command": "bun run test:coverage --maxWorkers=2",
+    "exitCode": 0,
+    "seconds": 8.33
+  },
+  {
+    "command": "bun run test:server",
+    "exitCode": 0,
+    "seconds": 0.98
+  },
+  {
+    "command": "THEME_PORT=4403 RESULTS_FILE=docs/evidence/select-review-integration.json bunx --no-install playwright test tests/integration/select.spec.ts",
+    "exitCode": 0,
+    "seconds": 32.1
+  },
+  {
+    "command": "THEME_PORT=4403 THEME_PRODUCTION=1 RESULTS_FILE=docs/evidence/select-review-e2e.json bunx --no-install playwright test tests/e2e/select.spec.ts tests/e2e/visual.spec.ts",
+    "exitCode": 0,
+    "seconds": 36.65
+  },
+  {
+    "command": "RESULTS_FILE=docs/evidence/select-review-hydration.json bun run test:hydration --grep 'hydrates Select'",
+    "exitCode": 0,
+    "seconds": 9.36
+  }
+]

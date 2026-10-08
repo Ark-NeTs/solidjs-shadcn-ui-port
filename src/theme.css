@@ -169,3 +169,8 @@
 @media (prefers-reduced-motion: reduce) {
   [data-slot="toggle"], [data-slot="toggle-group-item"] { transition: none; }
 }
+/* Retained Select options stay hidden while their native top-layer popup is closed. */
+[data-slot="select-content"][hidden] { display: none; }
+@media (prefers-reduced-motion: reduce) {
+  [data-slot="select-trigger"] { transition: none; }
+}

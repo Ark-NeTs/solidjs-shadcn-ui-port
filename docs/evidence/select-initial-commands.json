@@ -1,0 +1,32 @@
+[
+  {
+    "command": "bun run check",
+    "exitCode": 0,
+    "seconds": 3.2
+  },
+  {
+    "command": "bun run lint",
+    "exitCode": 0,
+    "seconds": 1.29
+  },
+  {
+    "command": "bun run test --maxWorkers=2",
+    "exitCode": 0,
+    "seconds": 6.45
+  },
+  {
+    "command": "bun run test:coverage --maxWorkers=2",
+    "exitCode": 0,
+    "seconds": 7.11
+  },
+  {
+    "command": "bun run test:server",
+    "exitCode": 0,
+    "seconds": 0.83
+  },
+  {
+    "command": "RESULTS_FILE=docs/evidence/select-hydration.json bun run test:hydration",
+    "exitCode": 1,
+    "seconds": 58.72
+  }
+]

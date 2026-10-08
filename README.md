@@ -4,13 +4,13 @@
 
 An owned Solid 2 design system for the future Solid admin, behind the D19 package
 boundary. The implementation contains **Button, Badge, Card, Separator, Skeleton, Input,
-Textarea, Label, Checkbox, Switch, Tabs, Popover, Alert Dialog, Combobox, Accordion, Collapsible, Tooltip, Hover Card, Radio Group, Toggle and Toggle Group**. The React admin and Svelte storefront keep their existing themes.
+Textarea, Label, Checkbox, Switch, Tabs, Popover, Alert Dialog, Combobox, Accordion, Collapsible, Tooltip, Hover Card, Radio Group, Toggle, Toggle Group and Select**. The React admin and Svelte storefront keep their existing themes.
 See [DECISIONS.md](DECISIONS.md) for the owner's 2026-10-07 foundation direction
-and [choice delivery](docs/CHOICES-DELIVERY.md) for current measured acceptance.
+and [Select delivery](docs/SELECT-DELIVERY.md) for current measured acceptance.
 [FOUNDATION-DELIVERY.md](FOUNDATION-DELIVERY.md) retains the earlier five-component results.
 
-These twenty-one components use Solid 2 and native HTML. Toggle wraps Kobalte; the
-other twenty component families use owned behavior. Overlay and preview positioning use
+These twenty-two components use Solid 2 and native HTML. Toggle wraps Kobalte; the
+other twenty-one component families use owned behavior. Overlay and preview positioning use
 `@floating-ui/dom@1.8.0`. Kobalte remains the first
 candidate for richer interaction primitives. Standalone Toggle uses `@kobalte/core@2.0.0-alpha.2` behind a cancellation adapter;
 see [Kobalte selection evaluation](KOBALTE-CHOICES.md). No corvu or experimental
@@ -19,6 +19,7 @@ Kobalte Checkbox/Switch were browser-tested first; reset and diagnostic failures
 are recorded in [KOBALTE-TOGGLES.md](KOBALTE-TOGGLES.md).
 Tooltip/Hover Card adoption evidence is in [KOBALTE-HINTS.md](KOBALTE-HINTS.md).
 Accordion/Collapsible adoption evidence is in [KOBALTE-DISCLOSURES.md](KOBALTE-DISCLOSURES.md).
+Select adoption evidence is in [KOBALTE-SELECT.md](KOBALTE-SELECT.md).
 Combobox adoption evidence is in [KOBALTE-COMBOBOX.md](KOBALTE-COMBOBOX.md).
 The Tabs/Popover/Alert Dialog probe is in [KOBALTE-OVERLAYS.md](KOBALTE-OVERLAYS.md).
 
@@ -26,7 +27,7 @@ The Tabs/Popover/Alert Dialog probe is in [KOBALTE-OVERLAYS.md](KOBALTE-OVERLAYS
 
 | File | Purpose |
 | --- | --- |
-| `src/components/ui/*.tsx` | Twenty-one components and their compound parts |
+| `src/components/ui/*.tsx` | Twenty-two components and their compound parts |
 | `src/lib/utils.ts` | Conditional classes and Tailwind 4 conflict resolution |
 | `src/theme.css` | Shared oklch tokens, Inter, utilities and reduced motion |
 | `src/index.ts` | Public library barrel |
@@ -57,6 +58,7 @@ import { HoverCard, HoverCardTrigger, HoverCardContent } from 'shadcn-solidjs-th
 import { RadioGroup, RadioGroupItem } from 'shadcn-solidjs-theme/ui/radio-group';
 import { Toggle } from 'shadcn-solidjs-theme/ui/toggle';
 import { ToggleGroup, ToggleGroupItem } from 'shadcn-solidjs-theme/ui/toggle-group';
+import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from 'shadcn-solidjs-theme/ui/select';
 import { cn } from 'shadcn-solidjs-theme/utils';
 ```
 
@@ -73,6 +75,8 @@ Detailed examples, every variant/size, accessibility notes and customization:
 [Component guide](docs/components.md).
 [Per-component acceptance matrix](docs/TEST-MATRIX.md) links requirements to tests
 and tracks browser, SSR, visual and accessibility gaps. Run `bun run dev` for the live gallery.
+Open `/?select` (append `&dark`) for single selection, native forms, controlled
+acceptance, long lists and a Select inside a modal.
 Open `/?choices` (append `&dark`) for native radio forms, pressed buttons,
 controlled acceptance, grouped focus, RTL and inherited styles.
 Open `/?hints` (append `&dark`) for hover/focus descriptions, link previews,

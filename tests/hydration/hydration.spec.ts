@@ -48,7 +48,7 @@ test('hydrates server nodes, edits native forms, rewires labels and resets canon
   const updates = page.getByRole('switch', { name: 'Updates' });
   await expect(updates).toBeChecked();
   await updates.press('Space');
-  const fruit = page.getByRole('combobox', { name: 'Fruit' });
+  const fruit = page.getByRole('combobox', { name: 'Fruit', exact: true });
   await fruit.fill('Ban');await fruit.press('ArrowDown');await fruit.press('Enter');
   await page.getByRole('button', { name: 'Submit preferences' }).click();
   await expect(page.getByTestId('submitted')).toHaveText(JSON.stringify({ email: 'edited@example.com', notes: 'Edited notes', terms: 'on', fruit: 'Banana' }));
@@ -176,4 +176,9 @@ test('hydrates radios and pressed buttons before keyboard selection, owner updat
  await hydratePage(page);const pickup=page.getByRole('radio',{name:'Hydrated pickup'});const shipping=page.getByRole('radio',{name:'Hydrated shipping'});await expect(pickup).toBeChecked();await pickup.focus();await pickup.press('ArrowDown');await expect(shipping).toBeFocused();await expect(shipping).toBeChecked();
  const bold=page.getByRole('button',{name:'Hydrated bold'});await expect(bold).toHaveAttribute('aria-pressed','true');await bold.press('Space');await expect(bold).toHaveAttribute('aria-pressed','false');
  const left=page.getByRole('button',{name:'Hydrated left'});const right=page.getByRole('button',{name:'Hydrated right'});await left.focus();await left.press('ArrowRight');await expect(right).toBeFocused();await expect(right).toHaveAttribute('aria-pressed','false');await right.press('Enter');await expect(left).toHaveAttribute('aria-pressed','true');await expect(right).toHaveAttribute('aria-pressed','true');await page.getByRole('button',{name:'Dispose components'}).click();await expect(page.locator('#hydration-root')).toBeEmpty();
+});
+
+
+test('hydrates Select labels and native values before selecting, resetting, dismissing and disposal',async({page})=>{
+ await hydratePage(page);const trigger=page.getByRole('combobox',{name:'Hydrated fruit',exact:true});await expect(trigger).toHaveText('Apple⌄');await trigger.press('ArrowDown');await trigger.press('End');await trigger.press('Enter');await expect(trigger).toHaveText('Cherry⌄');expect(await page.locator('#hydrated-select-form').evaluate((form:HTMLFormElement)=>new FormData(form).get('fruit'))).toBe('cherry');await page.getByRole('button',{name:'Reset hydrated fruit'}).click();await expect(trigger).toHaveText('Apple⌄');await trigger.press('Space');await trigger.press('Escape');await expect(trigger).toHaveAttribute('aria-expanded','false');await expect(trigger).toBeFocused();await page.getByRole('button',{name:'Dispose components'}).click();await expect(page.locator('#hydration-root')).toBeEmpty();
 });

@@ -6,7 +6,11 @@ and `packages/shadcn-svelte-theme/README.md`, before writing a line of code.
 
 ## Current owner direction — 2026-10-08
 
-**Current batch:** implement Radio Group, Toggle and Toggle Group, evaluating
+**Current batch:** implement Select, evaluating Kobalte first. Deliver the public
+component, examples, unit/browser/SSR/hydration tests, screenshots and documentation,
+then commit and push under the working agreement. See [Select delivery](docs/SELECT-DELIVERY.md).
+
+**Previous batch:** implement Radio Group, Toggle and Toggle Group, evaluating
 Kobalte first. Deliver implementations, examples, tests, documentation and measured
 evidence under the full commit/push agreement. See [choice delivery](docs/CHOICES-DELIVERY.md).
 

@@ -1,8 +1,8 @@
 # shadcn/ui → Solid 2 component map
 
 **Implemented (2026-10-08):** Button, Badge, Card, Separator, Skeleton, Input,
-Textarea, Label, Checkbox, Switch, Tabs, Popover, Alert Dialog, Combobox, Accordion, Collapsible, Tooltip, Hover Card, Radio Group, Toggle and Toggle Group now have Solid 2 source, documentation and passing unit, browser and built-library tests.
-See [choice delivery](docs/CHOICES-DELIVERY.md), [preview delivery](docs/HINTS-DELIVERY.md), [disclosure delivery](docs/DISCLOSURES-DELIVERY.md), [COMBOBOX-DELIVERY.md](COMBOBOX-DELIVERY.md), [OVERLAYS-DELIVERY.md](OVERLAYS-DELIVERY.md), [TOGGLES-DELIVERY.md](TOGGLES-DELIVERY.md), [FORM-FIELDS-DELIVERY.md](FORM-FIELDS-DELIVERY.md) and the earlier
+Textarea, Label, Checkbox, Switch, Tabs, Popover, Alert Dialog, Combobox, Accordion, Collapsible, Tooltip, Hover Card, Radio Group, Toggle, Toggle Group and Select now have Solid 2 source, documentation and passing unit, browser and built-library tests.
+See [Select delivery](docs/SELECT-DELIVERY.md), [choice delivery](docs/CHOICES-DELIVERY.md), [preview delivery](docs/HINTS-DELIVERY.md), [disclosure delivery](docs/DISCLOSURES-DELIVERY.md), [COMBOBOX-DELIVERY.md](COMBOBOX-DELIVERY.md), [OVERLAYS-DELIVERY.md](OVERLAYS-DELIVERY.md), [TOGGLES-DELIVERY.md](TOGGLES-DELIVERY.md), [FORM-FIELDS-DELIVERY.md](FORM-FIELDS-DELIVERY.md) and the earlier
 [FOUNDATION-DELIVERY.md](FOUNDATION-DELIVERY.md). These use native HTML; Toggle wraps Kobalte after its scoped acceptance;
 headless-library findings below remain relevant to later primitives.
 
@@ -74,9 +74,9 @@ No row currently selects corvu; alternatives are evaluated below.
 
 | Route | Entries |
 | --- | ---: |
-| Matching Kobalte primitive | 24 |
+| Matching Kobalte primitive | 23 |
 | Owned composition | 9 |
-| Native markup/CSS | 25 |
+| Native markup/CSS | 26 |
 | Unresolved behavior/engine gap | 7 |
 | Total | 65 |
 
@@ -130,7 +130,7 @@ No row currently selects corvu; alternatives are evaluated below.
 | [Radio Group](https://ui.shadcn.com/docs/components/radio-group) | N | `radio-group` evaluated first; owned native radios | Default reset and diagnostics fail on alpha.2/rc.13. Native forms, controlled rejection, required/disabled/readonly, reset ownership, arrows and SSR/hydration delivered. See KOBALTE-CHOICES.md and docs/CHOICES-DELIVERY.md. |
 | [Resizable](https://ui.shadcn.com/docs/components/resizable) | K | `resizable` | Drag/keyboard sizing, intersections and collapse exist; adapt units, public refs and persisted layouts. |
 | [Scroll Area](https://ui.shadcn.com/docs/components/scroll-area) | G | No custom scrollbar primitive | Need viewport/track/thumb/corner behavior, both axes, dragging, RTL and resize observation. Native overflow alone is not full parity. |
-| [Select](https://ui.shadcn.com/docs/components/select) | K | `select` | Trigger/value/options, groups, portal, keyboard/typeahead and native form integration. |
+| [Select](https://ui.shadcn.com/docs/components/select) | N | Owned native select + combobox/listbox | Delivered keyboard/typeahead, controlled state, form/reset, groups and top-layer placement. Kobalte alpha.2 passes basic interaction but emits 25 diagnostics in each tested engine; [evaluation](KOBALTE-SELECT.md), [delivery](docs/SELECT-DELIVERY.md). Explicit item data; no Radix item-aligned mode or portal API. |
 | [Separator](https://ui.shadcn.com/docs/components/separator) | K | `separator` | Horizontal/vertical and decorative versus semantic separator. |
 | [Sheet](https://ui.shadcn.com/docs/components/sheet) | C | `dialog` | Side-panel layout and transitions; Drawer is not necessary for a nongestural sheet. |
 | [Sidebar](https://ui.shadcn.com/docs/components/sidebar) | C | Sheet/`dialog`, `collapsible`, `tooltip`, `button` | Own responsive and controlled/collapsed state, shortcut and persistence boundary. |

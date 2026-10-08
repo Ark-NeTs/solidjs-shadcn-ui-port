@@ -1,0 +1,277 @@
+bun run check
+$ tsc --noEmit
+
+bun run lint
+$ eslint src tests playground scripts *.ts
+
+bun run test --maxWorkers=2
+$ vitest run "--maxWorkers=2"
+
+ RUN  v4.1.10 /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme
+
+
+ Test Files  13 passed (13)
+      Tests  167 passed (167)
+   Start at  22:42:15
+   Duration  6.05s (transform 653ms, setup 1.11s, import 1.05s, tests 3.80s, environment 4.59s)
+
+
+bun run test:coverage --maxWorkers=2
+$ vitest run --coverage "--maxWorkers=2"
+
+ RUN  v4.1.10 /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme
+      Coverage enabled with v8
+
+
+ Test Files  13 passed (13)
+      Tests  167 passed (167)
+   Start at  22:42:22
+   Duration  6.67s (transform 629ms, setup 1.15s, import 1.00s, tests 4.53s, environment 4.33s)
+
+ % Coverage report from v8
+-------------------|---------|----------|---------|---------|-------------------
+File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
+-------------------|---------|----------|---------|---------|-------------------
+-------------------|---------|----------|---------|---------|-------------------
+
+=============================== Coverage summary ===============================
+Statements   : 100% ( 2301/2301 )
+Branches     : 100% ( 1444/1444 )
+Functions    : 100% ( 935/935 )
+Lines        : 100% ( 640/640 )
+================================================================================
+
+bun run test:server
+$ vitest run --config vitest.server.config.ts
+
+ RUN  v4.1.10 /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme
+
+
+ Test Files  1 passed (1)
+      Tests  11 passed (11)
+   Start at  22:42:29
+   Duration  457ms (transform 279ms, setup 0ms, import 348ms, tests 27ms, environment 0ms)
+
+
+RESULTS_FILE=docs/evidence/select-hydration.json bun run test:hydration
+$ playwright test --config playwright.hydration.config.ts
+[WebServer] $ node --conditions=development scripts/build-hydration.mjs
+[WebServer] (node:72994) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:72995) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 93 tests using 1 worker
+
+(node:73079) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › tests/hydration/errored.spec.ts:30:1 › rejected hydrated data preserves drafts and explicit Errored resets recover without duplicate requests (694ms)
+  ✓   2 [chromium] › tests/hydration/errored.spec.ts:59:54 › a stale retry's resolve cannot overwrite a newer successful request (494ms)
+  ✓   3 [chromium] › tests/hydration/errored.spec.ts:59:54 › a stale retry's reject cannot overwrite a newer successful request (477ms)
+  ✓   4 [chromium] › tests/hydration/errored.spec.ts:77:1 › late rejection after pending unmount stays contained and a fresh boundary can recover (439ms)
+  ✓   5 [chromium] › tests/hydration/errored.spec.ts:93:1 › late rejection after disposing the hydrated root does not restore an error or content (270ms)
+  ✘   6 [chromium] › tests/hydration/hydration.spec.ts:33:1 › hydrates server nodes, edits native forms, rewires labels and resets canonical values (455ms)
+(node:73157) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   7 [chromium] › tests/hydration/hydration.spec.ts:66:1 › hydrates selected Tabs, preserves mounted drafts and updates both sides of live IDs (393ms)
+  ✓   8 [chromium] › tests/hydration/hydration.spec.ts:84:1 › hydrates closed overlays, updates naming, dismisses and restores focus without duplicate actions (697ms)
+  ✓   9 [chromium] › tests/hydration/hydration.spec.ts:110:51 › hydrates initially open popover and disposes active ownership (379ms)
+  ✓  10 [chromium] › tests/hydration/hydration.spec.ts:110:51 › hydrates initially open alert and disposes active ownership (372ms)
+  ✓  11 [chromium] › tests/hydration/hydration.spec.ts:135:1 › hydrates disclosures with stable owner IDs, retained drafts and ordinary remounts (398ms)
+  ✓  12 [chromium] › tests/hydration/hydration.spec.ts:158:1 › hydrates preview shells and IDs before focus, dismissal, link navigation and disposal (362ms)
+  ✓  13 [chromium] › tests/hydration/hydration.spec.ts:175:1 › hydrates radios and pressed buttons before keyboard selection, owner updates and disposal (338ms)
+  ✓  14 [chromium] › tests/hydration/hydration.spec.ts:182:1 › hydrates Select labels and native values before selecting, resetting, dismissing and disposal (387ms)
+  ✓  15 [chromium] › tests/hydration/loading.spec.ts:46:1 › compares native placeholders during the pending boundary handoff (240ms)
+  ✓  16 [chromium] › tests/hydration/loading.spec.ts:53:1 › hydrates pending Skeleton nodes, resolves the real boundary and unmounts ready content (222ms)
+  ✓  17 [chromium] › tests/hydration/loading.spec.ts:71:1 › unmounts hydrated pending boundaries and ignores old resolutions after a fresh mount (522ms)
+  ✓  18 [chromium] › tests/hydration/loading.spec.ts:92:1 › disposing the hydrated root prevents late promise completion from restoring content (306ms)
+  ✓  19 [chromium] › tests/hydration/retry-minimal.spec.ts:3:71 › plain Solid retry: replace-reset (322ms)
+  ✓  20 [chromium] › tests/hydration/retry-minimal.spec.ts:3:71 › plain Solid retry: replace-only (376ms)
+  ✓  21 [chromium] › tests/hydration/retry-minimal.spec.ts:3:71 › plain Solid retry: source-reset (371ms)
+  ✓  22 [chromium] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: plain (337ms)
+  ✓  23 [chromium] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: context (348ms)
+  ✓  24 [chromium] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: registration (335ms)
+  ✓  25 [chromium] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: registration-spread (308ms)
+  ✓  26 [chromium] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: registration-read (unsafe-pattern characterization) (264ms)
+  ✓  27 [chromium] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: package-shell (307ms)
+  ✓  28 [chromium] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: package-triggers (306ms)
+  ✓  29 [chromium] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: package-panels (288ms)
+  ✓  30 [chromium] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: package-controlled (306ms)
+  ✓  31 [chromium] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: package-uncontrolled (303ms)
+(node:73280) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  32 [firefox] › tests/hydration/errored.spec.ts:30:1 › rejected hydrated data preserves drafts and explicit Errored resets recover without duplicate requests (1.5s)
+  ✓  33 [firefox] › tests/hydration/errored.spec.ts:59:54 › a stale retry's resolve cannot overwrite a newer successful request (566ms)
+  ✓  34 [firefox] › tests/hydration/errored.spec.ts:59:54 › a stale retry's reject cannot overwrite a newer successful request (550ms)
+  ✓  35 [firefox] › tests/hydration/errored.spec.ts:77:1 › late rejection after pending unmount stays contained and a fresh boundary can recover (587ms)
+  ✓  36 [firefox] › tests/hydration/errored.spec.ts:93:1 › late rejection after disposing the hydrated root does not restore an error or content (430ms)
+  ✘  37 [firefox] › tests/hydration/hydration.spec.ts:33:1 › hydrates server nodes, edits native forms, rewires labels and resets canonical values (1.1s)
+(node:73372) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  38 [firefox] › tests/hydration/hydration.spec.ts:66:1 › hydrates selected Tabs, preserves mounted drafts and updates both sides of live IDs (2.0s)
+  ✓  39 [firefox] › tests/hydration/hydration.spec.ts:84:1 › hydrates closed overlays, updates naming, dismisses and restores focus without duplicate actions (1.1s)
+  ✓  40 [firefox] › tests/hydration/hydration.spec.ts:110:51 › hydrates initially open popover and disposes active ownership (476ms)
+  ✓  41 [firefox] › tests/hydration/hydration.spec.ts:110:51 › hydrates initially open alert and disposes active ownership (489ms)
+  ✓  42 [firefox] › tests/hydration/hydration.spec.ts:135:1 › hydrates disclosures with stable owner IDs, retained drafts and ordinary remounts (577ms)
+  ✓  43 [firefox] › tests/hydration/hydration.spec.ts:158:1 › hydrates preview shells and IDs before focus, dismissal, link navigation and disposal (520ms)
+  ✓  44 [firefox] › tests/hydration/hydration.spec.ts:175:1 › hydrates radios and pressed buttons before keyboard selection, owner updates and disposal (499ms)
+  ✓  45 [firefox] › tests/hydration/hydration.spec.ts:182:1 › hydrates Select labels and native values before selecting, resetting, dismissing and disposal (556ms)
+  ✓  46 [firefox] › tests/hydration/loading.spec.ts:46:1 › compares native placeholders during the pending boundary handoff (590ms)
+  ✓  47 [firefox] › tests/hydration/loading.spec.ts:53:1 › hydrates pending Skeleton nodes, resolves the real boundary and unmounts ready content (1.4s)
+  ✓  48 [firefox] › tests/hydration/loading.spec.ts:71:1 › unmounts hydrated pending boundaries and ignores old resolutions after a fresh mount (1.4s)
+  ✓  49 [firefox] › tests/hydration/loading.spec.ts:92:1 › disposing the hydrated root prevents late promise completion from restoring content (545ms)
+  ✓  50 [firefox] › tests/hydration/retry-minimal.spec.ts:3:71 › plain Solid retry: replace-reset (489ms)
+  ✓  51 [firefox] › tests/hydration/retry-minimal.spec.ts:3:71 › plain Solid retry: replace-only (439ms)
+  ✓  52 [firefox] › tests/hydration/retry-minimal.spec.ts:3:71 › plain Solid retry: source-reset (509ms)
+  ✓  53 [firefox] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: plain (458ms)
+  ✓  54 [firefox] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: context (515ms)
+  ✓  55 [firefox] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: registration (515ms)
+  ✓  56 [firefox] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: registration-spread (505ms)
+  ✓  57 [firefox] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: registration-read (unsafe-pattern characterization) (926ms)
+  ✓  58 [firefox] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: package-shell (512ms)
+  ✓  59 [firefox] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: package-triggers (628ms)
+  ✓  60 [firefox] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: package-panels (854ms)
+  ✓  61 [firefox] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: package-controlled (468ms)
+  ✓  62 [firefox] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: package-uncontrolled (453ms)
+(node:73781) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  63 [webkit] › tests/hydration/errored.spec.ts:30:1 › rejected hydrated data preserves drafts and explicit Errored resets recover without duplicate requests (1.3s)
+  ✓  64 [webkit] › tests/hydration/errored.spec.ts:59:54 › a stale retry's resolve cannot overwrite a newer successful request (722ms)
+  ✓  65 [webkit] › tests/hydration/errored.spec.ts:59:54 › a stale retry's reject cannot overwrite a newer successful request (701ms)
+  ✓  66 [webkit] › tests/hydration/errored.spec.ts:77:1 › late rejection after pending unmount stays contained and a fresh boundary can recover (639ms)
+  ✓  67 [webkit] › tests/hydration/errored.spec.ts:93:1 › late rejection after disposing the hydrated root does not restore an error or content (459ms)
+  ✘  68 [webkit] › tests/hydration/hydration.spec.ts:33:1 › hydrates server nodes, edits native forms, rewires labels and resets canonical values (574ms)
+(node:73869) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  69 [webkit] › tests/hydration/hydration.spec.ts:66:1 › hydrates selected Tabs, preserves mounted drafts and updates both sides of live IDs (762ms)
+  ✓  70 [webkit] › tests/hydration/hydration.spec.ts:84:1 › hydrates closed overlays, updates naming, dismisses and restores focus without duplicate actions (980ms)
+  ✓  71 [webkit] › tests/hydration/hydration.spec.ts:110:51 › hydrates initially open popover and disposes active ownership (530ms)
+  ✓  72 [webkit] › tests/hydration/hydration.spec.ts:110:51 › hydrates initially open alert and disposes active ownership (525ms)
+  ✓  73 [webkit] › tests/hydration/hydration.spec.ts:135:1 › hydrates disclosures with stable owner IDs, retained drafts and ordinary remounts (647ms)
+  ✓  74 [webkit] › tests/hydration/hydration.spec.ts:158:1 › hydrates preview shells and IDs before focus, dismissal, link navigation and disposal (529ms)
+  ✓  75 [webkit] › tests/hydration/hydration.spec.ts:175:1 › hydrates radios and pressed buttons before keyboard selection, owner updates and disposal (518ms)
+  ✓  76 [webkit] › tests/hydration/hydration.spec.ts:182:1 › hydrates Select labels and native values before selecting, resetting, dismissing and disposal (578ms)
+  ✓  77 [webkit] › tests/hydration/loading.spec.ts:46:1 › compares native placeholders during the pending boundary handoff (439ms)
+  ✓  78 [webkit] › tests/hydration/loading.spec.ts:53:1 › hydrates pending Skeleton nodes, resolves the real boundary and unmounts ready content (479ms)
+  ✓  79 [webkit] › tests/hydration/loading.spec.ts:71:1 › unmounts hydrated pending boundaries and ignores old resolutions after a fresh mount (862ms)
+  ✓  80 [webkit] › tests/hydration/loading.spec.ts:92:1 › disposing the hydrated root prevents late promise completion from restoring content (507ms)
+  ✓  81 [webkit] › tests/hydration/retry-minimal.spec.ts:3:71 › plain Solid retry: replace-reset (516ms)
+  ✓  82 [webkit] › tests/hydration/retry-minimal.spec.ts:3:71 › plain Solid retry: replace-only (525ms)
+  ✓  83 [webkit] › tests/hydration/retry-minimal.spec.ts:3:71 › plain Solid retry: source-reset (477ms)
+  ✓  84 [webkit] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: plain (445ms)
+  ✓  85 [webkit] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: context (442ms)
+  ✓  86 [webkit] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: registration (484ms)
+  ✓  87 [webkit] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: registration-spread (449ms)
+  ✓  88 [webkit] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: registration-read (unsafe-pattern characterization) (344ms)
+  ✓  89 [webkit] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: package-shell (435ms)
+  ✓  90 [webkit] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: package-triggers (495ms)
+  ✓  91 [webkit] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: package-panels (452ms)
+  ✓  92 [webkit] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: package-controlled (503ms)
+  ✓  93 [webkit] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: package-uncontrolled (450ms)
+
+
+  1) [chromium] › tests/hydration/hydration.spec.ts:33:1 › hydrates server nodes, edits native forms, rewires labels and resets canonical values
+
+    Error: locator.fill: Error: strict mode violation: getByRole('combobox', { name: 'Fruit' }) resolved to 2 elements:
+        1) <input value="Apple" role="combobox" data-slot="input" aria-label="Fruit" aria-expanded="false" _hk="acceptanceA1002011" aria-autocomplete="list" aria-controls="combobox-acceptances-list" class="h-8 w-full rounded-lg border border-input bg-transparent px-2.5 py-1 text-base transition-colors outline-none file:inline-flex file:h-6 file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-vi…/> aka getByTestId('hydration-form').getByRole('combobox', { name: 'Fruit' })
+        2) <button type="button" role="combobox" data-size="default" data-state="closed" aria-expanded="false" _hk="acceptanceA2l000" aria-haspopup="listbox" data-slot="select-trigger" aria-label="Hydrated fruit" id="select-acceptanceA2f-trigger" aria-controls="select-acceptanceA2f-list" class="flex w-fit max-w-full items-center justify-between gap-1.5 rounded-lg border border-input bg-transparent py-2 pr-2 pl-2.5 text-sm whitespace-nowrap transition-colors outline-none select-none focus-visible:border-ring focu…>…</button> aka getByRole('combobox', { name: 'Hydrated fruit' })
+
+    Call log:
+      - waiting for getByRole('combobox', { name: 'Fruit' })
+
+
+      50 |   await updates.press('Space');
+      51 |   const fruit = page.getByRole('combobox', { name: 'Fruit' });
+    > 52 |   await fruit.fill('Ban');await fruit.press('ArrowDown');await fruit.press('Enter');
+         |               ^
+      53 |   await page.getByRole('button', { name: 'Submit preferences' }).click();
+      54 |   await expect(page.getByTestId('submitted')).toHaveText(JSON.stringify({ email: 'edited@example.com', notes: 'Edited notes', terms: 'on', fruit: 'Banana' }));
+      55 |   await expect(page.getByTestId('submissions')).toHaveText('1');
+        at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/hydration.spec.ts:52:15
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/hydration-hydration-hydrat-d3f11-and-resets-canonical-values-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/hydration-hydration-hydrat-d3f11-and-resets-canonical-values-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/hydration-hydration-hydrat-d3f11-and-resets-canonical-values-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/hydration-hydration-hydrat-d3f11-and-resets-canonical-values-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [firefox] › tests/hydration/hydration.spec.ts:33:1 › hydrates server nodes, edits native forms, rewires labels and resets canonical values
+
+    Error: locator.fill: Error: strict mode violation: getByRole('combobox', { name: 'Fruit' }) resolved to 2 elements:
+        1) <input value="Apple" role="combobox" data-slot="input" aria-label="Fruit" aria-expanded="false" _hk="acceptanceA1002011" aria-autocomplete="list" aria-controls="combobox-acceptances-list" class="h-8 w-full rounded-lg border border-input bg-transparent px-2.5 py-1 text-base transition-colors outline-none file:inline-flex file:h-6 file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-vi…/> aka getByTestId('hydration-form').getByRole('combobox', { name: 'Fruit' })
+        2) <button type="button" role="combobox" data-size="default" data-state="closed" aria-expanded="false" _hk="acceptanceA2l000" aria-haspopup="listbox" data-slot="select-trigger" aria-label="Hydrated fruit" id="select-acceptanceA2f-trigger" aria-controls="select-acceptanceA2f-list" class="flex w-fit max-w-full items-center justify-between gap-1.5 rounded-lg border border-input bg-transparent py-2 pr-2 pl-2.5 text-sm whitespace-nowrap transition-colors outline-none select-none focus-visible:border-ring focu…>…</button> aka getByRole('combobox', { name: 'Hydrated fruit' })
+
+    Call log:
+      - waiting for getByRole('combobox', { name: 'Fruit' })
+
+
+      50 |   await updates.press('Space');
+      51 |   const fruit = page.getByRole('combobox', { name: 'Fruit' });
+    > 52 |   await fruit.fill('Ban');await fruit.press('ArrowDown');await fruit.press('Enter');
+         |               ^
+      53 |   await page.getByRole('button', { name: 'Submit preferences' }).click();
+      54 |   await expect(page.getByTestId('submitted')).toHaveText(JSON.stringify({ email: 'edited@example.com', notes: 'Edited notes', terms: 'on', fruit: 'Banana' }));
+      55 |   await expect(page.getByTestId('submissions')).toHaveText('1');
+        at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/hydration.spec.ts:52:15
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/hydration-hydration-hydrat-d3f11-and-resets-canonical-values-firefox/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/hydration-hydration-hydrat-d3f11-and-resets-canonical-values-firefox/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/hydration-hydration-hydrat-d3f11-and-resets-canonical-values-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/hydration-hydration-hydrat-d3f11-and-resets-canonical-values-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [webkit] › tests/hydration/hydration.spec.ts:33:1 › hydrates server nodes, edits native forms, rewires labels and resets canonical values
+
+    Error: locator.fill: Error: strict mode violation: getByRole('combobox', { name: 'Fruit' }) resolved to 2 elements:
+        1) <input value="Apple" role="combobox" data-slot="input" aria-label="Fruit" aria-expanded="false" _hk="acceptanceA1002011" aria-autocomplete="list" aria-controls="combobox-acceptances-list" class="h-8 w-full rounded-lg border border-input bg-transparent px-2.5 py-1 text-base transition-colors outline-none file:inline-flex file:h-6 file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-vi…/> aka getByTestId('hydration-form').getByRole('combobox', { name: 'Fruit' })
+        2) <button type="button" role="combobox" data-size="default" data-state="closed" aria-expanded="false" _hk="acceptanceA2l000" aria-haspopup="listbox" data-slot="select-trigger" aria-label="Hydrated fruit" id="select-acceptanceA2f-trigger" aria-controls="select-acceptanceA2f-list" class="flex w-fit max-w-full items-center justify-between gap-1.5 rounded-lg border border-input bg-transparent py-2 pr-2 pl-2.5 text-sm whitespace-nowrap transition-colors outline-none select-none focus-visible:border-ring focu…>…</button> aka getByRole('combobox', { name: 'Hydrated fruit' })
+
+    Call log:
+      - waiting for getByRole('combobox', { name: 'Fruit' })
+
+
+      50 |   await updates.press('Space');
+      51 |   const fruit = page.getByRole('combobox', { name: 'Fruit' });
+    > 52 |   await fruit.fill('Ban');await fruit.press('ArrowDown');await fruit.press('Enter');
+         |               ^
+      53 |   await page.getByRole('button', { name: 'Submit preferences' }).click();
+      54 |   await expect(page.getByTestId('submitted')).toHaveText(JSON.stringify({ email: 'edited@example.com', notes: 'Edited notes', terms: 'on', fruit: 'Banana' }));
+      55 |   await expect(page.getByTestId('submissions')).toHaveText('1');
+        at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/hydration.spec.ts:52:15
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/hydration-hydration-hydrat-d3f11-and-resets-canonical-values-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/hydration-hydration-hydrat-d3f11-and-resets-canonical-values-webkit/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/hydration-hydration-hydrat-d3f11-and-resets-canonical-values-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/hydration-hydration-hydrat-d3f11-and-resets-canonical-values-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3 failed
+    [chromium] › tests/hydration/hydration.spec.ts:33:1 › hydrates server nodes, edits native forms, rewires labels and resets canonical values
+    [firefox] › tests/hydration/hydration.spec.ts:33:1 › hydrates server nodes, edits native forms, rewires labels and resets canonical values
+    [webkit] › tests/hydration/hydration.spec.ts:33:1 › hydrates server nodes, edits native forms, rewires labels and resets canonical values
+  90 passed (58.4s)
+error: script "test:hydration" exited with code 1

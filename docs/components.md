@@ -896,6 +896,82 @@ cross-library composition and published/streaming SSR remain unverified.
 ![Dark choice controls](screenshots/choices-dark.png)
 ![Narrow choice controls](screenshots/choices-mobile.png)
 
+## Select
+
+Open `/?select` (append `&dark`) for required/native forms, controlled acceptance,
+long choices, custom colors and a Select inside a modal.
+
+```tsx
+import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from 'shadcn-solidjs-theme/ui/select';
+
+const fruit = [
+  { value: 'apple', label: 'Apple' },
+  { value: 'banana', label: 'Banana', disabled: true },
+  { value: 'cherry', label: 'Cherry' },
+];
+
+<Select items={fruit} name="fruit" defaultValue="apple" required>
+  <SelectTrigger aria-label="Fruit"><SelectValue placeholder="Choose fruit" /></SelectTrigger>
+  <SelectContent>{item => <SelectItem value={item.value} />}</SelectContent>
+</Select>
+```
+
+| Part | Contract |
+| --- | --- |
+| Select | Required `items: readonly SelectOption[]` with unique nonempty string values and plain-text labels; optional item disabled. `value`/`defaultValue`/`onValueChange`, independently controlled `open`/`defaultOpen`/`onOpenChange`, `name`, `form`, `required`, `disabled`, `readOnly`. No wrapper element. |
+| SelectTrigger | Native button attributes/ref/events/class; size `default` (32px) or `sm` (28px). Always type button with combobox semantics. Supply aria-label or an external Label linked to its id. |
+| SelectValue | Label from root item data; placeholder for the empty string. Native span props, class and optional custom children. |
+| SelectContent | Native div props/ref/class; side top/bottom, align start/center/end, sideOffset 4, collisionPadding 8. Accepts composed children or the per-item render function shown above. |
+| SelectItem | Required matching value, native div props/events/class and optional custom children. Label, disabled state and canonical selection come from root data. |
+| SelectGroup / SelectLabel | Compose a named group. Include one SelectLabel inside each group; its generated ID connects the label. A label outside a group is plain visual text. |
+| SelectSeparator | Decorative separator between groups. |
+| SelectScrollUpButton / SelectScrollDownButton | Click scrolls 100 CSS pixels without moving trigger focus. Content includes both automatically; native button props, label, children and class may customize explicitly composed copies. |
+
+The explicit item array supplies labels and native options during closed SSR,
+without discovering child registrations after hydration. Render each item once in
+that data order, including every enabled option. Use Content's per-item render
+function for large lists: its row scopes avoid Solid's wide-dependency diagnostic.
+For grouped composition, render matching SelectItems inside SelectGroups. Values
+must be unique and nonempty; empty string means no selection. Missing selected data
+retains the value and shows its string until the owner supplies another value.
+
+Controlled callbacks request changes; retaining a prop rejects the request. Selection
+and popup visibility may be accepted independently. Disabled and readOnly block user
+changes; disabled also excludes the native control from FormData. A hidden native
+select owns submission and required validity. Invalid submission focuses the visible
+trigger and exposes aria-invalid. Provide adjacent error/help text and aria-describedby
+for application-specific validation messages. Reset requests the original default
+after bubbling cancellation, follows reactive form ownership, and cancels pending
+work on reassociation/disposal. Use an unmatched nonempty form ID to detach; removing
+the prop restores the enclosing form. External DOM relocation/form-node replacement
+is not observed. A disabled selected native option is not a successful form value.
+
+Arrows open and navigate, wrapping enabled options; Home/End move within the open
+list; Enter/Space commit; Escape closes without committing. Closed typeahead selects,
+open typeahead highlights; repeated letters cycle and a 700ms pause clears the buffer.
+Tab leaves the trigger for the browser's ordinary destination. Focus stays on the
+trigger while aria-activedescendant exposes the active option. Caller click/keydown
+handlers run first and preventDefault cancels internal action. Items keep focus on
+the trigger during pointer selection. Controlled dismissal rejection leaves visibility
+under owner control; the popup is nonmodal and never traps focus.
+
+The manual browser popover stays in theme ancestry and escapes clipping. Floating UI
+tracks movement, scrolling and resize, flips/limits the popup, and ignores stale
+position results after changes/disposal. The bounded list scrolls active options into
+view after resizing. Semantic tokens, class/style overrides, light/dark, RTL and
+reduced-motion behavior are tested. Scroll arrows remain visible at list boundaries;
+hover/hold auto-scroll is not implemented. This is a flat single-select API; no
+multiselect, editable search, item-aligned Radix positioning, portal/asChild API or
+virtualized list is provided. Use Combobox for editable search.
+
+Source SSR/hydration, source/built browser interaction and light/dark/mobile visuals
+are covered in the [Select delivery](SELECT-DELIVERY.md). Physical assistive technology,
+touch, published/streaming SSR and application integration remain unverified.
+
+![Light Select examples](screenshots/select-light.png)
+![Dark Select examples](screenshots/select-dark.png)
+![Narrow Select examples](screenshots/select-mobile.png)
+
 ## Acceptance evidence
 
 See the [per-component test matrix](TEST-MATRIX.md) for linked assertions,

@@ -1,0 +1,194 @@
+bun run check
+$ tsc --noEmit
+
+bun run lint
+$ eslint src tests playground scripts *.ts
+
+bun run test --maxWorkers=2
+$ vitest run "--maxWorkers=2"
+
+ RUN  v4.1.10 /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme
+
+
+ Test Files  13 passed (13)
+      Tests  167 passed (167)
+   Start at  22:53:50
+   Duration  6.32s (transform 792ms, setup 1.20s, import 1.13s, tests 3.96s, environment 4.91s)
+
+
+bun run test:coverage --maxWorkers=2
+$ vitest run --coverage "--maxWorkers=2"
+
+ RUN  v4.1.10 /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme
+      Coverage enabled with v8
+
+
+ Test Files  13 passed (13)
+      Tests  167 passed (167)
+   Start at  22:53:56
+   Duration  7.83s (transform 1.01s, setup 1.45s, import 1.56s, tests 5.27s, environment 5.13s)
+
+ % Coverage report from v8
+-------------------|---------|----------|---------|---------|-------------------
+File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
+-------------------|---------|----------|---------|---------|-------------------
+-------------------|---------|----------|---------|---------|-------------------
+
+=============================== Coverage summary ===============================
+Statements   : 100% ( 2301/2301 )
+Branches     : 100% ( 1444/1444 )
+Functions    : 100% ( 935/935 )
+Lines        : 100% ( 640/640 )
+================================================================================
+
+bun run test:server
+$ vitest run --config vitest.server.config.ts
+
+ RUN  v4.1.10 /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme
+
+
+ Test Files  1 passed (1)
+      Tests  11 passed (11)
+   Start at  22:54:05
+   Duration  515ms (transform 305ms, setup 0ms, import 378ms, tests 27ms, environment 0ms)
+
+
+THEME_PORT=4403 RESULTS_FILE=docs/evidence/select-review-integration.json bunx --no-install playwright test tests/integration/select.spec.ts
+[WebServer] $ vite --config playground/vite.config.ts
+[WebServer] (node:85409) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 27 tests using 1 worker
+
+(node:85522) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › tests/select.ts:7:2 › keyboard selection, typeahead, disabled skipping and Escape preserve focus and form values (799ms)
+  ✓   2 [chromium] › tests/select.ts:10:2 › pointer choice, canceled reset and external ownership remain native through detach and remount (1.0s)
+  ✓   3 [chromium] › tests/select.ts:13:2 › controlled owners may reject opening, selection and dismissal until explicitly accepting (668ms)
+  ✓   4 [chromium] › tests/select.ts:16:2 › Tab, Shift+Tab and outside pointer preserve ordinary destinations (572ms)
+  ✓   5 [chromium] › tests/select.ts:19:2 › disabled and readonly controls retain values while required validation reaches the visible trigger (1.2s)
+  ✓   6 [chromium] › tests/select.ts:22:2 › long-list navigation survives resize, scrolling, RTL, data reversal and empty data (887ms)
+  ✓   7 [chromium] › tests/select.ts:25:2 › Select inside a modal dismisses independently and restores the modal trigger on closure (530ms)
+  ✓   8 [chromium] › tests/select.ts:28:33 › Select light theme, narrow enlarged layout and open accessibility (1.1s)
+  ✓   9 [chromium] › tests/select.ts:28:33 › Select dark theme, narrow enlarged layout and open accessibility (975ms)
+(node:85793) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  10 [firefox] › tests/select.ts:7:2 › keyboard selection, typeahead, disabled skipping and Escape preserve focus and form values (2.0s)
+  ✓  11 [firefox] › tests/select.ts:10:2 › pointer choice, canceled reset and external ownership remain native through detach and remount (941ms)
+  ✓  12 [firefox] › tests/select.ts:13:2 › controlled owners may reject opening, selection and dismissal until explicitly accepting (624ms)
+  ✓  13 [firefox] › tests/select.ts:16:2 › Tab, Shift+Tab and outside pointer preserve ordinary destinations (512ms)
+  ✓  14 [firefox] › tests/select.ts:19:2 › disabled and readonly controls retain values while required validation reaches the visible trigger (911ms)
+  ✓  15 [firefox] › tests/select.ts:22:2 › long-list navigation survives resize, scrolling, RTL, data reversal and empty data (1.2s)
+  ✓  16 [firefox] › tests/select.ts:25:2 › Select inside a modal dismisses independently and restores the modal trigger on closure (704ms)
+  ✓  17 [firefox] › tests/select.ts:28:33 › Select light theme, narrow enlarged layout and open accessibility (1.5s)
+  ✓  18 [firefox] › tests/select.ts:28:33 › Select dark theme, narrow enlarged layout and open accessibility (1.5s)
+(node:85969) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  19 [webkit] › tests/select.ts:7:2 › keyboard selection, typeahead, disabled skipping and Escape preserve focus and form values (1.4s)
+  ✓  20 [webkit] › tests/select.ts:10:2 › pointer choice, canceled reset and external ownership remain native through detach and remount (1.3s)
+  ✓  21 [webkit] › tests/select.ts:13:2 › controlled owners may reject opening, selection and dismissal until explicitly accepting (1.4s)
+  ✓  22 [webkit] › tests/select.ts:16:2 › Tab, Shift+Tab and outside pointer preserve ordinary destinations (661ms)
+  ✓  23 [webkit] › tests/select.ts:19:2 › disabled and readonly controls retain values while required validation reaches the visible trigger (796ms)
+  ✓  24 [webkit] › tests/select.ts:22:2 › long-list navigation survives resize, scrolling, RTL, data reversal and empty data (961ms)
+  ✓  25 [webkit] › tests/select.ts:25:2 › Select inside a modal dismisses independently and restores the modal trigger on closure (663ms)
+  ✓  26 [webkit] › tests/select.ts:28:33 › Select light theme, narrow enlarged layout and open accessibility (1.4s)
+  ✓  27 [webkit] › tests/select.ts:28:33 › Select dark theme, narrow enlarged layout and open accessibility (1.3s)
+
+  27 passed (31.7s)
+
+THEME_PORT=4403 THEME_PRODUCTION=1 RESULTS_FILE=docs/evidence/select-review-e2e.json bunx --no-install playwright test tests/e2e/select.spec.ts tests/e2e/visual.spec.ts
+[WebServer] $ vite build && tsc -p tsconfig.build.json
+[WebServer] (node:86481) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] $ vite build --config playground/vite.config.ts
+[WebServer] (node:86614) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:86656) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 51 tests using 1 worker
+
+(node:86684) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › tests/select.ts:7:2 › keyboard selection, typeahead, disabled skipping and Escape preserve focus and form values (740ms)
+  ✓   2 [chromium] › tests/select.ts:10:2 › pointer choice, canceled reset and external ownership remain native through detach and remount (759ms)
+  ✓   3 [chromium] › tests/select.ts:13:2 › controlled owners may reject opening, selection and dismissal until explicitly accepting (503ms)
+  ✓   4 [chromium] › tests/select.ts:16:2 › Tab, Shift+Tab and outside pointer preserve ordinary destinations (596ms)
+  ✓   5 [chromium] › tests/select.ts:19:2 › disabled and readonly controls retain values while required validation reaches the visible trigger (637ms)
+  ✓   6 [chromium] › tests/select.ts:22:2 › long-list navigation survives resize, scrolling, RTL, data reversal and empty data (502ms)
+  ✓   7 [chromium] › tests/select.ts:25:2 › Select inside a modal dismisses independently and restores the modal trigger on closure (294ms)
+  ✓   8 [chromium] › tests/select.ts:28:33 › Select light theme, narrow enlarged layout and open accessibility (839ms)
+  ✓   9 [chromium] › tests/select.ts:28:33 › Select dark theme, narrow enlarged layout and open accessibility (922ms)
+  ✓  10 [chromium] › tests/e2e/visual.spec.ts:3:45 › light component gallery (709ms)
+  ✓  11 [chromium] › tests/e2e/visual.spec.ts:3:45 › dark component gallery (711ms)
+  ✓  12 [chromium] › tests/e2e/visual.spec.ts:3:45 › mobile component gallery (582ms)
+  ✓  13 [chromium] › tests/e2e/visual.spec.ts:12:45 › light open overlays (634ms)
+  ✓  14 [chromium] › tests/e2e/visual.spec.ts:12:45 › dark open overlays (950ms)
+  ✓  15 [chromium] › tests/e2e/visual.spec.ts:12:45 › mobile open overlays (637ms)
+  ✓  16 [chromium] › tests/e2e/visual.spec.ts:16:45 › light open combobox (386ms)
+  ✓  17 [chromium] › tests/e2e/visual.spec.ts:16:45 › dark open combobox (410ms)
+  ✓  18 [chromium] › tests/e2e/visual.spec.ts:16:45 › mobile open combobox (284ms)
+  ✓  19 [chromium] › tests/e2e/visual.spec.ts:19:49 › light compact cards and vertical separators (281ms)
+  ✓  20 [chromium] › tests/e2e/visual.spec.ts:19:49 › dark compact cards and vertical separators (259ms)
+  ✓  21 [chromium] › tests/e2e/visual.spec.ts:19:49 › mobile compact cards and vertical separators (287ms)
+  ✓  22 [chromium] › tests/e2e/visual.spec.ts:26:45 › light accordion and collapsible (270ms)
+  ✓  23 [chromium] › tests/e2e/visual.spec.ts:26:45 › dark accordion and collapsible (275ms)
+  ✓  24 [chromium] › tests/e2e/visual.spec.ts:26:45 › mobile accordion and collapsible (235ms)
+  ✓  25 [chromium] › tests/e2e/visual.spec.ts:29:45 › light tooltip and hover card (275ms)
+  ✓  26 [chromium] › tests/e2e/visual.spec.ts:29:45 › dark tooltip and hover card (268ms)
+  ✓  27 [chromium] › tests/e2e/visual.spec.ts:29:45 › mobile tooltip and hover card (202ms)
+  ✓  28 [chromium] › tests/e2e/visual.spec.ts:32:45 › light radio and toggle choices (264ms)
+  ✓  29 [chromium] › tests/e2e/visual.spec.ts:32:45 › dark radio and toggle choices (266ms)
+  ✓  30 [chromium] › tests/e2e/visual.spec.ts:32:45 › mobile radio and toggle choices (227ms)
+  ✓  31 [chromium] › tests/e2e/visual.spec.ts:36:45 › light Select choices (325ms)
+  ✓  32 [chromium] › tests/e2e/visual.spec.ts:36:45 › dark Select choices (310ms)
+  ✓  33 [chromium] › tests/e2e/visual.spec.ts:36:45 › mobile Select choices (253ms)
+(node:87278) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  34 [firefox] › tests/select.ts:7:2 › keyboard selection, typeahead, disabled skipping and Escape preserve focus and form values (1.6s)
+  ✓  35 [firefox] › tests/select.ts:10:2 › pointer choice, canceled reset and external ownership remain native through detach and remount (918ms)
+  ✓  36 [firefox] › tests/select.ts:13:2 › controlled owners may reject opening, selection and dismissal until explicitly accepting (475ms)
+  ✓  37 [firefox] › tests/select.ts:16:2 › Tab, Shift+Tab and outside pointer preserve ordinary destinations (632ms)
+  ✓  38 [firefox] › tests/select.ts:19:2 › disabled and readonly controls retain values while required validation reaches the visible trigger (779ms)
+  ✓  39 [firefox] › tests/select.ts:22:2 › long-list navigation survives resize, scrolling, RTL, data reversal and empty data (721ms)
+  ✓  40 [firefox] › tests/select.ts:25:2 › Select inside a modal dismisses independently and restores the modal trigger on closure (427ms)
+  ✓  41 [firefox] › tests/select.ts:28:33 › Select light theme, narrow enlarged layout and open accessibility (1.1s)
+  ✓  42 [firefox] › tests/select.ts:28:33 › Select dark theme, narrow enlarged layout and open accessibility (1.2s)
+(node:87382) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  43 [webkit] › tests/select.ts:7:2 › keyboard selection, typeahead, disabled skipping and Escape preserve focus and form values (1.1s)
+  ✓  44 [webkit] › tests/select.ts:10:2 › pointer choice, canceled reset and external ownership remain native through detach and remount (951ms)
+  ✓  45 [webkit] › tests/select.ts:13:2 › controlled owners may reject opening, selection and dismissal until explicitly accepting (540ms)
+  ✓  46 [webkit] › tests/select.ts:16:2 › Tab, Shift+Tab and outside pointer preserve ordinary destinations (497ms)
+  ✓  47 [webkit] › tests/select.ts:19:2 › disabled and readonly controls retain values while required validation reaches the visible trigger (572ms)
+  ✓  48 [webkit] › tests/select.ts:22:2 › long-list navigation survives resize, scrolling, RTL, data reversal and empty data (752ms)
+  ✓  49 [webkit] › tests/select.ts:25:2 › Select inside a modal dismisses independently and restores the modal trigger on closure (519ms)
+  ✓  50 [webkit] › tests/select.ts:28:33 › Select light theme, narrow enlarged layout and open accessibility (1.2s)
+  ✓  51 [webkit] › tests/select.ts:28:33 › Select dark theme, narrow enlarged layout and open accessibility (1.1s)
+
+  51 passed (36.3s)
+
+RESULTS_FILE=docs/evidence/select-review-hydration.json bun run test:hydration --grep 'hydrates Select'
+$ playwright test --config playwright.hydration.config.ts --grep "hydrates Select"
+[WebServer] $ node --conditions=development scripts/build-hydration.mjs
+[WebServer] (node:87501) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:87524) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 6 tests using 1 worker
+
+(node:87583) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium] › tests/hydration/hydration.spec.ts:66:1 › hydrates selected Tabs, preserves mounted drafts and updates both sides of live IDs (698ms)
+  ✓  2 [chromium] › tests/hydration/hydration.spec.ts:182:1 › hydrates Select labels and native values before selecting, resetting, dismissing and disposal (477ms)
+(node:87658) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  3 [firefox] › tests/hydration/hydration.spec.ts:66:1 › hydrates selected Tabs, preserves mounted drafts and updates both sides of live IDs (1.5s)
+  ✓  4 [firefox] › tests/hydration/hydration.spec.ts:182:1 › hydrates Select labels and native values before selecting, resetting, dismissing and disposal (586ms)
+(node:87701) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  5 [webkit] › tests/hydration/hydration.spec.ts:66:1 › hydrates selected Tabs, preserves mounted drafts and updates both sides of live IDs (929ms)
+  ✓  6 [webkit] › tests/hydration/hydration.spec.ts:182:1 › hydrates Select labels and native values before selecting, resetting, dismissing and disposal (626ms)
+
+  6 passed (9.0s)

@@ -55,3 +55,9 @@ it('renders choice values, names and pressed semantics on the server',()=>{
  const html=renderToString(()=><><RadioGroup name="delivery" defaultValue="a" required><RadioGroupItem value="a" aria-label="Pickup"/><RadioGroupItem value="b" disabled aria-label="Shipping"/></RadioGroup><Toggle defaultPressed>Bold</Toggle><ToggleGroup type="multiple" defaultValue={['a']}><ToggleGroupItem value="a">Left</ToggleGroupItem><ToggleGroupItem value="b">Right</ToggleGroupItem></ToggleGroup></>);
  expect(html).toContain('role="radiogroup"');expect(html).toContain('name="delivery"');expect(html).toContain('aria-checked="true"');expect(html).toContain('required');expect(html).toContain('disabled');expect(html).toContain('aria-pressed="true"');expect(html).toContain('aria-pressed="false"');expect(html).toContain('data-state="on"');
 });
+
+import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from '../src';
+it('renders Select labels, native selected values, required state and retained closed options on the server',()=>{
+ const items=[{value:'apple',label:'Apple'},{value:'cherry',label:'Cherry',disabled:true}];const html=renderToString(()=><Select items={items} name="fruit" defaultValue="apple" required><SelectTrigger aria-label="Fruit"><SelectValue placeholder="Choose"/></SelectTrigger><SelectContent>{item=><SelectItem value={item.value}/>}</SelectContent></Select>);
+ expect(html).toContain('role="combobox"');expect(html).toContain('Apple');expect(html).toContain('aria-expanded="false"');expect(html).toContain('name="fruit"');expect(html).toContain('selected');expect(html).toContain('required');expect(html).toContain('disabled');expect(html).toContain('role="listbox"');expect(html).toContain('hidden');expect(html).not.toContain('data-native-open');
+});

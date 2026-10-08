@@ -3,7 +3,7 @@
 Initially audited 2026-10-08 against source at `314f27a`; updated with the
 [three-engine browser evidence](WEBKIT-DELIVERY.md) and
 [source hydration regression](HYDRATION-DELIVERY.md), including
-[real Loading boundaries](LOADING-HYDRATION-DELIVERY.md). Covers the **21
+[real Loading boundaries](LOADING-HYDRATION-DELIVERY.md). Covers the **22
 implemented component families**, including their compound parts. The other
 catalog entries in [COMPONENT-MAP.md](../COMPONENT-MAP.md) remain unimplemented;
 their adoption probes are not delivered-component acceptance tests.
@@ -43,14 +43,14 @@ are implementation scope limits, not features that an existing test proves.
 | Diagnostics and cleanup are checked | [Unit setup](../vitest.setup.ts), [browser fixture](../tests/browser-fixture.ts) | Every unit test checks console warn/error after cleanup; every B/E/H test checks console warning/error and page errors. The hydration build also rejects server warnings/errors; ordinary S tests have no equivalent diagnostic fixture. |
 | Whole-gallery accessibility | [B: light/dark examples have no axe accessibility violations](../tests/integration/foundation.spec.ts#L27) | Applies to the rendered, settled gallery state. Axe does not certify screen-reader usability or all dynamic states. |
 | Whole-gallery visual appearance | [V: light/dark/mobile component gallery](../tests/e2e/visual.spec.ts#L3) | Shared gallery plus dedicated disclosure and preview images; not every variant/state combination. |
-| Unit execution coverage | [Coverage configuration](../vitest.config.ts), [measured coverage](evidence/choices-coverage.json) | 100% statements, branches, functions and lines for included component/helper source; not exhaustive behavior coverage. |
+| Unit execution coverage | [Coverage configuration](../vitest.config.ts), [measured coverage](evidence/select-coverage.json) | 100% statements, branches, functions and lines for included component/helper source; not exhaustive behavior coverage. |
 
-The current choice delivery records **147 unit tests, 10 grouped SSR tests,
-312 browser integration runs (104 scenarios × 3 engines), and 279 E2E runs
-(86 journeys × 3 engines + 21 Chromium visual tests), and 90 hydration runs
-(87 positive assertions + 3 unsafe-pattern characterizations)**. Those visual tests compare
-24 images. These totals are package-wide, not per component. See the
-[Radio/Toggle verification](CHOICES-DELIVERY.md) for current results and the
+The current Select delivery records **167 unit tests, 11 grouped SSR tests,
+339 browser integration runs (113 scenarios × 3 engines), 309 E2E runs
+(95 journeys × 3 engines + 24 Chromium visual tests), and 93 hydration runs
+(90 positive assertions + 3 unsafe-pattern characterizations)**. Visual tests compare
+27 images. These totals are package-wide, not per component. See
+[Select verification](SELECT-DELIVERY.md) for current results and the
 [initial matrix verification](TEST-MATRIX-DELIVERY.md) for the original audit.
 
 WebKit runs on macOS with process-scoped button Tab navigation and native
@@ -419,6 +419,28 @@ automatic focus recovery after removing the focused DOM node, toolbar-specific r
 navigation, runtime ToggleGroup type changes and arbitrary polymorphism remain open
 or outside this increment. Coverage is for owned source/adapter execution, not Kobalte internals.
 
+## Select
+
+[Unit assertions](../tests/unit/select.test.tsx), [shared source/built scenarios](../tests/select.ts),
+[Kobalte evaluation](../KOBALTE-SELECT.md), [delivery](SELECT-DELIVERY.md).
+
+| Acceptance requirement | Existing evidence |
+| --- | --- |
+| Single canonical value and independent controlled visibility; owner rejection and later acceptance | U: local/controlled cases; B/E: controlled owners may reject opening, selection and dismissal until explicitly accepting |
+| Native FormData, required invalid focus, disabled omission, readOnly protection, canceled reset and changing form ownership | U: form/reset/validity cases; B/E: pointer choice, canceled reset and external ownership remain native through detach and remount; disabled and readonly controls retain values while required validation reaches the visible trigger |
+| Arrow wrap, Home/End, disabled skipping, repeated-letter typeahead, Enter/Space, Escape and ordinary Tab destinations | U: keyboard/typeahead/cancellation cases; B/E: keyboard selection, typeahead, disabled skipping and Escape preserve focus and form values; Tab, Shift+Tab and outside pointer preserve ordinary destinations |
+| Root data changes retain canonical selection and update labels; controlled native changes restore rejected values | U: item data and native change cases; B/E: long-list reversal/empty behavior |
+| Large-list scroll/reveal after resizing, RTL, clipping escape and empty data | U: 40-row render scopes, geometry/stale-result/observer cleanup; B/E: long-list navigation survives resize, scrolling, RTL, data reversal and empty data |
+| Nested modal selection/Escape stays independent; parent close restores its trigger | B/E: Select inside a modal dismisses independently and restores the modal trigger on closure |
+| Names/roles, semantic themes, trigger sizes, reduced motion, custom colors and enlarged narrow layouts | B/E: Select light/dark theme, narrow enlarged layout and open accessibility; axe checks both states |
+| Original SSR nodes/IDs remain interactive after hydration | S11; H: hydrates Select labels and native values before selecting, resetting, dismissing and disposal |
+| Light/dark/mobile appearance | V: three Select choices snapshots; not all state/theme combinations |
+
+No physical AT/touch, virtualized lists, data-fetch lifecycle, external DOM form
+relocation/replacement, item-aligned placement, hover/hold scroll or published SSR
+claim. Render every enabled item once in root data order. Explicit flat item data
+and source hydration are the accepted composition contract.
+
 ## SSR and visual scope by component
 
 | Component | Server assertions / presence | Visual scope |
@@ -443,6 +465,7 @@ or outside this increment. Coverage is for owned source/adapter execution, not K
 | Radio Group | S10: native name, checked, required and disabled markup | Dedicated light/dark/mobile choices |
 | Toggle | S10: native pressed button through Kobalte | Dedicated light/dark/mobile choices |
 | Toggle Group | S10: pressed/unpressed buttons and grouped state | Dedicated light/dark/mobile choices |
+| Select | S11: canonical native value/label, combobox, required/disabled and closed retained options | Dedicated open light/dark/mobile Select examples |
 | Hover Card | S9: native href, retained closed body, hidden shell in combined markup | Dedicated open light/dark/mobile previews |
 
 S1 title: “renders semantic foundation markup on the server”; S2: “renders named
@@ -453,7 +476,7 @@ opening native layers on the server”; S6: “renders the Combobox canonical va
 and form field without a browser”. S8: “renders disclosure state, custom ID
 relationships, disabled buttons and mount policy on the server”. None tests
 browser hydration. S9: “renders preview description IDs and native links without
-opening a browser layer”. S10: “renders choice values, names and pressed semantics on the server”.
+opening a browser layer”. S10: “renders choice values, names and pressed semantics on the server”. S11: “renders Select labels, native selected values, required state and retained closed options on the server”.
 
 **ASYNC-ERR-1 closed:** [Errored recovery](ERRORED-HYDRATION-DELIVERY.md) verifies
 explicit retry, repeated activation, draft identity/focus, stale resolve/reject,
@@ -470,9 +493,9 @@ order the next test work; they do not assign bug severity to untested behavior.
 | Priority | ID | Component(s) | Concrete closure condition |
 | --- | --- | --- | --- |
 | Manual follow-up | CMB-2 | Combobox | Browser scrolling/Tab/modal checks pass; record a physical IME composition/commit/cancel session before closing the remaining manual portion. |
-| Extended coverage | ALL-2 | All 21 | [H: real hydration, forms, Tabs and overlays](HYDRATION-DELIVERY.md) passes for the documented source fixtures. [Pending Loading boundary hydration](LOADING-HYDRATION-DELIVERY.md) and [client rejection/retry](ERRORED-HYDRATION-DELIVERY.md) are also covered. Streaming, ready-at-SSR boundaries, multiple roots, every variant and a published SSR build remain unverified. |
+| Extended coverage | ALL-2 | All 22 | [H: real hydration, forms, Tabs and overlays](HYDRATION-DELIVERY.md) passes for the documented source fixtures. [Pending Loading boundary hydration](LOADING-HYDRATION-DELIVERY.md) and [client rejection/retry](ERRORED-HYDRATION-DELIVERY.md) are also covered. Streaming, ready-at-SSR boundaries, multiple roots, every variant and a published SSR build remain unverified. |
 | Cross-cutting | ALL-3 | Interactive controls and semantic content | Record manual assistive-technology navigation/announcements; axe success is only automated evidence. |
-| Cross-cutting | ALL-4 | All 21 | Expand representative state/variant visual cases; isolate assertions currently supported only by shared gallery/SSR markup (notably Badge SSR). |
+| Cross-cutting | ALL-4 | All 22 | Expand representative state/variant visual cases; isolate assertions currently supported only by shared gallery/SSR markup (notably Badge SSR). |
 | Before app adoption | ALL-5 | Full package | Verify real admin composition, router/query integration and application errors; measure representative large-list/overlay performance. Current E2E is the gallery only. |
 
 No claim is made that every supported combination appears above. The matrix maps

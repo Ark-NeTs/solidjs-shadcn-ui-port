@@ -1,0 +1,15 @@
+{
+  "before": {
+    "bytes": 116807,
+    "gzip": 29433
+  },
+  "after": {
+    "bytes": 132248,
+    "gzip": 33084
+  },
+  "delta": {
+    "bytes": 15441,
+    "gzip": 3651
+  },
+  "scope": "Complete ESM library artifact, no CSS/fonts or external Solid runtime; not an application transfer or isolated tree-shaken import measurement."
+}

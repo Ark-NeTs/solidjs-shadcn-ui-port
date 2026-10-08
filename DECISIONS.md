@@ -401,3 +401,30 @@ always mounted. Combobox re-reveals its active option when ResizeObserver report
 list shrinkage after floating placement, and disposes that observer with the
 active-item effect. REASONING: the original one-shot scroll could leave the last
 option below the resized viewport. No warning suppression or test relaxation.
+
+## Select with explicit option data (2026-10-08)
+
+Evaluate Kobalte alpha.2 first on rc.13. Basic browser interaction/form checks
+pass, but 25 diagnostics per tested engine expose internal untracked reads,
+feedback and relay tearing. Keep the accepted Toggle dependency, but implement
+Select as owned state/native HTML with Floating UI. REASONING: do not ship
+library-internal diagnostic failures or carry experimental patches into production.
+See [probe evidence](KOBALTE-SELECT.md).
+
+Select takes explicit `{value,label,disabled}` items at its root. REASONING:
+closed server markup, the displayed label and native successful option must agree
+before child registration, and remain available when the popup is closed. Compound
+exports mirror the sibling; required data and placement-only alignment are documented
+API differences. Value and open callbacks request independent owner acceptance.
+A visually hidden native select provides FormData/required validity; invalid events
+focus the visible named trigger. Reset honors cancellation and requested form ownership.
+
+The manual native popover stays in its theme ancestry while entering the top layer.
+Focus stays on the combobox trigger with aria-activedescendant. Explicit tabindex=-1
+on the scrolling viewport prevents browsers from adding an extra Tab stop; deferred
+Tab dismissal lets native focus navigation finish, and reopening/disposal cancels it.
+REASONING: traces showed Firefox/Chromium entering the scroll viewport, then losing
+focus when it hid. Outside dismissal preserves its new destination. An option render
+function on SelectContent creates layout-neutral row owners; REASONING: returning
+40 components directly from a consumer For widened one parent insertion to 41 reads.
+Separators are decorative because listboxes permit option/group children, not separators.
