@@ -31,3 +31,9 @@ import { Combobox, ComboboxInput, ComboboxContent, ComboboxList, ComboboxItem } 
 it('renders the Combobox canonical value and form field without a browser',()=>{
  const html=renderToString(()=><form><Combobox items={['Apple','Banana']} defaultValue="Apple" name="fruit" required><ComboboxInput aria-label="Fruit"/><ComboboxContent><ComboboxList>{(item:string)=><ComboboxItem value={item}>{item}</ComboboxItem>}</ComboboxList></ComboboxContent></Combobox></form>);expect(html).toContain('role="combobox"');expect(html).toContain('value="Apple"');expect(html).toContain('name="fruit"');expect(html).toContain('aria-expanded="false"');expect(html).not.toContain('role="listbox"');
 });
+
+it('emits real input values for native defaults and preserves explicit empty values', () => {
+ const html=renderToString(()=><><Input defaultValue="server@example.com"/><Input value="current" defaultValue="baseline"/><Input value="" defaultValue="baseline"/></>);
+ expect(html).not.toMatch(/defaultvalue/i);
+ expect(html).toContain('value="server@example.com"');expect(html).toContain('value="current"');expect(html).toMatch(/<input value(?:=""|(?=\s))/);expect(html).not.toContain('baseline');
+});

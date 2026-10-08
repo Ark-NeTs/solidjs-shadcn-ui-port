@@ -1,0 +1,216 @@
+{
+  "config": {
+    "argv": [
+      "/Users/arktas/.asdf/installs/nodejs/25.3.0/bin/node",
+      "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/node_modules/.bin/playwright",
+      "test",
+      "--config",
+      "playwright.hydration.config.ts",
+      "--project=chromium",
+      "tests/hydration/tabs-minimal.spec.ts",
+      "--grep",
+      "registration-read"
+    ],
+    "configFile": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/playwright.hydration.config.ts",
+    "rootDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "hydration/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [
+          "**/visual.spec.ts"
+        ],
+        "testMatch": [
+          "hydration/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [
+          "**/visual.spec.ts"
+        ],
+        "testMatch": [
+          "hydration/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "docs/evidence/tabs-minimal-registration-read.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": {
+      "command": "bun run build:hydration && bunx --no-install vite preview --config hydration.vite.config.ts --host 127.0.0.1 --port 4403 --strictPort",
+      "url": "http://127.0.0.1:4403",
+      "reuseExistingServer": false,
+      "timeout": 60000
+    }
+  },
+  "suites": [
+    {
+      "title": "hydration/tabs-minimal.spec.ts",
+      "file": "hydration/tabs-minimal.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "minimal hydration: registration-read",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5562,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('tab', { name: 'History' })\nExpected: \u001b[32m\"\u001b[7mtru\u001b[27me\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7mfals\u001b[27me\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" getByRole('tab', { name: 'History' }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('tab', { name: 'History' })\u001b[22m\n\u001b[2m    14 × locator resolved to <button role=\"tab\" aria-selected=\"false\">History</button>\u001b[22m\n\u001b[2m       - unexpected value \"false\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('tab', { name: 'History' })\nExpected: \u001b[32m\"\u001b[7mtru\u001b[27me\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7mfals\u001b[27me\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" getByRole('tab', { name: 'History' }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('tab', { name: 'History' })\u001b[22m\n\u001b[2m    14 × locator resolved to <button role=\"tab\" aria-selected=\"false\">History</button>\u001b[22m\n\u001b[2m       - unexpected value \"false\"\u001b[22m\n\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/tabs-minimal.spec.ts:18:60",
+                    "location": {
+                      "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/tabs-minimal.spec.ts",
+                      "column": 60,
+                      "line": 18
+                    },
+                    "snippet": "  16 |   await page.getByLabel('Draft').fill('Draft after hydration');\n  17 |   await page.getByRole('tab', { name: 'History' }).click();\n> 18 |   await expect(page.getByRole('tab', { name: 'History' })).toHaveAttribute('aria-selected', 'true');\n     |                                                            ^\n  19 |   await page.getByRole('tab', { name: 'Profile' }).click();\n  20 |   await expect(page.getByLabel('Draft')).toHaveValue('Draft after hydration');\n  21 |   await testInfo.attach('minimal-hydration', { body: JSON.stringify({ mode, replaced, draft, interaction: 'passed' }), contentType: 'application/json' });"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/tabs-minimal.spec.ts",
+                        "column": 60,
+                        "line": 18
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('tab', { name: 'History' })\nExpected: \u001b[32m\"\u001b[7mtru\u001b[27me\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7mfals\u001b[27me\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" getByRole('tab', { name: 'History' }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('tab', { name: 'History' })\u001b[22m\n\u001b[2m    14 × locator resolved to <button role=\"tab\" aria-selected=\"false\">History</button>\u001b[22m\n\u001b[2m       - unexpected value \"false\"\u001b[22m\n\n\n  16 |   await page.getByLabel('Draft').fill('Draft after hydration');\n  17 |   await page.getByRole('tab', { name: 'History' }).click();\n> 18 |   await expect(page.getByRole('tab', { name: 'History' })).toHaveAttribute('aria-selected', 'true');\n     |                                                            ^\n  19 |   await page.getByRole('tab', { name: 'Profile' }).click();\n  20 |   await expect(page.getByLabel('Draft')).toHaveValue('Draft after hydration');\n  21 |   await testInfo.attach('minimal-hydration', { body: JSON.stringify({ mode, replaced, draft, interaction: 'passed' }), contentType: 'application/json' });\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/tabs-minimal.spec.ts:18:60"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T13:02:36.768Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "minimal-before-interaction",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicmVnaXN0cmF0aW9uLXJlYWQiLCJyZXBsYWNlZCI6W3sidGFnIjoiRElWIiwicm9sZSI6InRhYmxpc3QiLCJzbG90IjpudWxsfSx7InRhZyI6IkJVVFRPTiIsInJvbGUiOiJ0YWIiLCJzbG90IjpudWxsfSx7InRhZyI6IkJVVFRPTiIsInJvbGUiOiJ0YWIiLCJzbG90IjpudWxsfSx7InRhZyI6IkRJViIsInJvbGUiOiJ0YWJwYW5lbCIsInNsb3QiOm51bGx9LHsidGFnIjoiSU5QVVQiLCJyb2xlIjpudWxsLCJzbG90IjpudWxsfSx7InRhZyI6IkRJViIsInJvbGUiOiJ0YWJwYW5lbCIsInNsb3QiOm51bGx9XSwiZHJhZnQiOiJTZXJ2ZXIgZHJhZnQifQ=="
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-tabs-minimal-minimal-hydration-registration-read-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-tabs-minimal-minimal-hydration-registration-read-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-tabs-minimal-minimal-hydration-registration-read-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/tabs-minimal.spec.ts",
+                    "column": 60,
+                    "line": 18
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "26504aa0d361cf9ed912-23722631aa7385dd27ba",
+          "file": "hydration/tabs-minimal.spec.ts",
+          "line": 4,
+          "column": 27
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-08T13:02:34.536Z",
+    "duration": 8118.6449999999995,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

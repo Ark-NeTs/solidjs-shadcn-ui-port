@@ -133,6 +133,7 @@ bun run lint                # handwritten source and tests
 bun run test                # Vitest + Solid 2 testing-library + jsdom
 bun run test:coverage       # 100% thresholds on all components and library helpers
 bun run test:server         # server rendering without DOM globals
+bun run test:hydration      # SSR node reuse, live interactions and reduced Tabs regression
 bun run build               # ESM, declarations and compiled CSS
 bun run test:integration    # source JSX in Chromium, Firefox and WebKit, including axe
 bun run test:e2e            # fresh builds; journeys in all three browsers; Chromium visuals
@@ -184,3 +185,7 @@ files under `tests/e2e/visual.spec.ts-snapshots`; regenerate deliberately with
   full catalog completeness. Existing primitive findings stay in validation/.
 - Read AGENTS.md, DELIVERY.md and the current delivery report before extending
   the package. No registry script may overwrite the owned Solid 2 source.
+
+Source hydration now has [node-identity and interaction regressions](docs/HYDRATION-DELIVERY.md),
+including the two-tab/one-input registration reproduction.
+The harness compiles public source exports with SSR enabled; the existing `dist` bundle is for client rendering.

@@ -270,3 +270,27 @@ the guard supplies the tested focus-containment contract where native behavior
 falls short. Existing exact nested-focus tests now run in three engines; a unit
 regression verifies target removal and disposal. [Delivery](docs/WEBKIT-DELIVERY.md)
 records scope, native probes and remaining browser/device gaps.
+
+## Hydration registration and DOM ownership (2026-10-08)
+
+The hydration harness compiles public source exports for matched SSR and client
+hydration, retaining the existing CSR distribution. Compound registration uses
+render-local metadata on the server and owned boxed signal values in the browser;
+metadata writes must not invoke server signal setters. Allocate the signal on both
+sides to preserve hydration ordering. Box accessor values rather than using a
+function initializer, which Solid 2 interprets as a derived source.
+
+Registry insertion/removal uses functional updates. Do not replace these with
+`set([...untrack(read), entry])`: rc.13 keeps hydration snapshot scope during
+`untrack`, whereas the functional setter receives the current pending value.
+The reduced two-tab/one-input reproduction demonstrates that the read/write pattern
+replaces six SSR descendants and loses a pre-hydration draft without any package
+components. Functional updates preserve them in the plain and package cases.
+This fixes the remaining failure introduced by the local SSR metadata adaptation;
+it is not evidence that ordinary Solid hydration or Kobalte Tabs is broken.
+
+DOM effects wait for their refs because hydration can commit an initial effect
+first. Input maps its server default to a native value attribute while preserving
+client semantics. [Hydration evidence](docs/HYDRATION-DELIVERY.md) records exact
+node identity, interactions, diagnostic checks and scope limits. No runtime patch,
+dependency upgrade or diagnostic suppression is needed.

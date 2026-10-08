@@ -1,0 +1,445 @@
+{
+  "config": {
+    "argv": [
+      "/Users/arktas/.asdf/installs/nodejs/25.3.0/bin/node",
+      "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/node_modules/.bin/playwright",
+      "test",
+      "--config",
+      "playwright.hydration.config.ts",
+      "--project=chromium"
+    ],
+    "configFile": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/playwright.hydration.config.ts",
+    "rootDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "hydration/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [
+          "**/visual.spec.ts"
+        ],
+        "testMatch": [
+          "hydration/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [
+          "**/visual.spec.ts"
+        ],
+        "testMatch": [
+          "hydration/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "docs/evidence/hydration-initial.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": {
+      "command": "bun run build:hydration && bunx --no-install vite preview --config hydration.vite.config.ts --host 127.0.0.1 --port 4403 --strictPort",
+      "url": "http://127.0.0.1:4403",
+      "reuseExistingServer": false,
+      "timeout": 60000
+    }
+  },
+  "suites": [
+    {
+      "title": "hydration/hydration.spec.ts",
+      "file": "hydration/hydration.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "hydrates server nodes, edits native forms, rewires labels and resets canonical values",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5372,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveValue\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByLabel('Email')\nExpected: \u001b[32m\"server@example.com\"\u001b[39m\nReceived: \u001b[31m\"\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveValue\" getByLabel('Email') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByLabel('Email')\u001b[22m\n\u001b[2m    14 × locator resolved to <input required=\"\" name=\"email\" type=\"email\" _hk=\"acceptanced\" id=\"email-server\" data-slot=\"input\" defaultvalue=\"server@example.com\" class=\"h-8 w-full min-w-0 rounded-lg border border-input bg-transparent px-2.5 py-1 text-base transition-colors outline-none file:inline-flex file:h-6 file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:pointer-events-none…/>\u001b[22m\n\u001b[2m       - unexpected value \"\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveValue\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByLabel('Email')\nExpected: \u001b[32m\"server@example.com\"\u001b[39m\nReceived: \u001b[31m\"\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveValue\" getByLabel('Email') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByLabel('Email')\u001b[22m\n\u001b[2m    14 × locator resolved to <input required=\"\" name=\"email\" type=\"email\" _hk=\"acceptanced\" id=\"email-server\" data-slot=\"input\" defaultvalue=\"server@example.com\" class=\"h-8 w-full min-w-0 rounded-lg border border-input bg-transparent px-2.5 py-1 text-base transition-colors outline-none file:inline-flex file:h-6 file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:pointer-events-none…/>\u001b[22m\n\u001b[2m       - unexpected value \"\"\u001b[22m\n\n    at hydratePage (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/hydration.spec.ts:9:42)\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/hydration.spec.ts:32:3",
+                    "location": {
+                      "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/hydration.spec.ts",
+                      "column": 42,
+                      "line": 9
+                    },
+                    "snippet": "   7 |   await page.goto(initiallyOpen ? '/open/' : '/');\n   8 |   await expect(page.locator('#hydrate')).toHaveAttribute('data-ready', 'true');\n>  9 |   await expect(page.getByLabel('Email')).toHaveValue('server@example.com');\n     |                                          ^\n  10 |   await expect(page.getByRole('tab', { name: 'Profile', exact: true })).toHaveAttribute('aria-selected', 'true');\n  11 |   await expect(page.locator('[data-slot=\"alert-dialog-shell\"]')).not.toHaveAttribute('open');\n  12 |   const nodes = await page.locator('#hydration-root').evaluateHandle(root => Array.from(root.querySelectorAll('[data-slot]')));"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/hydration.spec.ts",
+                        "column": 42,
+                        "line": 9
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveValue\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByLabel('Email')\nExpected: \u001b[32m\"server@example.com\"\u001b[39m\nReceived: \u001b[31m\"\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveValue\" getByLabel('Email') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByLabel('Email')\u001b[22m\n\u001b[2m    14 × locator resolved to <input required=\"\" name=\"email\" type=\"email\" _hk=\"acceptanced\" id=\"email-server\" data-slot=\"input\" defaultvalue=\"server@example.com\" class=\"h-8 w-full min-w-0 rounded-lg border border-input bg-transparent px-2.5 py-1 text-base transition-colors outline-none file:inline-flex file:h-6 file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:pointer-events-none…/>\u001b[22m\n\u001b[2m       - unexpected value \"\"\u001b[22m\n\n\n   7 |   await page.goto(initiallyOpen ? '/open/' : '/');\n   8 |   await expect(page.locator('#hydrate')).toHaveAttribute('data-ready', 'true');\n>  9 |   await expect(page.getByLabel('Email')).toHaveValue('server@example.com');\n     |                                          ^\n  10 |   await expect(page.getByRole('tab', { name: 'Profile', exact: true })).toHaveAttribute('aria-selected', 'true');\n  11 |   await expect(page.locator('[data-slot=\"alert-dialog-shell\"]')).not.toHaveAttribute('open');\n  12 |   const nodes = await page.locator('#hydration-root').evaluateHandle(root => Array.from(root.querySelectorAll('[data-slot]')));\n    at hydratePage (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/hydration.spec.ts:9:42)\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/hydration.spec.ts:32:3"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T12:27:11.755Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-hydration-hydrat-d3f11-and-resets-canonical-values-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-hydration-hydrat-d3f11-and-resets-canonical-values-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-hydration-hydrat-d3f11-and-resets-canonical-values-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/hydration.spec.ts",
+                    "column": 42,
+                    "line": 9
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "1b38abd37014569c5914-781411c99a5ce3a2fa16",
+          "file": "hydration/hydration.spec.ts",
+          "line": 31,
+          "column": 1
+        },
+        {
+          "title": "hydrates selected Tabs, preserves mounted drafts and updates both sides of live IDs",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5268,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveValue\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByLabel('Email')\nExpected: \u001b[32m\"server@example.com\"\u001b[39m\nReceived: \u001b[31m\"\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveValue\" getByLabel('Email') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByLabel('Email')\u001b[22m\n\u001b[2m    14 × locator resolved to <input required=\"\" name=\"email\" type=\"email\" _hk=\"acceptanced\" id=\"email-server\" data-slot=\"input\" defaultvalue=\"server@example.com\" class=\"h-8 w-full min-w-0 rounded-lg border border-input bg-transparent px-2.5 py-1 text-base transition-colors outline-none file:inline-flex file:h-6 file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:pointer-events-none…/>\u001b[22m\n\u001b[2m       - unexpected value \"\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveValue\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByLabel('Email')\nExpected: \u001b[32m\"server@example.com\"\u001b[39m\nReceived: \u001b[31m\"\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveValue\" getByLabel('Email') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByLabel('Email')\u001b[22m\n\u001b[2m    14 × locator resolved to <input required=\"\" name=\"email\" type=\"email\" _hk=\"acceptanced\" id=\"email-server\" data-slot=\"input\" defaultvalue=\"server@example.com\" class=\"h-8 w-full min-w-0 rounded-lg border border-input bg-transparent px-2.5 py-1 text-base transition-colors outline-none file:inline-flex file:h-6 file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:pointer-events-none…/>\u001b[22m\n\u001b[2m       - unexpected value \"\"\u001b[22m\n\n    at hydratePage (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/hydration.spec.ts:9:42)\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/hydration.spec.ts:65:3",
+                    "location": {
+                      "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/hydration.spec.ts",
+                      "column": 42,
+                      "line": 9
+                    },
+                    "snippet": "   7 |   await page.goto(initiallyOpen ? '/open/' : '/');\n   8 |   await expect(page.locator('#hydrate')).toHaveAttribute('data-ready', 'true');\n>  9 |   await expect(page.getByLabel('Email')).toHaveValue('server@example.com');\n     |                                          ^\n  10 |   await expect(page.getByRole('tab', { name: 'Profile', exact: true })).toHaveAttribute('aria-selected', 'true');\n  11 |   await expect(page.locator('[data-slot=\"alert-dialog-shell\"]')).not.toHaveAttribute('open');\n  12 |   const nodes = await page.locator('#hydration-root').evaluateHandle(root => Array.from(root.querySelectorAll('[data-slot]')));"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/hydration.spec.ts",
+                        "column": 42,
+                        "line": 9
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveValue\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByLabel('Email')\nExpected: \u001b[32m\"server@example.com\"\u001b[39m\nReceived: \u001b[31m\"\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveValue\" getByLabel('Email') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByLabel('Email')\u001b[22m\n\u001b[2m    14 × locator resolved to <input required=\"\" name=\"email\" type=\"email\" _hk=\"acceptanced\" id=\"email-server\" data-slot=\"input\" defaultvalue=\"server@example.com\" class=\"h-8 w-full min-w-0 rounded-lg border border-input bg-transparent px-2.5 py-1 text-base transition-colors outline-none file:inline-flex file:h-6 file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:pointer-events-none…/>\u001b[22m\n\u001b[2m       - unexpected value \"\"\u001b[22m\n\n\n   7 |   await page.goto(initiallyOpen ? '/open/' : '/');\n   8 |   await expect(page.locator('#hydrate')).toHaveAttribute('data-ready', 'true');\n>  9 |   await expect(page.getByLabel('Email')).toHaveValue('server@example.com');\n     |                                          ^\n  10 |   await expect(page.getByRole('tab', { name: 'Profile', exact: true })).toHaveAttribute('aria-selected', 'true');\n  11 |   await expect(page.locator('[data-slot=\"alert-dialog-shell\"]')).not.toHaveAttribute('open');\n  12 |   const nodes = await page.locator('#hydration-root').evaluateHandle(root => Array.from(root.querySelectorAll('[data-slot]')));\n    at hydratePage (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/hydration.spec.ts:9:42)\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/hydration.spec.ts:65:3"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T12:27:17.710Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-hydration-hydrat-7e2e5-ates-both-sides-of-live-IDs-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-hydration-hydrat-7e2e5-ates-both-sides-of-live-IDs-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-hydration-hydrat-7e2e5-ates-both-sides-of-live-IDs-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/hydration.spec.ts",
+                    "column": 42,
+                    "line": 9
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "1b38abd37014569c5914-9b5c5f6c65142624573e",
+          "file": "hydration/hydration.spec.ts",
+          "line": 64,
+          "column": 1
+        },
+        {
+          "title": "hydrates closed overlays, updates naming, dismisses and restores focus without duplicate actions",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5235,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveValue\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByLabel('Email')\nExpected: \u001b[32m\"server@example.com\"\u001b[39m\nReceived: \u001b[31m\"\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveValue\" getByLabel('Email') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByLabel('Email')\u001b[22m\n\u001b[2m    14 × locator resolved to <input required=\"\" name=\"email\" type=\"email\" _hk=\"acceptanced\" id=\"email-server\" data-slot=\"input\" defaultvalue=\"server@example.com\" class=\"h-8 w-full min-w-0 rounded-lg border border-input bg-transparent px-2.5 py-1 text-base transition-colors outline-none file:inline-flex file:h-6 file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:pointer-events-none…/>\u001b[22m\n\u001b[2m       - unexpected value \"\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveValue\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByLabel('Email')\nExpected: \u001b[32m\"server@example.com\"\u001b[39m\nReceived: \u001b[31m\"\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveValue\" getByLabel('Email') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByLabel('Email')\u001b[22m\n\u001b[2m    14 × locator resolved to <input required=\"\" name=\"email\" type=\"email\" _hk=\"acceptanced\" id=\"email-server\" data-slot=\"input\" defaultvalue=\"server@example.com\" class=\"h-8 w-full min-w-0 rounded-lg border border-input bg-transparent px-2.5 py-1 text-base transition-colors outline-none file:inline-flex file:h-6 file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:pointer-events-none…/>\u001b[22m\n\u001b[2m       - unexpected value \"\"\u001b[22m\n\n    at hydratePage (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/hydration.spec.ts:9:42)\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/hydration.spec.ts:83:3",
+                    "location": {
+                      "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/hydration.spec.ts",
+                      "column": 42,
+                      "line": 9
+                    },
+                    "snippet": "   7 |   await page.goto(initiallyOpen ? '/open/' : '/');\n   8 |   await expect(page.locator('#hydrate')).toHaveAttribute('data-ready', 'true');\n>  9 |   await expect(page.getByLabel('Email')).toHaveValue('server@example.com');\n     |                                          ^\n  10 |   await expect(page.getByRole('tab', { name: 'Profile', exact: true })).toHaveAttribute('aria-selected', 'true');\n  11 |   await expect(page.locator('[data-slot=\"alert-dialog-shell\"]')).not.toHaveAttribute('open');\n  12 |   const nodes = await page.locator('#hydration-root').evaluateHandle(root => Array.from(root.querySelectorAll('[data-slot]')));"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/hydration.spec.ts",
+                        "column": 42,
+                        "line": 9
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveValue\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByLabel('Email')\nExpected: \u001b[32m\"server@example.com\"\u001b[39m\nReceived: \u001b[31m\"\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveValue\" getByLabel('Email') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByLabel('Email')\u001b[22m\n\u001b[2m    14 × locator resolved to <input required=\"\" name=\"email\" type=\"email\" _hk=\"acceptanced\" id=\"email-server\" data-slot=\"input\" defaultvalue=\"server@example.com\" class=\"h-8 w-full min-w-0 rounded-lg border border-input bg-transparent px-2.5 py-1 text-base transition-colors outline-none file:inline-flex file:h-6 file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:pointer-events-none…/>\u001b[22m\n\u001b[2m       - unexpected value \"\"\u001b[22m\n\n\n   7 |   await page.goto(initiallyOpen ? '/open/' : '/');\n   8 |   await expect(page.locator('#hydrate')).toHaveAttribute('data-ready', 'true');\n>  9 |   await expect(page.getByLabel('Email')).toHaveValue('server@example.com');\n     |                                          ^\n  10 |   await expect(page.getByRole('tab', { name: 'Profile', exact: true })).toHaveAttribute('aria-selected', 'true');\n  11 |   await expect(page.locator('[data-slot=\"alert-dialog-shell\"]')).not.toHaveAttribute('open');\n  12 |   const nodes = await page.locator('#hydration-root').evaluateHandle(root => Array.from(root.querySelectorAll('[data-slot]')));\n    at hydratePage (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/hydration.spec.ts:9:42)\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/hydration.spec.ts:83:3"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T12:27:23.456Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-hydration-hydrat-4d5c2-s-without-duplicate-actions-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-hydration-hydrat-4d5c2-s-without-duplicate-actions-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-hydration-hydrat-4d5c2-s-without-duplicate-actions-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/hydration.spec.ts",
+                    "column": 42,
+                    "line": 9
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "1b38abd37014569c5914-ce2835e94caf6a9ba0ed",
+          "file": "hydration/hydration.spec.ts",
+          "line": 82,
+          "column": 1
+        },
+        {
+          "title": "hydrates initially open layers into native top layers and disposes active ownership",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5263,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveValue\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByLabel('Email')\nExpected: \u001b[32m\"server@example.com\"\u001b[39m\nReceived: \u001b[31m\"\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveValue\" getByLabel('Email') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByLabel('Email')\u001b[22m\n\u001b[2m    14 × locator resolved to <input required=\"\" name=\"email\" type=\"email\" _hk=\"acceptanced\" id=\"email-server\" data-slot=\"input\" defaultvalue=\"server@example.com\" class=\"h-8 w-full min-w-0 rounded-lg border border-input bg-transparent px-2.5 py-1 text-base transition-colors outline-none file:inline-flex file:h-6 file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:pointer-events-none…/>\u001b[22m\n\u001b[2m       - unexpected value \"\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveValue\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByLabel('Email')\nExpected: \u001b[32m\"server@example.com\"\u001b[39m\nReceived: \u001b[31m\"\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveValue\" getByLabel('Email') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByLabel('Email')\u001b[22m\n\u001b[2m    14 × locator resolved to <input required=\"\" name=\"email\" type=\"email\" _hk=\"acceptanced\" id=\"email-server\" data-slot=\"input\" defaultvalue=\"server@example.com\" class=\"h-8 w-full min-w-0 rounded-lg border border-input bg-transparent px-2.5 py-1 text-base transition-colors outline-none file:inline-flex file:h-6 file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:pointer-events-none…/>\u001b[22m\n\u001b[2m       - unexpected value \"\"\u001b[22m\n\n    at hydratePage (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/hydration.spec.ts:9:42)\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/hydration.spec.ts:109:3",
+                    "location": {
+                      "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/hydration.spec.ts",
+                      "column": 42,
+                      "line": 9
+                    },
+                    "snippet": "   7 |   await page.goto(initiallyOpen ? '/open/' : '/');\n   8 |   await expect(page.locator('#hydrate')).toHaveAttribute('data-ready', 'true');\n>  9 |   await expect(page.getByLabel('Email')).toHaveValue('server@example.com');\n     |                                          ^\n  10 |   await expect(page.getByRole('tab', { name: 'Profile', exact: true })).toHaveAttribute('aria-selected', 'true');\n  11 |   await expect(page.locator('[data-slot=\"alert-dialog-shell\"]')).not.toHaveAttribute('open');\n  12 |   const nodes = await page.locator('#hydration-root').evaluateHandle(root => Array.from(root.querySelectorAll('[data-slot]')));"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/hydration.spec.ts",
+                        "column": 42,
+                        "line": 9
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveValue\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByLabel('Email')\nExpected: \u001b[32m\"server@example.com\"\u001b[39m\nReceived: \u001b[31m\"\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveValue\" getByLabel('Email') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByLabel('Email')\u001b[22m\n\u001b[2m    14 × locator resolved to <input required=\"\" name=\"email\" type=\"email\" _hk=\"acceptanced\" id=\"email-server\" data-slot=\"input\" defaultvalue=\"server@example.com\" class=\"h-8 w-full min-w-0 rounded-lg border border-input bg-transparent px-2.5 py-1 text-base transition-colors outline-none file:inline-flex file:h-6 file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:pointer-events-none…/>\u001b[22m\n\u001b[2m       - unexpected value \"\"\u001b[22m\n\n\n   7 |   await page.goto(initiallyOpen ? '/open/' : '/');\n   8 |   await expect(page.locator('#hydrate')).toHaveAttribute('data-ready', 'true');\n>  9 |   await expect(page.getByLabel('Email')).toHaveValue('server@example.com');\n     |                                          ^\n  10 |   await expect(page.getByRole('tab', { name: 'Profile', exact: true })).toHaveAttribute('aria-selected', 'true');\n  11 |   await expect(page.locator('[data-slot=\"alert-dialog-shell\"]')).not.toHaveAttribute('open');\n  12 |   const nodes = await page.locator('#hydration-root').evaluateHandle(root => Array.from(root.querySelectorAll('[data-slot]')));\n    at hydratePage (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/hydration.spec.ts:9:42)\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/hydration.spec.ts:109:3"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T12:27:29.154Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-hydration-hydrat-3839a-d-disposes-active-ownership-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-hydration-hydrat-3839a-d-disposes-active-ownership-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-hydration-hydrat-3839a-d-disposes-active-ownership-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/hydration.spec.ts",
+                    "column": 42,
+                    "line": 9
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "1b38abd37014569c5914-0d9fc43229f581bde590",
+          "file": "hydration/hydration.spec.ts",
+          "line": 108,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-08T12:27:09.579Z",
+    "duration": 25099.484,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 4,
+    "flaky": 0
+  }
+}

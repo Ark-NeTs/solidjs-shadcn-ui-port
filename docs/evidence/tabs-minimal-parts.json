@@ -1,0 +1,646 @@
+{
+  "config": {
+    "argv": [
+      "/Users/arktas/.asdf/installs/nodejs/25.3.0/bin/node",
+      "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/node_modules/.bin/playwright",
+      "test",
+      "--config",
+      "playwright.hydration.config.ts",
+      "--project=chromium",
+      "tests/hydration/tabs-minimal.spec.ts"
+    ],
+    "configFile": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/playwright.hydration.config.ts",
+    "rootDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "hydration/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [
+          "**/visual.spec.ts"
+        ],
+        "testMatch": [
+          "hydration/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [
+          "**/visual.spec.ts"
+        ],
+        "testMatch": [
+          "hydration/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "docs/evidence/tabs-minimal-parts.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": {
+      "command": "bun run build:hydration && bunx --no-install vite preview --config hydration.vite.config.ts --host 127.0.0.1 --port 4403 --strictPort",
+      "url": "http://127.0.0.1:4403",
+      "reuseExistingServer": false,
+      "timeout": 60000
+    }
+  },
+  "suites": [
+    {
+      "title": "hydration/tabs-minimal.spec.ts",
+      "file": "hydration/tabs-minimal.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "minimal hydration: plain",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 480,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T12:58:37.302Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "minimal-hydration",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicGxhaW4iLCJyZXBsYWNlZCI6W10sImRyYWZ0IjoiRHJhZnQgYmVmb3JlIGh5ZHJhdGlvbiIsImludGVyYWN0aW9uIjoicGFzc2VkIn0="
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "26504aa0d361cf9ed912-dd4d50193b17027c5b3f",
+          "file": "hydration/tabs-minimal.spec.ts",
+          "line": 4,
+          "column": 27
+        },
+        {
+          "title": "minimal hydration: context",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 313,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T12:58:38.058Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "minimal-hydration",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoiY29udGV4dCIsInJlcGxhY2VkIjpbXSwiZHJhZnQiOiJEcmFmdCBiZWZvcmUgaHlkcmF0aW9uIiwiaW50ZXJhY3Rpb24iOiJwYXNzZWQifQ=="
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "26504aa0d361cf9ed912-675d71cb6f3333218490",
+          "file": "hydration/tabs-minimal.spec.ts",
+          "line": 4,
+          "column": 27
+        },
+        {
+          "title": "minimal hydration: registration",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 280,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T12:58:38.380Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "minimal-hydration",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicmVnaXN0cmF0aW9uIiwicmVwbGFjZWQiOltdLCJkcmFmdCI6IkRyYWZ0IGJlZm9yZSBoeWRyYXRpb24iLCJpbnRlcmFjdGlvbiI6InBhc3NlZCJ9"
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "26504aa0d361cf9ed912-f282955f798c9b6feb8a",
+          "file": "hydration/tabs-minimal.spec.ts",
+          "line": 4,
+          "column": 27
+        },
+        {
+          "title": "minimal hydration: package-shell",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 257,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T12:58:38.666Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "minimal-hydration",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicGFja2FnZS1zaGVsbCIsInJlcGxhY2VkIjpbXSwiZHJhZnQiOiJEcmFmdCBiZWZvcmUgaHlkcmF0aW9uIiwiaW50ZXJhY3Rpb24iOiJwYXNzZWQifQ=="
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "26504aa0d361cf9ed912-f0c51af69dd49ecef85b",
+          "file": "hydration/tabs-minimal.spec.ts",
+          "line": 4,
+          "column": 27
+        },
+        {
+          "title": "minimal hydration: package-triggers",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 323,
+                  "error": {
+                    "message": "Error: Hydration must reuse the server elements\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  -  1\u001b[39m\n\u001b[31m+ Received  + 12\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"role\": \"tab\",\u001b[39m\n\u001b[31m+     \"slot\": \"tabs-trigger\",\u001b[39m\n\u001b[31m+     \"tag\": \"BUTTON\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"role\": \"tab\",\u001b[39m\n\u001b[31m+     \"slot\": \"tabs-trigger\",\u001b[39m\n\u001b[31m+     \"tag\": \"BUTTON\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                    "stack": "Error: Hydration must reuse the server elements\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  -  1\u001b[39m\n\u001b[31m+ Received  + 12\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"role\": \"tab\",\u001b[39m\n\u001b[31m+     \"slot\": \"tabs-trigger\",\u001b[39m\n\u001b[31m+     \"tag\": \"BUTTON\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"role\": \"tab\",\u001b[39m\n\u001b[31m+     \"slot\": \"tabs-trigger\",\u001b[39m\n\u001b[31m+     \"tag\": \"BUTTON\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/tabs-minimal.spec.ts:22:64",
+                    "location": {
+                      "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/tabs-minimal.spec.ts",
+                      "column": 64,
+                      "line": 22
+                    },
+                    "snippet": "  20 |   await testInfo.attach('minimal-hydration', { body: JSON.stringify({ mode, replaced, draft, interaction: 'passed' }), contentType: 'application/json' });\n  21 |   await nodes.dispose();\n> 22 |   expect(replaced, 'Hydration must reuse the server elements').toEqual([]);\n     |                                                                ^\n  23 | });\n  24 |"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/tabs-minimal.spec.ts",
+                        "column": 64,
+                        "line": 22
+                      },
+                      "message": "Error: Hydration must reuse the server elements\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  -  1\u001b[39m\n\u001b[31m+ Received  + 12\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"role\": \"tab\",\u001b[39m\n\u001b[31m+     \"slot\": \"tabs-trigger\",\u001b[39m\n\u001b[31m+     \"tag\": \"BUTTON\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"role\": \"tab\",\u001b[39m\n\u001b[31m+     \"slot\": \"tabs-trigger\",\u001b[39m\n\u001b[31m+     \"tag\": \"BUTTON\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  20 |   await testInfo.attach('minimal-hydration', { body: JSON.stringify({ mode, replaced, draft, interaction: 'passed' }), contentType: 'application/json' });\n  21 |   await nodes.dispose();\n> 22 |   expect(replaced, 'Hydration must reuse the server elements').toEqual([]);\n     |                                                                ^\n  23 | });\n  24 |\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/tabs-minimal.spec.ts:22:64"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T12:58:38.928Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "minimal-hydration",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicGFja2FnZS10cmlnZ2VycyIsInJlcGxhY2VkIjpbeyJ0YWciOiJCVVRUT04iLCJyb2xlIjoidGFiIiwic2xvdCI6InRhYnMtdHJpZ2dlciJ9LHsidGFnIjoiQlVUVE9OIiwicm9sZSI6InRhYiIsInNsb3QiOiJ0YWJzLXRyaWdnZXIifV0sImRyYWZ0IjoiRHJhZnQgYmVmb3JlIGh5ZHJhdGlvbiIsImludGVyYWN0aW9uIjoicGFzc2VkIn0="
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-tabs-minimal-minimal-hydration-package-triggers-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-tabs-minimal-minimal-hydration-package-triggers-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-tabs-minimal-minimal-hydration-package-triggers-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/tabs-minimal.spec.ts",
+                    "column": 64,
+                    "line": 22
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "26504aa0d361cf9ed912-e7fa124a8727305d4623",
+          "file": "hydration/tabs-minimal.spec.ts",
+          "line": 4,
+          "column": 27
+        },
+        {
+          "title": "minimal hydration: package-panels",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 408,
+                  "error": {
+                    "message": "Error: Hydration must reuse the server elements\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  -  1\u001b[39m\n\u001b[31m+ Received  + 32\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"role\": \"tablist\",\u001b[39m\n\u001b[31m+     \"slot\": null,\u001b[39m\n\u001b[31m+     \"tag\": \"DIV\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"role\": \"tab\",\u001b[39m\n\u001b[31m+     \"slot\": null,\u001b[39m\n\u001b[31m+     \"tag\": \"BUTTON\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"role\": \"tab\",\u001b[39m\n\u001b[31m+     \"slot\": null,\u001b[39m\n\u001b[31m+     \"tag\": \"BUTTON\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"role\": \"tabpanel\",\u001b[39m\n\u001b[31m+     \"slot\": \"tabs-content\",\u001b[39m\n\u001b[31m+     \"tag\": \"DIV\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"role\": null,\u001b[39m\n\u001b[31m+     \"slot\": null,\u001b[39m\n\u001b[31m+     \"tag\": \"INPUT\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"role\": \"tabpanel\",\u001b[39m\n\u001b[31m+     \"slot\": \"tabs-content\",\u001b[39m\n\u001b[31m+     \"tag\": \"DIV\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                    "stack": "Error: Hydration must reuse the server elements\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  -  1\u001b[39m\n\u001b[31m+ Received  + 32\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"role\": \"tablist\",\u001b[39m\n\u001b[31m+     \"slot\": null,\u001b[39m\n\u001b[31m+     \"tag\": \"DIV\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"role\": \"tab\",\u001b[39m\n\u001b[31m+     \"slot\": null,\u001b[39m\n\u001b[31m+     \"tag\": \"BUTTON\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"role\": \"tab\",\u001b[39m\n\u001b[31m+     \"slot\": null,\u001b[39m\n\u001b[31m+     \"tag\": \"BUTTON\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"role\": \"tabpanel\",\u001b[39m\n\u001b[31m+     \"slot\": \"tabs-content\",\u001b[39m\n\u001b[31m+     \"tag\": \"DIV\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"role\": null,\u001b[39m\n\u001b[31m+     \"slot\": null,\u001b[39m\n\u001b[31m+     \"tag\": \"INPUT\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"role\": \"tabpanel\",\u001b[39m\n\u001b[31m+     \"slot\": \"tabs-content\",\u001b[39m\n\u001b[31m+     \"tag\": \"DIV\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/tabs-minimal.spec.ts:22:64",
+                    "location": {
+                      "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/tabs-minimal.spec.ts",
+                      "column": 64,
+                      "line": 22
+                    },
+                    "snippet": "  20 |   await testInfo.attach('minimal-hydration', { body: JSON.stringify({ mode, replaced, draft, interaction: 'passed' }), contentType: 'application/json' });\n  21 |   await nodes.dispose();\n> 22 |   expect(replaced, 'Hydration must reuse the server elements').toEqual([]);\n     |                                                                ^\n  23 | });\n  24 |"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/tabs-minimal.spec.ts",
+                        "column": 64,
+                        "line": 22
+                      },
+                      "message": "Error: Hydration must reuse the server elements\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  -  1\u001b[39m\n\u001b[31m+ Received  + 32\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"role\": \"tablist\",\u001b[39m\n\u001b[31m+     \"slot\": null,\u001b[39m\n\u001b[31m+     \"tag\": \"DIV\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"role\": \"tab\",\u001b[39m\n\u001b[31m+     \"slot\": null,\u001b[39m\n\u001b[31m+     \"tag\": \"BUTTON\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"role\": \"tab\",\u001b[39m\n\u001b[31m+     \"slot\": null,\u001b[39m\n\u001b[31m+     \"tag\": \"BUTTON\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"role\": \"tabpanel\",\u001b[39m\n\u001b[31m+     \"slot\": \"tabs-content\",\u001b[39m\n\u001b[31m+     \"tag\": \"DIV\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"role\": null,\u001b[39m\n\u001b[31m+     \"slot\": null,\u001b[39m\n\u001b[31m+     \"tag\": \"INPUT\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"role\": \"tabpanel\",\u001b[39m\n\u001b[31m+     \"slot\": \"tabs-content\",\u001b[39m\n\u001b[31m+     \"tag\": \"DIV\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  20 |   await testInfo.attach('minimal-hydration', { body: JSON.stringify({ mode, replaced, draft, interaction: 'passed' }), contentType: 'application/json' });\n  21 |   await nodes.dispose();\n> 22 |   expect(replaced, 'Hydration must reuse the server elements').toEqual([]);\n     |                                                                ^\n  23 | });\n  24 |\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/tabs-minimal.spec.ts:22:64"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T12:58:39.518Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "minimal-hydration",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicGFja2FnZS1wYW5lbHMiLCJyZXBsYWNlZCI6W3sidGFnIjoiRElWIiwicm9sZSI6InRhYmxpc3QiLCJzbG90IjpudWxsfSx7InRhZyI6IkJVVFRPTiIsInJvbGUiOiJ0YWIiLCJzbG90IjpudWxsfSx7InRhZyI6IkJVVFRPTiIsInJvbGUiOiJ0YWIiLCJzbG90IjpudWxsfSx7InRhZyI6IkRJViIsInJvbGUiOiJ0YWJwYW5lbCIsInNsb3QiOiJ0YWJzLWNvbnRlbnQifSx7InRhZyI6IklOUFVUIiwicm9sZSI6bnVsbCwic2xvdCI6bnVsbH0seyJ0YWciOiJESVYiLCJyb2xlIjoidGFicGFuZWwiLCJzbG90IjoidGFicy1jb250ZW50In1dLCJkcmFmdCI6IlNlcnZlciBkcmFmdCIsImludGVyYWN0aW9uIjoicGFzc2VkIn0="
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-tabs-minimal-minimal-hydration-package-panels-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-tabs-minimal-minimal-hydration-package-panels-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-tabs-minimal-minimal-hydration-package-panels-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/tabs-minimal.spec.ts",
+                    "column": 64,
+                    "line": 22
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "26504aa0d361cf9ed912-a328460358df5925b39c",
+          "file": "hydration/tabs-minimal.spec.ts",
+          "line": 4,
+          "column": 27
+        },
+        {
+          "title": "minimal hydration: package-controlled",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 340,
+                  "error": {
+                    "message": "Error: Hydration must reuse the server elements\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  -  1\u001b[39m\n\u001b[31m+ Received  + 32\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"role\": \"tablist\",\u001b[39m\n\u001b[31m+     \"slot\": \"tabs-list\",\u001b[39m\n\u001b[31m+     \"tag\": \"DIV\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"role\": \"tab\",\u001b[39m\n\u001b[31m+     \"slot\": \"tabs-trigger\",\u001b[39m\n\u001b[31m+     \"tag\": \"BUTTON\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"role\": \"tab\",\u001b[39m\n\u001b[31m+     \"slot\": \"tabs-trigger\",\u001b[39m\n\u001b[31m+     \"tag\": \"BUTTON\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"role\": \"tabpanel\",\u001b[39m\n\u001b[31m+     \"slot\": \"tabs-content\",\u001b[39m\n\u001b[31m+     \"tag\": \"DIV\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"role\": null,\u001b[39m\n\u001b[31m+     \"slot\": null,\u001b[39m\n\u001b[31m+     \"tag\": \"INPUT\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"role\": \"tabpanel\",\u001b[39m\n\u001b[31m+     \"slot\": \"tabs-content\",\u001b[39m\n\u001b[31m+     \"tag\": \"DIV\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                    "stack": "Error: Hydration must reuse the server elements\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  -  1\u001b[39m\n\u001b[31m+ Received  + 32\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"role\": \"tablist\",\u001b[39m\n\u001b[31m+     \"slot\": \"tabs-list\",\u001b[39m\n\u001b[31m+     \"tag\": \"DIV\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"role\": \"tab\",\u001b[39m\n\u001b[31m+     \"slot\": \"tabs-trigger\",\u001b[39m\n\u001b[31m+     \"tag\": \"BUTTON\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"role\": \"tab\",\u001b[39m\n\u001b[31m+     \"slot\": \"tabs-trigger\",\u001b[39m\n\u001b[31m+     \"tag\": \"BUTTON\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"role\": \"tabpanel\",\u001b[39m\n\u001b[31m+     \"slot\": \"tabs-content\",\u001b[39m\n\u001b[31m+     \"tag\": \"DIV\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"role\": null,\u001b[39m\n\u001b[31m+     \"slot\": null,\u001b[39m\n\u001b[31m+     \"tag\": \"INPUT\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"role\": \"tabpanel\",\u001b[39m\n\u001b[31m+     \"slot\": \"tabs-content\",\u001b[39m\n\u001b[31m+     \"tag\": \"DIV\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/tabs-minimal.spec.ts:22:64",
+                    "location": {
+                      "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/tabs-minimal.spec.ts",
+                      "column": 64,
+                      "line": 22
+                    },
+                    "snippet": "  20 |   await testInfo.attach('minimal-hydration', { body: JSON.stringify({ mode, replaced, draft, interaction: 'passed' }), contentType: 'application/json' });\n  21 |   await nodes.dispose();\n> 22 |   expect(replaced, 'Hydration must reuse the server elements').toEqual([]);\n     |                                                                ^\n  23 | });\n  24 |"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/tabs-minimal.spec.ts",
+                        "column": 64,
+                        "line": 22
+                      },
+                      "message": "Error: Hydration must reuse the server elements\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  -  1\u001b[39m\n\u001b[31m+ Received  + 32\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"role\": \"tablist\",\u001b[39m\n\u001b[31m+     \"slot\": \"tabs-list\",\u001b[39m\n\u001b[31m+     \"tag\": \"DIV\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"role\": \"tab\",\u001b[39m\n\u001b[31m+     \"slot\": \"tabs-trigger\",\u001b[39m\n\u001b[31m+     \"tag\": \"BUTTON\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"role\": \"tab\",\u001b[39m\n\u001b[31m+     \"slot\": \"tabs-trigger\",\u001b[39m\n\u001b[31m+     \"tag\": \"BUTTON\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"role\": \"tabpanel\",\u001b[39m\n\u001b[31m+     \"slot\": \"tabs-content\",\u001b[39m\n\u001b[31m+     \"tag\": \"DIV\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"role\": null,\u001b[39m\n\u001b[31m+     \"slot\": null,\u001b[39m\n\u001b[31m+     \"tag\": \"INPUT\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"role\": \"tabpanel\",\u001b[39m\n\u001b[31m+     \"slot\": \"tabs-content\",\u001b[39m\n\u001b[31m+     \"tag\": \"DIV\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  20 |   await testInfo.attach('minimal-hydration', { body: JSON.stringify({ mode, replaced, draft, interaction: 'passed' }), contentType: 'application/json' });\n  21 |   await nodes.dispose();\n> 22 |   expect(replaced, 'Hydration must reuse the server elements').toEqual([]);\n     |                                                                ^\n  23 | });\n  24 |\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/tabs-minimal.spec.ts:22:64"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T12:58:40.321Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "minimal-hydration",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicGFja2FnZS1jb250cm9sbGVkIiwicmVwbGFjZWQiOlt7InRhZyI6IkRJViIsInJvbGUiOiJ0YWJsaXN0Iiwic2xvdCI6InRhYnMtbGlzdCJ9LHsidGFnIjoiQlVUVE9OIiwicm9sZSI6InRhYiIsInNsb3QiOiJ0YWJzLXRyaWdnZXIifSx7InRhZyI6IkJVVFRPTiIsInJvbGUiOiJ0YWIiLCJzbG90IjoidGFicy10cmlnZ2VyIn0seyJ0YWciOiJESVYiLCJyb2xlIjoidGFicGFuZWwiLCJzbG90IjoidGFicy1jb250ZW50In0seyJ0YWciOiJJTlBVVCIsInJvbGUiOm51bGwsInNsb3QiOm51bGx9LHsidGFnIjoiRElWIiwicm9sZSI6InRhYnBhbmVsIiwic2xvdCI6InRhYnMtY29udGVudCJ9XSwiZHJhZnQiOiJTZXJ2ZXIgZHJhZnQiLCJpbnRlcmFjdGlvbiI6InBhc3NlZCJ9"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-tabs-minimal-minimal-hydration-package-controlled-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-tabs-minimal-minimal-hydration-package-controlled-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-tabs-minimal-minimal-hydration-package-controlled-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/tabs-minimal.spec.ts",
+                    "column": 64,
+                    "line": 22
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "26504aa0d361cf9ed912-fa9257e3f876038f558e",
+          "file": "hydration/tabs-minimal.spec.ts",
+          "line": 4,
+          "column": 27
+        },
+        {
+          "title": "minimal hydration: package-uncontrolled",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 369,
+                  "error": {
+                    "message": "Error: Hydration must reuse the server elements\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  -  1\u001b[39m\n\u001b[31m+ Received  + 32\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"role\": \"tablist\",\u001b[39m\n\u001b[31m+     \"slot\": \"tabs-list\",\u001b[39m\n\u001b[31m+     \"tag\": \"DIV\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"role\": \"tab\",\u001b[39m\n\u001b[31m+     \"slot\": \"tabs-trigger\",\u001b[39m\n\u001b[31m+     \"tag\": \"BUTTON\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"role\": \"tab\",\u001b[39m\n\u001b[31m+     \"slot\": \"tabs-trigger\",\u001b[39m\n\u001b[31m+     \"tag\": \"BUTTON\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"role\": \"tabpanel\",\u001b[39m\n\u001b[31m+     \"slot\": \"tabs-content\",\u001b[39m\n\u001b[31m+     \"tag\": \"DIV\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"role\": null,\u001b[39m\n\u001b[31m+     \"slot\": null,\u001b[39m\n\u001b[31m+     \"tag\": \"INPUT\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"role\": \"tabpanel\",\u001b[39m\n\u001b[31m+     \"slot\": \"tabs-content\",\u001b[39m\n\u001b[31m+     \"tag\": \"DIV\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                    "stack": "Error: Hydration must reuse the server elements\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  -  1\u001b[39m\n\u001b[31m+ Received  + 32\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"role\": \"tablist\",\u001b[39m\n\u001b[31m+     \"slot\": \"tabs-list\",\u001b[39m\n\u001b[31m+     \"tag\": \"DIV\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"role\": \"tab\",\u001b[39m\n\u001b[31m+     \"slot\": \"tabs-trigger\",\u001b[39m\n\u001b[31m+     \"tag\": \"BUTTON\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"role\": \"tab\",\u001b[39m\n\u001b[31m+     \"slot\": \"tabs-trigger\",\u001b[39m\n\u001b[31m+     \"tag\": \"BUTTON\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"role\": \"tabpanel\",\u001b[39m\n\u001b[31m+     \"slot\": \"tabs-content\",\u001b[39m\n\u001b[31m+     \"tag\": \"DIV\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"role\": null,\u001b[39m\n\u001b[31m+     \"slot\": null,\u001b[39m\n\u001b[31m+     \"tag\": \"INPUT\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"role\": \"tabpanel\",\u001b[39m\n\u001b[31m+     \"slot\": \"tabs-content\",\u001b[39m\n\u001b[31m+     \"tag\": \"DIV\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/tabs-minimal.spec.ts:22:64",
+                    "location": {
+                      "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/tabs-minimal.spec.ts",
+                      "column": 64,
+                      "line": 22
+                    },
+                    "snippet": "  20 |   await testInfo.attach('minimal-hydration', { body: JSON.stringify({ mode, replaced, draft, interaction: 'passed' }), contentType: 'application/json' });\n  21 |   await nodes.dispose();\n> 22 |   expect(replaced, 'Hydration must reuse the server elements').toEqual([]);\n     |                                                                ^\n  23 | });\n  24 |"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/tabs-minimal.spec.ts",
+                        "column": 64,
+                        "line": 22
+                      },
+                      "message": "Error: Hydration must reuse the server elements\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  -  1\u001b[39m\n\u001b[31m+ Received  + 32\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"role\": \"tablist\",\u001b[39m\n\u001b[31m+     \"slot\": \"tabs-list\",\u001b[39m\n\u001b[31m+     \"tag\": \"DIV\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"role\": \"tab\",\u001b[39m\n\u001b[31m+     \"slot\": \"tabs-trigger\",\u001b[39m\n\u001b[31m+     \"tag\": \"BUTTON\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"role\": \"tab\",\u001b[39m\n\u001b[31m+     \"slot\": \"tabs-trigger\",\u001b[39m\n\u001b[31m+     \"tag\": \"BUTTON\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"role\": \"tabpanel\",\u001b[39m\n\u001b[31m+     \"slot\": \"tabs-content\",\u001b[39m\n\u001b[31m+     \"tag\": \"DIV\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"role\": null,\u001b[39m\n\u001b[31m+     \"slot\": null,\u001b[39m\n\u001b[31m+     \"tag\": \"INPUT\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"role\": \"tabpanel\",\u001b[39m\n\u001b[31m+     \"slot\": \"tabs-content\",\u001b[39m\n\u001b[31m+     \"tag\": \"DIV\",\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  20 |   await testInfo.attach('minimal-hydration', { body: JSON.stringify({ mode, replaced, draft, interaction: 'passed' }), contentType: 'application/json' });\n  21 |   await nodes.dispose();\n> 22 |   expect(replaced, 'Hydration must reuse the server elements').toEqual([]);\n     |                                                                ^\n  23 | });\n  24 |\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/tabs-minimal.spec.ts:22:64"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T12:58:41.045Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "minimal-hydration",
+                      "contentType": "application/json",
+                      "body": "eyJtb2RlIjoicGFja2FnZS11bmNvbnRyb2xsZWQiLCJyZXBsYWNlZCI6W3sidGFnIjoiRElWIiwicm9sZSI6InRhYmxpc3QiLCJzbG90IjoidGFicy1saXN0In0seyJ0YWciOiJCVVRUT04iLCJyb2xlIjoidGFiIiwic2xvdCI6InRhYnMtdHJpZ2dlciJ9LHsidGFnIjoiQlVUVE9OIiwicm9sZSI6InRhYiIsInNsb3QiOiJ0YWJzLXRyaWdnZXIifSx7InRhZyI6IkRJViIsInJvbGUiOiJ0YWJwYW5lbCIsInNsb3QiOiJ0YWJzLWNvbnRlbnQifSx7InRhZyI6IklOUFVUIiwicm9sZSI6bnVsbCwic2xvdCI6bnVsbH0seyJ0YWciOiJESVYiLCJyb2xlIjoidGFicGFuZWwiLCJzbG90IjoidGFicy1jb250ZW50In1dLCJkcmFmdCI6IlNlcnZlciBkcmFmdCIsImludGVyYWN0aW9uIjoicGFzc2VkIn0="
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-tabs-minimal-min-0a7f6-ration-package-uncontrolled-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-tabs-minimal-min-0a7f6-ration-package-uncontrolled-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-tabs-minimal-min-0a7f6-ration-package-uncontrolled-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/tabs-minimal.spec.ts",
+                    "column": 64,
+                    "line": 22
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "26504aa0d361cf9ed912-a2e1aa919e9176c570c6",
+          "file": "hydration/tabs-minimal.spec.ts",
+          "line": 4,
+          "column": 27
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-08T12:58:35.103Z",
+    "duration": 6486.655,
+    "expected": 4,
+    "skipped": 0,
+    "unexpected": 4,
+    "flaky": 0
+  }
+}

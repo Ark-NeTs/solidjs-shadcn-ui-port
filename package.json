@@ -36,7 +36,9 @@
     "test:e2e": "THEME_PRODUCTION=1 playwright test tests/e2e",
     "test:server": "vitest run --config vitest.server.config.ts",
     "parity:report": "bun scripts/check-admin-parity.ts",
-    "parity:admin": "bun scripts/check-admin-parity.ts --strict"
+    "parity:admin": "bun scripts/check-admin-parity.ts --strict",
+    "build:hydration": "node --conditions=development scripts/build-hydration.mjs",
+    "test:hydration": "playwright test --config playwright.hydration.config.ts"
   },
   "dependencies": {
     "@fontsource-variable/inter": "5.2.8",

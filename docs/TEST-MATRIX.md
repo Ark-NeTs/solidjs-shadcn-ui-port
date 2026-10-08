@@ -1,7 +1,8 @@
 # Component acceptance and test matrix
 
 Initially audited 2026-10-08 against source at `314f27a`; updated with the
-[three-engine browser evidence](WEBKIT-DELIVERY.md). Covers the **14
+[three-engine browser evidence](WEBKIT-DELIVERY.md) and
+[source hydration regression](HYDRATION-DELIVERY.md). Covers the **14
 implemented component families**, including their compound parts. The other
 catalog entries in [COMPONENT-MAP.md](../COMPONENT-MAP.md) remain unimplemented;
 their adoption probes are not delivered-component acceptance tests.
@@ -20,6 +21,7 @@ follow-ups add the browser contracts linked below.
 | B | Playwright against source components in the development gallery and focused examples, in Chromium, Firefox and WebKit. |
 | E | Playwright against a freshly built package/gallery, in Chromium, Firefox and WebKit. This is not an admin application E2E test. |
 | S | Server-rendered HTML assertions in Node. This is not hydration verification. |
+| H | Matched source SSR/client builds, exact server-node identity and live interaction in all three browser engines. |
 | V | Chromium screenshot comparison. A shared gallery image is not a separate assertion for every component/state. |
 | Open | No sufficient assertion at the specified layer; tracked in the gap register. |
 | N/A | The behavior is not owned by this component; reason stated. |
@@ -35,16 +37,18 @@ are implementation scope limits, not features that an existing test proves.
 | --- | --- | --- |
 | Public exports resolve | [U: exports every delivered component through the barrel and source subpaths](../tests/unit/contracts.test.ts#L25) | Export-name presence does not prove React API compatibility. |
 | Canonical light/dark tokens remain identical | [U: matches both shared theme blocks byte for byte](../tests/unit/contracts.test.ts#L16) | Token equality is not pixel parity across frameworks. |
-| Diagnostics and cleanup are checked | [Unit setup](../vitest.setup.ts), [browser fixture](../tests/browser-fixture.ts) | Every unit test checks console warn/error after cleanup; every B/E test checks console warning/error and page errors. SSR has no equivalent diagnostic fixture. |
+| Source hydration retains server nodes and IDs; forms, Tabs and overlays remain interactive | [H: integration scenarios](../tests/hydration/hydration.spec.ts), [two-tab/one-input differential](../tests/hydration/tabs-minimal.spec.ts) | Exactly the documented compositions; the unsafe registration negative control characterizes the rejected algorithm. |
+| Diagnostics and cleanup are checked | [Unit setup](../vitest.setup.ts), [browser fixture](../tests/browser-fixture.ts) | Every unit test checks console warn/error after cleanup; every B/E/H test checks console warning/error and page errors. The hydration build also rejects server warnings/errors; ordinary S tests have no equivalent diagnostic fixture. |
 | Whole-gallery accessibility | [B: light/dark examples have no axe accessibility violations](../tests/integration/foundation.spec.ts#L27) | Applies to the rendered, settled gallery state. Axe does not certify screen-reader usability or all dynamic states. |
 | Whole-gallery visual appearance | [V: light/dark/mobile component gallery](../tests/e2e/visual.spec.ts#L3) | Shared images include every family; not every variant/state combination. |
-| Unit execution coverage | [Coverage configuration](../vitest.config.ts), [measured coverage](evidence/webkit-coverage.json) | 100% statements, branches, functions and lines for included component/helper source; not exhaustive behavior coverage. |
+| Unit execution coverage | [Coverage configuration](../vitest.config.ts), [measured coverage](evidence/tabs-registration-coverage.json) | 100% statements, branches, functions and lines for included component/helper source; not exhaustive behavior coverage. |
 
-The WebKit delivery records **101 unit tests, 6 grouped SSR tests,
+The current hydration delivery records **104 unit tests, 7 grouped SSR tests,
 255 browser integration runs (85 scenarios × 3 engines), and 213 E2E runs
-(67 journeys × 3 engines + 12 Chromium visual tests)**. Those visual tests compare
+(67 journeys × 3 engines + 12 Chromium visual tests), and 45 hydration runs
+(42 positive assertions + 3 unsafe-pattern characterizations)**. Those visual tests compare
 15 images. These totals are package-wide, not per component. See the
-[WebKit verification](WEBKIT-DELIVERY.md) for current results and the
+[hydration verification](HYDRATION-DELIVERY.md) for current results and the
 [initial matrix verification](TEST-MATRIX-DELIVERY.md) for the original audit.
 
 WebKit runs on macOS with process-scoped button Tab navigation and native
@@ -221,6 +225,11 @@ DOM mutation limits as Checkbox apply; see [delivery](TOGGLES-FORMS-DELIVERY.md)
 
 ## Tabs
 
+[H: minimal and full hydration scenarios](HYDRATION-DELIVERY.md) assert server-node
+identity, retained drafts, controlled/uncontrolled selection, keyboard navigation
+and live bidirectional IDs. The unsafe read/write registration case is a separate
+negative control.
+
 | Acceptance requirement | Existing evidence |
 | --- | --- |
 | Enabled defaults, live IDs, conditional trigger removal and lazy panels | [U: derives an enabled default and wires reactive IDs, selection, refs and lazy panels](../tests/unit/tabs.test.tsx#L6) |
@@ -343,7 +352,7 @@ order the next test work; they do not assign bug severity to untested behavior.
 | Priority | ID | Component(s) | Concrete closure condition |
 | --- | --- | --- | --- |
 | Manual follow-up | CMB-2 | Combobox | Browser scrolling/Tab/modal checks pass; record a physical IME composition/commit/cancel session before closing the remaining manual portion. |
-| Next | ALL-2 | All 14 | Add hydrate-then-interact scenarios, including live IDs, form values, selected panels and open/closed overlays. |
+| Extended coverage | ALL-2 | All 14 | [H: real hydration, forms, Tabs and overlays](HYDRATION-DELIVERY.md) passes for the documented source fixtures. Streaming, Loading boundaries, multiple roots, every variant and a published SSR build remain unverified. |
 | Cross-cutting | ALL-3 | Interactive controls and semantic content | Record manual assistive-technology navigation/announcements; axe success is only automated evidence. |
 | Cross-cutting | ALL-4 | All 14 | Expand representative state/variant visual cases; isolate assertions currently supported only by shared gallery/SSR markup (notably Badge SSR). |
 | Before app adoption | ALL-5 | Full package | Verify real admin composition, router/query integration and application errors; measure representative large-list/overlay performance. Current E2E is the gallery only. |

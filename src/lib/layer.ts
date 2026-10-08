@@ -1,22 +1,23 @@
 // Native top-layer lifecycle, controlled ownership, accessible names and cleanup; D19/D90.
-import { createEffect, createSignal, createUniqueId, onCleanup, untrack, type Accessor } from 'solid-js';
+import { createEffect, createUniqueId, onCleanup, untrack, type Accessor } from 'solid-js';
 import type { JSX } from '@solidjs/web';
 import { createControllable } from './controllable';
+import { createRegistration } from './registration';
 export type LayerProps={children?: JSX.Element; open?:boolean; defaultOpen?:boolean; onOpenChange?:(open:boolean)=>void};
 export type LayerContext=ReturnType<typeof createLayer>;
 export type FocusProps={onOpenAutoFocus?:(event:Event)=>void; onCloseAutoFocus?:(event:Event)=>void; onEscapeKeyDown?:(event:Event)=>void};
 /** Share open state and accessor-based title/description IDs without delayed mirror effects. */
 export function createLayer(props:LayerProps){
   const id=createUniqueId();const [open,request]=createControllable(()=>props.open,()=>props.defaultOpen??false,value=>props.onOpenChange?.(value));
-  const [trigger,setTrigger]=createSignal<HTMLElement|undefined>(undefined,{ownedWrite:true});
-  const [anchor,setAnchor]=createSignal<HTMLElement|undefined>(undefined,{ownedWrite:true});
-  const [contentId,setContentId]=createSignal<Accessor<string>>(()=>()=>`layer-${id}`,{ownedWrite:true});
-  const [title,setTitle]=createSignal<Accessor<string>|undefined>(undefined,{ownedWrite:true});
-  const [description,setDescription]=createSignal<Accessor<string>|undefined>(undefined,{ownedWrite:true});
+  const [trigger,setTrigger]=createRegistration<HTMLElement|undefined>(undefined);
+  const [anchor,setAnchor]=createRegistration<HTMLElement|undefined>(undefined);
+  const [contentId,setContentId]=createRegistration<Accessor<string>>(()=>`layer-${id}`);
+  const [title,setTitle]=createRegistration<Accessor<string>|undefined>(undefined);
+  const [description,setDescription]=createRegistration<Accessor<string>|undefined>(undefined);
   return {id,open,request,trigger,setTrigger,anchor,setAnchor,contentId:()=>contentId()(),title:()=>title()?.(),description:()=>description()?.(),restoreFocus:true,
     register(kind:'content'|'title'|'description',value:Accessor<string>){
-      if(kind==='content'){setContentId(()=>value);return;}
-      const setter=kind==='title'?setTitle:setDescription;setter(()=>value);onCleanup(()=>setter(undefined));
+      if(kind==='content'){setContentId(value);return;}
+      const setter=kind==='title'?setTitle:setDescription;setter(value);onCleanup(()=>setter(undefined));
     },
   };
 }

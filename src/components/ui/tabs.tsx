@@ -4,6 +4,7 @@ import type { JSX } from '@solidjs/web';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '../../lib/utils';
 import { createControllable, callHandler } from '../../lib/controllable';
+import { createRegistration } from '../../lib/registration';
 
 type Entry = {value: Accessor<string>; id: Accessor<string>; disabled?: Accessor<boolean>};
 type TabsContextValue = {
@@ -19,13 +20,13 @@ export type TabsProps = JSX.HTMLAttributes<HTMLDivElement> & {value?: string; de
 /** Derive selection and registration without mirroring prop values in effects. */
 export function Tabs(props: TabsProps) {
   const defaultId=createUniqueId();
-  const [entries,setEntries]=createSignal<Entry[]>([],{ownedWrite:true});const [panels,setPanels]=createSignal<Entry[]>([],{ownedWrite:true});
+  const [entries,,updateEntries]=createRegistration<Entry[]>([]);const [panels,,updatePanels]=createRegistration<Entry[]>([]);
   const [value,setValue]=createControllable(()=>props.value,()=>props.defaultValue,value=>props.onValueChange?.(value!));
   const [focused,setFocused]=createSignal<string>();
   const context: TabsContextValue={id:()=>props.id||`tabs-${defaultId}`,entries,panels,
     value:()=>props.value!==undefined?props.value:entries().find(entry=>entry.value()===value()&&!entry.disabled!())?.value()??entries().find(entry=>!entry.disabled!())?.value(),
     select:setValue,orientation:()=>props.orientation??'horizontal',activation:()=>props.activationMode??'automatic',focused,setFocused,
-    register(entry,panel=false){const setter=panel?setPanels:setEntries;setter(current=>[...current,entry]);onCleanup(()=>setter(current=>current.filter(item=>item!==entry)));},
+    register(entry,panel=false){const update=panel?updatePanels:updateEntries;update(current=>[...current,entry]);onCleanup(()=>update(current=>current.filter(item=>item!==entry)));},
   };
   const rest=omit(props,'id','class','value','defaultValue','onValueChange','orientation','activationMode');
   return <Context value={context}><div {...rest} id={context.id()} data-slot="tabs" data-orientation={context.orientation()} data-horizontal={context.orientation()==='horizontal'?'':undefined} data-vertical={context.orientation()==='vertical'?'':undefined} class={cn('group/tabs flex min-w-0 gap-2 data-horizontal:flex-col',props.class)}/></Context>;
@@ -47,7 +48,8 @@ export const tabsListVariants = cva(
 
 export type TabsListProps=JSX.HTMLAttributes<HTMLDivElement> & VariantProps<typeof tabsListVariants> & {loop?: boolean};
 /** Restore only focus lost when this list's focused node is removed or moved by reconciliation. */
-function observeTabFocus(node:HTMLDivElement){
+function observeTabFocus(node:HTMLDivElement|undefined){
+  if(!node)return;
   const document=node.ownerDocument;let focused:HTMLElement|undefined;
   /** A newer focus destination relinquishes this list's right to restore focus. */
   function remember(event:FocusEvent){
@@ -71,8 +73,8 @@ function observeTabFocus(node:HTMLDivElement){
 export function TabsList(props: TabsListProps) {
   const context=useTabs();const rest=omit(props,'class','variant','onKeyDown','loop','ref');
   const [element,setElement]=createSignal<HTMLDivElement|undefined>(undefined,{ownedWrite:true});
-  // This static ref is assigned before DOM effects commit; SSR never runs the observer.
-  createEffect(()=>element()!,observeTabFocus);
+  // Hydration may commit effects before assigning refs.
+  createEffect(()=>element(),observeTabFocus);
   /** Process only this list’s navigation keys and allow caller cancellation. */
   function onKeyDown(event: KeyboardEvent & {currentTarget: HTMLDivElement; target: Element}) {
     callHandler(props.onKeyDown,event);if(event.defaultPrevented)return;

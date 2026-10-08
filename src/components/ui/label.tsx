@@ -10,8 +10,9 @@ export function Label(props: LabelProps) {
   const rest = omit(props, 'class', 'ref');
   const [element, setElement] = createSignal<HTMLLabelElement | undefined>(undefined, { ownedWrite: true });
   let previous: (HTMLElement & { labels?: NodeListOf<HTMLLabelElement> | null }) | null = null;
-  // The static ref is assigned before DOM effects commit; SSR does not run this effect.
-  createEffect(() => [element()!, props.for] as const, ([label]) => {
+  // Hydration can commit effects before refs arrive; observe only an available DOM node.
+  createEffect(() => [element(), props.for] as const, ([label]) => {
+    if (!label) return;
     const current = label.control as typeof previous;
     const oldLabels = previous?.labels;
     const newLabels = current?.labels;
