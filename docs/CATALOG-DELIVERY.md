@@ -7,7 +7,7 @@ The baseline has 24 delivered families out of the 65-entry catalog.
 | Group | Families | Status and evidence |
 | --- | --- | --- |
 | Native compositions (16) | Alert, Aspect Ratio, Attachment, Breadcrumb, Bubble, Button Group, Empty, Field, Input Group, Item, Kbd, Marker, Message, Native Select, Spinner, Table | Delivered; all required gates passed. [Native delivery](NATIVE-CATALOG-DELIVERY.md) |
-| Display and navigation (4) | Avatar, Pagination, Typography, Direction | Pending |
+| Display and navigation (4) | Avatar, Pagination, Typography, Direction | Delivered; [display delivery](DISPLAY-CATALOG-DELIVERY.md) |
 | Modal layouts (3) | Dialog, Sheet, Drawer | Pending; earlier Kobalte diagnostics are evaluation evidence, not shipped components |
 | Menus and command (5) | Dropdown Menu, Context Menu, Menubar, Navigation Menu, Command | Pending |
 | Dates and entry (3) | Calendar, Date Picker, Input OTP | Pending |

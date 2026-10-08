@@ -3,7 +3,7 @@
 Initially audited 2026-10-08 against source at `314f27a`; updated with the
 [three-engine browser evidence](WEBKIT-DELIVERY.md) and
 [source hydration regression](HYDRATION-DELIVERY.md), including
-[real Loading boundaries](LOADING-HYDRATION-DELIVERY.md). Covers the **40
+[real Loading boundaries](LOADING-HYDRATION-DELIVERY.md). Covers the **44
 implemented component families**, including their compound parts. The other
 catalog entries in [COMPONENT-MAP.md](../COMPONENT-MAP.md) remain unimplemented;
 their adoption probes are not delivered-component acceptance tests.
@@ -43,14 +43,13 @@ are implementation scope limits, not features that an existing test proves.
 | Diagnostics and cleanup are checked | [Unit setup](../vitest.setup.ts), [browser fixture](../tests/browser-fixture.ts) | Every unit test checks console warn/error after cleanup; every B/E/H test checks console warning/error and page errors. The hydration build also rejects server warnings/errors; ordinary S tests have no equivalent diagnostic fixture. |
 | Whole-gallery accessibility | [B: light/dark examples have no axe accessibility violations](../tests/integration/foundation.spec.ts#L27) | Applies to the rendered, settled gallery state. Axe does not certify screen-reader usability or all dynamic states. |
 | Whole-gallery visual appearance | [V: light/dark/mobile component gallery](../tests/e2e/visual.spec.ts#L3) | Shared gallery plus dedicated disclosure and preview images; not every variant/state combination. |
-| Unit execution coverage | [Coverage configuration](../vitest.config.ts), [measured coverage](evidence/catalog-native-coverage.json) | 100% statements, branches, functions and lines for included component/helper source; not exhaustive behavior coverage. |
+| Unit execution coverage | [Coverage configuration](../vitest.config.ts), [measured coverage](evidence/catalog-display-coverage.json) | 100% statements, branches, functions and lines for included component/helper source; not exhaustive behavior coverage. |
 
-The current native catalog delivery records **204 unit tests, 14 grouped SSR tests,
-399 browser integration runs (133 scenarios × 3 engines), 378 E2E runs
-(115 journeys × 3 engines + 33 Chromium visual tests), and 102 hydration runs
-(99 positive assertions + 3 unsafe-pattern characterizations)**. Visual tests compare
-36 images. These totals are package-wide, not per component. See
-[native verification](NATIVE-CATALOG-DELIVERY.md) for current results and the
+The current display catalog delivery records **213 unit tests, 15 grouped SSR tests,
+105 hydration runs
+(102 positive assertions + 3 unsafe-pattern characterizations)**. Visual tests compare
+39 images. These totals are package-wide, not per component. See
+[display verification](DISPLAY-CATALOG-DELIVERY.md) for full pre-callback regression results (417 source / 399 built), final affected-component reruns (18 source / 21 built/visual), and the
 [initial matrix verification](TEST-MATRIX-DELIVERY.md) for the original audit.
 
 WebKit runs on macOS with process-scoped button Tab navigation and native
@@ -604,3 +603,14 @@ dark and mobile layouts, with the precise examples in
 Native contracts live in shared tests imported by both source integration and
 built E2E suites. None of these limits is closed merely by reaching 100% code
 execution coverage.
+
+## Display and navigation compositions
+
+| Family | Acceptance and actual assertions | Remaining limits |
+| --- | --- | --- |
+| Avatar | [U](../tests/unit/catalog-display.test.tsx): missing/load/error/recovery, stale events, image-only removal, srcset preload options, delayed fallback cleanup, ref; [B/E](../tests/catalog-display.ts): real decode/failure/retry, delayed completion after source change and root disposal; [S/H](../tests/hydration/hydration.spec.ts): fallback retained before interaction then load/recover/dispose. | One Image per Root; responsive/DPR device selection and initially valid source during hydration remain unverified. Image requests may finish after cleanup, but handlers are removed. |
+| Pagination | [U](../tests/unit/catalog-display.test.tsx): current state, native ref/href, callback, disabled suppression and localization; [B/E/H](../tests/catalog-display.ts): Enter navigation, bounds, current page and disabled pointer/Tab attributes. | Page data, ranking and requests are host-owned; cross-origin/router and modified-click behavior have no dedicated browser case. |
+| Direction | [U](../tests/unit/catalog-display.test.tsx): default, explicit local, nested inheritance and precedence; [B/E/H](../tests/catalog-display.ts): dynamic nested DOM direction and Tabs keyboard behavior; B/E also verifies RTL Popover start alignment. | Emits a native div. Not a bridge to external Kobalte I18n context; every other control/portal combination is not independently re-tested. |
+| Typography | [U](../tests/unit/catalog-display.test.tsx): hierarchy, ref, text escaping and semantic elements; [B/E](../tests/catalog-display.ts): mobile/enlarged light/dark axe and native prose link; grouped S/H slot identity and V. | Not a Markdown parser or full upstream Typeset CSS implementation. All HTML element permutations and manual screen readers unverified. |
+
+All four appear in [three focused visual baselines](../tests/e2e/visual.spec.ts).

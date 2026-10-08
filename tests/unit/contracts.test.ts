@@ -27,6 +27,8 @@ describe('foundation contracts',()=>{
 
 
 it('exports the native catalog family APIs through source subpaths and the build barrel',async()=>{
- const families=['alert','aspect-ratio','attachment','breadcrumb','bubble','button-group','empty','field','input-group','item','kbd','marker','message','native-select','spinner','table'];
+ const families=['alert','aspect-ratio','attachment','breadcrumb','bubble','button-group','empty','field','input-group','item','kbd','marker','message','native-select','spinner','table','avatar','pagination','direction'];
  for(const family of families){const module=await import(`../../src/components/ui/${family}.tsx`);const reference=readFileSync(resolve(root,`../shadcn-theme/src/components/ui/${family}.tsx`),'utf8');const exports=reference.slice(reference.lastIndexOf('export {')+8).split('}')[0]!.split(',').map(name=>name.trim()).filter(Boolean);for(const name of exports){expect(module).toHaveProperty(name);expect(library).toHaveProperty(name);}}
 });
+
+it('exports semantic typography through the public barrel',()=>{for(const name of ['Typography','TypographyH1','TypographyH2','TypographyH3','TypographyH4','TypographyP','TypographyBlockquote','TypographyList','TypographyInlineCode','TypographyLead','TypographyLarge','TypographySmall','TypographyMuted'])expect(library).toHaveProperty(name);});

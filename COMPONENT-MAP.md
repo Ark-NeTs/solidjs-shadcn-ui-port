@@ -1,8 +1,8 @@
 # shadcn/ui → Solid 2 component map
 
 **Implemented (2026-10-08):** Button, Badge, Card, Separator, Skeleton, Input,
-Textarea, Label, Checkbox, Switch, Tabs, Popover, Alert Dialog, Combobox, Accordion, Collapsible, Tooltip, Hover Card, Radio Group, Toggle, Toggle Group, Select, Slider, Progress, Alert, Aspect Ratio, Attachment, Breadcrumb, Bubble, Button Group, Empty, Field, Input Group, Item, Kbd, Marker, Message, Native Select, Spinner and Table now have Solid 2 source, documentation and passing unit, browser and built-library tests.
-See [native catalog delivery](docs/NATIVE-CATALOG-DELIVERY.md), [Progress delivery](docs/PROGRESS-DELIVERY.md), [Slider delivery](docs/SLIDER-DELIVERY.md), [Select delivery](docs/SELECT-DELIVERY.md), [choice delivery](docs/CHOICES-DELIVERY.md), [preview delivery](docs/HINTS-DELIVERY.md), [disclosure delivery](docs/DISCLOSURES-DELIVERY.md), [COMBOBOX-DELIVERY.md](COMBOBOX-DELIVERY.md), [OVERLAYS-DELIVERY.md](OVERLAYS-DELIVERY.md), [TOGGLES-DELIVERY.md](TOGGLES-DELIVERY.md), [FORM-FIELDS-DELIVERY.md](FORM-FIELDS-DELIVERY.md) and the earlier
+Textarea, Label, Checkbox, Switch, Tabs, Popover, Alert Dialog, Combobox, Accordion, Collapsible, Tooltip, Hover Card, Radio Group, Toggle, Toggle Group, Select, Slider, Progress, Alert, Aspect Ratio, Attachment, Breadcrumb, Bubble, Button Group, Empty, Field, Input Group, Item, Kbd, Marker, Message, Native Select, Spinner, Table, Avatar, Pagination, Direction and Typography now have Solid 2 source, documentation and passing unit, browser and built-library tests.
+See [display catalog delivery](docs/DISPLAY-CATALOG-DELIVERY.md), [native catalog delivery](docs/NATIVE-CATALOG-DELIVERY.md), [Progress delivery](docs/PROGRESS-DELIVERY.md), [Slider delivery](docs/SLIDER-DELIVERY.md), [Select delivery](docs/SELECT-DELIVERY.md), [choice delivery](docs/CHOICES-DELIVERY.md), [preview delivery](docs/HINTS-DELIVERY.md), [disclosure delivery](docs/DISCLOSURES-DELIVERY.md), [COMBOBOX-DELIVERY.md](COMBOBOX-DELIVERY.md), [OVERLAYS-DELIVERY.md](OVERLAYS-DELIVERY.md), [TOGGLES-DELIVERY.md](TOGGLES-DELIVERY.md), [FORM-FIELDS-DELIVERY.md](FORM-FIELDS-DELIVERY.md) and the earlier
 [FOUNDATION-DELIVERY.md](FOUNDATION-DELIVERY.md). These use native HTML; Toggle wraps Kobalte after its scoped acceptance;
 headless-library findings below remain relevant to later primitives.
 
@@ -74,10 +74,10 @@ No row currently selects corvu; alternatives are evaluated below.
 
 | Route | Entries |
 | --- | ---: |
-| Matching Kobalte primitive | 19 |
-| Owned composition | 9 |
-| Native markup/CSS | 30 |
-| Unresolved behavior/engine gap | 7 |
+| Matching Kobalte primitive | 17 |
+| Owned composition | 11 |
+| Native markup/CSS | 31 |
+| Unresolved behavior/engine gap | 6 |
 | Total | 65 |
 
 | shadcn component | Route | Kobalte first / implementation path | Required adaptation or acceptance focus |
@@ -87,7 +87,7 @@ No row currently selects corvu; alternatives are evaluated below.
 | [Alert Dialog](https://ui.shadcn.com/docs/components/alert-dialog) | N | `alert-dialog` evaluated first; native modal chosen | Implemented explicit cancel/action, controlled state, least-destructive focus, nesting and scroll locks. Delayed native close after reopening is guarded; see docs/ALERT-REOPEN-DELIVERY.md. Library routing remains as recorded in KOBALTE-OVERLAYS.md and OVERLAYS-DELIVERY.md. |
 | [Aspect Ratio](https://ui.shadcn.com/docs/components/aspect-ratio) | N | CSS `aspect-ratio` | Ratio prop, sizing and overflow behavior; no headless state needed. |
 | [Attachment](https://ui.shadcn.com/docs/components/attachment) | C | `button` + owned presentation | File preview/metadata/removal slots; uploads and transport remain host-owned. `file-field` is optional only if an upload control is added. |
-| [Avatar](https://ui.shadcn.com/docs/components/avatar) | K | `image` | Image/fallback timing, failures, alt text; add group/badge presentation parts. |
+| [Avatar](https://ui.shadcn.com/docs/components/avatar) | C | `image` evaluated first; owned preload lifecycle | Delivered load/error/retry/stale-event cleanup, fallback delay, badge/group parts; alpha.2 relay diagnostic retained in validation/solid2-avatar. See docs/DISPLAY-CATALOG-DELIVERY.md. |
 | [Badge](https://ui.shadcn.com/docs/components/badge) | K | `badge` | Semantic variants, sizing, polymorphic link rendering. |
 | [Breadcrumb](https://ui.shadcn.com/docs/components/breadcrumb) | N | `breadcrumbs` evaluated first; native semantic wrappers | Delivered ordered links, current page, separators and ellipsis; menus compose separately. See docs/NATIVE-CATALOG-DELIVERY.md. |
 | [Bubble](https://ui.shadcn.com/docs/components/bubble) | N | Owned markup/CSS | Grouping, content, reaction slots and variants from the sibling. |
@@ -105,7 +105,7 @@ No row currently selects corvu; alternatives are evaluated below.
 | [Data Table](https://ui.shadcn.com/docs/components/data-table) | G | `checkbox`, `dropdown-menu`, `pagination` for controls | No table model. Evaluate TanStack Table core/compatible adapter for sort, filter, selection and paging; server data stays host-owned. |
 | [Date Picker](https://ui.shadcn.com/docs/components/date-picker) | K | `date-picker` (or `calendar` + `popover`) | Trigger/value formatting, range/multiple modes, bounds and Date adapter; time examples compose `time-field` where needed. |
 | [Dialog](https://ui.shadcn.com/docs/components/dialog) | K | `dialog` | Modal/nonmodal, portal, accessible naming, nested layers, Escape and focus restoration. |
-| [Direction](https://ui.shadcn.com/docs/components/direction) | G | `i18n` supplies locale-derived direction | Explicit `dir` provider parity is missing from I18nProvider's public props. Resolve locale-independent and nested direction before claiming RTL parity. |
+| [Direction](https://ui.shadcn.com/docs/components/direction) | C | `i18n` evaluated; owned explicit direction | Delivered nested reactive provider with native div boundary, Tabs keyboard direction and Popover alignment; not an external Kobalte context bridge. See docs/DISPLAY-CATALOG-DELIVERY.md. |
 | [Drawer](https://ui.shadcn.com/docs/components/drawer) | K | `drawer` | Gestures, snap points and four sides exist. Adapt direction→side, state attributes, scroll interactions and Vaul-facing props. |
 | [Dropdown Menu](https://ui.shadcn.com/docs/components/dropdown-menu) | K | `dropdown-menu` | Submenus, typeahead, groups, checkbox/radio items, disabled items and close behavior. |
 | [Empty](https://ui.shadcn.com/docs/components/empty) | N | Owned markup/CSS | Media/title/description/content slots; actions use Button. |
@@ -123,7 +123,7 @@ No row currently selects corvu; alternatives are evaluated below.
 | [Message Scroller](https://ui.shadcn.com/docs/components/message-scroller) | G | No scroll-follow controller | Own stick-to-bottom, user-scroll interruption, streamed growth, anchor preservation and cleanup; React helper cannot be imported into Solid. |
 | [Native Select](https://ui.shadcn.com/docs/components/native-select) | N | Native select/option/optgroup | Form value, keyboard/browser behavior, disabled state and styled icon. |
 | [Navigation Menu](https://ui.shadcn.com/docs/components/navigation-menu) | K | `navigation-menu` | Links, trigger/content/viewport composition, pointer/focus transitions and RTL. |
-| [Pagination](https://ui.shadcn.com/docs/components/pagination) | K | `pagination` | Map generated state to link-shaped parts; preserve href/current-page semantics and host-controlled paging. |
+| [Pagination](https://ui.shadcn.com/docs/components/pagination) | N | `pagination` evaluated first; passive native links | Delivered sibling link composition, current/disabled state and native navigation; page data stays host-owned. See docs/DISPLAY-CATALOG-DELIVERY.md. |
 | [Popover](https://ui.shadcn.com/docs/components/popover) | N | `popover` evaluated first; native top layer + Floating UI chosen | Implemented trigger/anchor/content, modal choice, collision placement, controlled rejection and focus restoration. See KOBALTE-OVERLAYS.md and OVERLAYS-DELIVERY.md. |
 | [Progress](https://ui.shadcn.com/docs/components/progress) | N | Owned div/indicator after Kobalte hydration rejection | Implemented known/unknown values, bounds, custom text, external labels, RTL, reduced motion and SSR/hydration. [Evaluation](KOBALTE-PROGRESS.md), [delivery](docs/PROGRESS-DELIVERY.md). |
 | [Questionnaire](https://ui.shadcn.com/docs/components/questionnaire) | C | `radio-group`, `checkbox`, `text-field`, `button`, `progress`; evaluate `steps` | Own ordered answers/navigation/validation, freeform and skipped answers, reset/resume, shortcuts and controlled state. No ready-made questionnaire exists. |
@@ -193,7 +193,7 @@ fallback for this Solid 2 package.
 
 ## Implementation gaps and next checks
 
-1. **Direction:** the published `I18nProviderProps` only offers `locale` and
+1. **Direction (owned provider delivered):** nested explicit direction, Tabs keyboard and Popover alignment now pass; see docs/DISPLAY-CATALOG-DELIVERY.md. For external Kobalte primitives, the published `I18nProviderProps` only offers `locale` and
    `children`; `useLocale` supplies direction inferred from locale. A DOM `dir`
    attribute alone cannot be assumed to change internal keyboard/placement
    behavior. Test explicit RTL with an LTR locale and nested overrides; choose

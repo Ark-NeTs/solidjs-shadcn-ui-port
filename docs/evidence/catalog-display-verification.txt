@@ -1,0 +1,256 @@
+bun run check
+$ tsc --noEmit
+
+bun run lint
+$ eslint src tests playground scripts *.ts
+
+bun run test --maxWorkers=2
+$ vitest run "--maxWorkers=2"
+
+ RUN  v4.1.10 /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme
+
+
+ Test Files  17 passed (17)
+      Tests  213 passed (213)
+   Start at  00:44:47
+   Duration  7.90s (transform 1.03s, setup 1.47s, import 1.70s, tests 4.57s, environment 6.11s)
+
+
+bun run test:coverage --maxWorkers=2
+$ vitest run --coverage "--maxWorkers=2"
+
+ RUN  v4.1.10 /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme
+      Coverage enabled with v8
+
+
+ Test Files  17 passed (17)
+      Tests  213 passed (213)
+   Start at  00:44:55
+   Duration  8.84s (transform 1.06s, setup 1.60s, import 1.84s, tests 5.43s, environment 5.81s)
+
+ % Coverage report from v8
+-------------------|---------|----------|---------|---------|-------------------
+File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
+-------------------|---------|----------|---------|---------|-------------------
+-------------------|---------|----------|---------|---------|-------------------
+
+=============================== Coverage summary ===============================
+Statements   : 100% ( 3363/3363 )
+Branches     : 100% ( 1862/1862 )
+Functions    : 100% ( 1329/1329 )
+Lines        : 100% ( 1027/1027 )
+================================================================================
+
+bun run test:server
+$ vitest run --config vitest.server.config.ts
+
+ RUN  v4.1.10 /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme
+
+
+ Test Files  1 passed (1)
+      Tests  15 passed (15)
+   Start at  00:45:05
+   Duration  601ms (transform 392ms, setup 0ms, import 481ms, tests 35ms, environment 0ms)
+
+
+RESULTS_FILE=docs/evidence/catalog-display-hydration.json bun run test:hydration --max-failures=1
+$ playwright test --config playwright.hydration.config.ts "--max-failures=1"
+[WebServer] $ node --conditions=development scripts/build-hydration.mjs
+[WebServer] (node:97825) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:97826) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 105 tests using 1 worker
+
+(node:97894) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓    1 [chromium] › tests/hydration/errored.spec.ts:30:1 › rejected hydrated data preserves drafts and explicit Errored resets recover without duplicate requests (697ms)
+  ✓    2 [chromium] › tests/hydration/errored.spec.ts:59:54 › a stale retry's resolve cannot overwrite a newer successful request (623ms)
+  ✓    3 [chromium] › tests/hydration/errored.spec.ts:59:54 › a stale retry's reject cannot overwrite a newer successful request (510ms)
+  ✓    4 [chromium] › tests/hydration/errored.spec.ts:77:1 › late rejection after pending unmount stays contained and a fresh boundary can recover (443ms)
+  ✓    5 [chromium] › tests/hydration/errored.spec.ts:93:1 › late rejection after disposing the hydrated root does not restore an error or content (306ms)
+  ✓    6 [chromium] › tests/hydration/hydration.spec.ts:33:1 › hydrates server nodes, edits native forms, rewires labels and resets canonical values (775ms)
+  ✓    7 [chromium] › tests/hydration/hydration.spec.ts:66:1 › hydrates selected Tabs, preserves mounted drafts and updates both sides of live IDs (468ms)
+  ✓    8 [chromium] › tests/hydration/hydration.spec.ts:84:1 › hydrates closed overlays, updates naming, dismisses and restores focus without duplicate actions (967ms)
+  ✓    9 [chromium] › tests/hydration/hydration.spec.ts:110:51 › hydrates initially open popover and disposes active ownership (415ms)
+  ✓   10 [chromium] › tests/hydration/hydration.spec.ts:110:51 › hydrates initially open alert and disposes active ownership (471ms)
+  ✓   11 [chromium] › tests/hydration/hydration.spec.ts:135:1 › hydrates disclosures with stable owner IDs, retained drafts and ordinary remounts (489ms)
+  ✓   12 [chromium] › tests/hydration/hydration.spec.ts:158:1 › hydrates preview shells and IDs before focus, dismissal, link navigation and disposal (484ms)
+  ✓   13 [chromium] › tests/hydration/hydration.spec.ts:175:1 › hydrates radios and pressed buttons before keyboard selection, owner updates and disposal (426ms)
+  ✓   14 [chromium] › tests/hydration/hydration.spec.ts:182:1 › hydrates Select labels and native values before selecting, resetting, dismissing and disposal (457ms)
+  ✓   15 [chromium] › tests/hydration/hydration.spec.ts:186:1 › hydrates Slider thumbs and values before keyboard adjustment, form reset and disposal (493ms)
+  ✓   16 [chromium] › tests/hydration/hydration.spec.ts:190:1 › hydrates Progress naming and fill before owner updates, label changes and disposal (491ms)
+  ✓   17 [chromium] › tests/hydration/hydration.spec.ts:195:1 › hydrates native catalog nodes then preserves draft recovery and native form reset (511ms)
+  ✓   18 [chromium] › tests/hydration/hydration.spec.ts:199:1 › hydrates display/navigation nodes then loads images, changes pages and reverses reading direction (543ms)
+  ✓   19 [chromium] › tests/hydration/loading.spec.ts:46:1 › compares native placeholders during the pending boundary handoff (262ms)
+  ✓   20 [chromium] › tests/hydration/loading.spec.ts:53:1 › hydrates pending Skeleton nodes, resolves the real boundary and unmounts ready content (242ms)
+  ✓   21 [chromium] › tests/hydration/loading.spec.ts:71:1 › unmounts hydrated pending boundaries and ignores old resolutions after a fresh mount (581ms)
+  ✓   22 [chromium] › tests/hydration/loading.spec.ts:92:1 › disposing the hydrated root prevents late promise completion from restoring content (325ms)
+  ✓   23 [chromium] › tests/hydration/retry-minimal.spec.ts:3:71 › plain Solid retry: replace-reset (340ms)
+  ✓   24 [chromium] › tests/hydration/retry-minimal.spec.ts:3:71 › plain Solid retry: replace-only (324ms)
+  ✓   25 [chromium] › tests/hydration/retry-minimal.spec.ts:3:71 › plain Solid retry: source-reset (357ms)
+  ✓   26 [chromium] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: plain (325ms)
+  ✓   27 [chromium] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: context (323ms)
+  ✓   28 [chromium] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: registration (345ms)
+  ✓   29 [chromium] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: registration-spread (305ms)
+  ✓   30 [chromium] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: registration-read (unsafe-pattern characterization) (224ms)
+  ✓   31 [chromium] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: package-shell (308ms)
+  ✓   32 [chromium] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: package-triggers (353ms)
+  ✓   33 [chromium] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: package-panels (357ms)
+  ✓   34 [chromium] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: package-controlled (320ms)
+  ✓   35 [chromium] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: package-uncontrolled (327ms)
+(node:98114) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   36 [firefox] › tests/hydration/errored.spec.ts:30:1 › rejected hydrated data preserves drafts and explicit Errored resets recover without duplicate requests (1.5s)
+  ✓   37 [firefox] › tests/hydration/errored.spec.ts:59:54 › a stale retry's resolve cannot overwrite a newer successful request (672ms)
+  ✓   38 [firefox] › tests/hydration/errored.spec.ts:59:54 › a stale retry's reject cannot overwrite a newer successful request (596ms)
+  ✓   39 [firefox] › tests/hydration/errored.spec.ts:77:1 › late rejection after pending unmount stays contained and a fresh boundary can recover (596ms)
+  ✓   40 [firefox] › tests/hydration/errored.spec.ts:93:1 › late rejection after disposing the hydrated root does not restore an error or content (413ms)
+  ✓   41 [firefox] › tests/hydration/hydration.spec.ts:33:1 › hydrates server nodes, edits native forms, rewires labels and resets canonical values (1.3s)
+  ✓   42 [firefox] › tests/hydration/hydration.spec.ts:66:1 › hydrates selected Tabs, preserves mounted drafts and updates both sides of live IDs (585ms)
+  ✓   43 [firefox] › tests/hydration/hydration.spec.ts:84:1 › hydrates closed overlays, updates naming, dismisses and restores focus without duplicate actions (1.0s)
+  ✓   44 [firefox] › tests/hydration/hydration.spec.ts:110:51 › hydrates initially open popover and disposes active ownership (620ms)
+  ✓   45 [firefox] › tests/hydration/hydration.spec.ts:110:51 › hydrates initially open alert and disposes active ownership (1.1s)
+  ✓   46 [firefox] › tests/hydration/hydration.spec.ts:135:1 › hydrates disclosures with stable owner IDs, retained drafts and ordinary remounts (821ms)
+  ✓   47 [firefox] › tests/hydration/hydration.spec.ts:158:1 › hydrates preview shells and IDs before focus, dismissal, link navigation and disposal (603ms)
+  ✓   48 [firefox] › tests/hydration/hydration.spec.ts:175:1 › hydrates radios and pressed buttons before keyboard selection, owner updates and disposal (633ms)
+  ✓   49 [firefox] › tests/hydration/hydration.spec.ts:182:1 › hydrates Select labels and native values before selecting, resetting, dismissing and disposal (611ms)
+  ✓   50 [firefox] › tests/hydration/hydration.spec.ts:186:1 › hydrates Slider thumbs and values before keyboard adjustment, form reset and disposal (569ms)
+  ✓   51 [firefox] › tests/hydration/hydration.spec.ts:190:1 › hydrates Progress naming and fill before owner updates, label changes and disposal (682ms)
+  ✓   52 [firefox] › tests/hydration/hydration.spec.ts:195:1 › hydrates native catalog nodes then preserves draft recovery and native form reset (743ms)
+  ✓   53 [firefox] › tests/hydration/hydration.spec.ts:199:1 › hydrates display/navigation nodes then loads images, changes pages and reverses reading direction (719ms)
+  ✓   54 [firefox] › tests/hydration/loading.spec.ts:46:1 › compares native placeholders during the pending boundary handoff (393ms)
+  ✓   55 [firefox] › tests/hydration/loading.spec.ts:53:1 › hydrates pending Skeleton nodes, resolves the real boundary and unmounts ready content (935ms)
+  ✓   56 [firefox] › tests/hydration/loading.spec.ts:71:1 › unmounts hydrated pending boundaries and ignores old resolutions after a fresh mount (740ms)
+  ✓   57 [firefox] › tests/hydration/loading.spec.ts:92:1 › disposing the hydrated root prevents late promise completion from restoring content (454ms)
+  ✓   58 [firefox] › tests/hydration/retry-minimal.spec.ts:3:71 › plain Solid retry: replace-reset (423ms)
+  ✓   59 [firefox] › tests/hydration/retry-minimal.spec.ts:3:71 › plain Solid retry: replace-only (425ms)
+  ✓   60 [firefox] › tests/hydration/retry-minimal.spec.ts:3:71 › plain Solid retry: source-reset (472ms)
+  ✓   61 [firefox] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: plain (457ms)
+  ✓   62 [firefox] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: context (480ms)
+  ✓   63 [firefox] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: registration (438ms)
+  ✓   64 [firefox] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: registration-spread (436ms)
+  ✓   65 [firefox] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: registration-read (unsafe-pattern characterization) (796ms)
+  ✓   66 [firefox] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: package-shell (441ms)
+  ✓   67 [firefox] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: package-triggers (434ms)
+  ✓   68 [firefox] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: package-panels (429ms)
+  ✓   69 [firefox] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: package-controlled (425ms)
+  ✓   70 [firefox] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: package-uncontrolled (427ms)
+(node:98350) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   71 [webkit] › tests/hydration/errored.spec.ts:30:1 › rejected hydrated data preserves drafts and explicit Errored resets recover without duplicate requests (1.0s)
+  ✓   72 [webkit] › tests/hydration/errored.spec.ts:59:54 › a stale retry's resolve cannot overwrite a newer successful request (697ms)
+  ✓   73 [webkit] › tests/hydration/errored.spec.ts:59:54 › a stale retry's reject cannot overwrite a newer successful request (716ms)
+  ✓   74 [webkit] › tests/hydration/errored.spec.ts:77:1 › late rejection after pending unmount stays contained and a fresh boundary can recover (694ms)
+  ✓   75 [webkit] › tests/hydration/errored.spec.ts:93:1 › late rejection after disposing the hydrated root does not restore an error or content (528ms)
+  ✓   76 [webkit] › tests/hydration/hydration.spec.ts:33:1 › hydrates server nodes, edits native forms, rewires labels and resets canonical values (1.2s)
+  ✓   77 [webkit] › tests/hydration/hydration.spec.ts:66:1 › hydrates selected Tabs, preserves mounted drafts and updates both sides of live IDs (716ms)
+  ✓   78 [webkit] › tests/hydration/hydration.spec.ts:84:1 › hydrates closed overlays, updates naming, dismisses and restores focus without duplicate actions (1.1s)
+  ✓   79 [webkit] › tests/hydration/hydration.spec.ts:110:51 › hydrates initially open popover and disposes active ownership (603ms)
+  ✓   80 [webkit] › tests/hydration/hydration.spec.ts:110:51 › hydrates initially open alert and disposes active ownership (668ms)
+  ✓   81 [webkit] › tests/hydration/hydration.spec.ts:135:1 › hydrates disclosures with stable owner IDs, retained drafts and ordinary remounts (707ms)
+  ✓   82 [webkit] › tests/hydration/hydration.spec.ts:158:1 › hydrates preview shells and IDs before focus, dismissal, link navigation and disposal (646ms)
+  ✓   83 [webkit] › tests/hydration/hydration.spec.ts:175:1 › hydrates radios and pressed buttons before keyboard selection, owner updates and disposal (654ms)
+  ✓   84 [webkit] › tests/hydration/hydration.spec.ts:182:1 › hydrates Select labels and native values before selecting, resetting, dismissing and disposal (655ms)
+  ✓   85 [webkit] › tests/hydration/hydration.spec.ts:186:1 › hydrates Slider thumbs and values before keyboard adjustment, form reset and disposal (654ms)
+  ✓   86 [webkit] › tests/hydration/hydration.spec.ts:190:1 › hydrates Progress naming and fill before owner updates, label changes and disposal (757ms)
+  ✓   87 [webkit] › tests/hydration/hydration.spec.ts:195:1 › hydrates native catalog nodes then preserves draft recovery and native form reset (739ms)
+  ✓   88 [webkit] › tests/hydration/hydration.spec.ts:199:1 › hydrates display/navigation nodes then loads images, changes pages and reverses reading direction (764ms)
+  ✓   89 [webkit] › tests/hydration/loading.spec.ts:46:1 › compares native placeholders during the pending boundary handoff (502ms)
+  ✓   90 [webkit] › tests/hydration/loading.spec.ts:53:1 › hydrates pending Skeleton nodes, resolves the real boundary and unmounts ready content (441ms)
+  ✓   91 [webkit] › tests/hydration/loading.spec.ts:71:1 › unmounts hydrated pending boundaries and ignores old resolutions after a fresh mount (850ms)
+  ✓   92 [webkit] › tests/hydration/loading.spec.ts:92:1 › disposing the hydrated root prevents late promise completion from restoring content (542ms)
+  ✓   93 [webkit] › tests/hydration/retry-minimal.spec.ts:3:71 › plain Solid retry: replace-reset (486ms)
+  ✓   94 [webkit] › tests/hydration/retry-minimal.spec.ts:3:71 › plain Solid retry: replace-only (531ms)
+  ✓   95 [webkit] › tests/hydration/retry-minimal.spec.ts:3:71 › plain Solid retry: source-reset (529ms)
+  ✓   96 [webkit] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: plain (467ms)
+  ✓   97 [webkit] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: context (520ms)
+  ✓   98 [webkit] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: registration (437ms)
+  ✓   99 [webkit] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: registration-spread (490ms)
+  ✓  100 [webkit] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: registration-read (unsafe-pattern characterization) (361ms)
+  ✓  101 [webkit] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: package-shell (530ms)
+  ✓  102 [webkit] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: package-triggers (495ms)
+  ✓  103 [webkit] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: package-panels (539ms)
+  ✓  104 [webkit] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: package-controlled (550ms)
+  ✓  105 [webkit] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: package-uncontrolled (539ms)
+
+  105 passed (1.1m)
+
+THEME_PORT=4403 RESULTS_FILE=docs/evidence/catalog-display-integration.json bun run test:integration --grep "Avatar |Pagination |Direction |Display catalog" --max-failures=1
+$ playwright test tests/integration --grep "Avatar |Pagination |Direction |Display catalog" "--max-failures=1"
+[WebServer] $ vite --config playground/vite.config.ts
+[WebServer] (node:98574) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 18 tests using 1 worker
+
+(node:98604) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › tests/catalog-display.ts:7:2 › Avatar decodes, falls back after failure, recovers and releases removed images (987ms)
+  ✓   2 [chromium] › tests/catalog-display.ts:8:2 › Avatar ignores delayed image completion after a newer source and unmount (504ms)
+  ✓   3 [chromium] › tests/catalog-display.ts:9:2 › Pagination keeps native links, selected state, bounds and disabled keyboard behavior (467ms)
+  ✓   4 [chromium] › tests/catalog-display.ts:10:2 › Direction updates nested context, native keyboard direction and aligned overlay placement (602ms)
+  ✓   5 [chromium] › tests/catalog-display.ts:11:33 › Display catalog light enlarged mobile prose and accessibility (963ms)
+  ✓   6 [chromium] › tests/catalog-display.ts:11:33 › Display catalog dark enlarged mobile prose and accessibility (884ms)
+(node:98733) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   7 [firefox] › tests/catalog-display.ts:7:2 › Avatar decodes, falls back after failure, recovers and releases removed images (1.3s)
+  ✓   8 [firefox] › tests/catalog-display.ts:8:2 › Avatar ignores delayed image completion after a newer source and unmount (498ms)
+  ✓   9 [firefox] › tests/catalog-display.ts:9:2 › Pagination keeps native links, selected state, bounds and disabled keyboard behavior (584ms)
+  ✓  10 [firefox] › tests/catalog-display.ts:10:2 › Direction updates nested context, native keyboard direction and aligned overlay placement (657ms)
+  ✓  11 [firefox] › tests/catalog-display.ts:11:33 › Display catalog light enlarged mobile prose and accessibility (1.5s)
+  ✓  12 [firefox] › tests/catalog-display.ts:11:33 › Display catalog dark enlarged mobile prose and accessibility (1.2s)
+(node:98815) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  13 [webkit] › tests/catalog-display.ts:7:2 › Avatar decodes, falls back after failure, recovers and releases removed images (1.0s)
+  ✓  14 [webkit] › tests/catalog-display.ts:8:2 › Avatar ignores delayed image completion after a newer source and unmount (614ms)
+  ✓  15 [webkit] › tests/catalog-display.ts:9:2 › Pagination keeps native links, selected state, bounds and disabled keyboard behavior (660ms)
+  ✓  16 [webkit] › tests/catalog-display.ts:10:2 › Direction updates nested context, native keyboard direction and aligned overlay placement (793ms)
+  ✓  17 [webkit] › tests/catalog-display.ts:11:33 › Display catalog light enlarged mobile prose and accessibility (1.1s)
+  ✓  18 [webkit] › tests/catalog-display.ts:11:33 › Display catalog dark enlarged mobile prose and accessibility (1.1s)
+
+  18 passed (19.2s)
+
+THEME_PORT=4403 RESULTS_FILE=docs/evidence/catalog-display-e2e.json bun run test:e2e --grep "Avatar |Pagination |Direction |Display catalog" --max-failures=1
+$ THEME_PRODUCTION=1 playwright test tests/e2e --grep "Avatar |Pagination |Direction |Display catalog" "--max-failures=1"
+[WebServer] $ vite build && tsc -p tsconfig.build.json
+[WebServer] (node:98886) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] $ vite build --config playground/vite.config.ts
+[WebServer] (node:98952) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:98953) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 21 tests using 1 worker
+
+(node:98970) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › tests/catalog-display.ts:7:2 › Avatar decodes, falls back after failure, recovers and releases removed images (804ms)
+  ✓   2 [chromium] › tests/catalog-display.ts:8:2 › Avatar ignores delayed image completion after a newer source and unmount (435ms)
+  ✓   3 [chromium] › tests/catalog-display.ts:9:2 › Pagination keeps native links, selected state, bounds and disabled keyboard behavior (365ms)
+  ✓   4 [chromium] › tests/catalog-display.ts:10:2 › Direction updates nested context, native keyboard direction and aligned overlay placement (449ms)
+  ✓   5 [chromium] › tests/catalog-display.ts:11:33 › Display catalog light enlarged mobile prose and accessibility (688ms)
+  ✓   6 [chromium] › tests/catalog-display.ts:11:33 › Display catalog dark enlarged mobile prose and accessibility (648ms)
+  ✓   7 [chromium] › tests/e2e/visual.spec.ts:53:45 › light Display catalog compositions (290ms)
+  ✓   8 [chromium] › tests/e2e/visual.spec.ts:53:45 › dark Display catalog compositions (272ms)
+  ✓   9 [chromium] › tests/e2e/visual.spec.ts:53:45 › mobile Display catalog compositions (256ms)
+(node:99066) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  10 [firefox] › tests/catalog-display.ts:7:2 › Avatar decodes, falls back after failure, recovers and releases removed images (1.2s)
+  ✓  11 [firefox] › tests/catalog-display.ts:8:2 › Avatar ignores delayed image completion after a newer source and unmount (487ms)
+  ✓  12 [firefox] › tests/catalog-display.ts:9:2 › Pagination keeps native links, selected state, bounds and disabled keyboard behavior (501ms)
+  ✓  13 [firefox] › tests/catalog-display.ts:10:2 › Direction updates nested context, native keyboard direction and aligned overlay placement (561ms)
+  ✓  14 [firefox] › tests/catalog-display.ts:11:33 › Display catalog light enlarged mobile prose and accessibility (1.0s)
+  ✓  15 [firefox] › tests/catalog-display.ts:11:33 › Display catalog dark enlarged mobile prose and accessibility (911ms)
+(node:99132) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  16 [webkit] › tests/catalog-display.ts:7:2 › Avatar decodes, falls back after failure, recovers and releases removed images (967ms)
+  ✓  17 [webkit] › tests/catalog-display.ts:8:2 › Avatar ignores delayed image completion after a newer source and unmount (500ms)
+  ✓  18 [webkit] › tests/catalog-display.ts:9:2 › Pagination keeps native links, selected state, bounds and disabled keyboard behavior (501ms)
+  ✓  19 [webkit] › tests/catalog-display.ts:10:2 › Direction updates nested context, native keyboard direction and aligned overlay placement (480ms)
+  ✓  20 [webkit] › tests/catalog-display.ts:11:33 › Display catalog light enlarged mobile prose and accessibility (946ms)
+  ✓  21 [webkit] › tests/catalog-display.ts:11:33 › Display catalog dark enlarged mobile prose and accessibility (935ms)
+
+  21 passed (19.8s)

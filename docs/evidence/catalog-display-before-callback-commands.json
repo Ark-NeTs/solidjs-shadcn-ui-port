@@ -1,0 +1,42 @@
+[
+  {
+    "command": "bun run check",
+    "exitCode": 0,
+    "seconds": 3.71
+  },
+  {
+    "command": "bun run lint",
+    "exitCode": 0,
+    "seconds": 1.48
+  },
+  {
+    "command": "bun run test --maxWorkers=2",
+    "exitCode": 0,
+    "seconds": 8.49
+  },
+  {
+    "command": "bun run test:coverage --maxWorkers=2",
+    "exitCode": 0,
+    "seconds": 9.17
+  },
+  {
+    "command": "bun run test:server",
+    "exitCode": 0,
+    "seconds": 0.98
+  },
+  {
+    "command": "RESULTS_FILE=docs/evidence/catalog-display-hydration.json bun run test:hydration --max-failures=1",
+    "exitCode": 0,
+    "seconds": 65.52
+  },
+  {
+    "command": "THEME_PORT=4403 RESULTS_FILE=docs/evidence/catalog-display-integration.json bun run test:integration --max-failures=1",
+    "exitCode": 0,
+    "seconds": 340.44
+  },
+  {
+    "command": "THEME_PORT=4403 RESULTS_FILE=docs/evidence/catalog-display-e2e.json bun run test:e2e --max-failures=1",
+    "exitCode": 0,
+    "seconds": 241.08
+  }
+]

@@ -79,3 +79,6 @@ import { NativeCatalogContent } from '../playground/catalog-native';
 it('renders native catalog semantics, form defaults and recovery content on the server',()=>{
  const html=renderToString(()=><NativeCatalogContent/>);for(const text of ['data-slot="alert"','data-slot="aspect-ratio"','data-slot="attachment"','data-slot="breadcrumb"','data-slot="bubble"','data-slot="button-group"','data-slot="empty"','data-slot="field"','data-slot="input-group"','data-slot="item"','data-slot="kbd"','data-slot="marker"','data-slot="message"','data-slot="native-select"','data-slot="spinner"','data-slot="table"','value="hello"','Keep this draft','role="alert"','for="catalog-address"','scope="col"','scope="row"'])expect(html).toContain(text);
 });
+
+import {DisplayCatalogContent} from '../playground/catalog-display';
+it('renders Avatar fallback, Pagination current page, nested Direction and semantic prose on the server',()=>{const html=renderToString(()=><DisplayCatalogContent/>);for(const text of ['data-slot="avatar"','data-slot="avatar-fallback"','AL','aria-current="page"','aria-disabled="true"','data-slot="direction-provider"','dir="ltr"','data-slot="typography"','<blockquote','<code'])expect(html).toContain(text);expect(html).not.toContain('data-slot="avatar-image"');});

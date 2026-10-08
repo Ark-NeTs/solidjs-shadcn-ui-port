@@ -40,3 +40,7 @@ export * from './components/ui/marker';
 export * from './components/ui/message';
 export * from './components/ui/field';
 export * from './components/ui/input-group';
+export * from './components/ui/avatar';
+export * from './components/ui/pagination';
+export * from './components/ui/typography';
+export * from './components/ui/direction';

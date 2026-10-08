@@ -1165,3 +1165,61 @@ at `/?catalog-native`, and [delivery evidence](NATIVE-CATALOG-DELIVERY.md).
 These examples provide grouped SSR and hydration coverage and three-browser
 interaction checks. They do not certify every combination of native props,
 manual screen-reader announcements, platform select popups or all visual states.
+
+## Avatar, Pagination, Direction and Typography
+
+See [display examples](../playground/catalog-display.tsx) at `/?catalog-display`.
+
+- `ui/avatar`: `Avatar`, `AvatarImage`, `AvatarFallback`, `AvatarBadge`,
+  `AvatarGroup`, `AvatarGroupCount`. Root sizes are `default`, `sm`, `lg`.
+  One AvatarImage belongs to each Avatar. Supply `alt` and useful fallback text.
+  Image source changes begin a new preload; stale events are ignored. Failed or
+  missing sources reveal fallback; a new valid source retries. `delayMs` delays
+  fallback presentation. Removing the image restores fallback; removing its owner
+  releases handlers/timers. Native image props/ref are applied when the image
+  renders, after preload. Root and Image offer `onLoadingStatusChange`.
+  Badge labels need semantic content, e.g. `role="img" aria-label="Available"`.
+  The component owns no identity service or upload operation.
+- `ui/pagination`: `Pagination`, `PaginationContent`, `PaginationItem`,
+  `PaginationLink`, `PaginationPrevious`, `PaginationNext`, `PaginationEllipsis`.
+  Supply hrefs and `isActive`; the host owns page calculation and fetching.
+  `disabled` removes href and Tab access, retains link semantics and suppresses
+  click callbacks/navigation. Previous/Next accept localized `text` and native
+  `aria-label`. This is link composition, not Kobalte's generated page engine.
+- `ui/direction`: `DirectionProvider dir="rtl"` (or `direction`, which takes
+  precedence) gives descendants a reactive context and a real native div boundary.
+  `useDirection()` returns an accessor; `useDirection(() => localDirection())`
+  prefers a supplied local value and otherwise inherits. Missing direction
+  inherits its provider; the outer default is LTR. Unlike the React provider this
+  emits a div: style that layout wrapper explicitly where needed. It is independent
+  of locale and does not translate text. Native and package keyboard/positioning
+  behavior reads the resulting DOM direction. External Kobalte providers do not
+  consume this owned context automatically.
+- `ui/typography`: `Typography` styles native prose descendants, with separate
+  `TypographyH1`, `H2`, `H3`, `H4`, `P`, `Blockquote`, `List`, `InlineCode`,
+  `Lead`, `Large`, `Small`, `Muted` parts (each prefixed `Typography`). The host
+  owns heading order and HTML content. No Markdown parser or HTML injection is
+  included. Add a keyboard stop and accessible name to horizontally scrolling
+  preformatted regions. Current upstream Typography redirects to Typeset; this
+  package delivers semantic typography recipes, not that separate CSS API.
+
+```tsx
+<DirectionProvider dir={direction()}>
+  <Avatar>
+    <AvatarImage src={person().image} alt={person().name} />
+    <AvatarFallback>{person().initials}</AvatarFallback>
+  </Avatar>
+  <Pagination aria-label="Search pages">
+    <PaginationContent>
+      <PaginationItem><PaginationLink href="?page=1" isActive>1</PaginationLink></PaginationItem>
+      <PaginationItem><PaginationNext href="?page=2" /></PaginationItem>
+    </PaginationContent>
+  </Pagination>
+</DirectionProvider>
+```
+
+Image loading does not run during SSR: fallback is rendered first. Hydration
+checks preserve server nodes before a user starts loading an image. Initially
+valid image loading during hydration, responsive image selection on actual
+high-DPI devices, manual assistive-technology announcements and router adapters
+remain unverified. See [display delivery](DISPLAY-CATALOG-DELIVERY.md).

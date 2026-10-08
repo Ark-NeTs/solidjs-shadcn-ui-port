@@ -1,0 +1,32 @@
+[
+  {
+    "browser": "chromium",
+    "checks": {
+      "loaded": true,
+      "fallback": true,
+      "recovered": true,
+      "unmounted": true
+    },
+    "diagnostics": [
+      {
+        "type": "warning",
+        "text": "[EFFECT_RELAY_TEAR] effect \"effect\" writes its compute output into \"signal\" on every run, and nothing else writes \"signal\" — it is derived state kept one flush late: everything reading it paints a frame behind everything reading the source. The written value is \"signal\" itself: read \"signal\" where \"signal\" is read (or createMemo it if a stable derivation is needed) and delete the effect.\n  in <Probe> › <Show> › value › <Image.Root> › <ImageContext> › computed › <Polymorphic> › <Dynamic> › <Anonymous> › computed › effect › <Image.Img> › effect\n[EFFECT_RELAY_TEAR] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#effect_relay_tear\n[EFFECT_RELAY_TEAR] deeper evidence: import { attribution } from \"solid-js/attribution\"; attribution.enable() explains every re-run — why-chains, costs(), feedback(), history(\"hold\" | \"waterfall\") — agent loop: node_modules/@solidjs/diagnostics/skills/agent-loops/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/diagnostics/skills/agent-loops/SKILL.md"
+      }
+    ]
+  },
+  {
+    "browser": "firefox",
+    "checks": {
+      "loaded": true,
+      "fallback": true,
+      "recovered": true,
+      "unmounted": true
+    },
+    "diagnostics": [
+      {
+        "type": "warning",
+        "text": "[EFFECT_RELAY_TEAR] effect \"effect\" writes its compute output into \"signal\" on every run, and nothing else writes \"signal\" — it is derived state kept one flush late: everything reading it paints a frame behind everything reading the source. The written value is \"signal\" itself: read \"signal\" where \"signal\" is read (or createMemo it if a stable derivation is needed) and delete the effect.\n  in <Probe> › <Show> › value › <Image.Root> › <ImageContext> › computed › <Polymorphic> › <Dynamic> › <Anonymous> › computed › effect › <Image.Img> › effect\n[EFFECT_RELAY_TEAR] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#effect_relay_tear\n[EFFECT_RELAY_TEAR] deeper evidence: import { attribution } from \"solid-js/attribution\"; attribution.enable() explains every re-run — why-chains, costs(), feedback(), history(\"hold\" | \"waterfall\") — agent loop: node_modules/@solidjs/diagnostics/skills/agent-loops/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/diagnostics/skills/agent-loops/SKILL.md"
+      }
+    ]
+  }
+]

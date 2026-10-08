@@ -49,3 +49,7 @@ for(const mode of ['light','dark','mobile'])test(`${mode} Progress states`,async
 for(const mode of ['light','dark','mobile'])test(`${mode} Native catalog compositions`,async({page})=>{
  if(mode==='mobile')await page.setViewportSize({width:390,height:844});await page.goto(`/?catalog-native${mode==='dark'?'&dark':''}`);await page.evaluate(()=>document.fonts.ready);await page.emulateMedia({reducedMotion:'reduce'});await expect(page.locator('main')).toHaveScreenshot(`catalog-native-${mode}.png`,{animations:'disabled',maxDiffPixelRatio:0.001});
 });
+
+for(const mode of ['light','dark','mobile'])test(`${mode} Display catalog compositions`,async({page})=>{
+ if(mode==='mobile')await page.setViewportSize({width:390,height:844});await page.goto(`/?catalog-display${mode==='dark'?'&dark':''}`);await page.evaluate(()=>document.fonts.ready);await page.emulateMedia({reducedMotion:'reduce'});await expect(page.locator('main')).toHaveScreenshot(`catalog-display-${mode}.png`,{animations:'disabled',maxDiffPixelRatio:0.001});
+});

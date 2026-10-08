@@ -503,3 +503,14 @@ transport, validation, shortcuts and message state. Keep canonical tokens intact
 use the existing destructive-emphasis token and foreground keyboard text for
 contrast. Logical alert-action placement and bounded example grids address RTL
 and enlarged text. [Delivery and limits](docs/NATIVE-CATALOG-DELIVERY.md).
+
+## 2026-10-09 — display/navigation compositions
+
+Evaluate Kobalte Image first and preserve its unpatched status-relay diagnostic.
+Use an owned preload lifecycle with stale-event guards for Avatar. Match the
+sibling's passive Pagination links rather than introduce a generated page engine.
+Direction owns an explicit reactive context and native div boundary, independent
+of locale; `display: contents` does not establish inline layout direction.
+Typography provides semantic recipes without a Markdown parser or a claim to
+upstream Typeset's complete CSS API. No new dependency or shared-token changes.
+[Acceptance and limits](docs/DISPLAY-CATALOG-DELIVERY.md).
