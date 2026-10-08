@@ -15,6 +15,9 @@ import { Popover, PopoverTrigger, PopoverContent, PopoverTitle, PopoverDescripti
 import { AlertDialog, AlertDialogTrigger, AlertDialogContent, AlertDialogTitle, AlertDialogDescription, AlertDialogCancel, AlertDialogAction } from 'shadcn-solidjs-theme/ui/alert-dialog';
 import { Combobox, ComboboxInput, ComboboxContent, ComboboxList, ComboboxItem } from 'shadcn-solidjs-theme/ui/combobox';
 
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from 'shadcn-solidjs-theme/ui/accordion';
+import { Collapsible, CollapsibleTrigger, CollapsibleContent } from 'shadcn-solidjs-theme/ui/collapsible';
+
 /** Keep request data deterministic across SSR and hydration; user changes belong to this owner. */
 export function HydrationFixture(props: { initiallyOpen: false | 'popover' | 'alert' }) {
   const [suffix, setSuffix] = createSignal('server');
@@ -56,6 +59,11 @@ export function HydrationFixture(props: { initiallyOpen: false | 'popover' | 'al
       <Input aria-label="Confirmation draft" defaultValue="Server confirmation draft"/>
       <AlertDialogCancel>Cancel confirmation</AlertDialogCancel><AlertDialogAction onClick={() => setConfirmed(value => value + 1)}>Confirm changes</AlertDialogAction>
     </AlertDialogContent></AlertDialog>
+    <Accordion type="single" collapsible defaultValue="draft">
+      <AccordionItem value="draft" triggerId={`disclosure-trigger-${suffix()}`} contentId={`disclosure-content-${suffix()}`}><AccordionTrigger>Hydrated draft section</AccordionTrigger><AccordionContent forceMount><Input aria-label="Accordion draft" defaultValue="Server accordion draft"/></AccordionContent></AccordionItem>
+      <AccordionItem value="other"><AccordionTrigger>Hydrated other section</AccordionTrigger><AccordionContent>Other disclosure content</AccordionContent></AccordionItem>
+    </Accordion>
+    <Collapsible defaultOpen><CollapsibleTrigger>Hydrated optional section</CollapsibleTrigger><CollapsibleContent><Input aria-label="Collapsible draft" defaultValue="Server collapsible draft"/></CollapsibleContent></Collapsible>
     <output data-testid="confirmed">{confirmed()}</output>
   </main>;
 }

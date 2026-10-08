@@ -1,0 +1,841 @@
+bun run check
+$ tsc --noEmit
+
+bun run lint
+$ eslint src tests playground scripts *.ts
+
+bun run test
+$ vitest run
+
+ RUN  v4.1.10 /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme
+
+
+ Test Files  10 passed (10)
+      Tests  115 passed (115)
+   Start at  19:04:35
+   Duration  2.27s (transform 1.97s, setup 2.91s, import 2.40s, tests 1.96s, environment 8.47s)
+
+
+bun run test:coverage
+$ vitest run --coverage
+
+ RUN  v4.1.10 /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme
+      Coverage enabled with v8
+
+
+ Test Files  10 passed (10)
+      Tests  115 passed (115)
+   Start at  19:04:38
+   Duration  2.49s (transform 2.62s, setup 2.73s, import 3.58s, tests 2.72s, environment 5.81s)
+
+ % Coverage report from v8
+-------------------|---------|----------|---------|---------|-------------------
+File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
+-------------------|---------|----------|---------|---------|-------------------
+-------------------|---------|----------|---------|---------|-------------------
+
+=============================== Coverage summary ===============================
+Statements   : 100% ( 1377/1377 )
+Branches     : 100% ( 815/815 )
+Functions    : 100% ( 573/573 )
+Lines        : 100% ( 432/432 )
+================================================================================
+
+bun run test:server
+$ vitest run --config vitest.server.config.ts
+
+ RUN  v4.1.10 /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme
+
+
+ Test Files  1 passed (1)
+      Tests  8 passed (8)
+   Start at  19:04:41
+   Duration  352ms (transform 204ms, setup 0ms, import 255ms, tests 17ms, environment 0ms)
+
+
+RESULTS_FILE=docs/evidence/disclosures-hydration.json bun run test:hydration
+$ playwright test --config playwright.hydration.config.ts
+[WebServer] $ node --conditions=development scripts/build-hydration.mjs
+[WebServer] (node:54022) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:54044) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 84 tests using 1 worker
+
+(node:54081) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › tests/hydration/errored.spec.ts:30:1 › rejected hydrated data preserves drafts and explicit Errored resets recover without duplicate requests (558ms)
+  ✓   2 [chromium] › tests/hydration/errored.spec.ts:59:54 › a stale retry's resolve cannot overwrite a newer successful request (480ms)
+  ✓   3 [chromium] › tests/hydration/errored.spec.ts:59:54 › a stale retry's reject cannot overwrite a newer successful request (479ms)
+  ✓   4 [chromium] › tests/hydration/errored.spec.ts:77:1 › late rejection after pending unmount stays contained and a fresh boundary can recover (490ms)
+  ✓   5 [chromium] › tests/hydration/errored.spec.ts:93:1 › late rejection after disposing the hydrated root does not restore an error or content (272ms)
+  ✓   6 [chromium] › tests/hydration/hydration.spec.ts:33:1 › hydrates server nodes, edits native forms, rewires labels and resets canonical values (597ms)
+  ✓   7 [chromium] › tests/hydration/hydration.spec.ts:66:1 › hydrates selected Tabs, preserves mounted drafts and updates both sides of live IDs (351ms)
+  ✓   8 [chromium] › tests/hydration/hydration.spec.ts:84:1 › hydrates closed overlays, updates naming, dismisses and restores focus without duplicate actions (646ms)
+  ✓   9 [chromium] › tests/hydration/hydration.spec.ts:110:51 › hydrates initially open popover and disposes active ownership (322ms)
+  ✓  10 [chromium] › tests/hydration/hydration.spec.ts:110:51 › hydrates initially open alert and disposes active ownership (372ms)
+  ✓  11 [chromium] › tests/hydration/hydration.spec.ts:135:1 › hydrates disclosures with stable owner IDs, retained drafts and ordinary remounts (354ms)
+  ✓  12 [chromium] › tests/hydration/loading.spec.ts:46:1 › compares native placeholders during the pending boundary handoff (252ms)
+  ✓  13 [chromium] › tests/hydration/loading.spec.ts:53:1 › hydrates pending Skeleton nodes, resolves the real boundary and unmounts ready content (229ms)
+  ✓  14 [chromium] › tests/hydration/loading.spec.ts:71:1 › unmounts hydrated pending boundaries and ignores old resolutions after a fresh mount (523ms)
+  ✓  15 [chromium] › tests/hydration/loading.spec.ts:92:1 › disposing the hydrated root prevents late promise completion from restoring content (304ms)
+  ✓  16 [chromium] › tests/hydration/retry-minimal.spec.ts:3:71 › plain Solid retry: replace-reset (342ms)
+  ✓  17 [chromium] › tests/hydration/retry-minimal.spec.ts:3:71 › plain Solid retry: replace-only (341ms)
+  ✓  18 [chromium] › tests/hydration/retry-minimal.spec.ts:3:71 › plain Solid retry: source-reset (338ms)
+  ✓  19 [chromium] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: plain (286ms)
+  ✓  20 [chromium] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: context (286ms)
+  ✓  21 [chromium] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: registration (287ms)
+  ✓  22 [chromium] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: registration-spread (297ms)
+  ✓  23 [chromium] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: registration-read (unsafe-pattern characterization) (198ms)
+  ✓  24 [chromium] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: package-shell (303ms)
+  ✓  25 [chromium] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: package-triggers (303ms)
+  ✓  26 [chromium] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: package-panels (304ms)
+  ✓  27 [chromium] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: package-controlled (316ms)
+  ✓  28 [chromium] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: package-uncontrolled (319ms)
+(node:54261) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  29 [firefox] › tests/hydration/errored.spec.ts:30:1 › rejected hydrated data preserves drafts and explicit Errored resets recover without duplicate requests (1.4s)
+  ✓  30 [firefox] › tests/hydration/errored.spec.ts:59:54 › a stale retry's resolve cannot overwrite a newer successful request (727ms)
+  ✓  31 [firefox] › tests/hydration/errored.spec.ts:59:54 › a stale retry's reject cannot overwrite a newer successful request (750ms)
+  ✓  32 [firefox] › tests/hydration/errored.spec.ts:77:1 › late rejection after pending unmount stays contained and a fresh boundary can recover (694ms)
+  ✓  33 [firefox] › tests/hydration/errored.spec.ts:93:1 › late rejection after disposing the hydrated root does not restore an error or content (468ms)
+  ✓  34 [firefox] › tests/hydration/hydration.spec.ts:33:1 › hydrates server nodes, edits native forms, rewires labels and resets canonical values (1.0s)
+  ✓  35 [firefox] › tests/hydration/hydration.spec.ts:66:1 › hydrates selected Tabs, preserves mounted drafts and updates both sides of live IDs (478ms)
+  ✓  36 [firefox] › tests/hydration/hydration.spec.ts:84:1 › hydrates closed overlays, updates naming, dismisses and restores focus without duplicate actions (1.0s)
+  ✓  37 [firefox] › tests/hydration/hydration.spec.ts:110:51 › hydrates initially open popover and disposes active ownership (507ms)
+  ✓  38 [firefox] › tests/hydration/hydration.spec.ts:110:51 › hydrates initially open alert and disposes active ownership (899ms)
+  ✓  39 [firefox] › tests/hydration/hydration.spec.ts:135:1 › hydrates disclosures with stable owner IDs, retained drafts and ordinary remounts (616ms)
+  ✓  40 [firefox] › tests/hydration/loading.spec.ts:46:1 › compares native placeholders during the pending boundary handoff (369ms)
+  ✓  41 [firefox] › tests/hydration/loading.spec.ts:53:1 › hydrates pending Skeleton nodes, resolves the real boundary and unmounts ready content (486ms)
+  ✓  42 [firefox] › tests/hydration/loading.spec.ts:71:1 › unmounts hydrated pending boundaries and ignores old resolutions after a fresh mount (842ms)
+  ✓  43 [firefox] › tests/hydration/loading.spec.ts:92:1 › disposing the hydrated root prevents late promise completion from restoring content (517ms)
+  ✓  44 [firefox] › tests/hydration/retry-minimal.spec.ts:3:71 › plain Solid retry: replace-reset (572ms)
+  ✓  45 [firefox] › tests/hydration/retry-minimal.spec.ts:3:71 › plain Solid retry: replace-only (550ms)
+  ✓  46 [firefox] › tests/hydration/retry-minimal.spec.ts:3:71 › plain Solid retry: source-reset (562ms)
+  ✓  47 [firefox] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: plain (503ms)
+  ✓  48 [firefox] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: context (939ms)
+  ✓  49 [firefox] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: registration (484ms)
+  ✓  50 [firefox] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: registration-spread (470ms)
+  ✓  51 [firefox] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: registration-read (unsafe-pattern characterization) (342ms)
+  ✓  52 [firefox] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: package-shell (484ms)
+  ✓  53 [firefox] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: package-triggers (485ms)
+  ✓  54 [firefox] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: package-panels (486ms)
+  ✓  55 [firefox] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: package-controlled (506ms)
+  ✓  56 [firefox] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: package-uncontrolled (505ms)
+(node:54441) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  57 [webkit] › tests/hydration/errored.spec.ts:30:1 › rejected hydrated data preserves drafts and explicit Errored resets recover without duplicate requests (969ms)
+  ✓  58 [webkit] › tests/hydration/errored.spec.ts:59:54 › a stale retry's resolve cannot overwrite a newer successful request (648ms)
+  ✓  59 [webkit] › tests/hydration/errored.spec.ts:59:54 › a stale retry's reject cannot overwrite a newer successful request (655ms)
+  ✓  60 [webkit] › tests/hydration/errored.spec.ts:77:1 › late rejection after pending unmount stays contained and a fresh boundary can recover (644ms)
+  ✓  61 [webkit] › tests/hydration/errored.spec.ts:93:1 › late rejection after disposing the hydrated root does not restore an error or content (465ms)
+  ✓  62 [webkit] › tests/hydration/hydration.spec.ts:33:1 › hydrates server nodes, edits native forms, rewires labels and resets canonical values (853ms)
+  ✓  63 [webkit] › tests/hydration/hydration.spec.ts:66:1 › hydrates selected Tabs, preserves mounted drafts and updates both sides of live IDs (548ms)
+  ✓  64 [webkit] › tests/hydration/hydration.spec.ts:84:1 › hydrates closed overlays, updates naming, dismisses and restores focus without duplicate actions (849ms)
+  ✓  65 [webkit] › tests/hydration/hydration.spec.ts:110:51 › hydrates initially open popover and disposes active ownership (468ms)
+  ✓  66 [webkit] › tests/hydration/hydration.spec.ts:110:51 › hydrates initially open alert and disposes active ownership (484ms)
+  ✓  67 [webkit] › tests/hydration/hydration.spec.ts:135:1 › hydrates disclosures with stable owner IDs, retained drafts and ordinary remounts (577ms)
+  ✓  68 [webkit] › tests/hydration/loading.spec.ts:46:1 › compares native placeholders during the pending boundary handoff (423ms)
+  ✓  69 [webkit] › tests/hydration/loading.spec.ts:53:1 › hydrates pending Skeleton nodes, resolves the real boundary and unmounts ready content (426ms)
+  ✓  70 [webkit] › tests/hydration/loading.spec.ts:71:1 › unmounts hydrated pending boundaries and ignores old resolutions after a fresh mount (810ms)
+  ✓  71 [webkit] › tests/hydration/loading.spec.ts:92:1 › disposing the hydrated root prevents late promise completion from restoring content (517ms)
+  ✓  72 [webkit] › tests/hydration/retry-minimal.spec.ts:3:71 › plain Solid retry: replace-reset (475ms)
+  ✓  73 [webkit] › tests/hydration/retry-minimal.spec.ts:3:71 › plain Solid retry: replace-only (478ms)
+  ✓  74 [webkit] › tests/hydration/retry-minimal.spec.ts:3:71 › plain Solid retry: source-reset (504ms)
+  ✓  75 [webkit] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: plain (464ms)
+  ✓  76 [webkit] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: context (462ms)
+  ✓  77 [webkit] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: registration (505ms)
+  ✓  78 [webkit] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: registration-spread (454ms)
+  ✓  79 [webkit] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: registration-read (unsafe-pattern characterization) (339ms)
+  ✓  80 [webkit] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: package-shell (456ms)
+  ✓  81 [webkit] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: package-triggers (483ms)
+  ✓  82 [webkit] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: package-panels (462ms)
+  ✓  83 [webkit] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: package-controlled (462ms)
+  ✓  84 [webkit] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: package-uncontrolled (472ms)
+
+  84 passed (47.7s)
+
+THEME_PORT=4403 RESULTS_FILE=docs/evidence/disclosures-integration.json bun run test:integration
+$ playwright test tests/integration
+[WebServer] $ vite --config playground/vite.config.ts
+[WebServer] (node:54632) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 273 tests using 1 worker
+
+(node:54654) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓    1 [chromium] › tests/alert-dialog-focus.ts:28:3 › Alert Dialog wraps both Tab boundaries and skips disabled, hidden and negative-tabindex controls (531ms)
+  ✓    2 [chromium] › tests/alert-dialog-focus.ts:59:5 › nested Alert Dialog wraps focus and Escape restores its parent (427ms)
+  ✓    3 [chromium] › tests/alert-dialog-focus.ts:59:5 › nested Alert Dialog wraps focus and Cancel restores its parent (356ms)
+  ✓    4 [chromium] › tests/alert-dialog-focus.ts:59:5 › nested Alert Dialog wraps focus and Confirm restores its parent (357ms)
+  ✓    5 [chromium] › tests/alert-dialog-focus.ts:59:5 › nested Alert Dialog wraps focus and Escape restores its parent with force-mounted content (373ms)
+  ✓    6 [chromium] › tests/alert-dialog-focus.ts:107:3 › a queued native close event cannot dismiss a reopened force-mounted Alert Dialog (441ms)
+  ✓    7 [chromium] › tests/card-layout.ts:35:7 › light desktop cards wrap long content and retain compact spacing and usable actions (449ms)
+  ✓    8 [chromium] › tests/card-layout.ts:35:7 › light narrow enlarged cards wrap long content and retain compact spacing and usable actions (557ms)
+  ✓    9 [chromium] › tests/card-layout.ts:70:5 › light vertical separators stretch, accept overrides, expose semantics and skip keyboard navigation (436ms)
+  ✓   10 [chromium] › tests/card-layout.ts:35:7 › dark desktop cards wrap long content and retain compact spacing and usable actions (452ms)
+  ✓   11 [chromium] › tests/card-layout.ts:35:7 › dark narrow enlarged cards wrap long content and retain compact spacing and usable actions (523ms)
+  ✓   12 [chromium] › tests/card-layout.ts:70:5 › dark vertical separators stretch, accept overrides, expose semantics and skip keyboard navigation (405ms)
+  ✓   13 [chromium] › tests/integration/combobox.spec.ts:4:1 › searches with keyboard, submits canonical state, resets and validates required selection (552ms)
+  ✓   14 [chromium] › tests/integration/combobox.spec.ts:7:1 › handles empty, disabled and rejected selections without diagnostics (681ms)
+  ✓   15 [chromium] › tests/integration/combobox.spec.ts:10:1 › searches inside a popup and returns focus to its trigger (446ms)
+  ✓   16 [chromium] › tests/integration/combobox.spec.ts:13:1 › selects multiple chips and clears by explicit remove actions (529ms)
+  ✓   17 [chromium] › tests/integration/combobox.spec.ts:16:1 › keeps open content accessible and within enlarged narrow viewports (737ms)
+  ✓   18 [chromium] › tests/combobox-contracts.ts:7:5 › Uncontrolled multiple values submit, remove, clear and reset to their defaults (745ms)
+  ✓   19 [chromium] › tests/combobox-contracts.ts:7:5 › Controlled multiple values submit, remove, clear and reset to their defaults (680ms)
+  ✓   20 [chromium] › tests/combobox-contracts.ts:40:3 › object result replacement preserves stable-key selection and native form reset (703ms)
+  ✓   21 [chromium] › tests/combobox-contracts.ts:70:3 › rejected controlled opening, query and dismissal retain owner state until an owner update (554ms)
+  ✓   22 [chromium] › tests/combobox-navigation.ts:21:5 › active options stay visible through wrapping and scrolling in desktop layouts (495ms)
+  ✓   23 [chromium] › tests/combobox-navigation.ts:21:5 › active options stay visible through wrapping and scrolling in narrow enlarged layouts (622ms)
+  ✓   24 [chromium] › tests/combobox-navigation.ts:44:3 › inline Tab and Shift+Tab discard drafts and reach native neighboring controls (311ms)
+  ✓   25 [chromium] › tests/combobox-navigation.ts:62:3 › popup search Tab reaches the next control and Shift+Tab returns to its trigger (461ms)
+  ✓   26 [chromium] › tests/combobox-navigation.ts:82:3 › nested chooser selects and dismisses independently while its modal retains focus and scroll lock (766ms)
+  ✓   27 [chromium] › tests/disclosures.ts:7:2 › single accordion wires IDs, skips disabled items, supports orientation/RTL and preserves forced drafts (531ms)
+  ✓   28 [chromium] › tests/disclosures.ts:14:2 › multiple expansion is independent and nested disclosure keys do not navigate the parent (300ms)
+  ✓   29 [chromium] › tests/disclosures.ts:18:2 › collapsible remounts ordinary content and keeps rejected owner state until explicitly changed (433ms)
+  ✓   30 [chromium] › tests/disclosures.ts:22:33 › disclosures keep accessible names, focus and long content at enlarged narrow width in light (1.0s)
+  ✓   31 [chromium] › tests/disclosures.ts:22:33 › disclosures keep accessible names, focus and long content at enlarged narrow width in dark (966ms)
+  ✓   32 [chromium] › tests/integration/form-fields.spec.ts:5:1 › labels focus their controls and keyboard navigation exposes focus rings (451ms)
+  ✓   33 [chromium] › tests/integration/form-fields.spec.ts:11:1 › read-only, disabled, file and invalid fields retain their native behavior (685ms)
+  ✓   34 [chromium] › tests/integration/form-fields.spec.ts:19:36 › light invalid field presentation has no axe violations (1.2s)
+  ✓   35 [chromium] › tests/integration/form-fields.spec.ts:19:36 › dark invalid field presentation has no axe violations (1.3s)
+  ✓   36 [chromium] › tests/integration/foundation.spec.ts:5:1 › keyboard activation, focus ring, disabled examples and navigation (510ms)
+  ✓   37 [chromium] › tests/integration/foundation.spec.ts:12:1 › card size and separator orientation update geometry and semantics (437ms)
+  ✓   38 [chromium] › tests/integration/foundation.spec.ts:18:1 › custom theme changes token-driven button colors (368ms)
+  ✓   39 [chromium] › tests/integration/foundation.spec.ts:22:1 › loading placeholders are hidden from accessibility tree and stop motion (442ms)
+  ✓   40 [chromium] › tests/integration/foundation.spec.ts:27:36 › light examples have no axe accessibility violations (1.0s)
+  ✓   41 [chromium] › tests/integration/foundation.spec.ts:27:36 › dark examples have no axe accessibility violations (1.3s)
+  ✓   42 [chromium] › tests/link-navigation.ts:37:7 › Button link has visible light keyboard focus and native Enter navigation (309ms)
+  ✓   43 [chromium] › tests/link-navigation.ts:37:7 › Badge link has visible light keyboard focus and native Enter navigation (290ms)
+  ✓   44 [chromium] › tests/link-navigation.ts:37:7 › Button link has visible dark keyboard focus and native Enter navigation (291ms)
+  ✓   45 [chromium] › tests/link-navigation.ts:37:7 › Badge link has visible dark keyboard focus and native Enter navigation (314ms)
+  ✓   46 [chromium] › tests/link-navigation.ts:68:3 › disabled Button anchor is skipped in both tab directions and blocks pointer activation (295ms)
+  ✓   47 [chromium] › tests/link-navigation.ts:84:3 › disabling a focused Button anchor blocks keyboard and pointer activation until re-enabled (342ms)
+  ✓   48 [chromium] › tests/native-fields.ts:18:3 › number Input enforces required, bounds and step and restores its native default (591ms)
+  ✓   49 [chromium] › tests/native-fields.ts:42:5 › date Input validates bounds and submits and resets its native string value (434ms)
+  ✓   50 [chromium] › tests/native-fields.ts:42:5 › time Input validates bounds and submits and resets its native string value (406ms)
+  ✓   51 [chromium] › tests/native-fields.ts:42:5 › datetime-local Input validates bounds and submits and resets its native string value (409ms)
+  ✓   52 [chromium] › tests/native-fields.ts:60:3 › range Input uses keyboard steps and limits and serializes and resets its value (375ms)
+  ✓   53 [chromium] › tests/native-fields.ts:78:3 › text-like Input types retain native values and email and URL reject invalid submission (474ms)
+  ✓   54 [chromium] › tests/native-fields.ts:101:3 › read-only Textarea remains focusable, scrollable and submitted, then accepts edits when unlocked (472ms)
+  ✓   55 [chromium] › tests/native-fields.ts:122:5 › Textarea supports actual pointer resizing in desktop layout (473ms)
+  ✓   56 [chromium] › tests/native-fields.ts:122:5 › Textarea supports actual pointer resizing in narrow enlarged layout (484ms)
+  ✓   57 [chromium] › tests/native-fields.ts:144:3 › Label follows live for and ID reassociation without losing drafts or activating a disabled target (617ms)
+  ✓   58 [chromium] › tests/native-fields.ts:195:3 › Label refresh preserves editing focus, selection and nodes through repeated reassociation (307ms)
+  ✓   59 [chromium] › tests/integration/overlays.spec.ts:5:1 › tabs skip disabled entries and support automatic, manual, vertical and RTL navigation (632ms)
+  ✓   60 [chromium] › tests/integration/overlays.spec.ts:11:1 › popover positions, labels and restores focus on Escape but preserves outside clicks (998ms)
+  ✓   61 [chromium] › tests/integration/overlays.spec.ts:17:1 › nested alert dismissal leaves the popover open and returns focus to its trigger (639ms)
+  ✓   62 [chromium] › tests/integration/overlays.spec.ts:20:1 › modal popover traps focus and releases scroll locking (589ms)
+  ✓   63 [chromium] › tests/integration/overlays.spec.ts:23:1 › alert blocks outside dismissal and preserves a draft through pending failure and retry (697ms)
+  ✓   64 [chromium] › tests/integration/overlays.spec.ts:26:32 › overlays pass axe with light theme and enlarged text (1.6s)
+  ✓   65 [chromium] › tests/integration/overlays.spec.ts:26:32 › overlays pass axe with dark theme and enlarged text (1.6s)
+  ✓   66 [chromium] › tests/popover-placement.ts:37:3 › follows two-axis ancestor scrolling and document scrolling while remaining open (727ms)
+  ✓   67 [chromium] › tests/popover-placement.ts:57:3 › reanchors after viewport, anchor and popup resizing without reopening (975ms)
+  ✓   68 [chromium] › tests/popover-placement.ts:77:3 › tracks a transformed anchor during movement and returns to its original position (1.8s)
+  ✓   69 [chromium] › tests/popover-placement.ts:108:3 › flips and shifts at viewport edges, constrains oversized content and keeps its action reachable (577ms)
+  ✓   70 [chromium] › tests/popover-placement.ts:130:3 › escapes a transformed paint-clipping ancestor and accepts clicks outside its bounds (557ms)
+  ✓   71 [chromium] › tests/skeleton-loading.ts:24:5 › light desktop Skeleton Loading resolves and releases its fallback and ready subtree (409ms)
+  ✓   72 [chromium] › tests/skeleton-loading.ts:24:5 › dark narrow enlarged Skeleton Loading resolves and releases its fallback and ready subtree (507ms)
+  ✓   73 [chromium] › tests/skeleton-loading.ts:61:3 › pending Skeleton boundaries stay disposed after late resolution and cannot replace a fresh request (575ms)
+  ✓   74 [chromium] › tests/tabs-lifecycle.ts:25:5 › automatic Tabs recover focus when the focused trigger is removed (321ms)
+  ✓   75 [chromium] › tests/tabs-lifecycle.ts:47:5 › automatic Tabs preserve the focused node across keyed reordering and navigate the new DOM order (371ms)
+  ✓   76 [chromium] › tests/tabs-lifecycle.ts:25:5 › manual Tabs recover focus when the focused trigger is removed (307ms)
+  ✓   77 [chromium] › tests/tabs-lifecycle.ts:47:5 › manual Tabs preserve the focused node across keyed reordering and navigate the new DOM order (373ms)
+  ✓   78 [chromium] › tests/tabs-lifecycle.ts:81:3 › force-mounted panels preserve draft nodes while hidden and lazy panels dispose their drafts (525ms)
+  ✓   79 [chromium] › tests/tabs-lifecycle.ts:109:3 › external removal and reordering preserve focus outside the tablist (325ms)
+  ✓   80 [chromium] › tests/toggle-forms.ts:27:5 › Checkbox honors bubbling reset cancellation and recovers on an allowed reset (496ms)
+  ✓   81 [chromium] › tests/toggle-forms.ts:46:5 › Checkbox rebinds explicit ownership, detaches and returns to its ancestor without remounting (868ms)
+  ✓   82 [chromium] › tests/toggle-forms.ts:79:5 › Checkbox discards queued reset work after reassociation or unmount and remounts cleanly (625ms)
+  ✓   83 [chromium] › tests/toggle-forms.ts:27:5 › Switch honors bubbling reset cancellation and recovers on an allowed reset (478ms)
+  ✓   84 [chromium] › tests/toggle-forms.ts:46:5 › Switch rebinds explicit ownership, detaches and returns to its ancestor without remounting (806ms)
+  ✓   85 [chromium] › tests/toggle-forms.ts:79:5 › Switch discards queued reset work after reassociation or unmount and remounts cleanly (675ms)
+  ✓   86 [chromium] › tests/toggle-forms.ts:105:3 › Checkbox preserves mixed semantics on canceled reset and restores them on allowed reset (460ms)
+  ✓   87 [chromium] › tests/integration/toggles.spec.ts:5:1 › labels and Space update checkboxes, mixed selections and switches once (500ms)
+  ✓   88 [chromium] › tests/integration/toggles.spec.ts:10:1 › disabled/read-only and rejected controlled changes preserve the displayed value (518ms)
+  ✓   89 [chromium] › tests/integration/toggles.spec.ts:15:1 › both switch sizes move the thumb correctly in LTR and RTL and respect reduced motion (474ms)
+  ✓   90 [chromium] › tests/integration/toggles.spec.ts:23:36 › light toggles including invalid controls pass axe (1.3s)
+  ✓   91 [chromium] › tests/integration/toggles.spec.ts:23:36 › dark toggles including invalid controls pass axe (1.3s)
+(node:55323) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   92 [firefox] › tests/alert-dialog-focus.ts:28:3 › Alert Dialog wraps both Tab boundaries and skips disabled, hidden and negative-tabindex controls (1.1s)
+  ✓   93 [firefox] › tests/alert-dialog-focus.ts:59:5 › nested Alert Dialog wraps focus and Escape restores its parent (551ms)
+  ✓   94 [firefox] › tests/alert-dialog-focus.ts:59:5 › nested Alert Dialog wraps focus and Cancel restores its parent (526ms)
+  ✓   95 [firefox] › tests/alert-dialog-focus.ts:59:5 › nested Alert Dialog wraps focus and Confirm restores its parent (605ms)
+  ✓   96 [firefox] › tests/alert-dialog-focus.ts:59:5 › nested Alert Dialog wraps focus and Escape restores its parent with force-mounted content (538ms)
+  ✓   97 [firefox] › tests/alert-dialog-focus.ts:107:3 › a queued native close event cannot dismiss a reopened force-mounted Alert Dialog (577ms)
+  ✓   98 [firefox] › tests/card-layout.ts:35:7 › light desktop cards wrap long content and retain compact spacing and usable actions (655ms)
+  ✓   99 [firefox] › tests/card-layout.ts:35:7 › light narrow enlarged cards wrap long content and retain compact spacing and usable actions (643ms)
+  ✓  100 [firefox] › tests/card-layout.ts:70:5 › light vertical separators stretch, accept overrides, expose semantics and skip keyboard navigation (479ms)
+  ✓  101 [firefox] › tests/card-layout.ts:35:7 › dark desktop cards wrap long content and retain compact spacing and usable actions (1.0s)
+  ✓  102 [firefox] › tests/card-layout.ts:35:7 › dark narrow enlarged cards wrap long content and retain compact spacing and usable actions (714ms)
+  ✓  103 [firefox] › tests/card-layout.ts:70:5 › dark vertical separators stretch, accept overrides, expose semantics and skip keyboard navigation (545ms)
+  ✓  104 [firefox] › tests/integration/combobox.spec.ts:4:1 › searches with keyboard, submits canonical state, resets and validates required selection (1.3s)
+  ✓  105 [firefox] › tests/integration/combobox.spec.ts:7:1 › handles empty, disabled and rejected selections without diagnostics (672ms)
+  ✓  106 [firefox] › tests/integration/combobox.spec.ts:10:1 › searches inside a popup and returns focus to its trigger (629ms)
+  ✓  107 [firefox] › tests/integration/combobox.spec.ts:13:1 › selects multiple chips and clears by explicit remove actions (684ms)
+  ✓  108 [firefox] › tests/integration/combobox.spec.ts:16:1 › keeps open content accessible and within enlarged narrow viewports (959ms)
+  ✓  109 [firefox] › tests/combobox-contracts.ts:7:5 › Uncontrolled multiple values submit, remove, clear and reset to their defaults (876ms)
+  ✓  110 [firefox] › tests/combobox-contracts.ts:7:5 › Controlled multiple values submit, remove, clear and reset to their defaults (838ms)
+  ✓  111 [firefox] › tests/combobox-contracts.ts:40:3 › object result replacement preserves stable-key selection and native form reset (1.6s)
+  ✓  112 [firefox] › tests/combobox-contracts.ts:70:3 › rejected controlled opening, query and dismissal retain owner state until an owner update (840ms)
+  ✓  113 [firefox] › tests/combobox-navigation.ts:21:5 › active options stay visible through wrapping and scrolling in desktop layouts (816ms)
+  ✓  114 [firefox] › tests/combobox-navigation.ts:21:5 › active options stay visible through wrapping and scrolling in narrow enlarged layouts (830ms)
+  ✓  115 [firefox] › tests/combobox-navigation.ts:44:3 › inline Tab and Shift+Tab discard drafts and reach native neighboring controls (388ms)
+  ✓  116 [firefox] › tests/combobox-navigation.ts:62:3 › popup search Tab reaches the next control and Shift+Tab returns to its trigger (512ms)
+  ✓  117 [firefox] › tests/combobox-navigation.ts:82:3 › nested chooser selects and dismisses independently while its modal retains focus and scroll lock (977ms)
+  ✓  118 [firefox] › tests/disclosures.ts:7:2 › single accordion wires IDs, skips disabled items, supports orientation/RTL and preserves forced drafts (714ms)
+  ✓  119 [firefox] › tests/disclosures.ts:14:2 › multiple expansion is independent and nested disclosure keys do not navigate the parent (346ms)
+  ✓  120 [firefox] › tests/disclosures.ts:18:2 › collapsible remounts ordinary content and keeps rejected owner state until explicitly changed (492ms)
+  ✓  121 [firefox] › tests/disclosures.ts:22:33 › disclosures keep accessible names, focus and long content at enlarged narrow width in light (1.6s)
+  ✓  122 [firefox] › tests/disclosures.ts:22:33 › disclosures keep accessible names, focus and long content at enlarged narrow width in dark (1.2s)
+  ✓  123 [firefox] › tests/integration/form-fields.spec.ts:5:1 › labels focus their controls and keyboard navigation exposes focus rings (515ms)
+  ✓  124 [firefox] › tests/integration/form-fields.spec.ts:11:1 › read-only, disabled, file and invalid fields retain their native behavior (645ms)
+  ✓  125 [firefox] › tests/integration/form-fields.spec.ts:19:36 › light invalid field presentation has no axe violations (1.6s)
+  ✓  126 [firefox] › tests/integration/form-fields.spec.ts:19:36 › dark invalid field presentation has no axe violations (1.6s)
+  ✓  127 [firefox] › tests/integration/foundation.spec.ts:5:1 › keyboard activation, focus ring, disabled examples and navigation (542ms)
+  ✓  128 [firefox] › tests/integration/foundation.spec.ts:12:1 › card size and separator orientation update geometry and semantics (521ms)
+  ✓  129 [firefox] › tests/integration/foundation.spec.ts:18:1 › custom theme changes token-driven button colors (449ms)
+  ✓  130 [firefox] › tests/integration/foundation.spec.ts:22:1 › loading placeholders are hidden from accessibility tree and stop motion (497ms)
+  ✓  131 [firefox] › tests/integration/foundation.spec.ts:27:36 › light examples have no axe accessibility violations (1.9s)
+  ✓  132 [firefox] › tests/integration/foundation.spec.ts:27:36 › dark examples have no axe accessibility violations (1.6s)
+  ✓  133 [firefox] › tests/link-navigation.ts:37:7 › Button link has visible light keyboard focus and native Enter navigation (402ms)
+  ✓  134 [firefox] › tests/link-navigation.ts:37:7 › Badge link has visible light keyboard focus and native Enter navigation (380ms)
+  ✓  135 [firefox] › tests/link-navigation.ts:37:7 › Button link has visible dark keyboard focus and native Enter navigation (392ms)
+  ✓  136 [firefox] › tests/link-navigation.ts:37:7 › Badge link has visible dark keyboard focus and native Enter navigation (407ms)
+  ✓  137 [firefox] › tests/link-navigation.ts:68:3 › disabled Button anchor is skipped in both tab directions and blocks pointer activation (390ms)
+  ✓  138 [firefox] › tests/link-navigation.ts:84:3 › disabling a focused Button anchor blocks keyboard and pointer activation until re-enabled (544ms)
+  ✓  139 [firefox] › tests/native-fields.ts:18:3 › number Input enforces required, bounds and step and restores its native default (819ms)
+  ✓  140 [firefox] › tests/native-fields.ts:42:5 › date Input validates bounds and submits and resets its native string value (588ms)
+  ✓  141 [firefox] › tests/native-fields.ts:42:5 › time Input validates bounds and submits and resets its native string value (1.1s)
+  ✓  142 [firefox] › tests/native-fields.ts:42:5 › datetime-local Input validates bounds and submits and resets its native string value (626ms)
+  ✓  143 [firefox] › tests/native-fields.ts:60:3 › range Input uses keyboard steps and limits and serializes and resets its value (533ms)
+  ✓  144 [firefox] › tests/native-fields.ts:78:3 › text-like Input types retain native values and email and URL reject invalid submission (653ms)
+  ✓  145 [firefox] › tests/native-fields.ts:101:3 › read-only Textarea remains focusable, scrollable and submitted, then accepts edits when unlocked (719ms)
+  ✓  146 [firefox] › tests/native-fields.ts:122:5 › Textarea supports actual pointer resizing in desktop layout (653ms)
+  ✓  147 [firefox] › tests/native-fields.ts:122:5 › Textarea supports actual pointer resizing in narrow enlarged layout (625ms)
+  ✓  148 [firefox] › tests/native-fields.ts:144:3 › Label follows live for and ID reassociation without losing drafts or activating a disabled target (912ms)
+  ✓  149 [firefox] › tests/native-fields.ts:195:3 › Label refresh preserves editing focus, selection and nodes through repeated reassociation (477ms)
+  ✓  150 [firefox] › tests/integration/overlays.spec.ts:5:1 › tabs skip disabled entries and support automatic, manual, vertical and RTL navigation (747ms)
+  ✓  151 [firefox] › tests/integration/overlays.spec.ts:11:1 › popover positions, labels and restores focus on Escape but preserves outside clicks (1.5s)
+  ✓  152 [firefox] › tests/integration/overlays.spec.ts:17:1 › nested alert dismissal leaves the popover open and returns focus to its trigger (678ms)
+  ✓  153 [firefox] › tests/integration/overlays.spec.ts:20:1 › modal popover traps focus and releases scroll locking (639ms)
+  ✓  154 [firefox] › tests/integration/overlays.spec.ts:23:1 › alert blocks outside dismissal and preserves a draft through pending failure and retry (965ms)
+  ✓  155 [firefox] › tests/integration/overlays.spec.ts:26:32 › overlays pass axe with light theme and enlarged text (2.3s)
+  ✓  156 [firefox] › tests/integration/overlays.spec.ts:26:32 › overlays pass axe with dark theme and enlarged text (2.4s)
+  ✓  157 [firefox] › tests/popover-placement.ts:37:3 › follows two-axis ancestor scrolling and document scrolling while remaining open (705ms)
+  ✓  158 [firefox] › tests/popover-placement.ts:57:3 › reanchors after viewport, anchor and popup resizing without reopening (799ms)
+  ✓  159 [firefox] › tests/popover-placement.ts:77:3 › tracks a transformed anchor during movement and returns to its original position (2.0s)
+  ✓  160 [firefox] › tests/popover-placement.ts:108:3 › flips and shifts at viewport edges, constrains oversized content and keeps its action reachable (569ms)
+  ✓  161 [firefox] › tests/popover-placement.ts:130:3 › escapes a transformed paint-clipping ancestor and accepts clicks outside its bounds (1.4s)
+  ✓  162 [firefox] › tests/skeleton-loading.ts:24:5 › light desktop Skeleton Loading resolves and releases its fallback and ready subtree (572ms)
+  ✓  163 [firefox] › tests/skeleton-loading.ts:24:5 › dark narrow enlarged Skeleton Loading resolves and releases its fallback and ready subtree (569ms)
+  ✓  164 [firefox] › tests/skeleton-loading.ts:61:3 › pending Skeleton boundaries stay disposed after late resolution and cannot replace a fresh request (841ms)
+  ✓  165 [firefox] › tests/tabs-lifecycle.ts:25:5 › automatic Tabs recover focus when the focused trigger is removed (456ms)
+  ✓  166 [firefox] › tests/tabs-lifecycle.ts:47:5 › automatic Tabs preserve the focused node across keyed reordering and navigate the new DOM order (554ms)
+  ✓  167 [firefox] › tests/tabs-lifecycle.ts:25:5 › manual Tabs recover focus when the focused trigger is removed (465ms)
+  ✓  168 [firefox] › tests/tabs-lifecycle.ts:47:5 › manual Tabs preserve the focused node across keyed reordering and navigate the new DOM order (588ms)
+  ✓  169 [firefox] › tests/tabs-lifecycle.ts:81:3 › force-mounted panels preserve draft nodes while hidden and lazy panels dispose their drafts (736ms)
+  ✓  170 [firefox] › tests/tabs-lifecycle.ts:109:3 › external removal and reordering preserve focus outside the tablist (484ms)
+  ✓  171 [firefox] › tests/toggle-forms.ts:27:5 › Checkbox honors bubbling reset cancellation and recovers on an allowed reset (1.1s)
+  ✓  172 [firefox] › tests/toggle-forms.ts:46:5 › Checkbox rebinds explicit ownership, detaches and returns to its ancestor without remounting (1.2s)
+  ✓  173 [firefox] › tests/toggle-forms.ts:79:5 › Checkbox discards queued reset work after reassociation or unmount and remounts cleanly (936ms)
+  ✓  174 [firefox] › tests/toggle-forms.ts:27:5 › Switch honors bubbling reset cancellation and recovers on an allowed reset (618ms)
+  ✓  175 [firefox] › tests/toggle-forms.ts:46:5 › Switch rebinds explicit ownership, detaches and returns to its ancestor without remounting (1.1s)
+  ✓  176 [firefox] › tests/toggle-forms.ts:79:5 › Switch discards queued reset work after reassociation or unmount and remounts cleanly (1.0s)
+  ✓  177 [firefox] › tests/toggle-forms.ts:105:3 › Checkbox preserves mixed semantics on canceled reset and restores them on allowed reset (613ms)
+  ✓  178 [firefox] › tests/integration/toggles.spec.ts:5:1 › labels and Space update checkboxes, mixed selections and switches once (759ms)
+  ✓  179 [firefox] › tests/integration/toggles.spec.ts:10:1 › disabled/read-only and rejected controlled changes preserve the displayed value (747ms)
+  ✓  180 [firefox] › tests/integration/toggles.spec.ts:15:1 › both switch sizes move the thumb correctly in LTR and RTL and respect reduced motion (637ms)
+  ✓  181 [firefox] › tests/integration/toggles.spec.ts:23:36 › light toggles including invalid controls pass axe (2.2s)
+  ✓  182 [firefox] › tests/integration/toggles.spec.ts:23:36 › dark toggles including invalid controls pass axe (2.2s)
+(node:56186) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  183 [webkit] › tests/alert-dialog-focus.ts:28:3 › Alert Dialog wraps both Tab boundaries and skips disabled, hidden and negative-tabindex controls (1.0s)
+  ✓  184 [webkit] › tests/alert-dialog-focus.ts:59:5 › nested Alert Dialog wraps focus and Escape restores its parent (655ms)
+  ✓  185 [webkit] › tests/alert-dialog-focus.ts:59:5 › nested Alert Dialog wraps focus and Cancel restores its parent (674ms)
+  ✓  186 [webkit] › tests/alert-dialog-focus.ts:59:5 › nested Alert Dialog wraps focus and Confirm restores its parent (556ms)
+  ✓  187 [webkit] › tests/alert-dialog-focus.ts:59:5 › nested Alert Dialog wraps focus and Escape restores its parent with force-mounted content (584ms)
+  ✓  188 [webkit] › tests/alert-dialog-focus.ts:107:3 › a queued native close event cannot dismiss a reopened force-mounted Alert Dialog (540ms)
+  ✓  189 [webkit] › tests/card-layout.ts:35:7 › light desktop cards wrap long content and retain compact spacing and usable actions (597ms)
+  ✓  190 [webkit] › tests/card-layout.ts:35:7 › light narrow enlarged cards wrap long content and retain compact spacing and usable actions (643ms)
+  ✓  191 [webkit] › tests/card-layout.ts:70:5 › light vertical separators stretch, accept overrides, expose semantics and skip keyboard navigation (551ms)
+  ✓  192 [webkit] › tests/card-layout.ts:35:7 › dark desktop cards wrap long content and retain compact spacing and usable actions (564ms)
+  ✓  193 [webkit] › tests/card-layout.ts:35:7 › dark narrow enlarged cards wrap long content and retain compact spacing and usable actions (627ms)
+  ✓  194 [webkit] › tests/card-layout.ts:70:5 › dark vertical separators stretch, accept overrides, expose semantics and skip keyboard navigation (591ms)
+  ✓  195 [webkit] › tests/integration/combobox.spec.ts:4:1 › searches with keyboard, submits canonical state, resets and validates required selection (851ms)
+  ✓  196 [webkit] › tests/integration/combobox.spec.ts:7:1 › handles empty, disabled and rejected selections without diagnostics (844ms)
+  ✓  197 [webkit] › tests/integration/combobox.spec.ts:10:1 › searches inside a popup and returns focus to its trigger (631ms)
+  ✓  198 [webkit] › tests/integration/combobox.spec.ts:13:1 › selects multiple chips and clears by explicit remove actions (771ms)
+  ✓  199 [webkit] › tests/integration/combobox.spec.ts:16:1 › keeps open content accessible and within enlarged narrow viewports (1.1s)
+  ✓  200 [webkit] › tests/combobox-contracts.ts:7:5 › Uncontrolled multiple values submit, remove, clear and reset to their defaults (843ms)
+  ✓  201 [webkit] › tests/combobox-contracts.ts:7:5 › Controlled multiple values submit, remove, clear and reset to their defaults (803ms)
+  ✓  202 [webkit] › tests/combobox-contracts.ts:40:3 › object result replacement preserves stable-key selection and native form reset (921ms)
+  ✓  203 [webkit] › tests/combobox-contracts.ts:70:3 › rejected controlled opening, query and dismissal retain owner state until an owner update (775ms)
+  ✓  204 [webkit] › tests/combobox-navigation.ts:21:5 › active options stay visible through wrapping and scrolling in desktop layouts (809ms)
+  ✓  205 [webkit] › tests/combobox-navigation.ts:21:5 › active options stay visible through wrapping and scrolling in narrow enlarged layouts (805ms)
+  ✓  206 [webkit] › tests/combobox-navigation.ts:44:3 › inline Tab and Shift+Tab discard drafts and reach native neighboring controls (444ms)
+  ✓  207 [webkit] › tests/combobox-navigation.ts:62:3 › popup search Tab reaches the next control and Shift+Tab returns to its trigger (553ms)
+  ✓  208 [webkit] › tests/combobox-navigation.ts:82:3 › nested chooser selects and dismisses independently while its modal retains focus and scroll lock (818ms)
+  ✓  209 [webkit] › tests/disclosures.ts:7:2 › single accordion wires IDs, skips disabled items, supports orientation/RTL and preserves forced drafts (700ms)
+  ✓  210 [webkit] › tests/disclosures.ts:14:2 › multiple expansion is independent and nested disclosure keys do not navigate the parent (443ms)
+  ✓  211 [webkit] › tests/disclosures.ts:18:2 › collapsible remounts ordinary content and keeps rejected owner state until explicitly changed (525ms)
+  ✓  212 [webkit] › tests/disclosures.ts:22:33 › disclosures keep accessible names, focus and long content at enlarged narrow width in light (1.1s)
+  ✓  213 [webkit] › tests/disclosures.ts:22:33 › disclosures keep accessible names, focus and long content at enlarged narrow width in dark (1.1s)
+  ✓  214 [webkit] › tests/integration/form-fields.spec.ts:5:1 › labels focus their controls and keyboard navigation exposes focus rings (595ms)
+  ✓  215 [webkit] › tests/integration/form-fields.spec.ts:11:1 › read-only, disabled, file and invalid fields retain their native behavior (910ms)
+  ✓  216 [webkit] › tests/integration/form-fields.spec.ts:19:36 › light invalid field presentation has no axe violations (1.5s)
+  ✓  217 [webkit] › tests/integration/form-fields.spec.ts:19:36 › dark invalid field presentation has no axe violations (1.5s)
+  ✓  218 [webkit] › tests/integration/foundation.spec.ts:5:1 › keyboard activation, focus ring, disabled examples and navigation (690ms)
+  ✓  219 [webkit] › tests/integration/foundation.spec.ts:12:1 › card size and separator orientation update geometry and semantics (591ms)
+  ✓  220 [webkit] › tests/integration/foundation.spec.ts:18:1 › custom theme changes token-driven button colors (534ms)
+  ✓  221 [webkit] › tests/integration/foundation.spec.ts:22:1 › loading placeholders are hidden from accessibility tree and stop motion (552ms)
+  ✓  222 [webkit] › tests/integration/foundation.spec.ts:27:36 › light examples have no axe accessibility violations (1.3s)
+  ✓  223 [webkit] › tests/integration/foundation.spec.ts:27:36 › dark examples have no axe accessibility violations (1.5s)
+  ✓  224 [webkit] › tests/link-navigation.ts:37:7 › Button link has visible light keyboard focus and native Enter navigation (442ms)
+  ✓  225 [webkit] › tests/link-navigation.ts:37:7 › Badge link has visible light keyboard focus and native Enter navigation (428ms)
+  ✓  226 [webkit] › tests/link-navigation.ts:37:7 › Button link has visible dark keyboard focus and native Enter navigation (436ms)
+  ✓  227 [webkit] › tests/link-navigation.ts:37:7 › Badge link has visible dark keyboard focus and native Enter navigation (427ms)
+  ✓  228 [webkit] › tests/link-navigation.ts:68:3 › disabled Button anchor is skipped in both tab directions and blocks pointer activation (419ms)
+  ✓  229 [webkit] › tests/link-navigation.ts:84:3 › disabling a focused Button anchor blocks keyboard and pointer activation until re-enabled (500ms)
+  ✓  230 [webkit] › tests/native-fields.ts:18:3 › number Input enforces required, bounds and step and restores its native default (790ms)
+  ✓  231 [webkit] › tests/native-fields.ts:42:5 › date Input validates bounds and submits and resets its native string value (591ms)
+  ✓  232 [webkit] › tests/native-fields.ts:42:5 › time Input validates bounds and submits and resets its native string value (548ms)
+  ✓  233 [webkit] › tests/native-fields.ts:42:5 › datetime-local Input validates bounds and submits and resets its native string value (573ms)
+  ✓  234 [webkit] › tests/native-fields.ts:60:3 › range Input uses keyboard steps and limits and serializes and resets its value (534ms)
+  ✓  235 [webkit] › tests/native-fields.ts:78:3 › text-like Input types retain native values and email and URL reject invalid submission (706ms)
+  ✓  236 [webkit] › tests/native-fields.ts:101:3 › read-only Textarea remains focusable, scrollable and submitted, then accepts edits when unlocked (602ms)
+  ✓  237 [webkit] › tests/native-fields.ts:122:5 › Textarea supports actual pointer resizing in desktop layout (406ms)
+  ✓  238 [webkit] › tests/native-fields.ts:122:5 › Textarea supports actual pointer resizing in narrow enlarged layout (450ms)
+  ✓  239 [webkit] › tests/native-fields.ts:144:3 › Label follows live for and ID reassociation without losing drafts or activating a disabled target (856ms)
+  ✓  240 [webkit] › tests/native-fields.ts:195:3 › Label refresh preserves editing focus, selection and nodes through repeated reassociation (471ms)
+  ✓  241 [webkit] › tests/integration/overlays.spec.ts:5:1 › tabs skip disabled entries and support automatic, manual, vertical and RTL navigation (823ms)
+  ✓  242 [webkit] › tests/integration/overlays.spec.ts:11:1 › popover positions, labels and restores focus on Escape but preserves outside clicks (1.1s)
+  ✓  243 [webkit] › tests/integration/overlays.spec.ts:17:1 › nested alert dismissal leaves the popover open and returns focus to its trigger (719ms)
+  ✓  244 [webkit] › tests/integration/overlays.spec.ts:20:1 › modal popover traps focus and releases scroll locking (684ms)
+  ✓  245 [webkit] › tests/integration/overlays.spec.ts:23:1 › alert blocks outside dismissal and preserves a draft through pending failure and retry (858ms)
+  ✓  246 [webkit] › tests/integration/overlays.spec.ts:26:32 › overlays pass axe with light theme and enlarged text (2.0s)
+  ✓  247 [webkit] › tests/integration/overlays.spec.ts:26:32 › overlays pass axe with dark theme and enlarged text (2.1s)
+  ✓  248 [webkit] › tests/popover-placement.ts:37:3 › follows two-axis ancestor scrolling and document scrolling while remaining open (637ms)
+  ✓  249 [webkit] › tests/popover-placement.ts:57:3 › reanchors after viewport, anchor and popup resizing without reopening (1.1s)
+  ✓  250 [webkit] › tests/popover-placement.ts:77:3 › tracks a transformed anchor during movement and returns to its original position (1.9s)
+  ✓  251 [webkit] › tests/popover-placement.ts:108:3 › flips and shifts at viewport edges, constrains oversized content and keeps its action reachable (549ms)
+  ✓  252 [webkit] › tests/popover-placement.ts:130:3 › escapes a transformed paint-clipping ancestor and accepts clicks outside its bounds (641ms)
+  ✓  253 [webkit] › tests/skeleton-loading.ts:24:5 › light desktop Skeleton Loading resolves and releases its fallback and ready subtree (523ms)
+  ✓  254 [webkit] › tests/skeleton-loading.ts:24:5 › dark narrow enlarged Skeleton Loading resolves and releases its fallback and ready subtree (583ms)
+  ✓  255 [webkit] › tests/skeleton-loading.ts:61:3 › pending Skeleton boundaries stay disposed after late resolution and cannot replace a fresh request (781ms)
+  ✓  256 [webkit] › tests/tabs-lifecycle.ts:25:5 › automatic Tabs recover focus when the focused trigger is removed (489ms)
+  ✓  257 [webkit] › tests/tabs-lifecycle.ts:47:5 › automatic Tabs preserve the focused node across keyed reordering and navigate the new DOM order (645ms)
+  ✓  258 [webkit] › tests/tabs-lifecycle.ts:25:5 › manual Tabs recover focus when the focused trigger is removed (540ms)
+  ✓  259 [webkit] › tests/tabs-lifecycle.ts:47:5 › manual Tabs preserve the focused node across keyed reordering and navigate the new DOM order (608ms)
+  ✓  260 [webkit] › tests/tabs-lifecycle.ts:81:3 › force-mounted panels preserve draft nodes while hidden and lazy panels dispose their drafts (656ms)
+  ✓  261 [webkit] › tests/tabs-lifecycle.ts:109:3 › external removal and reordering preserve focus outside the tablist (480ms)
+  ✓  262 [webkit] › tests/toggle-forms.ts:27:5 › Checkbox honors bubbling reset cancellation and recovers on an allowed reset (646ms)
+  ✓  263 [webkit] › tests/toggle-forms.ts:46:5 › Checkbox rebinds explicit ownership, detaches and returns to its ancestor without remounting (958ms)
+  ✓  264 [webkit] › tests/toggle-forms.ts:79:5 › Checkbox discards queued reset work after reassociation or unmount and remounts cleanly (758ms)
+  ✓  265 [webkit] › tests/toggle-forms.ts:27:5 › Switch honors bubbling reset cancellation and recovers on an allowed reset (576ms)
+  ✓  266 [webkit] › tests/toggle-forms.ts:46:5 › Switch rebinds explicit ownership, detaches and returns to its ancestor without remounting (1.1s)
+  ✓  267 [webkit] › tests/toggle-forms.ts:79:5 › Switch discards queued reset work after reassociation or unmount and remounts cleanly (813ms)
+  ✓  268 [webkit] › tests/toggle-forms.ts:105:3 › Checkbox preserves mixed semantics on canceled reset and restores them on allowed reset (546ms)
+  ✓  269 [webkit] › tests/integration/toggles.spec.ts:5:1 › labels and Space update checkboxes, mixed selections and switches once (732ms)
+  ✓  270 [webkit] › tests/integration/toggles.spec.ts:10:1 › disabled/read-only and rejected controlled changes preserve the displayed value (724ms)
+  ✓  271 [webkit] › tests/integration/toggles.spec.ts:15:1 › both switch sizes move the thumb correctly in LTR and RTL and respect reduced motion (698ms)
+  ✓  272 [webkit] › tests/integration/toggles.spec.ts:23:36 › light toggles including invalid controls pass axe (1.5s)
+  ✓  273 [webkit] › tests/integration/toggles.spec.ts:23:36 › dark toggles including invalid controls pass axe (1.6s)
+
+  273 passed (3.5m)
+
+THEME_PORT=4403 RESULTS_FILE=docs/evidence/disclosures-e2e.json bun run test:e2e
+$ THEME_PRODUCTION=1 playwright test tests/e2e
+[WebServer] $ vite build && tsc -p tsconfig.build.json
+[WebServer] (node:56921) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] $ vite build --config playground/vite.config.ts
+[WebServer] (node:56966) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:56983) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 234 tests using 1 worker
+
+(node:56985) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓    1 [chromium] › tests/alert-dialog-focus.ts:28:3 › Alert Dialog wraps both Tab boundaries and skips disabled, hidden and negative-tabindex controls (453ms)
+  ✓    2 [chromium] › tests/alert-dialog-focus.ts:59:5 › nested Alert Dialog wraps focus and Escape restores its parent (258ms)
+  ✓    3 [chromium] › tests/alert-dialog-focus.ts:59:5 › nested Alert Dialog wraps focus and Cancel restores its parent (299ms)
+  ✓    4 [chromium] › tests/alert-dialog-focus.ts:59:5 › nested Alert Dialog wraps focus and Confirm restores its parent (256ms)
+  ✓    5 [chromium] › tests/alert-dialog-focus.ts:59:5 › nested Alert Dialog wraps focus and Escape restores its parent with force-mounted content (241ms)
+  ✓    6 [chromium] › tests/alert-dialog-focus.ts:107:3 › a queued native close event cannot dismiss a reopened force-mounted Alert Dialog (390ms)
+  ✓    7 [chromium] › tests/card-layout.ts:35:7 › light desktop cards wrap long content and retain compact spacing and usable actions (332ms)
+  ✓    8 [chromium] › tests/card-layout.ts:35:7 › light narrow enlarged cards wrap long content and retain compact spacing and usable actions (538ms)
+  ✓    9 [chromium] › tests/card-layout.ts:70:5 › light vertical separators stretch, accept overrides, expose semantics and skip keyboard navigation (266ms)
+  ✓   10 [chromium] › tests/card-layout.ts:35:7 › dark desktop cards wrap long content and retain compact spacing and usable actions (332ms)
+  ✓   11 [chromium] › tests/card-layout.ts:35:7 › dark narrow enlarged cards wrap long content and retain compact spacing and usable actions (538ms)
+  ✓   12 [chromium] › tests/card-layout.ts:70:5 › dark vertical separators stretch, accept overrides, expose semantics and skip keyboard navigation (280ms)
+  ✓   13 [chromium] › tests/e2e/combobox.spec.ts:3:1 › built Combobox searches, commits, resets and recovers a rejected change (601ms)
+  ✓   14 [chromium] › tests/combobox-contracts.ts:7:5 › Uncontrolled multiple values submit, remove, clear and reset to their defaults (587ms)
+  ✓   15 [chromium] › tests/combobox-contracts.ts:7:5 › Controlled multiple values submit, remove, clear and reset to their defaults (574ms)
+  ✓   16 [chromium] › tests/combobox-contracts.ts:40:3 › object result replacement preserves stable-key selection and native form reset (577ms)
+  ✓   17 [chromium] › tests/combobox-contracts.ts:70:3 › rejected controlled opening, query and dismissal retain owner state until an owner update (412ms)
+  ✓   18 [chromium] › tests/combobox-navigation.ts:21:5 › active options stay visible through wrapping and scrolling in desktop layouts (326ms)
+  ✓   19 [chromium] › tests/combobox-navigation.ts:21:5 › active options stay visible through wrapping and scrolling in narrow enlarged layouts (439ms)
+  ✓   20 [chromium] › tests/combobox-navigation.ts:44:3 › inline Tab and Shift+Tab discard drafts and reach native neighboring controls (193ms)
+  ✓   21 [chromium] › tests/combobox-navigation.ts:62:3 › popup search Tab reaches the next control and Shift+Tab returns to its trigger (310ms)
+  ✓   22 [chromium] › tests/combobox-navigation.ts:82:3 › nested chooser selects and dismisses independently while its modal retains focus and scroll lock (579ms)
+  ✓   23 [chromium] › tests/disclosures.ts:7:2 › single accordion wires IDs, skips disabled items, supports orientation/RTL and preserves forced drafts (434ms)
+  ✓   24 [chromium] › tests/disclosures.ts:14:2 › multiple expansion is independent and nested disclosure keys do not navigate the parent (167ms)
+  ✓   25 [chromium] › tests/disclosures.ts:18:2 › collapsible remounts ordinary content and keeps rejected owner state until explicitly changed (276ms)
+  ✓   26 [chromium] › tests/disclosures.ts:22:33 › disclosures keep accessible names, focus and long content at enlarged narrow width in light (839ms)
+  ✓   27 [chromium] › tests/disclosures.ts:22:33 › disclosures keep accessible names, focus and long content at enlarged narrow width in dark (787ms)
+  ✓   28 [chromium] › tests/e2e/form-fields.spec.ts:3:1 › native validation preserves drafts and reset restores controlled and uncontrolled fields (483ms)
+  ✘   29 [chromium] › tests/e2e/form-fields.spec.ts:12:1 › long field values, file names and enlarged fonts fit a narrow screen (438ms)
+(node:57185) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   30 [chromium] › tests/link-navigation.ts:37:7 › Button link has visible light keyboard focus and native Enter navigation (314ms)
+  ✓   31 [chromium] › tests/link-navigation.ts:37:7 › Badge link has visible light keyboard focus and native Enter navigation (255ms)
+  ✓   32 [chromium] › tests/link-navigation.ts:37:7 › Button link has visible dark keyboard focus and native Enter navigation (235ms)
+  ✓   33 [chromium] › tests/link-navigation.ts:37:7 › Badge link has visible dark keyboard focus and native Enter navigation (214ms)
+  ✓   34 [chromium] › tests/link-navigation.ts:68:3 › disabled Button anchor is skipped in both tab directions and blocks pointer activation (217ms)
+  ✓   35 [chromium] › tests/link-navigation.ts:84:3 › disabling a focused Button anchor blocks keyboard and pointer activation until re-enabled (275ms)
+  ✓   36 [chromium] › tests/native-fields.ts:18:3 › number Input enforces required, bounds and step and restores its native default (506ms)
+  ✓   37 [chromium] › tests/native-fields.ts:42:5 › date Input validates bounds and submits and resets its native string value (324ms)
+  ✓   38 [chromium] › tests/native-fields.ts:42:5 › time Input validates bounds and submits and resets its native string value (340ms)
+  ✓   39 [chromium] › tests/native-fields.ts:42:5 › datetime-local Input validates bounds and submits and resets its native string value (491ms)
+  ✓   40 [chromium] › tests/native-fields.ts:60:3 › range Input uses keyboard steps and limits and serializes and resets its value (314ms)
+  ✓   41 [chromium] › tests/native-fields.ts:78:3 › text-like Input types retain native values and email and URL reject invalid submission (410ms)
+  ✓   42 [chromium] › tests/native-fields.ts:101:3 › read-only Textarea remains focusable, scrollable and submitted, then accepts edits when unlocked (393ms)
+  ✓   43 [chromium] › tests/native-fields.ts:122:5 › Textarea supports actual pointer resizing in desktop layout (410ms)
+  ✓   44 [chromium] › tests/native-fields.ts:122:5 › Textarea supports actual pointer resizing in narrow enlarged layout (451ms)
+  ✓   45 [chromium] › tests/native-fields.ts:144:3 › Label follows live for and ID reassociation without losing drafts or activating a disabled target (548ms)
+  ✓   46 [chromium] › tests/native-fields.ts:195:3 › Label refresh preserves editing focus, selection and nodes through repeated reassociation (205ms)
+  ✓   47 [chromium] › tests/e2e/overlays.spec.ts:3:1 › built tabs and popover compose into a keyboard-only confirmation flow (246ms)
+  ✓   48 [chromium] › tests/e2e/overlays.spec.ts:6:1 › built alert preserves rejected drafts and completes only an explicit retry (528ms)
+  ✓   49 [chromium] › tests/e2e/playground.spec.ts:3:1 › form validation, pending submit protection and recovery to ready (333ms)
+  ✓   50 [chromium] › tests/e2e/playground.spec.ts:9:1 › narrow viewport, enlarged text and long input stay usable (505ms)
+  ✓   51 [chromium] › tests/popover-placement.ts:37:3 › follows two-axis ancestor scrolling and document scrolling while remaining open (645ms)
+  ✓   52 [chromium] › tests/popover-placement.ts:57:3 › reanchors after viewport, anchor and popup resizing without reopening (775ms)
+  ✓   53 [chromium] › tests/popover-placement.ts:77:3 › tracks a transformed anchor during movement and returns to its original position (1.7s)
+  ✓   54 [chromium] › tests/popover-placement.ts:108:3 › flips and shifts at viewport edges, constrains oversized content and keeps its action reachable (447ms)
+  ✓   55 [chromium] › tests/popover-placement.ts:130:3 › escapes a transformed paint-clipping ancestor and accepts clicks outside its bounds (422ms)
+  ✓   56 [chromium] › tests/skeleton-loading.ts:24:5 › light desktop Skeleton Loading resolves and releases its fallback and ready subtree (305ms)
+  ✓   57 [chromium] › tests/skeleton-loading.ts:24:5 › dark narrow enlarged Skeleton Loading resolves and releases its fallback and ready subtree (385ms)
+  ✓   58 [chromium] › tests/skeleton-loading.ts:61:3 › pending Skeleton boundaries stay disposed after late resolution and cannot replace a fresh request (505ms)
+  ✓   59 [chromium] › tests/tabs-lifecycle.ts:25:5 › automatic Tabs recover focus when the focused trigger is removed (205ms)
+  ✓   60 [chromium] › tests/tabs-lifecycle.ts:47:5 › automatic Tabs preserve the focused node across keyed reordering and navigate the new DOM order (256ms)
+  ✓   61 [chromium] › tests/tabs-lifecycle.ts:25:5 › manual Tabs recover focus when the focused trigger is removed (204ms)
+  ✓   62 [chromium] › tests/tabs-lifecycle.ts:47:5 › manual Tabs preserve the focused node across keyed reordering and navigate the new DOM order (274ms)
+  ✓   63 [chromium] › tests/tabs-lifecycle.ts:81:3 › force-mounted panels preserve draft nodes while hidden and lazy panels dispose their drafts (406ms)
+  ✓   64 [chromium] › tests/tabs-lifecycle.ts:109:3 › external removal and reordering preserve focus outside the tablist (275ms)
+  ✓   65 [chromium] › tests/toggle-forms.ts:27:5 › Checkbox honors bubbling reset cancellation and recovers on an allowed reset (390ms)
+  ✓   66 [chromium] › tests/toggle-forms.ts:46:5 › Checkbox rebinds explicit ownership, detaches and returns to its ancestor without remounting (693ms)
+  ✓   67 [chromium] › tests/toggle-forms.ts:79:5 › Checkbox discards queued reset work after reassociation or unmount and remounts cleanly (545ms)
+  ✓   68 [chromium] › tests/toggle-forms.ts:27:5 › Switch honors bubbling reset cancellation and recovers on an allowed reset (400ms)
+  ✓   69 [chromium] › tests/toggle-forms.ts:46:5 › Switch rebinds explicit ownership, detaches and returns to its ancestor without remounting (706ms)
+  ✓   70 [chromium] › tests/toggle-forms.ts:79:5 › Switch discards queued reset work after reassociation or unmount and remounts cleanly (542ms)
+  ✓   71 [chromium] › tests/toggle-forms.ts:105:3 › Checkbox preserves mixed semantics on canceled reset and restores them on allowed reset (356ms)
+  ✓   72 [chromium] › tests/e2e/toggles.spec.ts:3:1 › notification form validates, serializes checked values and restores default-on controls (568ms)
+  ✓   73 [chromium] › tests/e2e/toggles.spec.ts:9:1 › toggles remain usable with enlarged text at mobile width (507ms)
+  ✓   74 [chromium] › tests/e2e/visual.spec.ts:3:45 › light component gallery (703ms)
+  ✓   75 [chromium] › tests/e2e/visual.spec.ts:3:45 › dark component gallery (636ms)
+  ✓   76 [chromium] › tests/e2e/visual.spec.ts:3:45 › mobile component gallery (486ms)
+  ✓   77 [chromium] › tests/e2e/visual.spec.ts:12:45 › light open overlays (548ms)
+  ✓   78 [chromium] › tests/e2e/visual.spec.ts:12:45 › dark open overlays (583ms)
+  ✓   79 [chromium] › tests/e2e/visual.spec.ts:12:45 › mobile open overlays (437ms)
+  ✘   80 [chromium] › tests/e2e/visual.spec.ts:16:45 › light open combobox (663ms)
+(node:57530) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   81 [chromium] › tests/e2e/visual.spec.ts:16:45 › dark open combobox (715ms)
+(node:57554) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   82 [chromium] › tests/e2e/visual.spec.ts:16:45 › mobile open combobox (284ms)
+  ✓   83 [chromium] › tests/e2e/visual.spec.ts:19:49 › light compact cards and vertical separators (269ms)
+  ✓   84 [chromium] › tests/e2e/visual.spec.ts:19:49 › dark compact cards and vertical separators (250ms)
+  ✓   85 [chromium] › tests/e2e/visual.spec.ts:19:49 › mobile compact cards and vertical separators (245ms)
+  ✓   86 [chromium] › tests/e2e/visual.spec.ts:26:45 › light accordion and collapsible (265ms)
+  ✓   87 [chromium] › tests/e2e/visual.spec.ts:26:45 › dark accordion and collapsible (263ms)
+  ✓   88 [chromium] › tests/e2e/visual.spec.ts:26:45 › mobile accordion and collapsible (241ms)
+(node:57648) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   89 [firefox] › tests/alert-dialog-focus.ts:28:3 › Alert Dialog wraps both Tab boundaries and skips disabled, hidden and negative-tabindex controls (1.0s)
+  ✓   90 [firefox] › tests/alert-dialog-focus.ts:59:5 › nested Alert Dialog wraps focus and Escape restores its parent (449ms)
+  ✓   91 [firefox] › tests/alert-dialog-focus.ts:59:5 › nested Alert Dialog wraps focus and Cancel restores its parent (572ms)
+  ✓   92 [firefox] › tests/alert-dialog-focus.ts:59:5 › nested Alert Dialog wraps focus and Confirm restores its parent (462ms)
+  ✓   93 [firefox] › tests/alert-dialog-focus.ts:59:5 › nested Alert Dialog wraps focus and Escape restores its parent with force-mounted content (602ms)
+  ✓   94 [firefox] › tests/alert-dialog-focus.ts:107:3 › a queued native close event cannot dismiss a reopened force-mounted Alert Dialog (497ms)
+  ✓   95 [firefox] › tests/card-layout.ts:35:7 › light desktop cards wrap long content and retain compact spacing and usable actions (502ms)
+  ✓   96 [firefox] › tests/card-layout.ts:35:7 › light narrow enlarged cards wrap long content and retain compact spacing and usable actions (598ms)
+  ✓   97 [firefox] › tests/card-layout.ts:70:5 › light vertical separators stretch, accept overrides, expose semantics and skip keyboard navigation (516ms)
+  ✓   98 [firefox] › tests/card-layout.ts:35:7 › dark desktop cards wrap long content and retain compact spacing and usable actions (906ms)
+  ✓   99 [firefox] › tests/card-layout.ts:35:7 › dark narrow enlarged cards wrap long content and retain compact spacing and usable actions (583ms)
+  ✓  100 [firefox] › tests/card-layout.ts:70:5 › dark vertical separators stretch, accept overrides, expose semantics and skip keyboard navigation (425ms)
+  ✓  101 [firefox] › tests/e2e/combobox.spec.ts:3:1 › built Combobox searches, commits, resets and recovers a rejected change (774ms)
+  ✓  102 [firefox] › tests/combobox-contracts.ts:7:5 › Uncontrolled multiple values submit, remove, clear and reset to their defaults (995ms)
+  ✓  103 [firefox] › tests/combobox-contracts.ts:7:5 › Controlled multiple values submit, remove, clear and reset to their defaults (875ms)
+  ✓  104 [firefox] › tests/combobox-contracts.ts:40:3 › object result replacement preserves stable-key selection and native form reset (804ms)
+  ✓  105 [firefox] › tests/combobox-contracts.ts:70:3 › rejected controlled opening, query and dismissal retain owner state until an owner update (660ms)
+  ✓  106 [firefox] › tests/combobox-navigation.ts:21:5 › active options stay visible through wrapping and scrolling in desktop layouts (687ms)
+  ✓  107 [firefox] › tests/combobox-navigation.ts:21:5 › active options stay visible through wrapping and scrolling in narrow enlarged layouts (680ms)
+  ✓  108 [firefox] › tests/combobox-navigation.ts:44:3 › inline Tab and Shift+Tab discard drafts and reach native neighboring controls (860ms)
+  ✓  109 [firefox] › tests/combobox-navigation.ts:62:3 › popup search Tab reaches the next control and Shift+Tab returns to its trigger (413ms)
+  ✓  110 [firefox] › tests/combobox-navigation.ts:82:3 › nested chooser selects and dismisses independently while its modal retains focus and scroll lock (727ms)
+  ✓  111 [firefox] › tests/disclosures.ts:7:2 › single accordion wires IDs, skips disabled items, supports orientation/RTL and preserves forced drafts (840ms)
+  ✓  112 [firefox] › tests/disclosures.ts:14:2 › multiple expansion is independent and nested disclosure keys do not navigate the parent (434ms)
+  ✓  113 [firefox] › tests/disclosures.ts:18:2 › collapsible remounts ordinary content and keeps rejected owner state until explicitly changed (516ms)
+  ✓  114 [firefox] › tests/disclosures.ts:22:33 › disclosures keep accessible names, focus and long content at enlarged narrow width in light (1.0s)
+  ✓  115 [firefox] › tests/disclosures.ts:22:33 › disclosures keep accessible names, focus and long content at enlarged narrow width in dark (1.0s)
+  ✓  116 [firefox] › tests/e2e/form-fields.spec.ts:3:1 › native validation preserves drafts and reset restores controlled and uncontrolled fields (678ms)
+  ✓  117 [firefox] › tests/e2e/form-fields.spec.ts:12:1 › long field values, file names and enlarged fonts fit a narrow screen (620ms)
+  ✓  118 [firefox] › tests/link-navigation.ts:37:7 › Button link has visible light keyboard focus and native Enter navigation (980ms)
+  ✓  119 [firefox] › tests/link-navigation.ts:37:7 › Badge link has visible light keyboard focus and native Enter navigation (350ms)
+  ✓  120 [firefox] › tests/link-navigation.ts:37:7 › Button link has visible dark keyboard focus and native Enter navigation (322ms)
+  ✓  121 [firefox] › tests/link-navigation.ts:37:7 › Badge link has visible dark keyboard focus and native Enter navigation (409ms)
+  ✓  122 [firefox] › tests/link-navigation.ts:68:3 › disabled Button anchor is skipped in both tab directions and blocks pointer activation (297ms)
+  ✓  123 [firefox] › tests/link-navigation.ts:84:3 › disabling a focused Button anchor blocks keyboard and pointer activation until re-enabled (387ms)
+  ✓  124 [firefox] › tests/native-fields.ts:18:3 › number Input enforces required, bounds and step and restores its native default (738ms)
+  ✓  125 [firefox] › tests/native-fields.ts:42:5 › date Input validates bounds and submits and resets its native string value (515ms)
+  ✓  126 [firefox] › tests/native-fields.ts:42:5 › time Input validates bounds and submits and resets its native string value (539ms)
+  ✓  127 [firefox] › tests/native-fields.ts:42:5 › datetime-local Input validates bounds and submits and resets its native string value (500ms)
+  ✓  128 [firefox] › tests/native-fields.ts:60:3 › range Input uses keyboard steps and limits and serializes and resets its value (982ms)
+  ✓  129 [firefox] › tests/native-fields.ts:78:3 › text-like Input types retain native values and email and URL reject invalid submission (640ms)
+  ✓  130 [firefox] › tests/native-fields.ts:101:3 › read-only Textarea remains focusable, scrollable and submitted, then accepts edits when unlocked (654ms)
+  ✓  131 [firefox] › tests/native-fields.ts:122:5 › Textarea supports actual pointer resizing in desktop layout (557ms)
+  ✓  132 [firefox] › tests/native-fields.ts:122:5 › Textarea supports actual pointer resizing in narrow enlarged layout (542ms)
+  ✓  133 [firefox] › tests/native-fields.ts:144:3 › Label follows live for and ID reassociation without losing drafts or activating a disabled target (828ms)
+  ✓  134 [firefox] › tests/native-fields.ts:195:3 › Label refresh preserves editing focus, selection and nodes through repeated reassociation (365ms)
+  ✓  135 [firefox] › tests/e2e/overlays.spec.ts:3:1 › built tabs and popover compose into a keyboard-only confirmation flow (419ms)
+  ✓  136 [firefox] › tests/e2e/overlays.spec.ts:6:1 › built alert preserves rejected drafts and completes only an explicit retry (821ms)
+  ✓  137 [firefox] › tests/e2e/playground.spec.ts:3:1 › form validation, pending submit protection and recovery to ready (510ms)
+  ✓  138 [firefox] › tests/e2e/playground.spec.ts:9:1 › narrow viewport, enlarged text and long input stay usable (1.1s)
+  ✓  139 [firefox] › tests/popover-placement.ts:37:3 › follows two-axis ancestor scrolling and document scrolling while remaining open (656ms)
+  ✓  140 [firefox] › tests/popover-placement.ts:57:3 › reanchors after viewport, anchor and popup resizing without reopening (807ms)
+  ✓  141 [firefox] › tests/popover-placement.ts:77:3 › tracks a transformed anchor during movement and returns to its original position (1.9s)
+  ✓  142 [firefox] › tests/popover-placement.ts:108:3 › flips and shifts at viewport edges, constrains oversized content and keeps its action reachable (482ms)
+  ✓  143 [firefox] › tests/popover-placement.ts:130:3 › escapes a transformed paint-clipping ancestor and accepts clicks outside its bounds (571ms)
+  ✓  144 [firefox] › tests/skeleton-loading.ts:24:5 › light desktop Skeleton Loading resolves and releases its fallback and ready subtree (454ms)
+  ✓  145 [firefox] › tests/skeleton-loading.ts:24:5 › dark narrow enlarged Skeleton Loading resolves and releases its fallback and ready subtree (554ms)
+  ✓  146 [firefox] › tests/skeleton-loading.ts:61:3 › pending Skeleton boundaries stay disposed after late resolution and cannot replace a fresh request (780ms)
+  ✓  147 [firefox] › tests/tabs-lifecycle.ts:25:5 › automatic Tabs recover focus when the focused trigger is removed (396ms)
+  ✓  148 [firefox] › tests/tabs-lifecycle.ts:47:5 › automatic Tabs preserve the focused node across keyed reordering and navigate the new DOM order (979ms)
+  ✓  149 [firefox] › tests/tabs-lifecycle.ts:25:5 › manual Tabs recover focus when the focused trigger is removed (388ms)
+  ✓  150 [firefox] › tests/tabs-lifecycle.ts:47:5 › manual Tabs preserve the focused node across keyed reordering and navigate the new DOM order (480ms)
+  ✓  151 [firefox] › tests/tabs-lifecycle.ts:81:3 › force-mounted panels preserve draft nodes while hidden and lazy panels dispose their drafts (603ms)
+  ✓  152 [firefox] › tests/tabs-lifecycle.ts:109:3 › external removal and reordering preserve focus outside the tablist (458ms)
+  ✓  153 [firefox] › tests/toggle-forms.ts:27:5 › Checkbox honors bubbling reset cancellation and recovers on an allowed reset (563ms)
+  ✓  154 [firefox] › tests/toggle-forms.ts:46:5 › Checkbox rebinds explicit ownership, detaches and returns to its ancestor without remounting (1.0s)
+  ✓  155 [firefox] › tests/toggle-forms.ts:79:5 › Checkbox discards queued reset work after reassociation or unmount and remounts cleanly (812ms)
+  ✓  156 [firefox] › tests/toggle-forms.ts:27:5 › Switch honors bubbling reset cancellation and recovers on an allowed reset (530ms)
+  ✓  157 [firefox] › tests/toggle-forms.ts:46:5 › Switch rebinds explicit ownership, detaches and returns to its ancestor without remounting (1.0s)
+  ✓  158 [firefox] › tests/toggle-forms.ts:79:5 › Switch discards queued reset work after reassociation or unmount and remounts cleanly (1.2s)
+  ✓  159 [firefox] › tests/toggle-forms.ts:105:3 › Checkbox preserves mixed semantics on canceled reset and restores them on allowed reset (581ms)
+  ✓  160 [firefox] › tests/e2e/toggles.spec.ts:3:1 › notification form validates, serializes checked values and restores default-on controls (894ms)
+  ✓  161 [firefox] › tests/e2e/toggles.spec.ts:9:1 › toggles remain usable with enlarged text at mobile width (686ms)
+(node:58226) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  162 [webkit] › tests/alert-dialog-focus.ts:28:3 › Alert Dialog wraps both Tab boundaries and skips disabled, hidden and negative-tabindex controls (722ms)
+  ✓  163 [webkit] › tests/alert-dialog-focus.ts:59:5 › nested Alert Dialog wraps focus and Escape restores its parent (504ms)
+  ✓  164 [webkit] › tests/alert-dialog-focus.ts:59:5 › nested Alert Dialog wraps focus and Cancel restores its parent (559ms)
+  ✓  165 [webkit] › tests/alert-dialog-focus.ts:59:5 › nested Alert Dialog wraps focus and Confirm restores its parent (496ms)
+  ✓  166 [webkit] › tests/alert-dialog-focus.ts:59:5 › nested Alert Dialog wraps focus and Escape restores its parent with force-mounted content (488ms)
+  ✓  167 [webkit] › tests/alert-dialog-focus.ts:107:3 › a queued native close event cannot dismiss a reopened force-mounted Alert Dialog (499ms)
+  ✓  168 [webkit] › tests/card-layout.ts:35:7 › light desktop cards wrap long content and retain compact spacing and usable actions (505ms)
+  ✓  169 [webkit] › tests/card-layout.ts:35:7 › light narrow enlarged cards wrap long content and retain compact spacing and usable actions (555ms)
+  ✓  170 [webkit] › tests/card-layout.ts:70:5 › light vertical separators stretch, accept overrides, expose semantics and skip keyboard navigation (463ms)
+  ✓  171 [webkit] › tests/card-layout.ts:35:7 › dark desktop cards wrap long content and retain compact spacing and usable actions (487ms)
+  ✓  172 [webkit] › tests/card-layout.ts:35:7 › dark narrow enlarged cards wrap long content and retain compact spacing and usable actions (560ms)
+  ✓  173 [webkit] › tests/card-layout.ts:70:5 › dark vertical separators stretch, accept overrides, expose semantics and skip keyboard navigation (472ms)
+  ✓  174 [webkit] › tests/e2e/combobox.spec.ts:3:1 › built Combobox searches, commits, resets and recovers a rejected change (866ms)
+  ✓  175 [webkit] › tests/combobox-contracts.ts:7:5 › Uncontrolled multiple values submit, remove, clear and reset to their defaults (725ms)
+  ✓  176 [webkit] › tests/combobox-contracts.ts:7:5 › Controlled multiple values submit, remove, clear and reset to their defaults (808ms)
+  ✓  177 [webkit] › tests/combobox-contracts.ts:40:3 › object result replacement preserves stable-key selection and native form reset (722ms)
+  ✓  178 [webkit] › tests/combobox-contracts.ts:70:3 › rejected controlled opening, query and dismissal retain owner state until an owner update (644ms)
+  ✓  179 [webkit] › tests/combobox-navigation.ts:21:5 › active options stay visible through wrapping and scrolling in desktop layouts (607ms)
+  ✓  180 [webkit] › tests/combobox-navigation.ts:21:5 › active options stay visible through wrapping and scrolling in narrow enlarged layouts (615ms)
+  ✓  181 [webkit] › tests/combobox-navigation.ts:44:3 › inline Tab and Shift+Tab discard drafts and reach native neighboring controls (445ms)
+  ✓  182 [webkit] › tests/combobox-navigation.ts:62:3 › popup search Tab reaches the next control and Shift+Tab returns to its trigger (441ms)
+  ✓  183 [webkit] › tests/combobox-navigation.ts:82:3 › nested chooser selects and dismisses independently while its modal retains focus and scroll lock (866ms)
+  ✓  184 [webkit] › tests/disclosures.ts:7:2 › single accordion wires IDs, skips disabled items, supports orientation/RTL and preserves forced drafts (643ms)
+  ✓  185 [webkit] › tests/disclosures.ts:14:2 › multiple expansion is independent and nested disclosure keys do not navigate the parent (320ms)
+  ✓  186 [webkit] › tests/disclosures.ts:18:2 › collapsible remounts ordinary content and keeps rejected owner state until explicitly changed (416ms)
+  ✓  187 [webkit] › tests/disclosures.ts:22:33 › disclosures keep accessible names, focus and long content at enlarged narrow width in light (966ms)
+  ✓  188 [webkit] › tests/disclosures.ts:22:33 › disclosures keep accessible names, focus and long content at enlarged narrow width in dark (947ms)
+  ✓  189 [webkit] › tests/e2e/form-fields.spec.ts:3:1 › native validation preserves drafts and reset restores controlled and uncontrolled fields (759ms)
+  ✓  190 [webkit] › tests/e2e/form-fields.spec.ts:12:1 › long field values, file names and enlarged fonts fit a narrow screen (593ms)
+  ✓  191 [webkit] › tests/link-navigation.ts:37:7 › Button link has visible light keyboard focus and native Enter navigation (366ms)
+  ✓  192 [webkit] › tests/link-navigation.ts:37:7 › Badge link has visible light keyboard focus and native Enter navigation (377ms)
+  ✓  193 [webkit] › tests/link-navigation.ts:37:7 › Button link has visible dark keyboard focus and native Enter navigation (370ms)
+  ✓  194 [webkit] › tests/link-navigation.ts:37:7 › Badge link has visible dark keyboard focus and native Enter navigation (371ms)
+  ✓  195 [webkit] › tests/link-navigation.ts:68:3 › disabled Button anchor is skipped in both tab directions and blocks pointer activation (372ms)
+  ✓  196 [webkit] › tests/link-navigation.ts:84:3 › disabling a focused Button anchor blocks keyboard and pointer activation until re-enabled (419ms)
+  ✓  197 [webkit] › tests/native-fields.ts:18:3 › number Input enforces required, bounds and step and restores its native default (674ms)
+  ✓  198 [webkit] › tests/native-fields.ts:42:5 › date Input validates bounds and submits and resets its native string value (528ms)
+  ✓  199 [webkit] › tests/native-fields.ts:42:5 › time Input validates bounds and submits and resets its native string value (535ms)
+  ✓  200 [webkit] › tests/native-fields.ts:42:5 › datetime-local Input validates bounds and submits and resets its native string value (465ms)
+  ✓  201 [webkit] › tests/native-fields.ts:60:3 › range Input uses keyboard steps and limits and serializes and resets its value (438ms)
+  ✓  202 [webkit] › tests/native-fields.ts:78:3 › text-like Input types retain native values and email and URL reject invalid submission (561ms)
+  ✓  203 [webkit] › tests/native-fields.ts:101:3 › read-only Textarea remains focusable, scrollable and submitted, then accepts edits when unlocked (519ms)
+  ✓  204 [webkit] › tests/native-fields.ts:122:5 › Textarea supports actual pointer resizing in desktop layout (366ms)
+  ✓  205 [webkit] › tests/native-fields.ts:122:5 › Textarea supports actual pointer resizing in narrow enlarged layout (484ms)
+  ✓  206 [webkit] › tests/native-fields.ts:144:3 › Label follows live for and ID reassociation without losing drafts or activating a disabled target (723ms)
+  ✓  207 [webkit] › tests/native-fields.ts:195:3 › Label refresh preserves editing focus, selection and nodes through repeated reassociation (416ms)
+  ✓  208 [webkit] › tests/e2e/overlays.spec.ts:3:1 › built tabs and popover compose into a keyboard-only confirmation flow (507ms)
+  ✓  209 [webkit] › tests/e2e/overlays.spec.ts:6:1 › built alert preserves rejected drafts and completes only an explicit retry (726ms)
+  ✓  210 [webkit] › tests/e2e/playground.spec.ts:3:1 › form validation, pending submit protection and recovery to ready (548ms)
+  ✓  211 [webkit] › tests/e2e/playground.spec.ts:9:1 › narrow viewport, enlarged text and long input stay usable (609ms)
+  ✓  212 [webkit] › tests/popover-placement.ts:37:3 › follows two-axis ancestor scrolling and document scrolling while remaining open (668ms)
+  ✓  213 [webkit] › tests/popover-placement.ts:57:3 › reanchors after viewport, anchor and popup resizing without reopening (724ms)
+  ✓  214 [webkit] › tests/popover-placement.ts:77:3 › tracks a transformed anchor during movement and returns to its original position (1.9s)
+  ✓  215 [webkit] › tests/popover-placement.ts:108:3 › flips and shifts at viewport edges, constrains oversized content and keeps its action reachable (478ms)
+  ✓  216 [webkit] › tests/popover-placement.ts:130:3 › escapes a transformed paint-clipping ancestor and accepts clicks outside its bounds (582ms)
+  ✓  217 [webkit] › tests/skeleton-loading.ts:24:5 › light desktop Skeleton Loading resolves and releases its fallback and ready subtree (470ms)
+  ✓  218 [webkit] › tests/skeleton-loading.ts:24:5 › dark narrow enlarged Skeleton Loading resolves and releases its fallback and ready subtree (477ms)
+  ✓  219 [webkit] › tests/skeleton-loading.ts:61:3 › pending Skeleton boundaries stay disposed after late resolution and cannot replace a fresh request (688ms)
+  ✓  220 [webkit] › tests/tabs-lifecycle.ts:25:5 › automatic Tabs recover focus when the focused trigger is removed (413ms)
+  ✓  221 [webkit] › tests/tabs-lifecycle.ts:47:5 › automatic Tabs preserve the focused node across keyed reordering and navigate the new DOM order (496ms)
+  ✓  222 [webkit] › tests/tabs-lifecycle.ts:25:5 › manual Tabs recover focus when the focused trigger is removed (462ms)
+  ✓  223 [webkit] › tests/tabs-lifecycle.ts:47:5 › manual Tabs preserve the focused node across keyed reordering and navigate the new DOM order (551ms)
+  ✓  224 [webkit] › tests/tabs-lifecycle.ts:81:3 › force-mounted panels preserve draft nodes while hidden and lazy panels dispose their drafts (571ms)
+  ✓  225 [webkit] › tests/tabs-lifecycle.ts:109:3 › external removal and reordering preserve focus outside the tablist (376ms)
+  ✓  226 [webkit] › tests/toggle-forms.ts:27:5 › Checkbox honors bubbling reset cancellation and recovers on an allowed reset (530ms)
+  ✓  227 [webkit] › tests/toggle-forms.ts:46:5 › Checkbox rebinds explicit ownership, detaches and returns to its ancestor without remounting (925ms)
+  ✓  228 [webkit] › tests/toggle-forms.ts:79:5 › Checkbox discards queued reset work after reassociation or unmount and remounts cleanly (693ms)
+  ✓  229 [webkit] › tests/toggle-forms.ts:27:5 › Switch honors bubbling reset cancellation and recovers on an allowed reset (524ms)
+  ✓  230 [webkit] › tests/toggle-forms.ts:46:5 › Switch rebinds explicit ownership, detaches and returns to its ancestor without remounting (860ms)
+  ✓  231 [webkit] › tests/toggle-forms.ts:79:5 › Switch discards queued reset work after reassociation or unmount and remounts cleanly (758ms)
+  ✓  232 [webkit] › tests/toggle-forms.ts:105:3 › Checkbox preserves mixed semantics on canceled reset and restores them on allowed reset (533ms)
+  ✓  233 [webkit] › tests/e2e/toggles.spec.ts:3:1 › notification form validates, serializes checked values and restores default-on controls (814ms)
+  ✓  234 [webkit] › tests/e2e/toggles.spec.ts:9:1 › toggles remain usable with enlarged text at mobile width (605ms)
+
+
+  1) [chromium] › tests/e2e/form-fields.spec.ts:12:1 › long field values, file names and enlarged fonts fit a narrow screen
+
+    Error: browserContext.close: ENOENT: no such file or directory, open '/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/.playwright-artifacts-0/traces/abbd686312fd2f0ed9d3-16f26c7c2aaccb1ca560-recording56.trace'
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-form-fields-long-field-ff756-d-fonts-fit-a-narrow-screen-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/e2e-form-fields-long-field-ff756-d-fonts-fit-a-narrow-screen-chromium/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/e2e-form-fields-long-field-ff756-d-fonts-fit-a-narrow-screen-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/e2e-form-fields-long-field-ff756-d-fonts-fit-a-narrow-screen-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › tests/e2e/visual.spec.ts:16:45 › light open combobox ─────────────────────────────
+
+    Error: expect(page).toHaveScreenshot(expected) failed
+
+      1145 pixels (ratio 0.01 of all image pixels) are different.
+
+      Snapshot: combobox-light.png
+
+    Call log:
+      - Expect "toHaveScreenshot(combobox-light.png)" with timeout 5000ms
+        - verifying given screenshot expectation
+      - taking page screenshot
+        - disabled all CSS animations
+      - waiting for fonts to load...
+      - fonts loaded
+      - 1145 pixels (ratio 0.01 of all image pixels) are different.
+      - waiting 100ms before taking screenshot
+      - taking page screenshot
+        - disabled all CSS animations
+      - waiting for fonts to load...
+      - fonts loaded
+      - captured a stable screenshot
+      - 1145 pixels (ratio 0.01 of all image pixels) are different.
+
+
+      15 | });
+      16 | for(const mode of ['light','dark','mobile'])test(`${mode} open combobox`,async({page})=>{
+    > 17 |  if(mode==='mobile')await page.setViewportSize({width:390,height:844});await page.goto(mode==='dark'?'/?dark':'/');await page.evaluate(()=>document.fonts.ready);await page.emulateMedia({reducedMotion:'reduce'});await page.getByRole('combobox',{name:'Favorite fruit'}).press('ArrowDown');await expect(page.getByRole('listbox')).toBeVisible();await expect(page).toHaveScreenshot(`combobox-${mode}.png`,{animations:'disabled',maxDiffPixelRatio:0.001});
+         |                                                                                                                                                                                                                                                                                                                                                                         ^
+      18 | });
+      19 | for (const mode of ['light', 'dark', 'mobile']) test(`${mode} compact cards and vertical separators`, async ({ page }) => {
+      20 |   if (mode === 'mobile') await page.setViewportSize({ width: 390, height: 844 });
+        at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/e2e/visual.spec.ts:17:361
+
+    attachment #1: combobox-light (image/png) ──────────────────────────────────────────────────────
+    Expected: tests/e2e/visual.spec.ts-snapshots/combobox-light-chromium-darwin.png
+    Received: test-results/e2e-visual-light-open-combobox-chromium/combobox-light-actual.png
+    Diff:     test-results/e2e-visual-light-open-combobox-chromium/combobox-light-diff.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-visual-light-open-combobox-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/e2e-visual-light-open-combobox-chromium/error-context.md
+
+    attachment #5: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/e2e-visual-light-open-combobox-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/e2e-visual-light-open-combobox-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [chromium] › tests/e2e/visual.spec.ts:16:45 › dark open combobox ──────────────────────────────
+
+    Error: expect(page).toHaveScreenshot(expected) failed
+
+      1213 pixels (ratio 0.01 of all image pixels) are different.
+
+      Snapshot: combobox-dark.png
+
+    Call log:
+      - Expect "toHaveScreenshot(combobox-dark.png)" with timeout 5000ms
+        - verifying given screenshot expectation
+      - taking page screenshot
+        - disabled all CSS animations
+      - waiting for fonts to load...
+      - fonts loaded
+      - 1213 pixels (ratio 0.01 of all image pixels) are different.
+      - waiting 100ms before taking screenshot
+      - taking page screenshot
+        - disabled all CSS animations
+      - waiting for fonts to load...
+      - fonts loaded
+      - captured a stable screenshot
+      - 1213 pixels (ratio 0.01 of all image pixels) are different.
+
+
+      15 | });
+      16 | for(const mode of ['light','dark','mobile'])test(`${mode} open combobox`,async({page})=>{
+    > 17 |  if(mode==='mobile')await page.setViewportSize({width:390,height:844});await page.goto(mode==='dark'?'/?dark':'/');await page.evaluate(()=>document.fonts.ready);await page.emulateMedia({reducedMotion:'reduce'});await page.getByRole('combobox',{name:'Favorite fruit'}).press('ArrowDown');await expect(page.getByRole('listbox')).toBeVisible();await expect(page).toHaveScreenshot(`combobox-${mode}.png`,{animations:'disabled',maxDiffPixelRatio:0.001});
+         |                                                                                                                                                                                                                                                                                                                                                                         ^
+      18 | });
+      19 | for (const mode of ['light', 'dark', 'mobile']) test(`${mode} compact cards and vertical separators`, async ({ page }) => {
+      20 |   if (mode === 'mobile') await page.setViewportSize({ width: 390, height: 844 });
+        at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/e2e/visual.spec.ts:17:361
+
+    attachment #1: combobox-dark (image/png) ───────────────────────────────────────────────────────
+    Expected: tests/e2e/visual.spec.ts-snapshots/combobox-dark-chromium-darwin.png
+    Received: test-results/e2e-visual-dark-open-combobox-chromium/combobox-dark-actual.png
+    Diff:     test-results/e2e-visual-dark-open-combobox-chromium/combobox-dark-diff.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-visual-dark-open-combobox-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/e2e-visual-dark-open-combobox-chromium/error-context.md
+
+    attachment #5: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/e2e-visual-dark-open-combobox-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/e2e-visual-dark-open-combobox-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3 failed
+    [chromium] › tests/e2e/form-fields.spec.ts:12:1 › long field values, file names and enlarged fonts fit a narrow screen
+    [chromium] › tests/e2e/visual.spec.ts:16:45 › light open combobox ──────────────────────────────
+    [chromium] › tests/e2e/visual.spec.ts:16:45 › dark open combobox ───────────────────────────────
+  231 passed (2.3m)
+error: script "test:e2e" exited with code 1

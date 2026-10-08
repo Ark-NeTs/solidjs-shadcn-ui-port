@@ -37,3 +37,9 @@ it('emits real input values for native defaults and preserves explicit empty val
  expect(html).not.toMatch(/defaultvalue/i);
  expect(html).toContain('value="server@example.com"');expect(html).toContain('value="current"');expect(html).toMatch(/<input value(?:=""|(?=\s))/);expect(html).not.toContain('baseline');
 });
+
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent, Collapsible, CollapsibleTrigger, CollapsibleContent } from '../src';
+it('renders disclosure state, custom ID relationships, disabled buttons and mount policy on the server',()=>{
+ const html=renderToString(()=><><Accordion type="single" defaultValue="a"><AccordionItem value="a" triggerId="question" contentId="answer"><AccordionTrigger>Server question</AccordionTrigger><AccordionContent>Server answer</AccordionContent></AccordionItem><AccordionItem value="b" disabled><AccordionTrigger>Unavailable</AccordionTrigger><AccordionContent>Unmounted answer</AccordionContent></AccordionItem></Accordion><Collapsible><CollapsibleTrigger>Server details</CollapsibleTrigger><CollapsibleContent forceMount>Retained body</CollapsibleContent></Collapsible></>);
+ expect(html).toContain('aria-expanded="true"');expect(html).toContain('aria-disabled="true"');expect(html).toContain('aria-controls="answer"');expect(html).toContain('aria-labelledby="question"');expect(html).toContain('role="region"');expect(html).toContain('Server answer');expect(html).not.toContain('Unmounted answer');expect(html).toContain('Retained body');expect(html).toContain('hidden');expect(html).toContain('disabled');
+});

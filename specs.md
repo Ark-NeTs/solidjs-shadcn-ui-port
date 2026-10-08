@@ -6,7 +6,11 @@ and `packages/shadcn-svelte-theme/README.md`, before writing a line of code.
 
 ## Current owner direction — 2026-10-08
 
-**Current batch:** implement Combobox as the next increment. Evaluate Kobalte first;
+**Current batch:** implement Accordion and Collapsible after evaluating Kobalte.
+Deliver source, examples, unit/browser/SSR/hydration tests and screenshots; follow
+the commit/push working agreement. See [disclosure delivery](docs/DISCLOSURES-DELIVERY.md).
+
+**Previous batch:** implement Combobox as the next increment. Evaluate Kobalte first;
 deliver source, docs and tests, then commit/push on a codex branch under the latest
 working agreement. See [COMBOBOX-DELIVERY.md](COMBOBOX-DELIVERY.md).
 

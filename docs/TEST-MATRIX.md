@@ -3,7 +3,7 @@
 Initially audited 2026-10-08 against source at `314f27a`; updated with the
 [three-engine browser evidence](WEBKIT-DELIVERY.md) and
 [source hydration regression](HYDRATION-DELIVERY.md), including
-[real Loading boundaries](LOADING-HYDRATION-DELIVERY.md). Covers the **14
+[real Loading boundaries](LOADING-HYDRATION-DELIVERY.md). Covers the **16
 implemented component families**, including their compound parts. The other
 catalog entries in [COMPONENT-MAP.md](../COMPONENT-MAP.md) remain unimplemented;
 their adoption probes are not delivered-component acceptance tests.
@@ -42,15 +42,15 @@ are implementation scope limits, not features that an existing test proves.
 | Rejected hydrated data recovers through explicit retry and preserves drafts; late results stay isolated | [H: five error/retry scenarios](../tests/hydration/errored.spec.ts), [three native Solid comparisons](../tests/hydration/retry-minimal.spec.ts) | Pending SSR followed by client rejection; the previous error stays visible until retry settlement. No SSR error serialization or streaming claim. |
 | Diagnostics and cleanup are checked | [Unit setup](../vitest.setup.ts), [browser fixture](../tests/browser-fixture.ts) | Every unit test checks console warn/error after cleanup; every B/E/H test checks console warning/error and page errors. The hydration build also rejects server warnings/errors; ordinary S tests have no equivalent diagnostic fixture. |
 | Whole-gallery accessibility | [B: light/dark examples have no axe accessibility violations](../tests/integration/foundation.spec.ts#L27) | Applies to the rendered, settled gallery state. Axe does not certify screen-reader usability or all dynamic states. |
-| Whole-gallery visual appearance | [V: light/dark/mobile component gallery](../tests/e2e/visual.spec.ts#L3) | Shared images include every family; not every variant/state combination. |
-| Unit execution coverage | [Coverage configuration](../vitest.config.ts), [measured coverage](evidence/alert-reopen-coverage.json) | 100% statements, branches, functions and lines for included component/helper source; not exhaustive behavior coverage. |
+| Whole-gallery visual appearance | [V: light/dark/mobile component gallery](../tests/e2e/visual.spec.ts#L3) | Shared gallery plus dedicated disclosure images; not every variant/state combination. |
+| Unit execution coverage | [Coverage configuration](../vitest.config.ts), [measured coverage](evidence/disclosures-coverage.json) | 100% statements, branches, functions and lines for included component/helper source; not exhaustive behavior coverage. |
 
-The current modal lifecycle delivery records **105 unit tests, 7 grouped SSR tests,
-258 browser integration runs (86 scenarios × 3 engines), and 216 E2E runs
-(68 journeys × 3 engines + 12 Chromium visual tests), and 81 hydration runs
-(78 positive assertions + 3 unsafe-pattern characterizations)**. Those visual tests compare
-15 images. These totals are package-wide, not per component. See the
-[Alert Dialog reopen verification](ALERT-REOPEN-DELIVERY.md) for current results and the
+The current disclosure delivery records **115 unit tests, 8 grouped SSR tests,
+273 browser integration runs (91 scenarios × 3 engines), and 234 E2E runs
+(73 journeys × 3 engines + 15 Chromium visual tests), and 84 hydration runs
+(81 positive assertions + 3 unsafe-pattern characterizations)**. Those visual tests compare
+18 images. These totals are package-wide, not per component. See the
+[Accordion/Collapsible verification](DISCLOSURES-DELIVERY.md) for current results and the
 [initial matrix verification](TEST-MATRIX-DELIVERY.md) for the original audit.
 
 WebKit runs on macOS with process-scoped button Tab navigation and native
@@ -332,6 +332,31 @@ exports. **CMB-2 remains open for a physical IME session only.** The synthetic H
 about the native text caret. Complete Base UI API parity remains an implementation
 limit documented in [the guide](components.md#combobox).
 
+## Accordion
+
+| Acceptance requirement | Existing evidence |
+| --- | --- |
+| Single required/collapsible selection, multiple immutable values, controlled rejection, disabled items/root | [U: disclosure selection and ownership cases](../tests/unit/disclosures.test.tsx); [B/E: single accordion and multiple expansion](../tests/disclosures.ts) |
+| Arrow/Home/End focus, disabled skipping, horizontal LTR/RTL, clamped/wrapped movement, canceled handlers, nested isolation | U keyboard/nested cases; B/E single accordion and nested disclosure assertions. Clamped navigation and canceled handlers are unit assertions. |
+| Heading level, named region, generated and explicit live IDs | U semantics; [S: disclosure markup](../tests/server.test.tsx); [H: stable owner IDs](../tests/hydration/hydration.spec.ts); B/E controls/labelledby assertions |
+| Forced draft identity and ordinary content removal | U selection/mount cases; B/E single selection draft; H server-node reuse, live IDs, keyboard selection and preserved draft |
+| Focus, theme override, reduced motion, enlarged narrow layout and axe | B/E light/dark disclosure checks; [V: light/dark/mobile disclosure page](../tests/e2e/visual.spec.ts) |
+
+## Collapsible
+
+| Acceptance requirement | Existing evidence |
+| --- | --- |
+| Native button/ref, controlled/uncontrolled expansion, root/trigger disabled, canceled/bound click callbacks | [U: disclosure state, refs and owner cases](../tests/unit/disclosures.test.tsx) |
+| Ordinary children remount, forceMount retains draft identity, custom IDs remain reactive | U mount/ID cases; [B/E: collapsible remounts and owner rejection](../tests/disclosures.ts); [H: ordinary remount after hydration](../tests/hydration/hydration.spec.ts) |
+| Controlled rejected open/close retains canonical state until owner accepts | U and B/E owner assertions in both directions |
+| SSR retained closed body and hidden shell; hydration retains all original slots | [S: disclosure markup](../tests/server.test.tsx); H disclosure fixture and disposal |
+| Accessible names, long prose, light/dark/narrow layout and visuals | B/E whole disclosure page axe/layout checks; dedicated V screenshots. Physical assistive technology remains open. |
+
+Both families use native buttons and own no network/async state. Host loading,
+empty and error content is composed as children. No animated exit, arbitrary
+`asChild`, or runtime change of Accordion selection type is promised. Custom IDs
+are configured on the root/item; exact API boundaries are in the component guide.
+
 ## SSR and visual scope by component
 
 | Component | Server assertions / presence | Visual scope |
@@ -350,13 +375,17 @@ limit documented in [the guide](components.md#combobox).
 | Popover | S4 asserts a closed expanded state in shared markup; [S5](../tests/server.test.tsx#L26) asserts forced title and popover attribute | Shared closed triggers plus dedicated open light/dark/mobile |
 | Alert Dialog | S4 asserts no alertdialog while closed; S5 asserts forced title/role | Shared closed trigger plus dedicated open light/dark/mobile |
 | Combobox | [S6](../tests/server.test.tsx#L31): role, initial value, name, closed state and absent listbox | Shared single/multiple examples plus dedicated open single-select light/dark/mobile |
+| Accordion | S8: expanded/required state, custom controls/labelledby, region, visible/absent body | Dedicated light/dark/mobile disclosure page |
+| Collapsible | S8: closed forced body and hidden shell in combined markup | Dedicated light/dark/mobile disclosure page |
 
 S1 title: “renders semantic foundation markup on the server”; S2: “renders named
 fields with labels, native values and validation attributes”; S3: “server-renders
 toggle state, native forms and accessible roles”; S4: “renders tabs and closed
 overlay triggers without a browser”; S5: “renders forced overlay structure without
 opening native layers on the server”; S6: “renders the Combobox canonical value
-and form field without a browser”. None tests browser hydration.
+and form field without a browser”. S8: “renders disclosure state, custom ID
+relationships, disabled buttons and mount policy on the server”. None tests
+browser hydration.
 
 **ASYNC-ERR-1 closed:** [Errored recovery](ERRORED-HYDRATION-DELIVERY.md) verifies
 explicit retry, repeated activation, draft identity/focus, stale resolve/reject,
@@ -373,9 +402,9 @@ order the next test work; they do not assign bug severity to untested behavior.
 | Priority | ID | Component(s) | Concrete closure condition |
 | --- | --- | --- | --- |
 | Manual follow-up | CMB-2 | Combobox | Browser scrolling/Tab/modal checks pass; record a physical IME composition/commit/cancel session before closing the remaining manual portion. |
-| Extended coverage | ALL-2 | All 14 | [H: real hydration, forms, Tabs and overlays](HYDRATION-DELIVERY.md) passes for the documented source fixtures. [Pending Loading boundary hydration](LOADING-HYDRATION-DELIVERY.md) and [client rejection/retry](ERRORED-HYDRATION-DELIVERY.md) are also covered. Streaming, ready-at-SSR boundaries, multiple roots, every variant and a published SSR build remain unverified. |
+| Extended coverage | ALL-2 | All 16 | [H: real hydration, forms, Tabs and overlays](HYDRATION-DELIVERY.md) passes for the documented source fixtures. [Pending Loading boundary hydration](LOADING-HYDRATION-DELIVERY.md) and [client rejection/retry](ERRORED-HYDRATION-DELIVERY.md) are also covered. Streaming, ready-at-SSR boundaries, multiple roots, every variant and a published SSR build remain unverified. |
 | Cross-cutting | ALL-3 | Interactive controls and semantic content | Record manual assistive-technology navigation/announcements; axe success is only automated evidence. |
-| Cross-cutting | ALL-4 | All 14 | Expand representative state/variant visual cases; isolate assertions currently supported only by shared gallery/SSR markup (notably Badge SSR). |
+| Cross-cutting | ALL-4 | All 16 | Expand representative state/variant visual cases; isolate assertions currently supported only by shared gallery/SSR markup (notably Badge SSR). |
 | Before app adoption | ALL-5 | Full package | Verify real admin composition, router/query integration and application errors; measure representative large-list/overlay performance. Current E2E is the gallery only. |
 
 No claim is made that every supported combination appears above. The matrix maps

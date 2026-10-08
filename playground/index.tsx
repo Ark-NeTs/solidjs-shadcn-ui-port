@@ -21,6 +21,7 @@ import { ToggleForms } from './toggle-forms';
 import { LinkNavigation } from './link-navigation';
 import { NativeFields } from './native-fields';
 import { CardLayout } from './card-layout';
+import { Disclosures } from './disclosures';
 import { SkeletonLoading } from './skeleton-loading';
 import { TabsExamples, OverlayExamples } from './overlays';
 const variants = ['default', 'secondary', 'outline', 'ghost', 'destructive', 'link'] as const;
@@ -45,10 +46,11 @@ function Playground() {
       </header>
       <section id="top" class="py-12">
         <Badge variant="secondary">Solid 2 · First release</Badge>
-        <h1 class="mt-5 max-w-2xl text-4xl font-semibold tracking-tight sm:text-5xl">A shared language,<br />fourteen building blocks.</h1>
+        <h1 class="mt-5 max-w-2xl text-4xl font-semibold tracking-tight sm:text-5xl">A shared language,<br />sixteen building blocks.</h1>
         <p class="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">Familiar shadcn styling. Reactive Solid components. Shared light and dark tokens, ready to compose into your next screen.</p>
-        <div class="mt-6 samples"><Button as="a" href="#components">Explore components</Button><span class="text-xs text-muted-foreground">Button / Badge / Card / Separator / Skeleton / Input / Textarea / Label / Checkbox / Switch / Tabs / Popover / Alert Dialog / Combobox</span></div>
+        <div class="mt-6 samples"><Button as="a" href="#components">Explore components</Button><span class="text-xs text-muted-foreground">Button / Badge / Card / Separator / Skeleton / Input / Textarea / Label / Checkbox / Switch / Tabs / Popover / Alert Dialog / Combobox / Accordion / Collapsible</span></div>
       </section>
+      <p class="mb-6"><a class="underline" href="/?disclosures">Explore Accordion and Collapsible →</a></p>
       <Separator />
       <section id="components" class="demo-section" aria-labelledby="button-heading">
         <h2 id="button-heading">01 / Button</h2><p>Actions with clear hierarchy. Native keyboard, form, and disabled behavior.</p>
@@ -77,7 +79,7 @@ function Playground() {
       <section class="demo-section" aria-labelledby="tabs-heading"><h2 id="tabs-heading">11 / Tabs</h2><p>Named panels, roving focus, and automatic or manual activation.</p><TabsExamples/></section>
       <section class="demo-section" aria-labelledby="overlays-heading"><h2 id="overlays-heading">12–13 / Popover &amp; Alert Dialog</h2><p>Contextual editing and explicit confirmation, with focus managed by the browser.</p><OverlayExamples/></section>
       <section class="demo-section" aria-labelledby="combobox-heading"><h2 id="combobox-heading">14 / Combobox</h2><p>Search, choose, clear, and reset. Selection stays with its owner.</p><ComboboxExamples/></section>
-      <footer class="mt-16 border-t pt-6 text-xs text-muted-foreground">Fourteen components · Shared semantic tokens · No application services</footer>
+      <footer class="mt-16 border-t pt-6 text-xs text-muted-foreground">Sixteen components · Shared semantic tokens · No application services</footer>
     </main>
   </div>;
 }
@@ -136,6 +138,7 @@ function ToggleExamples() {
 /** Select focused acceptance examples without changing the main gallery layout. */
 function Preview() {
   const query = new URLSearchParams(location.search);
+  if (query.has('disclosures')) return <Disclosures/>;
   if (query.has('skeleton-loading')) return <SkeletonLoading/>;
   if (query.has('card-layout')) return <CardLayout/>;
   if (query.has('native-fields')) return <NativeFields/>;

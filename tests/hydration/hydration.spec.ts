@@ -130,3 +130,26 @@ for (const kind of ['popover', 'alert'] as const) test(`hydrates initially open 
   await page.locator('#hydrate').evaluate((node: HTMLButtonElement) => { node.disabled = false;node.focus(); });
   await expect(page.locator('#hydrate')).toBeFocused();
 });
+
+
+test('hydrates disclosures with stable owner IDs, retained drafts and ordinary remounts', async ({ page }) => {
+  await hydratePage(page);
+  const trigger = page.getByRole('button', { name: 'Hydrated draft section' });
+  const draft = page.getByLabel('Accordion draft');const original = await draft.elementHandle();
+  await draft.fill('Keep hydrated disclosure edits');
+  await page.getByRole('button', { name: 'Change IDs' }).click();
+  await expect(trigger).toHaveAttribute('id', 'disclosure-trigger-client');
+  await expectControls(page, '#disclosure-trigger-client', '#disclosure-content-client');
+  await expect(page.locator('#disclosure-content-client')).toHaveAttribute('aria-labelledby', 'disclosure-trigger-client');
+  await trigger.press('ArrowDown');const other = page.getByRole('button', { name: 'Hydrated other section' });
+  await expect(other).toBeFocused();await other.press('Enter');await expect(draft).toBeHidden();
+  await trigger.press('Space');await expect(draft).toHaveValue('Keep hydrated disclosure edits');
+  expect(await draft.evaluate((node, before) => node === before, original)).toBe(true);
+  const optional = page.getByRole('button', { name: 'Hydrated optional section' });
+  const temporary = page.getByLabel('Collapsible draft');const removed = await temporary.elementHandle();
+  await temporary.fill('Discard this draft');await optional.press('Enter');await expect(temporary).toHaveCount(0);
+  expect(await removed!.evaluate(node => node.isConnected)).toBe(false);
+  await optional.press('Space');await expect(temporary).toHaveValue('Server collapsible draft');
+  await page.getByRole('button', { name: 'Dispose components', exact: true }).click();
+  await expect(page.locator('#hydration-root')).toBeEmpty();
+});

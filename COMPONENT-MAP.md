@@ -1,8 +1,8 @@
 # shadcn/ui → Solid 2 component map
 
 **Implemented (2026-10-08):** Button, Badge, Card, Separator, Skeleton, Input,
-Textarea, Label, Checkbox, Switch, Tabs, Popover, Alert Dialog and Combobox now have owned Solid 2 source, documentation and passing unit, browser and built-library tests.
-See [COMBOBOX-DELIVERY.md](COMBOBOX-DELIVERY.md), [OVERLAYS-DELIVERY.md](OVERLAYS-DELIVERY.md), [TOGGLES-DELIVERY.md](TOGGLES-DELIVERY.md), [FORM-FIELDS-DELIVERY.md](FORM-FIELDS-DELIVERY.md) and the earlier
+Textarea, Label, Checkbox, Switch, Tabs, Popover, Alert Dialog, Combobox, Accordion and Collapsible now have owned Solid 2 source, documentation and passing unit, browser and built-library tests.
+See [disclosure delivery](docs/DISCLOSURES-DELIVERY.md), [COMBOBOX-DELIVERY.md](COMBOBOX-DELIVERY.md), [OVERLAYS-DELIVERY.md](OVERLAYS-DELIVERY.md), [TOGGLES-DELIVERY.md](TOGGLES-DELIVERY.md), [FORM-FIELDS-DELIVERY.md](FORM-FIELDS-DELIVERY.md) and the earlier
 [FOUNDATION-DELIVERY.md](FOUNDATION-DELIVERY.md). These use native HTML;
 headless-library findings below remain relevant to later primitives.
 
@@ -82,7 +82,7 @@ No row currently selects corvu; alternatives are evaluated below.
 
 | shadcn component | Route | Kobalte first / implementation path | Required adaptation or acceptance focus |
 | --- | --- | --- | --- |
-| [Accordion](https://ui.shadcn.com/docs/components/accordion) | K | `accordion` | Single/multiple expansion, disabled items, heading/trigger semantics, keyboard navigation. |
+| [Accordion](https://ui.shadcn.com/docs/components/accordion) | N | `accordion` evaluated first; owned signals/native buttons | Single/multiple, heading/region semantics, disabled items, orientation/RTL, controlled selection and mount policy delivered. Alpha.2/rc.13 warns; see KOBALTE-DISCLOSURES.md and docs/DISCLOSURES-DELIVERY.md. |
 | [Alert](https://ui.shadcn.com/docs/components/alert) | K | `alert` | Title/description/icon slots; use alert announcements only when appropriate. |
 | [Alert Dialog](https://ui.shadcn.com/docs/components/alert-dialog) | N | `alert-dialog` evaluated first; native modal chosen | Implemented explicit cancel/action, controlled state, least-destructive focus, nesting and scroll locks. Delayed native close after reopening is guarded; see docs/ALERT-REOPEN-DELIVERY.md. Library routing remains as recorded in KOBALTE-OVERLAYS.md and OVERLAYS-DELIVERY.md. |
 | [Aspect Ratio](https://ui.shadcn.com/docs/components/aspect-ratio) | N | CSS `aspect-ratio` | Ratio prop, sizing and overflow behavior; no headless state needed. |
@@ -98,7 +98,7 @@ No row currently selects corvu; alternatives are evaluated below.
 | [Carousel](https://ui.shadcn.com/docs/components/carousel) | G | `button` only supplies controls | No carousel engine. Evaluate Embla core with an owned Solid lifecycle adapter; drag, loop, resize, plugins and keyboard behavior need tests. |
 | [Chart](https://ui.shadcn.com/docs/components/chart) | G | No chart engine | Select a Solid 2-compatible or framework-neutral renderer; recreate chart config, tooltip, legend and theme contracts. Recharts is React-specific. |
 | [Checkbox](https://ui.shadcn.com/docs/components/checkbox) | N | `checkbox` evaluated first; native input chosen | Implemented checked/mixed/disabled, controlled rejection, forms/reset and labels. Unpatched Kobalte emits diagnostics; see KOBALTE-TOGGLES.md and TOGGLES-DELIVERY.md. |
-| [Collapsible](https://ui.shadcn.com/docs/components/collapsible) | K | `collapsible` | Controlled expansion, hidden content and animation lifecycle. |
+| [Collapsible](https://ui.shadcn.com/docs/components/collapsible) | N | `collapsible` evaluated first; owned signals/native button | Controlled/uncontrolled expansion, hidden shell and optional retained drafts delivered. Alpha.2/rc.13 warns; animated exit is unsupported. See KOBALTE-DISCLOSURES.md and docs/DISCLOSURES-DELIVERY.md. |
 | [Combobox](https://ui.shadcn.com/docs/components/combobox) | C | `combobox` evaluated first; owned composition | Evaluated first; alpha.2/rc.13 reset and diagnostics fail. Owned Input/Popover composition delivers single/multiple selection, search, chips, forms and keyboard access. API limits and evidence: COMBOBOX-DELIVERY.md. No corvu Combobox primitive. |
 | [Command](https://ui.shadcn.com/docs/components/command) | G | `search` / `combobox`, `listbox`, `dialog` candidates | No cmdk equivalent. Own item registration, ranking/filtering, grouped visibility, inline palette and action dispatch; prove focus semantics before selecting composition. |
 | [Context Menu](https://ui.shadcn.com/docs/components/context-menu) | K | `context-menu` | Pointer/keyboard opening, submenus, checkbox/radio items and dismissal. |

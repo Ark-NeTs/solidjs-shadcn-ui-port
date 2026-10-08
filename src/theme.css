@@ -156,3 +156,8 @@
   [data-slot="popover-content"], [data-slot="alert-dialog-content"],
   [data-slot="alert-dialog-overlay"], [data-slot="tabs-trigger"] { animation: none; transition: none; }
 }
+/* Closed disclosures stay absent from layout and navigation, including force-mounted children. */
+[data-slot="accordion-content"][hidden], [data-slot="collapsible-content"][hidden] { display: none; }
+@media (prefers-reduced-motion: reduce) {
+  [data-slot="accordion-trigger"] { transition: none; }
+}

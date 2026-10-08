@@ -23,3 +23,6 @@ for (const mode of ['light', 'dark', 'mobile']) test(`${mode} compact cards and 
   await page.evaluate(() => document.fonts.ready);
   await expect(page.locator('main')).toHaveScreenshot(`card-layout-${mode}.png`, { animations: 'disabled', maxDiffPixelRatio: 0.001 });
 });
+for(const mode of ['light','dark','mobile'])test(`${mode} accordion and collapsible`,async({page})=>{
+ if(mode==='mobile')await page.setViewportSize({width:390,height:844});await page.goto(`/?disclosures${mode==='dark'?'&dark':''}`);await page.evaluate(()=>document.fonts.ready);await page.emulateMedia({reducedMotion:'reduce'});await expect(page.locator('main')).toHaveScreenshot(`disclosures-${mode}.png`,{animations:'disabled',maxDiffPixelRatio:0.001});
+});

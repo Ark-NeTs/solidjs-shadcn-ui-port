@@ -1,6 +1,7 @@
 # Component guide
 
-All components forward native attributes, events, children and refs. Use `class`
+Components forward native attributes, events, children and refs within the
+contracts documented below. Use `class`
 for caller overrides. Import only from `shadcn-solidjs-theme`; dependencies stay
 inside the package (D19). The live playground demonstrates each component.
 
@@ -635,6 +636,84 @@ check does not certify a port of the admin or every Base UI behavior.
 ![Light searchable chooser](screenshots/combobox-light.png)
 ![Dark searchable chooser](screenshots/combobox-dark.png)
 ![Narrow searchable chooser](screenshots/combobox-mobile.png)
+
+## Accordion and Collapsible
+
+Open `/?disclosures` (or `/?disclosures&dark`) in the playground. Both components
+use native buttons, owned Solid signals and the shared semantic theme. Kobalte
+was evaluated first; [its diagnostic evidence](../KOBALTE-DISCLOSURES.md) explains
+the current implementation choice.
+
+```tsx
+import { createSignal } from 'solid-js';
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent }
+  from 'shadcn-solidjs-theme/ui/accordion';
+import { Collapsible, CollapsibleTrigger, CollapsibleContent }
+  from 'shadcn-solidjs-theme/ui/collapsible';
+import { buttonVariants } from 'shadcn-solidjs-theme/ui/button';
+import { Input } from 'shadcn-solidjs-theme/ui/input';
+
+function Details() {
+  const [open, setOpen] = createSignal(false);
+  return <>
+    <Accordion type="single" defaultValue="profile" collapsible>
+      <AccordionItem value="profile" triggerId="profile-question" contentId="profile-answer">
+        <AccordionTrigger headingLevel={2}>Profile details</AccordionTrigger>
+        <AccordionContent forceMount>
+          <Input aria-label="Profile draft" defaultValue="My workspace" />
+        </AccordionContent>
+      </AccordionItem>
+      <AccordionItem value="billing" disabled>
+        <AccordionTrigger>Billing is unavailable</AccordionTrigger>
+        <AccordionContent>Billing details</AccordionContent>
+      </AccordionItem>
+    </Accordion>
+    <Collapsible open={open()} onOpenChange={setOpen}>
+      <CollapsibleTrigger class={buttonVariants({ variant: 'outline' })}>
+        Extra information
+      </CollapsibleTrigger>
+      <CollapsibleContent class="pt-3">Application-owned content.</CollapsibleContent>
+    </Collapsible>
+  </>;
+}
+```
+
+| Part | Contract |
+| --- | --- |
+| Accordion | Required `type="single"` uses a string `value`/`defaultValue`/`onValueChange`; `type="multiple"` uses string arrays. Choose the type for the owner's lifetime. Single mode starts empty unless given a default; once open, `collapsible` allows clearing it. |
+| Accordion root/item/trigger | Root and item accept `disabled`; the trigger also accepts native `disabled`. Items require unique, nonempty `value` strings. `orientation` defaults to vertical, `loop` defaults to true, and DOM `dir` controls horizontal arrow direction. |
+| AccordionTrigger | Native button inside an accessible heading (default level 3; `headingLevel` accepts 2–6). Decorative chevron follows expansion. `class` styles the button; callback `ref` receives it. |
+| AccordionContent | Named `region`; `class` styles the inner padded body. Other native attributes and `ref` reach the outer content element. |
+| Collapsible | Boolean `open`/`defaultOpen`/`onOpenChange`, `disabled`, native root attributes. Controlled requests only change the display when the owner updates its prop. |
+| CollapsibleTrigger/Content | Unstyled native button and content div; compose buttonVariants and content classes as needed. |
+| IDs and mount policy | Set `triggerId`/`contentId` on AccordionItem or Collapsible, not on its parts. Defaults are stable generated IDs. Both are known at SSR time and update reactively. Content shells remain hidden while closed; children unmount unless Content has `forceMount`. |
+
+Tab reaches each enabled trigger. Enter/Space toggles expansion. Accordion arrows
+move focus without changing selection; Home/End reach the first/last enabled
+trigger. Horizontal arrows follow LTR/RTL; `loop={false}` clamps at the ends.
+Nested accordions/disclosures do not redirect navigation in the parent. A required
+single selection uses `aria-disabled` while retaining focus so another question
+can still be reached. Canceled `onClick`/`onKeyDown` handlers suppress the default
+action. Triggers always use `type="button"`, including inside forms.
+
+Use `forceMount` when local input drafts should survive closing. Hidden content is
+removed from layout, accessibility navigation and Tab order; this applies even
+when the shell has display utility classes. Ordinary content starts fresh on
+reopen. No fetching, retry policy, persistence or application authorization lives
+inside these components. Loading/error/empty content belongs to the application.
+
+Differences from the React sibling: Solid `class` and callback refs, root/item ID
+configuration, native trigger elements (no `asChild`), no height measurement CSS
+variables, and no animated exit or delayed unmount. Accordion retains the sibling's
+root/item/trigger/content classes apart from height-animation hooks; one decorative
+native chevron rotates instead of importing the sibling's two React icons. Reduced motion removes the trigger
+transition. Token overrides and light/dark/narrow layouts are verified; physical
+screen-reader sessions, animation parity and every arbitrary nested composition
+are not certified by automated tests.
+
+![Light disclosures](screenshots/disclosures-light.png)
+![Dark disclosures](screenshots/disclosures-dark.png)
+![Narrow disclosures](screenshots/disclosures-mobile.png)
 
 ## Acceptance evidence
 

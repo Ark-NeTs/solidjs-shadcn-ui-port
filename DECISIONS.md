@@ -311,3 +311,23 @@ resolution, late completion and disposal assertions remain strict, with no runti
 patch or diagnostics suppression. [Evidence](docs/LOADING-HYDRATION-DELIVERY.md)
 is specific to pending renderToString output and client-owned completion; it does
 not establish streaming or ready-at-SSR boundary support.
+
+
+## Owned Accordion and Collapsible (2026-10-08)
+
+Under D19/D90, evaluate Kobalte first, then keep these two wrappers native and
+signal-owned: unpatched alpha.2 opens/closes in Chromium and Firefox but emits
+Solid 2 rc.13 untracked-read, feedback and relay diagnostics.
+[Kobalte evidence](KOBALTE-DISCLOSURES.md) records every message. No missing
+capability justifies corvu; neither library is added to production.
+
+REASONING: these disclosures need selection, button activation and hidden content,
+without a portal, geometry effect or external listener. A shared disclosure helper
+owns IDs and mounting; Accordion adds selection and DOM-order keyboard navigation.
+Explicit trigger/content IDs belong to the root/item, so SSR knows both IDs before
+rendering either part. Sibling-time registration produced an incorrect controls
+link in the server regression and is not used here.
+
+Keep content shells mounted and hidden while closed; unmount children unless
+forceMount is requested. Natural height replaces animated height/exit presence.
+These API differences are documented in the [component guide](docs/components.md).
