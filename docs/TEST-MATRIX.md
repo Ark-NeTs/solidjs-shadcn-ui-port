@@ -2,7 +2,8 @@
 
 Initially audited 2026-10-08 against source at `314f27a`; updated with the
 [three-engine browser evidence](WEBKIT-DELIVERY.md) and
-[source hydration regression](HYDRATION-DELIVERY.md). Covers the **14
+[source hydration regression](HYDRATION-DELIVERY.md), including
+[real Loading boundaries](LOADING-HYDRATION-DELIVERY.md). Covers the **14
 implemented component families**, including their compound parts. The other
 catalog entries in [COMPONENT-MAP.md](../COMPONENT-MAP.md) remain unimplemented;
 their adoption probes are not delivered-component acceptance tests.
@@ -41,14 +42,14 @@ are implementation scope limits, not features that an existing test proves.
 | Diagnostics and cleanup are checked | [Unit setup](../vitest.setup.ts), [browser fixture](../tests/browser-fixture.ts) | Every unit test checks console warn/error after cleanup; every B/E/H test checks console warning/error and page errors. The hydration build also rejects server warnings/errors; ordinary S tests have no equivalent diagnostic fixture. |
 | Whole-gallery accessibility | [B: light/dark examples have no axe accessibility violations](../tests/integration/foundation.spec.ts#L27) | Applies to the rendered, settled gallery state. Axe does not certify screen-reader usability or all dynamic states. |
 | Whole-gallery visual appearance | [V: light/dark/mobile component gallery](../tests/e2e/visual.spec.ts#L3) | Shared images include every family; not every variant/state combination. |
-| Unit execution coverage | [Coverage configuration](../vitest.config.ts), [measured coverage](evidence/tabs-registration-coverage.json) | 100% statements, branches, functions and lines for included component/helper source; not exhaustive behavior coverage. |
+| Unit execution coverage | [Coverage configuration](../vitest.config.ts), [measured coverage](evidence/loading-hydration-coverage.json) | 100% statements, branches, functions and lines for included component/helper source; not exhaustive behavior coverage. |
 
 The current hydration delivery records **104 unit tests, 7 grouped SSR tests,
 255 browser integration runs (85 scenarios × 3 engines), and 213 E2E runs
-(67 journeys × 3 engines + 12 Chromium visual tests), and 45 hydration runs
-(42 positive assertions + 3 unsafe-pattern characterizations)**. Those visual tests compare
+(67 journeys × 3 engines + 12 Chromium visual tests), and 57 hydration runs
+(54 positive assertions + 3 unsafe-pattern characterizations)**. Those visual tests compare
 15 images. These totals are package-wide, not per component. See the
-[hydration verification](HYDRATION-DELIVERY.md) for current results and the
+[Loading hydration verification](LOADING-HYDRATION-DELIVERY.md) for current results and the
 [initial matrix verification](TEST-MATRIX-DELIVERY.md) for the original audit.
 
 WebKit runs on macOS with process-scoped button Tab navigation and native
@@ -129,11 +130,14 @@ state are N/A for this noninteractive boundary.
 | Browser reduced-motion preference stops animation | [B: loading placeholders are hidden from accessibility tree and stop motion](../tests/integration/foundation.spec.ts#L22) |
 | Application pending state adds/removes placeholders through a complete workflow | [E: form validation, pending submit protection and recovery to ready](../tests/e2e/playground.spec.ts#L3), shared pending-state V |
 | Real Loading replaces the fallback, preserves shell editing and releases ready content on unmount | [B/E: light desktop and dark narrow/enlarged](../tests/skeleton-loading.ts#L24) |
+| Pending SSR fallback is claimed, client handoff stays confined to that fallback, resolution/unmount preserve shell drafts, and disposed roots ignore late completion | [H: real Loading hydration and native comparison](../tests/hydration/loading.spec.ts), [runtime handoff evidence](LOADING-HYDRATION-DELIVERY.md) |
 | Pending disposal survives late resolution before/after a fresh mount; old requests cannot replace the fresh fallback | [B/E: late settlement and remount](../tests/skeleton-loading.ts#L61) |
 
 **SKL-1 closed:** [real promise-driven browser fixture](SKELETON-LOADING-DELIVERY.md)
 exercises resolution and unmounting in all three engines and export modes. Skeleton-owned
-retry is N/A; request rejection, refetch transitions and hydration remain unverified.
+retry is N/A. [Pending fallback hydration](LOADING-HYDRATION-DELIVERY.md) now covers
+claim/handoff, resolution and disposal; rejection, refetch transitions and streamed
+server completion remain unverified.
 
 ## Input
 
@@ -352,7 +356,7 @@ order the next test work; they do not assign bug severity to untested behavior.
 | Priority | ID | Component(s) | Concrete closure condition |
 | --- | --- | --- | --- |
 | Manual follow-up | CMB-2 | Combobox | Browser scrolling/Tab/modal checks pass; record a physical IME composition/commit/cancel session before closing the remaining manual portion. |
-| Extended coverage | ALL-2 | All 14 | [H: real hydration, forms, Tabs and overlays](HYDRATION-DELIVERY.md) passes for the documented source fixtures. Streaming, Loading boundaries, multiple roots, every variant and a published SSR build remain unverified. |
+| Extended coverage | ALL-2 | All 14 | [H: real hydration, forms, Tabs and overlays](HYDRATION-DELIVERY.md) passes for the documented source fixtures. [Pending Loading boundary hydration](LOADING-HYDRATION-DELIVERY.md) is also covered. Streaming, ready-at-SSR boundaries, multiple roots, every variant and a published SSR build remain unverified. |
 | Cross-cutting | ALL-3 | Interactive controls and semantic content | Record manual assistive-technology navigation/announcements; axe success is only automated evidence. |
 | Cross-cutting | ALL-4 | All 14 | Expand representative state/variant visual cases; isolate assertions currently supported only by shared gallery/SSR markup (notably Badge SSR). |
 | Before app adoption | ALL-5 | Full package | Verify real admin composition, router/query integration and application errors; measure representative large-list/overlay performance. Current E2E is the gallery only. |

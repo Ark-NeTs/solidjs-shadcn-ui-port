@@ -1,0 +1,300 @@
+{
+  "config": {
+    "argv": [
+      "/Users/arktas/.asdf/installs/nodejs/25.3.0/bin/node",
+      "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/node_modules/.bin/playwright",
+      "test",
+      "--config",
+      "playwright.hydration.config.ts",
+      "tests/hydration/loading.spec.ts",
+      "--project=chromium",
+      "--grep",
+      "native placeholders|resolves the real"
+    ],
+    "configFile": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/playwright.hydration.config.ts",
+    "rootDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "hydration/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [
+          "**/visual.spec.ts"
+        ],
+        "testMatch": [
+          "hydration/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [
+          "**/visual.spec.ts"
+        ],
+        "testMatch": [
+          "hydration/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "docs/evidence/loading-hydration-handoff.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": {
+      "command": "bun run build:hydration && bunx --no-install vite preview --config hydration.vite.config.ts --host 127.0.0.1 --port 4403 --strictPort",
+      "url": "http://127.0.0.1:4403",
+      "reuseExistingServer": false,
+      "timeout": 60000
+    }
+  },
+  "suites": [
+    {
+      "title": "hydration/loading.spec.ts",
+      "file": "hydration/loading.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "compares native placeholders during the pending boundary handoff",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 473,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced00\\\" data-testid=\\\"profile-fallback\\\" aria-busy=\\\"true\\\"><p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p><!--$--><div _hk=\\\"acceptanced030\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\"></div><div _hk=\\\"acceptanced031\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\"></div><!--/--></div>\",\u001b[39m\n\u001b[31m+   \"<p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced030\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\"></div>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced031\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\"></div>\",\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced00\\\" data-testid=\\\"profile-fallback\\\" aria-busy=\\\"true\\\"><p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p><!--$--><div _hk=\\\"acceptanced030\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\"></div><div _hk=\\\"acceptanced031\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\"></div><!--/--></div>\",\u001b[39m\n\u001b[31m+   \"<p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced030\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\"></div>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced031\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\"></div>\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at hydratePending (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts:37:20)\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts:43:3",
+                    "location": {
+                      "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts",
+                      "column": 20,
+                      "line": 37
+                    },
+                    "snippet": "  35 |   const replaced = await nodes.evaluate(elements => elements.filter(node => !node.isConnected).map(node => node.outerHTML));\n  36 |   await test.info().attach('fallback-handoff', { body: JSON.stringify({ native, duringClaim, replaced }), contentType: 'application/json' });\n> 37 |   expect(replaced).toEqual([]);\n     |                    ^\n  38 |   await nodes.dispose();\n  39 |   await expect(page.getByLabel('Profile draft')).toHaveValue('Draft before hydration');\n  40 | }"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts",
+                        "column": 20,
+                        "line": 37
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced00\\\" data-testid=\\\"profile-fallback\\\" aria-busy=\\\"true\\\"><p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p><!--$--><div _hk=\\\"acceptanced030\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\"></div><div _hk=\\\"acceptanced031\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\"></div><!--/--></div>\",\u001b[39m\n\u001b[31m+   \"<p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced030\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\"></div>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced031\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\"></div>\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  35 |   const replaced = await nodes.evaluate(elements => elements.filter(node => !node.isConnected).map(node => node.outerHTML));\n  36 |   await test.info().attach('fallback-handoff', { body: JSON.stringify({ native, duringClaim, replaced }), contentType: 'application/json' });\n> 37 |   expect(replaced).toEqual([]);\n     |                    ^\n  38 |   await nodes.dispose();\n  39 |   await expect(page.getByLabel('Profile draft')).toHaveValue('Draft before hydration');\n  40 | }\n    at hydratePending (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts:37:20)\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts:43:3"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T13:24:04.126Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "fallback-handoff",
+                      "contentType": "application/json",
+                      "body": "eyJuYXRpdmUiOnRydWUsImR1cmluZ0NsYWltIjpbXSwicmVwbGFjZWQiOlsiPGRpdiBfaGs9XCJhY2NlcHRhbmNlZDAwXCIgZGF0YS10ZXN0aWQ9XCJwcm9maWxlLWZhbGxiYWNrXCIgYXJpYS1idXN5PVwidHJ1ZVwiPjxwIHJvbGU9XCJzdGF0dXNcIj5Mb2FkaW5nIHByb2ZpbGUgPCEtLSQtLT4xPCEtLS8tLT48L3A+PCEtLSQtLT48ZGl2IF9oaz1cImFjY2VwdGFuY2VkMDMwXCIgZGF0YS1zbG90PVwic2tlbGV0b25cIiBhcmlhLWhpZGRlbj1cInRydWVcIj48L2Rpdj48ZGl2IF9oaz1cImFjY2VwdGFuY2VkMDMxXCIgZGF0YS1zbG90PVwic2tlbGV0b25cIiBhcmlhLWhpZGRlbj1cInRydWVcIj48L2Rpdj48IS0tLy0tPjwvZGl2PiIsIjxwIHJvbGU9XCJzdGF0dXNcIj5Mb2FkaW5nIHByb2ZpbGUgPCEtLSQtLT4xPCEtLS8tLT48L3A+IiwiPGRpdiBfaGs9XCJhY2NlcHRhbmNlZDAzMFwiIGRhdGEtc2xvdD1cInNrZWxldG9uXCIgYXJpYS1oaWRkZW49XCJ0cnVlXCI+PC9kaXY+IiwiPGRpdiBfaGs9XCJhY2NlcHRhbmNlZDAzMVwiIGRhdGEtc2xvdD1cInNrZWxldG9uXCIgYXJpYS1oaWRkZW49XCJ0cnVlXCI+PC9kaXY+Il19"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-loading-compares-7ec04-he-pending-boundary-handoff-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-loading-compares-7ec04-he-pending-boundary-handoff-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-loading-compares-7ec04-he-pending-boundary-handoff-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts",
+                    "column": 20,
+                    "line": 37
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "f735e0d8cfd7bad5de53-859fb64897776ea772a6",
+          "file": "hydration/loading.spec.ts",
+          "line": 42,
+          "column": 1
+        },
+        {
+          "title": "hydrates pending Skeleton nodes, resolves the real boundary and unmounts ready content",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 372,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced00\\\" data-testid=\\\"profile-fallback\\\" aria-busy=\\\"true\\\"><p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p><!--$--><div _hk=\\\"acceptanced030\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted h-8 w-32\\\"></div><div _hk=\\\"acceptanced031\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted mt-2 h-4 w-full\\\"></div><!--/--></div>\",\u001b[39m\n\u001b[31m+   \"<p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced030\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted h-8 w-32\\\"></div>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced031\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted mt-2 h-4 w-full\\\"></div>\",\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced00\\\" data-testid=\\\"profile-fallback\\\" aria-busy=\\\"true\\\"><p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p><!--$--><div _hk=\\\"acceptanced030\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted h-8 w-32\\\"></div><div _hk=\\\"acceptanced031\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted mt-2 h-4 w-full\\\"></div><!--/--></div>\",\u001b[39m\n\u001b[31m+   \"<p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced030\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted h-8 w-32\\\"></div>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced031\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted mt-2 h-4 w-full\\\"></div>\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at hydratePending (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts:37:20)\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts:47:3",
+                    "location": {
+                      "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts",
+                      "column": 20,
+                      "line": 37
+                    },
+                    "snippet": "  35 |   const replaced = await nodes.evaluate(elements => elements.filter(node => !node.isConnected).map(node => node.outerHTML));\n  36 |   await test.info().attach('fallback-handoff', { body: JSON.stringify({ native, duringClaim, replaced }), contentType: 'application/json' });\n> 37 |   expect(replaced).toEqual([]);\n     |                    ^\n  38 |   await nodes.dispose();\n  39 |   await expect(page.getByLabel('Profile draft')).toHaveValue('Draft before hydration');\n  40 | }"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts",
+                        "column": 20,
+                        "line": 37
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced00\\\" data-testid=\\\"profile-fallback\\\" aria-busy=\\\"true\\\"><p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p><!--$--><div _hk=\\\"acceptanced030\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted h-8 w-32\\\"></div><div _hk=\\\"acceptanced031\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted mt-2 h-4 w-full\\\"></div><!--/--></div>\",\u001b[39m\n\u001b[31m+   \"<p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced030\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted h-8 w-32\\\"></div>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced031\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted mt-2 h-4 w-full\\\"></div>\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  35 |   const replaced = await nodes.evaluate(elements => elements.filter(node => !node.isConnected).map(node => node.outerHTML));\n  36 |   await test.info().attach('fallback-handoff', { body: JSON.stringify({ native, duringClaim, replaced }), contentType: 'application/json' });\n> 37 |   expect(replaced).toEqual([]);\n     |                    ^\n  38 |   await nodes.dispose();\n  39 |   await expect(page.getByLabel('Profile draft')).toHaveValue('Draft before hydration');\n  40 | }\n    at hydratePending (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts:37:20)\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts:47:3"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T13:24:05.303Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "fallback-handoff",
+                      "contentType": "application/json",
+                      "body": "eyJuYXRpdmUiOmZhbHNlLCJkdXJpbmdDbGFpbSI6W10sInJlcGxhY2VkIjpbIjxkaXYgX2hrPVwiYWNjZXB0YW5jZWQwMFwiIGRhdGEtdGVzdGlkPVwicHJvZmlsZS1mYWxsYmFja1wiIGFyaWEtYnVzeT1cInRydWVcIj48cCByb2xlPVwic3RhdHVzXCI+TG9hZGluZyBwcm9maWxlIDwhLS0kLS0+MTwhLS0vLS0+PC9wPjwhLS0kLS0+PGRpdiBfaGs9XCJhY2NlcHRhbmNlZDAzMFwiIGRhdGEtc2xvdD1cInNrZWxldG9uXCIgYXJpYS1oaWRkZW49XCJ0cnVlXCIgY2xhc3M9XCJhbmltYXRlLXB1bHNlIHJvdW5kZWQtbWQgYmctbXV0ZWQgaC04IHctMzJcIj48L2Rpdj48ZGl2IF9oaz1cImFjY2VwdGFuY2VkMDMxXCIgZGF0YS1zbG90PVwic2tlbGV0b25cIiBhcmlhLWhpZGRlbj1cInRydWVcIiBjbGFzcz1cImFuaW1hdGUtcHVsc2Ugcm91bmRlZC1tZCBiZy1tdXRlZCBtdC0yIGgtNCB3LWZ1bGxcIj48L2Rpdj48IS0tLy0tPjwvZGl2PiIsIjxwIHJvbGU9XCJzdGF0dXNcIj5Mb2FkaW5nIHByb2ZpbGUgPCEtLSQtLT4xPCEtLS8tLT48L3A+IiwiPGRpdiBfaGs9XCJhY2NlcHRhbmNlZDAzMFwiIGRhdGEtc2xvdD1cInNrZWxldG9uXCIgYXJpYS1oaWRkZW49XCJ0cnVlXCIgY2xhc3M9XCJhbmltYXRlLXB1bHNlIHJvdW5kZWQtbWQgYmctbXV0ZWQgaC04IHctMzJcIj48L2Rpdj4iLCI8ZGl2IF9oaz1cImFjY2VwdGFuY2VkMDMxXCIgZGF0YS1zbG90PVwic2tlbGV0b25cIiBhcmlhLWhpZGRlbj1cInRydWVcIiBjbGFzcz1cImFuaW1hdGUtcHVsc2Ugcm91bmRlZC1tZCBiZy1tdXRlZCBtdC0yIGgtNCB3LWZ1bGxcIj48L2Rpdj4iXX0="
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-loading-hydrates-3d90a--and-unmounts-ready-content-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-loading-hydrates-3d90a--and-unmounts-ready-content-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-loading-hydrates-3d90a--and-unmounts-ready-content-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts",
+                    "column": 20,
+                    "line": 37
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "f735e0d8cfd7bad5de53-2fc2bee85d32f3849c23",
+          "file": "hydration/loading.spec.ts",
+          "line": 46,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-08T13:24:01.899Z",
+    "duration": 4000.5879999999997,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 2,
+    "flaky": 0
+  }
+}

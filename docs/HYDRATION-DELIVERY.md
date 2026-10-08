@@ -107,8 +107,8 @@ The carried-forward hydration fixes are also covered:
 ## Limits and previous regression finding
 
 This covers source exports compiled for SSR/hydration. The existing distribution
-is still CSR-only; no published server export is added. Streaming, Loading-boundary
-hydration, multiple roots, every variant, general pre-hydration event replay,
+is still CSR-only; no published server export is added. Streaming, multiple roots,
+every variant, general pre-hydration event replay,
 application integration, Safari devices and manual assistive-technology sessions
 remain unverified. The reduced native input specifically proves pre-hydration draft
 preservation; this is not a universal form-state preservation claim. No dependency,
@@ -168,5 +168,6 @@ IME and manual assistive-technology sessions were not run.
 | Tests prove the behavior | Positive hydration cases retain all inspected server nodes; explicitly labeled negative controls preserve the rejected algorithm as a reproduction. See regression outcomes above. |
 | Delivery evidence is accurate | Historical failures, exact measured commands, scope limits, architectural decision and matrix are recorded. |
 
-Next: extend source hydration coverage to a real Solid Loading boundary resolving
-and unmounting; maintain the separate WebKit Combobox follow-up if it recurs.
+Follow-up: [real pending Loading boundary hydration](LOADING-HYDRATION-DELIVERY.md)
+now covers resolution and unmounting, including the runtime fallback handoff.
+Maintain the separate WebKit Combobox follow-up if it recurs.

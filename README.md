@@ -187,5 +187,6 @@ files under `tests/e2e/visual.spec.ts-snapshots`; regenerate deliberately with
   the package. No registry script may overwrite the owned Solid 2 source.
 
 Source hydration now has [node-identity and interaction regressions](docs/HYDRATION-DELIVERY.md),
-including the two-tab/one-input registration reproduction.
+including the two-tab/one-input registration reproduction and
+[real Loading boundary resolution/disposal](docs/LOADING-HYDRATION-DELIVERY.md).
 The harness compiles public source exports with SSR enabled; the existing `dist` bundle is for client rendering.

@@ -294,3 +294,20 @@ first. Input maps its server default to a native value attribute while preservin
 client semantics. [Hydration evidence](docs/HYDRATION-DELIVERY.md) records exact
 node identity, interactions, diagnostic checks and scope limits. No runtime patch,
 dependency upgrade or diagnostic suppression is needed.
+
+## Pending Loading hydration acceptance (2026-10-08)
+
+For Solid 2.0.0-rc.13 synchronous SSR, distinguish the exact hydration claim from
+its queued pending-boundary handoff. The runtime serializes an unresolved Loading
+boundary as `$$f`; hydration first claims its server fallback, then recreates the
+client boundary. Native placeholders and Skeleton exhibit the same four-node
+fallback replacement. Require all nodes to survive the synchronous claim and all
+nodes outside the fallback to survive the subsequent handoff. Keep persistent
+editable drafts outside that fallback in the acceptance fixture.
+
+REASONING: treating the fallback's documented-in-source runtime handoff as a
+Skeleton defect would encourage unnecessary component workarounds. Real promise
+resolution, late completion and disposal assertions remain strict, with no runtime
+patch or diagnostics suppression. [Evidence](docs/LOADING-HYDRATION-DELIVERY.md)
+is specific to pending renderToString output and client-owned completion; it does
+not establish streaming or ready-at-SSR boundary support.

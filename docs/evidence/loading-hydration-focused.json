@@ -1,0 +1,840 @@
+{
+  "config": {
+    "argv": [
+      "/Users/arktas/.asdf/installs/nodejs/25.3.0/bin/node",
+      "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/node_modules/.bin/playwright",
+      "test",
+      "--config",
+      "playwright.hydration.config.ts",
+      "tests/hydration/loading.spec.ts"
+    ],
+    "configFile": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/playwright.hydration.config.ts",
+    "rootDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "hydration/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [
+          "**/visual.spec.ts"
+        ],
+        "testMatch": [
+          "hydration/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [
+          "**/visual.spec.ts"
+        ],
+        "testMatch": [
+          "hydration/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "docs/evidence/loading-hydration-focused.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": {
+      "command": "bun run build:hydration && bunx --no-install vite preview --config hydration.vite.config.ts --host 127.0.0.1 --port 4403 --strictPort",
+      "url": "http://127.0.0.1:4403",
+      "reuseExistingServer": false,
+      "timeout": 60000
+    }
+  },
+  "suites": [
+    {
+      "title": "hydration/loading.spec.ts",
+      "file": "hydration/loading.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "hydrates pending Skeleton nodes, resolves the real boundary and unmounts ready content",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 554,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced00\\\" data-testid=\\\"profile-fallback\\\" aria-busy=\\\"true\\\"><p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p><!--$--><div _hk=\\\"acceptanced02\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted h-8 w-32\\\"></div><!--/--><!--$--><div _hk=\\\"acceptanced03\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted mt-2 h-4 w-full\\\"></div><!--/--></div>\",\u001b[39m\n\u001b[31m+   \"<p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced02\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted h-8 w-32\\\"></div>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced03\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted mt-2 h-4 w-full\\\"></div>\",\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced00\\\" data-testid=\\\"profile-fallback\\\" aria-busy=\\\"true\\\"><p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p><!--$--><div _hk=\\\"acceptanced02\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted h-8 w-32\\\"></div><!--/--><!--$--><div _hk=\\\"acceptanced03\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted mt-2 h-4 w-full\\\"></div><!--/--></div>\",\u001b[39m\n\u001b[31m+   \"<p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced02\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted h-8 w-32\\\"></div>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced03\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted mt-2 h-4 w-full\\\"></div>\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at hydratePending (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts:31:116)\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts:37:3",
+                    "location": {
+                      "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts",
+                      "column": 116,
+                      "line": 31
+                    },
+                    "snippet": "  29 |   await expect(page.locator('#hydration-root')).toHaveAttribute('data-hydrated', 'true');\n  30 |   await expectPending(page, 1);\n> 31 |   expect(await nodes.evaluate(elements => elements.filter(node => !node.isConnected).map(node => node.outerHTML))).toEqual([]);\n     |                                                                                                                    ^\n  32 |   await nodes.dispose();\n  33 |   await expect(page.getByLabel('Profile draft')).toHaveValue('Draft before hydration');\n  34 | }"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts",
+                        "column": 116,
+                        "line": 31
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced00\\\" data-testid=\\\"profile-fallback\\\" aria-busy=\\\"true\\\"><p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p><!--$--><div _hk=\\\"acceptanced02\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted h-8 w-32\\\"></div><!--/--><!--$--><div _hk=\\\"acceptanced03\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted mt-2 h-4 w-full\\\"></div><!--/--></div>\",\u001b[39m\n\u001b[31m+   \"<p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced02\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted h-8 w-32\\\"></div>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced03\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted mt-2 h-4 w-full\\\"></div>\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  29 |   await expect(page.locator('#hydration-root')).toHaveAttribute('data-hydrated', 'true');\n  30 |   await expectPending(page, 1);\n> 31 |   expect(await nodes.evaluate(elements => elements.filter(node => !node.isConnected).map(node => node.outerHTML))).toEqual([]);\n     |                                                                                                                    ^\n  32 |   await nodes.dispose();\n  33 |   await expect(page.getByLabel('Profile draft')).toHaveValue('Draft before hydration');\n  34 | }\n    at hydratePending (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts:31:116)\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts:37:3"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T13:21:17.504Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-loading-hydrates-3d90a--and-unmounts-ready-content-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-loading-hydrates-3d90a--and-unmounts-ready-content-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-loading-hydrates-3d90a--and-unmounts-ready-content-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts",
+                    "column": 116,
+                    "line": 31
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "f735e0d8cfd7bad5de53-2fc2bee85d32f3849c23",
+          "file": "hydration/loading.spec.ts",
+          "line": 36,
+          "column": 1
+        },
+        {
+          "title": "unmounts hydrated pending boundaries and ignores old resolutions after a fresh mount",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 349,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced00\\\" data-testid=\\\"profile-fallback\\\" aria-busy=\\\"true\\\"><p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p><!--$--><div _hk=\\\"acceptanced02\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted h-8 w-32\\\"></div><!--/--><!--$--><div _hk=\\\"acceptanced03\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted mt-2 h-4 w-full\\\"></div><!--/--></div>\",\u001b[39m\n\u001b[31m+   \"<p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced02\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted h-8 w-32\\\"></div>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced03\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted mt-2 h-4 w-full\\\"></div>\",\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced00\\\" data-testid=\\\"profile-fallback\\\" aria-busy=\\\"true\\\"><p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p><!--$--><div _hk=\\\"acceptanced02\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted h-8 w-32\\\"></div><!--/--><!--$--><div _hk=\\\"acceptanced03\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted mt-2 h-4 w-full\\\"></div><!--/--></div>\",\u001b[39m\n\u001b[31m+   \"<p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced02\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted h-8 w-32\\\"></div>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced03\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted mt-2 h-4 w-full\\\"></div>\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at hydratePending (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts:31:116)\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts:55:3",
+                    "location": {
+                      "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts",
+                      "column": 116,
+                      "line": 31
+                    },
+                    "snippet": "  29 |   await expect(page.locator('#hydration-root')).toHaveAttribute('data-hydrated', 'true');\n  30 |   await expectPending(page, 1);\n> 31 |   expect(await nodes.evaluate(elements => elements.filter(node => !node.isConnected).map(node => node.outerHTML))).toEqual([]);\n     |                                                                                                                    ^\n  32 |   await nodes.dispose();\n  33 |   await expect(page.getByLabel('Profile draft')).toHaveValue('Draft before hydration');\n  34 | }"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts",
+                        "column": 116,
+                        "line": 31
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced00\\\" data-testid=\\\"profile-fallback\\\" aria-busy=\\\"true\\\"><p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p><!--$--><div _hk=\\\"acceptanced02\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted h-8 w-32\\\"></div><!--/--><!--$--><div _hk=\\\"acceptanced03\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted mt-2 h-4 w-full\\\"></div><!--/--></div>\",\u001b[39m\n\u001b[31m+   \"<p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced02\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted h-8 w-32\\\"></div>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced03\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted mt-2 h-4 w-full\\\"></div>\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  29 |   await expect(page.locator('#hydration-root')).toHaveAttribute('data-hydrated', 'true');\n  30 |   await expectPending(page, 1);\n> 31 |   expect(await nodes.evaluate(elements => elements.filter(node => !node.isConnected).map(node => node.outerHTML))).toEqual([]);\n     |                                                                                                                    ^\n  32 |   await nodes.dispose();\n  33 |   await expect(page.getByLabel('Profile draft')).toHaveValue('Draft before hydration');\n  34 | }\n    at hydratePending (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts:31:116)\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts:55:3"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T13:21:18.715Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-loading-unmounts-cfa4a-lutions-after-a-fresh-mount-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-loading-unmounts-cfa4a-lutions-after-a-fresh-mount-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-loading-unmounts-cfa4a-lutions-after-a-fresh-mount-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts",
+                    "column": 116,
+                    "line": 31
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "f735e0d8cfd7bad5de53-4847a358fcc1ae739f4e",
+          "file": "hydration/loading.spec.ts",
+          "line": 54,
+          "column": 1
+        },
+        {
+          "title": "disposing the hydrated root prevents late promise completion from restoring content",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 345,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced00\\\" data-testid=\\\"profile-fallback\\\" aria-busy=\\\"true\\\"><p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p><!--$--><div _hk=\\\"acceptanced02\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted h-8 w-32\\\"></div><!--/--><!--$--><div _hk=\\\"acceptanced03\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted mt-2 h-4 w-full\\\"></div><!--/--></div>\",\u001b[39m\n\u001b[31m+   \"<p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced02\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted h-8 w-32\\\"></div>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced03\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted mt-2 h-4 w-full\\\"></div>\",\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced00\\\" data-testid=\\\"profile-fallback\\\" aria-busy=\\\"true\\\"><p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p><!--$--><div _hk=\\\"acceptanced02\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted h-8 w-32\\\"></div><!--/--><!--$--><div _hk=\\\"acceptanced03\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted mt-2 h-4 w-full\\\"></div><!--/--></div>\",\u001b[39m\n\u001b[31m+   \"<p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced02\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted h-8 w-32\\\"></div>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced03\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted mt-2 h-4 w-full\\\"></div>\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at hydratePending (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts:31:116)\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts:76:3",
+                    "location": {
+                      "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts",
+                      "column": 116,
+                      "line": 31
+                    },
+                    "snippet": "  29 |   await expect(page.locator('#hydration-root')).toHaveAttribute('data-hydrated', 'true');\n  30 |   await expectPending(page, 1);\n> 31 |   expect(await nodes.evaluate(elements => elements.filter(node => !node.isConnected).map(node => node.outerHTML))).toEqual([]);\n     |                                                                                                                    ^\n  32 |   await nodes.dispose();\n  33 |   await expect(page.getByLabel('Profile draft')).toHaveValue('Draft before hydration');\n  34 | }"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts",
+                        "column": 116,
+                        "line": 31
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced00\\\" data-testid=\\\"profile-fallback\\\" aria-busy=\\\"true\\\"><p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p><!--$--><div _hk=\\\"acceptanced02\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted h-8 w-32\\\"></div><!--/--><!--$--><div _hk=\\\"acceptanced03\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted mt-2 h-4 w-full\\\"></div><!--/--></div>\",\u001b[39m\n\u001b[31m+   \"<p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced02\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted h-8 w-32\\\"></div>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced03\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted mt-2 h-4 w-full\\\"></div>\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  29 |   await expect(page.locator('#hydration-root')).toHaveAttribute('data-hydrated', 'true');\n  30 |   await expectPending(page, 1);\n> 31 |   expect(await nodes.evaluate(elements => elements.filter(node => !node.isConnected).map(node => node.outerHTML))).toEqual([]);\n     |                                                                                                                    ^\n  32 |   await nodes.dispose();\n  33 |   await expect(page.getByLabel('Profile draft')).toHaveValue('Draft before hydration');\n  34 | }\n    at hydratePending (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts:31:116)\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts:76:3"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T13:21:19.462Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-loading-disposin-6ae93-tion-from-restoring-content-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-loading-disposin-6ae93-tion-from-restoring-content-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-loading-disposin-6ae93-tion-from-restoring-content-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts",
+                    "column": 116,
+                    "line": 31
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "f735e0d8cfd7bad5de53-6946937930bfc494f97f",
+          "file": "hydration/loading.spec.ts",
+          "line": 75,
+          "column": 1
+        },
+        {
+          "title": "hydrates pending Skeleton nodes, resolves the real boundary and unmounts ready content",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 1485,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced00\\\" data-testid=\\\"profile-fallback\\\" aria-busy=\\\"true\\\"><p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p><!--$--><div _hk=\\\"acceptanced02\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted h-8 w-32\\\"></div><!--/--><!--$--><div _hk=\\\"acceptanced03\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted mt-2 h-4 w-full\\\"></div><!--/--></div>\",\u001b[39m\n\u001b[31m+   \"<p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced02\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted h-8 w-32\\\"></div>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced03\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted mt-2 h-4 w-full\\\"></div>\",\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced00\\\" data-testid=\\\"profile-fallback\\\" aria-busy=\\\"true\\\"><p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p><!--$--><div _hk=\\\"acceptanced02\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted h-8 w-32\\\"></div><!--/--><!--$--><div _hk=\\\"acceptanced03\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted mt-2 h-4 w-full\\\"></div><!--/--></div>\",\u001b[39m\n\u001b[31m+   \"<p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced02\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted h-8 w-32\\\"></div>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced03\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted mt-2 h-4 w-full\\\"></div>\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at hydratePending (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts:31:116)\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts:37:3",
+                    "location": {
+                      "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts",
+                      "column": 116,
+                      "line": 31
+                    },
+                    "snippet": "  29 |   await expect(page.locator('#hydration-root')).toHaveAttribute('data-hydrated', 'true');\n  30 |   await expectPending(page, 1);\n> 31 |   expect(await nodes.evaluate(elements => elements.filter(node => !node.isConnected).map(node => node.outerHTML))).toEqual([]);\n     |                                                                                                                    ^\n  32 |   await nodes.dispose();\n  33 |   await expect(page.getByLabel('Profile draft')).toHaveValue('Draft before hydration');\n  34 | }"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts",
+                        "column": 116,
+                        "line": 31
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced00\\\" data-testid=\\\"profile-fallback\\\" aria-busy=\\\"true\\\"><p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p><!--$--><div _hk=\\\"acceptanced02\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted h-8 w-32\\\"></div><!--/--><!--$--><div _hk=\\\"acceptanced03\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted mt-2 h-4 w-full\\\"></div><!--/--></div>\",\u001b[39m\n\u001b[31m+   \"<p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced02\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted h-8 w-32\\\"></div>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced03\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted mt-2 h-4 w-full\\\"></div>\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  29 |   await expect(page.locator('#hydration-root')).toHaveAttribute('data-hydrated', 'true');\n  30 |   await expectPending(page, 1);\n> 31 |   expect(await nodes.evaluate(elements => elements.filter(node => !node.isConnected).map(node => node.outerHTML))).toEqual([]);\n     |                                                                                                                    ^\n  32 |   await nodes.dispose();\n  33 |   await expect(page.getByLabel('Profile draft')).toHaveValue('Draft before hydration');\n  34 | }\n    at hydratePending (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts:31:116)\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts:37:3"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T13:21:20.192Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-loading-hydrates-3d90a--and-unmounts-ready-content-firefox/test-failed-1.png"
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-loading-hydrates-3d90a--and-unmounts-ready-content-firefox/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-loading-hydrates-3d90a--and-unmounts-ready-content-firefox/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts",
+                    "column": 116,
+                    "line": 31
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "f735e0d8cfd7bad5de53-c57e6e58b39b5d28ee75",
+          "file": "hydration/loading.spec.ts",
+          "line": 36,
+          "column": 1
+        },
+        {
+          "title": "unmounts hydrated pending boundaries and ignores old resolutions after a fresh mount",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 1057,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced00\\\" data-testid=\\\"profile-fallback\\\" aria-busy=\\\"true\\\"><p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p><!--$--><div _hk=\\\"acceptanced02\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted h-8 w-32\\\"></div><!--/--><!--$--><div _hk=\\\"acceptanced03\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted mt-2 h-4 w-full\\\"></div><!--/--></div>\",\u001b[39m\n\u001b[31m+   \"<p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced02\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted h-8 w-32\\\"></div>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced03\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted mt-2 h-4 w-full\\\"></div>\",\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced00\\\" data-testid=\\\"profile-fallback\\\" aria-busy=\\\"true\\\"><p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p><!--$--><div _hk=\\\"acceptanced02\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted h-8 w-32\\\"></div><!--/--><!--$--><div _hk=\\\"acceptanced03\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted mt-2 h-4 w-full\\\"></div><!--/--></div>\",\u001b[39m\n\u001b[31m+   \"<p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced02\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted h-8 w-32\\\"></div>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced03\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted mt-2 h-4 w-full\\\"></div>\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at hydratePending (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts:31:116)\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts:55:3",
+                    "location": {
+                      "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts",
+                      "column": 116,
+                      "line": 31
+                    },
+                    "snippet": "  29 |   await expect(page.locator('#hydration-root')).toHaveAttribute('data-hydrated', 'true');\n  30 |   await expectPending(page, 1);\n> 31 |   expect(await nodes.evaluate(elements => elements.filter(node => !node.isConnected).map(node => node.outerHTML))).toEqual([]);\n     |                                                                                                                    ^\n  32 |   await nodes.dispose();\n  33 |   await expect(page.getByLabel('Profile draft')).toHaveValue('Draft before hydration');\n  34 | }"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts",
+                        "column": 116,
+                        "line": 31
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced00\\\" data-testid=\\\"profile-fallback\\\" aria-busy=\\\"true\\\"><p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p><!--$--><div _hk=\\\"acceptanced02\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted h-8 w-32\\\"></div><!--/--><!--$--><div _hk=\\\"acceptanced03\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted mt-2 h-4 w-full\\\"></div><!--/--></div>\",\u001b[39m\n\u001b[31m+   \"<p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced02\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted h-8 w-32\\\"></div>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced03\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted mt-2 h-4 w-full\\\"></div>\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  29 |   await expect(page.locator('#hydration-root')).toHaveAttribute('data-hydrated', 'true');\n  30 |   await expectPending(page, 1);\n> 31 |   expect(await nodes.evaluate(elements => elements.filter(node => !node.isConnected).map(node => node.outerHTML))).toEqual([]);\n     |                                                                                                                    ^\n  32 |   await nodes.dispose();\n  33 |   await expect(page.getByLabel('Profile draft')).toHaveValue('Draft before hydration');\n  34 | }\n    at hydratePending (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts:31:116)\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts:55:3"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T13:21:23.442Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-loading-unmounts-cfa4a-lutions-after-a-fresh-mount-firefox/test-failed-1.png"
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-loading-unmounts-cfa4a-lutions-after-a-fresh-mount-firefox/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-loading-unmounts-cfa4a-lutions-after-a-fresh-mount-firefox/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts",
+                    "column": 116,
+                    "line": 31
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "f735e0d8cfd7bad5de53-c2be748f149caa28c39f",
+          "file": "hydration/loading.spec.ts",
+          "line": 54,
+          "column": 1
+        },
+        {
+          "title": "disposing the hydrated root prevents late promise completion from restoring content",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 1060,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced00\\\" data-testid=\\\"profile-fallback\\\" aria-busy=\\\"true\\\"><p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p><!--$--><div _hk=\\\"acceptanced02\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted h-8 w-32\\\"></div><!--/--><!--$--><div _hk=\\\"acceptanced03\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted mt-2 h-4 w-full\\\"></div><!--/--></div>\",\u001b[39m\n\u001b[31m+   \"<p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced02\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted h-8 w-32\\\"></div>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced03\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted mt-2 h-4 w-full\\\"></div>\",\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced00\\\" data-testid=\\\"profile-fallback\\\" aria-busy=\\\"true\\\"><p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p><!--$--><div _hk=\\\"acceptanced02\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted h-8 w-32\\\"></div><!--/--><!--$--><div _hk=\\\"acceptanced03\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted mt-2 h-4 w-full\\\"></div><!--/--></div>\",\u001b[39m\n\u001b[31m+   \"<p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced02\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted h-8 w-32\\\"></div>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced03\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted mt-2 h-4 w-full\\\"></div>\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at hydratePending (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts:31:116)\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts:76:3",
+                    "location": {
+                      "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts",
+                      "column": 116,
+                      "line": 31
+                    },
+                    "snippet": "  29 |   await expect(page.locator('#hydration-root')).toHaveAttribute('data-hydrated', 'true');\n  30 |   await expectPending(page, 1);\n> 31 |   expect(await nodes.evaluate(elements => elements.filter(node => !node.isConnected).map(node => node.outerHTML))).toEqual([]);\n     |                                                                                                                    ^\n  32 |   await nodes.dispose();\n  33 |   await expect(page.getByLabel('Profile draft')).toHaveValue('Draft before hydration');\n  34 | }"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts",
+                        "column": 116,
+                        "line": 31
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced00\\\" data-testid=\\\"profile-fallback\\\" aria-busy=\\\"true\\\"><p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p><!--$--><div _hk=\\\"acceptanced02\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted h-8 w-32\\\"></div><!--/--><!--$--><div _hk=\\\"acceptanced03\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted mt-2 h-4 w-full\\\"></div><!--/--></div>\",\u001b[39m\n\u001b[31m+   \"<p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced02\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted h-8 w-32\\\"></div>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced03\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted mt-2 h-4 w-full\\\"></div>\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  29 |   await expect(page.locator('#hydration-root')).toHaveAttribute('data-hydrated', 'true');\n  30 |   await expectPending(page, 1);\n> 31 |   expect(await nodes.evaluate(elements => elements.filter(node => !node.isConnected).map(node => node.outerHTML))).toEqual([]);\n     |                                                                                                                    ^\n  32 |   await nodes.dispose();\n  33 |   await expect(page.getByLabel('Profile draft')).toHaveValue('Draft before hydration');\n  34 | }\n    at hydratePending (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts:31:116)\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts:76:3"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T13:21:25.554Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-loading-disposin-6ae93-tion-from-restoring-content-firefox/test-failed-1.png"
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-loading-disposin-6ae93-tion-from-restoring-content-firefox/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-loading-disposin-6ae93-tion-from-restoring-content-firefox/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts",
+                    "column": 116,
+                    "line": 31
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "f735e0d8cfd7bad5de53-eec173d07ac8dd14ee35",
+          "file": "hydration/loading.spec.ts",
+          "line": 75,
+          "column": 1
+        },
+        {
+          "title": "hydrates pending Skeleton nodes, resolves the real boundary and unmounts ready content",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 1130,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced00\\\" data-testid=\\\"profile-fallback\\\" aria-busy=\\\"true\\\"><p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p><!--$--><div _hk=\\\"acceptanced02\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted h-8 w-32\\\"></div><!--/--><!--$--><div _hk=\\\"acceptanced03\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted mt-2 h-4 w-full\\\"></div><!--/--></div>\",\u001b[39m\n\u001b[31m+   \"<p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced02\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted h-8 w-32\\\"></div>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced03\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted mt-2 h-4 w-full\\\"></div>\",\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced00\\\" data-testid=\\\"profile-fallback\\\" aria-busy=\\\"true\\\"><p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p><!--$--><div _hk=\\\"acceptanced02\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted h-8 w-32\\\"></div><!--/--><!--$--><div _hk=\\\"acceptanced03\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted mt-2 h-4 w-full\\\"></div><!--/--></div>\",\u001b[39m\n\u001b[31m+   \"<p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced02\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted h-8 w-32\\\"></div>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced03\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted mt-2 h-4 w-full\\\"></div>\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at hydratePending (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts:31:116)\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts:37:3",
+                    "location": {
+                      "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts",
+                      "column": 116,
+                      "line": 31
+                    },
+                    "snippet": "  29 |   await expect(page.locator('#hydration-root')).toHaveAttribute('data-hydrated', 'true');\n  30 |   await expectPending(page, 1);\n> 31 |   expect(await nodes.evaluate(elements => elements.filter(node => !node.isConnected).map(node => node.outerHTML))).toEqual([]);\n     |                                                                                                                    ^\n  32 |   await nodes.dispose();\n  33 |   await expect(page.getByLabel('Profile draft')).toHaveValue('Draft before hydration');\n  34 | }"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts",
+                        "column": 116,
+                        "line": 31
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced00\\\" data-testid=\\\"profile-fallback\\\" aria-busy=\\\"true\\\"><p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p><!--$--><div _hk=\\\"acceptanced02\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted h-8 w-32\\\"></div><!--/--><!--$--><div _hk=\\\"acceptanced03\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted mt-2 h-4 w-full\\\"></div><!--/--></div>\",\u001b[39m\n\u001b[31m+   \"<p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced02\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted h-8 w-32\\\"></div>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced03\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted mt-2 h-4 w-full\\\"></div>\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  29 |   await expect(page.locator('#hydration-root')).toHaveAttribute('data-hydrated', 'true');\n  30 |   await expectPending(page, 1);\n> 31 |   expect(await nodes.evaluate(elements => elements.filter(node => !node.isConnected).map(node => node.outerHTML))).toEqual([]);\n     |                                                                                                                    ^\n  32 |   await nodes.dispose();\n  33 |   await expect(page.getByLabel('Profile draft')).toHaveValue('Draft before hydration');\n  34 | }\n    at hydratePending (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts:31:116)\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts:37:3"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T13:21:27.622Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-loading-hydrates-3d90a--and-unmounts-ready-content-webkit/test-failed-1.png"
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-loading-hydrates-3d90a--and-unmounts-ready-content-webkit/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-loading-hydrates-3d90a--and-unmounts-ready-content-webkit/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts",
+                    "column": 116,
+                    "line": 31
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "f735e0d8cfd7bad5de53-7d9101079629ef17c65f",
+          "file": "hydration/loading.spec.ts",
+          "line": 36,
+          "column": 1
+        },
+        {
+          "title": "unmounts hydrated pending boundaries and ignores old resolutions after a fresh mount",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 648,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced00\\\" data-testid=\\\"profile-fallback\\\" aria-busy=\\\"true\\\"><p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p><!--$--><div _hk=\\\"acceptanced02\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted h-8 w-32\\\"></div><!--/--><!--$--><div _hk=\\\"acceptanced03\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted mt-2 h-4 w-full\\\"></div><!--/--></div>\",\u001b[39m\n\u001b[31m+   \"<p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced02\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted h-8 w-32\\\"></div>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced03\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted mt-2 h-4 w-full\\\"></div>\",\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced00\\\" data-testid=\\\"profile-fallback\\\" aria-busy=\\\"true\\\"><p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p><!--$--><div _hk=\\\"acceptanced02\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted h-8 w-32\\\"></div><!--/--><!--$--><div _hk=\\\"acceptanced03\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted mt-2 h-4 w-full\\\"></div><!--/--></div>\",\u001b[39m\n\u001b[31m+   \"<p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced02\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted h-8 w-32\\\"></div>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced03\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted mt-2 h-4 w-full\\\"></div>\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at hydratePending (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts:31:116)\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts:55:3",
+                    "location": {
+                      "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts",
+                      "column": 116,
+                      "line": 31
+                    },
+                    "snippet": "  29 |   await expect(page.locator('#hydration-root')).toHaveAttribute('data-hydrated', 'true');\n  30 |   await expectPending(page, 1);\n> 31 |   expect(await nodes.evaluate(elements => elements.filter(node => !node.isConnected).map(node => node.outerHTML))).toEqual([]);\n     |                                                                                                                    ^\n  32 |   await nodes.dispose();\n  33 |   await expect(page.getByLabel('Profile draft')).toHaveValue('Draft before hydration');\n  34 | }"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts",
+                        "column": 116,
+                        "line": 31
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced00\\\" data-testid=\\\"profile-fallback\\\" aria-busy=\\\"true\\\"><p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p><!--$--><div _hk=\\\"acceptanced02\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted h-8 w-32\\\"></div><!--/--><!--$--><div _hk=\\\"acceptanced03\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted mt-2 h-4 w-full\\\"></div><!--/--></div>\",\u001b[39m\n\u001b[31m+   \"<p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced02\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted h-8 w-32\\\"></div>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced03\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted mt-2 h-4 w-full\\\"></div>\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  29 |   await expect(page.locator('#hydration-root')).toHaveAttribute('data-hydrated', 'true');\n  30 |   await expectPending(page, 1);\n> 31 |   expect(await nodes.evaluate(elements => elements.filter(node => !node.isConnected).map(node => node.outerHTML))).toEqual([]);\n     |                                                                                                                    ^\n  32 |   await nodes.dispose();\n  33 |   await expect(page.getByLabel('Profile draft')).toHaveValue('Draft before hydration');\n  34 | }\n    at hydratePending (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts:31:116)\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts:55:3"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T13:21:29.465Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-loading-unmounts-cfa4a-lutions-after-a-fresh-mount-webkit/test-failed-1.png"
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-loading-unmounts-cfa4a-lutions-after-a-fresh-mount-webkit/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-loading-unmounts-cfa4a-lutions-after-a-fresh-mount-webkit/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts",
+                    "column": 116,
+                    "line": 31
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "f735e0d8cfd7bad5de53-fb52fa0897dfd3cfc6f8",
+          "file": "hydration/loading.spec.ts",
+          "line": 54,
+          "column": 1
+        },
+        {
+          "title": "disposing the hydrated root prevents late promise completion from restoring content",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 624,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced00\\\" data-testid=\\\"profile-fallback\\\" aria-busy=\\\"true\\\"><p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p><!--$--><div _hk=\\\"acceptanced02\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted h-8 w-32\\\"></div><!--/--><!--$--><div _hk=\\\"acceptanced03\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted mt-2 h-4 w-full\\\"></div><!--/--></div>\",\u001b[39m\n\u001b[31m+   \"<p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced02\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted h-8 w-32\\\"></div>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced03\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted mt-2 h-4 w-full\\\"></div>\",\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced00\\\" data-testid=\\\"profile-fallback\\\" aria-busy=\\\"true\\\"><p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p><!--$--><div _hk=\\\"acceptanced02\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted h-8 w-32\\\"></div><!--/--><!--$--><div _hk=\\\"acceptanced03\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted mt-2 h-4 w-full\\\"></div><!--/--></div>\",\u001b[39m\n\u001b[31m+   \"<p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced02\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted h-8 w-32\\\"></div>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced03\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted mt-2 h-4 w-full\\\"></div>\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at hydratePending (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts:31:116)\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts:76:3",
+                    "location": {
+                      "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts",
+                      "column": 116,
+                      "line": 31
+                    },
+                    "snippet": "  29 |   await expect(page.locator('#hydration-root')).toHaveAttribute('data-hydrated', 'true');\n  30 |   await expectPending(page, 1);\n> 31 |   expect(await nodes.evaluate(elements => elements.filter(node => !node.isConnected).map(node => node.outerHTML))).toEqual([]);\n     |                                                                                                                    ^\n  32 |   await nodes.dispose();\n  33 |   await expect(page.getByLabel('Profile draft')).toHaveValue('Draft before hydration');\n  34 | }"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts",
+                        "column": 116,
+                        "line": 31
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced00\\\" data-testid=\\\"profile-fallback\\\" aria-busy=\\\"true\\\"><p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p><!--$--><div _hk=\\\"acceptanced02\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted h-8 w-32\\\"></div><!--/--><!--$--><div _hk=\\\"acceptanced03\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted mt-2 h-4 w-full\\\"></div><!--/--></div>\",\u001b[39m\n\u001b[31m+   \"<p role=\\\"status\\\">Loading profile <!--$-->1<!--/--></p>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced02\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted h-8 w-32\\\"></div>\",\u001b[39m\n\u001b[31m+   \"<div _hk=\\\"acceptanced03\\\" data-slot=\\\"skeleton\\\" aria-hidden=\\\"true\\\" class=\\\"animate-pulse rounded-md bg-muted mt-2 h-4 w-full\\\"></div>\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  29 |   await expect(page.locator('#hydration-root')).toHaveAttribute('data-hydrated', 'true');\n  30 |   await expectPending(page, 1);\n> 31 |   expect(await nodes.evaluate(elements => elements.filter(node => !node.isConnected).map(node => node.outerHTML))).toEqual([]);\n     |                                                                                                                    ^\n  32 |   await nodes.dispose();\n  33 |   await expect(page.getByLabel('Profile draft')).toHaveValue('Draft before hydration');\n  34 | }\n    at hydratePending (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts:31:116)\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts:76:3"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T13:21:30.576Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-loading-disposin-6ae93-tion-from-restoring-content-webkit/test-failed-1.png"
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-loading-disposin-6ae93-tion-from-restoring-content-webkit/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-loading-disposin-6ae93-tion-from-restoring-content-webkit/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/hydration/loading.spec.ts",
+                    "column": 116,
+                    "line": 31
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "f735e0d8cfd7bad5de53-450569f5cbcfc5b47b03",
+          "file": "hydration/loading.spec.ts",
+          "line": 75,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-08T13:21:15.294Z",
+    "duration": 16157.954000000002,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 9,
+    "flaky": 0
+  }
+}
