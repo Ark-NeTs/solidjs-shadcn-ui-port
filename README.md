@@ -75,7 +75,8 @@ examples; append `&force-mounted` to keep the child mounted while closed.
 
 Open `/?native-fields` for native input types, or append `&textarea` / `&labels`
 for scrolling/resizing and live label examples. [INP-1/TXT-1/LBL-1 delivery](docs/NATIVE-FIELDS-DELIVERY.md)
-records their acceptance scope.
+records their acceptance scope. [Label cache refresh](docs/LABEL-REFRESH-DELIVERY.md)
+closes the Firefox live-name follow-up while preserving label and editor identity.
 
 Open `/?link-navigation` (append `&dark` or `&disabled`) for Button/Badge keyboard
 navigation and disabled-anchor examples. [BTN-1/BDG-1 delivery](docs/LINKS-NAVIGATION-DELIVERY.md)

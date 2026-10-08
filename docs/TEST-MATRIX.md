@@ -1,7 +1,7 @@
 # Component acceptance and test matrix
 
 Initially audited 2026-10-08 against source at `314f27a`; updated with the
-[native field browser evidence](NATIVE-FIELDS-DELIVERY.md). Covers the **14
+[Label reassociation follow-up](LABEL-REFRESH-DELIVERY.md). Covers the **14
 implemented component families**, including their compound parts. The other
 catalog entries in [COMPONENT-MAP.md](../COMPONENT-MAP.md) remain unimplemented;
 their adoption probes are not delivered-component acceptance tests.
@@ -9,7 +9,7 @@ their adoption probes are not delivered-component acceptance tests.
 This is a behavior inventory, not a claim that every possible state is tested.
 Read the assertions in the linked tests: a broad test title alone is not evidence
 for every behavior it mentions. Gaps below are unverified acceptance cases, not
-confirmed implementation bugs. The initial audit added no tests; the CMB-1, CMB-2, POP-1, ALT-1, TAB-1, CHK-1/SWT-1, BTN-1/BDG-1 and native field
+confirmed implementation bugs. The initial audit added no tests; the CMB-1, CMB-2, POP-1, ALT-1, TAB-1, CHK-1/SWT-1, BTN-1/BDG-1 and native field/Label
 follow-ups add the browser contracts linked below.
 
 ## Reading the evidence
@@ -38,13 +38,13 @@ are implementation scope limits, not features that an existing test proves.
 | Diagnostics and cleanup are checked | [Unit setup](../vitest.setup.ts), [browser fixture](../tests/browser-fixture.ts) | Every unit test checks console warn/error after cleanup; every B/E test checks console warning/error and page errors. SSR has no equivalent diagnostic fixture. |
 | Whole-gallery accessibility | [B: light/dark examples have no axe accessibility violations](../tests/integration/foundation.spec.ts#L27) | Applies to the rendered, settled gallery state. Axe does not certify screen-reader usability or all dynamic states. |
 | Whole-gallery visual appearance | [V: light/dark/mobile component gallery](../tests/e2e/visual.spec.ts#L3) | Shared images include every family; not every variant/state combination. |
-| Unit execution coverage | [Coverage configuration](../vitest.config.ts), [measured coverage](evidence/native-fields-coverage.json) | 100% statements, branches, functions and lines for included component/helper source; not exhaustive behavior coverage. |
+| Unit execution coverage | [Coverage configuration](../vitest.config.ts), [measured coverage](evidence/label-refresh-coverage.json) | 100% statements, branches, functions and lines for included component/helper source; not exhaustive behavior coverage. |
 
-The native field delivery records **97 unit tests, 6 grouped SSR tests,
-150 browser integration runs (75 scenarios × 2 engines), and 123 E2E runs
-(57 journeys × 2 engines + 9 Chromium visual tests)**. Those visual tests compare
+The Label follow-up records **100 unit tests, 6 grouped SSR tests,
+152 browser integration runs (76 scenarios × 2 engines), and 125 E2E runs
+(58 journeys × 2 engines + 9 Chromium visual tests)**. Those visual tests compare
 12 images. These totals are package-wide, not per component. See the
-[native field verification](NATIVE-FIELDS-DELIVERY.md) for current results and the
+[Label follow-up verification](LABEL-REFRESH-DELIVERY.md) for current results and the
 [initial matrix verification](TEST-MATRIX-DELIVERY.md) for the original audit.
 
 ## Button
@@ -159,14 +159,16 @@ all auto-growing default configurations; see [delivery](NATIVE-FIELDS-DELIVERY.m
 | Clicking the label focuses its actual input/textarea | [B: labels focus their controls and keyboard navigation exposes focus rings](../tests/integration/form-fields.spec.ts#L5) |
 | Clicking associated toggle labels changes the corresponding control | [B: labels and Space update checkboxes, mixed selections and switches once](../tests/integration/toggles.spec.ts#L5) |
 | Live for/ID reassociation targets the correct Input/Textarea, preserves nodes/drafts and respects disabled targets | [B/E: live native targeting](../tests/native-fields.ts#L144), both engines |
-| Accessible names follow reassociation | [B/E: Chromium-only name assertions](../tests/native-fields.ts#L144); Firefox limitation remains open below |
+| Accessible names follow reassociation and a target ID change | [B/E: both-engine name assertions](../tests/native-fields.ts#L144) |
+| Repeated association changes during editing preserve label/content identity, focus, selection and draft | [B/E: editing lifetime](../tests/native-fields.ts#L195) |
+| Refresh only stale old/new collections, leave healthy/missing targets alone, and stop on disposal | [U: stale collections](../tests/unit/form-fields.test.tsx#L38), [U: removed association](../tests/unit/form-fields.test.tsx#L63) |
 
-**LBL-1 browser targeting complete; Firefox name acceptance remains open.**
-A plain-HTML [cached-label probe](evidence/native-fields-label-cached-probe.json)
-reproduces stale `labels` collections after reassociation in Firefox. The component
-suite asserts updated names only in Chromium and does not count Firefox click
-focus as proof of accessible names. See [delivery](NATIVE-FIELDS-DELIVERY.md).
-Label-owned form values, validation and request recovery are N/A.
+**LBL-1 closed for reactive for/ID reassociation.** Both engines now assert live
+accessible names through source and built exports. The feature-detected refresh
+invalidates stale native collections without moving the label or its content;
+see [delivery](LABEL-REFRESH-DELIVERY.md). Physical AT, arbitrary external DOM
+changes and form-associated custom elements remain unverified. Label-owned form
+values, validation and request recovery are N/A.
 
 ## Checkbox
 
@@ -324,7 +326,6 @@ order the next test work; they do not assign bug severity to untested behavior.
 | Priority | ID | Component(s) | Concrete closure condition |
 | --- | --- | --- | --- |
 | Manual follow-up | CMB-2 | Combobox | Browser scrolling/Tab/modal checks pass; record a physical IME composition/commit/cancel session before closing the remaining manual portion. |
-| Browser follow-up | LBL-1 | Label | Resolve or explicitly accept Firefox’s native cached-label limitation, then assert live accessible names after for/ID reassociation; click targeting already passes. |
 | Next | CRD-1, SEP-1 | Card, Separator | Add compact/long-content Card layout assertions and a vertical Separator visual state. |
 | Follow-up | SKL-1 | Skeleton | Actual Solid Loading resolution/unmount is exercised in a browser, separate from the manually toggled preview. |
 | Cross-cutting | ALL-1 | All 14 | Add WebKit runs and inspect differences; a mobile viewport alone does not certify Safari or a touch device. |
@@ -342,7 +343,8 @@ and component guide; it cannot be closed by increasing execution coverage alone.
 
 | ID | Closed | Evidence |
 | --- | --- | --- |
-| INP-1, TXT-1; LBL-1 targeting portion | 2026-10-08 | [Delivery](NATIVE-FIELDS-DELIVERY.md): ten field scenarios × two engines × source and built exports. Firefox live accessible names remain open. |
+| LBL-1 | 2026-10-08 | [Delivery](LABEL-REFRESH-DELIVERY.md): native cache refresh, restored Firefox name assertions and repeated editing checks in both export modes/engines. |
+| INP-1, TXT-1; LBL-1 targeting portion | 2026-10-08 | [Delivery](NATIVE-FIELDS-DELIVERY.md): ten field scenarios × two engines × source and built exports. Firefox names were deferred here and closed in the follow-up above. |
 | BTN-1, BDG-1 | 2026-10-08 | [Delivery](LINKS-NAVIGATION-DELIVERY.md): six link scenarios × two engines × source and built exports. No runtime fix needed. |
 | CHK-1, SWT-1 | 2026-10-08 | [Delivery](TOGGLES-FORMS-DELIVERY.md): seven native form scenarios × two engines × source and built exports. Fixed premature synchronization before reset cancellation. |
 | TAB-1 | 2026-10-08 | [Delivery](TABS-TAB1-DELIVERY.md): six lifecycle scenarios × two engines × source and built exports. Fixed removal/reorder focus loss and Firefox’s extra scrolling-list tab stop. |

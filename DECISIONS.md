@@ -230,3 +230,21 @@ boundary for browser-generated events. Cancellation must be checked after all
 native listeners and the reset default action. No API, theme or headless-library
 choice changes. [Delivery evidence](docs/TOGGLES-FORMS-DELIVERY.md) covers source
 and built exports in Chromium and Firefox.
+
+## Refresh stale native label collections on reassociation (2026-10-08)
+
+Firefox 155's cached control.labels lists can disagree with label.control after a
+reactive for change. Native probing confirms a transient comment child invalidates
+those collections; attribute rewrites do not. Preserve the label/content DOM and
+caller focus by adding/removing only that marker when either the old target still
+contains the label or the new target omits it. Check actual collection state,
+not a browser version or user-agent string; healthy collections require no mutation.
+
+REASONING: child-list invalidation fixes native computed names without moving
+caller-owned content, remounting refs, or overriding accessible names through ARIA.
+A DOM effect observes the static ref and reactive for prop after the DOM commit;
+it retains only the previous target and is disposed with the component. No timer,
+observer, global registry or external-DOM mutation monitoring is added. SSR remains
+native markup. Consumers observing label child-list mutations can see the temporary
+comment insertion/removal. [Delivery](docs/LABEL-REFRESH-DELIVERY.md) records the
+probe, repeated focus/selection/identity tests and restored both-engine assertions.

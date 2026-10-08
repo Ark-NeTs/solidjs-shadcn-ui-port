@@ -53,9 +53,11 @@ function LiveLabel() {
       <Button onClick={() => setRenamed(!renamed())}>Rename textarea ID</Button>
       <Button onClick={() => setDisabled(!disabled())}>{disabled() ? 'Enable textarea' : 'Disable textarea'}</Button>
     </div>
-    <Label data-testid="live-label" for={target() === 'first' ? 'first' : secondId()}>Active draft</Label>
+    <Label data-testid="live-label" for={target() === 'first' ? 'first' : secondId()}><span data-testid="label-text">Active draft</span></Label>
     <Input id="first" data-testid="first-draft" defaultValue="Input draft"/>
-    <Textarea id={secondId()} data-testid="second-draft" defaultValue="Textarea draft" disabled={disabled()}/>
+    <Textarea id={secondId()} data-testid="second-draft" defaultValue="Textarea draft" disabled={disabled()}
+      onKeyDown={event => { if (event.key === 'F2') setTarget(target() === 'first' ? 'second' : 'first'); }}/>
+    <p>F2 in the textarea moves the label while preserving the editing focus.</p>
     <Button>After drafts</Button>
   </div>;
 }

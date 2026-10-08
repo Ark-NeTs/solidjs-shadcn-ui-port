@@ -1,3 +1,4 @@
 // Native Input, Textarea and Label contracts against built exports; D19/D90.
-import { nativeFields } from '../native-fields';
+import { nativeFields, labelEditing } from '../native-fields';
 nativeFields();
+labelEditing();

@@ -34,3 +34,46 @@ describe('native form fields', () => {
     const label=screen.getByText('Notes');expect(ref).toBe(label);expect(label).toHaveClass('gap-4');expect(label).not.toHaveClass('gap-2');fireEvent.click(label);expect(click).toHaveBeenCalledTimes(1);expect(screen.getByRole('textbox')).toHaveAttribute('rows','4');expect(screen.getByRole('textbox')).toHaveAttribute('cols','30');expect(screen.getByRole('textbox')).toHaveAttribute('wrap','soft');
   });
 });
+
+it.each(['old', 'new'] as const)('refreshes a stale %s target collection without replacing label content or focus', stale => {
+  const [target, setTarget] = createSignal('first');
+  const ref = vi.fn();
+  const { unmount } = render(() => <><Label for={target()} ref={ref}><span>Live name</span></Label><Input id="first"/><Textarea id="second" defaultValue="Keep this draft"/></>);
+  const label = document.querySelector('label')!;
+  const child = label.firstChild;
+  const first = document.getElementById('first') as HTMLInputElement;
+  const second = document.getElementById('second') as HTMLTextAreaElement;
+  // jsdom does not reproduce Firefox's stale native collections; simulate either side.
+  if (stale === 'old') vi.spyOn(first, 'labels', 'get').mockReturnValue(document.querySelectorAll('label'));
+  else vi.spyOn(second, 'labels', 'get').mockReturnValue(document.querySelectorAll('label.missing'));
+  const append = vi.spyOn(label, 'append');
+  second.focus(); second.setSelectionRange(2, 5);
+  setTarget('second'); flush();
+  expect(append).toHaveBeenCalledTimes(1);
+  expect(label.control).toBe(second);
+  expect(label.firstChild).toBe(child);
+  expect(label.childNodes).toHaveLength(1);
+  expect(ref).toHaveBeenCalledExactlyOnceWith(label);
+  expect(second).toHaveFocus(); expect(second).toHaveValue('Keep this draft');
+  expect([second.selectionStart, second.selectionEnd]).toEqual([2, 5]);
+  unmount(); setTarget('first'); flush();
+  expect(append).toHaveBeenCalledTimes(1);
+});
+
+it('leaves healthy and missing associations alone and refreshes a stale removed association', () => {
+  const [target, setTarget] = createSignal<string | undefined>('first');
+  render(() => <><Label for={target()}>Live name</Label><Input id="first"/><Textarea id="second"/></>);
+  const label = document.querySelector('label')!;
+  const first = document.getElementById('first') as HTMLInputElement;
+  const append = vi.spyOn(label, 'append');
+  setTarget('second'); flush();
+  expect(label.control).toBe(document.getElementById('second'));
+  expect(append).not.toHaveBeenCalled();
+  setTarget('first'); flush();
+  vi.spyOn(first, 'labels', 'get').mockReturnValue(document.querySelectorAll('label'));
+  setTarget(undefined); flush();
+  expect(label.control).toBeNull(); expect(label).not.toHaveAttribute('for');
+  expect(append).toHaveBeenCalledTimes(1);
+  setTarget('missing'); flush();
+  expect(append).toHaveBeenCalledTimes(1);
+});

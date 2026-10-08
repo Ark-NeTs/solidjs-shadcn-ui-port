@@ -169,11 +169,15 @@ accessible label. Both `for` and the target `id` may update reactively; the
 Textarea, rename the target ID, and preserve their edited drafts and identities.
 A label does not focus a disabled target; enabling the target restores activation.
 
-**Firefox limitation:** live accessible-name reassociation is not accepted yet.
-The tested engine retains previously read native `labels` collections after a
-`for` change, also with plain HTML; Playwright can then report a stale name.
-Native click targeting passes in both engines and updated names pass in Chromium.
-This observation does not establish physical screen-reader behavior.
+Reactive `for` changes also synchronize native label collections. If the previous
+or current control's `labels` list disagrees with `label.control`, Label briefly
+adds/removes a comment child to invalidate the stale browser cache. It preserves
+the label, its content, refs, editing focus and selection, and leaves healthy
+collections untouched. No user-agent check or ARIA override is used.
+[LBL-1 follow-up](LABEL-REFRESH-DELIVERY.md) restores accessible-name assertions in
+both Chromium and Firefox, including repeated reassociation during editing.
+This does not certify physical screen-reader behavior or arbitrary external DOM
+rewrites that bypass reactive `for` updates.
 
 Describe errors with text and `aria-describedby`, alongside
 `aria-invalid="true"`; the owner clears the error and preserves the draft during

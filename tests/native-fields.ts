@@ -141,7 +141,7 @@ export function nativeFields() {
     });
   }
 
-  test('Label follows live for and ID reassociation without losing drafts or activating a disabled target', async ({ page, browserName }) => {
+  test('Label follows live for and ID reassociation without losing drafts or activating a disabled target', async ({ page }) => {
     await page.goto('/?native-fields&labels');
     const label = page.getByTestId('live-label');
     const first = page.getByTestId('first-draft');
@@ -158,14 +158,13 @@ export function nativeFields() {
     await label.click();
     await expect(second).toBeFocused();
     expect(await label.evaluate((node, target) => (node as HTMLLabelElement).control === target, secondNode)).toBe(true);
-    // Firefox retains stale native labels collections after reassociation; see delivery evidence.
-    if (browserName === 'chromium') {
-      await expect(second).toHaveAccessibleName('Active draft');
-      await expect(first).toHaveAccessibleName('');
-    }
+    await expect(second).toHaveAccessibleName('Active draft');
+    await expect(first).toHaveAccessibleName('');
     await page.getByRole('button', { name: 'Rename textarea ID' }).click();
     await expect(label).toHaveAttribute('for', 'renamed-notes');
     await expect(second).toHaveAttribute('id', 'renamed-notes');
+    await expect(second).toHaveAccessibleName('Active draft');
+    await expect(first).toHaveAccessibleName('');
     await label.click();
     await expect(second).toBeFocused();
     await page.getByRole('button', { name: 'Disable textarea' }).click();
@@ -182,13 +181,41 @@ export function nativeFields() {
     await label.click();
     await expect(first).toBeFocused();
     expect(await label.evaluate((node, target) => (node as HTMLLabelElement).control === target, firstNode)).toBe(true);
-    if (browserName === 'chromium') {
-      await expect(first).toHaveAccessibleName('Active draft');
-      await expect(second).toHaveAccessibleName('');
-    }
+    await expect(first).toHaveAccessibleName('Active draft');
+    await expect(second).toHaveAccessibleName('');
     await expect(first).toHaveValue('Keep input edits');
     await expect(second).toHaveValue('Keep textarea edits');
     expect(await first.evaluate((node, saved) => node === saved, firstNode)).toBe(true);
     expect(await second.evaluate((node, saved) => node === saved, secondNode)).toBe(true);
+  });
+}
+
+/** Guard focus, selection and nested label identity while reassociation happens during editing. */
+export function labelEditing() {
+  test('Label refresh preserves editing focus, selection and nodes through repeated reassociation', async ({ page }) => {
+    await page.goto('/?native-fields&labels');
+    const label = page.getByTestId('live-label');
+    const child = page.getByTestId('label-text');
+    const first = page.getByTestId('first-draft');
+    const second = page.getByTestId('second-draft');
+    const labelNode = await label.elementHandle();
+    const childNode = await child.elementHandle();
+    if (!labelNode || !childNode) throw new Error('Expected mounted label content');
+    // Prime both native collections before changing the association.
+    await expect(first).toHaveAccessibleName('Active draft');
+    await expect(second).toHaveAccessibleName('');
+    await second.fill('Preserve this edited draft');
+    await second.evaluate(node => (node as HTMLTextAreaElement).setSelectionRange(2, 7));
+    for (const target of ['second', 'first', 'second', 'first']) {
+      await page.keyboard.press('F2');
+      await expect(second).toBeFocused();
+      await expect(second).toHaveValue('Preserve this edited draft');
+      expect(await second.evaluate(node => [(node as HTMLTextAreaElement).selectionStart, (node as HTMLTextAreaElement).selectionEnd])).toEqual([2, 7]);
+      await expect(first).toHaveAccessibleName(target === 'first' ? 'Active draft' : '');
+      await expect(second).toHaveAccessibleName(target === 'second' ? 'Active draft' : '');
+      expect(await label.evaluate((node, saved) => node === saved, labelNode)).toBe(true);
+      expect(await child.evaluate((node, saved) => node === saved, childNode)).toBe(true);
+      expect(await label.evaluate(node => node.childNodes.length)).toBe(1);
+    }
   });
 }
