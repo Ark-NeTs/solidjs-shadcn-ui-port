@@ -1,0 +1,367 @@
+{
+  "config": {
+    "argv": [
+      "/Users/arktas/.asdf/installs/nodejs/25.3.0/bin/node",
+      "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/node_modules/.bin/playwright",
+      "test",
+      "--config",
+      "playwright.hydration.config.ts",
+      "--grep",
+      "hydrates Progress"
+    ],
+    "configFile": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/playwright.hydration.config.ts",
+    "rootDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "hydration/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [
+          "**/visual.spec.ts"
+        ],
+        "testMatch": [
+          "hydration/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [
+          "**/visual.spec.ts"
+        ],
+        "testMatch": [
+          "hydration/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "docs/evidence/progress-hydration-focused.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": {
+      "command": "bun run build:hydration && bunx --no-install vite preview --config hydration.vite.config.ts --host 127.0.0.1 --port 4403 --strictPort",
+      "url": "http://127.0.0.1:4403",
+      "reuseExistingServer": false,
+      "timeout": 60000
+    }
+  },
+  "suites": [
+    {
+      "title": "hydration/hydration.spec.ts",
+      "file": "hydration/hydration.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "hydrates Progress naming and fill before owner updates, label changes and disposal",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 809,
+                  "error": {
+                    "message": "Error: No browser errors or development diagnostics\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 5\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Hydration key miss for \\\"acceptanceA30040350\\\": no server-rendered element carries this key (template: <div>). A detached element was created instead; its subtree will not appear in the document or become interactive. This usually means the server and client hydration id namespaces are misaligned — when hydrating a subtree of a larger server render, wrap the document shell in <NoHydration> and re-enter with <Hydration> around the hydrated subtree (or pass hydrate() a renderId matching the server's <Hydration id>).\",\u001b[39m\n\u001b[31m+   \"Hydration completed with 1 unclaimed server-rendered node(s):\u001b[39m\n\u001b[31m+   <div _hk=\\\"acceptanceA30040360\\\" style=\\\"--kb-meter-fill-width:25%;--kb-progress-fill-width:25%;width:v\",\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                    "stack": "Error: No browser errors or development diagnostics\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 5\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Hydration key miss for \\\"acceptanceA30040350\\\": no server-rendered element carries this key (template: <div>). A detached element was created instead; its subtree will not appear in the document or become interactive. This usually means the server and client hydration id namespaces are misaligned — when hydrating a subtree of a larger server render, wrap the document shell in <NoHydration> and re-enter with <Hydration> around the hydrated subtree (or pass hydrate() a renderId matching the server's <Hydration id>).\",\u001b[39m\n\u001b[31m+   \"Hydration completed with 1 unclaimed server-rendered node(s):\u001b[39m\n\u001b[31m+   <div _hk=\\\"acceptanceA30040360\\\" style=\\\"--kb-meter-fill-width:25%;--kb-progress-fill-width:25%;width:v\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at Object.base.extend.diagnostics.auto (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/browser-fixture.ts:10:69)",
+                    "location": {
+                      "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/browser-fixture.ts",
+                      "column": 69,
+                      "line": 10
+                    },
+                    "snippet": "\u001b[90m   at \u001b[39mbrowser-fixture.ts:10\n\n   8 |     await use(messages);\n   9 |     await testInfo.attach('browser-diagnostics',{body:JSON.stringify(messages),contentType:'application/json'});\n> 10 |     expect(messages,'No browser errors or development diagnostics').toEqual([]);\n     |                                                                     ^\n  11 |   },{auto:true}],\n  12 | });\n  13 | export { expect };"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/browser-fixture.ts",
+                        "column": 69,
+                        "line": 10
+                      },
+                      "message": "Error: No browser errors or development diagnostics\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 5\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Hydration key miss for \\\"acceptanceA30040350\\\": no server-rendered element carries this key (template: <div>). A detached element was created instead; its subtree will not appear in the document or become interactive. This usually means the server and client hydration id namespaces are misaligned — when hydrating a subtree of a larger server render, wrap the document shell in <NoHydration> and re-enter with <Hydration> around the hydrated subtree (or pass hydrate() a renderId matching the server's <Hydration id>).\",\u001b[39m\n\u001b[31m+   \"Hydration completed with 1 unclaimed server-rendered node(s):\u001b[39m\n\u001b[31m+   <div _hk=\\\"acceptanceA30040360\\\" style=\\\"--kb-meter-fill-width:25%;--kb-progress-fill-width:25%;width:v\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n   at browser-fixture.ts:10\n\n   8 |     await use(messages);\n   9 |     await testInfo.attach('browser-diagnostics',{body:JSON.stringify(messages),contentType:'application/json'});\n> 10 |     expect(messages,'No browser errors or development diagnostics').toEqual([]);\n     |                                                                     ^\n  11 |   },{auto:true}],\n  12 | });\n  13 | export { expect };\n    at Object.base.extend.diagnostics.auto (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/browser-fixture.ts:10:69)"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T20:40:01.156Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "WyJIeWRyYXRpb24ga2V5IG1pc3MgZm9yIFwiYWNjZXB0YW5jZUEzMDA0MDM1MFwiOiBubyBzZXJ2ZXItcmVuZGVyZWQgZWxlbWVudCBjYXJyaWVzIHRoaXMga2V5ICh0ZW1wbGF0ZTogPGRpdj4pLiBBIGRldGFjaGVkIGVsZW1lbnQgd2FzIGNyZWF0ZWQgaW5zdGVhZDsgaXRzIHN1YnRyZWUgd2lsbCBub3QgYXBwZWFyIGluIHRoZSBkb2N1bWVudCBvciBiZWNvbWUgaW50ZXJhY3RpdmUuIFRoaXMgdXN1YWxseSBtZWFucyB0aGUgc2VydmVyIGFuZCBjbGllbnQgaHlkcmF0aW9uIGlkIG5hbWVzcGFjZXMgYXJlIG1pc2FsaWduZWQg4oCUIHdoZW4gaHlkcmF0aW5nIGEgc3VidHJlZSBvZiBhIGxhcmdlciBzZXJ2ZXIgcmVuZGVyLCB3cmFwIHRoZSBkb2N1bWVudCBzaGVsbCBpbiA8Tm9IeWRyYXRpb24+IGFuZCByZS1lbnRlciB3aXRoIDxIeWRyYXRpb24+IGFyb3VuZCB0aGUgaHlkcmF0ZWQgc3VidHJlZSAob3IgcGFzcyBoeWRyYXRlKCkgYSByZW5kZXJJZCBtYXRjaGluZyB0aGUgc2VydmVyJ3MgPEh5ZHJhdGlvbiBpZD4pLiIsIkh5ZHJhdGlvbiBjb21wbGV0ZWQgd2l0aCAxIHVuY2xhaW1lZCBzZXJ2ZXItcmVuZGVyZWQgbm9kZShzKTpcbiAgPGRpdiBfaGs9XCJhY2NlcHRhbmNlQTMwMDQwMzYwXCIgc3R5bGU9XCItLWtiLW1ldGVyLWZpbGwtd2lkdGg6MjUlOy0ta2ItcHJvZ3Jlc3MtZmlsbC13aWR0aDoyNSU7d2lkdGg6diJd"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-hydration-hydrat-125e7--label-changes-and-disposal-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-hydration-hydrat-125e7--label-changes-and-disposal-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-hydration-hydrat-125e7--label-changes-and-disposal-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/browser-fixture.ts",
+                    "column": 69,
+                    "line": 10
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "1b38abd37014569c5914-1e0b9d0641099185875c",
+          "file": "hydration/hydration.spec.ts",
+          "line": 190,
+          "column": 1
+        },
+        {
+          "title": "hydrates Progress naming and fill before owner updates, label changes and disposal",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 1586,
+                  "error": {
+                    "message": "Error: No browser errors or development diagnostics\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 5\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Hydration key miss for \\\"acceptanceA30040350\\\": no server-rendered element carries this key (template: <div>). A detached element was created instead; its subtree will not appear in the document or become interactive. This usually means the server and client hydration id namespaces are misaligned — when hydrating a subtree of a larger server render, wrap the document shell in <NoHydration> and re-enter with <Hydration> around the hydrated subtree (or pass hydrate() a renderId matching the server's <Hydration id>).\",\u001b[39m\n\u001b[31m+   \"Hydration completed with 1 unclaimed server-rendered node(s):\u001b[39m\n\u001b[31m+   <div _hk=\\\"acceptanceA30040360\\\" style=\\\"--kb-meter-fill-width:25%;--kb-progress-fill-width:25%;width:v\",\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                    "stack": "Error: No browser errors or development diagnostics\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 5\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Hydration key miss for \\\"acceptanceA30040350\\\": no server-rendered element carries this key (template: <div>). A detached element was created instead; its subtree will not appear in the document or become interactive. This usually means the server and client hydration id namespaces are misaligned — when hydrating a subtree of a larger server render, wrap the document shell in <NoHydration> and re-enter with <Hydration> around the hydrated subtree (or pass hydrate() a renderId matching the server's <Hydration id>).\",\u001b[39m\n\u001b[31m+   \"Hydration completed with 1 unclaimed server-rendered node(s):\u001b[39m\n\u001b[31m+   <div _hk=\\\"acceptanceA30040360\\\" style=\\\"--kb-meter-fill-width:25%;--kb-progress-fill-width:25%;width:v\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at Object.base.extend.diagnostics.auto (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/browser-fixture.ts:10:69)",
+                    "location": {
+                      "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/browser-fixture.ts",
+                      "column": 69,
+                      "line": 10
+                    },
+                    "snippet": "\u001b[90m   at \u001b[39mbrowser-fixture.ts:10\n\n   8 |     await use(messages);\n   9 |     await testInfo.attach('browser-diagnostics',{body:JSON.stringify(messages),contentType:'application/json'});\n> 10 |     expect(messages,'No browser errors or development diagnostics').toEqual([]);\n     |                                                                     ^\n  11 |   },{auto:true}],\n  12 | });\n  13 | export { expect };"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/browser-fixture.ts",
+                        "column": 69,
+                        "line": 10
+                      },
+                      "message": "Error: No browser errors or development diagnostics\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 5\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Hydration key miss for \\\"acceptanceA30040350\\\": no server-rendered element carries this key (template: <div>). A detached element was created instead; its subtree will not appear in the document or become interactive. This usually means the server and client hydration id namespaces are misaligned — when hydrating a subtree of a larger server render, wrap the document shell in <NoHydration> and re-enter with <Hydration> around the hydrated subtree (or pass hydrate() a renderId matching the server's <Hydration id>).\",\u001b[39m\n\u001b[31m+   \"Hydration completed with 1 unclaimed server-rendered node(s):\u001b[39m\n\u001b[31m+   <div _hk=\\\"acceptanceA30040360\\\" style=\\\"--kb-meter-fill-width:25%;--kb-progress-fill-width:25%;width:v\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n   at browser-fixture.ts:10\n\n   8 |     await use(messages);\n   9 |     await testInfo.attach('browser-diagnostics',{body:JSON.stringify(messages),contentType:'application/json'});\n> 10 |     expect(messages,'No browser errors or development diagnostics').toEqual([]);\n     |                                                                     ^\n  11 |   },{auto:true}],\n  12 | });\n  13 | export { expect };\n    at Object.base.extend.diagnostics.auto (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/browser-fixture.ts:10:69)"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T20:40:02.605Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "WyJIeWRyYXRpb24ga2V5IG1pc3MgZm9yIFwiYWNjZXB0YW5jZUEzMDA0MDM1MFwiOiBubyBzZXJ2ZXItcmVuZGVyZWQgZWxlbWVudCBjYXJyaWVzIHRoaXMga2V5ICh0ZW1wbGF0ZTogPGRpdj4pLiBBIGRldGFjaGVkIGVsZW1lbnQgd2FzIGNyZWF0ZWQgaW5zdGVhZDsgaXRzIHN1YnRyZWUgd2lsbCBub3QgYXBwZWFyIGluIHRoZSBkb2N1bWVudCBvciBiZWNvbWUgaW50ZXJhY3RpdmUuIFRoaXMgdXN1YWxseSBtZWFucyB0aGUgc2VydmVyIGFuZCBjbGllbnQgaHlkcmF0aW9uIGlkIG5hbWVzcGFjZXMgYXJlIG1pc2FsaWduZWQg4oCUIHdoZW4gaHlkcmF0aW5nIGEgc3VidHJlZSBvZiBhIGxhcmdlciBzZXJ2ZXIgcmVuZGVyLCB3cmFwIHRoZSBkb2N1bWVudCBzaGVsbCBpbiA8Tm9IeWRyYXRpb24+IGFuZCByZS1lbnRlciB3aXRoIDxIeWRyYXRpb24+IGFyb3VuZCB0aGUgaHlkcmF0ZWQgc3VidHJlZSAob3IgcGFzcyBoeWRyYXRlKCkgYSByZW5kZXJJZCBtYXRjaGluZyB0aGUgc2VydmVyJ3MgPEh5ZHJhdGlvbiBpZD4pLiIsIkh5ZHJhdGlvbiBjb21wbGV0ZWQgd2l0aCAxIHVuY2xhaW1lZCBzZXJ2ZXItcmVuZGVyZWQgbm9kZShzKTpcbiAgPGRpdiBfaGs9XCJhY2NlcHRhbmNlQTMwMDQwMzYwXCIgc3R5bGU9XCItLWtiLW1ldGVyLWZpbGwtd2lkdGg6MjUlOy0ta2ItcHJvZ3Jlc3MtZmlsbC13aWR0aDoyNSU7d2lkdGg6diJd"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-hydration-hydrat-125e7--label-changes-and-disposal-firefox/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-hydration-hydrat-125e7--label-changes-and-disposal-firefox/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-hydration-hydrat-125e7--label-changes-and-disposal-firefox/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/browser-fixture.ts",
+                    "column": 69,
+                    "line": 10
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "1b38abd37014569c5914-1aa2b662ea57b771480a",
+          "file": "hydration/hydration.spec.ts",
+          "line": 190,
+          "column": 1
+        },
+        {
+          "title": "hydrates Progress naming and fill before owner updates, label changes and disposal",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 914,
+                  "error": {
+                    "message": "Error: No browser errors or development diagnostics\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 5\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Hydration key miss for \\\"acceptanceA30040350\\\": no server-rendered element carries this key (template: <div>). A detached element was created instead; its subtree will not appear in the document or become interactive. This usually means the server and client hydration id namespaces are misaligned — when hydrating a subtree of a larger server render, wrap the document shell in <NoHydration> and re-enter with <Hydration> around the hydrated subtree (or pass hydrate() a renderId matching the server's <Hydration id>).\",\u001b[39m\n\u001b[31m+   \"Hydration completed with 1 unclaimed server-rendered node(s):\u001b[39m\n\u001b[31m+   <div _hk=\\\"acceptanceA30040360\\\" style=\\\"--kb-meter-fill-width:25%;--kb-progress-fill-width:25%;width:v\",\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                    "stack": "Error: No browser errors or development diagnostics\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 5\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Hydration key miss for \\\"acceptanceA30040350\\\": no server-rendered element carries this key (template: <div>). A detached element was created instead; its subtree will not appear in the document or become interactive. This usually means the server and client hydration id namespaces are misaligned — when hydrating a subtree of a larger server render, wrap the document shell in <NoHydration> and re-enter with <Hydration> around the hydrated subtree (or pass hydrate() a renderId matching the server's <Hydration id>).\",\u001b[39m\n\u001b[31m+   \"Hydration completed with 1 unclaimed server-rendered node(s):\u001b[39m\n\u001b[31m+   <div _hk=\\\"acceptanceA30040360\\\" style=\\\"--kb-meter-fill-width:25%;--kb-progress-fill-width:25%;width:v\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at Object.base.extend.diagnostics.auto (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/browser-fixture.ts:10:69)",
+                    "location": {
+                      "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/browser-fixture.ts",
+                      "column": 69,
+                      "line": 10
+                    },
+                    "snippet": "\u001b[90m   at \u001b[39mbrowser-fixture.ts:10\n\n   8 |     await use(messages);\n   9 |     await testInfo.attach('browser-diagnostics',{body:JSON.stringify(messages),contentType:'application/json'});\n> 10 |     expect(messages,'No browser errors or development diagnostics').toEqual([]);\n     |                                                                     ^\n  11 |   },{auto:true}],\n  12 | });\n  13 | export { expect };"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/browser-fixture.ts",
+                        "column": 69,
+                        "line": 10
+                      },
+                      "message": "Error: No browser errors or development diagnostics\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 5\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Hydration key miss for \\\"acceptanceA30040350\\\": no server-rendered element carries this key (template: <div>). A detached element was created instead; its subtree will not appear in the document or become interactive. This usually means the server and client hydration id namespaces are misaligned — when hydrating a subtree of a larger server render, wrap the document shell in <NoHydration> and re-enter with <Hydration> around the hydrated subtree (or pass hydrate() a renderId matching the server's <Hydration id>).\",\u001b[39m\n\u001b[31m+   \"Hydration completed with 1 unclaimed server-rendered node(s):\u001b[39m\n\u001b[31m+   <div _hk=\\\"acceptanceA30040360\\\" style=\\\"--kb-meter-fill-width:25%;--kb-progress-fill-width:25%;width:v\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n   at browser-fixture.ts:10\n\n   8 |     await use(messages);\n   9 |     await testInfo.attach('browser-diagnostics',{body:JSON.stringify(messages),contentType:'application/json'});\n> 10 |     expect(messages,'No browser errors or development diagnostics').toEqual([]);\n     |                                                                     ^\n  11 |   },{auto:true}],\n  12 | });\n  13 | export { expect };\n    at Object.base.extend.diagnostics.auto (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/browser-fixture.ts:10:69)"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T20:40:05.422Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "WyJIeWRyYXRpb24ga2V5IG1pc3MgZm9yIFwiYWNjZXB0YW5jZUEzMDA0MDM1MFwiOiBubyBzZXJ2ZXItcmVuZGVyZWQgZWxlbWVudCBjYXJyaWVzIHRoaXMga2V5ICh0ZW1wbGF0ZTogPGRpdj4pLiBBIGRldGFjaGVkIGVsZW1lbnQgd2FzIGNyZWF0ZWQgaW5zdGVhZDsgaXRzIHN1YnRyZWUgd2lsbCBub3QgYXBwZWFyIGluIHRoZSBkb2N1bWVudCBvciBiZWNvbWUgaW50ZXJhY3RpdmUuIFRoaXMgdXN1YWxseSBtZWFucyB0aGUgc2VydmVyIGFuZCBjbGllbnQgaHlkcmF0aW9uIGlkIG5hbWVzcGFjZXMgYXJlIG1pc2FsaWduZWQg4oCUIHdoZW4gaHlkcmF0aW5nIGEgc3VidHJlZSBvZiBhIGxhcmdlciBzZXJ2ZXIgcmVuZGVyLCB3cmFwIHRoZSBkb2N1bWVudCBzaGVsbCBpbiA8Tm9IeWRyYXRpb24+IGFuZCByZS1lbnRlciB3aXRoIDxIeWRyYXRpb24+IGFyb3VuZCB0aGUgaHlkcmF0ZWQgc3VidHJlZSAob3IgcGFzcyBoeWRyYXRlKCkgYSByZW5kZXJJZCBtYXRjaGluZyB0aGUgc2VydmVyJ3MgPEh5ZHJhdGlvbiBpZD4pLiIsIkh5ZHJhdGlvbiBjb21wbGV0ZWQgd2l0aCAxIHVuY2xhaW1lZCBzZXJ2ZXItcmVuZGVyZWQgbm9kZShzKTpcbiAgPGRpdiBfaGs9XCJhY2NlcHRhbmNlQTMwMDQwMzYwXCIgc3R5bGU9XCItLWtiLW1ldGVyLWZpbGwtd2lkdGg6MjUlOy0ta2ItcHJvZ3Jlc3MtZmlsbC13aWR0aDoyNSU7d2lkdGg6diJd"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-hydration-hydrat-125e7--label-changes-and-disposal-webkit/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-hydration-hydrat-125e7--label-changes-and-disposal-webkit/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-hydration-hydrat-125e7--label-changes-and-disposal-webkit/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/browser-fixture.ts",
+                    "column": 69,
+                    "line": 10
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "1b38abd37014569c5914-817e412be6f3dcb9686d",
+          "file": "hydration/hydration.spec.ts",
+          "line": 190,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-08T20:39:58.979Z",
+    "duration": 7636.659000000001,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 3,
+    "flaky": 0
+  }
+}

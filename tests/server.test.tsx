@@ -67,3 +67,9 @@ it('renders Slider bounds, thumb values, names and vertical semantics on the ser
  const html=renderToString(()=><Slider aria-label="Server range" thumbLabels={['Minimum','Maximum']} defaultValue={[20,80]} name="range" minStepsBetweenThumbs={10} orientation="vertical" disabled/>);
  expect(html).toContain('role="slider"');expect(html).toContain('aria-label="Minimum"');expect(html).toContain('aria-valuenow="20"');expect(html).toContain('aria-valuenow="80"');expect(html).toContain('aria-valuemax="70"');expect(html).toContain('aria-valuemin="30"');expect(html).toContain('aria-orientation="vertical"');expect(html.match(/name="range"/g)).toHaveLength(2);expect(html).toContain('value="20"');expect(html).toContain('value="80"');expect(html).toContain('disabled');
 });
+
+import { Progress } from '../src';
+it('renders Progress values, external names, completed and unknown states on the server',()=>{
+ const html=renderToString(()=><><span id="work">Work</span><Progress value={25} max={50} aria-labelledby="work"/><Progress value={50} max={50} aria-label="Done"/><Progress aria-label="Unknown"/></>);
+ expect(html.match(/role="progressbar"/g)).toHaveLength(3);expect(html).toContain('aria-labelledby="work"');expect(html).toContain('aria-valuenow="25"');expect(html).toContain('aria-valuemax="50"');expect(html).toContain('aria-valuetext="50%"');expect(html).toContain('data-state="complete"');expect(html).toContain('data-state="indeterminate"');expect(html.match(/aria-valuenow=/g)).toHaveLength(2);
+});

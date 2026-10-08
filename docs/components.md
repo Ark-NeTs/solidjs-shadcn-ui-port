@@ -1052,6 +1052,71 @@ remain unverified. See [delivery](SLIDER-DELIVERY.md) for exact acceptance evide
 ![Dark Slider examples](screenshots/slider-dark.png)
 ![Narrow Slider examples](screenshots/slider-mobile.png)
 
+## Progress
+
+Open `/?progress` (append `&dark`) for known/unknown work, changing totals, RTL,
+custom colors and an actual Solid Loading fallback.
+
+```tsx
+import { createSignal, Loading } from 'solid-js';
+import { Progress } from 'shadcn-solidjs-theme/ui/progress';
+
+function ExportProgress() {
+  const [completed, setCompleted] = createSignal(3);
+  return <><span id="export-label">Exporting files</span>
+    <Progress value={completed()} max={10} aria-labelledby="export-label"
+      getValueLabel={(value, max) => `${value} of ${max} files`} />
+    <button onClick={() => setCompleted(10)}>Complete export</button>
+  </>;
+}
+
+// Put an async reader inside this boundary. The fallback owns no request or timer.
+<Loading fallback={<Progress aria-label="Loading report" />}>
+  <Report />
+</Loading>
+```
+
+| Prop | Contract |
+| --- | --- |
+| value | Number or null; missing/null, nonfinite, negative or above max means indeterminate. Zero is valid. Values may be fractional. |
+| max | Positive finite total; defaults to 100, as do invalid/nonpositive totals. The minimum is always zero. |
+| getValueLabel(value, max) | Custom determinate value text. Default is rounded percentage text. Supply a localized formatter when needed. |
+| aria-valuetext | Explicit text overrides getValueLabel for known work; unknown progress omits both aria-valuenow and aria-valuetext. |
+| aria-label / aria-labelledby | Supply a name describing the operation. External label references stay reactive through native attribute bindings. |
+| Native div props | id, ref, class/style, direction, description and events are forwarded. Role and numeric ARIA values are managed internally. No children, as/polymorphism or compound-part API. |
+
+The owned root has role=progressbar, data-slot=progress and
+`data-state="loading" | "complete" | "indeterminate"`. Its single indicator uses
+data-slot=progress-indicator and the same state. Use these package slots/state for
+styling. Native refs point at the root div without another DOM wrapper.
+
+Owner values and max are derived directly; the component never increments itself,
+changes owner data, fetches or submits a form value. Invalid values display unknown
+work instead of inventing a percentage. Shrinking max below the current value also
+shows unknown work; correcting the inputs recovers without remounting. To represent
+failure, cancellation or retry, render the application's explanation and actions
+outside the progressbar. It does not create a live region or aria-busy on the
+surrounding application; announce meaningful status changes in an app-owned status
+region, and label the busy region where appropriate. It is not a keyboard control
+and does not enter Tab order by default.
+
+The thin muted track and primary fill use shared semantic tokens. The fill grows
+from inline-start, including inherited RTL, and updates as its container resizes.
+Unknown work shows a centered segment that pulses without implying a percentage;
+reduced motion keeps that segment static and removes width transitions. Root class
+and style can change dimensions or semantic tokens; descendant slot selectors can
+customize the indicator. Keep labels/help outside the thin track to avoid clipping.
+
+SSR, source hydration, source/built browser updates, real Loading resolution and
+late resolution after unmount are covered. Physical screen-reader announcements,
+forced colors, streaming/published SSR and real admin/Electron composition remain
+unverified. There is no vertical, buffered, segmented or circular mode. See
+[delivery](PROGRESS-DELIVERY.md) and [Kobalte evaluation](../KOBALTE-PROGRESS.md).
+
+![Light Progress examples](screenshots/progress-light.png)
+![Dark Progress examples](screenshots/progress-dark.png)
+![Narrow Progress examples](screenshots/progress-mobile.png)
+
 ## Acceptance evidence
 
 See the [per-component test matrix](TEST-MATRIX.md) for linked assertions,

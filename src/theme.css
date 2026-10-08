@@ -178,3 +178,7 @@
 @media (prefers-reduced-motion: reduce) {
   [data-slot="slider-thumb"] { transition: none; }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  [data-slot="progress-indicator"] { animation: none; transition: none; }
+}

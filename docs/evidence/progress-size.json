@@ -1,0 +1,16 @@
+{
+  "baselineCommit": "6ac4eed",
+  "before": {
+    "bytes": 141902,
+    "gzip": 35866
+  },
+  "after": {
+    "bytes": 143396,
+    "gzip": 36228
+  },
+  "delta": {
+    "bytes": 1494,
+    "gzip": 362
+  },
+  "scope": "Whole-library JavaScript; excludes CSS/fonts/external Solid runtime, not a consuming application transfer measurement"
+}

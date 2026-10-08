@@ -1,0 +1,64 @@
+{
+  "hydration": {
+    "passed": 99,
+    "emptyDiagnostics": 99,
+    "retries": 0,
+    "skipped": 0
+  },
+  "integration": {
+    "passed": 381,
+    "emptyDiagnostics": 381,
+    "retries": 0,
+    "skipped": 0
+  },
+  "e2e": {
+    "passed": 357,
+    "emptyDiagnostics": 357,
+    "retries": 0,
+    "skipped": 0
+  },
+  "coverage": {
+    "lines": {
+      "total": 705,
+      "covered": 705,
+      "skipped": 0,
+      "pct": 100
+    },
+    "statements": {
+      "total": 2546,
+      "covered": 2546,
+      "skipped": 0,
+      "pct": 100
+    },
+    "functions": {
+      "total": 1007,
+      "covered": 1007,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branches": {
+      "total": 1681,
+      "covered": 1681,
+      "skipped": 0,
+      "pct": 100
+    },
+    "branchesTrue": {
+      "total": 0,
+      "covered": 0,
+      "skipped": 0,
+      "pct": 100
+    }
+  },
+  "visualBaselines": 33,
+  "localDocumentationLinks": 435,
+  "kobalteEvaluation": {
+    "rawBrowsers": 2,
+    "externalLabelDropped": true,
+    "adaptedSourcePasses": 18,
+    "rejectedHydrationShapes": 3,
+    "failedEnginesPerShape": 3,
+    "deliveredImplementation": "owned"
+  },
+  "finalBuildSizeMatches": true,
+  "seconds": 0.026
+}

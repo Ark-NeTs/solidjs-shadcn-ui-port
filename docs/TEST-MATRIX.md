@@ -43,14 +43,14 @@ are implementation scope limits, not features that an existing test proves.
 | Diagnostics and cleanup are checked | [Unit setup](../vitest.setup.ts), [browser fixture](../tests/browser-fixture.ts) | Every unit test checks console warn/error after cleanup; every B/E/H test checks console warning/error and page errors. The hydration build also rejects server warnings/errors; ordinary S tests have no equivalent diagnostic fixture. |
 | Whole-gallery accessibility | [B: light/dark examples have no axe accessibility violations](../tests/integration/foundation.spec.ts#L27) | Applies to the rendered, settled gallery state. Axe does not certify screen-reader usability or all dynamic states. |
 | Whole-gallery visual appearance | [V: light/dark/mobile component gallery](../tests/e2e/visual.spec.ts#L3) | Shared gallery plus dedicated disclosure and preview images; not every variant/state combination. |
-| Unit execution coverage | [Coverage configuration](../vitest.config.ts), [measured coverage](evidence/slider-coverage.json) | 100% statements, branches, functions and lines for included component/helper source; not exhaustive behavior coverage. |
+| Unit execution coverage | [Coverage configuration](../vitest.config.ts), [measured coverage](evidence/progress-coverage.json) | 100% statements, branches, functions and lines for included component/helper source; not exhaustive behavior coverage. |
 
-The current Slider delivery records **185 unit tests, 12 grouped SSR tests,
-363 browser integration runs (121 scenarios × 3 engines), 336 E2E runs
-(103 journeys × 3 engines + 27 Chromium visual tests), and 96 hydration runs
-(93 positive assertions + 3 unsafe-pattern characterizations)**. Visual tests compare
-30 images. These totals are package-wide, not per component. See
-[Slider verification](SLIDER-DELIVERY.md) for current results and the
+The current Progress delivery records **191 unit tests, 13 grouped SSR tests,
+381 browser integration runs (127 scenarios × 3 engines), 357 E2E runs
+(109 journeys × 3 engines + 30 Chromium visual tests), and 99 hydration runs
+(96 positive assertions + 3 unsafe-pattern characterizations)**. Visual tests compare
+33 images. These totals are package-wide, not per component. See
+[Progress verification](PROGRESS-DELIVERY.md) for current results and the
 [initial matrix verification](TEST-MATRIX-DELIVERY.md) for the original audit.
 
 WebKit runs on macOS with process-scoped button Tab navigation and native
@@ -463,6 +463,24 @@ DOM form relocation/replacement, published/streaming SSR and app integration rem
 unverified. Three-thumb behavior and invalid configurations have unit coverage;
 browser range scenarios use two thumbs. No crossing/swap mode or draggable fill.
 
+## Progress
+
+[Unit assertions](../tests/unit/progress.test.tsx), [shared browser scenarios](../tests/progress.ts),
+[Kobalte evaluation](../KOBALTE-PROGRESS.md), [delivery](PROGRESS-DELIVERY.md).
+
+| Acceptance requirement | Existing evidence |
+| --- | --- |
+| Zero/fractional/complete values and reactive totals share one normalized value model | U: zero/fractional/complete and invalid bounds; B/E: follows owner values and bounds, preserves identity |
+| Missing/null/nonfinite/out-of-range values are unknown and corrected inputs recover | U: invalid value and bounds loops; B/E: known → unknown → zero, without stale ARIA text |
+| External labels, custom text, native attributes/ref and class overrides | U: naming/ref/classes, dynamic external labels/text; B/E: accessible File transfer name and file counts; S13/H: labelledby survives SSR/hydration and ID changes |
+| RTL, resized geometry, semantic colors, reduced motion, enlarged narrow layouts | B/E: fill follows inherited RTL and resized tracks; light/dark themes and axe; V: three dedicated states screenshots |
+| Read-only status stays outside Tab order and form data | U: empty FormData; B/E: Tab moves from the preceding link directly to Advance transfer |
+| Real Loading fallback resolves and disposes without replacing a focused draft | B/E: Loading fallback resolves; pending fallback stays unmounted after late resolution |
+| SSR node identity and live updates after hydration | S13; H: hydrates Progress naming and fill before owner updates, label changes and disposal |
+
+No manual screen-reader, forced-colors, streaming/published SSR or real application
+claim. Progress owns no network state, live region, busy-region policy or retry.
+
 ## SSR and visual scope by component
 
 | Component | Server assertions / presence | Visual scope |
@@ -487,6 +505,7 @@ browser range scenarios use two thumbs. No crossing/swap mode or draggable fill.
 | Radio Group | S10: native name, checked, required and disabled markup | Dedicated light/dark/mobile choices |
 | Toggle | S10: native pressed button through Kobalte | Dedicated light/dark/mobile choices |
 | Toggle Group | S10: pressed/unpressed buttons and grouped state | Dedicated light/dark/mobile choices |
+| Progress | S13: zero-based bounds, external naming, known/complete/unknown states | Dedicated light/dark/mobile Progress examples |
 | Slider | S12: thumb values/names, neighbor bounds, disabled inputs and vertical semantics | Dedicated light/dark/mobile Slider examples |
 | Select | S11: canonical native value/label, combobox, required/disabled and closed retained options | Dedicated open light/dark/mobile Select examples |
 | Hover Card | S9: native href, retained closed body, hidden shell in combined markup | Dedicated open light/dark/mobile previews |
@@ -499,7 +518,7 @@ opening native layers on the server”; S6: “renders the Combobox canonical va
 and form field without a browser”. S8: “renders disclosure state, custom ID
 relationships, disabled buttons and mount policy on the server”. None tests
 browser hydration. S9: “renders preview description IDs and native links without
-opening a browser layer”. S10: “renders choice values, names and pressed semantics on the server”. S11: “renders Select labels, native selected values, required state and retained closed options on the server”. S12: “renders Slider bounds, thumb values, names and vertical semantics on the server”.
+opening a browser layer”. S10: “renders choice values, names and pressed semantics on the server”. S11: “renders Select labels, native selected values, required state and retained closed options on the server”. S12: “renders Slider bounds, thumb values, names and vertical semantics on the server”. S13: “renders Progress values, external names, completed and unknown states on the server”.
 
 **ASYNC-ERR-1 closed:** [Errored recovery](ERRORED-HYDRATION-DELIVERY.md) verifies
 explicit retry, repeated activation, draft identity/focus, stale resolve/reject,
@@ -516,9 +535,9 @@ order the next test work; they do not assign bug severity to untested behavior.
 | Priority | ID | Component(s) | Concrete closure condition |
 | --- | --- | --- | --- |
 | Manual follow-up | CMB-2 | Combobox | Browser scrolling/Tab/modal checks pass; record a physical IME composition/commit/cancel session before closing the remaining manual portion. |
-| Extended coverage | ALL-2 | All 23 | [H: real hydration, forms, Tabs and overlays](HYDRATION-DELIVERY.md) passes for the documented source fixtures. [Pending Loading boundary hydration](LOADING-HYDRATION-DELIVERY.md) and [client rejection/retry](ERRORED-HYDRATION-DELIVERY.md) are also covered. Streaming, ready-at-SSR boundaries, multiple roots, every variant and a published SSR build remain unverified. |
+| Extended coverage | ALL-2 | All 24 | [H: real hydration, forms, Tabs and overlays](HYDRATION-DELIVERY.md) passes for the documented source fixtures. [Pending Loading boundary hydration](LOADING-HYDRATION-DELIVERY.md) and [client rejection/retry](ERRORED-HYDRATION-DELIVERY.md) are also covered. Streaming, ready-at-SSR boundaries, multiple roots, every variant and a published SSR build remain unverified. |
 | Cross-cutting | ALL-3 | Interactive controls and semantic content | Record manual assistive-technology navigation/announcements; axe success is only automated evidence. |
-| Cross-cutting | ALL-4 | All 23 | Expand representative state/variant visual cases; isolate assertions currently supported only by shared gallery/SSR markup (notably Badge SSR). |
+| Cross-cutting | ALL-4 | All 24 | Expand representative state/variant visual cases; isolate assertions currently supported only by shared gallery/SSR markup (notably Badge SSR). |
 | Before app adoption | ALL-5 | Full package | Verify real admin composition, router/query integration and application errors; measure representative large-list/overlay performance. Current E2E is the gallery only. |
 
 No claim is made that every supported combination appears above. The matrix maps

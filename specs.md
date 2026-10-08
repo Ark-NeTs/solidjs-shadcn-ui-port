@@ -6,7 +6,11 @@ and `packages/shadcn-svelte-theme/README.md`, before writing a line of code.
 
 ## Current owner direction — 2026-10-08
 
-**Current batch:** implement Slider, evaluating Kobalte first. Deliver the component,
+**Current batch:** implement Progress, evaluating Kobalte first. Deliver the component,
+examples, unit/browser/SSR/hydration tests, screenshots and documentation, then commit
+and push under the working agreement. See [Progress delivery](docs/PROGRESS-DELIVERY.md).
+
+**Previous batch:** implement Slider, evaluating Kobalte first. Deliver the component,
 examples, unit/browser/SSR/hydration tests, screenshots and documentation, then commit
 and push under the working agreement. See [Slider delivery](docs/SLIDER-DELIVERY.md).
 

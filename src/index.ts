@@ -23,3 +23,4 @@ export * from './components/ui/toggle';
 export * from './components/ui/toggle-group';
 export * from './components/ui/select';
 export * from './components/ui/slider';
+export * from './components/ui/progress';

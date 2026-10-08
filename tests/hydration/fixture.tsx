@@ -1,4 +1,5 @@
 // Server/client shared acceptance composition through public source exports; D19/D90.
+import { Progress } from 'shadcn-solidjs-theme/ui/progress';
 import { Slider } from 'shadcn-solidjs-theme/ui/slider';
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from 'shadcn-solidjs-theme/ui/select';
 import { createSignal } from 'solid-js';
@@ -32,6 +33,7 @@ export function HydrationFixture(props: { initiallyOpen: false | 'popover' | 'al
   const [notes, setNotes] = createSignal('Server notes');
   const [submitted, setSubmitted] = createSignal('Nothing submitted');
   const [submissions, setSubmissions] = createSignal(0);
+  const [progress, setProgress] = createSignal<number|null>(25);
   const [confirmed, setConfirmed] = createSignal(0);
   /** Serialize native values and count submits to detect duplicate hydration handlers. */
   function submit(event: SubmitEvent & { currentTarget: HTMLFormElement }) {
@@ -80,6 +82,7 @@ export function HydrationFixture(props: { initiallyOpen: false | 'popover' | 'al
     <ToggleGroup type="multiple" aria-label="Hydrated styles" defaultValue={["a"]}><ToggleGroupItem value="a">Hydrated left</ToggleGroupItem><ToggleGroupItem value="b">Hydrated right</ToggleGroupItem></ToggleGroup>
     <form id="hydrated-select-form"><Select items={[{value:"apple",label:"Apple"},{value:"cherry",label:"Cherry"}]} name="fruit" defaultValue="apple"><SelectTrigger aria-label="Hydrated fruit"><SelectValue/></SelectTrigger><SelectContent>{item=><SelectItem value={item.value}/>}</SelectContent></Select><button type="reset">Reset hydrated fruit</button></form>
     <form id="hydrated-slider-form"><Slider aria-label="Hydrated range" thumbLabels={["Hydrated minimum","Hydrated maximum"]} name="range" defaultValue={[20,80]} minStepsBetweenThumbs={10}/><button type="reset">Reset hydrated range</button></form>
+    <span id={`progress-label-${suffix()}`}>Hydrated progress</span><Progress aria-labelledby={`progress-label-${suffix()}`} value={progress()}/><Button onClick={()=>setProgress(100)}>Complete hydrated progress</Button><Button onClick={()=>setProgress(null)}>Unknown hydrated progress</Button>
     <output data-testid="confirmed">{confirmed()}</output>
   </main>;
 }

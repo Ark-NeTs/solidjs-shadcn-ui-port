@@ -460,3 +460,30 @@ vertical values grow bottom-to-top unless inverted. The thumb surface uses seman
 background instead of the sibling's hard-coded white so custom/dark themes inherit.
 Explicit thumb labels take precedence over the root's shared labelledby reference.
 REASONING: the minimum and maximum must remain distinguishable to assistive tools.
+
+## Owned Progress after Kobalte integration evaluation (2026-10-08)
+
+Evaluate unpatched Kobalte alpha.2 on the shared Solid rc.13 runtime first. Its
+Chromium/Firefox probe updates values, bounds, fill and known/unknown states without
+diagnostics, but drops external aria-labelledby. A supported rendering adapter
+restores the external name and passes source-browser checks. It fails hydration
+at the indicator; both a static Fill renderer and an owned indicator under Kobalte
+Root still produce mismatched hydration keys. The exact upstream-versus-adapter
+cause remains unresolved. REASONING: two adapter repair attempts do not establish
+hydration acceptance, so deliver the small owned display component with the same strict
+hydration assertions instead of adding a private dependency patch or key workaround.
+Preserve the failed reports in [the evaluation](KOBALTE-PROGRESS.md).
+
+Normalize the public wrapper to zero-based value/max semantics: absent/null,
+nonfinite or out-of-range values mean unknown work; nonpositive/nonfinite max
+falls back to 100. Never write corrected values back to the owner. Default value
+text is a deterministic rounded percent so SSR and hydration agree; callers can
+provide localized getValueLabel text or explicit aria-valuetext. REASONING: a
+progress bar cannot invent completion or honestly report an invalid percentage.
+
+Port the sibling's thin semantic track, but use bounded width with logical flow
+rather than a fixed 0–100 translateX calculation. REASONING: custom totals and RTL
+must agree with announced values. Unknown work uses a centered 40% segment with
+opacity pulse, reduced to a static segment for reduced motion. There is no timer,
+fetch, form value or automatic live-region announcement; the application owns
+operation status, retries, busy regions and completion messages.

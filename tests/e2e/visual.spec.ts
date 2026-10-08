@@ -40,3 +40,7 @@ for(const mode of ['light','dark','mobile'])test(`${mode} Select choices`,async(
 for(const mode of ['light','dark','mobile'])test(`${mode} Slider ranges`,async({page})=>{
  if(mode==='mobile')await page.setViewportSize({width:390,height:844});await page.goto(`/?slider${mode==='dark'?'&dark':''}`);await page.evaluate(()=>document.fonts.ready);await page.emulateMedia({reducedMotion:'reduce'});await expect(page.locator('main')).toHaveScreenshot(`slider-${mode}.png`,{animations:'disabled',maxDiffPixelRatio:0.001});
 });
+
+for(const mode of ['light','dark','mobile'])test(`${mode} Progress states`,async({page})=>{
+ if(mode==='mobile')await page.setViewportSize({width:390,height:844});await page.goto(`/?progress${mode==='dark'?'&dark':''}`);await page.evaluate(()=>document.fonts.ready);await page.emulateMedia({reducedMotion:'reduce'});await expect(page.locator('main')).toHaveScreenshot(`progress-${mode}.png`,{animations:'disabled',maxDiffPixelRatio:0.001});
+});

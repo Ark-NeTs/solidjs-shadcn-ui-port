@@ -1,0 +1,42 @@
+[
+  {
+    "command": "bun run check",
+    "exitCode": 0,
+    "seconds": 3.03
+  },
+  {
+    "command": "bun run lint",
+    "exitCode": 0,
+    "seconds": 1.39
+  },
+  {
+    "command": "bun run test --maxWorkers=2",
+    "exitCode": 0,
+    "seconds": 7.12
+  },
+  {
+    "command": "bun run test:coverage --maxWorkers=2",
+    "exitCode": 0,
+    "seconds": 7.85
+  },
+  {
+    "command": "bun run test:server",
+    "exitCode": 0,
+    "seconds": 0.94
+  },
+  {
+    "command": "RESULTS_FILE=docs/evidence/progress-hydration.json bun run test:hydration",
+    "exitCode": 0,
+    "seconds": 56.29
+  },
+  {
+    "command": "THEME_PORT=4403 RESULTS_FILE=docs/evidence/progress-integration.json bun run test:integration",
+    "exitCode": 0,
+    "seconds": 296.01
+  },
+  {
+    "command": "THEME_PORT=4403 RESULTS_FILE=docs/evidence/progress-e2e.json bun run test:e2e",
+    "exitCode": 0,
+    "seconds": 207.78
+  }
+]

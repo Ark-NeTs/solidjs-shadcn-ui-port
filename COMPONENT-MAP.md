@@ -1,8 +1,8 @@
 # shadcn/ui → Solid 2 component map
 
 **Implemented (2026-10-08):** Button, Badge, Card, Separator, Skeleton, Input,
-Textarea, Label, Checkbox, Switch, Tabs, Popover, Alert Dialog, Combobox, Accordion, Collapsible, Tooltip, Hover Card, Radio Group, Toggle, Toggle Group, Select and Slider now have Solid 2 source, documentation and passing unit, browser and built-library tests.
-See [Slider delivery](docs/SLIDER-DELIVERY.md), [Select delivery](docs/SELECT-DELIVERY.md), [choice delivery](docs/CHOICES-DELIVERY.md), [preview delivery](docs/HINTS-DELIVERY.md), [disclosure delivery](docs/DISCLOSURES-DELIVERY.md), [COMBOBOX-DELIVERY.md](COMBOBOX-DELIVERY.md), [OVERLAYS-DELIVERY.md](OVERLAYS-DELIVERY.md), [TOGGLES-DELIVERY.md](TOGGLES-DELIVERY.md), [FORM-FIELDS-DELIVERY.md](FORM-FIELDS-DELIVERY.md) and the earlier
+Textarea, Label, Checkbox, Switch, Tabs, Popover, Alert Dialog, Combobox, Accordion, Collapsible, Tooltip, Hover Card, Radio Group, Toggle, Toggle Group, Select, Slider and Progress now have Solid 2 source, documentation and passing unit, browser and built-library tests.
+See [Progress delivery](docs/PROGRESS-DELIVERY.md), [Slider delivery](docs/SLIDER-DELIVERY.md), [Select delivery](docs/SELECT-DELIVERY.md), [choice delivery](docs/CHOICES-DELIVERY.md), [preview delivery](docs/HINTS-DELIVERY.md), [disclosure delivery](docs/DISCLOSURES-DELIVERY.md), [COMBOBOX-DELIVERY.md](COMBOBOX-DELIVERY.md), [OVERLAYS-DELIVERY.md](OVERLAYS-DELIVERY.md), [TOGGLES-DELIVERY.md](TOGGLES-DELIVERY.md), [FORM-FIELDS-DELIVERY.md](FORM-FIELDS-DELIVERY.md) and the earlier
 [FOUNDATION-DELIVERY.md](FOUNDATION-DELIVERY.md). These use native HTML; Toggle wraps Kobalte after its scoped acceptance;
 headless-library findings below remain relevant to later primitives.
 
@@ -74,9 +74,9 @@ No row currently selects corvu; alternatives are evaluated below.
 
 | Route | Entries |
 | --- | ---: |
-| Matching Kobalte primitive | 22 |
+| Matching Kobalte primitive | 21 |
 | Owned composition | 9 |
-| Native markup/CSS | 27 |
+| Native markup/CSS | 28 |
 | Unresolved behavior/engine gap | 7 |
 | Total | 65 |
 
@@ -125,7 +125,7 @@ No row currently selects corvu; alternatives are evaluated below.
 | [Navigation Menu](https://ui.shadcn.com/docs/components/navigation-menu) | K | `navigation-menu` | Links, trigger/content/viewport composition, pointer/focus transitions and RTL. |
 | [Pagination](https://ui.shadcn.com/docs/components/pagination) | K | `pagination` | Map generated state to link-shaped parts; preserve href/current-page semantics and host-controlled paging. |
 | [Popover](https://ui.shadcn.com/docs/components/popover) | N | `popover` evaluated first; native top layer + Floating UI chosen | Implemented trigger/anchor/content, modal choice, collision placement, controlled rejection and focus restoration. See KOBALTE-OVERLAYS.md and OVERLAYS-DELIVERY.md. |
-| [Progress](https://ui.shadcn.com/docs/components/progress) | K | `progress` | Determinate/indeterminate values, accessible text and themed indicator. |
+| [Progress](https://ui.shadcn.com/docs/components/progress) | N | Owned div/indicator after Kobalte hydration rejection | Implemented known/unknown values, bounds, custom text, external labels, RTL, reduced motion and SSR/hydration. [Evaluation](KOBALTE-PROGRESS.md), [delivery](docs/PROGRESS-DELIVERY.md). |
 | [Questionnaire](https://ui.shadcn.com/docs/components/questionnaire) | C | `radio-group`, `checkbox`, `text-field`, `button`, `progress`; evaluate `steps` | Own ordered answers/navigation/validation, freeform and skipped answers, reset/resume, shortcuts and controlled state. No ready-made questionnaire exists. |
 | [Radio Group](https://ui.shadcn.com/docs/components/radio-group) | N | `radio-group` evaluated first; owned native radios | Default reset and diagnostics fail on alpha.2/rc.13. Native forms, controlled rejection, required/disabled/readonly, reset ownership, arrows and SSR/hydration delivered. See KOBALTE-CHOICES.md and docs/CHOICES-DELIVERY.md. |
 | [Resizable](https://ui.shadcn.com/docs/components/resizable) | K | `resizable` | Drag/keyboard sizing, intersections and collapse exist; adapt units, public refs and persisted layouts. |
