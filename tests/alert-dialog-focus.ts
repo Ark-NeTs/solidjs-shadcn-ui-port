@@ -103,4 +103,56 @@ export function alertDialogFocus() {
       await step(page, 'Shift+Tab', page.getByRole('button', { name: 'Before dialog' }));
     });
   }
+
+  test('a queued native close event cannot dismiss a reopened force-mounted Alert Dialog', async ({ page }, testInfo) => {
+    const { parent, trigger, originalOverflow } = await openParent(page, true);
+    const draft = page.getByRole('textbox', { name: 'Parent draft' });
+    await draft.fill('Draft survives rapid reopen');
+    const draftNode = await draft.elementHandle();
+    const nestedTrigger = page.getByRole('button', { name: 'Open nested confirmation', exact: true });
+    await nestedTrigger.press('Enter');
+    const cancel = page.getByRole('button', { name: 'Cancel nested', exact: true });
+    await expect(cancel).toBeFocused();
+    // Reopen as soon as native close removes `open`, before its queued close event.
+    // Only timing is controlled: the browser's close(), event and showModal() stay real.
+    const observation = await page.getByTestId('nested-content').evaluate(async content => {
+      const dialog = content.closest('dialog')!;
+      const opener = dialog.parentElement!.querySelector<HTMLButtonElement>('[aria-controls="' + content.id + '"]')!;
+      const cancelButton = content.querySelector<HTMLButtonElement>('[data-slot="alert-dialog-cancel"]')!;
+      let reopened = false;
+      const observer = new MutationObserver(() => {
+        if (!dialog.open && !reopened) {
+          reopened = true;observer.disconnect();opener.click();
+        }
+      });
+      observer.observe(dialog, { attributes: true, attributeFilter: ['open'] });
+      const delivered = new Promise<{ trusted: boolean; openWhenDelivered: boolean }>(resolve => {
+        dialog.addEventListener('close', event => resolve({ trusted: event.isTrusted, openWhenDelivered: dialog.open }), { once: true, capture: true });
+      });
+      cancelButton.click();
+      const event = await delivered;
+      await new Promise<void>(done => requestAnimationFrame(() => done()));
+      await new Promise<void>(done => requestAnimationFrame(() => done()));
+      observer.disconnect();
+      return { ...event, reopened, openAfterDelivery: dialog.open };
+    });
+    await testInfo.attach('native-close-order', { body: JSON.stringify(observation), contentType: 'application/json' });
+    expect(observation).toEqual({ trusted: true, openWhenDelivered: true, reopened: true, openAfterDelivery: true });
+    await expect(cancel).toBeFocused();await expect(nestedTrigger).toHaveAttribute('aria-expanded', 'true');
+    await expect(draft).toHaveValue('Draft survives rapid reopen');
+    expect(await draft.evaluate((node, original) => node === original, draftNode)).toBe(true);
+    expect(await page.evaluate(() => document.documentElement.style.overflow)).toBe('hidden');
+    // A genuine external close still reaches the owner, then keyboard reopening remains usable.
+    await page.getByTestId('nested-content').evaluate(content => content.closest('dialog')!.close());
+    await expect(nestedTrigger).toHaveAttribute('aria-expanded', 'false');await expect(nestedTrigger).toBeFocused();
+    await expect(parent).toBeVisible();
+    expect(await page.evaluate(() => document.documentElement.style.overflow)).toBe('hidden');
+    await nestedTrigger.press('Enter');await expect(cancel).toBeFocused();
+    await page.keyboard.press('Enter');await expect(nestedTrigger).toBeFocused();
+    await expect(parent).toBeVisible();
+    await page.getByRole('button', { name: 'Cancel parent', exact: true }).press('Enter');
+    await expect(parent).toHaveCount(0);await expect(trigger).toBeFocused();
+    expect(await page.evaluate(() => document.documentElement.style.overflow)).toBe(originalOverflow);
+  });
+
 }

@@ -78,7 +78,12 @@ export function useNativeLayer(context:LayerContext, element:Accessor<HTMLElemen
       context.request(false);queueMicrotask(()=>{if(active)node!.showPopover();});
     }
     /** Preserve controlled authority even when application markup calls dialog.close(). */
-    function closed(){context.request(false);queueMicrotask(()=>{if(active)(node as HTMLDialogElement).showModal();});}
+    function closed(){
+      const dialog=node as HTMLDialogElement;
+      // close() queues its event; a force-mounted dialog may have reopened before delivery.
+      if(dialog.open)return;
+      context.request(false);queueMicrotask(()=>{if(active)dialog.showModal();});
+    }
     /** Escape hooks for nonmodal popovers can cancel the native dismissal. */
     function keydown(event:KeyboardEvent){
       if((event.target as Element).closest('[role=dialog],[role=alertdialog]')!==node)return;

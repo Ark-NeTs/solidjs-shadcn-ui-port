@@ -1,0 +1,218 @@
+{
+  "config": {
+    "argv": [
+      "/Users/arktas/.asdf/installs/nodejs/25.3.0/bin/node",
+      "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/node_modules/.bin/playwright",
+      "test",
+      "tests/e2e",
+      "tests/e2e/alert-dialog-focus.spec.ts",
+      "--project=chromium",
+      "--grep",
+      "queued native close"
+    ],
+    "configFile": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/playwright.config.ts",
+    "rootDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "integration/**/*.spec.ts",
+          "e2e/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [
+          "**/visual.spec.ts"
+        ],
+        "testMatch": [
+          "integration/**/*.spec.ts",
+          "e2e/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [
+          "**/visual.spec.ts"
+        ],
+        "testMatch": [
+          "integration/**/*.spec.ts",
+          "e2e/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "docs/evidence/alert-reopen-before.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": {
+      "command": "bun run build && THEME_BUILT=1 bun run build:playground && bunx --no-install vite preview --config playground/vite.config.ts --host 127.0.0.1 --port 4403 --strictPort",
+      "url": "http://127.0.0.1:4403",
+      "reuseExistingServer": false,
+      "timeout": 60000
+    }
+  },
+  "suites": [
+    {
+      "title": "e2e/alert-dialog-focus.spec.ts",
+      "file": "e2e/alert-dialog-focus.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "a queued native close event cannot dismiss a reopened force-mounted Alert Dialog",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 722,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[2m  Object {\u001b[22m\n\u001b[32m-   \"openAfterDelivery\": true,\u001b[39m\n\u001b[31m+   \"openAfterDelivery\": false,\u001b[39m\n\u001b[2m    \"openWhenDelivered\": true,\u001b[22m\n\u001b[2m    \"reopened\": true,\u001b[22m\n\u001b[2m    \"trusted\": true,\u001b[22m\n\u001b[2m  }\u001b[22m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[2m  Object {\u001b[22m\n\u001b[32m-   \"openAfterDelivery\": true,\u001b[39m\n\u001b[31m+   \"openAfterDelivery\": false,\u001b[39m\n\u001b[2m    \"openWhenDelivered\": true,\u001b[22m\n\u001b[2m    \"reopened\": true,\u001b[22m\n\u001b[2m    \"trusted\": true,\u001b[22m\n\u001b[2m  }\u001b[22m\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/alert-dialog-focus.ts:140:25",
+                    "location": {
+                      "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/alert-dialog-focus.ts",
+                      "column": 25,
+                      "line": 140
+                    },
+                    "snippet": "  138 |     });\n  139 |     await testInfo.attach('native-close-order', { body: JSON.stringify(observation), contentType: 'application/json' });\n> 140 |     expect(observation).toEqual({ trusted: true, openWhenDelivered: true, reopened: true, openAfterDelivery: true });\n      |                         ^\n  141 |     await expect(cancel).toBeFocused();await expect(nestedTrigger).toHaveAttribute('aria-expanded', 'true');\n  142 |     await expect(draft).toHaveValue('Draft survives rapid reopen');\n  143 |     expect(await draft.evaluate((node, original) => node === original, draftNode)).toBe(true);"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/alert-dialog-focus.ts",
+                        "column": 25,
+                        "line": 140
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[2m  Object {\u001b[22m\n\u001b[32m-   \"openAfterDelivery\": true,\u001b[39m\n\u001b[31m+   \"openAfterDelivery\": false,\u001b[39m\n\u001b[2m    \"openWhenDelivered\": true,\u001b[22m\n\u001b[2m    \"reopened\": true,\u001b[22m\n\u001b[2m    \"trusted\": true,\u001b[22m\n\u001b[2m  }\u001b[22m\n\n  138 |     });\n  139 |     await testInfo.attach('native-close-order', { body: JSON.stringify(observation), contentType: 'application/json' });\n> 140 |     expect(observation).toEqual({ trusted: true, openWhenDelivered: true, reopened: true, openAfterDelivery: true });\n      |                         ^\n  141 |     await expect(cancel).toBeFocused();await expect(nestedTrigger).toHaveAttribute('aria-expanded', 'true');\n  142 |     await expect(draft).toHaveValue('Draft survives rapid reopen');\n  143 |     expect(await draft.evaluate((node, original) => node === original, draftNode)).toBe(true);\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/alert-dialog-focus.ts:140:25"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T15:04:47.429Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "native-close-order",
+                      "contentType": "application/json",
+                      "body": "eyJ0cnVzdGVkIjp0cnVlLCJvcGVuV2hlbkRlbGl2ZXJlZCI6dHJ1ZSwicmVvcGVuZWQiOnRydWUsIm9wZW5BZnRlckRlbGl2ZXJ5IjpmYWxzZX0="
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/e2e-alert-dialog-focus-a-q-e0f2b--force-mounted-Alert-Dialog-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/e2e-alert-dialog-focus-a-q-e0f2b--force-mounted-Alert-Dialog-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/e2e-alert-dialog-focus-a-q-e0f2b--force-mounted-Alert-Dialog-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/alert-dialog-focus.ts",
+                    "column": 25,
+                    "line": 140
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "e8f0e20d2abb8e252620-75afae0e10c5e8d6e3d8",
+          "file": "alert-dialog-focus.ts",
+          "line": 107,
+          "column": 3
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-08T15:04:44.144Z",
+    "duration": 4436.178,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

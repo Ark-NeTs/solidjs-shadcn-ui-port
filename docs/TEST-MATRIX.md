@@ -43,14 +43,14 @@ are implementation scope limits, not features that an existing test proves.
 | Diagnostics and cleanup are checked | [Unit setup](../vitest.setup.ts), [browser fixture](../tests/browser-fixture.ts) | Every unit test checks console warn/error after cleanup; every B/E/H test checks console warning/error and page errors. The hydration build also rejects server warnings/errors; ordinary S tests have no equivalent diagnostic fixture. |
 | Whole-gallery accessibility | [B: light/dark examples have no axe accessibility violations](../tests/integration/foundation.spec.ts#L27) | Applies to the rendered, settled gallery state. Axe does not certify screen-reader usability or all dynamic states. |
 | Whole-gallery visual appearance | [V: light/dark/mobile component gallery](../tests/e2e/visual.spec.ts#L3) | Shared images include every family; not every variant/state combination. |
-| Unit execution coverage | [Coverage configuration](../vitest.config.ts), [measured coverage](evidence/retry-recovery-coverage.json) | 100% statements, branches, functions and lines for included component/helper source; not exhaustive behavior coverage. |
+| Unit execution coverage | [Coverage configuration](../vitest.config.ts), [measured coverage](evidence/alert-reopen-coverage.json) | 100% statements, branches, functions and lines for included component/helper source; not exhaustive behavior coverage. |
 
-The current hydration delivery records **104 unit tests, 7 grouped SSR tests,
-255 browser integration runs (85 scenarios × 3 engines), and 213 E2E runs
-(67 journeys × 3 engines + 12 Chromium visual tests), and 81 hydration runs
+The current modal lifecycle delivery records **105 unit tests, 7 grouped SSR tests,
+258 browser integration runs (86 scenarios × 3 engines), and 216 E2E runs
+(68 journeys × 3 engines + 12 Chromium visual tests), and 81 hydration runs
 (78 positive assertions + 3 unsafe-pattern characterizations)**. Those visual tests compare
 15 images. These totals are package-wide, not per component. See the
-[Errored hydration verification](ERRORED-HYDRATION-DELIVERY.md) for current results and the
+[Alert Dialog reopen verification](ALERT-REOPEN-DELIVERY.md) for current results and the
 [initial matrix verification](TEST-MATRIX-DELIVERY.md) for the original audit.
 
 WebKit runs on macOS with process-scoped button Tab navigation and native
@@ -289,6 +289,7 @@ scroll frame, occluded/offscreen anchor policy or mobile visual viewport behavio
 | Open light/dark/enlarged-mobile accessibility and appearance | [B: open overlay axe/viewport checks](../tests/integration/overlays.spec.ts#L26), [V: open overlays](../tests/e2e/visual.spec.ts#L12) |
 | Own Tab/Shift+Tab boundaries wrap, skip excluded controls, reject background focus and restore native page order on close | [B/E: exact Alert Dialog focus destinations](../tests/alert-dialog-focus.ts#L28) |
 | Nested alerts contain focus, preserve the parent draft/scroll lock, and restore focus on Escape, Cancel and Confirm | [B/E: nested dismissal paths and reopen](../tests/alert-dialog-focus.ts#L59), parameterized by dismissal and forceMount |
+| A delayed native close cannot dismiss reopened content; real external close still reaches the owner | [U: delayed close regression](../tests/unit/overlays.test.tsx#L109), [B/E: real queued close](../tests/alert-dialog-focus.ts#L107), including trusted-event/open-state evidence, draft identity, focus and scroll locks |
 | A hidden, mounted child cannot supply the parent's initial focus target | [U: parents with/without Cancel](../tests/unit/overlays.test.tsx#L80), [B/E: force-mounted child](../tests/alert-dialog-focus.ts#L59) |
 
 **ALT-1 closed:** five scenarios run through
@@ -297,6 +298,12 @@ scroll frame, occluded/offscreen anchor policy or mobile visual viewport behavio
 This proves the named parent/child composition, not arbitrary depth, every
 focusable element type or custom focus-hook behavior. Pending/failure examples
 remain simulated application state, not backend fault-injection tests.
+
+**ALT-2 closed:** the [deterministic native-event regression](ALERT-REOPEN-DELIVERY.md)
+reproduced a trusted queued close arriving after force-mounted content reopened.
+The shared modal handler now ignores that stale event while the dialog is open.
+Source and built browser tests preserve genuine external closing, focus, drafts
+and nested scroll locks. Controlled rejection/disposal remains covered in units.
 
 ## Combobox
 
@@ -365,7 +372,6 @@ order the next test work; they do not assign bug severity to untested behavior.
 
 | Priority | ID | Component(s) | Concrete closure condition |
 | --- | --- | --- | --- |
-| Investigate intermittent failure | ALT-2 | Alert Dialog | One Chromium built E2E run failed to reopen force-mounted nested content; five isolated repetitions passed without changes. Preserve the [failure evidence](evidence/retry-recovery-e2e.json) and isolate event ordering before claiming the intermittency is fixed. |
 | Manual follow-up | CMB-2 | Combobox | Browser scrolling/Tab/modal checks pass; record a physical IME composition/commit/cancel session before closing the remaining manual portion. |
 | Extended coverage | ALL-2 | All 14 | [H: real hydration, forms, Tabs and overlays](HYDRATION-DELIVERY.md) passes for the documented source fixtures. [Pending Loading boundary hydration](LOADING-HYDRATION-DELIVERY.md) and [client rejection/retry](ERRORED-HYDRATION-DELIVERY.md) are also covered. Streaming, ready-at-SSR boundaries, multiple roots, every variant and a published SSR build remain unverified. |
 | Cross-cutting | ALL-3 | Interactive controls and semantic content | Record manual assistive-technology navigation/announcements; axe success is only automated evidence. |

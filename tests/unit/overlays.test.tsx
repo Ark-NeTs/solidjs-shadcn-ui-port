@@ -31,7 +31,7 @@ it('uses native modality, ref callbacks and cancellable Escape with explicit ale
  fireEvent.click(screen.getByText('Delete'));flush();fireEvent.click(screen.getByText('Delete now'));flush();expect(screen.queryByRole('alertdialog')).toBeNull();fireEvent.click(screen.getByText('Delete'));flush();fireEvent.click(screen.getByText('Cancel'));flush();expect(ref).toHaveBeenCalledTimes(4);
 });
 it('handles external dialog close, controlled rejection and unmount cancellation',async()=>{
- const [open,setOpen]=createSignal(true);const request=vi.fn();const {unmount}=render(()=><AlertDialog open={open()} onOpenChange={request}><AlertDialogContent forceMount aria-label="Controlled"><AlertDialogAction>Done</AlertDialogAction></AlertDialogContent></AlertDialog>);const dialog=screen.getByRole('alertdialog') as HTMLDialogElement;dialog.close();dialog.dispatchEvent(new Event('close'));await Promise.resolve();flush();expect(request).toHaveBeenCalledExactlyOnceWith(false);expect(dialog.open).toBe(true);setOpen(false);flush();expect(dialog.open).toBe(false);setOpen(true);flush();dialog.dispatchEvent(new Event('close'));unmount();await Promise.resolve();expect(request).toHaveBeenCalledTimes(2);
+ const [open,setOpen]=createSignal(true);const request=vi.fn();const {unmount}=render(()=><AlertDialog open={open()} onOpenChange={request}><AlertDialogContent forceMount aria-label="Controlled"><AlertDialogAction>Done</AlertDialogAction></AlertDialogContent></AlertDialog>);const dialog=screen.getByRole('alertdialog') as HTMLDialogElement;dialog.close();dialog.dispatchEvent(new Event('close'));await Promise.resolve();flush();expect(request).toHaveBeenCalledExactlyOnceWith(false);expect(dialog.open).toBe(true);setOpen(false);flush();expect(dialog.open).toBe(false);setOpen(true);flush();dialog.close();dialog.dispatchEvent(new Event('close'));unmount();await Promise.resolve();expect(request).toHaveBeenCalledTimes(2);
 });
 it('supports modal popovers, title-less naming, initial focus hooks and fallback focus',()=>{
  const {unmount}=render(()=><Popover defaultOpen modal><PopoverContent aria-label="Empty" forceMount/></Popover>);expect(screen.getByRole('dialog',{name:'Empty'})).toHaveFocus();unmount();render(()=><AlertDialog defaultOpen><AlertDialogContent aria-label="Empty alert"/></AlertDialog>);expect(document.querySelector('[data-slot=alert-dialog-content]')).toHaveFocus();
@@ -53,7 +53,7 @@ it('keeps empty modal keyboard focus inside its fallback content',()=>{
 });
 it('restores outside dismissal without a trigger and accepts external dialog close',async()=>{
  render(()=><Popover defaultOpen><PopoverContent aria-label="No trigger"><button>Inside</button></PopoverContent></Popover>);const content=screen.getByRole('dialog');fireEvent.keyDown(content,{key:'Enter'});fireEvent.keyDown(content,{key:'Escape'});fireEvent.pointerDown(document.body);toggle(content,'closed');expect(screen.queryByRole('dialog')).toBeNull();
- render(()=><AlertDialog defaultOpen><AlertDialogContent aria-label="External close"/></AlertDialog>);const dialog=screen.getByRole('alertdialog');dialog.dispatchEvent(new Event('close'));await Promise.resolve();flush();expect(screen.queryByRole('alertdialog')).toBeNull();
+ render(()=><AlertDialog defaultOpen><AlertDialogContent aria-label="External close"/></AlertDialog>);const dialog=screen.getByRole('alertdialog') as HTMLDialogElement;dialog.close();dialog.dispatchEvent(new Event('close'));await Promise.resolve();flush();expect(screen.queryByRole('alertdialog')).toBeNull();
 });
 it('disposes placement observers, follows anchors and rejects stale async positions after changes or unmount',async()=>{
  type Result=Awaited<ReturnType<typeof computePosition>>;const resolvers:Array<(result:Result)=>void>=[];
@@ -103,4 +103,20 @@ it('contains focus in the newest modal and releases ownership when it closes or 
  child.dispatchEvent(new Event('cancel',{cancelable:true}));flush();expect(screen.getByText('Open guard child')).toHaveFocus();
  parentInput.focus();screen.getByText('Outside modal owners').focus();expect(parentInput).toHaveFocus();
  unmount();const outside=document.createElement('button');document.body.append(outside);outside.focus();expect(outside).toHaveFocus();outside.remove();
+});
+
+
+it('ignores delayed close events after a force-mounted dialog reopens without repeating focus or ownership changes',async()=>{
+ const request=vi.fn();const focus=vi.fn();
+ render(()=><AlertDialog onOpenChange={request}><AlertDialogTrigger>Reopen safely</AlertDialogTrigger><AlertDialogContent forceMount aria-label="Retained dialog" onOpenAutoFocus={focus}><AlertDialogCancel>Close retained</AlertDialogCancel></AlertDialogContent></AlertDialog>);
+ const trigger=screen.getByText('Reopen safely');
+ fireEvent.click(trigger);flush();const dialog=screen.getByRole('alertdialog') as HTMLDialogElement;
+ fireEvent.click(screen.getByText('Close retained'));flush();expect(dialog.open).toBe(false);
+ fireEvent.click(trigger);flush();expect(dialog.open).toBe(true);request.mockClear();focus.mockClear();
+ dialog.dispatchEvent(new Event('close'));dialog.dispatchEvent(new Event('close'));await Promise.resolve();flush();
+ expect(request).not.toHaveBeenCalled();expect(focus).not.toHaveBeenCalled();expect(dialog.open).toBe(true);
+ expect(screen.getByText('Close retained')).toHaveFocus();expect(document.documentElement.style.overflow).toBe('hidden');
+ dialog.close();dialog.dispatchEvent(new Event('close'));await Promise.resolve();flush();
+ expect(request).toHaveBeenCalledExactlyOnceWith(false);expect(dialog.open).toBe(false);expect(trigger).toHaveFocus();
+ expect(document.documentElement.style.overflow).toBe('');
 });

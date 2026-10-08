@@ -477,7 +477,11 @@ modal, including when WebKit accepts a focus attempt into an underlying dialog.
 It releases its listener and stack entry before close/restoration. Scroll locks
 remain until the last nested modal closes. Initial
 focus candidates belong to the opening layer; controls inside a nested dialog
-are excluded even when its content is kept mounted while closed.
+are excluded even when its content is kept mounted while closed. A delayed native
+`close` event from an earlier open cycle cannot dismiss a dialog that has already
+reopened. Genuine external `dialog.close()` calls still request closure from the
+owner; controlled owners can reject that request. See
+[ALT-2 event-order regression](ALERT-REOPEN-DELIVERY.md).
 
 All sibling parts are exported: Trigger, Portal, Overlay, Content, Header,
 Footer, Media, Title, Description, Action and Cancel. Portal preserves children

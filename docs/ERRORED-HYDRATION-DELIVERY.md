@@ -105,8 +105,9 @@ The failure is retained in [the initial E2E report](evidence/retry-recovery-e2e.
 and [five repetitions](evidence/retry-recovery-alert-repeat.json). The native
 layer's queued close-event handling is a possible investigation direction, not
 an established cause. No unrelated production fix or test delay was added.
-**ALT-2 remains open** in the matrix; a passing subsequent gate is not a claim
-that this intermittent behavior was fixed.
+**ALT-2 was left open by this delivery**; passing subsequent gates did not
+establish a fix. The later [Alert Dialog reopen delivery](ALERT-REOPEN-DELIVERY.md)
+reproduces and fixes the queued native close race, closing ALT-2.
 
 ## Verification
 

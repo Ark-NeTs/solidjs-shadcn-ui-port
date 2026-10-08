@@ -84,7 +84,7 @@ No row currently selects corvu; alternatives are evaluated below.
 | --- | --- | --- | --- |
 | [Accordion](https://ui.shadcn.com/docs/components/accordion) | K | `accordion` | Single/multiple expansion, disabled items, heading/trigger semantics, keyboard navigation. |
 | [Alert](https://ui.shadcn.com/docs/components/alert) | K | `alert` | Title/description/icon slots; use alert announcements only when appropriate. |
-| [Alert Dialog](https://ui.shadcn.com/docs/components/alert-dialog) | N | `alert-dialog` evaluated first; native modal chosen | Implemented explicit cancel/action, controlled state, least-destructive focus, nesting and scroll locks. See KOBALTE-OVERLAYS.md and OVERLAYS-DELIVERY.md. |
+| [Alert Dialog](https://ui.shadcn.com/docs/components/alert-dialog) | N | `alert-dialog` evaluated first; native modal chosen | Implemented explicit cancel/action, controlled state, least-destructive focus, nesting and scroll locks. Delayed native close after reopening is guarded; see docs/ALERT-REOPEN-DELIVERY.md. Library routing remains as recorded in KOBALTE-OVERLAYS.md and OVERLAYS-DELIVERY.md. |
 | [Aspect Ratio](https://ui.shadcn.com/docs/components/aspect-ratio) | N | CSS `aspect-ratio` | Ratio prop, sizing and overflow behavior; no headless state needed. |
 | [Attachment](https://ui.shadcn.com/docs/components/attachment) | C | `button` + owned presentation | File preview/metadata/removal slots; uploads and transport remain host-owned. `file-field` is optional only if an upload control is added. |
 | [Avatar](https://ui.shadcn.com/docs/components/avatar) | K | `image` | Image/fallback timing, failures, alt text; add group/badge presentation parts. |
