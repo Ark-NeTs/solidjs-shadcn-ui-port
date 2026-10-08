@@ -6,7 +6,11 @@ and `packages/shadcn-svelte-theme/README.md`, before writing a line of code.
 
 ## Current owner direction — 2026-10-08
 
-**Current batch:** implement Accordion and Collapsible after evaluating Kobalte.
+**Current batch:** implement Tooltip and Hover Card, evaluating Kobalte first.
+Deliver source, examples, tests, screenshots and docs under the full commit/push
+working agreement. See [preview delivery](docs/HINTS-DELIVERY.md).
+
+**Previous batch:** implement Accordion and Collapsible after evaluating Kobalte.
 Deliver source, examples, unit/browser/SSR/hydration tests and screenshots; follow
 the commit/push working agreement. See [disclosure delivery](docs/DISCLOSURES-DELIVERY.md).
 

@@ -4,17 +4,18 @@
 
 An owned Solid 2 design system for the future Solid admin, behind the D19 package
 boundary. The implementation contains **Button, Badge, Card, Separator, Skeleton, Input,
-Textarea, Label, Checkbox, Switch, Tabs, Popover, Alert Dialog, Combobox, Accordion and Collapsible**. The React admin and Svelte storefront keep their existing themes.
+Textarea, Label, Checkbox, Switch, Tabs, Popover, Alert Dialog, Combobox, Accordion, Collapsible, Tooltip and Hover Card**. The React admin and Svelte storefront keep their existing themes.
 See [DECISIONS.md](DECISIONS.md) for the owner's 2026-10-07 foundation direction
-and [disclosure delivery](docs/DISCLOSURES-DELIVERY.md) for current measured acceptance.
+and [preview delivery](docs/HINTS-DELIVERY.md) for current measured acceptance.
 [FOUNDATION-DELIVERY.md](FOUNDATION-DELIVERY.md) retains the earlier five-component results.
 
-These sixteen components use native HTML and Solid 2. Popover positioning uses
+These eighteen components use native HTML and Solid 2. Overlay and preview positioning use
 `@floating-ui/dom@1.8.0`. Kobalte remains the first
 candidate for richer interaction primitives. Neither Kobalte nor corvu, nor the
 experimental validation patches, is a dependency of this implementation.
 Kobalte Checkbox/Switch were browser-tested first; reset and diagnostic failures
 are recorded in [KOBALTE-TOGGLES.md](KOBALTE-TOGGLES.md).
+Tooltip/Hover Card adoption evidence is in [KOBALTE-HINTS.md](KOBALTE-HINTS.md).
 Accordion/Collapsible adoption evidence is in [KOBALTE-DISCLOSURES.md](KOBALTE-DISCLOSURES.md).
 Combobox adoption evidence is in [KOBALTE-COMBOBOX.md](KOBALTE-COMBOBOX.md).
 The Tabs/Popover/Alert Dialog probe is in [KOBALTE-OVERLAYS.md](KOBALTE-OVERLAYS.md).
@@ -23,7 +24,7 @@ The Tabs/Popover/Alert Dialog probe is in [KOBALTE-OVERLAYS.md](KOBALTE-OVERLAYS
 
 | File | Purpose |
 | --- | --- |
-| `src/components/ui/*.tsx` | Sixteen components and their compound parts |
+| `src/components/ui/*.tsx` | Eighteen components and their compound parts |
 | `src/lib/utils.ts` | Conditional classes and Tailwind 4 conflict resolution |
 | `src/theme.css` | Shared oklch tokens, Inter, utilities and reduced motion |
 | `src/index.ts` | Public library barrel |
@@ -49,6 +50,8 @@ import { Checkbox } from 'shadcn-solidjs-theme/ui/checkbox';
 import { Switch } from 'shadcn-solidjs-theme/ui/switch';
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from 'shadcn-solidjs-theme/ui/accordion';
 import { Collapsible, CollapsibleTrigger, CollapsibleContent } from 'shadcn-solidjs-theme/ui/collapsible';
+import { Tooltip, TooltipProvider, TooltipTrigger, TooltipContent } from 'shadcn-solidjs-theme/ui/tooltip';
+import { HoverCard, HoverCardTrigger, HoverCardContent } from 'shadcn-solidjs-theme/ui/hover-card';
 import { cn } from 'shadcn-solidjs-theme/utils';
 ```
 
@@ -65,6 +68,8 @@ Detailed examples, every variant/size, accessibility notes and customization:
 [Component guide](docs/components.md).
 [Per-component acceptance matrix](docs/TEST-MATRIX.md) links requirements to tests
 and tracks browser, SSR, visual and accessibility gaps. Run `bun run dev` for the live gallery.
+Open `/?hints` (append `&dark`) for hover/focus descriptions, link previews,
+controlled rejection, clipping/movement and a Tooltip inside a modal.
 Open `/?disclosures` (append `&dark`) for single/multiple Accordion, nested
 Collapsible, draft preservation, keyboard direction and controlled rejection.
 Set custom `triggerId`/`contentId` on AccordionItem or Collapsible so both sides

@@ -331,3 +331,32 @@ link in the server regression and is not used here.
 Keep content shells mounted and hidden while closed; unmount children unless
 forceMount is requested. Natural height replaces animated height/exit presence.
 These API differences are documented in the [component guide](docs/components.md).
+
+
+## Tooltip and Hover Card lifetime (2026-10-08)
+
+Keep Kobalte first: alpha.2 on Solid 2 rc.13 passes isolated pointer opening,
+Escape, focus opening and explicit outside-focus dismissal in Chromium/Firefox,
+but produces two Tooltip and five Hover Card warnings in each engine. The
+[unpatched probe](KOBALTE-HINTS.md) therefore fails the strict diagnostic gate.
+Both capabilities exist, so no corvu catalog fallback is introduced.
+
+REASONING: one owned hint controller shares delay cancellation, owner state,
+hover/focus engagement and disposal. Native manual popovers preserve DOM/theme
+ancestry and avoid autofocus; Floating UI supplies fixed collision-aware placement.
+Escape is consumed by the top preview so a containing modal remains open. Keyboard
+focus events can run synchronously inside a parent modal's effect; their controller
+work uses an explicit untrack event boundary. Descendant focus travel uses native
+focusin/focusout, rather than non-bubbling focus/blur on the content shell.
+
+Root-owned contentId is known before SSR, like the disclosure ID contract. Closed
+shells stay hidden and retain children only with forceMount. Pointer travel uses
+a rectangular bridge; provider delay windows are local to that provider. Geometry
+writes reject stale async results and preserve caller CSS size constraints.
+
+Shared rendering now contains utility classes in src/lib, so theme.css explicitly
+scans that directory as well as components. Screenshots caught the previously
+missing compiled preview colors and widths; real-browser assertions now cover them.
+This increment intentionally omits the React tooltip arrow, transform-origin CSS
+variables, portal-container APIs, asChild and exit animation; the guide records
+these scope limits. No runtime dependency, patch or diagnostic suppression is added.

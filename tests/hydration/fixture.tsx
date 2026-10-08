@@ -18,6 +18,9 @@ import { Combobox, ComboboxInput, ComboboxContent, ComboboxList, ComboboxItem } 
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from 'shadcn-solidjs-theme/ui/accordion';
 import { Collapsible, CollapsibleTrigger, CollapsibleContent } from 'shadcn-solidjs-theme/ui/collapsible';
 
+import { Tooltip, TooltipTrigger, TooltipContent } from 'shadcn-solidjs-theme/ui/tooltip';
+import { HoverCard, HoverCardTrigger, HoverCardContent } from 'shadcn-solidjs-theme/ui/hover-card';
+
 /** Keep request data deterministic across SSR and hydration; user changes belong to this owner. */
 export function HydrationFixture(props: { initiallyOpen: false | 'popover' | 'alert' }) {
   const [suffix, setSuffix] = createSignal('server');
@@ -64,6 +67,9 @@ export function HydrationFixture(props: { initiallyOpen: false | 'popover' | 'al
       <AccordionItem value="other"><AccordionTrigger>Hydrated other section</AccordionTrigger><AccordionContent>Other disclosure content</AccordionContent></AccordionItem>
     </Accordion>
     <Collapsible defaultOpen><CollapsibleTrigger>Hydrated optional section</CollapsibleTrigger><CollapsibleContent><Input aria-label="Collapsible draft" defaultValue="Server collapsible draft"/></CollapsibleContent></Collapsible>
+    <Tooltip contentId={`hydrated-tip-${suffix()}`}><TooltipTrigger>Hydrated help</TooltipTrigger><TooltipContent forceMount>Hydrated description</TooltipContent></Tooltip>
+    <HoverCard contentId={`hydrated-card-${suffix()}`} openDelay={0}><HoverCardTrigger href="#hydrated-profile">Hydrated profile</HoverCardTrigger><HoverCardContent forceMount><a href="#hydrated-profile">View hydrated profile</a></HoverCardContent></HoverCard>
+    <p id="hydrated-profile">Hydrated destination</p>
     <output data-testid="confirmed">{confirmed()}</output>
   </main>;
 }

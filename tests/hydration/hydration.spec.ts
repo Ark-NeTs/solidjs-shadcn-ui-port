@@ -153,3 +153,20 @@ test('hydrates disclosures with stable owner IDs, retained drafts and ordinary r
   await page.getByRole('button', { name: 'Dispose components', exact: true }).click();
   await expect(page.locator('#hydration-root')).toBeEmpty();
 });
+
+
+test('hydrates preview shells and IDs before focus, dismissal, link navigation and disposal', async ({ page }) => {
+  await hydratePage(page);
+  const trigger = page.getByRole('button', { name: 'Hydrated help' });
+  const tip = page.locator('#hydrated-tip-server');const original = await tip.elementHandle();
+  await page.getByRole('button', { name: 'Change IDs' }).click();await trigger.focus();
+  await expect(trigger).toHaveAttribute('aria-describedby', 'hydrated-tip-client');
+  await expect(page.getByRole('tooltip')).toHaveText('Hydrated description');
+  expect(await page.locator('#hydrated-tip-client').evaluate((node, before) => node === before, original)).toBe(true);
+  await page.keyboard.press('Escape');await expect(trigger).toBeFocused();await expect(page.getByRole('tooltip')).toBeHidden();
+  const link = page.getByRole('link', { name: 'Hydrated profile', exact: true });await link.focus();
+  await expect(link).toHaveAttribute('aria-describedby', 'hydrated-card-client');
+  await expect(page.getByRole('link', { name: 'View hydrated profile' })).toBeVisible();
+  await link.press('Enter');await expect(page).toHaveURL(/#hydrated-profile$/);
+  await page.getByRole('button', { name: 'Dispose components' }).click();await expect(page.locator('#hydration-root')).toBeEmpty();
+});

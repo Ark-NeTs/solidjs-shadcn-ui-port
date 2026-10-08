@@ -3,7 +3,7 @@
 Initially audited 2026-10-08 against source at `314f27a`; updated with the
 [three-engine browser evidence](WEBKIT-DELIVERY.md) and
 [source hydration regression](HYDRATION-DELIVERY.md), including
-[real Loading boundaries](LOADING-HYDRATION-DELIVERY.md). Covers the **16
+[real Loading boundaries](LOADING-HYDRATION-DELIVERY.md). Covers the **18
 implemented component families**, including their compound parts. The other
 catalog entries in [COMPONENT-MAP.md](../COMPONENT-MAP.md) remain unimplemented;
 their adoption probes are not delivered-component acceptance tests.
@@ -42,15 +42,15 @@ are implementation scope limits, not features that an existing test proves.
 | Rejected hydrated data recovers through explicit retry and preserves drafts; late results stay isolated | [H: five error/retry scenarios](../tests/hydration/errored.spec.ts), [three native Solid comparisons](../tests/hydration/retry-minimal.spec.ts) | Pending SSR followed by client rejection; the previous error stays visible until retry settlement. No SSR error serialization or streaming claim. |
 | Diagnostics and cleanup are checked | [Unit setup](../vitest.setup.ts), [browser fixture](../tests/browser-fixture.ts) | Every unit test checks console warn/error after cleanup; every B/E/H test checks console warning/error and page errors. The hydration build also rejects server warnings/errors; ordinary S tests have no equivalent diagnostic fixture. |
 | Whole-gallery accessibility | [B: light/dark examples have no axe accessibility violations](../tests/integration/foundation.spec.ts#L27) | Applies to the rendered, settled gallery state. Axe does not certify screen-reader usability or all dynamic states. |
-| Whole-gallery visual appearance | [V: light/dark/mobile component gallery](../tests/e2e/visual.spec.ts#L3) | Shared gallery plus dedicated disclosure images; not every variant/state combination. |
-| Unit execution coverage | [Coverage configuration](../vitest.config.ts), [measured coverage](evidence/disclosures-coverage.json) | 100% statements, branches, functions and lines for included component/helper source; not exhaustive behavior coverage. |
+| Whole-gallery visual appearance | [V: light/dark/mobile component gallery](../tests/e2e/visual.spec.ts#L3) | Shared gallery plus dedicated disclosure and preview images; not every variant/state combination. |
+| Unit execution coverage | [Coverage configuration](../vitest.config.ts), [measured coverage](evidence/hints-coverage.json) | 100% statements, branches, functions and lines for included component/helper source; not exhaustive behavior coverage. |
 
-The current disclosure delivery records **115 unit tests, 8 grouped SSR tests,
-273 browser integration runs (91 scenarios × 3 engines), and 234 E2E runs
-(73 journeys × 3 engines + 15 Chromium visual tests), and 84 hydration runs
-(81 positive assertions + 3 unsafe-pattern characterizations)**. Those visual tests compare
-18 images. These totals are package-wide, not per component. See the
-[Accordion/Collapsible verification](DISCLOSURES-DELIVERY.md) for current results and the
+The current preview delivery records **130 unit tests, 9 grouped SSR tests,
+291 browser integration runs (97 scenarios × 3 engines), and 255 E2E runs
+(79 journeys × 3 engines + 18 Chromium visual tests), and 87 hydration runs
+(84 positive assertions + 3 unsafe-pattern characterizations)**. Those visual tests compare
+21 images. These totals are package-wide, not per component. See the
+[Tooltip/Hover Card verification](HINTS-DELIVERY.md) for current results and the
 [initial matrix verification](TEST-MATRIX-DELIVERY.md) for the original audit.
 
 WebKit runs on macOS with process-scoped button Tab navigation and native
@@ -357,6 +357,33 @@ empty and error content is composed as children. No animated exit, arbitrary
 `asChild`, or runtime change of Accordion selection type is promised. Custom IDs
 are configured on the root/item; exact API boundaries are in the component guide.
 
+## Tooltip
+
+| Acceptance requirement | Existing evidence |
+| --- | --- |
+| Provider delay, skip window and hoverable policy; canceled pending open; root/native disabled; disposal | [U: preview delay, cancellation and default deadlines](../tests/unit/hints.test.tsx); [B/E: tooltip delay and preview availability](../tests/hints.ts) |
+| Focus opening, existing description preserved, no name change, Escape/click dismissal and controlled rejection | U owner/ID and event cases; B/E tooltip/owner assertions and nested modal Escape |
+| Hoverable content and stationary trigger/content gap | U bridge/deadline checks; B/E pointer journeys (gap specifically asserted on Hover Card, which shares the controller) |
+| Correct compiled colors, viewport placement, long text width and stale geometry rejection | U geometry/size constraints; B/E actual tooltip background, bounds and long-description width |
+| Custom SSR ID and stable hydrated shell; live description update | [S: preview markup](../tests/server.test.tsx); [H: preview shell reuse and interactions](../tests/hydration/hydration.spec.ts) |
+| Light/dark/mobile appearance | [V: Tooltip/Hover Card screenshots](../tests/e2e/visual.spec.ts); screenshots are full-page because native top-layer content can extend outside main's bounding box |
+
+## Hover Card
+
+| Acceptance requirement | Existing evidence |
+| --- | --- |
+| Default/custom delay, controlled rejection and owner acceptance, disabling/removing pending preview | [U: preview timer/owner cases](../tests/unit/hints.test.tsx); [B/E: availability and owner scenario](../tests/hints.ts) |
+| Native href/ref/click, accessible disabled anchor, focus travel into content and dismissal after departure | U native navigation, canceled handlers and focus-out; B/E native Tab/Enter/profile navigation (Option-Tab for macOS WebKit links) |
+| Pointer bridge, stationary gap, hoverable content and close deadline not restarted by moves | U controller/geometry cases; B/E slow gap travel and content hover |
+| Top-layer clipping escape, movement/scroll/resize, light/dark inherited tokens, reduced motion, enlarged narrow layout and axe | B/E preview layout scenarios; three V images. Resize/scroll assertions establish continued visibility and viewport bounds, not exhaustive subpixel placement for every side. |
+| Server link/retained shell; hydration and root disposal | S preview markup; H live IDs, link navigation and unmount |
+
+Both families own no data requests. Essential content and touch-accessible navigation
+remain available outside the preview. The scope excludes a Tooltip arrow, animated
+exit, asChild and portal-container APIs. Pointer drag-selection persistence, external
+hidePopover calls, physical AT/touch devices and arbitrary cross-library nesting
+remain unverified. Shared coverage percentages do not close those gaps.
+
 ## SSR and visual scope by component
 
 | Component | Server assertions / presence | Visual scope |
@@ -377,6 +404,8 @@ are configured on the root/item; exact API boundaries are in the component guide
 | Combobox | [S6](../tests/server.test.tsx#L31): role, initial value, name, closed state and absent listbox | Shared single/multiple examples plus dedicated open single-select light/dark/mobile |
 | Accordion | S8: expanded/required state, custom controls/labelledby, region, visible/absent body | Dedicated light/dark/mobile disclosure page |
 | Collapsible | S8: closed forced body and hidden shell in combined markup | Dedicated light/dark/mobile disclosure page |
+| Tooltip | S9: role, custom and existing description IDs, manual popover attribute | Dedicated open light/dark/mobile previews |
+| Hover Card | S9: native href, retained closed body, hidden shell in combined markup | Dedicated open light/dark/mobile previews |
 
 S1 title: “renders semantic foundation markup on the server”; S2: “renders named
 fields with labels, native values and validation attributes”; S3: “server-renders
@@ -385,7 +414,8 @@ overlay triggers without a browser”; S5: “renders forced overlay structure w
 opening native layers on the server”; S6: “renders the Combobox canonical value
 and form field without a browser”. S8: “renders disclosure state, custom ID
 relationships, disabled buttons and mount policy on the server”. None tests
-browser hydration.
+browser hydration. S9: “renders preview description IDs and native links without
+opening a browser layer”.
 
 **ASYNC-ERR-1 closed:** [Errored recovery](ERRORED-HYDRATION-DELIVERY.md) verifies
 explicit retry, repeated activation, draft identity/focus, stale resolve/reject,
@@ -402,9 +432,9 @@ order the next test work; they do not assign bug severity to untested behavior.
 | Priority | ID | Component(s) | Concrete closure condition |
 | --- | --- | --- | --- |
 | Manual follow-up | CMB-2 | Combobox | Browser scrolling/Tab/modal checks pass; record a physical IME composition/commit/cancel session before closing the remaining manual portion. |
-| Extended coverage | ALL-2 | All 16 | [H: real hydration, forms, Tabs and overlays](HYDRATION-DELIVERY.md) passes for the documented source fixtures. [Pending Loading boundary hydration](LOADING-HYDRATION-DELIVERY.md) and [client rejection/retry](ERRORED-HYDRATION-DELIVERY.md) are also covered. Streaming, ready-at-SSR boundaries, multiple roots, every variant and a published SSR build remain unverified. |
+| Extended coverage | ALL-2 | All 18 | [H: real hydration, forms, Tabs and overlays](HYDRATION-DELIVERY.md) passes for the documented source fixtures. [Pending Loading boundary hydration](LOADING-HYDRATION-DELIVERY.md) and [client rejection/retry](ERRORED-HYDRATION-DELIVERY.md) are also covered. Streaming, ready-at-SSR boundaries, multiple roots, every variant and a published SSR build remain unverified. |
 | Cross-cutting | ALL-3 | Interactive controls and semantic content | Record manual assistive-technology navigation/announcements; axe success is only automated evidence. |
-| Cross-cutting | ALL-4 | All 16 | Expand representative state/variant visual cases; isolate assertions currently supported only by shared gallery/SSR markup (notably Badge SSR). |
+| Cross-cutting | ALL-4 | All 18 | Expand representative state/variant visual cases; isolate assertions currently supported only by shared gallery/SSR markup (notably Badge SSR). |
 | Before app adoption | ALL-5 | Full package | Verify real admin composition, router/query integration and application errors; measure representative large-list/overlay performance. Current E2E is the gallery only. |
 
 No claim is made that every supported combination appears above. The matrix maps

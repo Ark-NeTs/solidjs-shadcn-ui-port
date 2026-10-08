@@ -6,6 +6,7 @@
 /* Scan this package's components for utility classes regardless of which
    app imports this stylesheet (paths are resolved relative to this file). */
 @source './components';
+@source './lib';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -161,3 +162,6 @@
 @media (prefers-reduced-motion: reduce) {
   [data-slot="accordion-trigger"] { transition: none; }
 }
+
+/* Native previews must remain hidden even when display utility classes are applied. */
+[data-slot="tooltip-content"][hidden], [data-slot="hover-card-content"][hidden] { display: none; }

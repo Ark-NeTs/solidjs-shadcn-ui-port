@@ -1,8 +1,8 @@
 # shadcn/ui → Solid 2 component map
 
 **Implemented (2026-10-08):** Button, Badge, Card, Separator, Skeleton, Input,
-Textarea, Label, Checkbox, Switch, Tabs, Popover, Alert Dialog, Combobox, Accordion and Collapsible now have owned Solid 2 source, documentation and passing unit, browser and built-library tests.
-See [disclosure delivery](docs/DISCLOSURES-DELIVERY.md), [COMBOBOX-DELIVERY.md](COMBOBOX-DELIVERY.md), [OVERLAYS-DELIVERY.md](OVERLAYS-DELIVERY.md), [TOGGLES-DELIVERY.md](TOGGLES-DELIVERY.md), [FORM-FIELDS-DELIVERY.md](FORM-FIELDS-DELIVERY.md) and the earlier
+Textarea, Label, Checkbox, Switch, Tabs, Popover, Alert Dialog, Combobox, Accordion, Collapsible, Tooltip and Hover Card now have owned Solid 2 source, documentation and passing unit, browser and built-library tests.
+See [preview delivery](docs/HINTS-DELIVERY.md), [disclosure delivery](docs/DISCLOSURES-DELIVERY.md), [COMBOBOX-DELIVERY.md](COMBOBOX-DELIVERY.md), [OVERLAYS-DELIVERY.md](OVERLAYS-DELIVERY.md), [TOGGLES-DELIVERY.md](TOGGLES-DELIVERY.md), [FORM-FIELDS-DELIVERY.md](FORM-FIELDS-DELIVERY.md) and the earlier
 [FOUNDATION-DELIVERY.md](FOUNDATION-DELIVERY.md). These use native HTML;
 headless-library findings below remain relevant to later primitives.
 
@@ -74,9 +74,9 @@ No row currently selects corvu; alternatives are evaluated below.
 
 | Route | Entries |
 | --- | ---: |
-| Matching Kobalte primitive | 36 |
-| Owned composition | 8 |
-| Native markup/CSS | 14 |
+| Matching Kobalte primitive | 26 |
+| Owned composition | 9 |
+| Native markup/CSS | 23 |
 | Unresolved behavior/engine gap | 7 |
 | Total | 65 |
 
@@ -110,7 +110,7 @@ No row currently selects corvu; alternatives are evaluated below.
 | [Dropdown Menu](https://ui.shadcn.com/docs/components/dropdown-menu) | K | `dropdown-menu` | Submenus, typeahead, groups, checkbox/radio items, disabled items and close behavior. |
 | [Empty](https://ui.shadcn.com/docs/components/empty) | N | Owned markup/CSS | Media/title/description/content slots; actions use Button. |
 | [Field](https://ui.shadcn.com/docs/components/field) | C | Control-specific Label/Description/ErrorMessage + native fieldset | Generic layout, legends, errors and IDs across all controls; do not put unrelated controls in a TextField context. |
-| [Hover Card](https://ui.shadcn.com/docs/components/hover-card) | K | `hover-card` | Delays, pointer travel, focus behavior, portal and collision placement. |
+| [Hover Card](https://ui.shadcn.com/docs/components/hover-card) | N | `hover-card` evaluated first; owned native preview | Alpha.2/rc.13 emits diagnostics. Delivered delay, pointer bridge, focus travel, native link, Escape, placement and cleanup; see KOBALTE-HINTS.md and docs/HINTS-DELIVERY.md. |
 | [Input](https://ui.shadcn.com/docs/components/input) | N | Native input; `text-field` evaluated for field composition | Implemented and tested: native input, type/event/ref/reactive props, validation and form reset. See FORM-FIELDS-DELIVERY.md; TextField.Root is not required. |
 | [Input Group](https://ui.shadcn.com/docs/components/input-group) | C | Input/Textarea + `button` | Addons, focus/invalid state, disabled propagation and grouped borders. |
 | [Input OTP](https://ui.shadcn.com/docs/components/input-otp) | K | `otp-field` | Harness patch passes tested editing, label/ARIA, native form and reset contracts; see KOBALTE-OTP.md. Build slots/groups/separators; native paste/autofill/password managers remain unverified. |
@@ -144,7 +144,7 @@ No row currently selects corvu; alternatives are evaluated below.
 | [Toast](https://ui.shadcn.com/docs/components/toast) | K | `toast` | Region/queue, dismiss/actions, duration/pause, announcements, swipe and positioning. |
 | [Toggle](https://ui.shadcn.com/docs/components/toggle) | K | `toggle-button` | Pressed/unpressed/disabled, variants and accessible name. |
 | [Toggle Group](https://ui.shadcn.com/docs/components/toggle-group) | K | `toggle-group` | Single/multiple selection, roving focus, orientation and RTL. |
-| [Tooltip](https://ui.shadcn.com/docs/components/tooltip) | K | `tooltip` | Delay/provider adaptation, hover/focus, Escape and accessible description. |
+| [Tooltip](https://ui.shadcn.com/docs/components/tooltip) | N | `tooltip` evaluated first; owned native preview | Alpha.2/rc.13 emits diagnostics. Delivered provider delay/skip window, hover/focus, Escape, description IDs and collision placement; see KOBALTE-HINTS.md and docs/HINTS-DELIVERY.md. |
 | [Typography](https://ui.shadcn.com/docs/components/typography) | N | Semantic elements + classes | Heading/list/prose/code styles, hierarchy, long content and theme tokens. |
 | [Sonner](https://ui.shadcn.com/docs/components/radix/sonner) | C | `toast` + owned imperative facade | Preserve Toaster/notification use cases, promise updates, IDs, variants and stacking; no claim of automatic Sonner API equivalence. |
 

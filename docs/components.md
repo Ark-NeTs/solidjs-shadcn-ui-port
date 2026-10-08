@@ -715,6 +715,93 @@ are not certified by automated tests.
 ![Dark disclosures](screenshots/disclosures-dark.png)
 ![Narrow disclosures](screenshots/disclosures-mobile.png)
 
+## Tooltip and Hover Card
+
+Open `/?hints` (append `&dark`) for live examples. Tooltip adds a short,
+noninteractive description to a button. Hover Card previews information behind a
+native link; keep the destination usable without the preview. Use Popover or Dialog
+for essential forms and actions. Tooltip content must not contain focusable controls.
+
+```tsx
+import { Tooltip, TooltipProvider, TooltipTrigger, TooltipContent }
+  from 'shadcn-solidjs-theme/ui/tooltip';
+import { HoverCard, HoverCardTrigger, HoverCardContent }
+  from 'shadcn-solidjs-theme/ui/hover-card';
+import { buttonVariants } from 'shadcn-solidjs-theme/ui/button';
+
+function Previews() {
+  return <>
+    <TooltipProvider delayDuration={200} skipDelayDuration={300}>
+      <Tooltip contentId="save-description">
+        <TooltipTrigger class={buttonVariants({ variant: 'outline' })}>
+          Save draft
+        </TooltipTrigger>
+        <TooltipContent side="bottom">Keep your work without publishing it.</TooltipContent>
+      </Tooltip>
+    </TooltipProvider>
+    <HoverCard openDelay={500} closeDelay={300}>
+      <HoverCardTrigger href="/team/maya" class="underline">Maya Chen</HoverCardTrigger>
+      <HoverCardContent class="space-y-2">
+        <p class="font-medium">Maya Chen · Design</p>
+        <p>Creates welcoming spaces for your team.</p>
+        <a href="/team/maya" class="underline">View profile</a>
+      </HoverCardContent>
+    </HoverCard>
+  </>;
+}
+```
+
+| Part | Public contract |
+| --- | --- |
+| TooltipProvider | Optional shared `delayDuration` (default 0), `skipDelayDuration` (300 ms), `disableHoverableContent` (false). A recently closed tooltip skips the hover delay within this provider. |
+| Tooltip | Boolean `open`, `defaultOpen`, `onOpenChange`; `delayDuration` overrides provider hover delay. `closeDelay` defaults to 100 ms. `disabled` suppresses display/interaction while preserving owner selection. |
+| HoverCard | Same boolean owner contract; `openDelay` defaults to 700 ms, `closeDelay` to 300 ms. Keyboard focus opens immediately. No provider is required. |
+| Both roots | `contentId` sets a stable custom ID before SSR. IDs update reactively. Controlled callbacks request changes; rejected requests do not change the displayed canonical state. |
+| TooltipTrigger | Native button, always type button. Native attributes/refs/events, root/native disabled state and existing aria-describedby are preserved. Open descriptions are appended without changing its name. Pointer down/click dismiss without consuming the button action. |
+| HoverCardTrigger | Native anchor with href/target/rel/ref/events. Root disabled removes href, sets aria-disabled and removes it from Tab order. Open content is a supplemental description. Navigation remains native. |
+| Both Content parts | `side`, `align`, `sideOffset`, `alignOffset`, `collisionPadding` (8), `avoidCollisions` (true), `forceMount`, `onEscapeKeyDown`, native div attributes/ref/style/class. Custom IDs belong on the root. Tooltip defaults top/center/6px; Hover Card bottom/center/4px. |
+
+Hover starts a cancellable timer. Leaving before opening, disabling the root,
+removing the trigger or disposing the root prevents a late open. Keyboard focus
+opens immediately. Pointer travel inside the rectangle joining trigger and content
+keeps the preview open, including a pause over the gap. Leaving both regions closes
+after the delay, unless focus remains within them. TooltipProvider can disable
+hoverable content. Touch pointer hover does not open previews; touch-device behavior
+has not been manually certified.
+
+Escape closes the top preview, leaves focus in place and does not close its parent
+modal. `onEscapeKeyDown` can cancel that request. Outside pointer activation requests
+closure without restoring focus. Hover Card allows native Tab travel into its links;
+leaving both trigger and content closes it. Content uses bubbling `onFocusIn` and
+`onFocusOut` for this contract. Canceled caller pointer/focus handlers suppress the
+associated internal behavior. Tooltip focus is never moved into its description.
+
+Native manual popovers render above clipping ancestors while retaining DOM order
+and local theme tokens. Floating UI follows scrolling, resizing and anchor movement;
+collision handling flips/shifts the preview and bounds it to available space while
+respecting its CSS size limits. Caller class/style changes refresh placement. Stale
+coordinate results cannot affect a closed or replaced preview. The component owns
+no request, loading/error state, network retry or application authorization.
+
+Content shells remain mounted but hidden while closed. Ordinary children unmount;
+`forceMount` retains them. Root IDs and shell identity survive source hydration.
+The same semantic colors and typography apply in light/dark mode; use class/style
+or inherited tokens to customize them. The stylesheet explicitly scans shared
+rendering helpers, so these styles also ship in the compiled package.
+
+Intentional differences from the React wrappers: native button/anchor elements
+(no asChild), root-owned IDs, browser top layer instead of a portal-container API,
+no Tooltip arrow, no Radix transform-origin variables, and no exit/presence animation.
+The styling keeps the sibling's core surfaces, spacing and type. A rectangular
+pointer bridge is less precise than a polygon corridor. Drag-selection persistence,
+external manual calls to hidePopover, arbitrary nesting with other libraries,
+physical assistive technology and touch devices remain unverified. Do not use a
+preview as the only way to reach important content.
+
+![Light Tooltip and Hover Card](screenshots/hints-light.png)
+![Dark Tooltip and Hover Card](screenshots/hints-dark.png)
+![Narrow Tooltip and Hover Card](screenshots/hints-mobile.png)
+
 ## Acceptance evidence
 
 See the [per-component test matrix](TEST-MATRIX.md) for linked assertions,
