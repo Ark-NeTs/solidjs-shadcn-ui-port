@@ -47,3 +47,8 @@ export * from './components/ui/direction';
 export * from './components/ui/dialog';
 export * from './components/ui/sheet';
 export * from './components/ui/drawer';
+export * from './components/ui/dropdown-menu';
+export * from './components/ui/context-menu';
+export * from './components/ui/menubar';
+export * from './components/ui/navigation-menu';
+export * from './components/ui/command';

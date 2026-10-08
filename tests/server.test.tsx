@@ -85,3 +85,6 @@ it('renders Avatar fallback, Pagination current page, nested Direction and seman
 
 import {ModalCatalogContent} from '../playground/catalog-modal';
 it('renders retained Dialog Sheet and Drawer names, closed state and drafts on the server',()=>{const html=renderToString(()=><ModalCatalogContent/>);for(const text of ['data-slot="dialog-content"','data-slot="sheet-content"','data-slot="drawer-content"','data-slot="drawer-handle"','data-state="closed"','aria-expanded="false"','editor-title-initial','Keep this draft','data-side="right"','data-vaul-drawer-direction="bottom"'])expect(html).toContain(text);});
+
+import {MenuCatalogContent} from '../playground/catalog-menus';
+it('renders menu controls, navigation links and searchable commands without opening overlays on the server',()=>{const html=renderToString(()=><MenuCatalogContent/>);for(const text of ['data-slot="dropdown-menu-trigger"','data-slot="context-menu-trigger"','role="menubar"','aria-label="Library navigation"','role="combobox"','role="listbox"','Create workspace','aria-disabled="true"'])expect(html).toContain(text);expect(html).not.toContain('data-slot="dropdown-menu-content"');expect(html).not.toContain('No matching commands');});

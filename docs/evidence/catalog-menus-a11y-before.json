@@ -1,0 +1,1034 @@
+{
+  "config": {
+    "argv": [
+      "/Users/arktas/.asdf/installs/nodejs/25.3.0/bin/node",
+      "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/node_modules/.bin/playwright",
+      "test",
+      "tests/integration/catalog-menus.spec.ts",
+      "--max-failures=1"
+    ],
+    "configFile": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/playwright.config.ts",
+    "rootDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 1,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "integration/**/*.spec.ts",
+          "e2e/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [
+          "**/visual.spec.ts"
+        ],
+        "testMatch": [
+          "integration/**/*.spec.ts",
+          "e2e/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [
+          "**/visual.spec.ts"
+        ],
+        "testMatch": [
+          "integration/**/*.spec.ts",
+          "e2e/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "docs/evidence/catalog-menus-focused.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": {
+      "command": "bun run dev",
+      "url": "http://127.0.0.1:4403",
+      "reuseExistingServer": false,
+      "timeout": 60000
+    }
+  },
+  "suites": [
+    {
+      "title": "integration/catalog-menus.spec.ts",
+      "file": "integration/catalog-menus.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Dropdown keyboard navigation skips disabled actions, opens submenus and returns focus",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 673,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T22:36:50.239Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e117e5e4b357fa03df31-3d425bc12e8883bccccc",
+          "file": "catalog-menus.ts",
+          "line": 7,
+          "column": 2
+        },
+        {
+          "title": "Dropdown cancels selection, changes preferences and keeps live accessible IDs",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 537,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T22:36:51.198Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e117e5e4b357fa03df31-bb6cbf551eb8c6540205",
+          "file": "catalog-menus.ts",
+          "line": 8,
+          "column": 2
+        },
+        {
+          "title": "Dropdown Tab leaves naturally, native links navigate and outside pointer does not steal focus",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 528,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T22:36:51.741Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e117e5e4b357fa03df31-ec2ec8568a300d9d1f37",
+          "file": "catalog-menus.ts",
+          "line": 9,
+          "column": 2
+        },
+        {
+          "title": "Dropdown hover opens a child without stealing focus and closes it when another action receives focus",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 682,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T22:36:52.277Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e117e5e4b357fa03df31-0dd7d727d9fbb349a86a",
+          "file": "catalog-menus.ts",
+          "line": 10,
+          "column": 2
+        },
+        {
+          "title": "Context Menu positions at the pointer and supports keyboard invocation and nested commands",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 485,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T22:36:52.964Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e117e5e4b357fa03df31-99d8e4b8b0e4beb002f8",
+          "file": "catalog-menus.ts",
+          "line": 11,
+          "column": 2
+        },
+        {
+          "title": "Menubar roves across enabled triggers and changes an open menu in LTR and RTL",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 436,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T22:36:53.454Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e117e5e4b357fa03df31-d322b6eb5afc1858d8e9",
+          "file": "catalog-menus.ts",
+          "line": 12,
+          "column": 2
+        },
+        {
+          "title": "Navigation hover and keyboard expose native links in a shared viewport",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 646,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T22:36:53.896Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e117e5e4b357fa03df31-80a47b816cc0d2bdd835",
+          "file": "catalog-menus.ts",
+          "line": 13,
+          "column": 2
+        },
+        {
+          "title": "Command searches keywords, handles empty results and executes only an enabled selection",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 329,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T22:36:54.548Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e117e5e4b357fa03df31-755a5b0044acbf534ca6",
+          "file": "catalog-menus.ts",
+          "line": 14,
+          "column": 2
+        },
+        {
+          "title": "Command dialog and dropdown inside a modal close independently and restore native focus",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 379,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T22:36:54.882Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e117e5e4b357fa03df31-86c226a315dddea311b3",
+          "file": "catalog-menus.ts",
+          "line": 15,
+          "column": 2
+        },
+        {
+          "title": "Menus light enlarged mobile layouts and accessibility",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 1294,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  -   1\u001b[39m\n\u001b[31m+ Received  + 181\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"description\": \"Ensure an element's role supports its ARIA attributes\",\u001b[39m\n\u001b[31m+     \"help\": \"Elements must only use supported ARIA attributes\",\u001b[39m\n\u001b[31m+     \"helpUrl\": \"https://dequeuniversity.com/rules/axe/4.11/aria-allowed-attr?application=playwright\",\u001b[39m\n\u001b[31m+     \"id\": \"aria-allowed-attr\",\u001b[39m\n\u001b[31m+     \"impact\": \"critical\",\u001b[39m\n\u001b[31m+     \"nodes\": Array [\u001b[39m\n\u001b[31m+       Object {\u001b[39m\n\u001b[31m+         \"all\": Array [\u001b[39m\n\u001b[31m+           Object {\u001b[39m\n\u001b[31m+             \"data\": Array [\u001b[39m\n\u001b[31m+               \"aria-expanded=\\\"false\\\"\",\u001b[39m\n\u001b[31m+             ],\u001b[39m\n\u001b[31m+             \"id\": \"aria-allowed-attr\",\u001b[39m\n\u001b[31m+             \"impact\": \"critical\",\u001b[39m\n\u001b[31m+             \"message\": \"ARIA attribute is not allowed: aria-expanded=\\\"false\\\"\",\u001b[39m\n\u001b[31m+             \"relatedNodes\": Array [],\u001b[39m\n\u001b[31m+           },\u001b[39m\n\u001b[31m+         ],\u001b[39m\n\u001b[31m+         \"any\": Array [],\u001b[39m\n\u001b[31m+         \"failureSummary\": \"Fix all of the following:\u001b[39m\n\u001b[31m+   ARIA attribute is not allowed: aria-expanded=\\\"false\\\"\",\u001b[39m\n\u001b[31m+         \"html\": \"<div class=\\\"rounded-xl border border-dashed p-8 text-center text-sm focus-visible:ring-2 focus-visible:ring-ring\\\" tabindex=\\\"0\\\" id=\\\"menu-cl-1-trigger\\\" data-slot=\\\"context-menu-trigger\\\" aria-haspopup=\\\"menu\\\" aria-expanded=\\\"false\\\" aria-controls=\\\"menu-cl-1\\\">\",\u001b[39m\n\u001b[31m+         \"impact\": \"critical\",\u001b[39m\n\u001b[31m+         \"none\": Array [],\u001b[39m\n\u001b[31m+         \"target\": Array [\u001b[39m\n\u001b[31m+           \"#menu-cl-1-trigger\",\u001b[39m\n\u001b[31m+         ],\u001b[39m\n\u001b[31m+       },\u001b[39m\n\u001b[31m+     ],\u001b[39m\n\u001b[31m+     \"tags\": Array [\u001b[39m\n\u001b[31m+       \"cat.aria\",\u001b[39m\n\u001b[31m+       \"wcag2a\",\u001b[39m\n\u001b[31m+       \"wcag412\",\u001b[39m\n\u001b[31m+       \"EN-301-549\",\u001b[39m\n\u001b[31m+       \"EN-9.4.1.2\",\u001b[39m\n\u001b[31m+       \"RGAAv4\",\u001b[39m\n\u001b[31m+       \"RGAA-7.1.1\",\u001b[39m\n\u001b[31m+     ],\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"description\": \"Ensure elements with an ARIA role that require child roles contain them\",\u001b[39m\n\u001b[31m+     \"help\": \"Certain ARIA roles must contain particular children\",\u001b[39m\n\u001b[31m+     \"helpUrl\": \"https://dequeuniversity.com/rules/axe/4.11/aria-required-children?application=playwright\",\u001b[39m\n\u001b[31m+     \"id\": \"aria-required-children\",\u001b[39m\n\u001b[31m+     \"impact\": \"critical\",\u001b[39m\n\u001b[31m+     \"nodes\": Array [\u001b[39m\n\u001b[31m+       Object {\u001b[39m\n\u001b[31m+         \"all\": Array [],\u001b[39m\n\u001b[31m+         \"any\": Array [\u001b[39m\n\u001b[31m+           Object {\u001b[39m\n\u001b[31m+             \"data\": Object {\u001b[39m\n\u001b[31m+               \"messageKey\": \"unallowed\",\u001b[39m\n\u001b[31m+               \"values\": \"[role=separator]\",\u001b[39m\n\u001b[31m+             },\u001b[39m\n\u001b[31m+             \"id\": \"aria-required-children\",\u001b[39m\n\u001b[31m+             \"impact\": \"critical\",\u001b[39m\n\u001b[31m+             \"message\": \"Element has children which are not allowed: [role=separator]\",\u001b[39m\n\u001b[31m+             \"relatedNodes\": Array [\u001b[39m\n\u001b[31m+               Object {\u001b[39m\n\u001b[31m+                 \"html\": \"<div role=\\\"separator\\\" data-slot=\\\"command-separator\\\" class=\\\"-mx-1 h-px bg-border\\\"></div>\",\u001b[39m\n\u001b[31m+                 \"target\": Array [\u001b[39m\n\u001b[31m+                   \"div[data-slot=\\\"command-separator\\\"]\",\u001b[39m\n\u001b[31m+                 ],\u001b[39m\n\u001b[31m+               },\u001b[39m\n\u001b[31m+             ],\u001b[39m\n\u001b[31m+           },\u001b[39m\n\u001b[31m+         ],\u001b[39m\n\u001b[31m+         \"failureSummary\": \"Fix any of the following:\u001b[39m\n\u001b[31m+   Element has children which are not allowed: [role=separator]\",\u001b[39m\n\u001b[31m+         \"html\": \"<div id=\\\"command-cl-12-list\\\" role=\\\"listbox\\\" aria-label=\\\"Commands\\\" data-slot=\\\"command-list\\\" class=\\\"max-h-72 scroll-py-1 overflow-x-hidden overflow-y-auto outline-none\\\">\",\u001b[39m\n\u001b[31m+         \"impact\": \"critical\",\u001b[39m\n\u001b[31m+         \"none\": Array [],\u001b[39m\n\u001b[31m+         \"target\": Array [\u001b[39m\n\u001b[31m+           \"#command-cl-12-list\",\u001b[39m\n\u001b[31m+         ],\u001b[39m\n\u001b[31m+       },\u001b[39m\n\u001b[31m+     ],\u001b[39m\n\u001b[31m+     \"tags\": Array [\u001b[39m\n\u001b[31m+       \"cat.aria\",\u001b[39m\n\u001b[31m+       \"wcag2a\",\u001b[39m\n\u001b[31m+       \"wcag131\",\u001b[39m\n\u001b[31m+       \"EN-301-549\",\u001b[39m\n\u001b[31m+       \"EN-9.1.3.1\",\u001b[39m\n\u001b[31m+       \"RGAAv4\",\u001b[39m\n\u001b[31m+       \"RGAA-9.3.1\",\u001b[39m\n\u001b[31m+     ],\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"description\": \"Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds\",\u001b[39m\n\u001b[31m+     \"help\": \"Elements must meet minimum color contrast ratio thresholds\",\u001b[39m\n\u001b[31m+     \"helpUrl\": \"https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright\",\u001b[39m\n\u001b[31m+     \"id\": \"color-contrast\",\u001b[39m\n\u001b[31m+     \"impact\": \"serious\",\u001b[39m\n\u001b[31m+     \"nodes\": Array [\u001b[39m\n\u001b[31m+       Object {\u001b[39m\n\u001b[31m+         \"all\": Array [],\u001b[39m\n\u001b[31m+         \"any\": Array [\u001b[39m\n\u001b[31m+           Object {\u001b[39m\n\u001b[31m+             \"data\": Object {\u001b[39m\n\u001b[31m+               \"bgColor\": \"#f1f3f3\",\u001b[39m\n\u001b[31m+               \"contrastRatio\": 4.13,\u001b[39m\n\u001b[31m+               \"expectedContrastRatio\": \"4.5:1\",\u001b[39m\n\u001b[31m+               \"fgColor\": \"#67787c\",\u001b[39m\n\u001b[31m+               \"fontSize\": \"13.5pt (18px)\",\u001b[39m\n\u001b[31m+               \"fontWeight\": \"normal\",\u001b[39m\n\u001b[31m+               \"messageKey\": null,\u001b[39m\n\u001b[31m+             },\u001b[39m\n\u001b[31m+             \"id\": \"color-contrast\",\u001b[39m\n\u001b[31m+             \"impact\": \"serious\",\u001b[39m\n\u001b[31m+             \"message\": \"Element has insufficient color contrast of 4.13 (foreground color: #67787c, background color: #f1f3f3, font size: 13.5pt (18px), font weight: normal). Expected contrast ratio of 4.5:1\",\u001b[39m\n\u001b[31m+             \"relatedNodes\": Array [\u001b[39m\n\u001b[31m+               Object {\u001b[39m\n\u001b[31m+                 \"html\": \"<button type=\\\"button\\\" role=\\\"menuitem\\\" tabindex=\\\"-1\\\" data-slot=\\\"dropdown-menu-item\\\" data-variant=\\\"default\\\" class=\\\"relative flex w-full...\\\">\",\u001b[39m\n\u001b[31m+                 \"target\": Array [\u001b[39m\n\u001b[31m+                   \".rounded-md.text-start[data-slot=\\\"dropdown-menu-item\\\"]:nth-child(2)\",\u001b[39m\n\u001b[31m+                 ],\u001b[39m\n\u001b[31m+               },\u001b[39m\n\u001b[31m+             ],\u001b[39m\n\u001b[31m+           },\u001b[39m\n\u001b[31m+         ],\u001b[39m\n\u001b[31m+         \"failureSummary\": \"Fix any of the following:\u001b[39m\n\u001b[31m+   Element has insufficient color contrast of 4.13 (foreground color: #67787c, background color: #f1f3f3, font size: 13.5pt (18px), font weight: normal). Expected contrast ratio of 4.5:1\",\u001b[39m\n\u001b[31m+         \"html\": \"<span data-slot=\\\"dropdown-menu-shortcut\\\" class=\\\"ms-auto text-xs tracking-widest text-muted-foreground\\\">⌘N</span>\",\u001b[39m\n\u001b[31m+         \"impact\": \"serious\",\u001b[39m\n\u001b[31m+         \"none\": Array [],\u001b[39m\n\u001b[31m+         \"target\": Array [\u001b[39m\n\u001b[31m+           \"span[data-slot=\\\"dropdown-menu-shortcut\\\"]\",\u001b[39m\n\u001b[31m+         ],\u001b[39m\n\u001b[31m+       },\u001b[39m\n\u001b[31m+       Object {\u001b[39m\n\u001b[31m+         \"all\": Array [],\u001b[39m\n\u001b[31m+         \"any\": Array [\u001b[39m\n\u001b[31m+           Object {\u001b[39m\n\u001b[31m+             \"data\": Object {\u001b[39m\n\u001b[31m+               \"bgColor\": \"#f1f3f3\",\u001b[39m\n\u001b[31m+               \"contrastRatio\": 4.13,\u001b[39m\n\u001b[31m+               \"expectedContrastRatio\": \"4.5:1\",\u001b[39m\n\u001b[31m+               \"fgColor\": \"#67787c\",\u001b[39m\n\u001b[31m+               \"fontSize\": \"13.5pt (18px)\",\u001b[39m\n\u001b[31m+               \"fontWeight\": \"normal\",\u001b[39m\n\u001b[31m+               \"messageKey\": null,\u001b[39m\n\u001b[31m+             },\u001b[39m\n\u001b[31m+             \"id\": \"color-contrast\",\u001b[39m\n\u001b[31m+             \"impact\": \"serious\",\u001b[39m\n\u001b[31m+             \"message\": \"Element has insufficient color contrast of 4.13 (foreground color: #67787c, background color: #f1f3f3, font size: 13.5pt (18px), font weight: normal). Expected contrast ratio of 4.5:1\",\u001b[39m\n\u001b[31m+             \"relatedNodes\": Array [\u001b[39m\n\u001b[31m+               Object {\u001b[39m\n\u001b[31m+                 \"html\": \"<div id=\\\"command-cl-12-cl-14\\\" role=\\\"option\\\" tabindex=\\\"-1\\\" aria-selected=\\\"true\\\" data-slot=\\\"command-item\\\" class=\\\"relative flex cursor...\\\" data-selected=\\\"\\\">\",\u001b[39m\n\u001b[31m+                 \"target\": Array [\u001b[39m\n\u001b[31m+                   \"#command-cl-12-cl-14\",\u001b[39m\n\u001b[31m+                 ],\u001b[39m\n\u001b[31m+               },\u001b[39m\n\u001b[31m+             ],\u001b[39m\n\u001b[31m+           },\u001b[39m\n\u001b[31m+         ],\u001b[39m\n\u001b[31m+         \"failureSummary\": \"Fix any of the following:\u001b[39m\n\u001b[31m+   Element has insufficient color contrast of 4.13 (foreground color: #67787c, background color: #f1f3f3, font size: 13.5pt (18px), font weight: normal). Expected contrast ratio of 4.5:1\",\u001b[39m\n\u001b[31m+         \"html\": \"<span data-slot=\\\"command-shortcut\\\" class=\\\"ms-auto text-xs tracking-widest text-muted-foreground\\\">⌘K N</span>\",\u001b[39m\n\u001b[31m+         \"impact\": \"serious\",\u001b[39m\n\u001b[31m+         \"none\": Array [],\u001b[39m\n\u001b[31m+         \"target\": Array [\u001b[39m\n\u001b[31m+           \"span[data-slot=\\\"command-shortcut\\\"]\",\u001b[39m\n\u001b[31m+         ],\u001b[39m\n\u001b[31m+       },\u001b[39m\n\u001b[31m+     ],\u001b[39m\n\u001b[31m+     \"tags\": Array [\u001b[39m\n\u001b[31m+       \"cat.color\",\u001b[39m\n\u001b[31m+       \"wcag2aa\",\u001b[39m\n\u001b[31m+       \"wcag143\",\u001b[39m\n\u001b[31m+       \"TTv5\",\u001b[39m\n\u001b[31m+       \"TT13.c\",\u001b[39m\n\u001b[31m+       \"EN-301-549\",\u001b[39m\n\u001b[31m+       \"EN-9.1.4.3\",\u001b[39m\n\u001b[31m+       \"ACT\",\u001b[39m\n\u001b[31m+       \"RGAAv4\",\u001b[39m\n\u001b[31m+       \"RGAA-3.2.1\",\u001b[39m\n\u001b[31m+     ],\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  -   1\u001b[39m\n\u001b[31m+ Received  + 181\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"description\": \"Ensure an element's role supports its ARIA attributes\",\u001b[39m\n\u001b[31m+     \"help\": \"Elements must only use supported ARIA attributes\",\u001b[39m\n\u001b[31m+     \"helpUrl\": \"https://dequeuniversity.com/rules/axe/4.11/aria-allowed-attr?application=playwright\",\u001b[39m\n\u001b[31m+     \"id\": \"aria-allowed-attr\",\u001b[39m\n\u001b[31m+     \"impact\": \"critical\",\u001b[39m\n\u001b[31m+     \"nodes\": Array [\u001b[39m\n\u001b[31m+       Object {\u001b[39m\n\u001b[31m+         \"all\": Array [\u001b[39m\n\u001b[31m+           Object {\u001b[39m\n\u001b[31m+             \"data\": Array [\u001b[39m\n\u001b[31m+               \"aria-expanded=\\\"false\\\"\",\u001b[39m\n\u001b[31m+             ],\u001b[39m\n\u001b[31m+             \"id\": \"aria-allowed-attr\",\u001b[39m\n\u001b[31m+             \"impact\": \"critical\",\u001b[39m\n\u001b[31m+             \"message\": \"ARIA attribute is not allowed: aria-expanded=\\\"false\\\"\",\u001b[39m\n\u001b[31m+             \"relatedNodes\": Array [],\u001b[39m\n\u001b[31m+           },\u001b[39m\n\u001b[31m+         ],\u001b[39m\n\u001b[31m+         \"any\": Array [],\u001b[39m\n\u001b[31m+         \"failureSummary\": \"Fix all of the following:\u001b[39m\n\u001b[31m+   ARIA attribute is not allowed: aria-expanded=\\\"false\\\"\",\u001b[39m\n\u001b[31m+         \"html\": \"<div class=\\\"rounded-xl border border-dashed p-8 text-center text-sm focus-visible:ring-2 focus-visible:ring-ring\\\" tabindex=\\\"0\\\" id=\\\"menu-cl-1-trigger\\\" data-slot=\\\"context-menu-trigger\\\" aria-haspopup=\\\"menu\\\" aria-expanded=\\\"false\\\" aria-controls=\\\"menu-cl-1\\\">\",\u001b[39m\n\u001b[31m+         \"impact\": \"critical\",\u001b[39m\n\u001b[31m+         \"none\": Array [],\u001b[39m\n\u001b[31m+         \"target\": Array [\u001b[39m\n\u001b[31m+           \"#menu-cl-1-trigger\",\u001b[39m\n\u001b[31m+         ],\u001b[39m\n\u001b[31m+       },\u001b[39m\n\u001b[31m+     ],\u001b[39m\n\u001b[31m+     \"tags\": Array [\u001b[39m\n\u001b[31m+       \"cat.aria\",\u001b[39m\n\u001b[31m+       \"wcag2a\",\u001b[39m\n\u001b[31m+       \"wcag412\",\u001b[39m\n\u001b[31m+       \"EN-301-549\",\u001b[39m\n\u001b[31m+       \"EN-9.4.1.2\",\u001b[39m\n\u001b[31m+       \"RGAAv4\",\u001b[39m\n\u001b[31m+       \"RGAA-7.1.1\",\u001b[39m\n\u001b[31m+     ],\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"description\": \"Ensure elements with an ARIA role that require child roles contain them\",\u001b[39m\n\u001b[31m+     \"help\": \"Certain ARIA roles must contain particular children\",\u001b[39m\n\u001b[31m+     \"helpUrl\": \"https://dequeuniversity.com/rules/axe/4.11/aria-required-children?application=playwright\",\u001b[39m\n\u001b[31m+     \"id\": \"aria-required-children\",\u001b[39m\n\u001b[31m+     \"impact\": \"critical\",\u001b[39m\n\u001b[31m+     \"nodes\": Array [\u001b[39m\n\u001b[31m+       Object {\u001b[39m\n\u001b[31m+         \"all\": Array [],\u001b[39m\n\u001b[31m+         \"any\": Array [\u001b[39m\n\u001b[31m+           Object {\u001b[39m\n\u001b[31m+             \"data\": Object {\u001b[39m\n\u001b[31m+               \"messageKey\": \"unallowed\",\u001b[39m\n\u001b[31m+               \"values\": \"[role=separator]\",\u001b[39m\n\u001b[31m+             },\u001b[39m\n\u001b[31m+             \"id\": \"aria-required-children\",\u001b[39m\n\u001b[31m+             \"impact\": \"critical\",\u001b[39m\n\u001b[31m+             \"message\": \"Element has children which are not allowed: [role=separator]\",\u001b[39m\n\u001b[31m+             \"relatedNodes\": Array [\u001b[39m\n\u001b[31m+               Object {\u001b[39m\n\u001b[31m+                 \"html\": \"<div role=\\\"separator\\\" data-slot=\\\"command-separator\\\" class=\\\"-mx-1 h-px bg-border\\\"></div>\",\u001b[39m\n\u001b[31m+                 \"target\": Array [\u001b[39m\n\u001b[31m+                   \"div[data-slot=\\\"command-separator\\\"]\",\u001b[39m\n\u001b[31m+                 ],\u001b[39m\n\u001b[31m+               },\u001b[39m\n\u001b[31m+             ],\u001b[39m\n\u001b[31m+           },\u001b[39m\n\u001b[31m+         ],\u001b[39m\n\u001b[31m+         \"failureSummary\": \"Fix any of the following:\u001b[39m\n\u001b[31m+   Element has children which are not allowed: [role=separator]\",\u001b[39m\n\u001b[31m+         \"html\": \"<div id=\\\"command-cl-12-list\\\" role=\\\"listbox\\\" aria-label=\\\"Commands\\\" data-slot=\\\"command-list\\\" class=\\\"max-h-72 scroll-py-1 overflow-x-hidden overflow-y-auto outline-none\\\">\",\u001b[39m\n\u001b[31m+         \"impact\": \"critical\",\u001b[39m\n\u001b[31m+         \"none\": Array [],\u001b[39m\n\u001b[31m+         \"target\": Array [\u001b[39m\n\u001b[31m+           \"#command-cl-12-list\",\u001b[39m\n\u001b[31m+         ],\u001b[39m\n\u001b[31m+       },\u001b[39m\n\u001b[31m+     ],\u001b[39m\n\u001b[31m+     \"tags\": Array [\u001b[39m\n\u001b[31m+       \"cat.aria\",\u001b[39m\n\u001b[31m+       \"wcag2a\",\u001b[39m\n\u001b[31m+       \"wcag131\",\u001b[39m\n\u001b[31m+       \"EN-301-549\",\u001b[39m\n\u001b[31m+       \"EN-9.1.3.1\",\u001b[39m\n\u001b[31m+       \"RGAAv4\",\u001b[39m\n\u001b[31m+       \"RGAA-9.3.1\",\u001b[39m\n\u001b[31m+     ],\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"description\": \"Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds\",\u001b[39m\n\u001b[31m+     \"help\": \"Elements must meet minimum color contrast ratio thresholds\",\u001b[39m\n\u001b[31m+     \"helpUrl\": \"https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright\",\u001b[39m\n\u001b[31m+     \"id\": \"color-contrast\",\u001b[39m\n\u001b[31m+     \"impact\": \"serious\",\u001b[39m\n\u001b[31m+     \"nodes\": Array [\u001b[39m\n\u001b[31m+       Object {\u001b[39m\n\u001b[31m+         \"all\": Array [],\u001b[39m\n\u001b[31m+         \"any\": Array [\u001b[39m\n\u001b[31m+           Object {\u001b[39m\n\u001b[31m+             \"data\": Object {\u001b[39m\n\u001b[31m+               \"bgColor\": \"#f1f3f3\",\u001b[39m\n\u001b[31m+               \"contrastRatio\": 4.13,\u001b[39m\n\u001b[31m+               \"expectedContrastRatio\": \"4.5:1\",\u001b[39m\n\u001b[31m+               \"fgColor\": \"#67787c\",\u001b[39m\n\u001b[31m+               \"fontSize\": \"13.5pt (18px)\",\u001b[39m\n\u001b[31m+               \"fontWeight\": \"normal\",\u001b[39m\n\u001b[31m+               \"messageKey\": null,\u001b[39m\n\u001b[31m+             },\u001b[39m\n\u001b[31m+             \"id\": \"color-contrast\",\u001b[39m\n\u001b[31m+             \"impact\": \"serious\",\u001b[39m\n\u001b[31m+             \"message\": \"Element has insufficient color contrast of 4.13 (foreground color: #67787c, background color: #f1f3f3, font size: 13.5pt (18px), font weight: normal). Expected contrast ratio of 4.5:1\",\u001b[39m\n\u001b[31m+             \"relatedNodes\": Array [\u001b[39m\n\u001b[31m+               Object {\u001b[39m\n\u001b[31m+                 \"html\": \"<button type=\\\"button\\\" role=\\\"menuitem\\\" tabindex=\\\"-1\\\" data-slot=\\\"dropdown-menu-item\\\" data-variant=\\\"default\\\" class=\\\"relative flex w-full...\\\">\",\u001b[39m\n\u001b[31m+                 \"target\": Array [\u001b[39m\n\u001b[31m+                   \".rounded-md.text-start[data-slot=\\\"dropdown-menu-item\\\"]:nth-child(2)\",\u001b[39m\n\u001b[31m+                 ],\u001b[39m\n\u001b[31m+               },\u001b[39m\n\u001b[31m+             ],\u001b[39m\n\u001b[31m+           },\u001b[39m\n\u001b[31m+         ],\u001b[39m\n\u001b[31m+         \"failureSummary\": \"Fix any of the following:\u001b[39m\n\u001b[31m+   Element has insufficient color contrast of 4.13 (foreground color: #67787c, background color: #f1f3f3, font size: 13.5pt (18px), font weight: normal). Expected contrast ratio of 4.5:1\",\u001b[39m\n\u001b[31m+         \"html\": \"<span data-slot=\\\"dropdown-menu-shortcut\\\" class=\\\"ms-auto text-xs tracking-widest text-muted-foreground\\\">⌘N</span>\",\u001b[39m\n\u001b[31m+         \"impact\": \"serious\",\u001b[39m\n\u001b[31m+         \"none\": Array [],\u001b[39m\n\u001b[31m+         \"target\": Array [\u001b[39m\n\u001b[31m+           \"span[data-slot=\\\"dropdown-menu-shortcut\\\"]\",\u001b[39m\n\u001b[31m+         ],\u001b[39m\n\u001b[31m+       },\u001b[39m\n\u001b[31m+       Object {\u001b[39m\n\u001b[31m+         \"all\": Array [],\u001b[39m\n\u001b[31m+         \"any\": Array [\u001b[39m\n\u001b[31m+           Object {\u001b[39m\n\u001b[31m+             \"data\": Object {\u001b[39m\n\u001b[31m+               \"bgColor\": \"#f1f3f3\",\u001b[39m\n\u001b[31m+               \"contrastRatio\": 4.13,\u001b[39m\n\u001b[31m+               \"expectedContrastRatio\": \"4.5:1\",\u001b[39m\n\u001b[31m+               \"fgColor\": \"#67787c\",\u001b[39m\n\u001b[31m+               \"fontSize\": \"13.5pt (18px)\",\u001b[39m\n\u001b[31m+               \"fontWeight\": \"normal\",\u001b[39m\n\u001b[31m+               \"messageKey\": null,\u001b[39m\n\u001b[31m+             },\u001b[39m\n\u001b[31m+             \"id\": \"color-contrast\",\u001b[39m\n\u001b[31m+             \"impact\": \"serious\",\u001b[39m\n\u001b[31m+             \"message\": \"Element has insufficient color contrast of 4.13 (foreground color: #67787c, background color: #f1f3f3, font size: 13.5pt (18px), font weight: normal). Expected contrast ratio of 4.5:1\",\u001b[39m\n\u001b[31m+             \"relatedNodes\": Array [\u001b[39m\n\u001b[31m+               Object {\u001b[39m\n\u001b[31m+                 \"html\": \"<div id=\\\"command-cl-12-cl-14\\\" role=\\\"option\\\" tabindex=\\\"-1\\\" aria-selected=\\\"true\\\" data-slot=\\\"command-item\\\" class=\\\"relative flex cursor...\\\" data-selected=\\\"\\\">\",\u001b[39m\n\u001b[31m+                 \"target\": Array [\u001b[39m\n\u001b[31m+                   \"#command-cl-12-cl-14\",\u001b[39m\n\u001b[31m+                 ],\u001b[39m\n\u001b[31m+               },\u001b[39m\n\u001b[31m+             ],\u001b[39m\n\u001b[31m+           },\u001b[39m\n\u001b[31m+         ],\u001b[39m\n\u001b[31m+         \"failureSummary\": \"Fix any of the following:\u001b[39m\n\u001b[31m+   Element has insufficient color contrast of 4.13 (foreground color: #67787c, background color: #f1f3f3, font size: 13.5pt (18px), font weight: normal). Expected contrast ratio of 4.5:1\",\u001b[39m\n\u001b[31m+         \"html\": \"<span data-slot=\\\"command-shortcut\\\" class=\\\"ms-auto text-xs tracking-widest text-muted-foreground\\\">⌘K N</span>\",\u001b[39m\n\u001b[31m+         \"impact\": \"serious\",\u001b[39m\n\u001b[31m+         \"none\": Array [],\u001b[39m\n\u001b[31m+         \"target\": Array [\u001b[39m\n\u001b[31m+           \"span[data-slot=\\\"command-shortcut\\\"]\",\u001b[39m\n\u001b[31m+         ],\u001b[39m\n\u001b[31m+       },\u001b[39m\n\u001b[31m+     ],\u001b[39m\n\u001b[31m+     \"tags\": Array [\u001b[39m\n\u001b[31m+       \"cat.color\",\u001b[39m\n\u001b[31m+       \"wcag2aa\",\u001b[39m\n\u001b[31m+       \"wcag143\",\u001b[39m\n\u001b[31m+       \"TTv5\",\u001b[39m\n\u001b[31m+       \"TT13.c\",\u001b[39m\n\u001b[31m+       \"EN-301-549\",\u001b[39m\n\u001b[31m+       \"EN-9.1.4.3\",\u001b[39m\n\u001b[31m+       \"ACT\",\u001b[39m\n\u001b[31m+       \"RGAAv4\",\u001b[39m\n\u001b[31m+       \"RGAA-3.2.1\",\u001b[39m\n\u001b[31m+     ],\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/catalog-menus.ts:16:600",
+                    "location": {
+                      "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/catalog-menus.ts",
+                      "column": 600,
+                      "line": 16
+                    },
+                    "snippet": "  14 |  test('Command searches keywords, handles empty results and executes only an enabled selection',async({page})=>{const input=page.getByRole('combobox',{name:'Search workspace commands'});await input.fill('preferences');await expect(page.getByRole('option',{name:'Open settings'})).toBeVisible();await expect(page.getByRole('option')).toHaveCount(1);await input.press('Enter');await expect(page.getByTestId('menu-result')).toHaveText('Open settings');await input.fill('missing');await expect(page.getByRole('listbox',{name:'Commands',exact:true}).getByRole('status')).toHaveText('No matching commands');await input.fill('');await input.press('End');await expect(page.getByRole('option',{name:'Read documentation'})).toHaveAttribute('aria-selected','true');await input.press('ArrowUp');await expect(page.getByRole('option',{name:'Open settings'})).toHaveAttribute('aria-selected','true');await expect(input).toBeFocused();});\n  15 |  test('Command dialog and dropdown inside a modal close independently and restore native focus',async({page})=>{const opener=page.getByRole('button',{name:'Open command palette'});await opener.press('Enter');await expect(page.getByRole('combobox',{name:'Search palette'})).toBeFocused();await page.keyboard.press('Enter');await expect(page.getByRole('dialog')).toHaveCount(0);await expect(opener).toBeFocused();await page.getByRole('button',{name:'Open menu dialog'}).press('Enter');const dialog=page.getByRole('dialog',{name:'Actions in a dialog'});const trigger=dialog.getByRole('button',{name:'Nested actions'});await trigger.press('Enter');await expect(page.getByRole('menuitem',{name:'Run nested action'})).toBeFocused();await page.keyboard.press('Escape');await expect(dialog).toBeVisible();await expect(trigger).toBeFocused();await page.keyboard.press('Escape');await expect(dialog).toHaveCount(0);});\n> 16 |  for(const dark of [false,true])test(`Menus ${dark?'dark':'light'} enlarged mobile layouts and accessibility`,async({page})=>{await page.setViewportSize({width:390,height:844});await page.goto(`/?catalog-menus${dark?'&dark':''}`);await page.evaluate(()=>document.documentElement.style.fontSize='24px');await page.getByRole('button',{name:'Document actions',exact:true}).click();const menu=page.getByRole('menu');const box=(await menu.boundingBox())!;expect(box.x).toBeGreaterThanOrEqual(0);expect(box.x+box.width).toBeLessThanOrEqual(391);expect((await new AxeBuilder({page}).analyze()).violations).toEqual([]);await page.keyboard.press('Escape');await page.getByRole('button',{name:'Open command palette'}).click();expect((await new AxeBuilder({page}).analyze()).violations).toEqual([]);});\n     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ^\n  17 | }\n  18 |"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/catalog-menus.ts",
+                        "column": 600,
+                        "line": 16
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  -   1\u001b[39m\n\u001b[31m+ Received  + 181\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"description\": \"Ensure an element's role supports its ARIA attributes\",\u001b[39m\n\u001b[31m+     \"help\": \"Elements must only use supported ARIA attributes\",\u001b[39m\n\u001b[31m+     \"helpUrl\": \"https://dequeuniversity.com/rules/axe/4.11/aria-allowed-attr?application=playwright\",\u001b[39m\n\u001b[31m+     \"id\": \"aria-allowed-attr\",\u001b[39m\n\u001b[31m+     \"impact\": \"critical\",\u001b[39m\n\u001b[31m+     \"nodes\": Array [\u001b[39m\n\u001b[31m+       Object {\u001b[39m\n\u001b[31m+         \"all\": Array [\u001b[39m\n\u001b[31m+           Object {\u001b[39m\n\u001b[31m+             \"data\": Array [\u001b[39m\n\u001b[31m+               \"aria-expanded=\\\"false\\\"\",\u001b[39m\n\u001b[31m+             ],\u001b[39m\n\u001b[31m+             \"id\": \"aria-allowed-attr\",\u001b[39m\n\u001b[31m+             \"impact\": \"critical\",\u001b[39m\n\u001b[31m+             \"message\": \"ARIA attribute is not allowed: aria-expanded=\\\"false\\\"\",\u001b[39m\n\u001b[31m+             \"relatedNodes\": Array [],\u001b[39m\n\u001b[31m+           },\u001b[39m\n\u001b[31m+         ],\u001b[39m\n\u001b[31m+         \"any\": Array [],\u001b[39m\n\u001b[31m+         \"failureSummary\": \"Fix all of the following:\u001b[39m\n\u001b[31m+   ARIA attribute is not allowed: aria-expanded=\\\"false\\\"\",\u001b[39m\n\u001b[31m+         \"html\": \"<div class=\\\"rounded-xl border border-dashed p-8 text-center text-sm focus-visible:ring-2 focus-visible:ring-ring\\\" tabindex=\\\"0\\\" id=\\\"menu-cl-1-trigger\\\" data-slot=\\\"context-menu-trigger\\\" aria-haspopup=\\\"menu\\\" aria-expanded=\\\"false\\\" aria-controls=\\\"menu-cl-1\\\">\",\u001b[39m\n\u001b[31m+         \"impact\": \"critical\",\u001b[39m\n\u001b[31m+         \"none\": Array [],\u001b[39m\n\u001b[31m+         \"target\": Array [\u001b[39m\n\u001b[31m+           \"#menu-cl-1-trigger\",\u001b[39m\n\u001b[31m+         ],\u001b[39m\n\u001b[31m+       },\u001b[39m\n\u001b[31m+     ],\u001b[39m\n\u001b[31m+     \"tags\": Array [\u001b[39m\n\u001b[31m+       \"cat.aria\",\u001b[39m\n\u001b[31m+       \"wcag2a\",\u001b[39m\n\u001b[31m+       \"wcag412\",\u001b[39m\n\u001b[31m+       \"EN-301-549\",\u001b[39m\n\u001b[31m+       \"EN-9.4.1.2\",\u001b[39m\n\u001b[31m+       \"RGAAv4\",\u001b[39m\n\u001b[31m+       \"RGAA-7.1.1\",\u001b[39m\n\u001b[31m+     ],\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"description\": \"Ensure elements with an ARIA role that require child roles contain them\",\u001b[39m\n\u001b[31m+     \"help\": \"Certain ARIA roles must contain particular children\",\u001b[39m\n\u001b[31m+     \"helpUrl\": \"https://dequeuniversity.com/rules/axe/4.11/aria-required-children?application=playwright\",\u001b[39m\n\u001b[31m+     \"id\": \"aria-required-children\",\u001b[39m\n\u001b[31m+     \"impact\": \"critical\",\u001b[39m\n\u001b[31m+     \"nodes\": Array [\u001b[39m\n\u001b[31m+       Object {\u001b[39m\n\u001b[31m+         \"all\": Array [],\u001b[39m\n\u001b[31m+         \"any\": Array [\u001b[39m\n\u001b[31m+           Object {\u001b[39m\n\u001b[31m+             \"data\": Object {\u001b[39m\n\u001b[31m+               \"messageKey\": \"unallowed\",\u001b[39m\n\u001b[31m+               \"values\": \"[role=separator]\",\u001b[39m\n\u001b[31m+             },\u001b[39m\n\u001b[31m+             \"id\": \"aria-required-children\",\u001b[39m\n\u001b[31m+             \"impact\": \"critical\",\u001b[39m\n\u001b[31m+             \"message\": \"Element has children which are not allowed: [role=separator]\",\u001b[39m\n\u001b[31m+             \"relatedNodes\": Array [\u001b[39m\n\u001b[31m+               Object {\u001b[39m\n\u001b[31m+                 \"html\": \"<div role=\\\"separator\\\" data-slot=\\\"command-separator\\\" class=\\\"-mx-1 h-px bg-border\\\"></div>\",\u001b[39m\n\u001b[31m+                 \"target\": Array [\u001b[39m\n\u001b[31m+                   \"div[data-slot=\\\"command-separator\\\"]\",\u001b[39m\n\u001b[31m+                 ],\u001b[39m\n\u001b[31m+               },\u001b[39m\n\u001b[31m+             ],\u001b[39m\n\u001b[31m+           },\u001b[39m\n\u001b[31m+         ],\u001b[39m\n\u001b[31m+         \"failureSummary\": \"Fix any of the following:\u001b[39m\n\u001b[31m+   Element has children which are not allowed: [role=separator]\",\u001b[39m\n\u001b[31m+         \"html\": \"<div id=\\\"command-cl-12-list\\\" role=\\\"listbox\\\" aria-label=\\\"Commands\\\" data-slot=\\\"command-list\\\" class=\\\"max-h-72 scroll-py-1 overflow-x-hidden overflow-y-auto outline-none\\\">\",\u001b[39m\n\u001b[31m+         \"impact\": \"critical\",\u001b[39m\n\u001b[31m+         \"none\": Array [],\u001b[39m\n\u001b[31m+         \"target\": Array [\u001b[39m\n\u001b[31m+           \"#command-cl-12-list\",\u001b[39m\n\u001b[31m+         ],\u001b[39m\n\u001b[31m+       },\u001b[39m\n\u001b[31m+     ],\u001b[39m\n\u001b[31m+     \"tags\": Array [\u001b[39m\n\u001b[31m+       \"cat.aria\",\u001b[39m\n\u001b[31m+       \"wcag2a\",\u001b[39m\n\u001b[31m+       \"wcag131\",\u001b[39m\n\u001b[31m+       \"EN-301-549\",\u001b[39m\n\u001b[31m+       \"EN-9.1.3.1\",\u001b[39m\n\u001b[31m+       \"RGAAv4\",\u001b[39m\n\u001b[31m+       \"RGAA-9.3.1\",\u001b[39m\n\u001b[31m+     ],\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+   Object {\u001b[39m\n\u001b[31m+     \"description\": \"Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds\",\u001b[39m\n\u001b[31m+     \"help\": \"Elements must meet minimum color contrast ratio thresholds\",\u001b[39m\n\u001b[31m+     \"helpUrl\": \"https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright\",\u001b[39m\n\u001b[31m+     \"id\": \"color-contrast\",\u001b[39m\n\u001b[31m+     \"impact\": \"serious\",\u001b[39m\n\u001b[31m+     \"nodes\": Array [\u001b[39m\n\u001b[31m+       Object {\u001b[39m\n\u001b[31m+         \"all\": Array [],\u001b[39m\n\u001b[31m+         \"any\": Array [\u001b[39m\n\u001b[31m+           Object {\u001b[39m\n\u001b[31m+             \"data\": Object {\u001b[39m\n\u001b[31m+               \"bgColor\": \"#f1f3f3\",\u001b[39m\n\u001b[31m+               \"contrastRatio\": 4.13,\u001b[39m\n\u001b[31m+               \"expectedContrastRatio\": \"4.5:1\",\u001b[39m\n\u001b[31m+               \"fgColor\": \"#67787c\",\u001b[39m\n\u001b[31m+               \"fontSize\": \"13.5pt (18px)\",\u001b[39m\n\u001b[31m+               \"fontWeight\": \"normal\",\u001b[39m\n\u001b[31m+               \"messageKey\": null,\u001b[39m\n\u001b[31m+             },\u001b[39m\n\u001b[31m+             \"id\": \"color-contrast\",\u001b[39m\n\u001b[31m+             \"impact\": \"serious\",\u001b[39m\n\u001b[31m+             \"message\": \"Element has insufficient color contrast of 4.13 (foreground color: #67787c, background color: #f1f3f3, font size: 13.5pt (18px), font weight: normal). Expected contrast ratio of 4.5:1\",\u001b[39m\n\u001b[31m+             \"relatedNodes\": Array [\u001b[39m\n\u001b[31m+               Object {\u001b[39m\n\u001b[31m+                 \"html\": \"<button type=\\\"button\\\" role=\\\"menuitem\\\" tabindex=\\\"-1\\\" data-slot=\\\"dropdown-menu-item\\\" data-variant=\\\"default\\\" class=\\\"relative flex w-full...\\\">\",\u001b[39m\n\u001b[31m+                 \"target\": Array [\u001b[39m\n\u001b[31m+                   \".rounded-md.text-start[data-slot=\\\"dropdown-menu-item\\\"]:nth-child(2)\",\u001b[39m\n\u001b[31m+                 ],\u001b[39m\n\u001b[31m+               },\u001b[39m\n\u001b[31m+             ],\u001b[39m\n\u001b[31m+           },\u001b[39m\n\u001b[31m+         ],\u001b[39m\n\u001b[31m+         \"failureSummary\": \"Fix any of the following:\u001b[39m\n\u001b[31m+   Element has insufficient color contrast of 4.13 (foreground color: #67787c, background color: #f1f3f3, font size: 13.5pt (18px), font weight: normal). Expected contrast ratio of 4.5:1\",\u001b[39m\n\u001b[31m+         \"html\": \"<span data-slot=\\\"dropdown-menu-shortcut\\\" class=\\\"ms-auto text-xs tracking-widest text-muted-foreground\\\">⌘N</span>\",\u001b[39m\n\u001b[31m+         \"impact\": \"serious\",\u001b[39m\n\u001b[31m+         \"none\": Array [],\u001b[39m\n\u001b[31m+         \"target\": Array [\u001b[39m\n\u001b[31m+           \"span[data-slot=\\\"dropdown-menu-shortcut\\\"]\",\u001b[39m\n\u001b[31m+         ],\u001b[39m\n\u001b[31m+       },\u001b[39m\n\u001b[31m+       Object {\u001b[39m\n\u001b[31m+         \"all\": Array [],\u001b[39m\n\u001b[31m+         \"any\": Array [\u001b[39m\n\u001b[31m+           Object {\u001b[39m\n\u001b[31m+             \"data\": Object {\u001b[39m\n\u001b[31m+               \"bgColor\": \"#f1f3f3\",\u001b[39m\n\u001b[31m+               \"contrastRatio\": 4.13,\u001b[39m\n\u001b[31m+               \"expectedContrastRatio\": \"4.5:1\",\u001b[39m\n\u001b[31m+               \"fgColor\": \"#67787c\",\u001b[39m\n\u001b[31m+               \"fontSize\": \"13.5pt (18px)\",\u001b[39m\n\u001b[31m+               \"fontWeight\": \"normal\",\u001b[39m\n\u001b[31m+               \"messageKey\": null,\u001b[39m\n\u001b[31m+             },\u001b[39m\n\u001b[31m+             \"id\": \"color-contrast\",\u001b[39m\n\u001b[31m+             \"impact\": \"serious\",\u001b[39m\n\u001b[31m+             \"message\": \"Element has insufficient color contrast of 4.13 (foreground color: #67787c, background color: #f1f3f3, font size: 13.5pt (18px), font weight: normal). Expected contrast ratio of 4.5:1\",\u001b[39m\n\u001b[31m+             \"relatedNodes\": Array [\u001b[39m\n\u001b[31m+               Object {\u001b[39m\n\u001b[31m+                 \"html\": \"<div id=\\\"command-cl-12-cl-14\\\" role=\\\"option\\\" tabindex=\\\"-1\\\" aria-selected=\\\"true\\\" data-slot=\\\"command-item\\\" class=\\\"relative flex cursor...\\\" data-selected=\\\"\\\">\",\u001b[39m\n\u001b[31m+                 \"target\": Array [\u001b[39m\n\u001b[31m+                   \"#command-cl-12-cl-14\",\u001b[39m\n\u001b[31m+                 ],\u001b[39m\n\u001b[31m+               },\u001b[39m\n\u001b[31m+             ],\u001b[39m\n\u001b[31m+           },\u001b[39m\n\u001b[31m+         ],\u001b[39m\n\u001b[31m+         \"failureSummary\": \"Fix any of the following:\u001b[39m\n\u001b[31m+   Element has insufficient color contrast of 4.13 (foreground color: #67787c, background color: #f1f3f3, font size: 13.5pt (18px), font weight: normal). Expected contrast ratio of 4.5:1\",\u001b[39m\n\u001b[31m+         \"html\": \"<span data-slot=\\\"command-shortcut\\\" class=\\\"ms-auto text-xs tracking-widest text-muted-foreground\\\">⌘K N</span>\",\u001b[39m\n\u001b[31m+         \"impact\": \"serious\",\u001b[39m\n\u001b[31m+         \"none\": Array [],\u001b[39m\n\u001b[31m+         \"target\": Array [\u001b[39m\n\u001b[31m+           \"span[data-slot=\\\"command-shortcut\\\"]\",\u001b[39m\n\u001b[31m+         ],\u001b[39m\n\u001b[31m+       },\u001b[39m\n\u001b[31m+     ],\u001b[39m\n\u001b[31m+     \"tags\": Array [\u001b[39m\n\u001b[31m+       \"cat.color\",\u001b[39m\n\u001b[31m+       \"wcag2aa\",\u001b[39m\n\u001b[31m+       \"wcag143\",\u001b[39m\n\u001b[31m+       \"TTv5\",\u001b[39m\n\u001b[31m+       \"TT13.c\",\u001b[39m\n\u001b[31m+       \"EN-301-549\",\u001b[39m\n\u001b[31m+       \"EN-9.1.4.3\",\u001b[39m\n\u001b[31m+       \"ACT\",\u001b[39m\n\u001b[31m+       \"RGAAv4\",\u001b[39m\n\u001b[31m+       \"RGAA-3.2.1\",\u001b[39m\n\u001b[31m+     ],\u001b[39m\n\u001b[31m+   },\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n  14 |  test('Command searches keywords, handles empty results and executes only an enabled selection',async({page})=>{const input=page.getByRole('combobox',{name:'Search workspace commands'});await input.fill('preferences');await expect(page.getByRole('option',{name:'Open settings'})).toBeVisible();await expect(page.getByRole('option')).toHaveCount(1);await input.press('Enter');await expect(page.getByTestId('menu-result')).toHaveText('Open settings');await input.fill('missing');await expect(page.getByRole('listbox',{name:'Commands',exact:true}).getByRole('status')).toHaveText('No matching commands');await input.fill('');await input.press('End');await expect(page.getByRole('option',{name:'Read documentation'})).toHaveAttribute('aria-selected','true');await input.press('ArrowUp');await expect(page.getByRole('option',{name:'Open settings'})).toHaveAttribute('aria-selected','true');await expect(input).toBeFocused();});\n  15 |  test('Command dialog and dropdown inside a modal close independently and restore native focus',async({page})=>{const opener=page.getByRole('button',{name:'Open command palette'});await opener.press('Enter');await expect(page.getByRole('combobox',{name:'Search palette'})).toBeFocused();await page.keyboard.press('Enter');await expect(page.getByRole('dialog')).toHaveCount(0);await expect(opener).toBeFocused();await page.getByRole('button',{name:'Open menu dialog'}).press('Enter');const dialog=page.getByRole('dialog',{name:'Actions in a dialog'});const trigger=dialog.getByRole('button',{name:'Nested actions'});await trigger.press('Enter');await expect(page.getByRole('menuitem',{name:'Run nested action'})).toBeFocused();await page.keyboard.press('Escape');await expect(dialog).toBeVisible();await expect(trigger).toBeFocused();await page.keyboard.press('Escape');await expect(dialog).toHaveCount(0);});\n> 16 |  for(const dark of [false,true])test(`Menus ${dark?'dark':'light'} enlarged mobile layouts and accessibility`,async({page})=>{await page.setViewportSize({width:390,height:844});await page.goto(`/?catalog-menus${dark?'&dark':''}`);await page.evaluate(()=>document.documentElement.style.fontSize='24px');await page.getByRole('button',{name:'Document actions',exact:true}).click();const menu=page.getByRole('menu');const box=(await menu.boundingBox())!;expect(box.x).toBeGreaterThanOrEqual(0);expect(box.x+box.width).toBeLessThanOrEqual(391);expect((await new AxeBuilder({page}).analyze()).violations).toEqual([]);await page.keyboard.press('Escape');await page.getByRole('button',{name:'Open command palette'}).click();expect((await new AxeBuilder({page}).analyze()).violations).toEqual([]);});\n     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ^\n  17 | }\n  18 |\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/catalog-menus.ts:16:600"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T22:36:55.267Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/integration-catalog-menus--f7f33-e-layouts-and-accessibility-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/integration-catalog-menus--f7f33-e-layouts-and-accessibility-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/integration-catalog-menus--f7f33-e-layouts-and-accessibility-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/catalog-menus.ts",
+                    "column": 600,
+                    "line": 16
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "e117e5e4b357fa03df31-8b063f06a813b8565bf5",
+          "file": "catalog-menus.ts",
+          "line": 16,
+          "column": 33
+        },
+        {
+          "title": "Menus dark enlarged mobile layouts and accessibility",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e117e5e4b357fa03df31-dd42b2b57f09762e1cf1",
+          "file": "catalog-menus.ts",
+          "line": 16,
+          "column": 33
+        },
+        {
+          "title": "Dropdown keyboard navigation skips disabled actions, opens submenus and returns focus",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e117e5e4b357fa03df31-ed6405c262e44ff1e06d",
+          "file": "catalog-menus.ts",
+          "line": 7,
+          "column": 2
+        },
+        {
+          "title": "Dropdown cancels selection, changes preferences and keeps live accessible IDs",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e117e5e4b357fa03df31-f819140aeb3e8f82ba7d",
+          "file": "catalog-menus.ts",
+          "line": 8,
+          "column": 2
+        },
+        {
+          "title": "Dropdown Tab leaves naturally, native links navigate and outside pointer does not steal focus",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e117e5e4b357fa03df31-4f5a5c08f5b18d6b094a",
+          "file": "catalog-menus.ts",
+          "line": 9,
+          "column": 2
+        },
+        {
+          "title": "Dropdown hover opens a child without stealing focus and closes it when another action receives focus",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e117e5e4b357fa03df31-0d1a45bd0ecca900a0f3",
+          "file": "catalog-menus.ts",
+          "line": 10,
+          "column": 2
+        },
+        {
+          "title": "Context Menu positions at the pointer and supports keyboard invocation and nested commands",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e117e5e4b357fa03df31-a57f566f00605907587e",
+          "file": "catalog-menus.ts",
+          "line": 11,
+          "column": 2
+        },
+        {
+          "title": "Menubar roves across enabled triggers and changes an open menu in LTR and RTL",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e117e5e4b357fa03df31-ceb34e03f06ad4a56c90",
+          "file": "catalog-menus.ts",
+          "line": 12,
+          "column": 2
+        },
+        {
+          "title": "Navigation hover and keyboard expose native links in a shared viewport",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e117e5e4b357fa03df31-0da557cddc39bb0626ba",
+          "file": "catalog-menus.ts",
+          "line": 13,
+          "column": 2
+        },
+        {
+          "title": "Command searches keywords, handles empty results and executes only an enabled selection",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e117e5e4b357fa03df31-f03cc6a2ef8f7653b610",
+          "file": "catalog-menus.ts",
+          "line": 14,
+          "column": 2
+        },
+        {
+          "title": "Command dialog and dropdown inside a modal close independently and restore native focus",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e117e5e4b357fa03df31-f06c3c183029a640086d",
+          "file": "catalog-menus.ts",
+          "line": 15,
+          "column": 2
+        },
+        {
+          "title": "Menus light enlarged mobile layouts and accessibility",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e117e5e4b357fa03df31-8dcd79bdfc81932ce465",
+          "file": "catalog-menus.ts",
+          "line": 16,
+          "column": 33
+        },
+        {
+          "title": "Menus dark enlarged mobile layouts and accessibility",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e117e5e4b357fa03df31-722474bd5295084c9b5c",
+          "file": "catalog-menus.ts",
+          "line": 16,
+          "column": 33
+        },
+        {
+          "title": "Dropdown keyboard navigation skips disabled actions, opens submenus and returns focus",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e117e5e4b357fa03df31-90f6526b0861f262ca3f",
+          "file": "catalog-menus.ts",
+          "line": 7,
+          "column": 2
+        },
+        {
+          "title": "Dropdown cancels selection, changes preferences and keeps live accessible IDs",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e117e5e4b357fa03df31-f99e908a4a1e53273c79",
+          "file": "catalog-menus.ts",
+          "line": 8,
+          "column": 2
+        },
+        {
+          "title": "Dropdown Tab leaves naturally, native links navigate and outside pointer does not steal focus",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e117e5e4b357fa03df31-636cb13b794058c17835",
+          "file": "catalog-menus.ts",
+          "line": 9,
+          "column": 2
+        },
+        {
+          "title": "Dropdown hover opens a child without stealing focus and closes it when another action receives focus",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e117e5e4b357fa03df31-abc1406b30ab4aaabcb0",
+          "file": "catalog-menus.ts",
+          "line": 10,
+          "column": 2
+        },
+        {
+          "title": "Context Menu positions at the pointer and supports keyboard invocation and nested commands",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e117e5e4b357fa03df31-eeb1542d110a81e1f0e6",
+          "file": "catalog-menus.ts",
+          "line": 11,
+          "column": 2
+        },
+        {
+          "title": "Menubar roves across enabled triggers and changes an open menu in LTR and RTL",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e117e5e4b357fa03df31-7fe039a9c35d227dbcd5",
+          "file": "catalog-menus.ts",
+          "line": 12,
+          "column": 2
+        },
+        {
+          "title": "Navigation hover and keyboard expose native links in a shared viewport",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e117e5e4b357fa03df31-29716236b06b2b972ea0",
+          "file": "catalog-menus.ts",
+          "line": 13,
+          "column": 2
+        },
+        {
+          "title": "Command searches keywords, handles empty results and executes only an enabled selection",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e117e5e4b357fa03df31-c7f68caea94c85aee9fa",
+          "file": "catalog-menus.ts",
+          "line": 14,
+          "column": 2
+        },
+        {
+          "title": "Command dialog and dropdown inside a modal close independently and restore native focus",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e117e5e4b357fa03df31-0e9abe4356984cfc6d90",
+          "file": "catalog-menus.ts",
+          "line": 15,
+          "column": 2
+        },
+        {
+          "title": "Menus light enlarged mobile layouts and accessibility",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e117e5e4b357fa03df31-0773cd6226615dd076db",
+          "file": "catalog-menus.ts",
+          "line": 16,
+          "column": 33
+        },
+        {
+          "title": "Menus dark enlarged mobile layouts and accessibility",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e117e5e4b357fa03df31-8670d749f384e64239a5",
+          "file": "catalog-menus.ts",
+          "line": 16,
+          "column": 33
+        }
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "message": "\u001b[31mTesting stopped early after 1 maximum allowed failures.\u001b[39m"
+    }
+  ],
+  "stats": {
+    "startTime": "2026-10-08T22:36:48.845Z",
+    "duration": 7848.5960000000005,
+    "expected": 9,
+    "skipped": 23,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

@@ -3,7 +3,7 @@
 Initially audited 2026-10-08 against source at `314f27a`; updated with the
 [three-engine browser evidence](WEBKIT-DELIVERY.md) and
 [source hydration regression](HYDRATION-DELIVERY.md), including
-[real Loading boundaries](LOADING-HYDRATION-DELIVERY.md). Covers the **47
+[real Loading boundaries](LOADING-HYDRATION-DELIVERY.md). Covers the **52
 implemented component families**, including their compound parts. The other
 catalog entries in [COMPONENT-MAP.md](../COMPONENT-MAP.md) remain unimplemented;
 their adoption probes are not delivered-component acceptance tests.
@@ -43,13 +43,13 @@ are implementation scope limits, not features that an existing test proves.
 | Diagnostics and cleanup are checked | [Unit setup](../vitest.setup.ts), [browser fixture](../tests/browser-fixture.ts) | Every unit test checks console warn/error after cleanup; every B/E/H test checks console warning/error and page errors. The hydration build also rejects server warnings/errors; ordinary S tests have no equivalent diagnostic fixture. |
 | Whole-gallery accessibility | [B: light/dark examples have no axe accessibility violations](../tests/integration/foundation.spec.ts#L27) | Applies to the rendered, settled gallery state. Axe does not certify screen-reader usability or all dynamic states. |
 | Whole-gallery visual appearance | [V: light/dark/mobile component gallery](../tests/e2e/visual.spec.ts#L3) | Shared gallery plus dedicated disclosure and preview images; not every variant/state combination. |
-| Unit execution coverage | [Coverage configuration](../vitest.config.ts), [measured coverage](evidence/catalog-modal-coverage.json) | 100% statements, branches, functions and lines for included component/helper source; not exhaustive behavior coverage. |
+| Unit execution coverage | [Coverage configuration](../vitest.config.ts), [measured coverage](evidence/catalog-menus-coverage.json) | 100% statements, branches, functions and lines for included component/helper source; not exhaustive behavior coverage. |
 
-The current modal delivery records **229 unit tests, 16 grouped SSR tests,
-108 hydration runs (105 positive assertions + 3 unsafe-pattern characterizations),
-447 source integration runs and 432 built E2E/visual runs**. Visual tests compare
-48 images. These totals are package-wide, not per component. See
-[modal verification](MODAL-CATALOG-DELIVERY.md) and the
+The current menu delivery records **258 unit tests, 17 grouped SSR tests,
+111 hydration runs (108 positive assertions + 3 unsafe-pattern characterizations),
+480 source integration runs and 468 built E2E/visual runs**. Visual tests compare
+66 images. These totals are package-wide, not per component. See
+[menu verification](MENU-CATALOG-DELIVERY.md) and the
 [initial matrix verification](TEST-MATRIX-DELIVERY.md) for the original audit.
 
 WebKit runs on macOS with process-scoped button Tab navigation and native
@@ -628,3 +628,19 @@ All four appear in [three focused visual baselines](../tests/e2e/visual.spec.ts)
 | All: server semantics and client continuity | [S: retained modal HTML](../tests/server.test.tsx), [H: modal journey](../tests/hydration/hydration.spec.ts); initial closed forceMount nodes, nested focus, draft edits, drawer size and disposal |
 | All: customization and access | Light/dark/mobile [V: modal images](../tests/e2e/visual.spec.ts); enlarged mobile axe/geometry in B/E; no manual screen-reader certification |
 | Open / scope boundaries | Real mobile touch/virtual keyboard, open modality changes and manual assistive technology unverified. No delayed exit presence, background scaling, momentum, arbitrary-content swipe or Vaul viewport-fraction semantics. See [guide](components.md). |
+
+## Menu and command compositions
+
+| Family | Assertions | Limits |
+| --- | --- | --- |
+| Dropdown Menu | U/B/E keyboard boundaries, typeahead, disabled skipping, live IDs, checkbox/radio ownership, canceled selection, native anchor, submenu hover/keys, Tab and focus return; U stale placement and teardown. | Nonmodal; no exit-presence or arbitrary child cloning. |
+| Context Menu | U/B/E pointer coordinates, ContextMenu/Shift+F10, disabled native context, nested action and focus return. | Physical touch long-press unverified. |
+| Menubar | U/B/E enabled trigger roving, open-menu transfer, RTL and Escape; U controlled rejection and canceled requests. | Horizontal menus; application shortcuts remain host-owned. |
+| Navigation Menu | U/B/E pointer intent, canceled stale timers, shared/inline viewport, native links, keyboard entry/Escape, outside focus and controlled ownership. | No polygon grace-area or custom reparenting. |
+| Command | U/B/E keywords/custom filtering, empty/disabled results, active descendant, controlled query rejection, keyboard and pointer selection; named Dialog composition. | Authored order, explicit values, no async transport/ranking/virtualization engine. |
+
+Tests: [units](../tests/unit/catalog-menus.test.tsx),
+[shared source/built browser contracts](../tests/catalog-menus.ts),
+[server](../tests/server.test.tsx), [hydration](../tests/hydration/hydration.spec.ts),
+[visuals](../tests/e2e/visual.spec.ts). Final counts and gates belong in the
+[menu delivery report](MENU-CATALOG-DELIVERY.md), not inferred from code coverage.

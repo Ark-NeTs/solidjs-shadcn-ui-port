@@ -9,7 +9,7 @@ The baseline has 24 delivered families out of the 65-entry catalog.
 | Native compositions (16) | Alert, Aspect Ratio, Attachment, Breadcrumb, Bubble, Button Group, Empty, Field, Input Group, Item, Kbd, Marker, Message, Native Select, Spinner, Table | Delivered; all required gates passed. [Native delivery](NATIVE-CATALOG-DELIVERY.md) |
 | Display and navigation (4) | Avatar, Pagination, Typography, Direction | Delivered; [display delivery](DISPLAY-CATALOG-DELIVERY.md) |
 | Modal layouts (3) | Dialog, Sheet, Drawer | Delivered; [modal delivery](MODAL-CATALOG-DELIVERY.md) |
-| Menus and command (5) | Dropdown Menu, Context Menu, Menubar, Navigation Menu, Command | Pending |
+| Menus and command (5) | Dropdown Menu, Context Menu, Menubar, Navigation Menu, Command | Delivered; [menu delivery](MENU-CATALOG-DELIVERY.md) |
 | Dates and entry (3) | Calendar, Date Picker, Input OTP | Pending |
 | Layout engines (4) | Resizable, Scroll Area, Carousel, Message Scroller | Pending |
 | Data and application compositions (6) | Chart, Data Table, Sidebar, Questionnaire, Toast, Sonner | Pending |

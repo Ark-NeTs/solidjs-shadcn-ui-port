@@ -1,0 +1,218 @@
+[
+  {
+    "browser": "chromium",
+    "mode": "dropdown",
+    "checks": {
+      "open": true,
+      "escape": true,
+      "unmount": true
+    },
+    "diagnostics": [
+      {
+        "type": "warning",
+        "text": "[EFFECT_WRITES_OWN_SOURCE] effect \"effect\" re-ran because of its own write: it wrote \"signal\", which fed back into its inputs. Two flushes to settle, and the screen rendered the pre-write value in between. The written value is a function of what the effect reads — compute it in a memo (or normalize where the source is written) instead of correcting it after the fact.\n  in <Probe> › <Show> › value › <D.Root> › <MenuRoot> › <MenuRootContext> › computed › <Menu> › effect\n[EFFECT_WRITES_OWN_SOURCE] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#effect_writes_own_source\n[EFFECT_WRITES_OWN_SOURCE] deeper evidence: import { attribution } from \"solid-js/attribution\"; attribution.enable() explains every re-run — why-chains, costs(), feedback(), history(\"hold\" | \"waterfall\") — agent loop: node_modules/@solidjs/diagnostics/skills/agent-loops/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/diagnostics/skills/agent-loops/SKILL.md"
+      },
+      {
+        "type": "warning",
+        "text": "[EFFECT_RELAY_TEAR] effect \"effect\" ran twice for one write of \"signal\": once in the flush where \"signal\" changed, and again after effect \"effect\" relayed it by writing \"signal\" — the first frame showed the new \"signal\" with the stale \"signal\". The written value is \"signal\" itself: read \"signal\" where \"signal\" is read (or createMemo it if a stable derivation is needed) and delete the effect.\n  in <Probe> › <Show> › value › <D.Root> › <MenuRoot> › <MenuRootContext> › computed › <Menu> › effect\n[EFFECT_RELAY_TEAR] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#effect_relay_tear\n[EFFECT_RELAY_TEAR] deeper evidence: import { attribution } from \"solid-js/attribution\"; attribution.enable() explains every re-run — why-chains, costs(), feedback(), history(\"hold\" | \"waterfall\") — agent loop: node_modules/@solidjs/diagnostics/skills/agent-loops/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/diagnostics/skills/agent-loops/SKILL.md"
+      },
+      {
+        "type": "warning",
+        "text": "[EFFECT_RELAY_TEAR] effect \"effect\" writes its compute output into \"signal\" on every run, and nothing else writes \"signal\" — it is derived state kept one flush late: everything reading it paints a frame behind everything reading the source. The written value is \"signal\" itself: read \"signal\" where \"signal\" is read (or createMemo it if a stable derivation is needed) and delete the effect.\n  in <Probe> › <Show> › value › <D.Root> › <MenuRoot> › <MenuRootContext> › computed › <Menu> › effect"
+      }
+    ]
+  },
+  {
+    "browser": "chromium",
+    "mode": "context",
+    "checks": {
+      "open": true,
+      "escape": true,
+      "unmount": true
+    },
+    "diagnostics": [
+      {
+        "type": "warning",
+        "text": "[EFFECT_WRITES_OWN_SOURCE] effect \"effect\" re-ran because of its own write: it wrote \"signal\", which fed back into its inputs. Two flushes to settle, and the screen rendered the pre-write value in between. The written value is a function of what the effect reads — compute it in a memo (or normalize where the source is written) instead of correcting it after the fact.\n  in <Probe> › <Show> › value › <C.Root> › <ContextMenuContext> › computed › <MenuRoot> › <MenuRootContext> › computed › <Menu> › effect\n[EFFECT_WRITES_OWN_SOURCE] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#effect_writes_own_source\n[EFFECT_WRITES_OWN_SOURCE] deeper evidence: import { attribution } from \"solid-js/attribution\"; attribution.enable() explains every re-run — why-chains, costs(), feedback(), history(\"hold\" | \"waterfall\") — agent loop: node_modules/@solidjs/diagnostics/skills/agent-loops/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/diagnostics/skills/agent-loops/SKILL.md"
+      },
+      {
+        "type": "warning",
+        "text": "[EFFECT_RELAY_TEAR] effect \"effect\" ran twice for one write of \"signal\": once in the flush where \"signal\" changed, and again after effect \"effect\" relayed it by writing \"signal\" — the first frame showed the new \"signal\" with the stale \"signal\". The written value is \"signal\" itself: read \"signal\" where \"signal\" is read (or createMemo it if a stable derivation is needed) and delete the effect.\n  in <Probe> › <Show> › value › <C.Root> › <ContextMenuContext> › computed › <MenuRoot> › <MenuRootContext> › computed › <Menu> › effect\n[EFFECT_RELAY_TEAR] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#effect_relay_tear\n[EFFECT_RELAY_TEAR] deeper evidence: import { attribution } from \"solid-js/attribution\"; attribution.enable() explains every re-run — why-chains, costs(), feedback(), history(\"hold\" | \"waterfall\") — agent loop: node_modules/@solidjs/diagnostics/skills/agent-loops/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/diagnostics/skills/agent-loops/SKILL.md"
+      },
+      {
+        "type": "warning",
+        "text": "[EFFECT_RELAY_TEAR] effect \"effect\" writes its compute output into \"signal\" on every run, and nothing else writes \"signal\" — it is derived state kept one flush late: everything reading it paints a frame behind everything reading the source. The written value is \"signal\" itself: read \"signal\" where \"signal\" is read (or createMemo it if a stable derivation is needed) and delete the effect.\n  in <Probe> › <Show> › value › <C.Root> › <ContextMenuContext> › computed › <MenuRoot> › <MenuRootContext> › computed › <Menu> › effect"
+      }
+    ]
+  },
+  {
+    "browser": "chromium",
+    "mode": "menubar",
+    "checks": {
+      "open": true,
+      "escape": true,
+      "unmount": true
+    },
+    "diagnostics": [
+      {
+        "type": "warning",
+        "text": "[EFFECT_WRITES_OWN_SOURCE] effect \"effect\" re-ran because of its own write: it wrote \"signal\", which fed back into its inputs. Two flushes to settle, and the screen rendered the pre-write value in between. The written value is a function of what the effect reads — compute it in a memo (or normalize where the source is written) instead of correcting it after the fact.\n  in <Probe> › <Show> › value › <M.Root> › <MenubarContext> › computed › <Polymorphic> › <Dynamic> › <Anonymous> › computed › effect › <M.Menu> › <MenuRoot> › <MenuRootContext> › computed › <Menu> › effect\n[EFFECT_WRITES_OWN_SOURCE] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#effect_writes_own_source\n[EFFECT_WRITES_OWN_SOURCE] deeper evidence: import { attribution } from \"solid-js/attribution\"; attribution.enable() explains every re-run — why-chains, costs(), feedback(), history(\"hold\" | \"waterfall\") — agent loop: node_modules/@solidjs/diagnostics/skills/agent-loops/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/diagnostics/skills/agent-loops/SKILL.md"
+      },
+      {
+        "type": "warning",
+        "text": "[EFFECT_RELAY_TEAR] effect \"effect\" ran twice for one write of \"signal\": once in the flush where \"signal\" changed, and again after effect \"effect\" relayed it by writing \"signal\" — the first frame showed the new \"signal\" with the stale \"signal\". The written value is \"signal\" itself: read \"signal\" where \"signal\" is read (or createMemo it if a stable derivation is needed) and delete the effect.\n  in <Probe> › <Show> › value › <M.Root> › <MenubarContext> › computed › <Polymorphic> › <Dynamic> › <Anonymous> › computed › effect › <M.Menu> › <MenuRoot> › <MenuRootContext> › computed › <Menu> › effect\n[EFFECT_RELAY_TEAR] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#effect_relay_tear\n[EFFECT_RELAY_TEAR] deeper evidence: import { attribution } from \"solid-js/attribution\"; attribution.enable() explains every re-run — why-chains, costs(), feedback(), history(\"hold\" | \"waterfall\") — agent loop: node_modules/@solidjs/diagnostics/skills/agent-loops/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/diagnostics/skills/agent-loops/SKILL.md"
+      },
+      {
+        "type": "warning",
+        "text": "[EFFECT_RELAY_TEAR] effect \"effect\" writes its compute output into \"signal\" on every run, and nothing else writes \"signal\" — it is derived state kept one flush late: everything reading it paints a frame behind everything reading the source. The written value is \"signal\" itself: read \"signal\" where \"signal\" is read (or createMemo it if a stable derivation is needed) and delete the effect.\n  in <Probe> › <Show> › value › <M.Root> › <MenubarContext> › computed › <Polymorphic> › <Dynamic> › <Anonymous> › computed › effect › <M.Menu> › <MenuRoot> › <MenuRootContext> › computed › <Menu> › effect"
+      }
+    ]
+  },
+  {
+    "browser": "chromium",
+    "mode": "navigation",
+    "checks": {
+      "open": true,
+      "escape": true,
+      "unmount": true
+    },
+    "diagnostics": [
+      {
+        "type": "warning",
+        "text": "[EFFECT_WRITES_OWN_SOURCE] effect \"effect\" re-ran because of its own write: it wrote \"signal\", which fed back into its inputs. Two flushes to settle, and the screen rendered the pre-write value in between. The written value is a function of what the effect reads — compute it in a memo (or normalize where the source is written) instead of correcting it after the fact.\n  in <Probe> › <Show> › value › <N.Root> › <NavigationMenuContext> › computed › <Popper> › <PopperContext> › computed › <MenubarRoot> › <MenubarContext> › computed › <Polymorphic> › <Dynamic> › <Anonymous> › computed › effect › <N.Menu> › <MenubarMenu> › <MenuRoot> › <MenuRootContext> › computed › <Menu> › effect\n[EFFECT_WRITES_OWN_SOURCE] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#effect_writes_own_source\n[EFFECT_WRITES_OWN_SOURCE] deeper evidence: import { attribution } from \"solid-js/attribution\"; attribution.enable() explains every re-run — why-chains, costs(), feedback(), history(\"hold\" | \"waterfall\") — agent loop: node_modules/@solidjs/diagnostics/skills/agent-loops/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/diagnostics/skills/agent-loops/SKILL.md"
+      },
+      {
+        "type": "warning",
+        "text": "[EFFECT_RELAY_TEAR] effect \"effect\" ran twice for one write of \"signal\": once in the flush where \"signal\" changed, and again after effect \"effect\" relayed it by writing \"signal\" — the first frame showed the new \"signal\" with the stale \"signal\". The written value is \"signal\" itself: read \"signal\" where \"signal\" is read (or createMemo it if a stable derivation is needed) and delete the effect.\n  in <Probe> › <Show> › value › <N.Root> › <NavigationMenuContext> › computed › <Popper> › <PopperContext> › computed › <MenubarRoot> › <MenubarContext> › computed › <Polymorphic> › <Dynamic> › <Anonymous> › computed › effect › <N.Menu> › <MenubarMenu> › <MenuRoot> › <MenuRootContext> › computed › <Menu> › effect\n[EFFECT_RELAY_TEAR] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#effect_relay_tear\n[EFFECT_RELAY_TEAR] deeper evidence: import { attribution } from \"solid-js/attribution\"; attribution.enable() explains every re-run — why-chains, costs(), feedback(), history(\"hold\" | \"waterfall\") — agent loop: node_modules/@solidjs/diagnostics/skills/agent-loops/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/diagnostics/skills/agent-loops/SKILL.md"
+      },
+      {
+        "type": "warning",
+        "text": "[EFFECT_WRITES_OWN_SOURCE] effect \"effect\" re-ran because of its own write: it wrote \"signal\", which fed back into its inputs. Two flushes to settle, and the screen rendered the pre-write value in between. The written value is a function of what the effect reads — compute it in a memo (or normalize where the source is written) instead of correcting it after the fact.\n  in <Probe> › <Show> › value › <N.Root> › effect"
+      },
+      {
+        "type": "warning",
+        "text": "[EFFECT_RELAY_TEAR] effect \"effect\" ran twice for one write of \"signal\": once in the flush where \"signal\" changed, and again after effect \"effect\" relayed it by writing \"signal\" — the first frame showed the new \"signal\" with the stale \"signal\". The written value is \"signal\" itself: read \"signal\" where \"signal\" is read (or createMemo it if a stable derivation is needed) and delete the effect.\n  in <Probe> › <Show> › value › <N.Root> › effect"
+      },
+      {
+        "type": "warning",
+        "text": "[EFFECT_RELAY_TEAR] effect \"effect\" writes its compute output into \"signal\" on every run, and nothing else writes \"signal\" — it is derived state kept one flush late: everything reading it paints a frame behind everything reading the source. The written value is \"computed\" itself: read \"computed\" where \"signal\" is read (or createMemo it if a stable derivation is needed) and delete the effect.\n  in <Probe> › <Show> › value › <N.Root> › effect"
+      },
+      {
+        "type": "warning",
+        "text": "[EFFECT_RELAY_TEAR] effect \"effect\" writes its compute output into \"signal\" on every run, and nothing else writes \"signal\" — it is derived state kept one flush late: everything reading it paints a frame behind everything reading the source. The written value is \"computed\" itself: read \"computed\" where \"signal\" is read (or createMemo it if a stable derivation is needed) and delete the effect.\n  in <Probe> › <Show> › value › <N.Root> › effect"
+      },
+      {
+        "type": "warning",
+        "text": "[EFFECT_RELAY_TEAR] effect \"effect\" writes its compute output into \"signal\" on every run, and nothing else writes \"signal\" — it is derived state kept one flush late: everything reading it paints a frame behind everything reading the source. The written value is \"signal\" itself: read \"signal\" where \"signal\" is read (or createMemo it if a stable derivation is needed) and delete the effect.\n  in <Probe> › <Show> › value › <N.Root> › <NavigationMenuContext> › computed › <Popper> › <PopperContext> › computed › <MenubarRoot> › <MenubarContext> › computed › <Polymorphic> › <Dynamic> › <Anonymous> › computed › effect › <N.Menu> › <MenubarMenu> › <MenuRoot> › <MenuRootContext> › computed › <Menu> › effect"
+      }
+    ]
+  },
+  {
+    "browser": "firefox",
+    "mode": "dropdown",
+    "checks": {
+      "open": true,
+      "escape": true,
+      "unmount": true
+    },
+    "diagnostics": [
+      {
+        "type": "warning",
+        "text": "[EFFECT_WRITES_OWN_SOURCE] effect \"effect\" re-ran because of its own write: it wrote \"signal\", which fed back into its inputs. Two flushes to settle, and the screen rendered the pre-write value in between. The written value is a function of what the effect reads — compute it in a memo (or normalize where the source is written) instead of correcting it after the fact.\n  in <Probe> › <Show> › value › <D.Root> › <MenuRoot> › <MenuRootContext> › computed › <Menu> › effect\n[EFFECT_WRITES_OWN_SOURCE] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#effect_writes_own_source\n[EFFECT_WRITES_OWN_SOURCE] deeper evidence: import { attribution } from \"solid-js/attribution\"; attribution.enable() explains every re-run — why-chains, costs(), feedback(), history(\"hold\" | \"waterfall\") — agent loop: node_modules/@solidjs/diagnostics/skills/agent-loops/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/diagnostics/skills/agent-loops/SKILL.md"
+      },
+      {
+        "type": "warning",
+        "text": "[EFFECT_RELAY_TEAR] effect \"effect\" ran twice for one write of \"signal\": once in the flush where \"signal\" changed, and again after effect \"effect\" relayed it by writing \"signal\" — the first frame showed the new \"signal\" with the stale \"signal\". The written value is \"signal\" itself: read \"signal\" where \"signal\" is read (or createMemo it if a stable derivation is needed) and delete the effect.\n  in <Probe> › <Show> › value › <D.Root> › <MenuRoot> › <MenuRootContext> › computed › <Menu> › effect\n[EFFECT_RELAY_TEAR] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#effect_relay_tear\n[EFFECT_RELAY_TEAR] deeper evidence: import { attribution } from \"solid-js/attribution\"; attribution.enable() explains every re-run — why-chains, costs(), feedback(), history(\"hold\" | \"waterfall\") — agent loop: node_modules/@solidjs/diagnostics/skills/agent-loops/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/diagnostics/skills/agent-loops/SKILL.md"
+      },
+      {
+        "type": "warning",
+        "text": "[EFFECT_RELAY_TEAR] effect \"effect\" writes its compute output into \"signal\" on every run, and nothing else writes \"signal\" — it is derived state kept one flush late: everything reading it paints a frame behind everything reading the source. The written value is \"signal\" itself: read \"signal\" where \"signal\" is read (or createMemo it if a stable derivation is needed) and delete the effect.\n  in <Probe> › <Show> › value › <D.Root> › <MenuRoot> › <MenuRootContext> › computed › <Menu> › effect"
+      }
+    ]
+  },
+  {
+    "browser": "firefox",
+    "mode": "context",
+    "checks": {
+      "open": true,
+      "escape": true,
+      "unmount": true
+    },
+    "diagnostics": [
+      {
+        "type": "warning",
+        "text": "[EFFECT_WRITES_OWN_SOURCE] effect \"effect\" re-ran because of its own write: it wrote \"signal\", which fed back into its inputs. Two flushes to settle, and the screen rendered the pre-write value in between. The written value is a function of what the effect reads — compute it in a memo (or normalize where the source is written) instead of correcting it after the fact.\n  in <Probe> › <Show> › value › <C.Root> › <ContextMenuContext> › computed › <MenuRoot> › <MenuRootContext> › computed › <Menu> › effect\n[EFFECT_WRITES_OWN_SOURCE] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#effect_writes_own_source\n[EFFECT_WRITES_OWN_SOURCE] deeper evidence: import { attribution } from \"solid-js/attribution\"; attribution.enable() explains every re-run — why-chains, costs(), feedback(), history(\"hold\" | \"waterfall\") — agent loop: node_modules/@solidjs/diagnostics/skills/agent-loops/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/diagnostics/skills/agent-loops/SKILL.md"
+      },
+      {
+        "type": "warning",
+        "text": "[EFFECT_RELAY_TEAR] effect \"effect\" ran twice for one write of \"signal\": once in the flush where \"signal\" changed, and again after effect \"effect\" relayed it by writing \"signal\" — the first frame showed the new \"signal\" with the stale \"signal\". The written value is \"signal\" itself: read \"signal\" where \"signal\" is read (or createMemo it if a stable derivation is needed) and delete the effect.\n  in <Probe> › <Show> › value › <C.Root> › <ContextMenuContext> › computed › <MenuRoot> › <MenuRootContext> › computed › <Menu> › effect\n[EFFECT_RELAY_TEAR] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#effect_relay_tear\n[EFFECT_RELAY_TEAR] deeper evidence: import { attribution } from \"solid-js/attribution\"; attribution.enable() explains every re-run — why-chains, costs(), feedback(), history(\"hold\" | \"waterfall\") — agent loop: node_modules/@solidjs/diagnostics/skills/agent-loops/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/diagnostics/skills/agent-loops/SKILL.md"
+      },
+      {
+        "type": "warning",
+        "text": "[EFFECT_RELAY_TEAR] effect \"effect\" writes its compute output into \"signal\" on every run, and nothing else writes \"signal\" — it is derived state kept one flush late: everything reading it paints a frame behind everything reading the source. The written value is \"signal\" itself: read \"signal\" where \"signal\" is read (or createMemo it if a stable derivation is needed) and delete the effect.\n  in <Probe> › <Show> › value › <C.Root> › <ContextMenuContext> › computed › <MenuRoot> › <MenuRootContext> › computed › <Menu> › effect"
+      }
+    ]
+  },
+  {
+    "browser": "firefox",
+    "mode": "menubar",
+    "checks": {
+      "open": true,
+      "escape": true,
+      "unmount": true
+    },
+    "diagnostics": [
+      {
+        "type": "warning",
+        "text": "[EFFECT_WRITES_OWN_SOURCE] effect \"effect\" re-ran because of its own write: it wrote \"signal\", which fed back into its inputs. Two flushes to settle, and the screen rendered the pre-write value in between. The written value is a function of what the effect reads — compute it in a memo (or normalize where the source is written) instead of correcting it after the fact.\n  in <Probe> › <Show> › value › <M.Root> › <MenubarContext> › computed › <Polymorphic> › <Dynamic> › <Anonymous> › computed › effect › <M.Menu> › <MenuRoot> › <MenuRootContext> › computed › <Menu> › effect\n[EFFECT_WRITES_OWN_SOURCE] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#effect_writes_own_source\n[EFFECT_WRITES_OWN_SOURCE] deeper evidence: import { attribution } from \"solid-js/attribution\"; attribution.enable() explains every re-run — why-chains, costs(), feedback(), history(\"hold\" | \"waterfall\") — agent loop: node_modules/@solidjs/diagnostics/skills/agent-loops/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/diagnostics/skills/agent-loops/SKILL.md"
+      },
+      {
+        "type": "warning",
+        "text": "[EFFECT_RELAY_TEAR] effect \"effect\" ran twice for one write of \"signal\": once in the flush where \"signal\" changed, and again after effect \"effect\" relayed it by writing \"signal\" — the first frame showed the new \"signal\" with the stale \"signal\". The written value is \"signal\" itself: read \"signal\" where \"signal\" is read (or createMemo it if a stable derivation is needed) and delete the effect.\n  in <Probe> › <Show> › value › <M.Root> › <MenubarContext> › computed › <Polymorphic> › <Dynamic> › <Anonymous> › computed › effect › <M.Menu> › <MenuRoot> › <MenuRootContext> › computed › <Menu> › effect\n[EFFECT_RELAY_TEAR] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#effect_relay_tear\n[EFFECT_RELAY_TEAR] deeper evidence: import { attribution } from \"solid-js/attribution\"; attribution.enable() explains every re-run — why-chains, costs(), feedback(), history(\"hold\" | \"waterfall\") — agent loop: node_modules/@solidjs/diagnostics/skills/agent-loops/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/diagnostics/skills/agent-loops/SKILL.md"
+      },
+      {
+        "type": "warning",
+        "text": "[EFFECT_RELAY_TEAR] effect \"effect\" writes its compute output into \"signal\" on every run, and nothing else writes \"signal\" — it is derived state kept one flush late: everything reading it paints a frame behind everything reading the source. The written value is \"signal\" itself: read \"signal\" where \"signal\" is read (or createMemo it if a stable derivation is needed) and delete the effect.\n  in <Probe> › <Show> › value › <M.Root> › <MenubarContext> › computed › <Polymorphic> › <Dynamic> › <Anonymous> › computed › effect › <M.Menu> › <MenuRoot> › <MenuRootContext> › computed › <Menu> › effect"
+      }
+    ]
+  },
+  {
+    "browser": "firefox",
+    "mode": "navigation",
+    "checks": {
+      "open": true,
+      "escape": true,
+      "unmount": true
+    },
+    "diagnostics": [
+      {
+        "type": "warning",
+        "text": "[EFFECT_WRITES_OWN_SOURCE] effect \"effect\" re-ran because of its own write: it wrote \"signal\", which fed back into its inputs. Two flushes to settle, and the screen rendered the pre-write value in between. The written value is a function of what the effect reads — compute it in a memo (or normalize where the source is written) instead of correcting it after the fact.\n  in <Probe> › <Show> › value › <N.Root> › <NavigationMenuContext> › computed › <Popper> › <PopperContext> › computed › <MenubarRoot> › <MenubarContext> › computed › <Polymorphic> › <Dynamic> › <Anonymous> › computed › effect › <N.Menu> › <MenubarMenu> › <MenuRoot> › <MenuRootContext> › computed › <Menu> › effect\n[EFFECT_WRITES_OWN_SOURCE] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#effect_writes_own_source\n[EFFECT_WRITES_OWN_SOURCE] deeper evidence: import { attribution } from \"solid-js/attribution\"; attribution.enable() explains every re-run — why-chains, costs(), feedback(), history(\"hold\" | \"waterfall\") — agent loop: node_modules/@solidjs/diagnostics/skills/agent-loops/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/diagnostics/skills/agent-loops/SKILL.md"
+      },
+      {
+        "type": "warning",
+        "text": "[EFFECT_RELAY_TEAR] effect \"effect\" ran twice for one write of \"signal\": once in the flush where \"signal\" changed, and again after effect \"effect\" relayed it by writing \"signal\" — the first frame showed the new \"signal\" with the stale \"signal\". The written value is \"signal\" itself: read \"signal\" where \"signal\" is read (or createMemo it if a stable derivation is needed) and delete the effect.\n  in <Probe> › <Show> › value › <N.Root> › <NavigationMenuContext> › computed › <Popper> › <PopperContext> › computed › <MenubarRoot> › <MenubarContext> › computed › <Polymorphic> › <Dynamic> › <Anonymous> › computed › effect › <N.Menu> › <MenubarMenu> › <MenuRoot> › <MenuRootContext> › computed › <Menu> › effect\n[EFFECT_RELAY_TEAR] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#effect_relay_tear\n[EFFECT_RELAY_TEAR] deeper evidence: import { attribution } from \"solid-js/attribution\"; attribution.enable() explains every re-run — why-chains, costs(), feedback(), history(\"hold\" | \"waterfall\") — agent loop: node_modules/@solidjs/diagnostics/skills/agent-loops/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/diagnostics/skills/agent-loops/SKILL.md"
+      },
+      {
+        "type": "warning",
+        "text": "[EFFECT_WRITES_OWN_SOURCE] effect \"effect\" re-ran because of its own write: it wrote \"signal\", which fed back into its inputs. Two flushes to settle, and the screen rendered the pre-write value in between. The written value is a function of what the effect reads — compute it in a memo (or normalize where the source is written) instead of correcting it after the fact.\n  in <Probe> › <Show> › value › <N.Root> › effect"
+      },
+      {
+        "type": "warning",
+        "text": "[EFFECT_RELAY_TEAR] effect \"effect\" ran twice for one write of \"signal\": once in the flush where \"signal\" changed, and again after effect \"effect\" relayed it by writing \"signal\" — the first frame showed the new \"signal\" with the stale \"signal\". The written value is \"signal\" itself: read \"signal\" where \"signal\" is read (or createMemo it if a stable derivation is needed) and delete the effect.\n  in <Probe> › <Show> › value › <N.Root> › effect"
+      },
+      {
+        "type": "warning",
+        "text": "[EFFECT_RELAY_TEAR] effect \"effect\" writes its compute output into \"signal\" on every run, and nothing else writes \"signal\" — it is derived state kept one flush late: everything reading it paints a frame behind everything reading the source. The written value is \"computed\" itself: read \"computed\" where \"signal\" is read (or createMemo it if a stable derivation is needed) and delete the effect.\n  in <Probe> › <Show> › value › <N.Root> › effect"
+      },
+      {
+        "type": "warning",
+        "text": "[EFFECT_RELAY_TEAR] effect \"effect\" writes its compute output into \"signal\" on every run, and nothing else writes \"signal\" — it is derived state kept one flush late: everything reading it paints a frame behind everything reading the source. The written value is \"computed\" itself: read \"computed\" where \"signal\" is read (or createMemo it if a stable derivation is needed) and delete the effect.\n  in <Probe> › <Show> › value › <N.Root> › effect"
+      },
+      {
+        "type": "warning",
+        "text": "[EFFECT_RELAY_TEAR] effect \"effect\" writes its compute output into \"signal\" on every run, and nothing else writes \"signal\" — it is derived state kept one flush late: everything reading it paints a frame behind everything reading the source. The written value is \"signal\" itself: read \"signal\" where \"signal\" is read (or createMemo it if a stable derivation is needed) and delete the effect.\n  in <Probe> › <Show> › value › <N.Root> › <NavigationMenuContext> › computed › <Popper> › <PopperContext> › computed › <MenubarRoot> › <MenubarContext> › computed › <Polymorphic> › <Dynamic> › <Anonymous> › computed › effect › <N.Menu> › <MenubarMenu> › <MenuRoot> › <MenuRootContext> › computed › <Menu> › effect"
+      }
+    ]
+  }
+]

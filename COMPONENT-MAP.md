@@ -74,10 +74,10 @@ No row currently selects corvu; alternatives are evaluated below.
 
 | Route | Entries |
 | --- | ---: |
-| Matching Kobalte primitive | 15 |
-| Owned composition | 13 |
+| Matching Kobalte primitive | 11 |
+| Owned composition | 18 |
 | Native markup/CSS | 31 |
-| Unresolved behavior/engine gap | 6 |
+| Unresolved behavior/engine gap | 5 |
 | Total | 65 |
 
 | shadcn component | Route | Kobalte first / implementation path | Required adaptation or acceptance focus |
@@ -100,14 +100,14 @@ No row currently selects corvu; alternatives are evaluated below.
 | [Checkbox](https://ui.shadcn.com/docs/components/checkbox) | N | `checkbox` evaluated first; native input chosen | Implemented checked/mixed/disabled, controlled rejection, forms/reset and labels. Unpatched Kobalte emits diagnostics; see KOBALTE-TOGGLES.md and TOGGLES-DELIVERY.md. |
 | [Collapsible](https://ui.shadcn.com/docs/components/collapsible) | N | `collapsible` evaluated first; owned signals/native button | Controlled/uncontrolled expansion, hidden shell and optional retained drafts delivered. Alpha.2/rc.13 warns; animated exit is unsupported. See KOBALTE-DISCLOSURES.md and docs/DISCLOSURES-DELIVERY.md. |
 | [Combobox](https://ui.shadcn.com/docs/components/combobox) | C | `combobox` evaluated first; owned composition | Evaluated first; alpha.2/rc.13 reset and diagnostics fail. Owned Input/Popover composition delivers single/multiple selection, search, chips, forms and keyboard access. API limits and evidence: COMBOBOX-DELIVERY.md. No corvu Combobox primitive. |
-| [Command](https://ui.shadcn.com/docs/components/command) | G | `search` / `combobox`, `listbox`, `dialog` candidates | No cmdk equivalent. Own item registration, ranking/filtering, grouped visibility, inline palette and action dispatch; prove focus semantics before selecting composition. |
-| [Context Menu](https://ui.shadcn.com/docs/components/context-menu) | K | `context-menu` | Pointer/keyboard opening, submenus, checkbox/radio items and dismissal. |
+| [Command](https://ui.shadcn.com/docs/components/command) | C | Owned command collection; Kobalte candidates evaluated | Delivered authored-order filtering, groups, active descendant and Dialog composition; see docs/MENU-CATALOG-DELIVERY.md. |
+| [Context Menu](https://ui.shadcn.com/docs/components/context-menu) | C | `context-menu` | Delivered owned native behavior after Kobalte diagnostic failure; see docs/MENU-CATALOG-DELIVERY.md for acceptance and API limits. |
 | [Data Table](https://ui.shadcn.com/docs/components/data-table) | G | `checkbox`, `dropdown-menu`, `pagination` for controls | No table model. Evaluate TanStack Table core/compatible adapter for sort, filter, selection and paging; server data stays host-owned. |
 | [Date Picker](https://ui.shadcn.com/docs/components/date-picker) | K | `date-picker` (or `calendar` + `popover`) | Trigger/value formatting, range/multiple modes, bounds and Date adapter; time examples compose `time-field` where needed. |
 | [Dialog](https://ui.shadcn.com/docs/components/dialog) | C | `dialog` evaluated first; shared native modal | Delivered names, nested focus, canceled dismissal, controlled state and hydration; see docs/MODAL-CATALOG-DELIVERY.md. |
 | [Direction](https://ui.shadcn.com/docs/components/direction) | C | `i18n` evaluated; owned explicit direction | Delivered nested reactive provider with native div boundary, Tabs keyboard direction and Popover alignment; not an external Kobalte context bridge. See docs/DISPLAY-CATALOG-DELIVERY.md. |
 | [Drawer](https://ui.shadcn.com/docs/components/drawer) | C | `drawer` evaluated first; native modal and owned handle | Delivered four sides, panel-fraction/pixel snaps, keyboard and handle drag, native content scrolling. Not full Vaul physics/API; see docs/MODAL-CATALOG-DELIVERY.md. |
-| [Dropdown Menu](https://ui.shadcn.com/docs/components/dropdown-menu) | K | `dropdown-menu` | Submenus, typeahead, groups, checkbox/radio items, disabled items and close behavior. |
+| [Dropdown Menu](https://ui.shadcn.com/docs/components/dropdown-menu) | C | `dropdown-menu` | Delivered owned native behavior after Kobalte diagnostic failure; see docs/MENU-CATALOG-DELIVERY.md for acceptance and API limits. |
 | [Empty](https://ui.shadcn.com/docs/components/empty) | N | Owned markup/CSS | Media/title/description/content slots; actions use Button. |
 | [Field](https://ui.shadcn.com/docs/components/field) | C | Control-specific Label/Description/ErrorMessage + native fieldset | Generic layout, legends, errors and IDs across all controls; do not put unrelated controls in a TextField context. |
 | [Hover Card](https://ui.shadcn.com/docs/components/hover-card) | N | `hover-card` evaluated first; owned native preview | Alpha.2/rc.13 emits diagnostics. Delivered delay, pointer bridge, focus travel, native link, Escape, placement and cleanup; see KOBALTE-HINTS.md and docs/HINTS-DELIVERY.md. |
@@ -118,11 +118,11 @@ No row currently selects corvu; alternatives are evaluated below.
 | [Kbd](https://ui.shadcn.com/docs/components/kbd) | N | Native kbd | Key/group styling; display does not register shortcuts. |
 | [Label](https://ui.shadcn.com/docs/components/label) | N | Native label; control-specific Kobalte Label when contextual | Implemented and tested: standalone `for` association, click-to-focus and native refs/events, without a provider. See FORM-FIELDS-DELIVERY.md. |
 | [Marker](https://ui.shadcn.com/docs/components/marker) | N | Owned markup/CSS | Icon/content slots and variants; do not convey state by color alone. |
-| [Menubar](https://ui.shadcn.com/docs/components/menubar) | K | `menubar` | Cross-menu arrow navigation, submenus, item selection and focus retention. |
+| [Menubar](https://ui.shadcn.com/docs/components/menubar) | C | `menubar` | Delivered owned native behavior after Kobalte diagnostic failure; see docs/MENU-CATALOG-DELIVERY.md for acceptance and API limits. |
 | [Message](https://ui.shadcn.com/docs/components/message) | N | Owned markup/CSS | Role/avatar/content/action presentation; streaming transport remains outside UI. |
 | [Message Scroller](https://ui.shadcn.com/docs/components/message-scroller) | G | No scroll-follow controller | Own stick-to-bottom, user-scroll interruption, streamed growth, anchor preservation and cleanup; React helper cannot be imported into Solid. |
 | [Native Select](https://ui.shadcn.com/docs/components/native-select) | N | Native select/option/optgroup | Form value, keyboard/browser behavior, disabled state and styled icon. |
-| [Navigation Menu](https://ui.shadcn.com/docs/components/navigation-menu) | K | `navigation-menu` | Links, trigger/content/viewport composition, pointer/focus transitions and RTL. |
+| [Navigation Menu](https://ui.shadcn.com/docs/components/navigation-menu) | C | `navigation-menu` | Delivered owned native behavior after Kobalte diagnostic failure; see docs/MENU-CATALOG-DELIVERY.md for acceptance and API limits. |
 | [Pagination](https://ui.shadcn.com/docs/components/pagination) | N | `pagination` evaluated first; passive native links | Delivered sibling link composition, current/disabled state and native navigation; page data stays host-owned. See docs/DISPLAY-CATALOG-DELIVERY.md. |
 | [Popover](https://ui.shadcn.com/docs/components/popover) | N | `popover` evaluated first; native top layer + Floating UI chosen | Implemented trigger/anchor/content, modal choice, collision placement, controlled rejection and focus restoration. See KOBALTE-OVERLAYS.md and OVERLAYS-DELIVERY.md. |
 | [Progress](https://ui.shadcn.com/docs/components/progress) | N | Owned div/indicator after Kobalte hydration rejection | Implemented known/unknown values, bounds, custom text, external labels, RTL, reduced motion and SSR/hydration. [Evaluation](KOBALTE-PROGRESS.md), [delivery](docs/PROGRESS-DELIVERY.md). |

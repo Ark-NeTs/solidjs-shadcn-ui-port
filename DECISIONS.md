@@ -534,3 +534,13 @@ count-derived stable thumb indices while each thumb reads its current value.
 Both changes keep registration and input values reactive without repeated
 collection/visibility work. They are included because they blocked acceptance,
 not as unrelated feature work; no diagnostic suppression is used.
+
+## Owned menu and command collections after pinned Kobalte evaluation
+
+The unpatched alpha.2/rc.13 menu probes report ownership/relay diagnostics in all
+four menu primitives. Share a native popover menu owner for Dropdown, Context and
+Menubar; keep site navigation and command listbox semantics separate. Preserve
+DOM theme ancestry and cancel stale positioning work. Navigation supplies a shared
+viewport by default; Command filters explicit values/keywords in authored order.
+These are scoped APIs, not a claim of Radix/cmdk prop compatibility. No corvu,
+private Kobalte patches or diagnostic suppression. See the menu delivery report.

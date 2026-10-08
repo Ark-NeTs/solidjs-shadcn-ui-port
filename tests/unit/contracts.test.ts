@@ -27,7 +27,7 @@ describe('foundation contracts',()=>{
 
 
 it('exports the native catalog family APIs through source subpaths and the build barrel',async()=>{
- const families=['alert','aspect-ratio','attachment','breadcrumb','bubble','button-group','empty','field','input-group','item','kbd','marker','message','native-select','spinner','table','avatar','pagination','direction','dialog','sheet','drawer'];
+ const families=['alert','aspect-ratio','attachment','breadcrumb','bubble','button-group','empty','field','input-group','item','kbd','marker','message','native-select','spinner','table','avatar','pagination','direction','dialog','sheet','drawer','dropdown-menu','context-menu','menubar','navigation-menu','command'];
  for(const family of families){const module=await import(`../../src/components/ui/${family}.tsx`);const reference=readFileSync(resolve(root,`../shadcn-theme/src/components/ui/${family}.tsx`),'utf8');const exports=reference.slice(reference.lastIndexOf('export {')+8).split('}')[0]!.split(',').map(name=>name.trim()).filter(Boolean);for(const name of exports){expect(module).toHaveProperty(name);expect(library).toHaveProperty(name);}}
 });
 

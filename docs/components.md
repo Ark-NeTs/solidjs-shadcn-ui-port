@@ -1263,3 +1263,29 @@ an extra overlay unless intentionally decorating. Native nonmodal light-dismiss
 does not use the modal outside cancellation hooks. Exit-animation retention,
 Vaul momentum/background scaling, content-wide swipe and React `asChild` are not
 implemented. See [modal delivery](MODAL-CATALOG-DELIVERY.md) for evidence and limits.
+
+## Menus and Command
+
+DropdownMenu and ContextMenu compose Root, Trigger, Content, Item, Group, Label,
+Separator, Shortcut, CheckboxItem, RadioGroup/RadioItem and Sub/SubTrigger/
+SubContent. Menubar adds a horizontal root and Menu per trigger. Each root accepts
+open/defaultOpen/onOpenChange; Menubar uses value/defaultValue/onValueChange.
+Selection is cancelable through onSelect. Set closeOnSelect=false for preferences
+that should keep the menu open. Native anchors use as="a" and href. Content
+supports side, align, offsets, collisionPadding, loop and forceMount. Portal is
+optional and retains DOM ancestry while the native popover reaches the top layer.
+
+NavigationMenu supplies a shared viewport by default; set viewport=false for
+inline content. Use Item values, Trigger, Content and native Link hrefs. active
+sets aria-current on links. Pointer delays are configurable. Navigation does not
+own routes or persistence.
+
+Command composes Input, List, Group, Item, Separator, Shortcut and Empty.
+Every Item needs a stable value and may specify keywords, disabled and onSelect.
+Input supports controlled value/onValueChange; root value controls the active
+command. Filtering preserves authored order; custom filter scores greater than
+zero include an item. shouldFilter=false delegates filtering to the host.
+CommandDialog provides named Dialog framing; its owner decides when an action
+closes the palette. Shortcuts are visual hints, not registered key bindings.
+
+Examples: `/?catalog-menus`. [Acceptance and scope](MENU-CATALOG-DELIVERY.md).
