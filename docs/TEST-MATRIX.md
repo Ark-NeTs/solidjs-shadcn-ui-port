@@ -1,7 +1,7 @@
 # Component acceptance and test matrix
 
 Initially audited 2026-10-08 against source at `314f27a`; updated with the
-[POP-1 browser evidence](POPOVER-POP1-DELIVERY.md). Covers the **14
+[ALT-1 browser evidence](ALERT-ALT1-DELIVERY.md). Covers the **14
 implemented component families**, including their compound parts. The other
 catalog entries in [COMPONENT-MAP.md](../COMPONENT-MAP.md) remain unimplemented;
 their adoption probes are not delivered-component acceptance tests.
@@ -9,7 +9,7 @@ their adoption probes are not delivered-component acceptance tests.
 This is a behavior inventory, not a claim that every possible state is tested.
 Read the assertions in the linked tests: a broad test title alone is not evidence
 for every behavior it mentions. Gaps below are unverified acceptance cases, not
-confirmed implementation bugs. The initial audit added no tests; the CMB-1, CMB-2 and POP-1
+confirmed implementation bugs. The initial audit added no tests; the CMB-1, CMB-2, POP-1 and ALT-1
 follow-ups add the browser contracts linked below.
 
 ## Reading the evidence
@@ -38,13 +38,13 @@ are implementation scope limits, not features that an existing test proves.
 | Diagnostics and cleanup are checked | [Unit setup](../vitest.setup.ts), [browser fixture](../tests/browser-fixture.ts) | Every unit test checks console warn/error after cleanup; every B/E test checks console warning/error and page errors. SSR has no equivalent diagnostic fixture. |
 | Whole-gallery accessibility | [B: light/dark examples have no axe accessibility violations](../tests/integration/foundation.spec.ts#L27) | Applies to the rendered, settled gallery state. Axe does not certify screen-reader usability or all dynamic states. |
 | Whole-gallery visual appearance | [V: light/dark/mobile component gallery](../tests/e2e/visual.spec.ts#L3) | Shared images include every family; not every variant/state combination. |
-| Unit execution coverage | [Coverage configuration](../vitest.config.ts), [measured coverage](evidence/popover-pop1-coverage.json) | 100% statements, branches, functions and lines for included component/helper source; not exhaustive behavior coverage. |
+| Unit execution coverage | [Coverage configuration](../vitest.config.ts), [measured coverage](evidence/alert-alt1-coverage.json) | 100% statements, branches, functions and lines for included component/helper source; not exhaustive behavior coverage. |
 
-The POP-1 delivery records **85 unit tests, 6 grouped SSR tests,
-82 browser integration runs (41 scenarios × 2 engines), and 55 E2E runs
-(23 journeys × 2 engines + 9 Chromium visual tests)**. Those visual tests compare
+The ALT-1 delivery records **87 unit tests, 6 grouped SSR tests,
+92 browser integration runs (46 scenarios × 2 engines), and 65 E2E runs
+(28 journeys × 2 engines + 9 Chromium visual tests)**. Those visual tests compare
 12 images. These totals are package-wide, not per component. See the
-[POP-1 verification](POPOVER-POP1-DELIVERY.md) for current results and the
+[ALT-1 verification](ALERT-ALT1-DELIVERY.md) for current results and the
 [initial matrix verification](TEST-MATRIX-DELIVERY.md) for the original audit.
 
 ## Button
@@ -214,12 +214,16 @@ scroll frame, occluded/offscreen anchor policy or mobile visual viewport behavio
 | Cancel receives focus; outside click does not close; pending failure retains draft and retry can complete | [B: alert blocks outside dismissal and preserves a draft through pending failure and retry](../tests/integration/overlays.spec.ts#L22), [E: built alert preserves rejected drafts and completes only an explicit retry](../tests/e2e/overlays.spec.ts#L6) |
 | Nested keyboard confirmation returns focus to the right owner | [B: nested alert dismissal](../tests/integration/overlays.spec.ts#L16), [E: built keyboard confirmation](../tests/e2e/overlays.spec.ts#L3) |
 | Open light/dark/enlarged-mobile accessibility and appearance | [B: open overlay axe/viewport checks](../tests/integration/overlays.spec.ts#L25), [V: open overlays](../tests/e2e/visual.spec.ts#L12) |
+| Own Tab/Shift+Tab boundaries wrap, skip excluded controls, reject background focus and restore native page order on close | [B/E: exact Alert Dialog focus destinations](../tests/alert-dialog-focus.ts#L28) |
+| Nested alerts contain focus, preserve the parent draft/scroll lock, and restore focus on Escape, Cancel and Confirm | [B/E: nested dismissal paths and reopen](../tests/alert-dialog-focus.ts#L59), parameterized by dismissal and forceMount |
+| A hidden, mounted child cannot supply the parent's initial focus target | [U: parents with/without Cancel](../tests/unit/overlays.test.tsx#L80), [B/E: force-mounted child](../tests/alert-dialog-focus.ts#L59) |
 
-Open **ALT-1**: full Tab/Shift+Tab boundary wrapping is directly asserted for Alert
-Dialog in [U](../tests/unit/overlays.test.tsx#L45), but the dedicated real-browser
-trap loop targets modal Popover. Add an Alert Dialog-specific loop, including a
-nested confirmation. Pending/failure examples are simulated application state,
-not backend fault-injection tests.
+**ALT-1 closed:** five scenarios run through
+[source integration](../tests/integration/alert-dialog-focus.spec.ts#L3) and
+[built E2E](../tests/e2e/alert-dialog-focus.spec.ts#L3) in Chromium and Firefox.
+This proves the named parent/child composition, not arbitrary depth, every
+focusable element type or custom focus-hook behavior. Pending/failure examples
+remain simulated application state, not backend fault-injection tests.
 
 ## Combobox
 
@@ -282,8 +286,7 @@ order the next test work; they do not assign bug severity to untested behavior.
 | Priority | ID | Component(s) | Concrete closure condition |
 | --- | --- | --- | --- |
 | Manual follow-up | CMB-2 | Combobox | Browser scrolling/Tab/modal checks pass; record a physical IME composition/commit/cancel session before closing the remaining manual portion. |
-| Next | ALT-1 | Alert Dialog | Browser loops Tab/Shift+Tab across both boundaries, then verifies a nested dialog returns focus without escaping the parent. |
-| Follow-up | TAB-1 | Tabs | Browser removes/reorders the focused trigger and verifies focus/selection; a force-mounted panel retains its edited draft. |
+| Next | TAB-1 | Tabs | Browser removes/reorders the focused trigger and verifies focus/selection; a force-mounted panel retains its edited draft. |
 | Follow-up | CHK-1, SWT-1 | Checkbox, Switch | Each control passes canceled reset and changing explicit form ownership in both browsers, including unmount before pending reset work. |
 | Follow-up | BTN-1, BDG-1 | Button, Badge | Browser proves focus/navigation of enabled links and disabled Button anchor nonactivation. |
 | Follow-up | INP-1, TXT-1, LBL-1 | Input, Textarea, Label | Define supported native input-type scenarios; add Textarea resize/read-only/scroll checks and live label reassociation in browser. |
@@ -304,6 +307,7 @@ and component guide; it cannot be closed by increasing execution coverage alone.
 
 | ID | Closed | Evidence |
 | --- | --- | --- |
+| ALT-1 | 2026-10-08 | [Delivery](ALERT-ALT1-DELIVERY.md): five focus/nesting scenarios × two engines × source and built exports. Fixed parent initial focus selecting a force-mounted child’s hidden Cancel. |
 | POP-1 | 2026-10-08 | [Delivery](POPOVER-POP1-DELIVERY.md): scrolling, resize, transform movement, collision and clipping; five scenarios × two engines × source and built exports. Fixed unintended coordinate transitions. |
 | CMB-2 browser portion | 2026-10-08 | [Delivery](COMBOBOX-CMB2-DELIVERY.md): five navigation/geometry/modal scenarios × two engines × source and built exports. Physical IME remains open above. |
 | CMB-1 | 2026-10-08 | [Delivery](COMBOBOX-CMB1-DELIVERY.md): four form/object/owner scenarios × two engines × source and built exports. No runtime fix was needed. |

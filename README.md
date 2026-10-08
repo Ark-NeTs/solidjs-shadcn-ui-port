@@ -69,6 +69,9 @@ The same page includes long-list and modal navigation examples, verified in
 Open `/?popover-placement&placement-case=scroll` for placement checks; substitute
 `resize`, `motion`, `edge` or `clip` for the other focused examples.
 [POP-1 delivery](docs/POPOVER-POP1-DELIVERY.md) records their browser acceptance.
+Open `/?alert-dialog-focus` for Alert Dialog keyboard and nested confirmation
+examples; append `&force-mounted` to keep the child mounted while closed.
+[ALT-1 delivery](docs/ALERT-ALT1-DELIVERY.md) records their focus acceptance.
 
 ![Light component gallery](docs/screenshots/light.png)
 ![Dark component gallery](docs/screenshots/dark.png)

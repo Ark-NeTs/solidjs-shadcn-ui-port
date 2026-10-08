@@ -185,3 +185,15 @@ Do not hide the defect by disabling motion in the test or widening its tolerance
 The regression samples intermediate frames, then requires subpixel attachment
 at rest. No placement engine, observer lifecycle or public prop API changes.
 See [POP-1 delivery](docs/POPOVER-POP1-DELIVERY.md).
+
+## Alert Dialog focus follow-up — 2026-10-08 (D19/D90)
+
+Restrict initial-focus candidates in the shared native-layer helper to controls
+whose nearest dialog/alertdialog is the layer being opened. Apply the same owner
+rule to the fallback content lookup. REASONING: a force-mounted child remains in
+the parent's DOM while closed; an unrestricted Cancel query found that hidden
+child button before the parent's own Cancel, so the parent's Cancel did not
+receive initial focus in either browser. Preserve Cancel priority, consumer cancellation
+hooks, native modality, Tab handling and scroll-lock cleanup. No new library,
+observer or delayed focus task is needed. See
+[ALT-1 delivery](docs/ALERT-ALT1-DELIVERY.md).

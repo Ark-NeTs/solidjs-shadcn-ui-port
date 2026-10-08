@@ -1,0 +1,3849 @@
+{
+  "config": {
+    "argv": [
+      "/Users/arktas/.asdf/installs/nodejs/25.3.0/bin/node",
+      "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/node_modules/.bin/playwright",
+      "test",
+      "tests/integration"
+    ],
+    "configFile": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/playwright.config.ts",
+    "rootDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "integration/**/*.spec.ts",
+          "e2e/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [
+          "**/visual.spec.ts"
+        ],
+        "testMatch": [
+          "integration/**/*.spec.ts",
+          "e2e/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "docs/evidence/alert-alt1-integration.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": {
+      "command": "bun run dev",
+      "url": "http://127.0.0.1:4403",
+      "reuseExistingServer": false,
+      "timeout": 60000
+    }
+  },
+  "suites": [
+    {
+      "title": "integration/alert-dialog-focus.spec.ts",
+      "file": "integration/alert-dialog-focus.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Alert Dialog wraps both Tab boundaries and skips disabled, hidden and negative-tabindex controls",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 553,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:34:26.485Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "cc0d7cd995f0b6ce7299-d8c579693c7b50621bff",
+          "file": "alert-dialog-focus.ts",
+          "line": 28,
+          "column": 3
+        },
+        {
+          "title": "nested Alert Dialog wraps focus and Escape restores its parent",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 428,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:34:27.256Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "cc0d7cd995f0b6ce7299-c27108d35306b91d5668",
+          "file": "alert-dialog-focus.ts",
+          "line": 59,
+          "column": 5
+        },
+        {
+          "title": "nested Alert Dialog wraps focus and Cancel restores its parent",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 473,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:34:27.690Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "cc0d7cd995f0b6ce7299-5cc3bd78844bdcedb7eb",
+          "file": "alert-dialog-focus.ts",
+          "line": 59,
+          "column": 5
+        },
+        {
+          "title": "nested Alert Dialog wraps focus and Confirm restores its parent",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 389,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:34:28.169Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "cc0d7cd995f0b6ce7299-fb1bf92a1583dc3ef98e",
+          "file": "alert-dialog-focus.ts",
+          "line": 59,
+          "column": 5
+        },
+        {
+          "title": "nested Alert Dialog wraps focus and Escape restores its parent with force-mounted content",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 402,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:34:28.563Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "cc0d7cd995f0b6ce7299-8fb5877b4960a9207e0b",
+          "file": "alert-dialog-focus.ts",
+          "line": 59,
+          "column": 5
+        },
+        {
+          "title": "Alert Dialog wraps both Tab boundaries and skips disabled, hidden and negative-tabindex controls",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1174,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:35:01.368Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "cc0d7cd995f0b6ce7299-334927274e592040111e",
+          "file": "alert-dialog-focus.ts",
+          "line": 28,
+          "column": 3
+        },
+        {
+          "title": "nested Alert Dialog wraps focus and Escape restores its parent",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 529,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:35:03.173Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "cc0d7cd995f0b6ce7299-9304cf929fe32b30ef7f",
+          "file": "alert-dialog-focus.ts",
+          "line": 59,
+          "column": 5
+        },
+        {
+          "title": "nested Alert Dialog wraps focus and Cancel restores its parent",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 511,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:35:03.709Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "cc0d7cd995f0b6ce7299-132c0d62f90de9132bb8",
+          "file": "alert-dialog-focus.ts",
+          "line": 59,
+          "column": 5
+        },
+        {
+          "title": "nested Alert Dialog wraps focus and Confirm restores its parent",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 568,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:35:04.225Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "cc0d7cd995f0b6ce7299-559bd6ea498feacd8cce",
+          "file": "alert-dialog-focus.ts",
+          "line": 59,
+          "column": 5
+        },
+        {
+          "title": "nested Alert Dialog wraps focus and Escape restores its parent with force-mounted content",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 527,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:35:04.798Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "cc0d7cd995f0b6ce7299-421d89e07e8906c1ef45",
+          "file": "alert-dialog-focus.ts",
+          "line": 59,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "integration/combobox.spec.ts",
+      "file": "integration/combobox.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "searches with keyboard, submits canonical state, resets and validates required selection",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 600,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:34:29.044Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "385cb6c6b2e672ec102d-bbc3e6d575922c387804",
+          "file": "integration/combobox.spec.ts",
+          "line": 4,
+          "column": 1
+        },
+        {
+          "title": "handles empty, disabled and rejected selections without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 569,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:34:29.649Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "385cb6c6b2e672ec102d-929cb4c7548103dc27ab",
+          "file": "integration/combobox.spec.ts",
+          "line": 7,
+          "column": 1
+        },
+        {
+          "title": "searches inside a popup and returns focus to its trigger",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 510,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:34:30.223Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "385cb6c6b2e672ec102d-c119d7801a192c16834c",
+          "file": "integration/combobox.spec.ts",
+          "line": 10,
+          "column": 1
+        },
+        {
+          "title": "selects multiple chips and clears by explicit remove actions",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 529,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:34:30.738Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "385cb6c6b2e672ec102d-5139dde6bedb063298eb",
+          "file": "integration/combobox.spec.ts",
+          "line": 13,
+          "column": 1
+        },
+        {
+          "title": "keeps open content accessible and within enlarged narrow viewports",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 828,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:34:31.272Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "385cb6c6b2e672ec102d-805aaa6d51f242cc07a7",
+          "file": "integration/combobox.spec.ts",
+          "line": 16,
+          "column": 1
+        },
+        {
+          "title": "Uncontrolled multiple values submit, remove, clear and reset to their defaults",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 700,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:34:32.105Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "385cb6c6b2e672ec102d-bc2c2effad6a1cdf7dd4",
+          "file": "combobox-contracts.ts",
+          "line": 7,
+          "column": 5
+        },
+        {
+          "title": "Controlled multiple values submit, remove, clear and reset to their defaults",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 698,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:34:32.809Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "385cb6c6b2e672ec102d-83f840e1b97dab29ff7c",
+          "file": "combobox-contracts.ts",
+          "line": 7,
+          "column": 5
+        },
+        {
+          "title": "object result replacement preserves stable-key selection and native form reset",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 719,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:34:33.511Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "385cb6c6b2e672ec102d-91005faaae9bf53c9737",
+          "file": "combobox-contracts.ts",
+          "line": 40,
+          "column": 3
+        },
+        {
+          "title": "rejected controlled opening, query and dismissal retain owner state until an owner update",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 642,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:34:34.235Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "385cb6c6b2e672ec102d-2c2ba217b6a2bddf5ada",
+          "file": "combobox-contracts.ts",
+          "line": 70,
+          "column": 3
+        },
+        {
+          "title": "active options stay visible through wrapping and scrolling in desktop layouts",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 609,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:34:34.883Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "385cb6c6b2e672ec102d-606a579bf3e4ce472e02",
+          "file": "combobox-navigation.ts",
+          "line": 21,
+          "column": 5
+        },
+        {
+          "title": "active options stay visible through wrapping and scrolling in narrow enlarged layouts",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 655,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:34:35.496Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "385cb6c6b2e672ec102d-9d73da5a88ff36973d8a",
+          "file": "combobox-navigation.ts",
+          "line": 21,
+          "column": 5
+        },
+        {
+          "title": "inline Tab and Shift+Tab discard drafts and reach native neighboring controls",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 352,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:34:36.156Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "385cb6c6b2e672ec102d-d1c3b0177bc7d01f8f16",
+          "file": "combobox-navigation.ts",
+          "line": 43,
+          "column": 3
+        },
+        {
+          "title": "popup search Tab reaches the next control and Shift+Tab returns to its trigger",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 477,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:34:36.512Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "385cb6c6b2e672ec102d-f17127a85cb60df42398",
+          "file": "combobox-navigation.ts",
+          "line": 61,
+          "column": 3
+        },
+        {
+          "title": "nested chooser selects and dismisses independently while its modal retains focus and scroll lock",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 817,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:34:36.993Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "385cb6c6b2e672ec102d-e116015a8b89099d5fef",
+          "file": "combobox-navigation.ts",
+          "line": 81,
+          "column": 3
+        },
+        {
+          "title": "searches with keyboard, submits canonical state, resets and validates required selection",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1004,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:35:05.410Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "385cb6c6b2e672ec102d-ce560f83cd48ff1d1b7b",
+          "file": "integration/combobox.spec.ts",
+          "line": 4,
+          "column": 1
+        },
+        {
+          "title": "handles empty, disabled and rejected selections without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 792,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:35:06.419Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "385cb6c6b2e672ec102d-961f1e0b137fa54bedba",
+          "file": "integration/combobox.spec.ts",
+          "line": 7,
+          "column": 1
+        },
+        {
+          "title": "searches inside a popup and returns focus to its trigger",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 579,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:35:07.216Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "385cb6c6b2e672ec102d-6b32125c2a8874a854ad",
+          "file": "integration/combobox.spec.ts",
+          "line": 10,
+          "column": 1
+        },
+        {
+          "title": "selects multiple chips and clears by explicit remove actions",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 618,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:35:07.800Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "385cb6c6b2e672ec102d-fe4938ab7af134977bd8",
+          "file": "integration/combobox.spec.ts",
+          "line": 13,
+          "column": 1
+        },
+        {
+          "title": "keeps open content accessible and within enlarged narrow viewports",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1449,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:35:08.424Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "385cb6c6b2e672ec102d-1e1d48aa856fc6e65208",
+          "file": "integration/combobox.spec.ts",
+          "line": 16,
+          "column": 1
+        },
+        {
+          "title": "Uncontrolled multiple values submit, remove, clear and reset to their defaults",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1056,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:35:09.879Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "385cb6c6b2e672ec102d-753c0b962348c938a9d0",
+          "file": "combobox-contracts.ts",
+          "line": 7,
+          "column": 5
+        },
+        {
+          "title": "Controlled multiple values submit, remove, clear and reset to their defaults",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 859,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:35:10.939Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "385cb6c6b2e672ec102d-988a6eb0655aab4f7b1c",
+          "file": "combobox-contracts.ts",
+          "line": 7,
+          "column": 5
+        },
+        {
+          "title": "object result replacement preserves stable-key selection and native form reset",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 943,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:35:11.803Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "385cb6c6b2e672ec102d-ef803ec378a65fee6378",
+          "file": "combobox-contracts.ts",
+          "line": 40,
+          "column": 3
+        },
+        {
+          "title": "rejected controlled opening, query and dismissal retain owner state until an owner update",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 782,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:35:12.752Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "385cb6c6b2e672ec102d-392f847a9108f278a694",
+          "file": "combobox-contracts.ts",
+          "line": 70,
+          "column": 3
+        },
+        {
+          "title": "active options stay visible through wrapping and scrolling in desktop layouts",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1060,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:35:13.538Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "385cb6c6b2e672ec102d-87f5a6bb023049e599d4",
+          "file": "combobox-navigation.ts",
+          "line": 21,
+          "column": 5
+        },
+        {
+          "title": "active options stay visible through wrapping and scrolling in narrow enlarged layouts",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 802,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:35:14.603Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "385cb6c6b2e672ec102d-fec6bc246af8ecc90fa6",
+          "file": "combobox-navigation.ts",
+          "line": 21,
+          "column": 5
+        },
+        {
+          "title": "inline Tab and Shift+Tab discard drafts and reach native neighboring controls",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 415,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:35:15.409Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "385cb6c6b2e672ec102d-43bb80ac3a3592c5a24e",
+          "file": "combobox-navigation.ts",
+          "line": 43,
+          "column": 3
+        },
+        {
+          "title": "popup search Tab reaches the next control and Shift+Tab returns to its trigger",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 541,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:35:15.828Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "385cb6c6b2e672ec102d-799d310a4ed2282e7263",
+          "file": "combobox-navigation.ts",
+          "line": 61,
+          "column": 3
+        },
+        {
+          "title": "nested chooser selects and dismisses independently while its modal retains focus and scroll lock",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 812,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:35:16.373Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "385cb6c6b2e672ec102d-479e23c278596fce18f6",
+          "file": "combobox-navigation.ts",
+          "line": 81,
+          "column": 3
+        }
+      ]
+    },
+    {
+      "title": "integration/form-fields.spec.ts",
+      "file": "integration/form-fields.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "labels focus their controls and keyboard navigation exposes focus rings",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 524,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:34:37.819Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a86abe38d4a4b49d7018-a157c18719acb3c4ed63",
+          "file": "integration/form-fields.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "read-only, disabled, file and invalid fields retain their native behavior",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 599,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:34:38.348Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a86abe38d4a4b49d7018-a463ea44eeeaec177262",
+          "file": "integration/form-fields.spec.ts",
+          "line": 11,
+          "column": 1
+        },
+        {
+          "title": "light invalid field presentation has no axe violations",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1370,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:34:38.952Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a86abe38d4a4b49d7018-f9bbef839f6979ff5008",
+          "file": "integration/form-fields.spec.ts",
+          "line": 19,
+          "column": 36
+        },
+        {
+          "title": "dark invalid field presentation has no axe violations",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1311,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:34:40.327Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a86abe38d4a4b49d7018-5bfd6981bd71dd5dd812",
+          "file": "integration/form-fields.spec.ts",
+          "line": 19,
+          "column": 36
+        },
+        {
+          "title": "labels focus their controls and keyboard navigation exposes focus rings",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1088,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:35:17.198Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a86abe38d4a4b49d7018-88a33455432b015872dd",
+          "file": "integration/form-fields.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "read-only, disabled, file and invalid fields retain their native behavior",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 599,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:35:18.293Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a86abe38d4a4b49d7018-e87249b5e8a35fd07cad",
+          "file": "integration/form-fields.spec.ts",
+          "line": 11,
+          "column": 1
+        },
+        {
+          "title": "light invalid field presentation has no axe violations",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1495,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:35:18.907Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a86abe38d4a4b49d7018-cb2510a7262db300c1b2",
+          "file": "integration/form-fields.spec.ts",
+          "line": 19,
+          "column": 36
+        },
+        {
+          "title": "dark invalid field presentation has no axe violations",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1634,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:35:20.408Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a86abe38d4a4b49d7018-f398a0be0498c87a55a8",
+          "file": "integration/form-fields.spec.ts",
+          "line": 19,
+          "column": 36
+        }
+      ]
+    },
+    {
+      "title": "integration/foundation.spec.ts",
+      "file": "integration/foundation.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "keyboard activation, focus ring, disabled examples and navigation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 476,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:34:41.647Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "179b3cd50866ab2deb38-61db3b5f25d238767907",
+          "file": "integration/foundation.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "card size and separator orientation update geometry and semantics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 556,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:34:42.128Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "179b3cd50866ab2deb38-4fc97867e0c56d8b0270",
+          "file": "integration/foundation.spec.ts",
+          "line": 12,
+          "column": 1
+        },
+        {
+          "title": "custom theme changes token-driven button colors",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 454,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:34:42.689Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "179b3cd50866ab2deb38-70ffe39b741da1edf102",
+          "file": "integration/foundation.spec.ts",
+          "line": 18,
+          "column": 1
+        },
+        {
+          "title": "loading placeholders are hidden from accessibility tree and stop motion",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 420,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:34:43.149Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "179b3cd50866ab2deb38-50b30ecaf4e0d6fcf0d3",
+          "file": "integration/foundation.spec.ts",
+          "line": 22,
+          "column": 1
+        },
+        {
+          "title": "light examples have no axe accessibility violations",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1023,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:34:43.574Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "179b3cd50866ab2deb38-ac852dd433751cc84727",
+          "file": "integration/foundation.spec.ts",
+          "line": 27,
+          "column": 36
+        },
+        {
+          "title": "dark examples have no axe accessibility violations",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1207,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:34:44.602Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "179b3cd50866ab2deb38-b01ffb469d2943b595d6",
+          "file": "integration/foundation.spec.ts",
+          "line": 27,
+          "column": 36
+        },
+        {
+          "title": "keyboard activation, focus ring, disabled examples and navigation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 705,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:35:22.053Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "179b3cd50866ab2deb38-c2c018ed6751fdfea4f0",
+          "file": "integration/foundation.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "card size and separator orientation update geometry and semantics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 519,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:35:22.763Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "179b3cd50866ab2deb38-cdd614cd559c6933de3e",
+          "file": "integration/foundation.spec.ts",
+          "line": 12,
+          "column": 1
+        },
+        {
+          "title": "custom theme changes token-driven button colors",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 428,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:35:23.286Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "179b3cd50866ab2deb38-f41eff82e452b2831be8",
+          "file": "integration/foundation.spec.ts",
+          "line": 18,
+          "column": 1
+        },
+        {
+          "title": "loading placeholders are hidden from accessibility tree and stop motion",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 478,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:35:23.721Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "179b3cd50866ab2deb38-356fb439342852dc6b5f",
+          "file": "integration/foundation.spec.ts",
+          "line": 22,
+          "column": 1
+        },
+        {
+          "title": "light examples have no axe accessibility violations",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1309,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:35:24.206Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "179b3cd50866ab2deb38-d24f38f7777c9010561c",
+          "file": "integration/foundation.spec.ts",
+          "line": 27,
+          "column": 36
+        },
+        {
+          "title": "dark examples have no axe accessibility violations",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1471,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:35:25.520Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "179b3cd50866ab2deb38-f0bb440ae0e84d491ddf",
+          "file": "integration/foundation.spec.ts",
+          "line": 27,
+          "column": 36
+        }
+      ]
+    },
+    {
+      "title": "integration/overlays.spec.ts",
+      "file": "integration/overlays.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "tabs skip disabled entries and support automatic, manual, vertical and RTL navigation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 616,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:34:45.821Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d07e81ed22d46041db88-d8e9a9f39ebba4e6c972",
+          "file": "integration/overlays.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "popover positions, labels and restores focus on Escape but preserves outside clicks",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 812,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:34:46.442Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d07e81ed22d46041db88-da89d290680e25379219",
+          "file": "integration/overlays.spec.ts",
+          "line": 11,
+          "column": 1
+        },
+        {
+          "title": "nested alert dismissal leaves the popover open and returns focus to its trigger",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 668,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:34:47.259Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d07e81ed22d46041db88-a5d662f1390dab814fdb",
+          "file": "integration/overlays.spec.ts",
+          "line": 16,
+          "column": 1
+        },
+        {
+          "title": "modal popover traps focus and releases scroll locking",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 612,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:34:47.932Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d07e81ed22d46041db88-12d8d6129660071d8332",
+          "file": "integration/overlays.spec.ts",
+          "line": 19,
+          "column": 1
+        },
+        {
+          "title": "alert blocks outside dismissal and preserves a draft through pending failure and retry",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 684,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:34:48.550Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d07e81ed22d46041db88-21d8ddef331d83d2f798",
+          "file": "integration/overlays.spec.ts",
+          "line": 22,
+          "column": 1
+        },
+        {
+          "title": "overlays pass axe with light theme and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1553,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:34:49.241Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d07e81ed22d46041db88-b132e6cea2fd2f1e4528",
+          "file": "integration/overlays.spec.ts",
+          "line": 25,
+          "column": 32
+        },
+        {
+          "title": "overlays pass axe with dark theme and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1656,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:34:50.798Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d07e81ed22d46041db88-04ad7c8aa2b55585d804",
+          "file": "integration/overlays.spec.ts",
+          "line": 25,
+          "column": 32
+        },
+        {
+          "title": "tabs skip disabled entries and support automatic, manual, vertical and RTL navigation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1487,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:35:27.003Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d07e81ed22d46041db88-496c6ce834a4a0328332",
+          "file": "integration/overlays.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "popover positions, labels and restores focus on Escape but preserves outside clicks",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 848,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:35:28.495Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d07e81ed22d46041db88-a2a1118f8aca0de2d926",
+          "file": "integration/overlays.spec.ts",
+          "line": 11,
+          "column": 1
+        },
+        {
+          "title": "nested alert dismissal leaves the popover open and returns focus to its trigger",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 634,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:35:29.349Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d07e81ed22d46041db88-a14f58a08abe4c0f8c75",
+          "file": "integration/overlays.spec.ts",
+          "line": 16,
+          "column": 1
+        },
+        {
+          "title": "modal popover traps focus and releases scroll locking",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 572,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:35:29.989Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d07e81ed22d46041db88-b73e5c81ef3608c6155a",
+          "file": "integration/overlays.spec.ts",
+          "line": 19,
+          "column": 1
+        },
+        {
+          "title": "alert blocks outside dismissal and preserves a draft through pending failure and retry",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 840,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:35:30.567Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d07e81ed22d46041db88-ef8d964468863ed443c7",
+          "file": "integration/overlays.spec.ts",
+          "line": 22,
+          "column": 1
+        },
+        {
+          "title": "overlays pass axe with light theme and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2263,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:35:31.412Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d07e81ed22d46041db88-9f32c4d0f410f64b55f7",
+          "file": "integration/overlays.spec.ts",
+          "line": 25,
+          "column": 32
+        },
+        {
+          "title": "overlays pass axe with dark theme and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2252,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:35:33.680Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d07e81ed22d46041db88-0feb88dd4fb7367c7533",
+          "file": "integration/overlays.spec.ts",
+          "line": 25,
+          "column": 32
+        }
+      ]
+    },
+    {
+      "title": "integration/popover-placement.spec.ts",
+      "file": "integration/popover-placement.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "follows two-axis ancestor scrolling and document scrolling while remaining open",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 725,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:34:52.464Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3f790e6f9312b1d7803d-b0a1faa946a70aef9806",
+          "file": "popover-placement.ts",
+          "line": 37,
+          "column": 3
+        },
+        {
+          "title": "reanchors after viewport, anchor and popup resizing without reopening",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 994,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:34:53.195Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3f790e6f9312b1d7803d-ca5630f9ed01ae8769c5",
+          "file": "popover-placement.ts",
+          "line": 57,
+          "column": 3
+        },
+        {
+          "title": "tracks a transformed anchor during movement and returns to its original position",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1825,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:34:54.194Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "movement-samples",
+                      "contentType": "application/json",
+                      "body": "W3sidGltZSI6MzU2LjUsInBvcHVwWCI6NjAsInBvcHVwWSI6MjI4LCJhbmNob3JZIjoxODAsIngiOjYwLCJlcnJvciI6MH0seyJ0aW1lIjozNzMuODAwMDAwMTkwNzM0ODYsInBvcHVwWCI6NjMuNzM0Mzc1LCJwb3B1cFkiOjIzMC40ODQzNzUsImFuY2hvclkiOjE4Mi40OTgzOTc4MjcxNDg0NCwieCI6NjMuNzQ3NjAwNTU1NDE5OTIsImVycm9yIjowLjAxNDAyMjgyNzE0ODQzNzV9LHsidGltZSI6Mzg4LjcwMDAwMDI4NjEwMjMsInBvcHVwWCI6NjcuNSwicG9wdXBZIjoyMzMsImFuY2hvclkiOjE4NS4wMDM0MDI3MDk5NjA5NCwieCI6NjcuNTA1MDk2NDM1NTQ2ODgsImVycm9yIjowLjAwNTA5NjQzNTU0Njg3NX0seyJ0aW1lIjo0MDcuMDk5OTk5OTA0NjMyNTcsInBvcHVwWCI6NzEuMjUsInBvcHVwWSI6MjM1LjUsImFuY2hvclkiOjE4Ny41MDgzOTIzMzM5ODQzOCwieCI6NzEuMjYyNjAzNzU5NzY1NjIsImVycm9yIjowLjAxMjYwMzc1OTc2NTYyNX0seyJ0aW1lIjo0MjMuMzAwMDAwMTkwNzM0ODYsInBvcHVwWCI6NzQuOTg0Mzc1LCJwb3B1cFkiOjIzNy45ODQzNzUsImFuY2hvclkiOjE4OS45OTgzOTc4MjcxNDg0NCwieCI6NzQuOTk3NjA0MzcwMTE3MTksImVycm9yIjowLjAxNDAyMjgyNzE0ODQzNzV9LHsidGltZSI6NDQwLjA5OTk5OTkwNDYzMjU3LCJwb3B1cFgiOjc4Ljc1LCJwb3B1cFkiOjI0MC41LCJhbmNob3JZIjoxOTIuNTAzNDAyNzA5OTYwOTQsIngiOjc4Ljc1NTA5NjQzNTU0Njg4LCJlcnJvciI6MC4wMDUwOTY0MzU1NDY4NzV9LHsidGltZSI6NDU2LCJwb3B1cFgiOjgyLjQ4NDM3NSwicG9wdXBZIjoyNDIuOTg0Mzc1LCJhbmNob3JZIjoxOTQuOTkzMzkyOTQ0MzM1OTQsIngiOjgyLjQ5MDA5NzA0NTg5ODQ0LCJlcnJvciI6MC4wMDkwMzMyMDMxMjV9LHsidGltZSI6NDcxLjkwMDAwMDA5NTM2NzQzLCJwb3B1cFgiOjg2LjIzNDM3NSwicG9wdXBZIjoyNDUuNDg0Mzc1LCJhbmNob3JZIjoxOTcuNDk4Mzk3ODI3MTQ4NDQsIngiOjg2LjI0NzYwNDM3MDExNzE5LCJlcnJvciI6MC4wMTQwMjI4MjcxNDg0Mzc1fSx7InRpbWUiOjQ4OS43MDAwMDAyODYxMDIzLCJwb3B1cFgiOjkwLCJwb3B1cFkiOjI0OCwiYW5jaG9yWSI6MjAwLjAwMzQwMjcwOTk2MDk0LCJ4Ijo5MC4wMDUwOTY0MzU1NDY4OCwiZXJyb3IiOjAuMDA1MDk2NDM1NTQ2ODc1fSx7InRpbWUiOjUwNi41OTk5OTk5MDQ2MzI1NywicG9wdXBYIjo5My43NSwicG9wdXBZIjoyNTAuNSwiYW5jaG9yWSI6MjAyLjUwODM5MjMzMzk4NDM4LCJ4Ijo5My43NjI2MDM3NTk3NjU2MiwiZXJyb3IiOjAuMDEyNjAzNzU5NzY1NjI1fSx7InRpbWUiOjUyMy44MDAwMDAxOTA3MzQ5LCJwb3B1cFgiOjk3LjQ4NDM3NSwicG9wdXBZIjoyNTIuOTg0Mzc1LCJhbmNob3JZIjoyMDQuOTk4Mzk3ODI3MTQ4NDQsIngiOjk3LjQ5NzYwNDM3MDExNzE5LCJlcnJvciI6MC4wMTQwMjI4MjcxNDg0Mzc1fSx7InRpbWUiOjUzOS41LCJwb3B1cFgiOjEwMS4yNSwicG9wdXBZIjoyNTUuNSwiYW5jaG9yWSI6MjA3LjUwMzQwMjcwOTk2MDk0LCJ4IjoxMDEuMjU1MDk2NDM1NTQ2ODgsImVycm9yIjowLjAwNTA5NjQzNTU0Njg3NX0seyJ0aW1lIjo1NTYuOTAwMDAwMDk1MzY3NCwicG9wdXBYIjoxMDQuOTg0Mzc1LCJwb3B1cFkiOjI1Ny45ODQzNzUsImFuY2hvclkiOjIwOS45OTM0MDgyMDMxMjUsIngiOjEwNC45OTAwOTcwNDU4OTg0NCwiZXJyb3IiOjAuMDA5MDMzMjAzMTI1fSx7InRpbWUiOjU3Mi4wOTk5OTk5MDQ2MzI2LCJwb3B1cFgiOjEwOC43MzQzNzUsInBvcHVwWSI6MjYwLjQ4NDM3NSwiYW5jaG9yWSI6MjEyLjQ5ODM5NzgyNzE0ODQ0LCJ4IjoxMDguNzQ3NjA0MzcwMTE3MTksImVycm9yIjowLjAxNDAyMjgyNzE0ODQzNzV9LHsidGltZSI6NTg5LjkwMDAwMDA5NTM2NzQsInBvcHVwWCI6MTEyLjUsInBvcHVwWSI6MjYzLCJhbmNob3JZIjoyMTUuMDAzNDAyNzA5OTYwOTQsIngiOjExMi41MDUwOTY0MzU1NDY4OCwiZXJyb3IiOjAuMDA1MDk2NDM1NTQ2ODc1fSx7InRpbWUiOjYwNi45MDAwMDAwOTUzNjc0LCJwb3B1cFgiOjExNi4yMzQzNzUsInBvcHVwWSI6MjY1LjQ4NDM3NSwiYW5jaG9yWSI6MjE3LjQ5MzQwODIwMzEyNSwieCI6MTE2LjI0MDA5NzA0NTg5ODQ0LCJlcnJvciI6MC4wMDkwMzMyMDMxMjV9LHsidGltZSI6NjIxLjkwMDAwMDA5NTM2NzQsInBvcHVwWCI6MTE5Ljk4NDM3NSwicG9wdXBZIjoyNjcuOTg0Mzc1LCJhbmNob3JZIjoyMTkuOTk4Mzk3ODI3MTQ4NDQsIngiOjExOS45OTc2MDQzNzAxMTcxOSwiZXJyb3IiOjAuMDE0MDM4MDg1OTM3NX0seyJ0aW1lIjo2NDAuNDAwMDAwMDk1MzY3NCwicG9wdXBYIjoxMjMuNzUsInBvcHVwWSI6MjcwLjUsImFuY2hvclkiOjIyMi41MDM0MDI3MDk5NjA5NCwieCI6MTIzLjc1NTA5NjQzNTU0Njg4LCJlcnJvciI6MC4wMDUwOTY0MzU1NDY4NzV9LHsidGltZSI6NjU2LjcwMDAwMDI4NjEwMjMsInBvcHVwWCI6MTI3LjQ4NDM3NSwicG9wdXBZIjoyNzIuOTg0Mzc1LCJhbmNob3JZIjoyMjQuOTkzNDA4MjAzMTI1LCJ4IjoxMjcuNDkwMDk3MDQ1ODk4NDQsImVycm9yIjowLjAwOTAzMzIwMzEyNX0seyJ0aW1lIjo2NzIuMDk5OTk5OTA0NjMyNiwicG9wdXBYIjoxMzEuMjM0Mzc1LCJwb3B1cFkiOjI3NS40ODQzNzUsImFuY2hvclkiOjIyNy40OTgzOTc4MjcxNDg0NCwieCI6MTMxLjI0NzU4OTExMTMyODEyLCJlcnJvciI6MC4wMTQwMzgwODU5Mzc1fSx7InRpbWUiOjY5MC40MDAwMDAwOTUzNjc0LCJwb3B1cFgiOjEzNSwicG9wdXBZIjoyNzgsImFuY2hvclkiOjIzMC4wMDM0MDI3MDk5NjA5NCwieCI6MTM1LjAwNTA5NjQzNTU0Njg4LCJlcnJvciI6MC4wMDUwOTY0MzU1NDY4NzV9LHsidGltZSI6NzA2LjMwMDAwMDE5MDczNDksInBvcHVwWCI6MTM4LjczNDM3NSwicG9wdXBZIjoyODAuNDg0Mzc1LCJhbmNob3JZIjoyMzIuNDkzNDA4MjAzMTI1LCJ4IjoxMzguNzQwMDk3MDQ1ODk4NDQsImVycm9yIjowLjAwOTAzMzIwMzEyNX0seyJ0aW1lIjo3MjMuODAwMDAwMTkwNzM0OSwicG9wdXBYIjoxNDIuNDg0Mzc1LCJwb3B1cFkiOjI4Mi45ODQzNzUsImFuY2hvclkiOjIzNC45OTgzOTc4MjcxNDg0NCwieCI6MTQyLjQ5NzU4OTExMTMyODEyLCJlcnJvciI6MC4wMTQwMzgwODU5Mzc1fSx7InRpbWUiOjczOS44MDAwMDAxOTA3MzQ5LCJwb3B1cFgiOjE0Ni4yNSwicG9wdXBZIjoyODUuNSwiYW5jaG9yWSI6MjM3LjUwMzQwMjcwOTk2MDk0LCJ4IjoxNDYuMjU1MDk2NDM1NTQ2ODgsImVycm9yIjowLjAwNTA5NjQzNTU0Njg3NX0seyJ0aW1lIjo3NTYuNTk5OTk5OTA0NjMyNiwicG9wdXBYIjoxNDkuOTg0Mzc1LCJwb3B1cFkiOjI4Ny45ODQzNzUsImFuY2hvclkiOjIzOS45OTM0MDgyMDMxMjUsIngiOjE0OS45OTAwOTcwNDU4OTg0NCwiZXJyb3IiOjAuMDA5MDMzMjAzMTI1fSx7InRpbWUiOjc3Mi4wOTk5OTk5MDQ2MzI2LCJwb3B1cFgiOjE1MCwicG9wdXBZIjoyODgsImFuY2hvclkiOjI0MCwieCI6MTUwLCJlcnJvciI6MH0seyJ0aW1lIjo3ODkuNSwicG9wdXBYIjoxNTAsInBvcHVwWSI6Mjg4LCJhbmNob3JZIjoyNDAsIngiOjE1MCwiZXJyb3IiOjB9LHsidGltZSI6ODA0LjcwMDAwMDI4NjEwMjMsInBvcHVwWCI6MTUwLCJwb3B1cFkiOjI4OCwiYW5jaG9yWSI6MjQwLCJ4IjoxNTAsImVycm9yIjowfSx7InRpbWUiOjgyMi41LCJwb3B1cFgiOjE1MCwicG9wdXBZIjoyODgsImFuY2hvclkiOjI0MCwieCI6MTUwLCJlcnJvciI6MH0seyJ0aW1lIjo4MzkuNzAwMDAwMjg2MTAyMywicG9wdXBYIjoxNTAsInBvcHVwWSI6Mjg4LCJhbmNob3JZIjoyNDAsIngiOjE1MCwiZXJyb3IiOjB9XQ=="
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3f790e6f9312b1d7803d-832430513cd5606cdb8a",
+          "file": "popover-placement.ts",
+          "line": 77,
+          "column": 3
+        },
+        {
+          "title": "flips and shifts at viewport edges, constrains oversized content and keeps its action reachable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 520,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:34:56.025Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3f790e6f9312b1d7803d-0471acc8f3fb18f16efe",
+          "file": "popover-placement.ts",
+          "line": 108,
+          "column": 3
+        },
+        {
+          "title": "escapes a transformed paint-clipping ancestor and accepts clicks outside its bounds",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 522,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:34:56.550Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3f790e6f9312b1d7803d-33fea5eba0e46f976557",
+          "file": "popover-placement.ts",
+          "line": 130,
+          "column": 3
+        },
+        {
+          "title": "follows two-axis ancestor scrolling and document scrolling while remaining open",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 784,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:35:35.950Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3f790e6f9312b1d7803d-6aa00860496652ed6ce9",
+          "file": "popover-placement.ts",
+          "line": 37,
+          "column": 3
+        },
+        {
+          "title": "reanchors after viewport, anchor and popup resizing without reopening",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 797,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:35:36.739Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3f790e6f9312b1d7803d-b6cb28c91a0a658fff2f",
+          "file": "popover-placement.ts",
+          "line": 57,
+          "column": 3
+        },
+        {
+          "title": "tracks a transformed anchor during movement and returns to its original position",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1926,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:35:37.542Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "movement-samples",
+                      "contentType": "application/json",
+                      "body": "W3sidGltZSI6MzM2LCJwb3B1cFgiOjYzLjc1LCJwb3B1cFkiOjIzMC41LCJhbmNob3JZIjoxODIuNSwieCI6NjMuNzUsImVycm9yIjowfSx7InRpbWUiOjM1MCwicG9wdXBYIjo2Ny41LCJwb3B1cFkiOjIzMywiYW5jaG9yWSI6MTg1LCJ4Ijo2Ny41LCJlcnJvciI6MH0seyJ0aW1lIjozNzQsInBvcHVwWCI6NzEuMjUsInBvcHVwWSI6MjM1LjUsImFuY2hvclkiOjE4Ny41LCJ4Ijo3MS4yNSwiZXJyb3IiOjB9LHsidGltZSI6Mzg2LCJwb3B1cFgiOjc1LCJwb3B1cFkiOjIzOCwiYW5jaG9yWSI6MTkwLCJ4Ijo3NSwiZXJyb3IiOjB9LHsidGltZSI6NDA2LCJwb3B1cFgiOjc4Ljc1LCJwb3B1cFkiOjI0MC41LCJhbmNob3JZIjoxOTIuNSwieCI6NzguNzUsImVycm9yIjowfSx7InRpbWUiOjQxNywicG9wdXBYIjo4Mi41LCJwb3B1cFkiOjI0MywiYW5jaG9yWSI6MTk1LCJ4Ijo4Mi41LCJlcnJvciI6MH0seyJ0aW1lIjo0NDAsInBvcHVwWCI6ODYuMjUsInBvcHVwWSI6MjQ1LjUsImFuY2hvclkiOjE5Ny41LCJ4Ijo4Ni4yNSwiZXJyb3IiOjB9LHsidGltZSI6NDUzLCJwb3B1cFgiOjkwLCJwb3B1cFkiOjI0OCwiYW5jaG9yWSI6MjAwLCJ4Ijo5MCwiZXJyb3IiOjB9LHsidGltZSI6NDcyLCJwb3B1cFgiOjkzLjc1LCJwb3B1cFkiOjI1MC41LCJhbmNob3JZIjoyMDIuNSwieCI6OTMuNzUsImVycm9yIjowfSx7InRpbWUiOjQ4OCwicG9wdXBYIjo5Ny41LCJwb3B1cFkiOjI1MywiYW5jaG9yWSI6MjA1LCJ4Ijo5Ny41LCJlcnJvciI6MH0seyJ0aW1lIjo1MDYsInBvcHVwWCI6MTAxLjI1LCJwb3B1cFkiOjI1NS41LCJhbmNob3JZIjoyMDcuNSwieCI6MTAxLjI1LCJlcnJvciI6MH0seyJ0aW1lIjo1MTgsInBvcHVwWCI6MTA1LCJwb3B1cFkiOjI1OCwiYW5jaG9yWSI6MjEwLCJ4IjoxMDUsImVycm9yIjowfSx7InRpbWUiOjUzNywicG9wdXBYIjoxMDguNzUsInBvcHVwWSI6MjYwLjUsImFuY2hvclkiOjIxMi41LCJ4IjoxMDguNzUsImVycm9yIjowfSx7InRpbWUiOjU1MCwicG9wdXBYIjoxMTIuNDY2NjU5NTQ1ODk4NDQsInBvcHVwWSI6MjYyLjk4MzMzNzQwMjM0Mzc1LCJhbmNob3JZIjoyMTQuOTgzMzM3NDAyMzQzNzUsIngiOjExMi40NjY2NTk1NDU4OTg0NCwiZXJyb3IiOjB9LHsidGltZSI6NTY2LCJwb3B1cFgiOjExNi4xMDAwMDYxMDM1MTU2MiwicG9wdXBZIjoyNjUuMzk5OTkzODk2NDg0NCwiYW5jaG9yWSI6MjE3LjM5OTk5Mzg5NjQ4NDM4LCJ4IjoxMTYuMTAwMDA2MTAzNTE1NjIsImVycm9yIjowfSx7InRpbWUiOjU4NCwicG9wdXBYIjoxMjAsInBvcHVwWSI6MjY4LCJhbmNob3JZIjoyMjAsIngiOjEyMCwiZXJyb3IiOjB9LHsidGltZSI6NjAwLCJwb3B1cFgiOjEyMy43NSwicG9wdXBZIjoyNzAuNSwiYW5jaG9yWSI6MjIyLjUsIngiOjEyMy43NSwiZXJyb3IiOjB9LHsidGltZSI6NjI0LCJwb3B1cFgiOjEyNy41LCJwb3B1cFkiOjI3MywiYW5jaG9yWSI6MjI1LCJ4IjoxMjcuNSwiZXJyb3IiOjB9LHsidGltZSI6NjM2LCJwb3B1cFgiOjEzMS4yNSwicG9wdXBZIjoyNzUuNSwiYW5jaG9yWSI6MjI3LjUsIngiOjEzMS4yNSwiZXJyb3IiOjB9LHsidGltZSI6NjU2LCJwb3B1cFgiOjEzNSwicG9wdXBZIjoyNzgsImFuY2hvclkiOjIzMCwieCI6MTM1LCJlcnJvciI6MH0seyJ0aW1lIjo2NjUsInBvcHVwWCI6MTM4LjYxNjY2ODcwMTE3MTg4LCJwb3B1cFkiOjI4MC40MTY2ODcwMTE3MTg3NSwiYW5jaG9yWSI6MjMyLjQxNjY3MTc1MjkyOTcsIngiOjEzOC42MTY2Njg3MDExNzE4OCwiZXJyb3IiOjAuMDAwMDE1MjU4Nzg5MDYyNX0seyJ0aW1lIjo2OTEsInBvcHVwWCI6MTQyLjUsInBvcHVwWSI6MjgzLCJhbmNob3JZIjoyMzUsIngiOjE0Mi41LCJlcnJvciI6MH0seyJ0aW1lIjo3MDQsInBvcHVwWCI6MTQ2LjI1LCJwb3B1cFkiOjI4NS41LCJhbmNob3JZIjoyMzcuNSwieCI6MTQ2LjI1LCJlcnJvciI6MH0seyJ0aW1lIjo3MjEsInBvcHVwWCI6MTUwLCJwb3B1cFkiOjI4OCwiYW5jaG9yWSI6MjQwLCJ4IjoxNTAsImVycm9yIjowfSx7InRpbWUiOjczNywicG9wdXBYIjoxNTAsInBvcHVwWSI6Mjg4LCJhbmNob3JZIjoyNDAsIngiOjE1MCwiZXJyb3IiOjB9LHsidGltZSI6NzU1LCJwb3B1cFgiOjE1MCwicG9wdXBZIjoyODgsImFuY2hvclkiOjI0MCwieCI6MTUwLCJlcnJvciI6MH0seyJ0aW1lIjo3NzEsInBvcHVwWCI6MTUwLCJwb3B1cFkiOjI4OCwiYW5jaG9yWSI6MjQwLCJ4IjoxNTAsImVycm9yIjowfSx7InRpbWUiOjc4MSwicG9wdXBYIjoxNTAsInBvcHVwWSI6Mjg4LCJhbmNob3JZIjoyNDAsIngiOjE1MCwiZXJyb3IiOjB9LHsidGltZSI6ODA2LCJwb3B1cFgiOjE1MCwicG9wdXBZIjoyODgsImFuY2hvclkiOjI0MCwieCI6MTUwLCJlcnJvciI6MH0seyJ0aW1lIjo4MTksInBvcHVwWCI6MTUwLCJwb3B1cFkiOjI4OCwiYW5jaG9yWSI6MjQwLCJ4IjoxNTAsImVycm9yIjowfV0="
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3f790e6f9312b1d7803d-188cb9cc7d392b7f7444",
+          "file": "popover-placement.ts",
+          "line": 77,
+          "column": 3
+        },
+        {
+          "title": "flips and shifts at viewport edges, constrains oversized content and keeps its action reachable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1060,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:35:39.473Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3f790e6f9312b1d7803d-65e67d523f86b4bd20b8",
+          "file": "popover-placement.ts",
+          "line": 108,
+          "column": 3
+        },
+        {
+          "title": "escapes a transformed paint-clipping ancestor and accepts clicks outside its bounds",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 624,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:35:40.539Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3f790e6f9312b1d7803d-352ec12ea41f4de075ba",
+          "file": "popover-placement.ts",
+          "line": 130,
+          "column": 3
+        }
+      ]
+    },
+    {
+      "title": "integration/toggles.spec.ts",
+      "file": "integration/toggles.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "labels and Space update checkboxes, mixed selections and switches once",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 501,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:34:57.082Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "338379f0248b3e90e5a5-774733eb6f1673b9a0f6",
+          "file": "integration/toggles.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "disabled/read-only and rejected controlled changes preserve the displayed value",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 550,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:34:57.587Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "338379f0248b3e90e5a5-cb1a835204c1ea756369",
+          "file": "integration/toggles.spec.ts",
+          "line": 10,
+          "column": 1
+        },
+        {
+          "title": "both switch sizes move the thumb correctly in LTR and RTL and respect reduced motion",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 449,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:34:58.142Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "338379f0248b3e90e5a5-306ef79b01048899c256",
+          "file": "integration/toggles.spec.ts",
+          "line": 15,
+          "column": 1
+        },
+        {
+          "title": "light toggles including invalid controls pass axe",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1236,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:34:58.596Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "338379f0248b3e90e5a5-258c5ce781e6195be449",
+          "file": "integration/toggles.spec.ts",
+          "line": 23,
+          "column": 36
+        },
+        {
+          "title": "dark toggles including invalid controls pass axe",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1191,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:34:59.837Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "338379f0248b3e90e5a5-ab455b234b5df6cb3424",
+          "file": "integration/toggles.spec.ts",
+          "line": 23,
+          "column": 36
+        },
+        {
+          "title": "labels and Space update checkboxes, mixed selections and switches once",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 628,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:35:41.174Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "338379f0248b3e90e5a5-f9a86d3e42c261f47470",
+          "file": "integration/toggles.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "disabled/read-only and rejected controlled changes preserve the displayed value",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 771,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:35:41.808Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "338379f0248b3e90e5a5-b84f0045d8270319ee33",
+          "file": "integration/toggles.spec.ts",
+          "line": 10,
+          "column": 1
+        },
+        {
+          "title": "both switch sizes move the thumb correctly in LTR and RTL and respect reduced motion",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 639,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:35:42.586Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "338379f0248b3e90e5a5-ffea53a5d3abac4f8414",
+          "file": "integration/toggles.spec.ts",
+          "line": 15,
+          "column": 1
+        },
+        {
+          "title": "light toggles including invalid controls pass axe",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1677,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:35:43.230Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "338379f0248b3e90e5a5-8c95dbd0cb3b6b5d9e90",
+          "file": "integration/toggles.spec.ts",
+          "line": 23,
+          "column": 36
+        },
+        {
+          "title": "dark toggles including invalid controls pass axe",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1610,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T06:35:44.913Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "338379f0248b3e90e5a5-d3893fb6a71976491a66",
+          "file": "integration/toggles.spec.ts",
+          "line": 23,
+          "column": 36
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-08T06:34:25.177Z",
+    "duration": 81715.363,
+    "expected": 92,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

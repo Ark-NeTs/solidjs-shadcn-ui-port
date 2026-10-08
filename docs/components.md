@@ -378,7 +378,9 @@ above. Always provide a title or explicit accessible name; description is
 optional. Native modal behavior makes the background inert; outside clicks do
 not dismiss. Cancel receives initial focus; Escape and accepted action/cancel
 requests close and restore the trigger. Keyboard Tab/Shift+Tab wrap inside the
-active modal. Scroll locks remain until the last nested modal closes.
+active modal. Scroll locks remain until the last nested modal closes. Initial
+focus candidates belong to the opening layer; controls inside a nested dialog
+are excluded even when its content is kept mounted while closed.
 
 All sibling parts are exported: Trigger, Portal, Overlay, Content, Header,
 Footer, Media, Title, Description, Action and Cancel. Portal preserves children
@@ -398,6 +400,13 @@ an operation's outcome is uncertain; close explicitly only on confirmed success.
 Render an error with an explicit retry after failure and preserve the draft.
 The playground demonstrates those transitions with manual completion/failure
 buttons; no operation or retry is hidden inside the library.
+
+The [focused keyboard example](../playground/alert-dialog-focus.tsx) runs at
+`/?alert-dialog-focus`; append `&force-mounted` to keep the closed child mounted.
+[ALT-1 acceptance](ALERT-ALT1-DELIVERY.md) verifies exact forward/reverse Tab
+boundaries, nested Escape/Cancel/Confirm, draft preservation, background inertness,
+scroll-lock release and focus return in Chromium and Firefox, against both
+source and built exports.
 
 ![Light popover](screenshots/popover-light.png)
 ![Dark alert dialog](screenshots/alert-dark.png)

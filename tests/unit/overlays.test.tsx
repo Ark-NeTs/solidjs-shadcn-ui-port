@@ -76,3 +76,16 @@ it('generates alert title IDs and wraps an empty modal popover without a native 
 it('cleans up a native popover that the browser has already hidden',()=>{
  const {unmount}=render(()=><Popover defaultOpen><PopoverContent aria-label="Already hidden"/></Popover>);screen.getByRole('dialog').hidePopover();unmount();
 });
+
+for(const withCancel of [false,true])it(`keeps parent initial focus out of a force-mounted child with parent cancel ${withCancel}`,()=>{
+ render(()=><AlertDialog defaultOpen><AlertDialogContent aria-label="Parent owner">
+  <AlertDialog><AlertDialogTrigger>Open child owner</AlertDialogTrigger><AlertDialogContent forceMount aria-label="Child owner"><AlertDialogCancel>Cancel child owner</AlertDialogCancel><AlertDialogAction>Accept child owner</AlertDialogAction></AlertDialogContent></AlertDialog>
+  <input aria-label="Owned draft"/>{withCancel&&<AlertDialogCancel>Cancel parent owner</AlertDialogCancel>}<AlertDialogAction>Accept parent owner</AlertDialogAction>
+ </AlertDialogContent></AlertDialog>);
+ const initial=withCancel?screen.getByText('Cancel parent owner'):screen.getByText('Open child owner');
+ expect(initial).toHaveFocus();
+ fireEvent.click(screen.getByText('Open child owner'));flush();expect(screen.getByText('Cancel child owner')).toHaveFocus();const child=screen.getByRole('alertdialog',{name:'Child owner'});
+ fireEvent.click(screen.getByText('Cancel child owner'));flush();expect(screen.getByText('Open child owner')).toHaveFocus();
+ expect(screen.getByRole('alertdialog',{name:'Parent owner'})).toHaveAttribute('open');
+ expect(child).toBeInTheDocument();expect(child).not.toHaveAttribute('open');
+});

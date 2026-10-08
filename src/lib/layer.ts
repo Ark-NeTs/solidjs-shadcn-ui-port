@@ -28,6 +28,10 @@ function lockScroll(document:Document){
   const lock=locks.get(document)??{count:0,overflow:document.documentElement.style.overflow};lock.count++;locks.set(document,lock);document.documentElement.style.overflow='hidden';
   return ()=>{if(--lock.count===0){document.documentElement.style.overflow=lock.overflow;locks.delete(document);}};
 }
+/** Keep initial focus within this layer; mounted descendants own their own focus targets. */
+function findOwnedTarget(node:HTMLElement,selector:string){
+  return Array.from(node.querySelectorAll<HTMLElement>(selector)).find(target=>target.closest('[role=dialog],[role=alertdialog]')===node);
+}
 /** Let the browser own modality and dismissal; synchronize only accepted state changes. */
 export function useNativeLayer(context:LayerContext, element:Accessor<HTMLElement|undefined>, modal:Accessor<boolean>, props:FocusProps){
   createEffect(()=>[element(),context.open(),modal()] as const,([node,open,isModal])=>{
@@ -64,7 +68,7 @@ export function useNativeLayer(context:LayerContext, element:Accessor<HTMLElemen
     if(isModal){node.addEventListener('cancel',cancel);node.addEventListener('close',closed);(node as HTMLDialogElement).showModal();}
     else {node.addEventListener('toggle',toggled);document.addEventListener('pointerdown',pointer,true);node.showPopover();}
     node.addEventListener('keydown',keydown);
-    untrack(()=>{if(!notify(props.onOpenAutoFocus)){const focus=node.querySelector<HTMLElement>('[data-slot="alert-dialog-cancel"]:not(:disabled),[autofocus],button:not(:disabled),input:not(:disabled),[tabindex="0"]');(node.querySelector<HTMLElement>('[data-slot="alert-dialog-cancel"]:not(:disabled)')??focus??node.querySelector<HTMLElement>('[data-slot=alert-dialog-content]')??node).focus();}});
+    untrack(()=>{if(!notify(props.onOpenAutoFocus)){const focus=findOwnedTarget(node,'[autofocus],button:not(:disabled),input:not(:disabled),[tabindex="0"]');(findOwnedTarget(node,'[data-slot="alert-dialog-cancel"]:not(:disabled)')??focus??findOwnedTarget(node,'[data-slot=alert-dialog-content]')??node).focus();}});
     return ()=>{
       active=false;
       node.removeEventListener('cancel',cancel);node.removeEventListener('close',closed);node.removeEventListener('toggle',toggled);node.removeEventListener('keydown',keydown);document.removeEventListener('pointerdown',pointer,true);
