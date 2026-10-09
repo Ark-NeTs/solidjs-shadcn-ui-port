@@ -797,3 +797,7 @@ Maintain one worker, strict diagnostics and no retries. Preserve suite outputs
 separately, upload diagnostics only on failure, and expire artifacts after three
 days. Read-only workflow permissions and local provider tests require no secrets
 or deployment actions. See [CI guide](../CI.md) and [delivery](../delivery/CI-DELIVERY.md).
+
+Hosted VM acceptance uses the Vite plugin’s documented `performanceTracks.attribution.hotTime` setting at 32ms per one-second window only when `CI=true`. Two hosted source runs showed 8–15ms timing findings moving between unrelated scopes; keep local development at 8ms and all console diagnostics fatal. This changes the timing threshold, not ownership, feedback, read-tracking or other diagnostic checks. Accessibility checks must await finite visual transitions before evaluating final-state contrast.
+
+Run each engine/suite combination in an isolated job. This allows source, built, hydration and consumer acceptance to report independently even when another suite fails, with one worker per runner and no shared server port. Artifact names include engine, suite and attempt.

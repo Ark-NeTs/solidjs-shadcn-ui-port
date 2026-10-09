@@ -1,0 +1,74 @@
+[
+  {
+    "command": "bun run check",
+    "seconds": 5.0,
+    "exitCode": 0
+  },
+  {
+    "command": "bun run lint",
+    "seconds": 2.05,
+    "exitCode": 0
+  },
+  {
+    "command": "bun run test:coverage",
+    "seconds": 9.29,
+    "exitCode": 0
+  },
+  {
+    "command": "bun run test:server",
+    "seconds": 1.24,
+    "exitCode": 0
+  },
+  {
+    "command": "CI=true THEME_PORT=4403 RESULTS_FILE=test-results/reports/ci-stability-source.json bunx --no-install playwright test tests/integration/admin-menu.spec.ts tests/integration/catalog-chart.spec.ts tests/integration/catalog-dates.spec.ts tests/integration/catalog-modal.spec.ts tests/integration/combobox-contracts.spec.ts tests/integration/overlays.spec.ts tests/integration/docs-site.spec.ts --output=test-results/ci-stability-source --global-timeout=600000",
+    "seconds": 186.12,
+    "exitCode": 0,
+    "browserStats": {
+      "startTime": "2026-10-09T20:08:34.359Z",
+      "duration": 185796.513,
+      "expected": 129,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  },
+  {
+    "command": "THEME_PRODUCTION=1 THEME_PORT=4403 RESULTS_FILE=test-results/reports/ci-docs-built-final.json bunx --no-install playwright test tests/e2e/docs-site.spec.ts tests/e2e/docs-previews.spec.ts --output=test-results/ci-docs-built-final --global-timeout=600000",
+    "seconds": 118.08,
+    "exitCode": 0,
+    "browserStats": {
+      "startTime": "2026-10-09T20:11:40.519Z",
+      "duration": 117707.587,
+      "expected": 261,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  },
+  {
+    "command": "THEME_PORT=4403 RESULTS_FILE=test-results/reports/ci-site-final.json bun run test:site --output=test-results/ci-site-final --global-timeout=300000",
+    "seconds": 21.41,
+    "exitCode": 0,
+    "browserStats": {
+      "startTime": "2026-10-09T20:13:38.591Z",
+      "duration": 21055.499,
+      "expected": 15,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  },
+  {
+    "command": "CI=true THEME_PORT=4403 RESULTS_FILE=test-results/reports/ci-consumer-final.json bun run test:consumer --output=test-results/ci-consumer-final --global-timeout=120000",
+    "seconds": 10.3,
+    "exitCode": 0,
+    "browserStats": {
+      "startTime": "2026-10-09T20:14:52.656Z",
+      "duration": 9923.387,
+      "expected": 9,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  }
+]

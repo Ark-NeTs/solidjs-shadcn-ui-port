@@ -59,14 +59,19 @@ jobs:
           if-no-files-found: ignore
 
   browser:
-    name: Browser / ${{ matrix.browser }}
+    name: Browser / ${{ matrix.browser }} / ${{ matrix.suite.name }}
     # Existing Chromium screenshots were reviewed on macOS 15 arm64.
     runs-on: macos-15
-    timeout-minutes: 60
+    timeout-minutes: 20
     strategy:
       fail-fast: false
       matrix:
         browser: [chromium, firefox, webkit]
+        suite:
+          - {name: integration, timeout: 900000}
+          - {name: e2e, timeout: 900000}
+          - {name: hydration, timeout: 900000}
+          - {name: consumer, timeout: 120000}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -81,31 +86,20 @@ jobs:
       - name: Install frozen dependencies
         run: bun install --frozen-lockfile --ignore-scripts
       - name: Install isolated consumer dependencies
+        if: ${{ matrix.suite.name == 'consumer' }}
         working-directory: validation/consumer-stack
         run: bun install --frozen-lockfile --ignore-scripts
       - name: Install pinned browser
         run: bunx --no-install playwright install --with-deps ${{ matrix.browser }}
-      - name: Source component integration
+      - name: ${{ matrix.suite.name }} acceptance
         env:
-          RESULTS_FILE: test-results/reports/integration.json
-        run: bun run test:integration --project=${{ matrix.browser }} --output=test-results/integration --global-timeout=900000
-      - name: Built components and visual comparisons
-        env:
-          RESULTS_FILE: test-results/reports/e2e.json
-        run: bun run test:e2e --project=${{ matrix.browser }} --output=test-results/e2e --global-timeout=900000
-      - name: SSR hydration and live interactions
-        env:
-          RESULTS_FILE: test-results/reports/hydration.json
-        run: bun run test:hydration --project=${{ matrix.browser }} --output=test-results/hydration --global-timeout=900000
-      - name: Isolated router and query consumer
-        env:
-          RESULTS_FILE: test-results/reports/consumer.json
-        run: bun run test:consumer --project=${{ matrix.browser }} --output=test-results/consumer --global-timeout=120000
+          RESULTS_FILE: test-results/reports/${{ matrix.suite.name }}.json
+        run: bun run test:${{ matrix.suite.name }} --project=${{ matrix.browser }} --output=test-results/${{ matrix.suite.name }} --global-timeout=${{ matrix.suite.timeout }}
       - name: Retain failure screenshots and traces
         if: ${{ failure() }}
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
-          name: browser-failure-${{ matrix.browser }}-${{ github.run_attempt }}
+          name: browser-failure-${{ matrix.browser }}-${{ matrix.suite.name }}-${{ github.run_attempt }}
           path: test-results/
           retention-days: 3
           if-no-files-found: ignore

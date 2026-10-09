@@ -10,7 +10,7 @@ account-login or deployment steps.
 | Job | Runner | Acceptance |
 | --- | --- | --- |
 | Types, lint, units and SSR | Ubuntu 24.04 | Typecheck, lint, unit coverage thresholds, server rendering and the captured public-import contract |
-| Browser / Chromium, Firefox, WebKit | macOS 15 arm64, one job per engine | Full source integration, built E2E, existing Chromium visuals, hydration and isolated router/query consumer |
+| Browser / Chromium, Firefox, WebKit | macOS 15 arm64, one isolated job per engine and suite | Full source integration, built E2E, existing Chromium visuals, hydration and isolated router/query consumer |
 | Documentation and public artifact | Ubuntu 24.04 | Guide examples, Markdown generation, three-engine navigation/accessibility and a fresh public build tested through the local provider |
 
 Each job installs Bun 1.4.2, Node 25.3.0 and frozen dependencies. External actions
@@ -19,8 +19,14 @@ Playwright package. Standard `macos-15` and `ubuntu-24.04` runners are used;
 there are no larger-runner labels. macOS 15 matches the platform used to review
 the committed visual baselines. Runner images still receive provider updates.
 
-Browser suites run sequentially within each job on port 4403, with one worker,
-no retries and strict diagnostics. Individual suite timeouts leave room for
+Each browser job runs one suite on its own runner and port 4403, with one worker,
+no retries and strict console diagnostics. The development profiler uses a CI-only
+32 ms accumulated compute budget per one-second window; local development keeps
+Solid’s 8 ms default. Hosted findings varied across unrelated scopes (8–15 ms),
+so this timing limit allows runner variance without disabling performance checks.
+All emitted warnings and errors remain fatal; this is not a production performance
+benchmark. Separate source, built, hydration and consumer jobs report independently
+so a failing suite cannot skip another. Individual suite timeouts leave room for
 artifact upload before the job timeout. Source, E2E, hydration, consumer and
 documentation outputs have separate folders so a later suite cannot erase an
 earlier failure report.

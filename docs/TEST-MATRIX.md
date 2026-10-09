@@ -911,7 +911,7 @@ probe, history/fixture review and verification limits.
 
 [The CI workflow](../.github/workflows/ci.yml) runs existing units/coverage, SSR,
 full source integration, built E2E/Chromium visuals, hydration, isolated-consumer
-and documentation/public-site checks. Three macOS browser jobs preserve the
+and documentation/public-site checks. Isolated macOS jobs for each engine/suite combination preserve the
 reviewed screenshot platform; Ubuntu also verifies the public documentation.
 No retries or baseline acceptance are introduced. Failure screenshots, traces
 and JSON reports expire after three days. Hosting checks automate the existing
@@ -919,3 +919,5 @@ assertions rather than expanding their behavioral scope. See [CI guide](CI.md)
 and [delivery](delivery/CI-DELIVERY.md) for measured results and platform limits.
 
 The first Linux documentation job exposed a mobile header overflow at 24px root text. Mobile navigation now wraps, while `tests/docs-site.ts` keeps the strict 390px overflow and light/dark accessibility assertions. The failed job demonstrated real screenshot/trace upload and three-day artifact expiry.
+
+Hosted development profiling uses a documented 32ms-per-second accumulated compute budget (local default: 8ms); all emitted warnings remain fatal. The overlay accessibility assertion waits for finite transitions to complete before checking final-state contrast. Timing results on shared hosted runners do not establish production performance.

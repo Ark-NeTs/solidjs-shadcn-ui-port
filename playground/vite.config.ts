@@ -4,8 +4,9 @@ import { realpathSync } from 'node:fs';
 import { resolve } from 'node:path';
 import solid from 'vite-plugin-solid';
 import tailwind from '@tailwindcss/vite';
+// Hosted VM profiling keeps all checks enabled with a measured timing allowance; see docs/CI.md.
 export default defineConfig({
-  root: import.meta.dirname, publicDir:process.env.VITE_PUBLIC_SITE==='1'?'public-site':'public', plugins: [solid(), tailwind()],
+  root: import.meta.dirname, publicDir:process.env.VITE_PUBLIC_SITE==='1'?'public-site':'public', plugins: [solid({performanceTracks:process.env.CI==='true'?{attribution:{hotTime:{budgetMs:32,windowMs:1000}}}:true}), tailwind()],
   resolve: { alias: process.env.THEME_BUILT === '1' ? [{find:/^shadcn-solidjs-theme\/ui\/[^/]+$/, replacement:resolve(import.meta.dirname, '../dist/shadcn-solidjs-theme.js')}] : [], dedupe: ['solid-js', '@solidjs/web', '@solidjs/signals'] },
   server: { host: '127.0.0.1', port: Number(process.env.THEME_PORT || 4399), strictPort: true, fs: { allow: [resolve(import.meta.dirname, '..'), realpathSync(resolve(import.meta.dirname, '../node_modules'))] } },
   build: { outDir:process.env.VITE_PUBLIC_SITE==='1'?'../site-dist':'../playground-dist', emptyOutDir: true, rolldownOptions: { input: {playground:resolve(import.meta.dirname,'index.html'),docs:resolve(import.meta.dirname,'docs.html')} } },
