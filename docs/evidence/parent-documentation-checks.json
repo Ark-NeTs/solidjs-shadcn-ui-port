@@ -1,0 +1,88 @@
+[
+  {
+    "command": "bun run check",
+    "exitCode": 0,
+    "seconds": 5.27,
+    "result": "Pass"
+  },
+  {
+    "command": "bun run lint",
+    "exitCode": 0,
+    "seconds": 2.34,
+    "result": "Pass"
+  },
+  {
+    "command": "bun run test",
+    "exitCode": 0,
+    "seconds": 8.87,
+    "result": "Pass"
+  },
+  {
+    "command": "bun run test:server",
+    "exitCode": 0,
+    "seconds": 1.36,
+    "result": "Pass"
+  },
+  {
+    "command": "bun run docs:check",
+    "exitCode": 0,
+    "seconds": 2.1,
+    "result": "Pass"
+  },
+  {
+    "command": "bun run docs:generate",
+    "exitCode": 0,
+    "seconds": 0.29,
+    "result": "Pass"
+  },
+  {
+    "command": "THEME_PORT=4403 RESULTS_FILE=test-results/parent-docs-source.json bunx --no-install playwright test tests/integration/docs-site.spec.ts",
+    "exitCode": 0,
+    "seconds": 31.16,
+    "browserStats": {
+      "startTime": "2026-10-09T19:03:23.643Z",
+      "duration": 30819.245,
+      "expected": 21,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "result": "Pass"
+  },
+  {
+    "command": "THEME_PORT=4403 RESULTS_FILE=test-results/parent-docs-public.json bun run test:site",
+    "exitCode": 0,
+    "seconds": 23.86,
+    "browserStats": {
+      "startTime": "2026-10-09T19:03:54.956Z",
+      "duration": 23365.298000000003,
+      "expected": 15,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "result": "Pass"
+  },
+  {
+    "command": "bun scripts/check-site.mjs",
+    "expectedExit": "nonzero",
+    "actualExit": 1,
+    "result": "Pass: extra page rejected",
+    "seconds": 0.04,
+    "setup": "Temporarily injected site-dist/docs/pages/parent-project.md.json; removed in finally before the clean-artifact check."
+  },
+  {
+    "command": "bun scripts/check-site.mjs",
+    "exitCode": 0,
+    "result": "Pass: clean artifact accepted",
+    "seconds": 0.03,
+    "artifact": {
+      "components": 65,
+      "guides": 3,
+      "files": 167,
+      "bytes": 9609787,
+      "largestFile": 639936,
+      "internalAssets": 0
+    }
+  }
+]

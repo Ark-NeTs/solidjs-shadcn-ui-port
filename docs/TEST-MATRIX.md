@@ -894,3 +894,15 @@ public-page allowlist. [Shared website browser checks](../tests/docs-site.ts)
 follow the relocated decisions and foundation-report links, including a deep-link
 reload, against source and built documentation in all three browsers.
 See [organization delivery](DOCUMENTATION-ORGANIZATION.md) for measured results.
+
+### Standalone documentation boundary
+
+Active specifications and checklists describe only this Solid library. The
+[public-generation unit check](../tests/unit/docs-site.test.ts) seeds an extra
+document page and verifies it is removed alongside internal evidence. The
+[public browser checks](../tests/site/public-site.spec.ts) require 404 responses
+for internal specs, origin notes and an unapproved page in all three engines.
+The [artifact checker](../scripts/check-site.mjs) also requires the exact approved
+guide/component page inventory, even for files absent from navigation.
+[Boundary audit](PARENT-DOCUMENTATION-AUDIT.md) records the negative packaging
+probe, history/fixture review and verification limits.

@@ -84,9 +84,9 @@ Cloudflare account; the final `deploy` publishes. Add the chosen custom domain i
 Cloudflare after verifying the generated `workers.dev` address. The package's
 `private: true` flag remains: website deployment does not publish an npm package.
 
-For a future GitLab integration, choose the reviewed branch/commit explicitly:
-local `main` may be ahead of the remote. Configure the same build command and
-pinned toolchain, with an isolated package install. No pipeline is created here.
+For a future GitHub integration, choose a reviewed commit on this repository's
+default `main` branch. Configure the same build command and pinned toolchain,
+with an isolated repository install. No pipeline is created here.
 
 ## Acceptance and rollback
 

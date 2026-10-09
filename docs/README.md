@@ -69,3 +69,4 @@ to reach their reports and supporting evidence:
 - [Public verification summary](PUBLIC-VERIFICATION.md)
 - [Documentation organization](DOCUMENTATION-ORGANIZATION.md)
 - [Standalone repository migration](REPOSITORY-MIGRATION.md)
+- [Parent-documentation boundary audit](PARENT-DOCUMENTATION-AUDIT.md)

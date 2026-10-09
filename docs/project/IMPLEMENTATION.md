@@ -1,46 +1,35 @@
-# Solid 2 implementation progress
+# Solid 2 implementation status
 
-## Current increment
+All 65 component families in the [catalog map](COMPONENT-MAP.md) have source,
+examples and documented contracts. See the [completion report](../PROJECT-COMPLETION.md)
+and [test matrix](../TEST-MATRIX.md) for measured acceptance and remaining limits.
+This plan applies only to the standalone repository.
 
-Foundation and five components committed as `b82f86c`; the owner then authorized
-Input, Textarea and Label, committed as `a916220`, and then Checkbox and Switch. No bucket number or admin
-migration slot is invented. This package-level plan tracks the bounded work;
-application scheduling remains in the repository roadmap.
+## Delivered foundation
 
-## Built — what shipped, and what the build did that the plan didn't say
+- Shared semantic light/dark tokens, class utilities, public source subpaths and
+  a built ESM/declaration boundary. Captured reference fixtures guard token,
+  class and export parity without requiring another checkout.
+- Owned Solid 2 state and native semantics for most components. Kobalte was
+  evaluated first; Toggle uses its accepted adapter. Primitive investigations
+  remain isolated from production. No corvu fallback is currently required.
+- Engine adapters for Carousel, Data Table and Chart, with package-owned cleanup
+  and explicit Solid APIs. Applications retain routing, cache and service policy.
+- Unit, server, source-browser, built-browser and hydration coverage, with
+  representative visual and accessibility checks. Documented scope limits remain
+  explicit rather than being hidden by coverage percentages.
+- A Solid + Vite documentation site, live previews, screenshots and the theme
+  generator. The public build has a curated content boundary and local provider
+  tests; registry publication and hosted deployment remain separate actions.
+- A realistic local form/Data Table composition and an isolated router/query
+  consumer harness. Neither requires the former application's source or services.
 
-- **Owned native components:** Button, Badge, all seven Card exports, Separator,
-  Skeleton, Input, Textarea, Label, Checkbox, Switch and `cn` now exist under the React-style subpaths. **REASONING:** this
-  batch's behavior is provided by native elements; importing experimental overlay
-  patches would add an unrelated acceptance dependency. Kobalte remains first
-  for richer primitives. Verified against the source and dependency manifest.
-- **Explicit link support:** Button accepts button/a and Badge span/a.
-  **REASONING:** native links cover this batch's navigation needs while avoiding
-  an untested arbitrary-component polymorphism contract. Router-owned links can
-  use the exported class helpers. Disabled links are tested for both navigation
-  prevention and handler suppression.
-- **Contrast correction:** destructive text uses a derived emphasis color.
-  **REASONING:** the reference light-mode text/background pair failed axe contrast;
-  exact visual copying would preserve that defect. Byte-identical canonical token
-  blocks and all other variant classes are guarded by tests.
-- **Solid 2-specific tooling:** JSX types use @solidjs/web; async fallback tests
-  use Loading. **REASONING:** the current migration guide and rc.13 APIs supersede
-  the historical spec's Solid 1-style JSX/Suspense examples. Source browser tests,
-  built-library browser journeys and server rendering cover different consumers.
-- **Independent package lock and install:** tests run with isolated dependencies.
-  **REASONING:** this increment must not repin the monorepo's other frameworks or
-  applications. A frozen package-local installation is documented and verified.
+## Continuing work
 
-- **Checkbox and Switch after Kobalte evaluation:** the owned implementation uses
-  native inputs with a shared Solid toggle helper. **REASONING:** the unmodified
-  Kobalte probe in both browsers showed a default-on Switch resetting off and
-  untracked/effect-feedback diagnostics. The native version passes controlled
-  rejection, mixed state, reset, cleanup, browser and SSR regressions without
-  importing diagnostic harness patches. See KOBALTE-TOGGLES.md and TOGGLES-DELIVERY.md.
+Follow the [specification](specs.md) and [delivery checklist](../checklists/DELIVERY.md)
+for future changes. Use the test matrix's open cases and the completion report's
+release decisions to select the next increment. Evaluate Kobalte first when a
+new primitive is needed, document API limits, and verify affected compositions.
 
-## Remaining catalog work
-
-Ten components are implemented, not the complete Tier 1 or catalog.
-`useIsMobile` and the remaining form controls are subsequent work. The existing COMPONENT-MAP.md remains
-the full inventory. Full admin-import parity, router/query interoperability,
-headless controls and application integration are not claimed complete.
+Keep active guides independent of the former workspace. Historical reports
+remain dated evidence; they do not reinstate old application rules or approvals.

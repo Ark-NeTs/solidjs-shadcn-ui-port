@@ -1,11 +1,33 @@
 # Project origins
 
 Extracted from `restaurant-management/packages/shadcn-solidjs-theme` at
-`603d56d`. The project-only history is preserved at the new repository root.
-The following decisions describe its original context; this repository now has
-independent configuration and dependencies.
+`603d56d`. Only the Solid package's history was imported. The
+[migration report](REPOSITORY-MIGRATION.md) records the extraction and verification.
+The standalone repository has its own configuration, dependencies and decisions.
 
-| Decision | Decision and original rationale | Owner | Status |
-| --- | --- | --- | --- |
-| D19 | **`packages/shadcn-theme` fully encapsulates shadcn: components use relative imports internally; apps consume them only via package subpath exports (`shadcn-theme/ui/*`, `shadcn-theme/utils`, `shadcn-theme/hooks/*`, `shadcn-theme/theme.css`). `components.json` and all shadcn/Radix/etc. dependencies live in the package; `apps/admin` declares only `shadcn-theme`.** Source-level exports keep D18's properties: Tailwind scans components (via `theme.css`'s own `@source`) and no build step gates dev. After `shadcn add`, run the package's `normalize-imports` script to rewrite generated `@/` imports. | Owner directive 2026-07-03: the admin app must know nothing about shadcn and its dependencies — the design system is an implementation detail of `shadcn-theme`. | Confirmed 2026-07-03 |
-| D90 | **Reopen `packages/shadcn-solidjs-theme` as an owned Solid 2 design system for a future Solid admin, beginning with shared tokens, Button, Badge, Card, Separator and Skeleton.** Use the D19 package boundary and React-style `ui/*` exports. This first batch uses native HTML; Kobalte remains first for later interaction primitives and corvu only for demonstrated gaps. Existing experimental dependency patches are not adopted. The original broad compatibility gate no longer blocks these five components; it still informs later primitive acceptance. Supersedes only D52's Solid-package-deletion clause; Svelte remains the storefront framework and no admin migration is included. | Owner directive 2026-10-07: implement the foundation and first five components instead of another diagnostic investigation. Scoped native implementation delivers usable components without importing unresolved headless-library behavior. | Confirmed 2026-10-07 (explicit implementation instruction); delivery evidence in [FOUNDATION-DELIVERY.md](delivery/FOUNDATION-DELIVERY.md). |
+## Design-system decisions retained from the original context
+
+- **D19: public package boundary.** Consumers use component, utility and theme
+  exports; underlying UI dependencies remain encapsulated. Historical reports
+  and code comments use this identifier for that design-system rule.
+- **D90: begin the owned Solid 2 implementation.** The owner authorized the
+  foundation and first five components on 2026-10-07. Native semantics could be
+  used after evaluating Kobalte, without adopting experimental dependency patches.
+  [Foundation delivery](delivery/FOUNDATION-DELIVERY.md) preserves that evidence.
+
+Those identifiers explain project history, not policies of another application.
+The current [specification](project/specs.md) and
+[decisions](project/DECISIONS.md) govern this project. Former application framework,
+roadmap, desktop and workspace instructions are outside its scope.
+
+## Captured test contracts
+
+`validation/reference-theme` preserves class, token and export parity against a
+dated React reference with provenance and checksums. `validation/admin-imports`
+contains only design-system import/re-export declarations for a symbol-availability
+audit. These fixtures are test inputs, not production application code, services
+or documentation. They are excluded from the public site artifact.
+
+Historical validation reports may contain original command paths and decision
+identifiers. Retain those as evidence of the tested setup; do not treat them as
+current installation instructions or copy former application documentation here.

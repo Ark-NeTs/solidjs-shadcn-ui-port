@@ -3,7 +3,7 @@
 Components forward native attributes, events, children and refs within the
 contracts documented below. Use `class`
 for caller overrides. Import only from `shadcn-solidjs-theme`; dependencies stay
-inside the package (D19). The live playground demonstrates each component.
+inside the package. The live playground demonstrates each component.
 
 ## Button
 
