@@ -720,3 +720,22 @@ Existing accepted primitives are reused; no additional headless library is neede
 The Sidebar's existing native `role` prop now applies to desktop rendering so an
 embedded preview can be a named region. Mobile overlays always retain dialog
 semantics. The default complementary landmark is unchanged.
+
+## Live theme generator — 2026-10-09
+
+The documentation entry supports `?create` locally and in the public static build.
+A neutral customization shell surrounds a separately themed Solid component canvas.
+The layout follows the shadcn/ui create reference, while reusing this package's
+accepted components and token contract. No additional headless library is required.
+Base color, accent, chart colors, heading/body font stacks, radius and density are
+allowlisted settings. One pure function produces the preview variables and both
+exported `:root` and `.dark` blocks; canonical defaults come from `src/theme.css`.
+Font stacks use bundled Inter or system fonts, without network font downloads.
+
+Settings update the URL using replaceState; form drafts remain local to mounted
+examples. Shuffle honors per-setting locks; reset changes theme settings rather
+than replacing the example owners. The native Dialog export contains only Theme
+Tokens, selectable CSS and Copy Theme. It preserves semantic ancestry, restores
+the opening button's focus and ignores clipboard completion after closing or
+unmounting. New/existing-project flows, framework/library selection and code
+scaffolding are intentionally absent from this theme-only tool.

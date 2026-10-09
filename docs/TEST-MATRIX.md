@@ -843,3 +843,20 @@ landmark and mobile modal dialog remain unchanged. Its unit test verifies the
 role across breakpoint transitions, and the existing browser/hydration Sidebar
 journeys remain release gates. All-family mounting is not a claim that every
 possible interaction or visual variant is tested. [Delivery](LIVE-DOCS-DELIVERY.md).
+
+## Live theme generator
+
+[Token unit contracts](../tests/unit/theme-model.test.ts) cover allowlisted URL
+settings, complete light/dark export parity, every setting option and shuffle locks.
+[Shared browser acceptance](../tests/theme-generator.ts) runs against source and
+built exports in Chromium, Firefox and WebKit. It verifies immediate styles and
+URL/reload persistence, retained form drafts, Tabs and pagination, locked shuffle,
+reset, live chart repaint, Theme-only export, exact clipboard payload, denied-copy
+recovery, pending-copy disposal, Escape/reopen and focus restoration. Mobile
+light/dark checks use 390px width, enlarged text and axe, including the modal.
+
+[Visual baselines](../tests/e2e/docs-site/visual.spec.ts) cover the generator's light,
+dark, mobile and export surfaces. [Public-site checks](../tests/site/public-site.spec.ts)
+exercise `/?create` through the local deployment runtime. This does not certify
+all possible palette/font combinations or replace manual screen-reader testing.
+[Delivery](THEME-GENERATOR-DELIVERY.md).

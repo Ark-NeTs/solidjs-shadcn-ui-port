@@ -10,3 +10,8 @@ test('custom theme controls and component documentation',async({page})=>{
 for(const id of ['tabs','data-table','dialog'])test(`inline ${id} preview layout`,async({page})=>{
  await page.goto(`/docs.html?component=${id}&dark`);await expect(page.locator(`[data-live-component="${id}"]`)).toBeVisible();await page.evaluate(()=>document.fonts.ready);await page.emulateMedia({reducedMotion:'reduce'});await expect(page.locator('#live-preview')).toHaveScreenshot(`docs-live-${id}.png`,{animations:'disabled',maxDiffPixelRatio:0.001});
 });
+
+for(const mode of ['light','dark','mobile'])test(`theme generator ${mode} workspace`,async({page})=>{
+ if(mode==='mobile')await page.setViewportSize({width:390,height:844});await page.goto(`/docs.html?create&accent=Violet&chart=Violet${mode==='dark'?'&dark':''}`);await expect(page.getByLabel('Project name',{exact:true})).toBeVisible();await page.evaluate(()=>document.fonts.ready);await expect(page).toHaveScreenshot(`theme-generator-${mode}.png`,{animations:'disabled',maxDiffPixelRatio:0.001});
+});
+test('theme only export dialog',async({page})=>{await page.goto('/docs.html?create&dark');await page.getByRole('button',{name:'Get Code',exact:true}).first().click();await expect(page.getByRole('dialog',{name:'Theme Tokens'})).toBeVisible();await page.evaluate(()=>document.fonts.ready);await expect(page).toHaveScreenshot('theme-generator-export.png',{animations:'disabled',maxDiffPixelRatio:0.001});});

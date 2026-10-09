@@ -1,0 +1,41 @@
+[
+  {
+    "check": "source",
+    "command": "bun x --no-install playwright test tests/integration/theme-generator.spec.ts tests/integration/docs-site.spec.ts --max-failures=1",
+    "environment": {
+      "THEME_PORT": "4403"
+    },
+    "exitCode": 0,
+    "seconds": 56.22
+  },
+  {
+    "check": "visual",
+    "command": "bun x --no-install playwright test tests/e2e/docs-site/visual.spec.ts --project=chromium --update-snapshots=changed --max-failures=1",
+    "environment": {
+      "THEME_PRODUCTION": "1",
+      "THEME_PORT": "4403"
+    },
+    "exitCode": 0,
+    "seconds": 12.61
+  },
+  {
+    "check": "built",
+    "command": "bun x --no-install playwright test tests/e2e/theme-generator.spec.ts tests/e2e/docs-site.spec.ts tests/e2e/docs-site/visual.spec.ts --max-failures=1 --update-snapshots=none",
+    "environment": {
+      "THEME_PRODUCTION": "1",
+      "THEME_PORT": "4403"
+    },
+    "exitCode": 0,
+    "seconds": 54.55
+  },
+  {
+    "check": "public",
+    "command": "bun run test:site",
+    "environment": {
+      "WRANGLER_BIN": "/tmp/solid-docs-deploy/node_modules/wrangler/bin/wrangler.js",
+      "THEME_PORT": "4403"
+    },
+    "exitCode": 0,
+    "seconds": 22.47
+  }
+]

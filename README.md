@@ -66,6 +66,14 @@ galleries at `/playground`, public verification notes,
 screenshots and the MIT license. Internal delivery reports and raw diagnostics
 stay in the repository. The existing local playground is unchanged.
 
+The **Themes** navigation link opens the live theme generator (`/docs.html?create`
+locally, `/?create` in the public site). Customize base/accent/chart palettes,
+heading and body font stacks, radius and density. Shuffle honors locked controls.
+**Get Code** opens only the Theme export with complete light/dark CSS variables.
+Paste these blocks after the theme imports in your stylesheet; bundled Inter or
+system font stacks require no additional downloads. Settings survive reload in
+the URL, while example drafts remain local to the current page.
+
 Use Vite to build, Vitest for unit tests, Playwright for browser acceptance, and
 Cloudflare Workers Static Assets to host. [Deployment instructions](docs/DEPLOYMENT.md)
 cover reproducible setup, local provider testing, packaging, publishing and rollback.
