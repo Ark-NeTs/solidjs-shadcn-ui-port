@@ -1,0 +1,91 @@
+{
+  "explanation": "Opening zoom was still active: authored width 240 rendered as 237.25048828125. Center alignment and gap tolerances had already passed. Final restored x=560 was compared with this intermediate x=561.374755859375.",
+  "traceEvent": {
+    "type": "after",
+    "callId": "call@9531",
+    "endTime": 404184.287,
+    "result": {
+      "value": {
+        "o": [
+          {
+            "k": "anchor",
+            "v": {
+              "o": [
+                {
+                  "k": "x",
+                  "v": {
+                    "n": 600
+                  }
+                },
+                {
+                  "k": "y",
+                  "v": {
+                    "n": 180
+                  }
+                },
+                {
+                  "k": "width",
+                  "v": {
+                    "n": 160
+                  }
+                },
+                {
+                  "k": "height",
+                  "v": {
+                    "n": 40
+                  }
+                }
+              ],
+              "id": 2
+            }
+          },
+          {
+            "k": "popup",
+            "v": {
+              "o": [
+                {
+                  "k": "x",
+                  "v": {
+                    "n": 561.374755859375
+                  }
+                },
+                {
+                  "k": "y",
+                  "v": {
+                    "n": 227.4386444091797
+                  }
+                },
+                {
+                  "k": "width",
+                  "v": {
+                    "n": 237.25048828125
+                  }
+                },
+                {
+                  "k": "height",
+                  "v": {
+                    "n": 219.45668029785156
+                  }
+                }
+              ],
+              "id": 3
+            }
+          },
+          {
+            "k": "side",
+            "v": {
+              "s": "bottom"
+            }
+          },
+          {
+            "k": "nativeOpen",
+            "v": {
+              "b": true
+            }
+          }
+        ],
+        "id": 1
+      }
+    }
+  }
+}

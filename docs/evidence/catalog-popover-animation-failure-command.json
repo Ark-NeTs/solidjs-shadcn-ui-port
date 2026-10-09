@@ -1,0 +1,5 @@
+{
+  "command": "THEME_PORT=4403 RESULTS_FILE=docs/evidence/catalog-final-e2e.json bun run test:e2e --max-failures=1",
+  "exitCode": 1,
+  "seconds": 409.885
+}

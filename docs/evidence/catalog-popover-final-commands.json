@@ -1,0 +1,27 @@
+[
+  {
+    "command": "bun run check",
+    "exitCode": 0,
+    "seconds": 4.381
+  },
+  {
+    "command": "bun run lint",
+    "exitCode": 0,
+    "seconds": 1.777
+  },
+  {
+    "command": "THEME_PORT=4403 RESULTS_FILE=docs/evidence/catalog-popover-final-source.json bunx playwright test tests/integration/popover-placement.spec.ts --max-failures=1",
+    "exitCode": 0,
+    "seconds": 20.519
+  },
+  {
+    "command": "THEME_PORT=4403 THEME_PRODUCTION=1 RESULTS_FILE=docs/evidence/catalog-popover-final-repeat.json bunx playwright test tests/e2e/popover-placement.spec.ts --grep \"reanchors after viewport\" --repeat-each=5 --max-failures=1",
+    "exitCode": 0,
+    "seconds": 30.529
+  },
+  {
+    "command": "THEME_PORT=4403 RESULTS_FILE=docs/evidence/catalog-final-e2e.json bun run test:e2e --max-failures=1",
+    "exitCode": 0,
+    "seconds": 433.606
+  }
+]

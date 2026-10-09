@@ -29,7 +29,13 @@ async function expectAttached(page: Page, center = false) {
 async function openPreview(page: Page, mode: string) {
   await page.goto(`/?popover-placement&placement-case=${mode}`);
   await page.getByRole('button', { name: 'Open placement preview' }).click();
-  await expect(page.getByRole('dialog', { name: 'Placement preview' })).toBeVisible();
+  const popup = page.getByRole('dialog', { name: 'Placement preview' });
+  await expect(popup).toBeVisible();
+  // Geometry baselines must follow the real opening animation. Center alignment
+  // can already pass while zoom still changes the popup's rendered width.
+  await popup.evaluate(async node => {
+    await Promise.all(node.getAnimations().map(animation => animation.finished));
+  });
 }
 
 /** Verify scrolling, element/viewport resize, transform movement and top-layer clipping. */
@@ -57,6 +63,7 @@ export function popoverPlacement() {
   test('reanchors after viewport, anchor and popup resizing without reopening', async ({ page }) => {
     await openPreview(page, 'resize');
     await expectAttached(page, true);
+    expect((await geometry(page)).popup.width).toBe(240);
     const initial = await geometry(page);
     await page.setViewportSize({ width: 720, height: 720 });
     await expect.poll(async () => (await geometry(page)).anchor.x).toBeCloseTo(initial.anchor.x - 240, 0);

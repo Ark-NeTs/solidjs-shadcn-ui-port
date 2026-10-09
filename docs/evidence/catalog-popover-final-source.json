@@ -1,0 +1,746 @@
+{
+  "config": {
+    "argv": [
+      "/Users/arktas/.asdf/installs/nodejs/25.3.0/bin/node",
+      "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/node_modules/.bin/playwright",
+      "test",
+      "tests/integration/popover-placement.spec.ts",
+      "--max-failures=1"
+    ],
+    "configFile": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/playwright.config.ts",
+    "rootDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 1,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "integration/**/*.spec.ts",
+          "e2e/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [
+          "**/visual.spec.ts"
+        ],
+        "testMatch": [
+          "integration/**/*.spec.ts",
+          "e2e/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [
+          "**/visual.spec.ts"
+        ],
+        "testMatch": [
+          "integration/**/*.spec.ts",
+          "e2e/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "docs/evidence/catalog-popover-final-source.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": {
+      "command": "bun run dev",
+      "url": "http://127.0.0.1:4403",
+      "reuseExistingServer": false,
+      "timeout": 60000
+    }
+  },
+  "suites": [
+    {
+      "title": "integration/popover-placement.spec.ts",
+      "file": "integration/popover-placement.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "follows two-axis ancestor scrolling and document scrolling while remaining open",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1072,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T08:27:59.141Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3f790e6f9312b1d7803d-b0a1faa946a70aef9806",
+          "file": "popover-placement.ts",
+          "line": 43,
+          "column": 3
+        },
+        {
+          "title": "reanchors after viewport, anchor and popup resizing without reopening",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1098,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T08:28:00.537Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3f790e6f9312b1d7803d-ca5630f9ed01ae8769c5",
+          "file": "popover-placement.ts",
+          "line": 63,
+          "column": 3
+        },
+        {
+          "title": "tracks a transformed anchor during movement and returns to its original position",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1947,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T08:28:01.641Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "movement-samples",
+                      "contentType": "application/json",
+                      "body": "W3sidGltZSI6NDcyLjkwMDAwMDA5NTM2NzQzLCJwb3B1cFgiOjYwLCJwb3B1cFkiOjIyOCwiYW5jaG9yWSI6MTgwLCJ4Ijo2MCwiZXJyb3IiOjB9LHsidGltZSI6NDg5LjcwMDAwMDI4NjEwMjMsInBvcHVwWCI6NjMuNzUsInBvcHVwWSI6MjMwLjUsImFuY2hvclkiOjE4Mi41MDAzNTA5NTIxNDg0NCwieCI6NjMuNzUwNTI2NDI4MjIyNjU2LCJlcnJvciI6MC4wMDA1MjY0MjgyMjI2NTYyNX0seyJ0aW1lIjo1MDcuNSwicG9wdXBYIjo2Ny40ODQzNzUsInBvcHVwWSI6MjMyLjk4NDM3NSwiYW5jaG9yWSI6MTg0Ljk5MDM1NjQ0NTMxMjUsIngiOjY3LjQ4NTUyNzAzODU3NDIyLCJlcnJvciI6MC4wMDU5ODE0NDUzMTI1fSx7InRpbWUiOjUyNC41LCJwb3B1cFgiOjcxLjIzNDM3NSwicG9wdXBZIjoyMzUuNDg0Mzc1LCJhbmNob3JZIjoxODcuNDk1MzQ2MDY5MzM1OTQsIngiOjcxLjI0MzAyNjczMzM5ODQ0LCJlcnJvciI6MC4wMTA5NzEwNjkzMzU5Mzc1fSx7InRpbWUiOjU0MC44MDAwMDAxOTA3MzQ5LCJwb3B1cFgiOjc1LCJwb3B1cFkiOjIzOCwiYW5jaG9yWSI6MTkwLjAwMDM1MDk1MjE0ODQ0LCJ4Ijo3NS4wMDA1MjY0MjgyMjI2NiwiZXJyb3IiOjAuMDAwNTI2NDI4MjIyNjU2MjV9LHsidGltZSI6NTU3LCJwb3B1cFgiOjc4Ljc1LCJwb3B1cFkiOjI0MC41LCJhbmNob3JZIjoxOTIuNTA1MzU1ODM0OTYwOTQsIngiOjc4Ljc1ODAyNjEyMzA0Njg4LCJlcnJvciI6MC4wMDgwMjYxMjMwNDY4NzV9LHsidGltZSI6NTczLjkwMDAwMDA5NTM2NzQsInBvcHVwWCI6ODIuNDg0Mzc1LCJwb3B1cFkiOjI0Mi45ODQzNzUsImFuY2hvclkiOjE5NC45OTUzNDYwNjkzMzU5NCwieCI6ODIuNDkzMDI2NzMzMzk4NDQsImVycm9yIjowLjAxMDk3MTA2OTMzNTkzNzV9LHsidGltZSI6NTkwLjgwMDAwMDE5MDczNDksInBvcHVwWCI6ODYuMjUsInBvcHVwWSI6MjQ1LjUsImFuY2hvclkiOjE5Ny41MDAzNTA5NTIxNDg0NCwieCI6ODYuMjUwNTI2NDI4MjIyNjYsImVycm9yIjowLjAwMDUyNjQyODIyMjY1NjI1fSx7InRpbWUiOjYwOC4zMDAwMDAxOTA3MzQ5LCJwb3B1cFgiOjg5Ljk4NDM3NSwicG9wdXBZIjoyNDcuOTg0Mzc1LCJhbmNob3JZIjoxOTkuOTkwMzU2NDQ1MzEyNSwieCI6ODkuOTg1NTI3MDM4NTc0MjIsImVycm9yIjowLjAwNTk4MTQ0NTMxMjV9LHsidGltZSI6NjI0LjgwMDAwMDE5MDczNDksInBvcHVwWCI6OTMuNzUsInBvcHVwWSI6MjUwLjUsImFuY2hvclkiOjIwMi41MTAzNDU0NTg5ODQzOCwieCI6OTMuNzY1NTI1ODE3ODcxMSwiZXJyb3IiOjAuMDE1NTI1ODE3ODcxMDkzNzV9LHsidGltZSI6NjQwLjgwMDAwMDE5MDczNDksInBvcHVwWCI6OTcuNSwicG9wdXBZIjoyNTMsImFuY2hvclkiOjIwNS4wMDAzNTA5NTIxNDg0NCwieCI6OTcuNTAwNTI2NDI4MjIyNjYsImVycm9yIjowLjAwMDUyNjQyODIyMjY1NjI1fSx7InRpbWUiOjY1Ny4yMDAwMDAyODYxMDIzLCJwb3B1cFgiOjEwMS4yNSwicG9wdXBZIjoyNTUuNSwiYW5jaG9yWSI6MjA3LjUwNTM1NTgzNDk2MDk0LCJ4IjoxMDEuMjU4MDI2MTIzMDQ2ODgsImVycm9yIjowLjAwODAyNjEyMzA0Njg3NX0seyJ0aW1lIjo2NzMuNjAwMDAwMzgxNDY5NywicG9wdXBYIjoxMDUsInBvcHVwWSI6MjU4LCJhbmNob3JZIjoyMTAuMDEwMzQ1NDU4OTg0MzgsIngiOjEwNS4wMTU1MjU4MTc4NzExLCJlcnJvciI6MC4wMTU1MjU4MTc4NzEwOTM3NX0seyJ0aW1lIjo2ODkuNDAwMDAwMDk1MzY3NCwicG9wdXBYIjoxMDguNzE4NzUsInBvcHVwWSI6MjYwLjQ4NDM3NSwiYW5jaG9yWSI6MjEyLjQ4NTM1MTU2MjUsIngiOjEwOC43MjgwMjczNDM3NSwiZXJyb3IiOjAuMDA5Mjc3MzQzNzV9LHsidGltZSI6NzA3LjkwMDAwMDA5NTM2NzQsInBvcHVwWCI6MTEyLjUsInBvcHVwWSI6MjYzLCJhbmNob3JZIjoyMTUuMDA1MzQwNTc2MTcxODgsIngiOjExMi41MDgwMjYxMjMwNDY4OCwiZXJyb3IiOjAuMDA4MDI2MTIzMDQ2ODc1fSx7InRpbWUiOjcyNC40MDAwMDAwOTUzNjc0LCJwb3B1cFgiOjExNi4yMzQzNzUsInBvcHVwWSI6MjY1LjQ4NDM3NSwiYW5jaG9yWSI6MjE3LjQ5NTM0NjA2OTMzNTk0LCJ4IjoxMTYuMjQzMDI2NzMzMzk4NDQsImVycm9yIjowLjAxMDk4NjMyODEyNX0seyJ0aW1lIjo3NDAuODAwMDAwMTkwNzM0OSwicG9wdXBYIjoxMjAsInBvcHVwWSI6MjY4LCJhbmNob3JZIjoyMjAuMDAwMzUwOTUyMTQ4NDQsIngiOjEyMC4wMDA1MjY0MjgyMjI2NiwiZXJyb3IiOjAuMDAwNTI2NDI4MjIyNjU2MjV9LHsidGltZSI6NzU2LjEwMDAwMDM4MTQ2OTcsInBvcHVwWCI6MTIzLjc1LCJwb3B1cFkiOjI3MC41LCJhbmNob3JZIjoyMjIuNTA1MzQwNTc2MTcxODgsIngiOjEyMy43NTgwMjYxMjMwNDY4OCwiZXJyb3IiOjAuMDA4MDI2MTIzMDQ2ODc1fSx7InRpbWUiOjc3My40MDAwMDAwOTUzNjc0LCJwb3B1cFgiOjEyNy40ODQzNzUsInBvcHVwWSI6MjcyLjk4NDM3NSwiYW5jaG9yWSI6MjI0Ljk5NTM0NjA2OTMzNTk0LCJ4IjoxMjcuNDkzMDI2NzMzMzk4NDQsImVycm9yIjowLjAxMDk4NjMyODEyNX0seyJ0aW1lIjo3OTAuNzAwMDAwMjg2MTAyMywicG9wdXBYIjoxMzEuMjUsInBvcHVwWSI6Mjc1LjUsImFuY2hvclkiOjIyNy41MDAzNTA5NTIxNDg0NCwieCI6MTMxLjI1MDUxODc5ODgyODEyLCJlcnJvciI6MC4wMDA1MTg3OTg4MjgxMjV9LHsidGltZSI6ODA4LjEwMDAwMDM4MTQ2OTcsInBvcHVwWCI6MTM1LCJwb3B1cFkiOjI3OCwiYW5jaG9yWSI6MjMwLjAwNTM0MDU3NjE3MTg4LCJ4IjoxMzUuMDA4MDI2MTIzMDQ2ODgsImVycm9yIjowLjAwODAyNjEyMzA0Njg3NX0seyJ0aW1lIjo4MjQsInBvcHVwWCI6MTM4LjczNDM3NSwicG9wdXBZIjoyODAuNDg0Mzc1LCJhbmNob3JZIjoyMzIuNDk1MzQ2MDY5MzM1OTQsIngiOjEzOC43NDMwMjY3MzMzOTg0NCwiZXJyb3IiOjAuMDEwOTg2MzI4MTI1fSx7InRpbWUiOjg0MC41LCJwb3B1cFgiOjE0Mi41LCJwb3B1cFkiOjI4MywiYW5jaG9yWSI6MjM1LjAwMDM1MDk1MjE0ODQ0LCJ4IjoxNDIuNTAwNTE4Nzk4ODI4MTIsImVycm9yIjowLjAwMDUxODc5ODgyODEyNX0seyJ0aW1lIjo4NTYuODAwMDAwMTkwNzM0OSwicG9wdXBYIjoxNDYuMjM0Mzc1LCJwb3B1cFkiOjI4NS40ODQzNzUsImFuY2hvclkiOjIzNy40OTAzNTY0NDUzMTI1LCJ4IjoxNDYuMjM1NTM0NjY3OTY4NzUsImVycm9yIjowLjAwNTk4MTQ0NTMxMjV9LHsidGltZSI6ODczLjUsInBvcHVwWCI6MTQ5Ljk4NDM3NSwicG9wdXBZIjoyODcuOTg0Mzc1LCJhbmNob3JZIjoyMzkuOTk1MzQ2MDY5MzM1OTQsIngiOjE0OS45OTMwMjY3MzMzOTg0NCwiZXJyb3IiOjAuMDEwOTg2MzI4MTI1fSx7InRpbWUiOjg4OS4zMDAwMDAxOTA3MzQ5LCJwb3B1cFgiOjE1MCwicG9wdXBZIjoyODgsImFuY2hvclkiOjI0MCwieCI6MTUwLCJlcnJvciI6MH0seyJ0aW1lIjo5MDcuNDAwMDAwMDk1MzY3NCwicG9wdXBYIjoxNTAsInBvcHVwWSI6Mjg4LCJhbmNob3JZIjoyNDAsIngiOjE1MCwiZXJyb3IiOjB9LHsidGltZSI6OTIzLjUsInBvcHVwWCI6MTUwLCJwb3B1cFkiOjI4OCwiYW5jaG9yWSI6MjQwLCJ4IjoxNTAsImVycm9yIjowfSx7InRpbWUiOjkzOS45MDAwMDAwOTUzNjc0LCJwb3B1cFgiOjE1MCwicG9wdXBZIjoyODgsImFuY2hvclkiOjI0MCwieCI6MTUwLCJlcnJvciI6MH0seyJ0aW1lIjo5NTYuNDAwMDAwMDk1MzY3NCwicG9wdXBYIjoxNTAsInBvcHVwWSI6Mjg4LCJhbmNob3JZIjoyNDAsIngiOjE1MCwiZXJyb3IiOjB9XQ=="
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3f790e6f9312b1d7803d-832430513cd5606cdb8a",
+          "file": "popover-placement.ts",
+          "line": 84,
+          "column": 3
+        },
+        {
+          "title": "flips and shifts at viewport edges, constrains oversized content and keeps its action reachable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 634,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T08:28:03.594Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3f790e6f9312b1d7803d-0471acc8f3fb18f16efe",
+          "file": "popover-placement.ts",
+          "line": 115,
+          "column": 3
+        },
+        {
+          "title": "escapes a transformed paint-clipping ancestor and accepts clicks outside its bounds",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 630,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T08:28:04.234Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3f790e6f9312b1d7803d-33fea5eba0e46f976557",
+          "file": "popover-placement.ts",
+          "line": 137,
+          "column": 3
+        },
+        {
+          "title": "follows two-axis ancestor scrolling and document scrolling while remaining open",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1288,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T08:28:05.139Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3f790e6f9312b1d7803d-6aa00860496652ed6ce9",
+          "file": "popover-placement.ts",
+          "line": 43,
+          "column": 3
+        },
+        {
+          "title": "reanchors after viewport, anchor and popup resizing without reopening",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 857,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T08:28:07.177Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3f790e6f9312b1d7803d-b6cb28c91a0a658fff2f",
+          "file": "popover-placement.ts",
+          "line": 63,
+          "column": 3
+        },
+        {
+          "title": "tracks a transformed anchor during movement and returns to its original position",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2043,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T08:28:08.040Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "movement-samples",
+                      "contentType": "application/json",
+                      "body": "W3sidGltZSI6NDE2LCJwb3B1cFgiOjYzLjc1LCJwb3B1cFkiOjIzMC41LCJhbmNob3JZIjoxODIuNSwieCI6NjMuNzUsImVycm9yIjowfSx7InRpbWUiOjQzMiwicG9wdXBYIjo2Ny41LCJwb3B1cFkiOjIzMywiYW5jaG9yWSI6MTg1LCJ4Ijo2Ny41LCJlcnJvciI6MH0seyJ0aW1lIjo0NDksInBvcHVwWCI6NzEuMjUsInBvcHVwWSI6MjM1LjUsImFuY2hvclkiOjE4Ny41LCJ4Ijo3MS4yNSwiZXJyb3IiOjB9LHsidGltZSI6NDY1LCJwb3B1cFgiOjc1LCJwb3B1cFkiOjIzOCwiYW5jaG9yWSI6MTkwLCJ4Ijo3NSwiZXJyb3IiOjB9LHsidGltZSI6NDgxLCJwb3B1cFgiOjc4Ljc1LCJwb3B1cFkiOjI0MC41LCJhbmNob3JZIjoxOTIuNSwieCI6NzguNzUsImVycm9yIjowfSx7InRpbWUiOjQ5NywicG9wdXBYIjo4Mi41LCJwb3B1cFkiOjI0MywiYW5jaG9yWSI6MTk1LCJ4Ijo4Mi41LCJlcnJvciI6MH0seyJ0aW1lIjo1MTcsInBvcHVwWCI6ODYuMjUsInBvcHVwWSI6MjQ1LjUsImFuY2hvclkiOjE5Ny41LCJ4Ijo4Ni4yNSwiZXJyb3IiOjB9LHsidGltZSI6NTMxLCJwb3B1cFgiOjkwLCJwb3B1cFkiOjI0OCwiYW5jaG9yWSI6MjAwLCJ4Ijo5MCwiZXJyb3IiOjB9LHsidGltZSI6NTQ5LCJwb3B1cFgiOjkzLjc1LCJwb3B1cFkiOjI1MC41LCJhbmNob3JZIjoyMDIuNSwieCI6OTMuNzUsImVycm9yIjowfSx7InRpbWUiOjU2NiwicG9wdXBYIjo5Ny41LCJwb3B1cFkiOjI1MywiYW5jaG9yWSI6MjA1LCJ4Ijo5Ny41LCJlcnJvciI6MH0seyJ0aW1lIjo1ODIsInBvcHVwWCI6MTAxLjI1LCJwb3B1cFkiOjI1NS41LCJhbmNob3JZIjoyMDcuNSwieCI6MTAxLjI1LCJlcnJvciI6MH0seyJ0aW1lIjo1OTksInBvcHVwWCI6MTA1LCJwb3B1cFkiOjI1OCwiYW5jaG9yWSI6MjEwLCJ4IjoxMDUsImVycm9yIjowfSx7InRpbWUiOjYxNCwicG9wdXBYIjoxMDguNzUsInBvcHVwWSI6MjYwLjUsImFuY2hvclkiOjIxMi41LCJ4IjoxMDguNzUsImVycm9yIjowfSx7InRpbWUiOjYyOCwicG9wdXBYIjoxMTIuNDMzMzM0MzUwNTg1OTQsInBvcHVwWSI6MjYyLjk1MDAxMjIwNzAzMTI1LCJhbmNob3JZIjoyMTQuOTQ5OTk2OTQ4MjQyMiwieCI6MTEyLjQzMzMzNDM1MDU4NTk0LCJlcnJvciI6MC4wMDAwMTUyNTg3ODkwNjI1fSx7InRpbWUiOjY1MiwicG9wdXBYIjoxMTYuMjUsInBvcHVwWSI6MjY1LjUsImFuY2hvclkiOjIxNy41LCJ4IjoxMTYuMjUsImVycm9yIjowfSx7InRpbWUiOjY2MiwicG9wdXBYIjoxMjAsInBvcHVwWSI6MjY4LCJhbmNob3JZIjoyMjAsIngiOjEyMCwiZXJyb3IiOjB9LHsidGltZSI6NjgyLCJwb3B1cFgiOjEyMy43NSwicG9wdXBZIjoyNzAuNSwiYW5jaG9yWSI6MjIyLjUsIngiOjEyMy43NSwiZXJyb3IiOjB9LHsidGltZSI6Njk5LCJwb3B1cFgiOjEyNy41LCJwb3B1cFkiOjI3MywiYW5jaG9yWSI6MjI1LCJ4IjoxMjcuNSwiZXJyb3IiOjB9LHsidGltZSI6NzE1LCJwb3B1cFgiOjEzMS4yNSwicG9wdXBZIjoyNzUuNSwiYW5jaG9yWSI6MjI3LjUsIngiOjEzMS4yNSwiZXJyb3IiOjB9LHsidGltZSI6NzMyLCJwb3B1cFgiOjEzNSwicG9wdXBZIjoyNzgsImFuY2hvclkiOjIzMCwieCI6MTM1LCJlcnJvciI6MH0seyJ0aW1lIjo3NDgsInBvcHVwWCI6MTM4Ljc1LCJwb3B1cFkiOjI4MC41LCJhbmNob3JZIjoyMzIuNSwieCI6MTM4Ljc1LCJlcnJvciI6MH0seyJ0aW1lIjo3NjYsInBvcHVwWCI6MTQyLjUsInBvcHVwWSI6MjgzLCJhbmNob3JZIjoyMzUsIngiOjE0Mi41LCJlcnJvciI6MH0seyJ0aW1lIjo3ODIsInBvcHVwWCI6MTQ2LjI1LCJwb3B1cFkiOjI4NS41LCJhbmNob3JZIjoyMzcuNSwieCI6MTQ2LjI1LCJlcnJvciI6MH0seyJ0aW1lIjo3OTksInBvcHVwWCI6MTUwLCJwb3B1cFkiOjI4OCwiYW5jaG9yWSI6MjQwLCJ4IjoxNTAsImVycm9yIjowfSx7InRpbWUiOjgxMCwicG9wdXBYIjoxNTAsInBvcHVwWSI6Mjg4LCJhbmNob3JZIjoyNDAsIngiOjE1MCwiZXJyb3IiOjB9LHsidGltZSI6ODI3LCJwb3B1cFgiOjE1MCwicG9wdXBZIjoyODgsImFuY2hvclkiOjI0MCwieCI6MTUwLCJlcnJvciI6MH0seyJ0aW1lIjo4NDUsInBvcHVwWCI6MTUwLCJwb3B1cFkiOjI4OCwiYW5jaG9yWSI6MjQwLCJ4IjoxNTAsImVycm9yIjowfSx7InRpbWUiOjg2NCwicG9wdXBYIjoxNTAsInBvcHVwWSI6Mjg4LCJhbmNob3JZIjoyNDAsIngiOjE1MCwiZXJyb3IiOjB9LHsidGltZSI6ODgxLCJwb3B1cFgiOjE1MCwicG9wdXBZIjoyODgsImFuY2hvclkiOjI0MCwieCI6MTUwLCJlcnJvciI6MH0seyJ0aW1lIjo4OTksInBvcHVwWCI6MTUwLCJwb3B1cFkiOjI4OCwiYW5jaG9yWSI6MjQwLCJ4IjoxNTAsImVycm9yIjowfV0="
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3f790e6f9312b1d7803d-188cb9cc7d392b7f7444",
+          "file": "popover-placement.ts",
+          "line": 84,
+          "column": 3
+        },
+        {
+          "title": "flips and shifts at viewport edges, constrains oversized content and keeps its action reachable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 675,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T08:28:10.089Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3f790e6f9312b1d7803d-65e67d523f86b4bd20b8",
+          "file": "popover-placement.ts",
+          "line": 115,
+          "column": 3
+        },
+        {
+          "title": "escapes a transformed paint-clipping ancestor and accepts clicks outside its bounds",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 717,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T08:28:10.772Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3f790e6f9312b1d7803d-352ec12ea41f4de075ba",
+          "file": "popover-placement.ts",
+          "line": 137,
+          "column": 3
+        },
+        {
+          "title": "follows two-axis ancestor scrolling and document scrolling while remaining open",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1076,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T08:28:11.949Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3f790e6f9312b1d7803d-18467512cfd486073b91",
+          "file": "popover-placement.ts",
+          "line": 43,
+          "column": 3
+        },
+        {
+          "title": "reanchors after viewport, anchor and popup resizing without reopening",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1196,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T08:28:13.260Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3f790e6f9312b1d7803d-c0598e67165fb67035be",
+          "file": "popover-placement.ts",
+          "line": 63,
+          "column": 3
+        },
+        {
+          "title": "tracks a transformed anchor during movement and returns to its original position",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2030,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T08:28:14.463Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "movement-samples",
+                      "contentType": "application/json",
+                      "body": "W3sidGltZSI6NDA2LCJwb3B1cFgiOjYwLCJwb3B1cFkiOjIyOCwiYW5jaG9yWSI6MTgwLCJ4Ijo2MCwiZXJyb3IiOjB9LHsidGltZSI6NDI0LCJwb3B1cFgiOjYzLjgxMjUsInBvcHVwWSI6MjMwLjU0Njg3NSwiYW5jaG9yWSI6MTgyLjU1MDAwMzA1MTc1NzgsIngiOjYzLjgyNTAwMDc2MjkzOTQ1LCJlcnJvciI6MC4wMTI1MDA3NjI5Mzk0NTMxMjV9LHsidGltZSI6NDQwLCJwb3B1cFgiOjY3LjY0MDYyNSwicG9wdXBZIjoyMzMuMDkzNzUsImFuY2hvclkiOjE4NS4xMDAwMDYxMDM1MTU2MiwieCI6NjcuNjUwMDAxNTI1ODc4OSwiZXJyb3IiOjAuMDA5Mzc2NTI1ODc4OTA2MjV9LHsidGltZSI6NDU3LCJwb3B1cFgiOjcxLjI1LCJwb3B1cFkiOjIzNS41LCJhbmNob3JZIjoxODcuNjQ5OTkzODk2NDg0MzgsIngiOjcxLjQ3NDk5ODQ3NDEyMTEsImVycm9yIjowLjIyNDk5ODQ3NDEyMTA5Mzc1fSx7InRpbWUiOjQ3NSwicG9wdXBYIjo3NS41MTU2MjUsInBvcHVwWSI6MjM4LjM0Mzc1LCJhbmNob3JZIjoxOTAuMzUwMDA2MTAzNTE1NjIsIngiOjc1LjUyNTAwMTUyNTg3ODksImVycm9yIjowLjAwOTM3NjUyNTg3ODkwNjI1fSx7InRpbWUiOjQ5NiwicG9wdXBYIjo4MC4yNSwicG9wdXBZIjoyNDEuNSwiYW5jaG9yWSI6MTkzLjUsIngiOjgwLjI1LCJlcnJvciI6MH0seyJ0aW1lIjo1MDcsInBvcHVwWCI6ODIuNSwicG9wdXBZIjoyNDMsImFuY2hvclkiOjE5NS4xNDk5OTM4OTY0ODQzOCwieCI6ODIuNzI0OTk4NDc0MTIxMSwiZXJyb3IiOjAuMjI0OTk4NDc0MTIxMDkzNzV9LHsidGltZSI6NTIzLCJwb3B1cFgiOjg2LjMxMjUsInBvcHVwWSI6MjQ1LjU0Njg3NSwiYW5jaG9yWSI6MTk3LjU1MDAwMzA1MTc1NzgsIngiOjg2LjMyNDk5Njk0ODI0MjE5LCJlcnJvciI6MC4wMTI0OTY5NDgyNDIxODc1fSx7InRpbWUiOjU1NCwicG9wdXBYIjo5My4wNjI1LCJwb3B1cFkiOjI1MC4wNDY4NzUsImFuY2hvclkiOjIwMi4xOTk5OTY5NDgyNDIyLCJ4Ijo5My4zMDAwMDMwNTE3NTc4MSwiZXJyb3IiOjAuMjM3NTAzMDUxNzU3ODEyNX0seyJ0aW1lIjo1NTcsInBvcHVwWCI6OTMuNzUsInBvcHVwWSI6MjUwLjUsImFuY2hvclkiOjIwMi42NDk5OTM4OTY0ODQzOCwieCI6OTMuOTc0OTk4NDc0MTIxMSwiZXJyb3IiOjAuMjI0OTk4NDc0MTIxMDkzNzV9LHsidGltZSI6NTc0LCJwb3B1cFgiOjk3LjU2MjUsInBvcHVwWSI6MjUzLjA0Njg3NSwiYW5jaG9yWSI6MjA1LjA1MDAwMzA1MTc1NzgsIngiOjk3LjU3NDk5Njk0ODI0MjE5LCJlcnJvciI6MC4wMTI0OTY5NDgyNDIxODc1fSx7InRpbWUiOjU5MCwicG9wdXBYIjoxMDEuMTcxODc1LCJwb3B1cFkiOjI1NS40Mzc1LCJhbmNob3JZIjoyMDcuNjAwMDA2MTAzNTE1NjIsIngiOjEwMS40MDAwMDE1MjU4Nzg5LCJlcnJvciI6MC4yMjgxMjY1MjU4Nzg5MDYyNX0seyJ0aW1lIjo2MTIsInBvcHVwWCI6MTA2LjM0Mzc1LCJwb3B1cFkiOjI1OC44OTA2MjUsImFuY2hvclkiOjIxMC44OTk5OTM4OTY0ODQzOCwieCI6MTA2LjM0OTk5ODQ3NDEyMTEsImVycm9yIjowLjAwOTM2ODg5NjQ4NDM3NX0seyJ0aW1lIjo2MjMsInBvcHVwWCI6MTA4LjgxMjUsInBvcHVwWSI6MjYwLjU0Njg3NSwiYW5jaG9yWSI6MjEyLjU1MDAwMzA1MTc1NzgsIngiOjEwOC44MjQ5OTY5NDgyNDIxOSwiZXJyb3IiOjAuMDEyNDk2OTQ4MjQyMTg3NX0seyJ0aW1lIjo2NDAsInBvcHVwWCI6MTEyLjQyMTg3NSwicG9wdXBZIjoyNjIuOTM3NSwiYW5jaG9yWSI6MjE1LjEwMDAwNjEwMzUxNTYyLCJ4IjoxMTIuNjUwMDAxNTI1ODc4OSwiZXJyb3IiOjAuMjI4MTI2NTI1ODc4OTA2MjV9LHsidGltZSI6NjY5LCJwb3B1cFgiOjExOC45Mzc1LCJwb3B1cFkiOjI2Ny4yOTY4NzUsImFuY2hvclkiOjIxOS40NDk5OTY5NDgyNDIyLCJ4IjoxMTkuMTc1MDAzMDUxNzU3ODEsImVycm9yIjowLjIzNzUwMzA1MTc1NzgxMjV9LHsidGltZSI6NjczLCJwb3B1cFgiOjEyMC4wNjI1LCJwb3B1cFkiOjI2OC4wNDY4NzUsImFuY2hvclkiOjIyMC4wNTAwMDMwNTE3NTc4LCJ4IjoxMjAuMDc0OTk2OTQ4MjQyMTksImVycm9yIjowLjAxMjQ5Njk0ODI0MjE4NzV9LHsidGltZSI6NjkwLCJwb3B1cFgiOjEyMy44OTA2MjUsInBvcHVwWSI6MjcwLjU5Mzc1LCJhbmNob3JZIjoyMjIuNjAwMDA2MTAzNTE1NjIsIngiOjEyMy45MDAwMDE1MjU4Nzg5LCJlcnJvciI6MC4wMDkzNzY1MjU4Nzg5MDYyNX0seyJ0aW1lIjo3MDcsInBvcHVwWCI6MTI3LjUsInBvcHVwWSI6MjczLCJhbmNob3JZIjoyMjUuMTQ5OTkzODk2NDg0MzgsIngiOjEyNy43MjQ5OTg0NzQxMjExLCJlcnJvciI6MC4yMjQ5OTg0NzQxMjEwOTM3NX0seyJ0aW1lIjo3MjcsInBvcHVwWCI6MTMyLCJwb3B1cFkiOjI3NiwiYW5jaG9yWSI6MjI4LjE0OTk5Mzg5NjQ4NDM4LCJ4IjoxMzIuMjI1MDA2MTAzNTE1NjIsImVycm9yIjowLjIyNTAwNjEwMzUxNTYyNX0seyJ0aW1lIjo3NDAsInBvcHVwWCI6MTM1LjE0MDYyNSwicG9wdXBZIjoyNzguMDkzNzUsImFuY2hvclkiOjIzMC4xMDAwMDYxMDM1MTU2MiwieCI6MTM1LjE0OTk5Mzg5NjQ4NDM4LCJlcnJvciI6MC4wMDkzNjg4OTY0ODQzNzV9LHsidGltZSI6NzU3LCJwb3B1cFgiOjEzOC43NSwicG9wdXBZIjoyODAuNSwiYW5jaG9yWSI6MjMyLjY0OTk5Mzg5NjQ4NDM4LCJ4IjoxMzguOTc1MDA2MTAzNTE1NjIsImVycm9yIjowLjIyNTAwNjEwMzUxNTYyNX0seyJ0aW1lIjo3ODYsInBvcHVwWCI6MTQ1LjUsInBvcHVwWSI6Mjg1LCJhbmNob3JZIjoyMzcsIngiOjE0NS41LCJlcnJvciI6MH0seyJ0aW1lIjo3OTAsInBvcHVwWCI6MTQ2LjM5MDYyNSwicG9wdXBZIjoyODUuNTkzNzUsImFuY2hvclkiOjIzNy42MDAwMDYxMDM1MTU2MiwieCI6MTQ2LjM5OTk5Mzg5NjQ4NDM4LCJlcnJvciI6MC4wMDkzNjg4OTY0ODQzNzV9LHsidGltZSI6ODA3LCJwb3B1cFgiOjE1MCwicG9wdXBZIjoyODgsImFuY2hvclkiOjI0MCwieCI6MTUwLCJlcnJvciI6MH0seyJ0aW1lIjo4MjMsInBvcHVwWCI6MTUwLCJwb3B1cFkiOjI4OCwiYW5jaG9yWSI6MjQwLCJ4IjoxNTAsImVycm9yIjowfSx7InRpbWUiOjg0MiwicG9wdXBYIjoxNTAsInBvcHVwWSI6Mjg4LCJhbmNob3JZIjoyNDAsIngiOjE1MCwiZXJyb3IiOjB9LHsidGltZSI6ODU2LCJwb3B1cFgiOjE1MCwicG9wdXBZIjoyODgsImFuY2hvclkiOjI0MCwieCI6MTUwLCJlcnJvciI6MH0seyJ0aW1lIjo4NzMsInBvcHVwWCI6MTUwLCJwb3B1cFkiOjI4OCwiYW5jaG9yWSI6MjQwLCJ4IjoxNTAsImVycm9yIjowfSx7InRpbWUiOjkwMCwicG9wdXBYIjoxNTAsInBvcHVwWSI6Mjg4LCJhbmNob3JZIjoyNDAsIngiOjE1MCwiZXJyb3IiOjB9XQ=="
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3f790e6f9312b1d7803d-5347aafda6c972fe1995",
+          "file": "popover-placement.ts",
+          "line": 84,
+          "column": 3
+        },
+        {
+          "title": "flips and shifts at viewport edges, constrains oversized content and keeps its action reachable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 696,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T08:28:16.502Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3f790e6f9312b1d7803d-38056875bf7f8f262963",
+          "file": "popover-placement.ts",
+          "line": 115,
+          "column": 3
+        },
+        {
+          "title": "escapes a transformed paint-clipping ancestor and accepts clicks outside its bounds",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 708,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T08:28:17.202Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3f790e6f9312b1d7803d-16599c186e846a9fedfb",
+          "file": "popover-placement.ts",
+          "line": 137,
+          "column": 3
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-09T08:27:57.777Z",
+    "duration": 20191.816,
+    "expected": 15,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}
