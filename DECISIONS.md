@@ -675,3 +675,13 @@ accessor into modal scopes, even while `open` stayed true. The equality boundary
 keeps controlled ownership and rejected requests intact while avoiding downstream
 work on unrelated owner changes. A subscriber-count regression covers unrelated
 edits, rejected controlled requests and the transition to local state.
+
+
+## Package license — 2026-10-09
+
+The owner selected MIT for shadcn-solidjs-theme and supplied ArkNeT as the
+copyright holder. The package-local LICENSE records that notice and the manifest
+declares the MIT SPDX identifier. This applies to this package, not the entire
+monorepo. Registry publication and website deployment remain separate actions;
+`private: true` stays in place until a release is requested.
+See [license delivery](docs/LICENSE-DELIVERY.md).

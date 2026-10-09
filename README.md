@@ -55,7 +55,8 @@ site through Bun 1.4.2; rerun `bun run docs:generate` after documentation edits.
 See [getting started](docs/GETTING-STARTED.md),
 [completion and remaining release decisions](docs/PROJECT-COMPLETION.md), and the
 [isolated router/query consumer](validation/consumer-stack/README.md).
-The package is private and unpublished; a public license/release has not been selected.
+The package is [MIT licensed](LICENSE), copyright © 2026 ArkNeT.
+It remains private in the workspace and unpublished to a registry.
 
 ## Admin composition example
 

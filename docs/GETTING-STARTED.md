@@ -72,5 +72,6 @@ remaining manual checks. [Catalog completion](CATALOG-COMPLETION-AUDIT.md)
 and [admin composition validation](ADMIN-MENU-DELIVERY.md) record measured results.
 Export names do not imply complete React API compatibility.
 
-The repository has not declared an open-source license or published package
-release. Distribution needs an owner-selected license and release destination.
+This package is [MIT licensed](../LICENSE), copyright © 2026 ArkNeT.
+It remains a private workspace package and has not been published to a registry
+or deployed as a public website.
