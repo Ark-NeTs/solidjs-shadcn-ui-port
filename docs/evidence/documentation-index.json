@@ -1,0 +1,60 @@
+{
+  "date": "2026-10-09",
+  "commands": [
+    {
+      "command": "bun run check",
+      "result": "Pass",
+      "seconds": 5.64,
+      "timingSource": "Python monotonic wall clock"
+    },
+    {
+      "command": "bun run lint",
+      "result": "Pass",
+      "seconds": 2.27,
+      "timingSource": "Python monotonic wall clock"
+    },
+    {
+      "command": "bun run test",
+      "result": "Pass (401)",
+      "seconds": 8.71,
+      "timingSource": "Python monotonic wall clock"
+    },
+    {
+      "command": "bun run test:server",
+      "result": "Pass (26)",
+      "seconds": 1.28,
+      "timingSource": "Python monotonic wall clock"
+    },
+    {
+      "command": "bun run docs:check",
+      "result": "Pass (7 compositions)",
+      "seconds": 2.14,
+      "timingSource": "Python monotonic wall clock"
+    },
+    {
+      "command": "bun run docs:generate",
+      "result": "Pass (65 families, 79 pages)",
+      "seconds": 0.26,
+      "timingSource": "Python monotonic wall clock"
+    },
+    {
+      "command": "THEME_PORT=4403 RESULTS_FILE=test-results/documentation-index-browser.json bunx --no-install playwright test tests/integration/docs-site.spec.ts",
+      "result": "Pass (21)",
+      "seconds": 29.13,
+      "timingSource": "Playwright report stats.duration"
+    }
+  ],
+  "links": {
+    "resolved": 37,
+    "organizedDocumentsLinked": 25
+  },
+  "browser": {
+    "startTime": "2026-10-09T18:38:02.079Z",
+    "duration": 29126.971999999998,
+    "expected": 21,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "reportingNote": "Playwright cleared the temporary command journal in test-results. Earlier command timings were recovered from captured tool output; browser outcome and duration were read from its completed JSON report. No checks required a retry."
+}

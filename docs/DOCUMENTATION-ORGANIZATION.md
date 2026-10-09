@@ -60,3 +60,31 @@ apply. No performance claim is made.
 Full per-component integration/e2e sweeps, hydration, consumer and manual
 screen-reader checks are not repeated for this change. Existing component
 acceptance records remain in the test matrix.
+
+## Documentation index — 2026-10-09
+
+Added [the documentation index](README.md), linked near the top of the repository
+README. It groups all 25 organized documents under project, checklists, validation
+and delivery, alongside user guides and current acceptance entry points. All 37
+index links resolve. The local generator discovers it as a normal documentation
+page; the public website retains its existing explicit allowlist.
+
+[Measured verification](evidence/documentation-index.json):
+
+| Command | Result | Time |
+| --- | --- | ---: |
+| `bun run check` | Pass | 5.64 s |
+| `bun run lint` | Pass | 2.27 s |
+| `bun run test` | Pass (401) | 8.71 s |
+| `bun run test:server` | Pass (26) | 1.28 s |
+| `bun run docs:check` | Pass (7 compositions) | 2.14 s |
+| `bun run docs:generate` | Pass (65 families, 79 pages) | 0.26 s |
+| `THEME_PORT=4403 RESULTS_FILE=test-results/documentation-index-browser.json bunx --no-install playwright test tests/integration/docs-site.spec.ts` | Pass (21) | 29.13 s |
+
+The existing unit suite checks every generated documentation link, including
+the new index. Existing documentation navigation scenarios pass in Chromium,
+Firefox and WebKit with strict diagnostics. No runtime code or tests changed.
+Full component integration/E2E, built-site, hydration, consumer, visual and manual
+screen-reader suites were not repeated for this Markdown-only change. The UI
+checklist's state, async work, IPC and cleanup requirements do not apply; this
+change adds navigable documentation without new interaction behavior or styling.

@@ -3,6 +3,9 @@
 Standalone Solid 2 port of the shadcn/ui catalog, with live documentation and a
 theme generator. The package import name remains `shadcn-solidjs-theme`.
 
+Browse the [documentation index](docs/README.md) for user guides, project plans,
+checklists, validation findings and delivery reports.
+
 ```sh
 bun install --frozen-lockfile --ignore-scripts
 bun run dev
