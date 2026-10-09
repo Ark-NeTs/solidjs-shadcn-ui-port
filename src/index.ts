@@ -55,3 +55,7 @@ export * from './components/ui/command';
 export * from './components/ui/calendar';
 export * from './components/ui/date-picker';
 export * from './components/ui/input-otp';
+export * from './components/ui/resizable';
+export * from './components/ui/scroll-area';
+export * from './components/ui/carousel';
+export * from './components/ui/message-scroller';
