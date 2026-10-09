@@ -62,3 +62,5 @@ export * from './components/ui/message-scroller';
 export * from './components/ui/toast';
 export * from './components/ui/sonner';
 export * from './components/ui/sidebar';
+export * from './components/ui/chart';
+export * from './components/ui/questionnaire';
