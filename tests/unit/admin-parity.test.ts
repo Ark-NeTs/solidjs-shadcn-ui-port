@@ -55,9 +55,9 @@ it('honors an explicit denied Solid condition rather than falling through to typ
   const check=fixture({'app/screen.ts':"import { Secret } from 'shadcn-theme';",'package/src/types.d.ts':'export declare const Secret:number;'}, {'.':{solid:null,types:'./src/types.d.ts'}});
   expect(check()).toMatchObject({complete:false,subpaths:[{moduleAvailable:false}]});
 });
-it('resolves every static admin import against the actual package public exports',()=>{
+it('resolves the captured admin import contract against actual public exports',()=>{
   const packageRoot=resolve(import.meta.dirname,'../..');
-  const report=auditAdminImports(packageRoot,resolve(packageRoot,'../../apps/admin/src'));
+  const report=auditAdminImports(packageRoot,resolve(packageRoot,'validation/admin-imports'));
   expect(report.subpaths.filter(row=>!row.moduleAvailable||row.missing.length)).toEqual([]);
   expect(report.subpaths.length).toBeGreaterThan(0);
 });

@@ -27,8 +27,8 @@ it('delivers every dated catalog family through a public subpath and the root ba
   }
 });
 
-it('covers sibling value export names with only the documented React ref-hook exception',()=>{
-  const sibling=resolve(root,'../shadcn-theme/src/components/ui');
+it('covers captured reference value export names with only the documented React ref-hook exception',()=>{
+  const sibling=resolve(root,'validation/reference-theme/src/components/ui');
   const files=readdirSync(sibling).filter(name=>name.endsWith('.tsx')).sort();
   expect(files.length).toBeGreaterThan(0);
   const program=ts.createProgram(files.flatMap(name=>[resolve(sibling,name),resolve(componentDirectory,name)]),{

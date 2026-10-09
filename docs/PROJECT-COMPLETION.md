@@ -197,7 +197,7 @@ website assets, test harnesses and local configuration. Nothing was published.
 The owner selected the [MIT license](../LICENSE) and ArkNeT as the copyright
 holder. The package manifest declares `MIT`; [license verification](LICENSE-DELIVERY.md)
 records packaging and documentation checks. The package remains private in the
-workspace and unpublished. External website deployment, registry publication,
+repository and unpublished. External website deployment, registry publication,
 public repository changes and CI changes remain outside this delivery.
 
 Manual screen-reader/physical-device/IME/SMS checks remain unrun, as do full app

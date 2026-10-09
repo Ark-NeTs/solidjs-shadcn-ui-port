@@ -877,3 +877,11 @@ canvas to light/dark/mobile/export baselines. Existing mobile checks include
 enlarged text and axe. No primitive implementation changed; existing component
 unit/server coverage is retained. Demo forms do not imply backend persistence.
 See [expansion delivery](THEME-CANVAS-EXPANSION.md) for fresh evidence and limits.
+
+### Standalone repository verification
+
+Contract unit tests now read the captured React reference and admin import
+fixtures in `validation`, preserving the pre-extraction baseline. These are dated
+contracts rather than a live application audit. Component implementations and
+browser assertions are unchanged. Fresh relocation checks and unrun scope are
+recorded in [repository migration](REPOSITORY-MIGRATION.md).

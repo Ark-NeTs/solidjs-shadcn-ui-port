@@ -1,0 +1,38 @@
+{
+  "preservedPackageCommits": 62,
+  "filteredTip": "7d929c17b394b55c31b63d021bfe6854336cec45",
+  "packageTree": "eeb0270a6756ecbccf9eebb9aec15e9fc0ccfefb",
+  "migrationTreeBefore": "bff71ea6e2fe30442909508ff566f688d75c2d51",
+  "migrationTreeAfter": "bff71ea6e2fe30442909508ff566f688d75c2d51",
+  "reachableCommitTreesChecked": 63,
+  "unrelatedRootsFound": 0,
+  "publishedHistoryRewritten": false,
+  "remote": "https://github.com/DmytroYeremieiev/solidjs-shadcn-ui-port",
+  "visibility": "private",
+  "checks": [
+    {
+      "command": "bun run check",
+      "exitCode": 0,
+      "seconds": 7.47,
+      "summary": "$ tsc --noEmit\n"
+    },
+    {
+      "command": "bun run lint",
+      "exitCode": 0,
+      "seconds": 2.8,
+      "summary": "$ eslint src tests playground scripts *.ts\n"
+    },
+    {
+      "command": "bun run test",
+      "exitCode": 0,
+      "seconds": 10.73,
+      "summary": "\n RUN  v4.1.10 /Users/arktas/GitHub/solidjs-shadcn-ui-port\n\n\n Test Files  33 passed (33)\n      Tests  400 passed (400)\n   Start at  21:22:33\n   Duration  10.17s (transform 15.56s, setup 8.68s, import 24.15s, tests 23.24s, environment 27.59s)\n\n$ vitest run\n"
+    },
+    {
+      "command": "bun run test:server",
+      "exitCode": 0,
+      "seconds": 1.39,
+      "summary": "\n RUN  v4.1.10 /Users/arktas/GitHub/solidjs-shadcn-ui-port\n\n\n Test Files  1 passed (1)\n      Tests  26 passed (26)\n   Start at  21:22:44\n   Duration  974ms (transform 650ms, setup 0ms, import 790ms, tests 91ms, environment 0ms)\n\n$ vitest run --config vitest.server.config.ts\n"
+    }
+  ]
+}

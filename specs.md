@@ -379,20 +379,21 @@ Rules that apply to every tier:
   the components need (check, chevron, close, spinner) as annotated local
   pictograms — never a React dependency.
 - **Parity is checked by a script, not by eye**: `scripts/check-admin-parity.ts`
-  scans `apps/admin/src` for `from 'shadcn-theme/…'` imports and their named
-  bindings, and fails if this package lacks the subpath or the export. It runs
+  scans the captured `validation/admin-imports` contract for `from 'shadcn-theme/…'`
+  imports and their named bindings, and fails if this package lacks the subpath
+  or the export. Pass `--app-root <directory>` to audit a current external app. It runs
   as a vitest test so the root `bun run test` guards it.
 
 ## 6. Package layout and contracts
 
-Mirror the D49 package (git `5498eac`), updated for Solid 2:
+The D49/D90 package contract now lives at the standalone repository root:
 
 ```
-packages/shadcn-solidjs-theme/
+solidjs-shadcn-ui-port/
   package.json          name shadcn-solidjs-theme; description (D19 + the new D#)
-  README.md             the template order from CLAUDE.md §Documentation
+  README.md             standalone setup, scope and verification
   specs.md              this file (keep; update the "checked" dates if you re-verify)
-  tsconfig.json         extends ../../tsconfig.base.json; jsx preserve; jsxImportSource solid-js
+  tsconfig.json         self-contained settings; jsx preserve; jsxImportSource @solidjs/web
   vite.config.ts        library build + vitest config (vite-plugin-solid, @tailwindcss/vite, dts)
   vitest.setup.ts       jest-dom matchers, ResizeObserver/matchMedia stubs, cleanup()
   src/theme.css         shared tokens (byte-identical blocks) + @source './components'

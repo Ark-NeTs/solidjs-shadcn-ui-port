@@ -8,15 +8,13 @@ using next.36 avoids overriding an incompatible peer requirement.
 From the Solid package directory, prepare its isolated install once:
 
 ```sh
-mkdir -p /tmp/solid-theme-consumer
-cp validation/consumer-stack/package.json validation/consumer-stack/bun.lock /tmp/solid-theme-consumer/
-(cd /tmp/solid-theme-consumer && bun install --frozen-lockfile --ignore-scripts)
+(cd validation/consumer-stack && bun install --frozen-lockfile --ignore-scripts)
 node scripts/check-consumer.mjs
 THEME_PORT=4403 bun run test:consumer
 ```
 
 Set `CONSUMER_DEPS_DIR` to the installed `node_modules` directory when using a
-different temporary location. No router/query dependency enters the component
+different install location. No router/query dependency enters the component
 package, no existing app changes, and the local service makes no network calls.
 The committed lock records the exact nine-package consumer dependency tree.
 

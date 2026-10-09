@@ -1,0 +1,131 @@
+[
+  {
+    "command": "bun run check",
+    "exitCode": 0,
+    "seconds": 5.61,
+    "summary": "$ tsc --noEmit\n"
+  },
+  {
+    "command": "bun run lint",
+    "exitCode": 0,
+    "seconds": 2.51,
+    "summary": "$ eslint src tests playground scripts *.ts\n"
+  },
+  {
+    "command": "bun run test",
+    "exitCode": 0,
+    "seconds": 10.01,
+    "summary": "$ vitest run\n\n RUN  v4.1.10 /Users/arktas/GitHub/solidjs-shadcn-ui-port\n\n\n Test Files  33 passed (33)\n      Tests  400 passed (400)\n   Start at  20:58:29\n   Duration  8.00s (transform 8.18s, setup 8.36s, import 12.36s, tests 15.34s, environment 24.47s)\n\n"
+  },
+  {
+    "command": "bun run test:server",
+    "exitCode": 0,
+    "seconds": 1.31,
+    "summary": "$ vitest run --config vitest.server.config.ts\n\n RUN  v4.1.10 /Users/arktas/GitHub/solidjs-shadcn-ui-port\n\n\n Test Files  1 passed (1)\n      Tests  26 passed (26)\n   Start at  20:58:38\n   Duration  918ms (transform 618ms, setup 0ms, import 749ms, tests 86ms, environment 0ms)\n\n"
+  },
+  {
+    "command": "bun run docs:check",
+    "exitCode": 0,
+    "seconds": 1.98,
+    "summary": "$ node scripts/check-doc-examples.mjs\nGuide examples: 7 compositions typechecked.\n"
+  },
+  {
+    "command": "bun run parity:admin",
+    "exitCode": 0,
+    "seconds": 0.4,
+    "summary": "ens/permissions.tsx\"\n      ],\n      \"missing\": []\n    },\n    {\n      \"subpath\": \"ui/textarea\",\n      \"moduleAvailable\": true,\n      \"requested\": [\n        \"Textarea\"\n      ],\n      \"namespace\": false,\n      \"files\": [\n        \"components/menu/extra-sheet.tsx\",\n        \"components/menu/item-sheet.tsx\",\n        \"components/menu/translation-sheet.tsx\",\n        \"components/orders/cancel-order-modal.tsx\",\n        \"screens/menus.tsx\",\n        \"screens/visits.tsx\"\n      ],\n      \"missing\": []\n    },\n    {\n      \"subpath\": \"utils\",\n      \"moduleAvailable\": true,\n      \"requested\": [\n        \"cn\"\n      ],\n      \"namespace\": false,\n      \"files\": [\n        \"components/chrome/index.tsx\",\n        \"components/layout-editor/background-picker.tsx\",\n        \"components/layout-editor/layout-editor.tsx\",\n        \"components/menu/extras-tab.tsx\",\n        \"components/menu/item-sheet.tsx\",\n        \"components/menu/items-tab.tsx\",\n        \"components/menu/menu-toolbar.tsx\",\n        \"components/menu/pictures-field.tsx\",\n        \"components/orders-history/bill-row.tsx\",\n        \"components/orders-history/order-card.tsx\",\n        \"components/orders-history/period-chips.tsx\",\n        \"components/orders-history/sort-header.tsx\",\n        \"components/orders-history/toolbar.tsx\",\n        \"components/orders-history/visit-header.tsx\",\n        \"components/searchable-select.tsx\",\n        \"components/select-native.tsx\",\n        \"components/shell/app-shell.tsx\",\n        \"screens/menus.tsx\",\n        \"screens/orders.tsx\",\n        \"screens/visits.tsx\"\n      ],\n      \"missing\": []\n    }\n  ],\n  \"complete\": true\n}\n"
+  },
+  {
+    "command": "node scripts/check-consumer.mjs",
+    "exitCode": 0,
+    "seconds": 1.32,
+    "summary": "Isolated consumer types passed.\n"
+  },
+  {
+    "command": "THEME_PORT=4403 bunx --no-install playwright test tests/integration/docs-previews.spec.ts tests/integration/docs-site.spec.ts tests/integration/theme-generator.spec.ts tests/integration/admin-menu.spec.ts",
+    "exitCode": 0,
+    "seconds": 285.58,
+    "summary": "315 passed in Chromium, Firefox and WebKit; time from Playwright report.",
+    "stats": {
+      "startTime": "2026-10-09T18:01:39.406Z",
+      "duration": 285578.95300000004,
+      "expected": 315,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  },
+  {
+    "command": "THEME_PORT=4403 THEME_PRODUCTION=1 RESULTS_FILE=test-results/migration-built.json bunx --no-install playwright test tests/e2e/docs-previews.spec.ts tests/e2e/docs-site.spec.ts tests/e2e/theme-generator.spec.ts tests/e2e/admin-menu.spec.ts tests/e2e/docs-site/visual.spec.ts",
+    "exitCode": 1,
+    "seconds": 225.16,
+    "summary": "324 passed; three documentation landing-page screenshots differed because the standalone setup instructions changed. Light/dark/mobile results were visually reviewed, refreshed, and all 12 visual cases passed on the subsequent run.",
+    "resolvedBy": "migration-visual.json: 12 passed"
+  },
+  {
+    "command": "THEME_PORT=4403 THEME_PRODUCTION=1 RESULTS_FILE=test-results/migration-visual.json bunx --no-install playwright test tests/e2e/docs-site/visual.spec.ts --project=chromium",
+    "exitCode": 0,
+    "seconds": 11.41,
+    "summary": ": https://rolldown.rs/reference/OutputOptions.codeSplitting\n[WebServer] - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.\n[WebServer] (node:70170) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n\nRunning 12 tests using 1 worker\n\n(node:70171) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n  ✓   1 [chromium] › tests/e2e/docs-site/visual.spec.ts:3:45 › light searchable documentation (478ms)\n  ✓   2 [chromium] › tests/e2e/docs-site/visual.spec.ts:3:45 › dark searchable documentation (275ms)\n  ✓   3 [chromium] › tests/e2e/docs-site/visual.spec.ts:3:45 › mobile searchable documentation (209ms)\n  ✓   4 [chromium] › tests/e2e/docs-site/visual.spec.ts:6:1 › custom theme controls and component documentation (334ms)\n  ✓   5 [chromium] › tests/e2e/docs-site/visual.spec.ts:10:48 › inline tabs preview layout (288ms)\n  ✓   6 [chromium] › tests/e2e/docs-site/visual.spec.ts:10:48 › inline data-table preview layout (311ms)\n  ✓   7 [chromium] › tests/e2e/docs-site/visual.spec.ts:10:48 › inline dialog preview layout (323ms)\n  ✓   8 [chromium] › tests/e2e/docs-site/visual.spec.ts:14:45 › theme generator light workspace (442ms)\n  ✓   9 [chromium] › tests/e2e/docs-site/visual.spec.ts:14:45 › theme generator dark workspace (373ms)\n  ✓  10 [chromium] › tests/e2e/docs-site/visual.spec.ts:14:45 › theme generator mobile workspace (356ms)\n  ✓  11 [chromium] › tests/e2e/docs-site/visual.spec.ts:17:1 › theme only export dialog (649ms)\n  ✓  12 [chromium] › tests/e2e/docs-site/visual.spec.ts:19:1 › full reference ordered theme canvas (1.5s)\n\n  12 passed (11.0s)\n"
+  },
+  {
+    "command": "THEME_PORT=4403 RESULTS_FILE=test-results/migration-hydration.json bun run test:hydration",
+    "exitCode": 0,
+    "seconds": 123.37,
+    "summary": "s, resolves the real boundary and unmounts ready content (489ms)\n  ✓  121 [webkit] › tests/hydration/loading.spec.ts:71:1 › unmounts hydrated pending boundaries and ignores old resolutions after a fresh mount (906ms)\n  ✓  122 [webkit] › tests/hydration/loading.spec.ts:92:1 › disposing the hydrated root prevents late promise completion from restoring content (531ms)\n  ✓  123 [webkit] › tests/hydration/retry-minimal.spec.ts:3:71 › plain Solid retry: replace-reset (528ms)\n  ✓  124 [webkit] › tests/hydration/retry-minimal.spec.ts:3:71 › plain Solid retry: replace-only (568ms)\n  ✓  125 [webkit] › tests/hydration/retry-minimal.spec.ts:3:71 › plain Solid retry: source-reset (689ms)\n  ✓  126 [webkit] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: plain (649ms)\n  ✓  127 [webkit] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: context (580ms)\n  ✓  128 [webkit] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: registration (564ms)\n  ✓  129 [webkit] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: registration-spread (534ms)\n  ✓  130 [webkit] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: registration-read (unsafe-pattern characterization) (417ms)\n  ✓  131 [webkit] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: package-shell (526ms)\n  ✓  132 [webkit] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: package-triggers (576ms)\n  ✓  133 [webkit] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: package-panels (635ms)\n  ✓  134 [webkit] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: package-controlled (545ms)\n  ✓  135 [webkit] › tests/hydration/tabs-minimal.spec.ts:4:27 › minimal hydration: package-uncontrolled (553ms)\n\n  135 passed (2.0m)\n"
+  },
+  {
+    "command": "THEME_PORT=4403 RESULTS_FILE=test-results/migration-consumer.json bun run test:consumer",
+    "exitCode": 0,
+    "seconds": 10.71,
+    "summary": " to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n  ✓  1 [chromium] › validation/consumer-stack/consumer.spec.ts:3:1 › resolves Loading, retains drafts through native router links and remounts from query cache (745ms)\n  ✓  2 [chromium] › validation/consumer-stack/consumer.spec.ts:6:1 › holds the previous tab content while a new query is pending (594ms)\n  ✓  3 [chromium] › validation/consumer-stack/consumer.spec.ts:9:1 › dismisses pending query content inside a modal and safely reopens it (527ms)\n(node:72036) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n  ✓  4 [firefox] › validation/consumer-stack/consumer.spec.ts:3:1 › resolves Loading, retains drafts through native router links and remounts from query cache (1.3s)\n  ✓  5 [firefox] › validation/consumer-stack/consumer.spec.ts:6:1 › holds the previous tab content while a new query is pending (488ms)\n  ✓  6 [firefox] › validation/consumer-stack/consumer.spec.ts:9:1 › dismisses pending query content inside a modal and safely reopens it (678ms)\n(node:72080) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n  ✓  7 [webkit] › validation/consumer-stack/consumer.spec.ts:3:1 › resolves Loading, retains drafts through native router links and remounts from query cache (867ms)\n  ✓  8 [webkit] › validation/consumer-stack/consumer.spec.ts:6:1 › holds the previous tab content while a new query is pending (645ms)\n  ✓  9 [webkit] › validation/consumer-stack/consumer.spec.ts:9:1 › dismisses pending query content inside a modal and safely reopens it (779ms)\n\n  9 passed (10.3s)\n"
+  },
+  {
+    "command": "THEME_PORT=4403 RESULTS_FILE=test-results/migration-site.json bun run test:site",
+    "exitCode": 0,
+    "seconds": 27.17,
+    "summary": "the public theme generator and exports the current preset (854ms)\n(node:72371) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n  ✓   6 [firefox] › tests/site/public-site.spec.ts:4:1 › serves the documentation home, license, cache headers and a real missing-page response (1.2s)\n  ✓   7 [firefox] › tests/site/public-site.spec.ts:12:1 › searches all families, loads a deep link and opens a working live gallery (1.5s)\n  ✓   8 [firefox] › tests/site/public-site.spec.ts:16:1 › links to public verification and keeps gallery navigation on gallery routes (871ms)\n  ✓   9 [firefox] › tests/site/public-site.spec.ts:20:1 › retains usable themes and accessibility in the public narrow layout (1.6s)\n  ✓  10 [firefox] › tests/site/public-site.spec.ts:24:1 › serves the public theme generator and exports the current preset (1.3s)\n(node:72724) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n  ✓  11 [webkit] › tests/site/public-site.spec.ts:4:1 › serves the documentation home, license, cache headers and a real missing-page response (1.2s)\n  ✓  12 [webkit] › tests/site/public-site.spec.ts:12:1 › searches all families, loads a deep link and opens a working live gallery (1.2s)\n  ✓  13 [webkit] › tests/site/public-site.spec.ts:16:1 › links to public verification and keeps gallery navigation on gallery routes (780ms)\n  ✓  14 [webkit] › tests/site/public-site.spec.ts:20:1 › retains usable themes and accessibility in the public narrow layout (1.4s)\n  ✓  15 [webkit] › tests/site/public-site.spec.ts:24:1 › serves the public theme generator and exports the current preset (1.2s)\n\n  15 passed (26.8s)\n"
+  },
+  {
+    "command": "bun run check",
+    "exitCode": 0,
+    "seconds": 4.82,
+    "summary": "$ tsc --noEmit\n"
+  },
+  {
+    "command": "bun run lint",
+    "exitCode": 0,
+    "seconds": 2.15,
+    "summary": "$ eslint src tests playground scripts *.ts\n"
+  },
+  {
+    "command": "bun run test",
+    "exitCode": 0,
+    "seconds": 7.89,
+    "summary": "$ vitest run\n\n RUN  v4.1.10 /Users/arktas/GitHub/solidjs-shadcn-ui-port\n\n\n Test Files  33 passed (33)\n      Tests  400 passed (400)\n   Start at  21:13:57\n   Duration  7.47s (transform 7.96s, setup 7.00s, import 14.19s, tests 16.70s, environment 22.22s)\n\n"
+  },
+  {
+    "command": "bun run test:server",
+    "exitCode": 0,
+    "seconds": 1.38,
+    "summary": "$ vitest run --config vitest.server.config.ts\n\n RUN  v4.1.10 /Users/arktas/GitHub/solidjs-shadcn-ui-port\n\n\n Test Files  1 passed (1)\n      Tests  26 passed (26)\n   Start at  21:14:05\n   Duration  894ms (transform 595ms, setup 0ms, import 726ms, tests 85ms, environment 0ms)\n\n"
+  },
+  {
+    "command": "bun run docs:check",
+    "exitCode": 0,
+    "seconds": 2.16,
+    "summary": "$ node scripts/check-doc-examples.mjs\nGuide examples: 7 compositions typechecked.\n"
+  },
+  {
+    "command": "bun run parity:admin",
+    "exitCode": 0,
+    "seconds": 0.43,
+    "summary": "   \"subpath\": \"ui/tabs\",\n      \"moduleAvailable\": true,\n      \"requested\": [\n        \"Tabs\",\n        \"TabsList\",\n        \"TabsTrigger\"\n      ],\n      \"namespace\": false,\n      \"files\": [\n        \"screens/permissions.tsx\"\n      ],\n      \"missing\": []\n    },\n    {\n      \"subpath\": \"ui/textarea\",\n      \"moduleAvailable\": true,\n      \"requested\": [\n        \"Textarea\"\n      ],\n      \"namespace\": false,\n      \"files\": [\n        \"components/menu/extra-sheet.tsx\",\n        \"components/menu/item-sheet.tsx\",\n        \"components/menu/translation-sheet.tsx\",\n        \"components/orders/cancel-order-modal.tsx\",\n        \"screens/menus.tsx\",\n        \"screens/visits.tsx\"\n      ],\n      \"missing\": []\n    },\n    {\n      \"subpath\": \"utils\",\n      \"moduleAvailable\": true,\n      \"requested\": [\n        \"cn\"\n      ],\n      \"namespace\": false,\n      \"files\": [\n        \"components/chrome/index.tsx\",\n        \"components/layout-editor/background-picker.tsx\",\n        \"components/layout-editor/layout-editor.tsx\",\n        \"components/menu/extras-tab.tsx\",\n        \"components/menu/item-sheet.tsx\",\n        \"components/menu/items-tab.tsx\",\n        \"components/menu/menu-toolbar.tsx\",\n        \"components/menu/pictures-field.tsx\",\n        \"components/orders-history/bill-row.tsx\",\n        \"components/orders-history/order-card.tsx\",\n        \"components/orders-history/period-chips.tsx\",\n        \"components/orders-history/sort-header.tsx\",\n        \"components/orders-history/toolbar.tsx\",\n        \"components/orders-history/visit-header.tsx\",\n        \"components/searchable-select.tsx\",\n        \"components/select-native.tsx\",\n        \"components/shell/app-shell.tsx\",\n        \"screens/menus.tsx\",\n        \"screens/orders.tsx\",\n        \"screens/visits.tsx\"\n      ],\n      \"missing\": []\n    }\n  ],\n  \"complete\": true\n}\n"
+  },
+  {
+    "command": "node scripts/check-consumer.mjs",
+    "exitCode": 0,
+    "seconds": 1.3,
+    "summary": "Isolated consumer types passed.\n"
+  }
+]

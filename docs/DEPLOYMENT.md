@@ -16,8 +16,8 @@ Sources checked 2026-10-09: [Cloudflare recommendation](https://developers.cloud
 ## Build the reviewed artifact
 
 Use Bun 1.4.2 and Node >=22.12.0. From this package directory, follow the
-[isolated package installation](../README.md#environment-and-secrets) if dependencies
-are missing. It avoids installing unrelated monorepo workspaces.
+[repository installation](../README.md#environment-and-secrets) if dependencies
+are missing. Dependencies install directly in this standalone repository.
 
 ```sh
 bun run build:site

@@ -33,3 +33,19 @@ delivery report.
 End every response to the user with one concise, natural follow-up suggestion
 for the next course of action. Make it specific to the current task and its
 progress, with a concrete next step that advances the user's goal.
+
+## Standalone repository
+
+The repository root is `~/GitHub/solidjs-shadcn-ui-port`. All source, documentation,
+playground, deployment and validation tools live here. Do not depend on files from
+the former restaurant-management checkout. Historical delivery records retain
+their original paths.
+
+Run `bun run check`, `bun run lint`, `bun run test`, and `bun run test:server`.
+Use isolated `THEME_PORT=4403` for browser suites so the development server on 4399
+stays available. Run browser suites sequentially. Install deployment tools with
+`(cd deployment && bun install --frozen-lockfile --ignore-scripts)`. The optional
+router/query consumer has its own install in `validation/consumer-stack`.
+
+`bun run parity:admin` checks the captured admin import contract in
+`validation/admin-imports`; `--app-root <directory>` checks a current external app.

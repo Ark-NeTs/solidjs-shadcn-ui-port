@@ -754,3 +754,13 @@ files without discarding the previous preview, and never upload to a service.
 Monetary summaries derive from editable amounts; informational rows keep stable
 identity during updates. The connection pattern is explicitly illustrative.
 The existing Theme-only export and token mapping remain unchanged.
+
+## Standalone repository — 2026-10-09
+
+The owner requested moving the entire Solid project into
+`~/GitHub/solidjs-shadcn-ui-port`, initializing Git there first. Preserve scoped
+project history, source, docs, deployment tools and validation evidence. Retain
+the public package name and exports. Configuration and active dependency installs
+are local to this repository. Capture external React-theme and admin import
+contracts as dated fixtures so verification does not require the former monorepo.
+Historical reports retain their original context. See [migration delivery](docs/REPOSITORY-MIGRATION.md).

@@ -1,0 +1,11 @@
+# Project origins
+
+Extracted from `restaurant-management/packages/shadcn-solidjs-theme` at
+`603d56d`. The project-only history is preserved at the new repository root.
+The following decisions describe its original context; this repository now has
+independent configuration and dependencies.
+
+| Decision | Decision and original rationale | Owner | Status |
+| --- | --- | --- | --- |
+| D19 | **`packages/shadcn-theme` fully encapsulates shadcn: components use relative imports internally; apps consume them only via package subpath exports (`shadcn-theme/ui/*`, `shadcn-theme/utils`, `shadcn-theme/hooks/*`, `shadcn-theme/theme.css`). `components.json` and all shadcn/Radix/etc. dependencies live in the package; `apps/admin` declares only `shadcn-theme`.** Source-level exports keep D18's properties: Tailwind scans components (via `theme.css`'s own `@source`) and no build step gates dev. After `shadcn add`, run the package's `normalize-imports` script to rewrite generated `@/` imports. | Owner directive 2026-07-03: the admin app must know nothing about shadcn and its dependencies — the design system is an implementation detail of `shadcn-theme`. | Confirmed 2026-07-03 |
+| D90 | **Reopen `packages/shadcn-solidjs-theme` as an owned Solid 2 design system for a future Solid admin, beginning with shared tokens, Button, Badge, Card, Separator and Skeleton.** Use the D19 package boundary and React-style `ui/*` exports. This first batch uses native HTML; Kobalte remains first for later interaction primitives and corvu only for demonstrated gaps. Existing experimental dependency patches are not adopted. The original broad compatibility gate no longer blocks these five components; it still informs later primitive acceptance. Supersedes only D52's Solid-package-deletion clause; Svelte remains the storefront framework and no admin migration is included. | Owner directive 2026-10-07: implement the foundation and first five components instead of another diagnostic investigation. Scoped native implementation delivers usable components without importing unresolved headless-library behavior. | Confirmed 2026-10-07 (explicit implementation instruction); delivery evidence in [FOUNDATION-DELIVERY.md](../FOUNDATION-DELIVERY.md). |

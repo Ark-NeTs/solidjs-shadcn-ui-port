@@ -1,10 +1,20 @@
-# shadcn-solidjs-theme
+# solidjs-shadcn-ui-port
+
+Standalone Solid 2 port of the shadcn/ui catalog, with live documentation and a
+theme generator. The package import name remains `shadcn-solidjs-theme`.
+
+```sh
+bun install --frozen-lockfile --ignore-scripts
+bun run dev
+```
+
+The repository is self-contained. [Migration details](docs/REPOSITORY-MIGRATION.md)
+record the preserved history and verification.
 
 ## Role and decisions
 
-An owned Solid 2 design system for the future Solid admin, behind the D19 package
-boundary. The implementation contains **Button, Badge, Card, Separator, Skeleton, Input,
-Textarea, Label, Checkbox, Switch, Tabs, Popover, Alert Dialog, Combobox, Accordion, Collapsible, Tooltip, Hover Card, Radio Group, Toggle, Toggle Group, Select, Slider, Progress, Alert, Aspect Ratio, Attachment, Breadcrumb, Bubble, Button Group, Empty, Field, Input Group, Item, Kbd, Marker, Message, Native Select, Spinner, Table, Avatar, Pagination, Direction, Typography, Dialog, Sheet, Drawer, Dropdown Menu, Context Menu, Menubar, Navigation Menu, Command, Calendar, Date Picker, Input OTP, Resizable, Scroll Area, Carousel, Message Scroller, Toast, Sonner, Sidebar, Chart, Questionnaire and Data Table**. The React admin and Svelte storefront keep their existing themes.
+An owned Solid 2 design system with a stable public package boundary. The implementation contains **Button, Badge, Card, Separator, Skeleton, Input,
+Textarea, Label, Checkbox, Switch, Tabs, Popover, Alert Dialog, Combobox, Accordion, Collapsible, Tooltip, Hover Card, Radio Group, Toggle, Toggle Group, Select, Slider, Progress, Alert, Aspect Ratio, Attachment, Breadcrumb, Bubble, Button Group, Empty, Field, Input Group, Item, Kbd, Marker, Message, Native Select, Spinner, Table, Avatar, Pagination, Direction, Typography, Dialog, Sheet, Drawer, Dropdown Menu, Context Menu, Menubar, Navigation Menu, Command, Calendar, Date Picker, Input OTP, Resizable, Scroll Area, Carousel, Message Scroller, Toast, Sonner, Sidebar, Chart, Questionnaire and Data Table**.
 See [DECISIONS.md](DECISIONS.md) for the owner's 2026-10-07 foundation direction
 and [full catalog delivery](docs/REMAINING-CATALOG-STATUS.md) for current verification status.
 [FOUNDATION-DELIVERY.md](FOUNDATION-DELIVERY.md) retains the earlier five-component results.
@@ -56,7 +66,7 @@ See [getting started](docs/GETTING-STARTED.md),
 [completion and remaining release decisions](docs/PROJECT-COMPLETION.md), and the
 [isolated router/query consumer](validation/consumer-stack/README.md).
 The package is [MIT licensed](LICENSE), copyright © 2026 ArkNeT.
-It remains private in the workspace and unpublished to a registry.
+It remains private and unpublished to a registry.
 
 ## Public website deployment
 
@@ -188,21 +198,17 @@ receive props and signals. The playground's save action is explicitly a local
 preview; the completion button lets tests and readers control pending state.
 `THEME_PORT` changes the local documentation port (default 4399).
 
-Use Bun 1.4.2 and Node >=22.12.0. Dependencies are exactly pinned in package.json
-and the package-local bun.lock. To install this package independently without
-resolving unrelated monorepo workspaces:
+Use Bun 1.4.2 and Node >=22.12.0. The local `.tool-versions` selects the tested
+Node 25.3.0 version for asdf users. Dependencies are pinned in `package.json` and
+the repository's `bun.lock`. Install directly from the repository root:
 
 ```sh
-tools_dir=$(mktemp -d "${TMPDIR:-/tmp}/solid-theme-tools.XXXXXX")
-cp package.json bun.lock "$tools_dir/"
-(cd "$tools_dir" && bun install --frozen-lockfile --ignore-scripts)
-# Only when this package has no node_modules already:
-ln -s "$tools_dir/node_modules" node_modules
+bun install --frozen-lockfile --ignore-scripts
 ```
 
-The playground allow list resolves that node_modules link so local fonts remain
-servable. A normal workspace installation can also supply dependencies; this
-increment does not update the monorepo lockfile or claim its all-workspace gates.
+The deployment tools and optional router/query harness keep their own lockfiles
+and local installs in `deployment` and `validation/consumer-stack`. No temporary
+dependency directory or restaurant-management checkout is required.
 
 ## Commands
 

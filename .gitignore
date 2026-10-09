@@ -5,7 +5,9 @@ coverage/
 test-results/
 playwright-report/
 
-# Retain measured delivery evidence despite the repository-wide text-file ignore.
+# Retain measured delivery evidence; transient logs and diagnostic text stay local.
+*.log
+*.txt
 !docs/evidence/*.txt
 
 hydration-dist/
@@ -20,3 +22,8 @@ site-dist/
 playground/public-site/
 .wrangler/
 !deployment/robots.txt
+
+# Standalone repository metadata and local secrets.
+.DS_Store
+.env
+.env.*

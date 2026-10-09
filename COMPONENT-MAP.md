@@ -43,7 +43,8 @@ Per-component behavioral acceptance and remaining test gaps are tracked in the
   **64 components**. Include **Sonner** too: it remains in the
   [Radix docs](https://ui.shadcn.com/docs/components/radix/sonner) and the local
   React package. The map therefore contains **65 entries**.
-- All **60** files in `../shadcn-theme/src/components/ui/*.tsx` are covered.
+- All **60** original React reference files are covered, now captured in
+  `validation/reference-theme/src/components/ui/*.tsx`.
   The five additional entries are Data Table, Date Picker, Questionnaire,
   Toast, and Typography. Keep these in scope even though the React sibling
   has no corresponding standalone file yet.

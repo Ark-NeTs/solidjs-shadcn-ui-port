@@ -3,15 +3,21 @@
 65 component families for Solid 2. Accessible interactions, semantic theme
 variables, and explicit component contracts — with examples you can run and adapt.
 
-This package is developed inside the restaurant-management workspace. It is
-currently private and is not published to npm. Use the workspace dependency
-below; no public registry installation is implied.
+This package is developed in the standalone `solidjs-shadcn-ui-port` repository.
+It is private and is not published to npm. Install dependencies at the repository
+root with `bun install --frozen-lockfile --ignore-scripts`.
 
-## Set up a workspace application
+## Set up an application
 
 Use the package's tested pins: `solid-js` and `@solidjs/web` at `2.0.0-rc.13`,
 with `vite-plugin-solid` `3.0.0-next.27`. Use Tailwind 4 with its Vite plugin.
-Declare `shadcn-solidjs-theme` as a `workspace:*` dependency.
+For a sibling application checkout, use a local file dependency:
+
+```sh
+bun add shadcn-solidjs-theme@file:../solidjs-shadcn-ui-port
+```
+
+Adjust the path for your checkout layout. Keep the existing package import name.
 
 ```css
 /* Your application's CSS entry */
@@ -73,5 +79,5 @@ and [admin composition validation](ADMIN-MENU-DELIVERY.md) record measured resul
 Export names do not imply complete React API compatibility.
 
 This package is [MIT licensed](../LICENSE), copyright © 2026 ArkNeT.
-It remains a private workspace package and has not been published to a registry
+It remains a private package and has not been published to a registry
 or deployed as a public website.

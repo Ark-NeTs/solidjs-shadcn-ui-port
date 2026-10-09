@@ -11,13 +11,13 @@ const root=resolve(import.meta.dirname,'../..');
 /** Extract only canonical token blocks; formatting drift must fail as well as value drift. */
 function tokens(css:string,selector:string){const start=css.indexOf(`${selector} {`);if(start<0)throw new Error(`Missing ${selector}`);return css.slice(start,css.indexOf('}',start)+1);}
 /** Execute only the local reference package's cva declaration, without importing React. */
-function referenceVariants(name:string){const source=readFileSync(resolve(root,`../shadcn-theme/src/components/ui/${name}.tsx`),'utf8');const start=source.indexOf(`const ${name}Variants = `)+`const ${name}Variants = `.length;return new Function('cva',`return ${source.slice(start,source.indexOf('\nfunction ',start))}`)(cva);}
+function referenceVariants(name:string){const source=readFileSync(resolve(root,`validation/reference-theme/src/components/ui/${name}.tsx`),'utf8');const start=source.indexOf(`const ${name}Variants = `)+`const ${name}Variants = `.length;return new Function('cva',`return ${source.slice(start,source.indexOf('\nfunction ',start))}`)(cva);}
 describe('foundation contracts',()=>{
-  it('matches both shared theme blocks byte for byte',()=>{const solid=readFileSync(resolve(root,'src/theme.css'),'utf8');const react=readFileSync(resolve(root,'../shadcn-theme/src/theme.css'),'utf8');for(const selector of [':root','.dark'])expect(tokens(solid,selector)).toBe(tokens(react,selector));});
+  it('matches both shared theme blocks byte for byte',()=>{const solid=readFileSync(resolve(root,'src/theme.css'),'utf8');const react=readFileSync(resolve(root,'validation/reference-theme/src/theme.css'),'utf8');for(const selector of [':root','.dark'])expect(tokens(solid,selector)).toBe(tokens(react,selector));});
   it('retains React button classes except the documented contrast correction',()=>{const reference=referenceVariants('button');for(const variant of ['default','outline','secondary','ghost','link','destructive'] as const)for(const size of ['default','xs','sm','lg','icon','icon-xs','icon-sm','icon-lg'] as const)expect(buttonVariants({variant,size})).toBe(reference({variant,size}).replace(" text-destructive ", " text-destructive-emphasis "));});
   it('retains React badge classes except the documented contrast correction',()=>{const reference=referenceVariants('badge');for(const variant of ['default','outline','secondary','ghost','link','destructive'] as const)expect(badgeVariants({variant})).toBe(reference({variant}).replace(" text-destructive ", " text-destructive-emphasis "));});
   it.each(['input','textarea','label','checkbox','switch'])('preserves the reference %s class contract',name=>{
-    const reference=readFileSync(resolve(root,`../shadcn-theme/src/components/ui/${name}.tsx`),'utf8');
+    const reference=readFileSync(resolve(root,`validation/reference-theme/src/components/ui/${name}.tsx`),'utf8');
     const source=readFileSync(resolve(root,`src/components/ui/${name}.tsx`),'utf8');
     expect(source.match(/cn\(\s*'([^']+)'/)?.[1]).toBe(reference.match(/cn\(\s*"([^"]+)"/)?.[1]);
   });
@@ -28,7 +28,7 @@ describe('foundation contracts',()=>{
 
 it('exports the native catalog family APIs through source subpaths and the build barrel',async()=>{
  const families=['alert','aspect-ratio','attachment','breadcrumb','bubble','button-group','empty','field','input-group','item','kbd','marker','message','native-select','spinner','table','avatar','pagination','direction','dialog','sheet','drawer','dropdown-menu','context-menu','menubar','navigation-menu','command','calendar','input-otp','resizable','scroll-area','carousel','message-scroller','sidebar','sonner','chart'];
- for(const family of families){const module=await import(`../../src/components/ui/${family}.tsx`);const reference=readFileSync(resolve(root,`../shadcn-theme/src/components/ui/${family}.tsx`),'utf8');const exports=reference.slice(reference.lastIndexOf('export {')+8).split('}')[0]!.split(',').map(name=>name.trim()).filter(name=>Boolean(name)&&!name.startsWith('type '));for(const name of exports){expect(module).toHaveProperty(name);expect(library).toHaveProperty(name);}}
+ for(const family of families){const module=await import(`../../src/components/ui/${family}.tsx`);const reference=readFileSync(resolve(root,`validation/reference-theme/src/components/ui/${family}.tsx`),'utf8');const exports=reference.slice(reference.lastIndexOf('export {')+8).split('}')[0]!.split(',').map(name=>name.trim()).filter(name=>Boolean(name)&&!name.startsWith('type '));for(const name of exports){expect(module).toHaveProperty(name);expect(library).toHaveProperty(name);}}
 });
 
 it('exports semantic typography through the public barrel',()=>{for(const name of ['Typography','TypographyH1','TypographyH2','TypographyH3','TypographyH4','TypographyP','TypographyBlockquote','TypographyList','TypographyInlineCode','TypographyLead','TypographyLarge','TypographySmall','TypographyMuted'])expect(library).toHaveProperty(name);});
