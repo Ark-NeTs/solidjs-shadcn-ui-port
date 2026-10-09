@@ -4,10 +4,9 @@
 
 Owner instruction: “implement that foundation and first five components instead
 of starting another diagnostic investigation.” This authorizes the limited
-Solid 2 package reopening described by D90 in the repository decision log and
+Solid 2 implementation described by D90 in [project origins](../ORIGINS.md) and
 supersedes this package's older requirement to finish broad Gate 0 before any
-component code. D19 encapsulation remains in force; D52's Svelte storefront
-choice remains in force.
+component code. The public package boundary remains in force.
 
 Build Button, Badge, Card, Separator and Skeleton, shared tokens, package exports,
 `cn`, a standalone playground, tests and documentation. Do not port an admin
@@ -772,3 +771,17 @@ README and agent instructions remain at the root. Project plans/specifications,
 checklists, primitive evaluations and delivery reports use separate directories
 under `docs`. Local website discovery is recursive; public-page publication stays
 allowlisted. All maintained links follow the moved files.
+
+## Standalone documentation boundaries — 2026-10-09
+
+The owner requested checking for unrelated documentation carried over from the
+former parent project. Active specs, implementation status and acceptance guidance
+now describe only this Solid library. Former application framework, desktop,
+roadmap and workspace requirements do not apply. Origin notes retain only the
+design-system rationale and captured test-contract provenance. Dated validation
+and delivery evidence remains historical, with its original command context.
+
+Public packaging must match the exact generated component/guide page inventory,
+including files absent from navigation. Reject extra documentation JSON pages
+rather than treating every filename under the page directory as approved. See
+[documentation boundary audit](../PARENT-DOCUMENTATION-AUDIT.md) for scope and evidence.

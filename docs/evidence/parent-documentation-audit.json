@@ -1,0 +1,67 @@
+{
+  "date": "2026-10-09",
+  "auditedHead": "d9dac9a5b099b340905e4ad3814dc0084dff65f9",
+  "trackedFiles": 1396,
+  "trackedMarkdown": 90,
+  "reachableCommits": 65,
+  "uniqueHistoricalPaths": 1454,
+  "allowedProjectRoots": [
+    "deployment",
+    "docs",
+    "playground",
+    "scripts",
+    "src",
+    "tests",
+    "validation"
+  ],
+  "unrelatedHistoricalRoots": [],
+  "forbiddenParentDocumentationPaths": [],
+  "trackedSymlinks": [],
+  "exactMatchesToParentDocumentation": [],
+  "referenceChecksumsVerified": 64,
+  "archivesReviewed": [
+    {
+      "path": "docs/evidence/retry-recovery-alert-trace.zip",
+      "entries": 31,
+      "traceFiles": 3,
+      "sourceSnapshots": 0
+    }
+  ],
+  "activeGuidesChecked": [
+    "docs/project/specs.md",
+    "docs/project/IMPLEMENTATION.md",
+    "docs/ORIGINS.md",
+    "docs/checklists/DELIVERY.md",
+    "docs/DEPLOYMENT.md"
+  ],
+  "retainedContext": "Dated Solid-package reports, original command paths, design-system decision IDs, and explicitly captured UI-contract fixtures remain relevant provenance. Existing published commit contents are not rewritten.",
+  "adminImportFixturesVerified": 42,
+  "parentComparisonScope": [
+    "docs/",
+    "CLAUDE.md"
+  ],
+  "parentComparisonCommit": "603d56d3a3e2f1e4fd9f96cb0e149d577ad4bda8",
+  "publicArtifact": {
+    "textFilesScanned": 84,
+    "parentMarkersChecked": [
+      "restaurant-management",
+      "CLAUDE.md",
+      "apps/storefront",
+      "docs/02-roadmap",
+      "docs/buckets/",
+      "window.desktop",
+      "D52"
+    ],
+    "parentMarkerMatches": [],
+    "approvedDocumentationPages": 68,
+    "artifact": {
+      "components": 65,
+      "guides": 3,
+      "files": 167,
+      "bytes": 9609787,
+      "largestFile": 639936,
+      "internalAssets": 0
+    }
+  },
+  "affectedGuideRelativeLinksVerified": 86
+}

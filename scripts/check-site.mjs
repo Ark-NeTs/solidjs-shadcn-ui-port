@@ -14,7 +14,10 @@ const notices=await readFile(resolve(out,'legal/THIRD-PARTY-NOTICES.txt'),'utf8'
 for(const notice of ['SIL OPEN FONT LICENSE','Apache License','Ryan Carniato','David Jerleke'])assert(notices.includes(notice),`Missing upstream notice: ${notice}`);
 for(const entry of ['index.html','docs.html','playground.html','404.html','_headers','robots.txt'])assert(existsSync(resolve(out,entry)),`Missing ${entry}`);
 for(const family of index.families){assert.equal(new URL(family.preview,'https://docs.test').pathname,'/playground');const page=JSON.parse(await readFile(resolve(out,`docs/pages/component-${family.id}.json`),'utf8'));assert(page.html.includes('<code'),`${family.id} needs code`);assert(page.html.includes('<img'),`${family.id} needs screenshots`);}
-const files=await walk(out);let bytes=0;
+const files=await walk(out);
+const expectedPages=[...[...pages].map(source=>`docs/pages/${source.replaceAll('/','--')}.json`),...[...families].map(id=>`docs/pages/component-${id}.json`)];
+assert.deepEqual(files.map(file=>relative(out,file)).filter(path=>path.startsWith('docs/pages/')).sort(),expectedPages.sort(),'Public page files must exactly match the approved documentation inventory');
+let bytes=0;
 for(const file of files){const path=relative(out,file);const size=(await stat(file)).size;bytes+=size;assert(size<=25*1024*1024,`Asset exceeds 25 MiB: ${path}`);assert(!/(^|\/)(evidence|tests|validation|node_modules|AGENTS\.md|CLAUDE\.md)(\/|\.|$)/i.test(path),`Internal asset: ${path}`);assert(!path.endsWith('.map'),`Source map: ${path}`);
  assert(/^(assets\/[^/]+|docs\/index\.json|docs\/pages\/[^/]+\.json|docs\/files\/(LICENSE\.txt|docs\/screenshots\/[^/]+\.(png|jpe?g|webp|svg|gif))|legal\/(LICENSE|THIRD-PARTY-NOTICES)\.txt|index\.html|docs\.html|playground\.html|404\.html|_headers|robots\.txt|deployment\.json)$/.test(path),`Unapproved public file: ${path}`);
  if(!/\.(png|jpe?g|gif|webp|woff2?)$/.test(path)){const text=await readFile(file,'utf8');assert(!/\/Users\/|\/private\/tmp\/|\/home\/[^\s/]+\//.test(text),`Local filesystem path in ${path}`);

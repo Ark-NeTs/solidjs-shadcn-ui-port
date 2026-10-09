@@ -60,3 +60,9 @@ root delivery reports in `docs/delivery`. Existing user guides, component guides
 acceptance records and evidence remain under `docs`. Update relative links when
 moving documents. The local documentation generator discovers nested Markdown;
 the public website retains its explicit page allowlist.
+
+Keep active specifications, checklists and user guides scoped to this standalone
+library. Do not import former application policies or documentation. Captured
+reference contracts and dated validation evidence retain explicit provenance;
+they do not create a dependency on the former checkout. Public builds must use
+the curated guide/asset allowlists and reject unindexed documentation pages.
