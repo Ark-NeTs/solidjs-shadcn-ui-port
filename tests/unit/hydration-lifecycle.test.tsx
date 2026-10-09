@@ -26,7 +26,7 @@ it('waits for label, tab-list and form bridge refs before synchronizing or obser
   unmount();expect(document.querySelector('label')).toBeNull();
 });
 
-const chartLifecycle=vi.hoisted(()=>({create:vi.fn(),destroy:vi.fn()}));
-vi.mock('chart.js/auto',()=>({default:class{constructor(){chartLifecycle.create();}destroy(){chartLifecycle.destroy();}update(){}toggleDataVisibility(){}}}));
+const chartLifecycle=vi.hoisted(()=>({create:vi.fn(),destroy:vi.fn(),register:vi.fn()}));
+vi.mock('chart.js',()=>({registerables:[],Chart:class{static register=chartLifecycle.register;constructor(){chartLifecycle.create();}destroy(){chartLifecycle.destroy();}update(){}toggleDataVisibility(){}}}));
 import {ChartContainer,Chart,ChartLegend} from '../../src/components/ui/chart';
-it('does not create Chart engines or observers until a hydration reference exists',()=>{const {unmount}=render(()=><ChartContainer config={{}}><Chart data={[{label:'First',count:1}]}/><ChartLegend/></ChartContainer>);expect(chartLifecycle.create).toHaveBeenCalledOnce();expect(screen.getByRole('img',{name:'Chart'})).toBeInTheDocument();unmount();expect(chartLifecycle.destroy).toHaveBeenCalledOnce();});
+it('does not create Chart engines or observers until a hydration reference exists',()=>{const {unmount}=render(()=><ChartContainer config={{}}><Chart data={[{label:'First',count:1}]}/><ChartLegend/></ChartContainer>);expect(chartLifecycle.create).toHaveBeenCalledOnce();expect(chartLifecycle.register).toHaveBeenCalledOnce();expect(screen.getByRole('img',{name:'Chart'})).toBeInTheDocument();unmount();expect(chartLifecycle.destroy).toHaveBeenCalledOnce();});
