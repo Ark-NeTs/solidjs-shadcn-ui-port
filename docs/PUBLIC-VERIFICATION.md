@@ -1,7 +1,8 @@
 # Verification and supported scope
 
 The dated 65-family catalog is implemented for Solid 2 rc.13. Each component page
-includes Solid usage, screenshots and a live example. The package uses semantic
+includes Solid usage, screenshots and an inline interactive example. Previews
+inherit the documentation theme and can be reset without leaving the page. The package uses semantic
 CSS variables for light/dark modes and custom themes.
 
 ## Automated acceptance

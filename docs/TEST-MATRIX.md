@@ -825,3 +825,21 @@ The public generator regression clears obsolete assets and excludes raw reports;
 [artifact checks](../scripts/check-site.mjs) inspect every emitted file and local
 asset link. This validates local provider behavior, not account permissions, DNS,
 remote TLS or an actual deployment. See [deployment delivery](DEPLOYMENT-DELIVERY.md).
+
+
+## Inline documentation previews
+
+[Shared preview acceptance](../tests/docs-previews.ts) mounts all 65 families
+through source and built documentation in all three browsers. It exercises state
+and reset, inherited themes, editable forms, keyboard Tabs, overlay dismissal and
+reopening, Select/Command actions, Data Table empty/restore, and notification
+cleanup. A held module response proves loading and explicit reload recovery;
+nine representative families check dark mobile layout at a 24 px root font and
+axe accessibility. [Visual cases](../tests/e2e/docs-site/visual.spec.ts) cover the
+inline custom Button and dark Tabs, Data Table and Dialog surfaces.
+
+The embedded Sidebar uses a desktop region; the default standalone complementary
+landmark and mobile modal dialog remain unchanged. Its unit test verifies the
+role across breakpoint transitions, and the existing browser/hydration Sidebar
+journeys remain release gates. All-family mounting is not a claim that every
+possible interaction or visual variant is tested. [Delivery](LIVE-DOCS-DELIVERY.md).

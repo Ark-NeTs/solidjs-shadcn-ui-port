@@ -1,0 +1,49 @@
+[
+  {
+    "check": "final-static",
+    "command": "bun run check",
+    "environment": {
+      "THEME_PORT": "4403"
+    },
+    "exitCode": 0,
+    "seconds": 4.6
+  },
+  {
+    "check": "final-lint",
+    "command": "bun run lint",
+    "environment": {
+      "THEME_PORT": "4403"
+    },
+    "exitCode": 0,
+    "seconds": 2.1
+  },
+  {
+    "check": "built",
+    "command": "bun x --no-install playwright test tests/e2e/docs-previews.spec.ts tests/e2e/docs-site.spec.ts tests/e2e/catalog-sidebar.spec.ts tests/e2e/docs-site/visual.spec.ts --max-failures=1 --update-snapshots=none",
+    "environment": {
+      "THEME_PRODUCTION": "1",
+      "THEME_PORT": "4403"
+    },
+    "exitCode": 0,
+    "seconds": 136.11
+  },
+  {
+    "check": "hydration",
+    "command": "bun run test:hydration --grep hydrates sidebar navigation",
+    "environment": {
+      "THEME_PORT": "4403"
+    },
+    "exitCode": 0,
+    "seconds": 8.75
+  },
+  {
+    "check": "public",
+    "command": "bun run test:site",
+    "environment": {
+      "WRANGLER_BIN": "/tmp/solid-docs-deploy/node_modules/wrangler/bin/wrangler.js",
+      "THEME_PORT": "4403"
+    },
+    "exitCode": 0,
+    "seconds": 18.99
+  }
+]

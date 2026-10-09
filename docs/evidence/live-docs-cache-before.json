@@ -1,0 +1,296 @@
+{
+  "config": {
+    "argv": [
+      "/Users/arktas/.asdf/installs/nodejs/25.3.0/bin/node",
+      "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/node_modules/.bin/playwright",
+      "test",
+      "tests/e2e/docs-previews.spec.ts",
+      "--grep",
+      "unavailable preview",
+      "--max-failures=1"
+    ],
+    "configFile": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/playwright.config.ts",
+    "rootDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 1,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "integration/**/*.spec.ts",
+          "e2e/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [
+          "**/visual.spec.ts"
+        ],
+        "testMatch": [
+          "integration/**/*.spec.ts",
+          "e2e/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [
+          "**/visual.spec.ts"
+        ],
+        "testMatch": [
+          "integration/**/*.spec.ts",
+          "e2e/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "docs/evidence/live-docs-reload.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": {
+      "command": "bun run build && THEME_BUILT=1 bun run build:playground && bunx --no-install vite preview --config playground/vite.config.ts --host 127.0.0.1 --port 4403 --strictPort",
+      "url": "http://127.0.0.1:4403",
+      "reuseExistingServer": false,
+      "timeout": 60000
+    }
+  },
+  "suites": [
+    {
+      "title": "e2e/docs-previews.spec.ts",
+      "file": "e2e/docs-previews.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "shows loading and recovers an unavailable preview module through explicit reload",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 621,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T16:00:58.091Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d339b2fe7a8a37530546-3cd3caa046d9009afd8a",
+          "file": "docs-previews.ts",
+          "line": 31,
+          "column": 2
+        },
+        {
+          "title": "shows loading and recovers an unavailable preview module through explicit reload",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1935,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T16:00:59.378Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d339b2fe7a8a37530546-a5214fc16ec0b4b23207",
+          "file": "docs-previews.ts",
+          "line": 31,
+          "column": 2
+        },
+        {
+          "title": "shows loading and recovers an unavailable preview module through explicit reload",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 7305,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('[data-live-component=button]')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" locator('[data-live-component=button]') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-live-component=button]')\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('[data-live-component=button]')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" locator('[data-live-component=button]') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-live-component=button]')\u001b[22m\n\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/docs-previews.ts:34:726",
+                    "location": {
+                      "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/docs-previews.ts",
+                      "column": 726,
+                      "line": 34
+                    },
+                    "snippet": "  32 |   let held:Route|undefined;let attempts=0;\n  33 |   await page.route('**/component-previews*',route=>{if(route.request().resourceType()!=='script')return route.continue();attempts++;if(attempts===1){held=route;return;}return route.continue();});\n> 34 |   await page.goto('/docs.html?component=button',{waitUntil:'load'});await expect(page.getByText('Loading live preview…',{exact:true})).toBeVisible();await expect(page.getByRole('button',{name:'Reset preview',exact:true})).toBeDisabled();await expect.poll(()=>!!held).toBe(true);await held!.fulfill({status:200,contentType:'text/javascript',body:'export const componentPreviews = {};'});await expect(page.getByRole('alert')).toContainText('The preview could not load');await expect(page.locator('.docs-prose pre').first()).toBeVisible();await Promise.all([page.waitForEvent('load'),page.getByRole('button',{name:'Reload page',exact:true}).click({noWaitAfter:true})]);await expect(page.locator('[data-live-component=button]')).toBeVisible();expect(attempts).toBe(2);\n     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ^\n  35 |  });\n  36 |  for(const id of ['button','calendar','data-table','questionnaire','sidebar','tabs','chart','input-otp','carousel'])test(`inline ${id} supports dark mobile and enlarged text`,async({page})=>{\n  37 |   await page.setViewportSize({width:390,height:844});await page.goto(`/docs.html?component=${id}&dark`);const preview=page.locator(`[data-live-component=\"${id}\"]`);await expect(preview).toBeVisible();await page.evaluate(()=>document.documentElement.style.fontSize='24px');await page.emulateMedia({reducedMotion:'reduce'});expect(await page.evaluate(()=>document.documentElement.scrollWidth)).toBeLessThanOrEqual(390);expect((await new AxeBuilder({page}).include('#live-preview').analyze()).violations).toEqual([]);"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/docs-previews.ts",
+                        "column": 726,
+                        "line": 34
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('[data-live-component=button]')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" locator('[data-live-component=button]') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-live-component=button]')\u001b[22m\n\n\n  32 |   let held:Route|undefined;let attempts=0;\n  33 |   await page.route('**/component-previews*',route=>{if(route.request().resourceType()!=='script')return route.continue();attempts++;if(attempts===1){held=route;return;}return route.continue();});\n> 34 |   await page.goto('/docs.html?component=button',{waitUntil:'load'});await expect(page.getByText('Loading live preview…',{exact:true})).toBeVisible();await expect(page.getByRole('button',{name:'Reset preview',exact:true})).toBeDisabled();await expect.poll(()=>!!held).toBe(true);await held!.fulfill({status:200,contentType:'text/javascript',body:'export const componentPreviews = {};'});await expect(page.getByRole('alert')).toContainText('The preview could not load');await expect(page.locator('.docs-prose pre').first()).toBeVisible();await Promise.all([page.waitForEvent('load'),page.getByRole('button',{name:'Reload page',exact:true}).click({noWaitAfter:true})]);await expect(page.locator('[data-live-component=button]')).toBeVisible();expect(attempts).toBe(2);\n     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ^\n  35 |  });\n  36 |  for(const id of ['button','calendar','data-table','questionnaire','sidebar','tabs','chart','input-otp','carousel'])test(`inline ${id} supports dark mobile and enlarged text`,async({page})=>{\n  37 |   await page.setViewportSize({width:390,height:844});await page.goto(`/docs.html?component=${id}&dark`);const preview=page.locator(`[data-live-component=\"${id}\"]`);await expect(preview).toBeVisible();await page.evaluate(()=>document.documentElement.style.fontSize='24px');await page.emulateMedia({reducedMotion:'reduce'});expect(await page.evaluate(()=>document.documentElement.scrollWidth)).toBeLessThanOrEqual(390);expect((await new AxeBuilder({page}).include('#live-preview').analyze()).violations).toEqual([]);\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/docs-previews.ts:34:726"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T16:01:03.327Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/e2e-docs-previews-shows-lo-8d13b-ule-through-explicit-reload-webkit/test-failed-1.png"
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/e2e-docs-previews-shows-lo-8d13b-ule-through-explicit-reload-webkit/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/e2e-docs-previews-shows-lo-8d13b-ule-through-explicit-reload-webkit/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/docs-previews.ts",
+                    "column": 726,
+                    "line": 34
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "d339b2fe7a8a37530546-635bbeb4b9030fdad1d1",
+          "file": "docs-previews.ts",
+          "line": 31,
+          "column": 2
+        }
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "message": "\u001b[31mTesting stopped early after 1 maximum allowed failures.\u001b[39m"
+    }
+  ],
+  "stats": {
+    "startTime": "2026-10-09T16:00:51.577Z",
+    "duration": 19567.602,
+    "expected": 2,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

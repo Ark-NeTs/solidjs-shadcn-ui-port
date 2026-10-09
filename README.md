@@ -61,7 +61,8 @@ It remains private in the workspace and unpublished to a registry.
 ## Public website deployment
 
 `bun run build:site` produces the curated static artifact in `site-dist`:
-documentation at `/`, live galleries at `/playground`, public verification notes,
+documentation at `/` with inline interactive previews for all 65 families, live
+galleries at `/playground`, public verification notes,
 screenshots and the MIT license. Internal delivery reports and raw diagnostics
 stay in the repository. The existing local playground is unchanged.
 

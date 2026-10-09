@@ -1,0 +1,5992 @@
+{
+  "config": {
+    "argv": [
+      "/Users/arktas/.asdf/installs/nodejs/25.3.0/bin/node",
+      "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/node_modules/.bin/playwright",
+      "test",
+      "tests/integration/docs-previews.spec.ts",
+      "tests/integration/docs-site.spec.ts",
+      "tests/integration/catalog-sidebar.spec.ts",
+      "--max-failures=1"
+    ],
+    "configFile": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/playwright.config.ts",
+    "rootDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 1,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "integration/**/*.spec.ts",
+          "e2e/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [
+          "**/visual.spec.ts"
+        ],
+        "testMatch": [
+          "integration/**/*.spec.ts",
+          "e2e/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [
+          "**/visual.spec.ts"
+        ],
+        "testMatch": [
+          "integration/**/*.spec.ts",
+          "e2e/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "docs/evidence/live-docs-source.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": {
+      "command": "bun run dev",
+      "url": "http://127.0.0.1:4403",
+      "reuseExistingServer": false,
+      "timeout": 60000
+    }
+  },
+  "suites": [
+    {
+      "title": "integration/catalog-sidebar.spec.ts",
+      "file": "integration/catalog-sidebar.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Sidebar desktop collapse, hints, controlled rejection and shortcuts keep navigation usable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1517,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T15:50:37.937Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "96465e4a1fc0b596efb7-c7acda90e8d0e5119d35",
+          "file": "catalog-sidebar.ts",
+          "line": 6,
+          "column": 2
+        },
+        {
+          "title": "Sidebar viewport changes retain the search input and native modal focus returns to its trigger",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 652,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T15:50:39.848Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "96465e4a1fc0b596efb7-a93337d7b222f662d77c",
+          "file": "catalog-sidebar.ts",
+          "line": 7,
+          "column": 2
+        },
+        {
+          "title": "Sidebar offcanvas hides interactive controls, none keeps navigation and variants remain responsive",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1235,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T15:50:40.507Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "96465e4a1fc0b596efb7-68a3d04ff4374dace311",
+          "file": "catalog-sidebar.ts",
+          "line": 8,
+          "column": 2
+        },
+        {
+          "title": "Sidebar light mobile enlarged content, outside dismissal and accessibility",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1286,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T15:50:41.749Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "96465e4a1fc0b596efb7-c51b2e5d733dc1bcc09c",
+          "file": "catalog-sidebar.ts",
+          "line": 9,
+          "column": 33
+        },
+        {
+          "title": "Sidebar dark mobile enlarged content, outside dismissal and accessibility",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1193,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T15:50:43.042Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "96465e4a1fc0b596efb7-c5347993b744755f8716",
+          "file": "catalog-sidebar.ts",
+          "line": 9,
+          "column": 33
+        },
+        {
+          "title": "Sidebar desktop landmarks and disabled navigation satisfy accessibility contracts",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 764,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T15:50:44.244Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "96465e4a1fc0b596efb7-c1a92c47cb3de929b24c",
+          "file": "catalog-sidebar.ts",
+          "line": 10,
+          "column": 2
+        },
+        {
+          "title": "Sidebar desktop collapse, hints, controlled rejection and shortcuts keep navigation usable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "96465e4a1fc0b596efb7-3952740dff64ca828c15",
+          "file": "catalog-sidebar.ts",
+          "line": 6,
+          "column": 2
+        },
+        {
+          "title": "Sidebar viewport changes retain the search input and native modal focus returns to its trigger",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "96465e4a1fc0b596efb7-abee77fd0816c4f9dc17",
+          "file": "catalog-sidebar.ts",
+          "line": 7,
+          "column": 2
+        },
+        {
+          "title": "Sidebar offcanvas hides interactive controls, none keeps navigation and variants remain responsive",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "96465e4a1fc0b596efb7-2c900b4f1099645bfc1d",
+          "file": "catalog-sidebar.ts",
+          "line": 8,
+          "column": 2
+        },
+        {
+          "title": "Sidebar light mobile enlarged content, outside dismissal and accessibility",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "96465e4a1fc0b596efb7-1e8e17794d5fb804b9f8",
+          "file": "catalog-sidebar.ts",
+          "line": 9,
+          "column": 33
+        },
+        {
+          "title": "Sidebar dark mobile enlarged content, outside dismissal and accessibility",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "96465e4a1fc0b596efb7-6ced0802700a6f4765c8",
+          "file": "catalog-sidebar.ts",
+          "line": 9,
+          "column": 33
+        },
+        {
+          "title": "Sidebar desktop landmarks and disabled navigation satisfy accessibility contracts",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "96465e4a1fc0b596efb7-50adfd5bde7b857858e6",
+          "file": "catalog-sidebar.ts",
+          "line": 10,
+          "column": 2
+        },
+        {
+          "title": "Sidebar desktop collapse, hints, controlled rejection and shortcuts keep navigation usable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "96465e4a1fc0b596efb7-a0401807f1a62636361f",
+          "file": "catalog-sidebar.ts",
+          "line": 6,
+          "column": 2
+        },
+        {
+          "title": "Sidebar viewport changes retain the search input and native modal focus returns to its trigger",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "96465e4a1fc0b596efb7-2f46966cb886fb6d07eb",
+          "file": "catalog-sidebar.ts",
+          "line": 7,
+          "column": 2
+        },
+        {
+          "title": "Sidebar offcanvas hides interactive controls, none keeps navigation and variants remain responsive",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "96465e4a1fc0b596efb7-5b9b9f67c31c7dab2f23",
+          "file": "catalog-sidebar.ts",
+          "line": 8,
+          "column": 2
+        },
+        {
+          "title": "Sidebar light mobile enlarged content, outside dismissal and accessibility",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "96465e4a1fc0b596efb7-a38353952219d1b613b2",
+          "file": "catalog-sidebar.ts",
+          "line": 9,
+          "column": 33
+        },
+        {
+          "title": "Sidebar dark mobile enlarged content, outside dismissal and accessibility",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "96465e4a1fc0b596efb7-8d6ac1e5ebb69eed3363",
+          "file": "catalog-sidebar.ts",
+          "line": 9,
+          "column": 33
+        },
+        {
+          "title": "Sidebar desktop landmarks and disabled navigation satisfy accessibility contracts",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "96465e4a1fc0b596efb7-596d4fd50be3c0f4a945",
+          "file": "catalog-sidebar.ts",
+          "line": 10,
+          "column": 2
+        }
+      ]
+    },
+    {
+      "title": "integration/docs-previews.spec.ts",
+      "file": "integration/docs-previews.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "inline button preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 559,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T15:50:45.024Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-cc6f44e3f8afb7fa8834",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline badge preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 441,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T15:50:45.589Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-4e454739559ae4eb1427",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline card preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 441,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T15:50:46.037Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-8cfaf9527b8bef30e69f",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline separator preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 783,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T15:50:46.484Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-9e316a0e827e943ac589",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline skeleton preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 700,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T15:50:47.276Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-7af1b673cfccb6c4ebce",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline input preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 725,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T15:50:47.984Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-31f0ec4d209c86a022dd",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline textarea preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 607,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T15:50:48.722Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-89f34434222104cdf662",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline label preview mounts without diagnostics",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5509,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('[data-live-component=\"label\"]')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" locator('[data-live-component=\"label\"]') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-live-component=\"label\"]')\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('[data-live-component=\"label\"]')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" locator('[data-live-component=\"label\"]') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-live-component=\"label\"]')\u001b[22m\n\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/docs-previews.ts:9:109",
+                    "location": {
+                      "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/docs-previews.ts",
+                      "column": 109,
+                      "line": 9
+                    },
+                    "snippet": "   7 | export function registerDocsPreviewTests(){\n   8 |  for(const id of groups.flatMap(group=>group.families))test(`inline ${id} preview mounts without diagnostics`,async({page})=>{\n>  9 |   await page.goto(`/docs.html?component=${id}`);await expect(page.locator(`[data-live-component=\"${id}\"]`)).toBeVisible();await expect(page.locator(`[data-live-component=\"${id}\"] [data-slot]`).first()).toBeVisible();await expect(page.getByRole('button',{name:'Reset preview',exact:true})).toBeEnabled();\n     |                                                                                                             ^\n  10 |  });\n  11 |  test('button state survives theme changes and reset creates a fresh example',async({page})=>{\n  12 |   await page.goto('/docs.html?component=button');const preview=page.getByRole('region',{name:'Button live preview'});await preview.getByRole('button',{name:'Click me',exact:true}).click();await expect(preview.getByRole('status')).toHaveText('Clicked 1 times');await page.getByRole('button',{name:'Dark mode',exact:true}).click();await page.getByLabel('Palette',{exact:true}).selectOption('forest');await expect(preview.getByRole('status')).toHaveText('Clicked 1 times');await expect.poll(()=>preview.getByRole('button',{name:'Click me',exact:true}).evaluate(node=>getComputedStyle(node).getPropertyValue('--primary').trim())).toBe('oklch(0.46 0.15 155)');await preview.getByRole('button',{name:'Reset preview',exact:true}).click();await expect(preview.getByRole('status')).toHaveText('Clicked 0 times');await expect(page).toHaveURL(/component=button/);"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/docs-previews.ts",
+                        "column": 109,
+                        "line": 9
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('[data-live-component=\"label\"]')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" locator('[data-live-component=\"label\"]') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-live-component=\"label\"]')\u001b[22m\n\n\n   7 | export function registerDocsPreviewTests(){\n   8 |  for(const id of groups.flatMap(group=>group.families))test(`inline ${id} preview mounts without diagnostics`,async({page})=>{\n>  9 |   await page.goto(`/docs.html?component=${id}`);await expect(page.locator(`[data-live-component=\"${id}\"]`)).toBeVisible();await expect(page.locator(`[data-live-component=\"${id}\"] [data-slot]`).first()).toBeVisible();await expect(page.getByRole('button',{name:'Reset preview',exact:true})).toBeEnabled();\n     |                                                                                                             ^\n  10 |  });\n  11 |  test('button state survives theme changes and reset creates a fresh example',async({page})=>{\n  12 |   await page.goto('/docs.html?component=button');const preview=page.getByRole('region',{name:'Button live preview'});await preview.getByRole('button',{name:'Click me',exact:true}).click();await expect(preview.getByRole('status')).toHaveText('Clicked 1 times');await page.getByRole('button',{name:'Dark mode',exact:true}).click();await page.getByLabel('Palette',{exact:true}).selectOption('forest');await expect(preview.getByRole('status')).toHaveText('Clicked 1 times');await expect.poll(()=>preview.getByRole('button',{name:'Click me',exact:true}).evaluate(node=>getComputedStyle(node).getPropertyValue('--primary').trim())).toBe('oklch(0.46 0.15 155)');await preview.getByRole('button',{name:'Reset preview',exact:true}).click();await expect(preview.getByRole('status')).toHaveText('Clicked 0 times');await expect(page).toHaveURL(/component=button/);\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/docs-previews.ts:9:109"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T15:50:49.337Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/integration-docs-previews--5ef13--mounts-without-diagnostics-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/integration-docs-previews--5ef13--mounts-without-diagnostics-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/integration-docs-previews--5ef13--mounts-without-diagnostics-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/docs-previews.ts",
+                    "column": 109,
+                    "line": 9
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-2f718540a635c47b8926",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline checkbox preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-823b706bd9723fd62587",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline switch preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-2347b9d5dcf3f3349d71",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline tabs preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-3fe89cf2b612acac3a0c",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline popover preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-5029458098601789ddf0",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline alert-dialog preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-2ed8bc84256d76335f1a",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline combobox preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-c0c2d835061b15567921",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline accordion preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-551e7b5108c33896f1f0",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline collapsible preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-9d6505c3133a6d181bed",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline tooltip preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-9a10a119dac3601eba92",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline hover-card preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-a74111f59ce66ab75f56",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline radio-group preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-8b213411d85f3383eb46",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline toggle preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-e2d00ba804a069f1ed71",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline toggle-group preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-7722b9003c83134d63ea",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline select preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-cee12d5f3b7677ec92f7",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline slider preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-36bb8df59fcee15b136e",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline progress preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-136495951eedeadfe765",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline alert preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-b15d41318aa988b99fd0",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline aspect-ratio preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-3517ab72c320e67614b5",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline attachment preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-8f2dc35cceadc503355b",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline breadcrumb preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-d9a4f3d8b593871e4d22",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline bubble preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-7b164f47a1cdce5c2f98",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline button-group preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-2447773782104dc39ea4",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline empty preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-e5dc7290f5b900f21c91",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline field preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-39c904279acc26c3716f",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline input-group preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-838920bb772d1d59e3ae",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline item preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-a4049692cad5b745945a",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline kbd preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-a087556b4db88c1dce8b",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline marker preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-aab2aaad9871de534398",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline message preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-d53f4096264db66830df",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline native-select preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-9f02d79dbdda12748106",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline spinner preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-4229fc2c4417d33af968",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline table preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-8122f3a8c5ef6d4f22fe",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline avatar preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-ffce32dc89eeec86572a",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline pagination preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-e62de35ca9b70fec28dd",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline direction preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-e2da5f108daeff2e5ede",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline typography preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-c5b66a3e1364155e231b",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline dialog preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-1d481da67917ae57da62",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline sheet preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-095da0ac7588d75c6846",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline drawer preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-281fb468facade15cb5b",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline dropdown-menu preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-2170afc2ef8665c6cb52",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline context-menu preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-a71e2a2b8f84e97710e6",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline menubar preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-c8bc1856ae4869003b45",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline navigation-menu preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-70a9c8092b8904cd171b",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline command preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-6bb6f1cdb451bbd883ee",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline calendar preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-e92da45036eb2f3aad37",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline date-picker preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-59552d3619f687eae20a",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline input-otp preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-18f33f9bb964fcd05df4",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline resizable preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-47247c67c42d72dd32c3",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline scroll-area preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-d6891ef410f741d848e0",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline carousel preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-13f5348502ce0ee9ae15",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline message-scroller preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-229dfe772f2201411116",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline toast preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-d1a8a43b75d38a458973",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline sonner preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-f36ca38265d63b90228a",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline sidebar preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-e9fa8a385ccfc23c7f29",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline chart preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-5e2af807e3c1fd5c329f",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline questionnaire preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-0622be419dade40a592e",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline data-table preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-081e4dfb88f72a3f637f",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "button state survives theme changes and reset creates a fresh example",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-68aace09d900bf34e96a",
+          "file": "docs-previews.ts",
+          "line": 11,
+          "column": 2
+        },
+        {
+          "title": "inline form controls and Tabs accept real input and keyboard selection",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-a5b8b34ae25c989a15f2",
+          "file": "docs-previews.ts",
+          "line": 14,
+          "column": 2
+        },
+        {
+          "title": "inline overlays open, dismiss, restore focus and reopen",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-643aed8bcf3e408d7277",
+          "file": "docs-previews.ts",
+          "line": 19,
+          "column": 2
+        },
+        {
+          "title": "inline Select, command and Data Table change their real state",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-e574bd9da2532992b817",
+          "file": "docs-previews.ts",
+          "line": 23,
+          "column": 2
+        },
+        {
+          "title": "inline notifications dispose their state when the preview resets",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-33d1f262ffeeb53d7ad3",
+          "file": "docs-previews.ts",
+          "line": 28,
+          "column": 2
+        },
+        {
+          "title": "shows loading and recovers an unavailable preview module through explicit reload",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-41f0d8e047d0427b37c3",
+          "file": "docs-previews.ts",
+          "line": 31,
+          "column": 2
+        },
+        {
+          "title": "inline button supports dark mobile and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-e2cda12fae238fdf313a",
+          "file": "docs-previews.ts",
+          "line": 36,
+          "column": 117
+        },
+        {
+          "title": "inline calendar supports dark mobile and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-b314c47a3bb2cbd310b0",
+          "file": "docs-previews.ts",
+          "line": 36,
+          "column": 117
+        },
+        {
+          "title": "inline data-table supports dark mobile and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-e868c89b1967c74fcf4a",
+          "file": "docs-previews.ts",
+          "line": 36,
+          "column": 117
+        },
+        {
+          "title": "inline questionnaire supports dark mobile and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-c44eba453b81d8c5346c",
+          "file": "docs-previews.ts",
+          "line": 36,
+          "column": 117
+        },
+        {
+          "title": "inline sidebar supports dark mobile and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-abe9509ed095b0376ebc",
+          "file": "docs-previews.ts",
+          "line": 36,
+          "column": 117
+        },
+        {
+          "title": "inline tabs supports dark mobile and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-cce190df1c1e6de649dc",
+          "file": "docs-previews.ts",
+          "line": 36,
+          "column": 117
+        },
+        {
+          "title": "inline chart supports dark mobile and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-1a9a864d67b2efe41cf3",
+          "file": "docs-previews.ts",
+          "line": 36,
+          "column": 117
+        },
+        {
+          "title": "inline input-otp supports dark mobile and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-9a500ec5648564d50c19",
+          "file": "docs-previews.ts",
+          "line": 36,
+          "column": 117
+        },
+        {
+          "title": "inline carousel supports dark mobile and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-50a4e39beaeb5c24a1f2",
+          "file": "docs-previews.ts",
+          "line": 36,
+          "column": 117
+        },
+        {
+          "title": "inline button preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-f2aea894feb7e3cf048d",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline badge preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-a710d784e56b7636fbae",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline card preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-73c2246fbecc71362e8d",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline separator preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-eab739d9b481979bdf94",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline skeleton preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-b7d2348a4519eb32cf6a",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline input preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-4de074147bc6afd8eaba",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline textarea preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-5df75a7687a8ee9c95c1",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline label preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-59188e8079b8fc6914de",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline checkbox preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-afa48ec502a80eea4e97",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline switch preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-baa57c614a1d81278830",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline tabs preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-543ad23dd59a41c2e98d",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline popover preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-6075dd683a99b6a5915e",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline alert-dialog preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-55c3b6382a95634e95c1",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline combobox preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-1ed3f726528b2531e770",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline accordion preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-ffe63aca151c366c8960",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline collapsible preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-2fe2c7bf5c75438bb38f",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline tooltip preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-b22a30bf5700f29e10d6",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline hover-card preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-f291c42f9663bd90d02d",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline radio-group preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-ca576e0446e047e8ba6f",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline toggle preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-48a47e160649258ccafa",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline toggle-group preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-a5d82237a5ec5ca912c8",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline select preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-b4315c99de9953f96633",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline slider preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-8846a13f86f636f43657",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline progress preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-312ea0273876c6313993",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline alert preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-b0d197cea06592bdf297",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline aspect-ratio preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-76489b7f17fb1ccdab11",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline attachment preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-82639c26956b3104ab10",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline breadcrumb preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-ba2777308e212f42ae9b",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline bubble preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-6a87c462dee06636ee1f",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline button-group preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-8fa60e42fe144b441848",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline empty preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-b39a0d54834d4ef72063",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline field preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-562ccfac35b65d81b808",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline input-group preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-ab2d65b49dffc05ddb24",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline item preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-095862b641f9fa8fbff3",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline kbd preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-11a28a311f6868eccf60",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline marker preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-5b533e0f23284428e7ba",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline message preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-78472a3f5eb8ddf36f73",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline native-select preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-ea027d0e67b372b9b4a7",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline spinner preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-742a36d3905cb80c1baf",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline table preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-af8472303edaebe640ae",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline avatar preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-17105550b49a609722bb",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline pagination preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-7801d0fa87aac9ce4690",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline direction preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-3f9ce498b41952e0fd51",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline typography preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-f6f2050e125cb02f0e7a",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline dialog preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-28a2d073fb02c1db4194",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline sheet preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-6c558fe8ddcc774aa1d8",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline drawer preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-19fe3f9967102e40052e",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline dropdown-menu preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-7023b034258b19bc8191",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline context-menu preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-217cc4e45b62d186edc3",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline menubar preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-a5a38d120bf0b78a468b",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline navigation-menu preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-0db5250f50d2d46b37ed",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline command preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-66614dadd7e73717594a",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline calendar preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-11975f58f13f0f452483",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline date-picker preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-0c0b0a9c550e8e238f8a",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline input-otp preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-aa09fd48e0ea3f1b7224",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline resizable preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-043faa10181dd43fd34d",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline scroll-area preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-c37cda6b6e4dde69f172",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline carousel preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-6e8250e99b6715b66991",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline message-scroller preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-15909bed8a26b0deb72b",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline toast preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-539da0bcf7c93d1bb207",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline sonner preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-77b7c174ef78bd61bcfd",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline sidebar preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-89b7a8df4d2b3894befe",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline chart preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-1e0993d41786e2051fdb",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline questionnaire preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-3f4c7572ab71e4d396dc",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline data-table preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-75fea3d6431588130430",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "button state survives theme changes and reset creates a fresh example",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-b044fca8cfd560e891db",
+          "file": "docs-previews.ts",
+          "line": 11,
+          "column": 2
+        },
+        {
+          "title": "inline form controls and Tabs accept real input and keyboard selection",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-fd123e978ded663de83c",
+          "file": "docs-previews.ts",
+          "line": 14,
+          "column": 2
+        },
+        {
+          "title": "inline overlays open, dismiss, restore focus and reopen",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-136a35bc667bf28c67c4",
+          "file": "docs-previews.ts",
+          "line": 19,
+          "column": 2
+        },
+        {
+          "title": "inline Select, command and Data Table change their real state",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-e0c212b7bebb15e59821",
+          "file": "docs-previews.ts",
+          "line": 23,
+          "column": 2
+        },
+        {
+          "title": "inline notifications dispose their state when the preview resets",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-c044a87281366b790540",
+          "file": "docs-previews.ts",
+          "line": 28,
+          "column": 2
+        },
+        {
+          "title": "shows loading and recovers an unavailable preview module through explicit reload",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-b6bb4dbbda1e5f4c26a0",
+          "file": "docs-previews.ts",
+          "line": 31,
+          "column": 2
+        },
+        {
+          "title": "inline button supports dark mobile and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-26f92ca33ead6808d288",
+          "file": "docs-previews.ts",
+          "line": 36,
+          "column": 117
+        },
+        {
+          "title": "inline calendar supports dark mobile and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-5773a8074bbc9aec41a3",
+          "file": "docs-previews.ts",
+          "line": 36,
+          "column": 117
+        },
+        {
+          "title": "inline data-table supports dark mobile and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-f94be460b8fe6510152a",
+          "file": "docs-previews.ts",
+          "line": 36,
+          "column": 117
+        },
+        {
+          "title": "inline questionnaire supports dark mobile and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-27d03fd013b66ba41ad5",
+          "file": "docs-previews.ts",
+          "line": 36,
+          "column": 117
+        },
+        {
+          "title": "inline sidebar supports dark mobile and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-e55dca2e6e8154541783",
+          "file": "docs-previews.ts",
+          "line": 36,
+          "column": 117
+        },
+        {
+          "title": "inline tabs supports dark mobile and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-df3a08578affbe92d57c",
+          "file": "docs-previews.ts",
+          "line": 36,
+          "column": 117
+        },
+        {
+          "title": "inline chart supports dark mobile and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-ad3d5a9d46058e418e2d",
+          "file": "docs-previews.ts",
+          "line": 36,
+          "column": 117
+        },
+        {
+          "title": "inline input-otp supports dark mobile and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-e057be42c973a33d4e27",
+          "file": "docs-previews.ts",
+          "line": 36,
+          "column": 117
+        },
+        {
+          "title": "inline carousel supports dark mobile and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-690079b36883e809bb64",
+          "file": "docs-previews.ts",
+          "line": 36,
+          "column": 117
+        },
+        {
+          "title": "inline button preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-de73e76878f486d9ad30",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline badge preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-3ed0889161ea9b29b1fd",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline card preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-9791afc258b152afc929",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline separator preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-9ccd40080c89a8aff48c",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline skeleton preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-b15017dc1507de732736",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline input preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-9b0ea9daf71b29f446c3",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline textarea preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-0be227f842fb7323df53",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline label preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-8bbce4531628c9be5ed4",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline checkbox preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-b55cf82a891de37ddd95",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline switch preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-cef9c555cec0beef42de",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline tabs preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-1c47910c133badb1cb7e",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline popover preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-b5f33aba73abd2a905c7",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline alert-dialog preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-0ad83cc96e7de2073985",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline combobox preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-87c25075af921bb819cb",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline accordion preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-d98ac2894a8619037622",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline collapsible preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-64c7040dce8ca6c9bbe5",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline tooltip preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-52ca85aae9422778f762",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline hover-card preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-711c7982f7e9eed16f33",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline radio-group preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-43a73684dc5e171390e4",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline toggle preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-978fe786ea8d4590a637",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline toggle-group preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-5f32b2ea9fa4d0b0e116",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline select preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-6aff113df98f51d6acd3",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline slider preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-32609c6507a16f10011e",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline progress preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-66b9e898f43da32d3772",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline alert preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-34f3ae69ac21742ab660",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline aspect-ratio preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-475f7560c0c0fdc17c25",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline attachment preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-bea1f9f76ea812bafeb1",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline breadcrumb preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-917103c93cf12bf9173c",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline bubble preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-d76383a2d58393746c58",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline button-group preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-bcce3c53a1b5c39e0fa6",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline empty preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-940fec844339821876be",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline field preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-1b30186f9b22cb72c2bd",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline input-group preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-7f8664320c6708116906",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline item preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-96e86320f81dfe92b5d5",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline kbd preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-57ba6e1d5379ca1d7eb6",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline marker preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-becd26e8ee07766a0d31",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline message preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-0de86bf8b89e56979eac",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline native-select preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-72966b40688095296452",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline spinner preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-39aa312a9d73085e2167",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline table preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-c4b3b06fd1d88bf0c380",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline avatar preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-ecbac683fa9ac63c9f45",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline pagination preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-aa44d0b681129ed7a93d",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline direction preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-df4b085ab57bd0856f22",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline typography preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-b8b94b23df85474917b0",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline dialog preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-b2a99cd8316c2ae96003",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline sheet preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-cbc979952e900597c91e",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline drawer preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-66d0e764d60f7fcf2938",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline dropdown-menu preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-03454909a682e08a73ea",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline context-menu preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-46637d03b6a46ef6d51f",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline menubar preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-848e79b3ef2035c11ad4",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline navigation-menu preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-631f3dbe23b2f62f72e9",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline command preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-810bdc3f889d719fdbec",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline calendar preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-97a172397c75ab422951",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline date-picker preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-94235fef7619b46a4b1f",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline input-otp preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-9278f7c1f1298f40a249",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline resizable preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-a8dc1aec16b316da2cf1",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline scroll-area preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-c38bea5db37a75239b1a",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline carousel preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-a88a1cbc20db3aab285a",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline message-scroller preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-c6e7b0d3853f13e23149",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline toast preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-3ef40db63f6d4b932866",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline sonner preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-c4288fdcc2ffd2895264",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline sidebar preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-8665058e47dfc6cf5327",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline chart preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-174fbd015742dc2f86eb",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline questionnaire preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-883e091d8996fc2e056d",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "inline data-table preview mounts without diagnostics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-9a20aa1d1eaf5b814a07",
+          "file": "docs-previews.ts",
+          "line": 8,
+          "column": 56
+        },
+        {
+          "title": "button state survives theme changes and reset creates a fresh example",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-f8499b911b086217e0fa",
+          "file": "docs-previews.ts",
+          "line": 11,
+          "column": 2
+        },
+        {
+          "title": "inline form controls and Tabs accept real input and keyboard selection",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-b42eff3f3017e81bbf7e",
+          "file": "docs-previews.ts",
+          "line": 14,
+          "column": 2
+        },
+        {
+          "title": "inline overlays open, dismiss, restore focus and reopen",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-909ded7757f4f3716e9d",
+          "file": "docs-previews.ts",
+          "line": 19,
+          "column": 2
+        },
+        {
+          "title": "inline Select, command and Data Table change their real state",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-0a0efbb54ea0e19ba7de",
+          "file": "docs-previews.ts",
+          "line": 23,
+          "column": 2
+        },
+        {
+          "title": "inline notifications dispose their state when the preview resets",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-05b5e3b483c7e3261e46",
+          "file": "docs-previews.ts",
+          "line": 28,
+          "column": 2
+        },
+        {
+          "title": "shows loading and recovers an unavailable preview module through explicit reload",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-ec2d958fac6f48970281",
+          "file": "docs-previews.ts",
+          "line": 31,
+          "column": 2
+        },
+        {
+          "title": "inline button supports dark mobile and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-e7bfc0dec32b41fe185c",
+          "file": "docs-previews.ts",
+          "line": 36,
+          "column": 117
+        },
+        {
+          "title": "inline calendar supports dark mobile and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-1e5dfa52634cde319e95",
+          "file": "docs-previews.ts",
+          "line": 36,
+          "column": 117
+        },
+        {
+          "title": "inline data-table supports dark mobile and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-00b700fb77b0a28427b7",
+          "file": "docs-previews.ts",
+          "line": 36,
+          "column": 117
+        },
+        {
+          "title": "inline questionnaire supports dark mobile and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-eafa2ed174860523f65a",
+          "file": "docs-previews.ts",
+          "line": 36,
+          "column": 117
+        },
+        {
+          "title": "inline sidebar supports dark mobile and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-ee38f2bc10dce8ef89fd",
+          "file": "docs-previews.ts",
+          "line": 36,
+          "column": 117
+        },
+        {
+          "title": "inline tabs supports dark mobile and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-e5a26b508fa684be45e2",
+          "file": "docs-previews.ts",
+          "line": 36,
+          "column": 117
+        },
+        {
+          "title": "inline chart supports dark mobile and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-07fb590d572cfa42b032",
+          "file": "docs-previews.ts",
+          "line": 36,
+          "column": 117
+        },
+        {
+          "title": "inline input-otp supports dark mobile and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-2c081347132b9a06e1cf",
+          "file": "docs-previews.ts",
+          "line": 36,
+          "column": 117
+        },
+        {
+          "title": "inline carousel supports dark mobile and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "e61f62126f0519a4a853-4e48bdb7d9306cc9af93",
+          "file": "docs-previews.ts",
+          "line": 36,
+          "column": 117
+        }
+      ]
+    },
+    {
+      "title": "integration/docs-site.spec.ts",
+      "file": "integration/docs-site.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "searches all components, opens a deep link and preserves native history",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "2c7eeb6666fc29406862-8f8750f5e655dc8aacd8",
+          "file": "docs-site.ts",
+          "line": 6,
+          "column": 2
+        },
+        {
+          "title": "retains the shell and theme through a failed page request and explicit retry",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "2c7eeb6666fc29406862-7a7e2810050734c324e3",
+          "file": "docs-site.ts",
+          "line": 9,
+          "column": 2
+        },
+        {
+          "title": "shows an unknown-page recovery and renders linked evidence with accessible code and images",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "2c7eeb6666fc29406862-6af15228225bc0a29006",
+          "file": "docs-site.ts",
+          "line": 12,
+          "column": 2
+        },
+        {
+          "title": "keeps navigation nodes through filtering and reports code-copy feedback",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "2c7eeb6666fc29406862-6864e4e10ba8786bb130",
+          "file": "docs-site.ts",
+          "line": 15,
+          "column": 2
+        },
+        {
+          "title": "documentation supports light mobile themes and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "2c7eeb6666fc29406862-401e375d73cbc432cb9c",
+          "file": "docs-site.ts",
+          "line": 18,
+          "column": 33
+        },
+        {
+          "title": "documentation supports dark mobile themes and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "2c7eeb6666fc29406862-7a18f09170150bea271c",
+          "file": "docs-site.ts",
+          "line": 18,
+          "column": 33
+        },
+        {
+          "title": "searches all components, opens a deep link and preserves native history",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "2c7eeb6666fc29406862-79cf5f2d1be92eb7f1b1",
+          "file": "docs-site.ts",
+          "line": 6,
+          "column": 2
+        },
+        {
+          "title": "retains the shell and theme through a failed page request and explicit retry",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "2c7eeb6666fc29406862-935cf866b1ea5dcb44a2",
+          "file": "docs-site.ts",
+          "line": 9,
+          "column": 2
+        },
+        {
+          "title": "shows an unknown-page recovery and renders linked evidence with accessible code and images",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "2c7eeb6666fc29406862-a1eb0553aec3171d3188",
+          "file": "docs-site.ts",
+          "line": 12,
+          "column": 2
+        },
+        {
+          "title": "keeps navigation nodes through filtering and reports code-copy feedback",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "2c7eeb6666fc29406862-e0a707f9bee15ac3e77a",
+          "file": "docs-site.ts",
+          "line": 15,
+          "column": 2
+        },
+        {
+          "title": "documentation supports light mobile themes and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "2c7eeb6666fc29406862-289171d4276c7adf993d",
+          "file": "docs-site.ts",
+          "line": 18,
+          "column": 33
+        },
+        {
+          "title": "documentation supports dark mobile themes and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "2c7eeb6666fc29406862-d8c54f472b0e3bc6c0a2",
+          "file": "docs-site.ts",
+          "line": 18,
+          "column": 33
+        },
+        {
+          "title": "searches all components, opens a deep link and preserves native history",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "2c7eeb6666fc29406862-5e35410bac352ea4a721",
+          "file": "docs-site.ts",
+          "line": 6,
+          "column": 2
+        },
+        {
+          "title": "retains the shell and theme through a failed page request and explicit retry",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "2c7eeb6666fc29406862-6e67dfac3ae9e0d1c11f",
+          "file": "docs-site.ts",
+          "line": 9,
+          "column": 2
+        },
+        {
+          "title": "shows an unknown-page recovery and renders linked evidence with accessible code and images",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "2c7eeb6666fc29406862-a27af9196328ed461ff1",
+          "file": "docs-site.ts",
+          "line": 12,
+          "column": 2
+        },
+        {
+          "title": "keeps navigation nodes through filtering and reports code-copy feedback",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "2c7eeb6666fc29406862-e69a172c6607b70f9f18",
+          "file": "docs-site.ts",
+          "line": 15,
+          "column": 2
+        },
+        {
+          "title": "documentation supports light mobile themes and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "2c7eeb6666fc29406862-fc0eaece9b19100478a8",
+          "file": "docs-site.ts",
+          "line": 18,
+          "column": 33
+        },
+        {
+          "title": "documentation supports dark mobile themes and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "2c7eeb6666fc29406862-fe72cf06be957ddbe672",
+          "file": "docs-site.ts",
+          "line": 18,
+          "column": 33
+        }
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "message": "\u001b[31mTesting stopped early after 1 maximum allowed failures.\u001b[39m"
+    }
+  ],
+  "stats": {
+    "startTime": "2026-10-09T15:50:36.509Z",
+    "duration": 18530.682,
+    "expected": 13,
+    "skipped": 262,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

@@ -1614,7 +1614,9 @@ import { SidebarProvider, Sidebar, SidebarContent, SidebarMenu,
 
 Ctrl/Cmd+B toggles outside editable fields. Mobile navigation uses a native modal;
 Escape returns focus to the trigger. The inner subtree survives breakpoint changes.
-Desktop/mobile open state can each be controlled. Set the `--sidebar-width`,
+Desktop/mobile open state can each be controlled. An embedded desktop example
+can set `role="region"` to avoid nesting a complementary landmark inside page
+content; mobile overlays retain `role="dialog"` and their modal semantics. Set the `--sidebar-width`,
 `--sidebar-width-mobile` and `--sidebar-width-icon` CSS variables for sizing.
 No cookies are written; applications own persistence and navigation destinations.
 See [API boundaries and evidence](SIDEBAR-CATALOG-DELIVERY.md).

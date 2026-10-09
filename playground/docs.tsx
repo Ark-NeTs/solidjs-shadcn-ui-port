@@ -7,6 +7,7 @@ import {Label} from 'shadcn-solidjs-theme/ui/label';
 import {NativeSelect,NativeSelectOption} from 'shadcn-solidjs-theme/ui/native-select';
 import './index.css';
 import './docs.css';
+import {DocsPreview} from './docs-preview';
 const publicSite=import.meta.env.VITE_PUBLIC_SITE==='1';
 const docsPath=publicSite?'/':'/docs.html';
 const galleryPath=publicSite?'/playground':'/';
@@ -56,6 +57,7 @@ function Documentation(){
    <div class="docs-eyebrow">COMPONENTS FOR SOLID 2</div><Show when={loading()}><p role="status">Loading documentation…</p></Show><Show when={error()}><div role="alert"><h1>Documentation unavailable</h1><p>{error()}</p><Button onClick={()=>void load()}>Try again</Button></div></Show>
    <Show when={!loading()&&!error()&&page()}><div class="docs-title-row"><h1>{page()!.title}</h1><Show when={family()}><Button as="a" href={`${family()!.preview}${dark()?(family()!.preview.includes('?')?'&dark':'?dark'):''}`} variant="outline">Open live example <span aria-hidden="true">↗</span></Button></Show></div>
     <Show when={family()}><p class="docs-import"><code>shadcn-solidjs-theme/ui/{family()!.id}</code></p></Show>
+    <Show when={family()}>{item=><DocsPreview id={item().id} name={item().name}/>}</Show>
     <article class="docs-prose" onClick={copy} innerHTML={page()!.html}/><p class="docs-copy-status" role="status">{copied()}</p>
    </Show>
    <footer class="docs-footer">Built with Solid signals. Documented contracts and reproducible tests.<br/>Solid 2 rc.13 · Kobalte evaluated first · Application data stays with your app.</footer>

@@ -704,3 +704,19 @@ server-side Solid runtime, Cloudflare Vite plugin or hosted CI change is needed.
 Wrangler is pinned in an isolated tooling manifest/lock and used locally to verify
 provider routing, headers and 404 behavior. The site is prepared for publication;
 selecting an account/domain and actually publishing remain separate actions.
+
+
+## Live components inside documentation — 2026-10-09
+
+Each component guide mounts a focused real example before its reference content.
+The example registry is imported only on component pages; selecting a guide
+instantiates one example owner. Theme controls preserve example state, while Reset
+replaces its owner and disposes listeners, overlays and notification subscriptions.
+Loading and module failure are explicit; failure keeps the reference content
+available and offers a page reload. No arbitrary code evaluation or remote service
+is added. Public subpath imports retain source/built verification boundaries.
+
+Existing accepted primitives are reused; no additional headless library is needed.
+The Sidebar's existing native `role` prop now applies to desktop rendering so an
+embedded preview can be a named region. Mobile overlays always retain dialog
+semantics. The default complementary landmark is unchanged.

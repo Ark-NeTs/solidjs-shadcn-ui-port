@@ -15,3 +15,12 @@
 @media(max-width:700px){.docs-header{padding:18px 20px;gap:16px;flex-wrap:wrap}.docs-header nav{order:3;flex-basis:100%;gap:18px;font-size:.75rem}.docs-header>button{margin-left:auto}.docs-layout{display:block;padding:24px 20px}.docs-sidebar nav{position:static}.docs-start{margin-bottom:18px}.docs-components{max-height:180px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px}.docs-sidebar{border-bottom:1px solid var(--border);padding-bottom:18px;margin-bottom:26px}.docs-main h1{font-size:1.9rem}.docs-prose{font-size:.9rem}.docs-prose pre{padding:14px}.docs-theme{margin-top:32px}.docs-version{display:none}}
 
 .docs-letter{font-size:.65rem;color:var(--muted-foreground);font-weight:600;margin:12px 10px 4px}.docs-components ul{list-style:none}
+
+/* Live examples inherit the same token scope as the surrounding documentation. */
+.docs-live{margin:24px 0 32px;border:1px solid var(--border);border-radius:var(--radius);min-width:0}
+.docs-live-header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 16px;border-bottom:1px solid var(--border)}
+.docs-live-header h2{font-size:.85rem;font-weight:600}
+.docs-live-body{padding:24px;min-height:160px;font-size:.875rem;overflow-wrap:anywhere}
+.docs-live-body>[data-live-component]{min-width:0;max-width:100%}
+.docs-live-body [data-slot=calendar]{max-width:100%;overflow:auto}
+@media(max-width:700px){.docs-live-body{padding:16px}.docs-live-header{padding:8px 12px;flex-wrap:wrap}}
