@@ -1,4 +1,5 @@
 // Interactive examples exercise public package exports and app-owned state; D19.
+import { DateCatalogExamples } from './catalog-dates';
 import { createSignal, Show } from 'solid-js';
 import { render } from '@solidjs/web';
 import { Button } from 'shadcn-solidjs-theme/ui/button';
@@ -147,6 +148,7 @@ function ToggleExamples() {
 /** Select focused acceptance examples without changing the main gallery layout. */
 function Preview() {
   const query = new URLSearchParams(location.search);
+  if (query.has('catalog-dates')) return <DateCatalogExamples/>;
   if (query.has('catalog-menus')) return <MenuCatalogExamples/>;
   if (query.has('catalog-modal')) return <ModalCatalogExamples/>;
   if (query.has('catalog-display')) return <DisplayCatalogExamples/>;

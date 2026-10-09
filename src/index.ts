@@ -52,3 +52,6 @@ export * from './components/ui/context-menu';
 export * from './components/ui/menubar';
 export * from './components/ui/navigation-menu';
 export * from './components/ui/command';
+export * from './components/ui/calendar';
+export * from './components/ui/date-picker';
+export * from './components/ui/input-otp';
