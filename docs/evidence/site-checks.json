@@ -1,0 +1,32 @@
+[
+  {
+    "check": "typecheck",
+    "command": "bun run check",
+    "exitCode": 0,
+    "seconds": 7.96
+  },
+  {
+    "check": "lint",
+    "command": "bun run lint",
+    "exitCode": 0,
+    "seconds": 2.07
+  },
+  {
+    "check": "unit",
+    "command": "bun run test",
+    "exitCode": 0,
+    "seconds": 8.0
+  },
+  {
+    "check": "server",
+    "command": "bun run test:server",
+    "exitCode": 0,
+    "seconds": 1.31
+  },
+  {
+    "check": "doc-examples",
+    "command": "bun run docs:check",
+    "exitCode": 0,
+    "seconds": 2.14
+  }
+]

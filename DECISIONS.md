@@ -685,3 +685,22 @@ declares the MIT SPDX identifier. This applies to this package, not the entire
 monorepo. Registry publication and website deployment remain separate actions;
 `private: true` stays in place until a release is requested.
 See [license delivery](docs/LICENSE-DELIVERY.md).
+
+
+## Public documentation artifact — 2026-10-09
+
+Public deployment has a separate curated build. Only getting started, component
+contracts, public verification notes, screenshots and the license enter its docs
+payload; internal instructions, raw diagnostics and delivery reports remain local.
+The public root serves documentation and `/playground` serves existing examples.
+Local development and existing browser acceptance retain their original URLs.
+The public artifact also preserves notices for the production dependency graph
+and font license. Missing notices fail the build; version-specific upstream
+fallbacks are checked in for Solid and Embla.
+
+Cloudflare Workers Static Assets is the recommended host for this static site,
+following Cloudflare's current new-project guidance. No Worker request handler,
+server-side Solid runtime, Cloudflare Vite plugin or hosted CI change is needed.
+Wrangler is pinned in an isolated tooling manifest/lock and used locally to verify
+provider routing, headers and 404 behavior. The site is prepared for publication;
+selecting an account/domain and actually publishing remain separate actions.

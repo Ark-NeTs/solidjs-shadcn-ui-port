@@ -1,0 +1,10 @@
+{
+  // Static files only; publishing requires a separately selected Cloudflare account.
+  "name": "arknet-solid-ui-docs",
+  "compatibility_date": "2026-10-09",
+  "assets": {
+    "directory": "./site-dist",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+}

@@ -58,6 +58,18 @@ See [getting started](docs/GETTING-STARTED.md),
 The package is [MIT licensed](LICENSE), copyright © 2026 ArkNeT.
 It remains private in the workspace and unpublished to a registry.
 
+## Public website deployment
+
+`bun run build:site` produces the curated static artifact in `site-dist`:
+documentation at `/`, live galleries at `/playground`, public verification notes,
+screenshots and the MIT license. Internal delivery reports and raw diagnostics
+stay in the repository. The existing local playground is unchanged.
+
+Use Vite to build, Vitest for unit tests, Playwright for browser acceptance, and
+Cloudflare Workers Static Assets to host. [Deployment instructions](docs/DEPLOYMENT.md)
+cover reproducible setup, local provider testing, packaging, publishing and rollback.
+Nothing is published by the build or tests.
+
 ## Admin composition example
 
 Open `/?admin-menu` in the playground to edit restaurant menu items through a
@@ -170,7 +182,7 @@ and the package-local bun.lock. To install this package independently without
 resolving unrelated monorepo workspaces:
 
 ```sh
-tools_dir=$(mktemp -d /private/tmp/solid-theme-tools.XXXXXX)
+tools_dir=$(mktemp -d "${TMPDIR:-/tmp}/solid-theme-tools.XXXXXX")
 cp package.json bun.lock "$tools_dir/"
 (cd "$tools_dir" && bun install --frozen-lockfile --ignore-scripts)
 # Only when this package has no node_modules already:

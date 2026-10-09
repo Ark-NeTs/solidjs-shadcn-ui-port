@@ -43,7 +43,9 @@
     "docs:generate": "bun scripts/build-docs.mjs",
     "docs:check": "node scripts/check-doc-examples.mjs",
     "sizes:consumer": "bun run build && node scripts/measure-consumer-bundles.mjs",
-    "test:consumer": "playwright test --config playwright.consumer.config.ts"
+    "test:consumer": "playwright test --config playwright.consumer.config.ts",
+    "build:site": "bun scripts/build-site.mjs",
+    "test:site": "playwright test --config playwright.site.config.ts"
   },
   "dependencies": {
     "@fontsource-variable/inter": "5.2.8",

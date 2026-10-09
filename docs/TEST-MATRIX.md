@@ -813,3 +813,15 @@ The [controlled-state regression](../tests/unit/controllable.test.ts) observes
 consumer notification counts across unrelated owner edits, controlled rejection
 and returning to local ownership. The final admin, overlay and form browser runs
 exercise this shared equality boundary with diagnostics enabled.
+
+
+## Public deployment artifact
+
+[Public-site acceptance](../tests/site/public-site.spec.ts) runs against Wrangler's
+local static-assets runtime in Chromium, Firefox and WebKit. It checks the root,
+deep links, working gallery routes, published verification/license, cache headers,
+real missing-page status, absence of internal files and mobile theme accessibility.
+The public generator regression clears obsolete assets and excludes raw reports;
+[artifact checks](../scripts/check-site.mjs) inspect every emitted file and local
+asset link. This validates local provider behavior, not account permissions, DNS,
+remote TLS or an actual deployment. See [deployment delivery](DEPLOYMENT-DELIVERY.md).

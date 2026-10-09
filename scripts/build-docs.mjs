@@ -4,12 +4,15 @@ import {readFile,writeFile,mkdir,readdir,copyFile,stat,rm} from 'node:fs/promise
 import {resolve,relative,dirname,extname} from 'node:path';
 import {existsSync,statSync} from 'node:fs';
 const root=resolve(import.meta.dirname,'..');
-const output=resolve(root,'playground/public/docs');
+const publicSite=process.argv.includes('--public');
+const output=resolve(root,publicSite?'playground/public-site/docs':'playground/public/docs');
+const publicPages=['docs/GETTING-STARTED.md','docs/components.md','docs/PUBLIC-VERIFICATION.md'];
+const docsPath=publicSite?'/':'/docs.html';
 const markdown=globalThis.Bun?.markdown;
 if(!markdown?.html)throw new Error('Documentation generation requires Bun 1.4.2 or later with Bun.markdown.');
 const groups=JSON.parse(await readFile(resolve(root,'playground/docs-groups.json'),'utf8'));
 const catalog=await readFile(resolve(root,'COMPONENT-MAP.md'),'utf8');
-const sources=(await Promise.all(['','docs'].map(async directory=>(await readdir(resolve(root,directory))).filter(name=>name.endsWith('.md')&&name!=='AGENTS.md').map(name=>`${directory?`${directory}/`:''}${name}`)))).flat();
+const sources=publicSite?publicPages:(await Promise.all(['','docs'].map(async directory=>(await readdir(resolve(root,directory))).filter(name=>name.endsWith('.md')&&name!=='AGENTS.md').map(name=>`${directory?`${directory}/`:''}${name}`)))).flat();
 const documents=new Set(sources);const copied=new Map();const omitted=new Set();
 // Rebuild this generated directory so removed pages/assets cannot remain in a release.
 await rm(output,{recursive:true,force:true});
@@ -19,11 +22,13 @@ function packageFile(source,href){const file=resolve(root,dirname(source),decode
 /** Rewrite maintained links to website pages or explicit source/evidence downloads. */
 function link(source,href){
  if(/^(https?:|mailto:)/i.test(href))return href;
- if(href.startsWith('#'))return `/docs.html?doc=${encodeURIComponent(source)}${href}`;
+ if(publicSite&&href==='/legal/THIRD-PARTY-NOTICES.txt')return href;
+ if(href.startsWith('#'))return `${docsPath}?doc=${encodeURIComponent(source)}${href}`;
  if(/^[a-z][\w+.-]*:/i.test(href)||href.startsWith('//')||href.startsWith('/'))return null;
  const [pathname,fragment]=href.split('#');const target=packageFile(source,pathname);
  if(!target||!existsSync(target.file)||!statSync(target.file).isFile()){omitted.add(`${source}: ${href}`);return null;}
- if(documents.has(target.path))return `/docs.html?doc=${encodeURIComponent(target.path)}${fragment?`#${fragment}`:''}`;
+ if(documents.has(target.path))return `${docsPath}?doc=${encodeURIComponent(target.path)}${fragment?`#${fragment}`:''}`;
+ if(publicSite&&target.path!=='LICENSE'&&!/^docs\/screenshots\/[^/]+\.(png|jpe?g|webp|svg|gif)$/.test(target.path)){omitted.add(`${source}: ${href}`);return null;}
  const suffix=['.png','.jpg','.jpeg','.webp','.svg','.gif','.json','.txt'].includes(extname(target.path))?'':'.txt';
  const asset=`files/${target.path}${suffix}`;copied.set(asset,target.file);return `/docs/${asset}${fragment?`#${fragment}`:''}`;
 }
@@ -44,7 +49,7 @@ for(const match of catalog.matchAll(/^\| \[([^\]]+)\]\(https:\/\/ui\.shadcn\.com
  const [,name,id]=match;const matches=groups.filter(group=>group.families.includes(id));if(matches.length!==1)throw new Error(`Expected one guide group for ${id}`);
  const group=matches[0];let section=sections.get(group.heading);if(!section)throw new Error(`Missing guide section ${group.heading}`);
  if(!section.includes('![')){const stem={'sheet':'sheet','drawer':'drawer','context-menu':'context-menu','dropdown-menu':'dropdown','menubar':'menubar','navigation-menu':'navigation-menu','command':'command-dialog'}[id];const screenshots=stem?[`${stem}-light.png`,`${stem}-dark.png`]:group.screenshots;section+='\n### Screenshots\n\n'+screenshots.map(file=>`![${name} in the ${file.includes('dark')?'dark':'light'} example gallery](screenshots/${file})`).join('\n\n');}
- families.push({id,name,preview:group.preview,heading:group.heading});
+ families.push({id,name,preview:publicSite?group.preview.replace(/^\//,'/playground'):group.preview,heading:group.heading});
  await writeFile(resolve(output,`pages/component-${id}.json`),JSON.stringify({title:name,html:await compile('docs/components.md',section)}));
 }
 if(families.length!==65||groups.flatMap(group=>group.families).length!==65)throw new Error('The website must cover all 65 catalog families.');

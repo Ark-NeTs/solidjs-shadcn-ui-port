@@ -7,6 +7,9 @@ import {Label} from 'shadcn-solidjs-theme/ui/label';
 import {NativeSelect,NativeSelectOption} from 'shadcn-solidjs-theme/ui/native-select';
 import './index.css';
 import './docs.css';
+const publicSite=import.meta.env.VITE_PUBLIC_SITE==='1';
+const docsPath=publicSite?'/':'/docs.html';
+const galleryPath=publicSite?'/playground':'/';
 type Family={id:string;name:string;preview:string;heading:string};
 type Registry={families:Family[];pages:{id:string;title:string;url:string}[]};
 type Page={title:string;html:string};
@@ -35,7 +38,7 @@ function Documentation(){
  /** Resolve only literal heading IDs, without interpreting selectors from the URL. */
  function documentElement(id:string){try{return document.getElementById(decodeURIComponent(id));}catch{return null;}}
  /** Preserve the selected appearance in links without replacing native navigation. */
- function href(key:string,value:string){return `/docs.html?${key}=${encodeURIComponent(value)}${dark()?'&dark':''}`;}
+ function href(key:string,value:string){return `${docsPath}?${key}=${encodeURIComponent(value)}${dark()?'&dark':''}`;}
  /** Copy the complete displayed code; denied clipboard access leaves it selectable. */
  async function copy(event:MouseEvent){const target=event.target;if(!(target instanceof HTMLElement)||!target.matches('[data-copy]'))return;const code=target.parentElement?.querySelector('code');if(!code)return;try{await navigator.clipboard.writeText(code.textContent??'');if(alive)setCopied('Code copied.');}catch{if(alive)setCopied('Clipboard unavailable. Select the code to copy it.');}}
  onSettled(()=>{void load();});
@@ -47,7 +50,7 @@ function Documentation(){
  const groups=createMemo(()=>{const grouped=new Map<string,Family[]>();for(const item of registry()?.families??[]){const letter=item.name[0]!;if(!grouped.has(letter))grouped.set(letter,[]);grouped.get(letter)!.push(item);}return Array.from(grouped,([letter,items])=>({letter,items}));});
  return <div class={`docs-site${dark()?' dark':''}`} style={{...palettes[palette()],'--radius':`${radius()}rem`}}>
   <a class="docs-skip" href="#docs-content">Skip to documentation</a>
-  <header class="docs-header"><a class="docs-brand" href={href('doc','docs/GETTING-STARTED.md')}><span aria-hidden="true" class="docs-mark">S</span> Solid UI <span class="docs-version">Solid 2</span></a><nav aria-label="Website"><a href="/">Playground</a><a href="/?admin-menu">Admin example</a><a href={href('doc','docs/TEST-MATRIX.md')}>Test coverage</a></nav><Button variant="outline" size="sm" aria-pressed={dark()?'true':'false'} onClick={()=>setDark(value=>!value)}>Dark mode</Button></header>
+  <header class="docs-header"><a class="docs-brand" href={href('doc','docs/GETTING-STARTED.md')}><span aria-hidden="true" class="docs-mark">S</span> Solid UI <span class="docs-version">Solid 2</span></a><nav aria-label="Website"><a href={galleryPath}>Playground</a><a href={`${galleryPath}?admin-menu`}>Admin example</a><a href={href('doc',publicSite?'docs/PUBLIC-VERIFICATION.md':'docs/TEST-MATRIX.md')}>Test coverage</a></nav><Button variant="outline" size="sm" aria-pressed={dark()?'true':'false'} onClick={()=>setDark(value=>!value)}>Dark mode</Button></header>
   <div class="docs-layout"><aside class="docs-sidebar"><nav aria-label="Documentation"><a class="docs-start" href={href('doc','docs/GETTING-STARTED.md')}>Getting started</a><Label for="component-search">Find a component</Label><Input id="component-search" type="search" value={query()} onInput={event=>setQuery(event.currentTarget.value)} placeholder="Search 65 components…"/><p class="docs-count" role="status">{registry()?`${filtered().length} components`:'Loading catalog…'}</p><ul class="docs-components"><For each={groups()}>{group=><ComponentGroup letter={group.letter} items={group.items} matches={matches} href={href} selected={component}/>}</For></ul><Show when={registry()&&filtered().length===0}><p>No matching components.</p><Button variant="outline" onClick={()=>setQuery('')}>Clear search</Button></Show></nav></aside>
   <main id="docs-content" class="docs-main" tabindex="-1" aria-busy={loading()?'true':undefined}>
    <div class="docs-eyebrow">COMPONENTS FOR SOLID 2</div><Show when={loading()}><p role="status">Loading documentation…</p></Show><Show when={error()}><div role="alert"><h1>Documentation unavailable</h1><p>{error()}</p><Button onClick={()=>void load()}>Try again</Button></div></Show>

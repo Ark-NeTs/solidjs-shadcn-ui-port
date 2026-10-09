@@ -1,0 +1,6 @@
+{
+  "command": "node \"$WRANGLER_BIN\" deploy --dry-run --outdir /tmp/solid-docs-upload-check",
+  "exitCode": 0,
+  "seconds": 0.89,
+  "output": "\n \u26c5\ufe0f wrangler 4.149.0\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n\u2728 Read 173 files from the assets directory <package>/site-dist\nTotal Upload: 0.35 KiB / gzip: 0.24 KiB\nNo bindings found.\n--dry-run: exiting now.\n"
+}

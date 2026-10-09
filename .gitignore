@@ -14,3 +14,9 @@ hydration-dist/
 playground/public/docs/
 
 validation/consumer-stack/dist/
+
+# Public website build and local deployment runtime.
+site-dist/
+playground/public-site/
+.wrangler/
+!deployment/robots.txt

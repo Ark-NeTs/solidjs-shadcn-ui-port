@@ -1,0 +1,22 @@
+// Public artifact routes, content boundaries and real examples; D19/D90.
+import AxeBuilder from '@axe-core/playwright';
+import {test,expect} from '../browser-fixture';
+test('serves the documentation home, license, cache headers and a real missing-page response',async({page,request})=>{
+ const home=await page.goto('/');expect(home?.status()).toBe(200);await expect(page.getByRole('heading',{name:'Build with Solid UI',level:1,exact:true})).toBeVisible();expect(home?.headers()['x-content-type-options']).toBe('nosniff');expect(home?.headers()['cache-control']).toContain('must-revalidate');
+ const script=await page.locator('script[type=module]').getAttribute('src');const asset=await request.get(script!);expect(asset.headers()['cache-control']).toContain('immutable');
+ const license=await request.get('/legal/LICENSE.txt');expect(license.status()).toBe(200);expect(await license.text()).toContain('Copyright (c) 2026 ArkNeT');
+ const notices=await request.get('/legal/THIRD-PARTY-NOTICES.txt');expect(notices.status()).toBe(200);expect(await notices.text()).toContain('SIL OPEN FONT LICENSE');
+ const missing=await request.get('/unavailable-page');expect(missing.status()).toBe(404);expect(await missing.text()).toContain('Page not found');await page.goto('/404.html');await expect(page.getByRole('heading',{name:'Page not found'})).toBeVisible();
+ for(const path of ['/docs/files/docs/evidence/completion-e2e.json','/docs/pages/AGENTS.md.json','/.env'])expect((await request.get(path)).status()).toBe(404);
+});
+test('searches all families, loads a deep link and opens a working live gallery',async({page})=>{
+ await page.goto('/');await expect(page.locator('.docs-components a:visible')).toHaveCount(65);await page.getByLabel('Find a component').fill('Data Table');const link=page.getByRole('link',{name:'Data Table',exact:true});await Promise.all([page.waitForURL('**/?component=data-table',{waitUntil:'load'}),link.click({noWaitAfter:true})]);await expect(page.getByRole('heading',{name:'Data Table',exact:true,level:1})).toBeVisible();await page.reload();await expect(page.locator('.docs-prose pre code').first()).toContainText('DataTable');
+ await Promise.all([page.waitForURL('**/playground?catalog-data-table',{waitUntil:'load'}),page.getByRole('link',{name:'Open live example'}).click({noWaitAfter:true})]);await expect(page.getByRole('table').first()).toBeVisible();await expect(page.getByRole('columnheader').first()).toBeVisible();await page.goBack();await expect(page.getByRole('heading',{name:'Data Table',exact:true,level:1})).toBeVisible();
+});
+test('links to public verification and keeps gallery navigation on gallery routes',async({page})=>{
+ await page.goto('/');await Promise.all([page.waitForURL('**/?doc=docs%2FPUBLIC-VERIFICATION.md',{waitUntil:'load'}),page.getByRole('link',{name:'Test coverage',exact:true}).click({noWaitAfter:true})]);await expect(page.getByRole('heading',{name:'Verification and supported scope',level:1,exact:true})).toBeVisible();
+ await Promise.all([page.waitForURL('**/playground',{waitUntil:'load'}),page.getByRole('link',{name:'Playground',exact:true}).click({noWaitAfter:true})]);await Promise.all([page.waitForURL('**/playground?catalog-chart',{waitUntil:'load'}),page.getByRole('navigation',{name:'More component galleries'}).getByRole('link',{name:'Chart',exact:true}).click({noWaitAfter:true})]);await expect(page.getByRole('img',{name:'Monthly visitors'}).first()).toBeVisible();
+});
+test('retains usable themes and accessibility in the public narrow layout',async({page})=>{
+ await page.setViewportSize({width:390,height:844});await page.goto('/?component=button&dark');await expect(page.getByRole('heading',{name:'Button',level:1,exact:true})).toBeVisible();await page.evaluate(()=>document.documentElement.style.fontSize='24px');await page.getByLabel('Palette',{exact:true}).selectOption('forest');await page.getByLabel('Corners',{exact:true}).selectOption('0.8');await page.getByRole('button',{name:'Primary action',exact:true}).evaluate(async node=>{await Promise.all(node.getAnimations().map(animation=>animation.finished));});expect(await page.evaluate(()=>document.documentElement.scrollWidth)).toBeLessThanOrEqual(390);expect((await new AxeBuilder({page}).analyze()).violations).toEqual([]);
+});
