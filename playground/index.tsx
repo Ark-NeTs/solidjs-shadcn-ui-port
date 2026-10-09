@@ -1,4 +1,5 @@
 // Interactive examples exercise public package exports and app-owned state; D19.
+import { DataTableCatalogExamples } from './catalog-data-table';
 import {QuestionnaireCatalogExamples} from './catalog-questionnaire';
 import {ChartCatalogExamples} from './catalog-chart';
 import { SidebarCatalogExamples } from './catalog-sidebar';
@@ -159,6 +160,7 @@ function Preview() {
   if (query.has('catalog-sidebar')) return <SidebarCatalogExamples/>;
   if (query.has('catalog-chart')) return <ChartCatalogExamples/>;
   if (query.has('catalog-questionnaire')) return <QuestionnaireCatalogExamples/>;
+  if (query.has('catalog-data-table')) return <DataTableCatalogExamples/>;
   if (query.has('catalog-menus')) return <MenuCatalogExamples/>;
   if (query.has('catalog-modal')) return <ModalCatalogExamples/>;
   if (query.has('catalog-display')) return <DisplayCatalogExamples/>;

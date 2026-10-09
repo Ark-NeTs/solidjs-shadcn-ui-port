@@ -64,3 +64,4 @@ export * from './components/ui/sonner';
 export * from './components/ui/sidebar';
 export * from './components/ui/chart';
 export * from './components/ui/questionnaire';
+export * from './components/ui/data-table';
