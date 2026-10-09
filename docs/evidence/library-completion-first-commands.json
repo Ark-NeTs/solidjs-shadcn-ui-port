@@ -1,0 +1,32 @@
+[
+  {
+    "command": "bun run check",
+    "exitCode": 0,
+    "seconds": 5.001,
+    "output": "$ tsc --noEmit\n"
+  },
+  {
+    "command": "bun run lint",
+    "exitCode": 0,
+    "seconds": 2.232,
+    "output": "$ eslint src tests playground scripts *.ts\n"
+  },
+  {
+    "command": "bun run docs:check",
+    "exitCode": 0,
+    "seconds": 1.658,
+    "output": "$ node scripts/check-doc-examples.mjs\nGuide examples: 3 compositions typechecked.\n"
+  },
+  {
+    "command": "node scripts/check-consumer.mjs",
+    "exitCode": 0,
+    "seconds": 1.348,
+    "output": "Isolated consumer types passed.\n"
+  },
+  {
+    "command": "bun run test",
+    "exitCode": 1,
+    "seconds": 9.084,
+    "output": "$ vitest run\n\n RUN  v4.1.10 /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme\n\nNot implemented: HTMLCanvasElement's getContext() method: without installing the canvas npm package\nstderr | tests/unit/hydration-lifecycle.test.tsx > does not create Chart engines or observers until a hydration reference exists\nFailed to create chart: can't acquire context from the given item\n\n \u276f tests/unit/hydration-lifecycle.test.tsx (2 tests | 1 failed) 174ms\n   \u00d7 does not create Chart engines or observers until a hydration reference exists 40ms\n\n\u23af\u23af\u23af\u23af\u23af\u23af\u23af Failed Tests 1 \u23af\u23af\u23af\u23af\u23af\u23af\u23af\n\n FAIL  tests/unit/hydration-lifecycle.test.tsx > does not create Chart engines or observers until a hydration reference exists\nAssertionError: expected \"vi.fn()\" to be called once, but got 0 times\n \u276f tests/unit/hydration-lifecycle.test.tsx:32:248\n\n\n\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af[1/2]\u23af\n\n FAIL  tests/unit/hydration-lifecycle.test.tsx > does not create Chart engines or observers until a hydration reference exists\nAssertionError: expected \"error\" to not be called at all, but actually been called 1 times\n\nReceived:\n\n  1st error call:\n\n    Array [\n      \"Failed to create chart: can't acquire context from the given item\",\n    ]\n\n\nNumber of calls: 1\n\n \u276f vitest.setup.ts:8:90\n      6| let errors: ReturnType<typeof vi.spyOn>;\n      7| beforeEach(() => { warnings = vi.spyOn(console, 'warn'); errors = vi.s\u2026\n      8| afterEach(() => { cleanup(); expect(warnings).not.toHaveBeenCalled(); \u2026\n       |                                                                                          ^\n      9|\n\n\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af[2/2]\u23af\n\n\n Test Files  1 failed | 30 passed (31)\n      Tests  1 failed | 391 passed (392)\n   Start at  14:11:49\n   Duration  8.59s (transform 10.87s, setup 6.61s, import 17.28s, tests 23.43s, environment 21.96s)\n\nerror: script \"test\" exited with code 1\n"
+  }
+]

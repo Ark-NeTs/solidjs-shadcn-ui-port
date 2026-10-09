@@ -1,0 +1,853 @@
+{
+  "config": {
+    "argv": [
+      "/Users/arktas/.asdf/installs/nodejs/25.3.0/bin/node",
+      "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/node_modules/.bin/playwright",
+      "test",
+      "tests/e2e/docs-site.spec.ts",
+      "--project=firefox",
+      "--repeat-each=3",
+      "--max-failures=1"
+    ],
+    "configFile": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/playwright.config.ts",
+    "rootDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 1,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "integration/**/*.spec.ts",
+          "e2e/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 3,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [
+          "**/visual.spec.ts"
+        ],
+        "testMatch": [
+          "integration/**/*.spec.ts",
+          "e2e/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [
+          "**/visual.spec.ts"
+        ],
+        "testMatch": [
+          "integration/**/*.spec.ts",
+          "e2e/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "docs/evidence/completion-firefox-load-after.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": {
+      "command": "bun run build && THEME_BUILT=1 bun run build:playground && bunx --no-install vite preview --config playground/vite.config.ts --host 127.0.0.1 --port 4403 --strictPort",
+      "url": "http://127.0.0.1:4403",
+      "reuseExistingServer": false,
+      "timeout": 60000
+    }
+  },
+  "suites": [
+    {
+      "title": "e2e/docs-site.spec.ts",
+      "file": "e2e/docs-site.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "searches all components, opens a deep link and preserves native history",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1601,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T12:20:25.465Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c22abe1d0252e36bdb59-fb900f32a8b4995edaf8",
+          "file": "docs-site.ts",
+          "line": 6,
+          "column": 2
+        },
+        {
+          "title": "retains the shell and theme through a failed page request and explicit retry",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 650,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T12:20:27.819Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c22abe1d0252e36bdb59-381884756ea676d31c58",
+          "file": "docs-site.ts",
+          "line": 9,
+          "column": 2
+        },
+        {
+          "title": "shows an unknown-page recovery and renders linked evidence with accessible code and images",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 952,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T12:20:28.476Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c22abe1d0252e36bdb59-26cf86e504f42517b0a0",
+          "file": "docs-site.ts",
+          "line": 12,
+          "column": 2
+        },
+        {
+          "title": "keeps navigation nodes through filtering and reports code-copy feedback",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 598,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T12:20:29.433Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c22abe1d0252e36bdb59-891ad5cce85d18961b67",
+          "file": "docs-site.ts",
+          "line": 15,
+          "column": 2
+        },
+        {
+          "title": "documentation supports light mobile themes and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1551,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T12:20:30.038Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c22abe1d0252e36bdb59-1d98fc0dd41c0273858d",
+          "file": "docs-site.ts",
+          "line": 18,
+          "column": 33
+        },
+        {
+          "title": "documentation supports dark mobile themes and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1601,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T12:20:31.595Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c22abe1d0252e36bdb59-6ccedd9d9e85be5b66b9",
+          "file": "docs-site.ts",
+          "line": 18,
+          "column": 33
+        },
+        {
+          "title": "searches all components, opens a deep link and preserves native history",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1508,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T12:20:33.707Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c22abe1d0252e36bdb59-e425a255dc7794a408d8",
+          "file": "docs-site.ts",
+          "line": 6,
+          "column": 2
+        },
+        {
+          "title": "retains the shell and theme through a failed page request and explicit retry",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 587,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T12:20:35.805Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c22abe1d0252e36bdb59-987a0cbb09dd8ab0f0e4",
+          "file": "docs-site.ts",
+          "line": 9,
+          "column": 2
+        },
+        {
+          "title": "shows an unknown-page recovery and renders linked evidence with accessible code and images",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 913,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T12:20:36.398Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c22abe1d0252e36bdb59-35ac39e27e5622b948eb",
+          "file": "docs-site.ts",
+          "line": 12,
+          "column": 2
+        },
+        {
+          "title": "keeps navigation nodes through filtering and reports code-copy feedback",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 596,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T12:20:37.318Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c22abe1d0252e36bdb59-7aaae0599868a9250e32",
+          "file": "docs-site.ts",
+          "line": 15,
+          "column": 2
+        },
+        {
+          "title": "documentation supports light mobile themes and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1641,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T12:20:37.920Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c22abe1d0252e36bdb59-9b77e9b5cc6982be5160",
+          "file": "docs-site.ts",
+          "line": 18,
+          "column": 33
+        },
+        {
+          "title": "documentation supports dark mobile themes and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1643,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T12:20:39.567Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c22abe1d0252e36bdb59-4d9b5ece18fbae78ba01",
+          "file": "docs-site.ts",
+          "line": 18,
+          "column": 33
+        },
+        {
+          "title": "searches all components, opens a deep link and preserves native history",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1816,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T12:20:41.830Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c22abe1d0252e36bdb59-c35a0a04a77f9e6cee9b",
+          "file": "docs-site.ts",
+          "line": 6,
+          "column": 2
+        },
+        {
+          "title": "retains the shell and theme through a failed page request and explicit retry",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 570,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T12:20:44.218Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c22abe1d0252e36bdb59-0ad4eaea4bd1114ffcdb",
+          "file": "docs-site.ts",
+          "line": 9,
+          "column": 2
+        },
+        {
+          "title": "shows an unknown-page recovery and renders linked evidence with accessible code and images",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 883,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T12:20:44.794Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c22abe1d0252e36bdb59-47fa575be1f6e900acf2",
+          "file": "docs-site.ts",
+          "line": 12,
+          "column": 2
+        },
+        {
+          "title": "keeps navigation nodes through filtering and reports code-copy feedback",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 641,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T12:20:45.682Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c22abe1d0252e36bdb59-5b83a1af44a9bf90aa38",
+          "file": "docs-site.ts",
+          "line": 15,
+          "column": 2
+        },
+        {
+          "title": "documentation supports light mobile themes and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1637,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T12:20:46.329Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c22abe1d0252e36bdb59-599509be2bf6da5288bb",
+          "file": "docs-site.ts",
+          "line": 18,
+          "column": 33
+        },
+        {
+          "title": "documentation supports dark mobile themes and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1500,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T12:20:47.971Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c22abe1d0252e36bdb59-42a20fbaff8a26f993a1",
+          "file": "docs-site.ts",
+          "line": 18,
+          "column": 33
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-09T12:20:20.128Z",
+    "duration": 29562.600000000002,
+    "expected": 18,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

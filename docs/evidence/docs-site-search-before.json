@@ -1,0 +1,594 @@
+{
+  "config": {
+    "argv": [
+      "/Users/arktas/.asdf/installs/nodejs/25.3.0/bin/node",
+      "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/node_modules/.bin/playwright",
+      "test",
+      "tests/integration/docs-site.spec.ts",
+      "--max-failures=1"
+    ],
+    "configFile": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/playwright.config.ts",
+    "rootDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 1,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "integration/**/*.spec.ts",
+          "e2e/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [
+          "**/visual.spec.ts"
+        ],
+        "testMatch": [
+          "integration/**/*.spec.ts",
+          "e2e/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [
+          "**/visual.spec.ts"
+        ],
+        "testMatch": [
+          "integration/**/*.spec.ts",
+          "e2e/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "docs/evidence/docs-site-source.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": {
+      "command": "bun run dev",
+      "url": "http://127.0.0.1:4403",
+      "reuseExistingServer": false,
+      "timeout": 60000
+    }
+  },
+  "suites": [
+    {
+      "title": "integration/docs-site.spec.ts",
+      "file": "integration/docs-site.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "searches all components, opens a deep link and preserves native history",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 930,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T10:58:52.405Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2c7eeb6666fc29406862-8f8750f5e655dc8aacd8",
+          "file": "docs-site.ts",
+          "line": 6,
+          "column": 2
+        },
+        {
+          "title": "retains the shell and theme through a failed page request and explicit retry",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 436,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T10:58:53.636Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2c7eeb6666fc29406862-7a7e2810050734c324e3",
+          "file": "docs-site.ts",
+          "line": 9,
+          "column": 2
+        },
+        {
+          "title": "shows an unknown-page recovery and renders linked evidence with accessible code and images",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 801,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T10:58:54.078Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2c7eeb6666fc29406862-6af15228225bc0a29006",
+          "file": "docs-site.ts",
+          "line": 12,
+          "column": 2
+        },
+        {
+          "title": "documentation supports light mobile themes and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1028,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T10:58:54.885Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2c7eeb6666fc29406862-401e375d73cbc432cb9c",
+          "file": "docs-site.ts",
+          "line": 15,
+          "column": 33
+        },
+        {
+          "title": "documentation supports dark mobile themes and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 946,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T10:58:55.918Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2c7eeb6666fc29406862-7a18f09170150bea271c",
+          "file": "docs-site.ts",
+          "line": 15,
+          "column": 33
+        },
+        {
+          "title": "searches all components, opens a deep link and preserves native history",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 1739,
+                  "error": {
+                    "message": "Error: No browser errors or development diagnostics\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"[HOT_SCOPE_TIME] memo \\\"<For>\\\" spent 8.0ms of compute inside one 1000ms window (budget 8ms). Latest cause: \\\"query\\\" (write)\u001b[39m\n\u001b[31m+   in <Documentation> › <For> › <For>\u001b[39m\n\u001b[31m+ [HOT_SCOPE_TIME] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#hot_scope_time\u001b[39m\n\u001b[31m+ [HOT_SCOPE_TIME] deeper evidence: import { attribution } from \\\"solid-js/attribution\\\"; attribution.enable() explains every re-run — why-chains, costs(), feedback(), history(\\\"hold\\\" | \\\"waterfall\\\") — agent loop: node_modules/@solidjs/diagnostics/skills/agent-loops/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/diagnostics/skills/agent-loops/SKILL.md\",\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                    "stack": "Error: No browser errors or development diagnostics\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"[HOT_SCOPE_TIME] memo \\\"<For>\\\" spent 8.0ms of compute inside one 1000ms window (budget 8ms). Latest cause: \\\"query\\\" (write)\u001b[39m\n\u001b[31m+   in <Documentation> › <For> › <For>\u001b[39m\n\u001b[31m+ [HOT_SCOPE_TIME] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#hot_scope_time\u001b[39m\n\u001b[31m+ [HOT_SCOPE_TIME] deeper evidence: import { attribution } from \\\"solid-js/attribution\\\"; attribution.enable() explains every re-run — why-chains, costs(), feedback(), history(\\\"hold\\\" | \\\"waterfall\\\") — agent loop: node_modules/@solidjs/diagnostics/skills/agent-loops/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/diagnostics/skills/agent-loops/SKILL.md\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at Object.base.extend.diagnostics.auto (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/browser-fixture.ts:10:69)",
+                    "location": {
+                      "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/browser-fixture.ts",
+                      "column": 69,
+                      "line": 10
+                    },
+                    "snippet": "\u001b[90m   at \u001b[39mbrowser-fixture.ts:10\n\n   8 |     await use(messages);\n   9 |     await testInfo.attach('browser-diagnostics',{body:JSON.stringify(messages),contentType:'application/json'});\n> 10 |     expect(messages,'No browser errors or development diagnostics').toEqual([]);\n     |                                                                     ^\n  11 |   },{auto:true}],\n  12 | });\n  13 | export { expect };"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/browser-fixture.ts",
+                        "column": 69,
+                        "line": 10
+                      },
+                      "message": "Error: No browser errors or development diagnostics\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"[HOT_SCOPE_TIME] memo \\\"<For>\\\" spent 8.0ms of compute inside one 1000ms window (budget 8ms). Latest cause: \\\"query\\\" (write)\u001b[39m\n\u001b[31m+   in <Documentation> › <For> › <For>\u001b[39m\n\u001b[31m+ [HOT_SCOPE_TIME] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#hot_scope_time\u001b[39m\n\u001b[31m+ [HOT_SCOPE_TIME] deeper evidence: import { attribution } from \\\"solid-js/attribution\\\"; attribution.enable() explains every re-run — why-chains, costs(), feedback(), history(\\\"hold\\\" | \\\"waterfall\\\") — agent loop: node_modules/@solidjs/diagnostics/skills/agent-loops/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/diagnostics/skills/agent-loops/SKILL.md\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n   at browser-fixture.ts:10\n\n   8 |     await use(messages);\n   9 |     await testInfo.attach('browser-diagnostics',{body:JSON.stringify(messages),contentType:'application/json'});\n> 10 |     expect(messages,'No browser errors or development diagnostics').toEqual([]);\n     |                                                                     ^\n  11 |   },{auto:true}],\n  12 | });\n  13 | export { expect };\n    at Object.base.extend.diagnostics.auto (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/browser-fixture.ts:10:69)"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T10:58:57.195Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "WyJbSE9UX1NDT1BFX1RJTUVdIG1lbW8gXCI8Rm9yPlwiIHNwZW50IDguMG1zIG9mIGNvbXB1dGUgaW5zaWRlIG9uZSAxMDAwbXMgd2luZG93IChidWRnZXQgOG1zKS4gTGF0ZXN0IGNhdXNlOiBcInF1ZXJ5XCIgKHdyaXRlKVxuICBpbiA8RG9jdW1lbnRhdGlvbj4g4oC6IDxGb3I+IOKAuiA8Rm9yPlxuW0hPVF9TQ09QRV9USU1FXSByZXBhaXIgZ3VpZGU6IG5vZGVfbW9kdWxlcy9zb2xpZC1qcy9za2lsbHMvcmVhY3Rpdml0eS1kaWFnbm9zdGljcy9TS0lMTC5tZCDigJQgaHR0cHM6Ly9naXRodWIuY29tL3NvbGlkanMvc29saWQvYmxvYi9tYWluL3BhY2thZ2VzL3NvbGlkL3NraWxscy9yZWFjdGl2aXR5LWRpYWdub3N0aWNzL1NLSUxMLm1kI2hvdF9zY29wZV90aW1lXG5bSE9UX1NDT1BFX1RJTUVdIGRlZXBlciBldmlkZW5jZTogaW1wb3J0IHsgYXR0cmlidXRpb24gfSBmcm9tIFwic29saWQtanMvYXR0cmlidXRpb25cIjsgYXR0cmlidXRpb24uZW5hYmxlKCkgZXhwbGFpbnMgZXZlcnkgcmUtcnVuIOKAlCB3aHktY2hhaW5zLCBjb3N0cygpLCBmZWVkYmFjaygpLCBoaXN0b3J5KFwiaG9sZFwiIHwgXCJ3YXRlcmZhbGxcIikg4oCUIGFnZW50IGxvb3A6IG5vZGVfbW9kdWxlcy9Ac29saWRqcy9kaWFnbm9zdGljcy9za2lsbHMvYWdlbnQtbG9vcHMvU0tJTEwubWQg4oCUIGh0dHBzOi8vZ2l0aHViLmNvbS9zb2xpZGpzL3NvbGlkL2Jsb2IvbWFpbi9wYWNrYWdlcy9kaWFnbm9zdGljcy9za2lsbHMvYWdlbnQtbG9vcHMvU0tJTEwubWQiXQ=="
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/integration-docs-site-sear-02afe-nd-preserves-native-history-firefox/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/integration-docs-site-sear-02afe-nd-preserves-native-history-firefox/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/integration-docs-site-sear-02afe-nd-preserves-native-history-firefox/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/browser-fixture.ts",
+                    "column": 69,
+                    "line": 10
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "2c7eeb6666fc29406862-79cf5f2d1be92eb7f1b1",
+          "file": "docs-site.ts",
+          "line": 6,
+          "column": 2
+        },
+        {
+          "title": "retains the shell and theme through a failed page request and explicit retry",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "2c7eeb6666fc29406862-935cf866b1ea5dcb44a2",
+          "file": "docs-site.ts",
+          "line": 9,
+          "column": 2
+        },
+        {
+          "title": "shows an unknown-page recovery and renders linked evidence with accessible code and images",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "2c7eeb6666fc29406862-a1eb0553aec3171d3188",
+          "file": "docs-site.ts",
+          "line": 12,
+          "column": 2
+        },
+        {
+          "title": "documentation supports light mobile themes and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "2c7eeb6666fc29406862-289171d4276c7adf993d",
+          "file": "docs-site.ts",
+          "line": 15,
+          "column": 33
+        },
+        {
+          "title": "documentation supports dark mobile themes and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "2c7eeb6666fc29406862-d8c54f472b0e3bc6c0a2",
+          "file": "docs-site.ts",
+          "line": 15,
+          "column": 33
+        },
+        {
+          "title": "searches all components, opens a deep link and preserves native history",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "2c7eeb6666fc29406862-5e35410bac352ea4a721",
+          "file": "docs-site.ts",
+          "line": 6,
+          "column": 2
+        },
+        {
+          "title": "retains the shell and theme through a failed page request and explicit retry",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "2c7eeb6666fc29406862-6e67dfac3ae9e0d1c11f",
+          "file": "docs-site.ts",
+          "line": 9,
+          "column": 2
+        },
+        {
+          "title": "shows an unknown-page recovery and renders linked evidence with accessible code and images",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "2c7eeb6666fc29406862-a27af9196328ed461ff1",
+          "file": "docs-site.ts",
+          "line": 12,
+          "column": 2
+        },
+        {
+          "title": "documentation supports light mobile themes and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "2c7eeb6666fc29406862-fc0eaece9b19100478a8",
+          "file": "docs-site.ts",
+          "line": 15,
+          "column": 33
+        },
+        {
+          "title": "documentation supports dark mobile themes and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "2c7eeb6666fc29406862-fe72cf06be957ddbe672",
+          "file": "docs-site.ts",
+          "line": 15,
+          "column": 33
+        }
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "message": "\u001b[31mTesting stopped early after 1 maximum allowed failures.\u001b[39m"
+    }
+  ],
+  "stats": {
+    "startTime": "2026-10-09T10:58:51.043Z",
+    "duration": 9361.071,
+    "expected": 5,
+    "skipped": 9,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

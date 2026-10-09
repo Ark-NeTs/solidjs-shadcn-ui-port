@@ -1,0 +1,489 @@
+{
+  "config": {
+    "argv": [
+      "/Users/arktas/.asdf/installs/nodejs/25.3.0/bin/node",
+      "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/node_modules/.bin/playwright",
+      "test",
+      "--config",
+      "playwright.consumer.config.ts",
+      "--max-failures=1"
+    ],
+    "configFile": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/playwright.consumer.config.ts",
+    "rootDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/validation/consumer-stack",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 1,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/validation/consumer-stack",
+        "testIgnore": [],
+        "testMatch": [
+          "consumer.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/validation/consumer-stack",
+        "testIgnore": [
+          "**/visual.spec.ts"
+        ],
+        "testMatch": [
+          "consumer.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/validation/consumer-stack",
+        "testIgnore": [
+          "**/visual.spec.ts"
+        ],
+        "testMatch": [
+          "consumer.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "docs/evidence/completion-consumer.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": {
+      "command": "bunx --no-install vite --config validation/consumer-stack/vite.config.mjs",
+      "url": "http://127.0.0.1:4403",
+      "reuseExistingServer": false,
+      "timeout": 60000
+    }
+  },
+  "suites": [
+    {
+      "title": "consumer.spec.ts",
+      "file": "consumer.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "resolves Loading, retains drafts through native router links and remounts from query cache",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 741,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T11:59:01.072Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c1cf76b2c3e27e53bcdc-d54ffdecc91284b950d1",
+          "file": "consumer.spec.ts",
+          "line": 3,
+          "column": 1
+        },
+        {
+          "title": "holds the previous tab content while a new query is pending",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 515,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T11:59:02.087Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c1cf76b2c3e27e53bcdc-f0f3724c4cb62b528d83",
+          "file": "consumer.spec.ts",
+          "line": 6,
+          "column": 1
+        },
+        {
+          "title": "dismisses pending query content inside a modal and safely reopens it",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 495,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T11:59:02.607Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c1cf76b2c3e27e53bcdc-5371df91a1bc034576f5",
+          "file": "consumer.spec.ts",
+          "line": 9,
+          "column": 1
+        },
+        {
+          "title": "resolves Loading, retains drafts through native router links and remounts from query cache",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1188,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T11:59:03.363Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c1cf76b2c3e27e53bcdc-02f36b03ce675b355926",
+          "file": "consumer.spec.ts",
+          "line": 3,
+          "column": 1
+        },
+        {
+          "title": "holds the previous tab content while a new query is pending",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 594,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T11:59:05.278Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c1cf76b2c3e27e53bcdc-bad96c011e369c25592a",
+          "file": "consumer.spec.ts",
+          "line": 6,
+          "column": 1
+        },
+        {
+          "title": "dismisses pending query content inside a modal and safely reopens it",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 688,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T11:59:05.882Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c1cf76b2c3e27e53bcdc-8e2ee61caa45632b124e",
+          "file": "consumer.spec.ts",
+          "line": 9,
+          "column": 1
+        },
+        {
+          "title": "resolves Loading, retains drafts through native router links and remounts from query cache",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1007,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T11:59:07.058Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c1cf76b2c3e27e53bcdc-85015f3453102376da99",
+          "file": "consumer.spec.ts",
+          "line": 3,
+          "column": 1
+        },
+        {
+          "title": "holds the previous tab content while a new query is pending",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 613,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T11:59:08.398Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c1cf76b2c3e27e53bcdc-e571cd99a34dd2541d7d",
+          "file": "consumer.spec.ts",
+          "line": 6,
+          "column": 1
+        },
+        {
+          "title": "dismisses pending query content inside a modal and safely reopens it",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 696,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T11:59:09.019Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c1cf76b2c3e27e53bcdc-73ba8b47af3ced0ee906",
+          "file": "consumer.spec.ts",
+          "line": 9,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-09T11:58:59.922Z",
+    "duration": 9845.534,
+    "expected": 9,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

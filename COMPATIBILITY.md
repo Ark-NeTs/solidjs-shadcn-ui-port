@@ -1,3 +1,11 @@
+> Historical compatibility probes below describe the state on 2026-10-07.
+> The implemented 65-family package and its current tests are recorded in
+> [catalog completion](docs/CATALOG-COMPLETION-AUDIT.md) and
+> [final package delivery](docs/PROJECT-COMPLETION.md). The isolated Router next.36 /
+> Query rc.5 consumer now verifies the client router/query/Loading/Tabs/Dialog leg
+> on the same Solid rc.13 runtime. Older “unrun” and “no package” notes remain
+> dated probe history, not the current delivery status.
+
 # Kobalte and corvu compatibility
 
 Checked 2026-10-07 following the owner's selection of Kobalte as the primary

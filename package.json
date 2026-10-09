@@ -23,9 +23,9 @@
     "./styles.css": "./dist/shadcn-solidjs-theme.css"
   },
   "scripts": {
-    "dev": "vite --config playground/vite.config.ts",
+    "dev": "bun run docs:generate && vite --config playground/vite.config.ts",
     "build": "vite build && tsc -p tsconfig.build.json",
-    "build:playground": "vite build --config playground/vite.config.ts",
+    "build:playground": "bun run docs:generate && vite build --config playground/vite.config.ts",
     "check": "tsc --noEmit",
     "typecheck": "bun run check",
     "lint": "eslint src tests playground scripts *.ts",
@@ -38,7 +38,11 @@
     "parity:report": "bun scripts/check-admin-parity.ts",
     "parity:admin": "bun scripts/check-admin-parity.ts --strict",
     "build:hydration": "node --conditions=development scripts/build-hydration.mjs",
-    "test:hydration": "playwright test --config playwright.hydration.config.ts"
+    "test:hydration": "playwright test --config playwright.hydration.config.ts",
+    "docs:generate": "bun scripts/build-docs.mjs",
+    "docs:check": "node scripts/check-doc-examples.mjs",
+    "sizes:consumer": "bun run build && node scripts/measure-consumer-bundles.mjs",
+    "test:consumer": "playwright test --config playwright.consumer.config.ts"
   },
   "dependencies": {
     "@fontsource-variable/inter": "5.2.8",

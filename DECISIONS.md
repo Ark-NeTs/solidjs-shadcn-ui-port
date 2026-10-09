@@ -635,3 +635,43 @@ one signal per field with the existing shallow equality policy. Controlled state
 remains authoritative, and partial resets retain initial defaults. The regression
 counts visibility getter reads while unrelated state changes, instead of relying
 only on timing budgets to detect wasted work.
+
+
+## Documentation delivery and consumer cost — 2026-10-09
+
+The browser documentation is generated from the existing Markdown using Bun's
+build-time parser, with raw HTML disabled and asset links restricted to maintained
+package files. No Markdown runtime dependency enters the library. Documentation
+and the legacy playground have separate HTML entry points; existing preview URLs
+and their acceptance fixtures remain stable.
+
+Chart.js registration moves from module import (`chart.js/auto`) to the first
+mounted chart. A Button-only built consumer previously retained the eager engine
+registration. The measured before/after bundles and mount-only unit regression
+justify the change; component semantics and canvas disposal are unchanged.
+
+The router/query compatibility probe lives in an isolated temporary install with
+a committed manifest/lock. Router next.36 and Query rc.5 declare compatible rc.13
+peers; newer Router tags require rc.14 and are not silently forced onto rc.13.
+Applications continue owning cache/routing; neither dependency enters this package.
+See [completion evidence](docs/PROJECT-COMPLETION.md).
+
+
+## Scrollable menu tab stops — 2026-10-09
+
+Menu items keep a single native tab stop on the focused, enabled action. Giving
+every item a negative tab index worked for programmatic arrow focus but left a
+scroll-constrained menu without a tab stop. Native focus/blur events update the
+item's local focus state and preserve caller handlers. This keeps native Tab
+departure and avoids introducing a separate container stop. A fixed-height browser
+regression verifies overflow, keyboard scrolling, axe and departure in all engines.
+
+
+## Controlled values gate unchanged owner updates — 2026-10-09
+
+The shared controlled-state helper memoizes its effective value. A caller deriving
+`open` from an edited draft previously forwarded every draft write through a plain
+accessor into modal scopes, even while `open` stayed true. The equality boundary
+keeps controlled ownership and rejected requests intact while avoiding downstream
+work on unrelated owner changes. A subscriber-count regression covers unrelated
+edits, rejected controlled requests and the transition to local state.

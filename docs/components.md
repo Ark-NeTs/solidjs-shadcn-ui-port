@@ -1148,6 +1148,70 @@ at `/?catalog-native`, and [delivery evidence](NATIVE-CATALOG-DELIVERY.md).
 | Table — `ui/table` | `Table`, `TableHeader`, `TableBody`, `TableFooter`, `TableHead`, `TableRow`, `TableCell`, `TableCaption`; native table inside horizontal overflow container. Set `scope` on headers; sorting/filtering belong to Data Table or the host. |
 
 ```tsx
+import { Alert, AlertTitle, AlertDescription } from 'shadcn-solidjs-theme/ui/alert';
+import { AspectRatio } from 'shadcn-solidjs-theme/ui/aspect-ratio';
+import { Attachment, AttachmentMedia, AttachmentContent, AttachmentTitle,
+  AttachmentDescription } from 'shadcn-solidjs-theme/ui/attachment';
+import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink,
+  BreadcrumbSeparator, BreadcrumbPage } from 'shadcn-solidjs-theme/ui/breadcrumb';
+import { BubbleGroup, Bubble, BubbleContent } from 'shadcn-solidjs-theme/ui/bubble';
+import { Button } from 'shadcn-solidjs-theme/ui/button';
+import { ButtonGroup, ButtonGroupSeparator } from 'shadcn-solidjs-theme/ui/button-group';
+import { Empty, EmptyHeader, EmptyTitle, EmptyDescription } from 'shadcn-solidjs-theme/ui/empty';
+import { FieldSet, FieldLegend, Field, FieldLabel, FieldDescription,
+  FieldError } from 'shadcn-solidjs-theme/ui/field';
+import { InputGroup, InputGroupAddon, InputGroupInput } from 'shadcn-solidjs-theme/ui/input-group';
+import { ItemGroup, Item, ItemContent, ItemTitle, ItemDescription } from 'shadcn-solidjs-theme/ui/item';
+import { KbdGroup, Kbd } from 'shadcn-solidjs-theme/ui/kbd';
+import { Marker, MarkerContent } from 'shadcn-solidjs-theme/ui/marker';
+import { MessageGroup, Message, MessageHeader, MessageContent } from 'shadcn-solidjs-theme/ui/message';
+import { NativeSelect, NativeSelectOption } from 'shadcn-solidjs-theme/ui/native-select';
+import { Spinner } from 'shadcn-solidjs-theme/ui/spinner';
+import { Table, TableCaption, TableHeader, TableRow, TableHead,
+  TableBody, TableCell } from 'shadcn-solidjs-theme/ui/table';
+
+<Alert><AlertTitle>Draft saved</AlertTitle>
+  <AlertDescription>Your changes are available to review.</AlertDescription>
+</Alert>;
+<AspectRatio ratio={16 / 9}>
+  <div class="grid h-full place-items-center bg-muted">Menu image preview</div>
+</AspectRatio>;
+<Attachment state="done"><AttachmentMedia>PDF</AttachmentMedia>
+  <AttachmentContent><AttachmentTitle>Seasonal menu.pdf</AttachmentTitle>
+    <AttachmentDescription>Ready to download</AttachmentDescription>
+  </AttachmentContent>
+</Attachment>;
+<Breadcrumb><BreadcrumbList>
+  <BreadcrumbItem><BreadcrumbLink href="/admin">Admin</BreadcrumbLink></BreadcrumbItem>
+  <BreadcrumbSeparator/>
+  <BreadcrumbItem><BreadcrumbPage>Menu</BreadcrumbPage></BreadcrumbItem>
+</BreadcrumbList></Breadcrumb>;
+<BubbleGroup><Bubble><BubbleContent>The order is ready.</BubbleContent></Bubble></BubbleGroup>;
+<ButtonGroup aria-label="Draft actions"><Button onClick={() => saveDraft()}>Save</Button>
+  <ButtonGroupSeparator/><Button onClick={() => resetDraft()}>Reset</Button>
+</ButtonGroup>;
+<Empty><EmptyHeader><EmptyTitle>No orders yet</EmptyTitle>
+  <EmptyDescription>New orders will appear here.</EmptyDescription>
+</EmptyHeader></Empty>;
+<ItemGroup><Item role="listitem"><ItemContent><ItemTitle>Seasonal pizza</ItemTitle>
+  <ItemDescription>Kitchen · Available</ItemDescription>
+</ItemContent></Item></ItemGroup>;
+<KbdGroup><Kbd>⌘</Kbd><Kbd>K</Kbd></KbdGroup>;
+<Marker variant="separator"><MarkerContent>Today</MarkerContent></Marker>;
+<MessageGroup><Message><MessageContent><MessageHeader>Kitchen</MessageHeader>
+  <p>Table 12 is ready for service.</p>
+</MessageContent></Message></MessageGroup>;
+<NativeSelect aria-label="Menu category" name="category">
+  <NativeSelectOption value="kitchen">Kitchen</NativeSelectOption>
+  <NativeSelectOption value="drinks">Drinks</NativeSelectOption>
+</NativeSelect>;
+<Spinner aria-label="Loading orders"/>;
+<Table><TableCaption>Menu prices</TableCaption><TableHeader><TableRow>
+  <TableHead scope="col">Item</TableHead><TableHead scope="col">Price</TableHead>
+</TableRow></TableHeader><TableBody><TableRow>
+  <TableCell>Seasonal pizza</TableCell><TableCell>$12.00</TableCell>
+</TableRow></TableBody></Table>;
+
 <FieldSet>
   <FieldLegend>Contact</FieldLegend>
   <Field>
@@ -1161,6 +1225,9 @@ at `/?catalog-native`, and [delivery evidence](NATIVE-CATALOG-DELIVERY.md).
   </Field>
 </FieldSet>
 ```
+
+`saveDraft`, `resetDraft` and `errors` are supplied by the application; navigation
+destinations likewise belong to your app. Render Spinner only while work is pending.
 
 These examples provide grouped SSR and hydration coverage and three-browser
 interaction checks. They do not certify every combination of native props,
@@ -1204,7 +1271,14 @@ See [display examples](../playground/catalog-display.tsx) at `/?catalog-display`
   package delivers semantic typography recipes, not that separate CSS API.
 
 ```tsx
+import { DirectionProvider } from 'shadcn-solidjs-theme/ui/direction';
+import { Avatar, AvatarImage, AvatarFallback } from 'shadcn-solidjs-theme/ui/avatar';
+import { Pagination, PaginationContent, PaginationItem, PaginationLink,
+  PaginationNext } from 'shadcn-solidjs-theme/ui/pagination';
+import { Typography } from 'shadcn-solidjs-theme/ui/typography';
+
 <DirectionProvider dir={direction()}>
+  <Typography><h1>Menu handbook</h1><p>Seasonal dishes and kitchen notes.</p></Typography>
   <Avatar>
     <AvatarImage src={person().image} alt={person().name} />
     <AvatarFallback>{person().initials}</AvatarFallback>
@@ -1217,6 +1291,8 @@ See [display examples](../playground/catalog-display.tsx) at `/?catalog-display`
   </Pagination>
 </DirectionProvider>
 ```
+
+`person` and `direction` are application-owned accessors.
 
 Image loading does not run during SSR: fallback is rendered first. Hydration
 checks preserve server nodes before a user starts loading an image. Initially
@@ -1244,6 +1320,15 @@ focusable handle accepts arrow keys/Home/End and captured pointer dragging.
 native; drag gestures start only on the handle.
 
 ```tsx
+import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle,
+  DialogDescription, DialogFooter, DialogClose } from 'shadcn-solidjs-theme/ui/dialog';
+import { Sheet, SheetTrigger, SheetContent, SheetHeader, SheetTitle,
+  SheetDescription } from 'shadcn-solidjs-theme/ui/sheet';
+import { Drawer, DrawerTrigger, DrawerContent, DrawerHeader, DrawerTitle,
+  DrawerDescription } from 'shadcn-solidjs-theme/ui/drawer';
+import { Label } from 'shadcn-solidjs-theme/ui/label';
+import { Input } from 'shadcn-solidjs-theme/ui/input';
+
 <Dialog>
   <DialogTrigger>Edit profile</DialogTrigger>
   <DialogContent>
@@ -1255,8 +1340,22 @@ native; drag gestures start only on the handle.
     <Input id="profile-name" value={draft()} onInput={event => setDraft(event.currentTarget.value)} />
     <DialogFooter><DialogClose>Keep draft and close</DialogClose></DialogFooter>
   </DialogContent>
-</Dialog>
+</Dialog>;
+<Sheet><SheetTrigger>Review order</SheetTrigger><SheetContent side="right">
+  <SheetHeader><SheetTitle>Order details</SheetTitle>
+    <SheetDescription>Review the selected table's current order.</SheetDescription>
+  </SheetHeader><p>Table 12 · Two dishes</p>
+</SheetContent></Sheet>;
+<Drawer snapPoints={[0.5, 1]} defaultActiveSnapPoint={0.5}>
+  <DrawerTrigger>Kitchen queue</DrawerTrigger><DrawerContent handleLabel="Queue height">
+    <DrawerHeader><DrawerTitle>Kitchen queue</DrawerTitle>
+      <DrawerDescription>Drag the handle or use its arrow keys to resize.</DrawerDescription>
+    </DrawerHeader><p>Three orders are being prepared.</p>
+  </DrawerContent>
+</Drawer>
 ```
+
+`draft` and `setDraft` belong to the application and keep edits across closing.
 
 Portal parts retain DOM ancestry and Content generates its overlay. Avoid adding
 an extra overlay unless intentionally decorating. Native nonmodal light-dismiss
@@ -1265,6 +1364,48 @@ Vaul momentum/background scaling, content-wide swipe and React `asChild` are not
 implemented. See [modal delivery](MODAL-CATALOG-DELIVERY.md) for evidence and limits.
 
 ## Menus and Command
+
+```tsx
+import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent,
+  DropdownMenuItem } from 'shadcn-solidjs-theme/ui/dropdown-menu';
+import { ContextMenu, ContextMenuTrigger, ContextMenuContent,
+  ContextMenuItem } from 'shadcn-solidjs-theme/ui/context-menu';
+import { Menubar, MenubarMenu, MenubarTrigger, MenubarContent,
+  MenubarItem } from 'shadcn-solidjs-theme/ui/menubar';
+import { NavigationMenu, NavigationMenuList, NavigationMenuItem,
+  NavigationMenuTrigger, NavigationMenuContent, NavigationMenuLink }
+  from 'shadcn-solidjs-theme/ui/navigation-menu';
+import { Command, CommandInput, CommandList, CommandEmpty,
+  CommandItem } from 'shadcn-solidjs-theme/ui/command';
+
+<DropdownMenu>
+  <DropdownMenuTrigger>Actions</DropdownMenuTrigger>
+  <DropdownMenuContent><DropdownMenuItem onSelect={() => saveDraft()}>
+    Save draft
+  </DropdownMenuItem></DropdownMenuContent>
+</DropdownMenu>;
+<ContextMenu>
+  <ContextMenuTrigger>Open with right click or Shift+F10</ContextMenuTrigger>
+  <ContextMenuContent><ContextMenuItem onSelect={() => editItem()}>
+    Edit item
+  </ContextMenuItem></ContextMenuContent>
+</ContextMenu>;
+<Menubar><MenubarMenu value="file"><MenubarTrigger>File</MenubarTrigger>
+  <MenubarContent><MenubarItem onSelect={() => newDraft()}>New draft</MenubarItem></MenubarContent>
+</MenubarMenu></Menubar>;
+<NavigationMenu><NavigationMenuList><NavigationMenuItem value="guide">
+  <NavigationMenuTrigger>Guide</NavigationMenuTrigger>
+  <NavigationMenuContent><NavigationMenuLink href="/guide">Read the guide</NavigationMenuLink></NavigationMenuContent>
+</NavigationMenuItem></NavigationMenuList></NavigationMenu>;
+<Command><CommandInput aria-label="Find an action"/><CommandList>
+  <CommandEmpty>No matching actions.</CommandEmpty>
+  <CommandItem value="save" onSelect={() => saveDraft()}>Save draft</CommandItem>
+</CommandList></Command>;
+```
+
+The handlers above (`saveDraft`, `editItem`, `newDraft`) are supplied by your
+application. Navigation destinations likewise belong to your app.
+
 
 DropdownMenu and ContextMenu compose Root, Trigger, Content, Item, Group, Label,
 Separator, Shortcut, CheckboxItem, RadioGroup/RadioItem and Sub/SubTrigger/
@@ -1291,6 +1432,31 @@ closes the palette. Shortcuts are visual hints, not registered key bindings.
 Examples: `/?catalog-menus`. [Acceptance and scope](MENU-CATALOG-DELIVERY.md).
 
 ## Calendar, Date Picker and Input OTP
+
+```tsx
+import { createSignal, For } from 'solid-js';
+import { Calendar, type DateSelection } from 'shadcn-solidjs-theme/ui/calendar';
+import { DatePicker } from 'shadcn-solidjs-theme/ui/date-picker';
+import { InputOTP, InputOTPGroup, InputOTPSlot }
+  from 'shadcn-solidjs-theme/ui/input-otp';
+
+function BookingFields() {
+  const [day, setDay] = createSignal<DateSelection>(undefined);
+  const [code, setCode] = createSignal('');
+  return <>
+    <Calendar aria-label="Available days" selected={day()} onSelect={setDay}/>
+    <DatePicker label="Booking date" name="date"/>
+    <label for="verification">Verification code</label>
+    <InputOTP id="verification" name="code" maxLength={6} minlength={6}
+      required pattern="[0-9]*" value={code()} onChange={setCode}>
+      <InputOTPGroup><For each={[0, 1, 2, 3, 4, 5]}>
+        {index => <InputOTPSlot index={index}/>}
+      </For></InputOTPGroup>
+    </InputOTP>
+  </>;
+}
+```
+
 
 Calendar accepts mode="single"|"multiple"|"range", selected/defaultSelected,
 onSelect, month/defaultMonth/onMonthChange, minDate/maxDate, startMonth/endMonth,
@@ -1323,6 +1489,43 @@ Examples: `/?catalog-dates`. [Acceptance and limits](DATE-CATALOG-DELIVERY.md).
 
 ## Resizable, Scroll Area, Carousel and Message Scroller
 
+```tsx
+import { For } from 'solid-js';
+import { ResizablePanelGroup, ResizablePanel, ResizableHandle }
+  from 'shadcn-solidjs-theme/ui/resizable';
+import { ScrollArea } from 'shadcn-solidjs-theme/ui/scroll-area';
+import { Carousel, CarouselContent, CarouselItem, CarouselPrevious,
+  CarouselNext } from 'shadcn-solidjs-theme/ui/carousel';
+import { MessageScrollerProvider, MessageScroller, MessageScrollerViewport,
+  MessageScrollerContent, MessageScrollerItem, MessageScrollerButton }
+  from 'shadcn-solidjs-theme/ui/message-scroller';
+
+<ResizablePanelGroup defaultLayout={[40, 60]} class="h-64">
+  <ResizablePanel minSize={20}>Navigation</ResizablePanel>
+  <ResizableHandle withHandle aria-label="Panel sizes"/>
+  <ResizablePanel minSize={30}>Editor</ResizablePanel>
+</ResizablePanelGroup>;
+<ScrollArea class="h-48" viewportProps={{'aria-label': 'Reference'}}>
+  <For each={referenceRows()}>{row => <p>{row.label}</p>}</For>
+</ScrollArea>;
+<Carousel aria-label="Featured dishes" class="mx-12">
+  <CarouselContent><For each={dishes()}>{dish =>
+    <CarouselItem>{dish.name}</CarouselItem>
+  }</For></CarouselContent><CarouselPrevious/><CarouselNext/>
+</Carousel>;
+<MessageScrollerProvider><MessageScroller class="h-64">
+  <MessageScrollerViewport aria-label="Conversation">
+    <MessageScrollerContent><For each={messages()}>{message =>
+      <MessageScrollerItem>{message.text}</MessageScrollerItem>
+    }</For></MessageScrollerContent>
+  </MessageScrollerViewport><MessageScrollerButton/>
+</MessageScroller></MessageScrollerProvider>;
+```
+
+`referenceRows`, `dishes` and `messages` are application-owned accessors. Preserve
+record identity when prepending history so the scroller can retain the visible item.
+
+
 Use ResizablePanelGroup with layout/defaultLayout/onLayout percentage arrays and
 horizontal/vertical orientation. Alternate ResizablePanel and ResizableHandle;
 panels expose minSize/maxSize and collapsible/collapsedSize. Handles support
@@ -1354,6 +1557,19 @@ The package owns these Solid APIs after the pinned Kobalte Toast failed the diag
 
 ```tsx
 import { Toaster, createToastStore } from 'shadcn-solidjs-theme/ui/sonner';
+import { ToastProvider, ToastViewport, Toast, ToastTitle, ToastDescription, ToastClose } from 'shadcn-solidjs-theme/ui/toast';
+
+// For an authored notification owned by this view:
+<ToastProvider>
+  <ToastViewport>
+    <Toast>
+      <ToastTitle>Changes saved</ToastTitle>
+      <ToastDescription>Your settings are ready.</ToastDescription>
+      <ToastClose />
+    </Toast>
+  </ToastViewport>
+</ToastProvider>;
+
 const notifications = createToastStore();
 // In the application owner's markup:
 <Toaster store={notifications} visibleToasts={3} />;

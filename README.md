@@ -41,7 +41,21 @@ The Tabs/Popover/Alert Dialog probe is in [KOBALTE-OVERLAYS.md](KOBALTE-OVERLAYS
 | `tests/unit/` | Reactivity, native contracts, loading, token and class parity |
 | `tests/integration/` | Source-component browser integration and axe checks |
 | `tests/e2e/` | Built-library journeys and screenshot baselines |
-| `validation/` | Earlier experiments; excluded from production builds/tests |
+| `validation/` | Earlier experiments and the optional isolated router/query consumer; excluded from library builds |
+
+## Documentation website
+
+Open `http://127.0.0.1:4399/docs.html` after `bun run dev`. The searchable site
+covers all 65 component families with examples, screenshots, live preview links,
+and light/dark palette and radius controls. Maintained Markdown generates the
+site through Bun 1.4.2; rerun `bun run docs:generate` after documentation edits.
+`bun run build:playground` emits both `index.html` and `docs.html` into
+`playground-dist`, with all required static documentation assets.
+
+See [getting started](docs/GETTING-STARTED.md),
+[completion and remaining release decisions](docs/PROJECT-COMPLETION.md), and the
+[isolated router/query consumer](validation/consumer-stack/README.md).
+The package is private and unpublished; a public license/release has not been selected.
 
 ## Admin composition example
 
@@ -197,6 +211,19 @@ link tests use native Option-Tab. It does not change system/Safari preferences.
 nested-modal focus fix. Use `RESULTS_FILE` to retain a browser JSON report. Visual baselines are committed
 files under `tests/e2e/visual.spec.ts-snapshots`; regenerate deliberately with
 `bun run test:e2e --update-snapshots=all` and review the images before accepting them.
+
+## Consumer bundle measurement
+
+`bun run sizes:consumer` builds the library and measures Button, form, overlays,
+Data Table and Chart consumers through both source and built-root imports.
+[Measured bytes and module inventories](docs/evidence/consumer-bundles.json)
+include Solid and dependencies, but exclude CSS/fonts. Prefer individual `ui/*`
+imports. Chart registration now waits for a mounted chart; the root import still
+retains more initialization than component subpaths.
+
+`bun run docs:check` typechecks the new guide compositions. `bun run test:consumer`
+runs the optional isolated router/query harness after its documented setup.
+Neither tool adds router, query or Markdown packages to library dependencies.
 
 ## Agent gotchas
 

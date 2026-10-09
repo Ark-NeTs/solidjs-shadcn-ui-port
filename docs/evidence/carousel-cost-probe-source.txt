@@ -1,0 +1,11 @@
+// Temporary diagnostic capture, removed after the investigation.
+import {attribution,costs} from 'solid-js/attribution';
+export function enable(){attribution.enable({log:false,values:'none',historyLimit:2000});}
+export function capture(){return {costs:costs(),reruns:attribution.history('rerun')};}
+
+// Temporary reproduction with runtime cost capture; strict fixture remains active.
+import {test} from '../browser-fixture';
+import {registerLayoutCatalogTests} from '../catalog-layout';
+test.beforeEach(async({page})=>{await page.goto('/?catalog-layout');await page.evaluate(async()=>{const path='/carousel-cost-probe.ts';const probe=await import(/* @vite-ignore */path);probe.enable();});});
+test.afterEach(async({page},testInfo)=>{const data=await page.evaluate(async()=>{const path='/carousel-cost-probe.ts';return (await import(/* @vite-ignore */path)).capture();});await testInfo.attach('carousel-costs',{body:JSON.stringify(data),contentType:'application/json'});});
+registerLayoutCatalogTests();

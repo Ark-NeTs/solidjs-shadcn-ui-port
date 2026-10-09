@@ -9,3 +9,8 @@ playwright-report/
 !docs/evidence/*.txt
 
 hydration-dist/
+
+# Generated website content; maintained Markdown remains the source.
+playground/public/docs/
+
+validation/consumer-stack/dist/

@@ -4,7 +4,18 @@ Written 2026-09-04 for the agent that will build this package. Read this
 whole file, then the repo's `CLAUDE.md`, then `packages/shadcn-theme/README.md`
 and `packages/shadcn-svelte-theme/README.md`, before writing a line of code.
 
-## Current owner direction — 2026-10-08
+## Current owner direction — 2026-10-09
+
+Continue autonomously through the package goal: the full 65-family library,
+documentation website, customizable themes, examples/screenshots and automated
+unit, browser integration and E2E acceptance. The admin composition is verified;
+[final delivery](docs/PROJECT-COMPLETION.md) records the website, consumer costs,
+isolated router/query acceptance and remaining release/manual limits. Existing
+app migration and external publication remain outside the package increment.
+The latest working agreement authorizes verified commits/pushes to the codex
+branch and supersedes historical checkpoint/never-commit instructions below.
+
+## Previous owner direction — 2026-10-08
 
 **Current scope:** implement all remaining catalog components, evaluating Kobalte first.
 Deliver in verified logical batches; track remaining work in [catalog delivery](docs/CATALOG-DELIVERY.md).

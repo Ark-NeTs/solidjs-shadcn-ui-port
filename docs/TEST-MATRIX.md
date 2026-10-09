@@ -483,7 +483,7 @@ claim. Progress owns no network state, live region, busy-region policy or retry.
 | Component | Server assertions / presence | Visual scope |
 | --- | --- | --- |
 | Button | [S1](../tests/server.test.tsx#L5): native button type and anchor href | Shared gallery variants and example sizes |
-| Badge | S1 includes Badge, but has no Badge-specific output assertion | Shared gallery variants |
+| Badge | [Dedicated server regression](../tests/server.test.tsx#L117): all six variants, span semantics, class/label forwarding and native anchor href | Shared gallery variants |
 | Card | S1 asserts contained title text; no assertion for every slot | Shared gallery plus dedicated default/compact long-content layouts |
 | Separator | S1 asserts semantic role and vertical orientation | Shared gallery plus dedicated stretched/custom vertical states |
 | Skeleton | S1 asserts its data-slot | Shared pending gallery placeholders |
@@ -534,8 +534,8 @@ order the next test work; they do not assign bug severity to untested behavior.
 | Manual follow-up | CMB-2 | Combobox | Browser scrolling/Tab/modal checks pass; record a physical IME composition/commit/cancel session before closing the remaining manual portion. |
 | Extended coverage | ALL-2 | Full catalog | [H: real hydration, forms, Tabs and overlays](HYDRATION-DELIVERY.md) passes for the documented source fixtures. [Pending Loading boundary hydration](LOADING-HYDRATION-DELIVERY.md) and [client rejection/retry](ERRORED-HYDRATION-DELIVERY.md) are also covered. Streaming, ready-at-SSR boundaries, multiple roots, every variant and a published SSR build remain unverified. |
 | Cross-cutting | ALL-3 | Interactive controls and semantic content | Record manual assistive-technology navigation/announcements; axe success is only automated evidence. |
-| Cross-cutting | ALL-4 | Full catalog | Expand representative state/variant visual cases; isolate assertions currently supported only by shared gallery/SSR markup (notably Badge SSR). |
-| Before app adoption | ALL-5 | Full package | Verify real admin composition, router/query integration and application errors; measure representative large-list/overlay performance. Current E2E covers component galleries and the package-only [admin menu composition](ADMIN-MENU-DELIVERY.md), not the actual application. [Static import availability](ADMIN-PARITY-DELIVERY.md) passes for 35 names across 14 subpaths; real application composition remains open. |
+| Cross-cutting | ALL-4 | Full catalog | Expand representative state/variant visual cases; isolate assertions currently supported only by shared gallery/SSR markup. Badge now has a dedicated server assertion for all variants and native link semantics. |
+| Before app adoption | ALL-5 | Full package | Verify real admin composition, router/query integration and application errors; measure representative large-list/overlay performance. Current E2E covers component galleries and the package-only [admin menu composition](ADMIN-MENU-DELIVERY.md), not the actual application. [Static import availability](ADMIN-PARITY-DELIVERY.md) passes for 35 names across 14 subpaths; real application composition remains open. The [isolated router/query harness](../validation/consumer-stack/README.md) verifies pending Tabs, query caching, route history and modal queries on the pinned Solid 2 runtime. |
 
 No claim is made that every supported combination appears above. The matrix maps
 currently stated component contracts to concrete evidence and highlights the
@@ -631,7 +631,7 @@ All four appear in [three focused visual baselines](../tests/e2e/visual.spec.ts)
 
 | Family | Assertions | Limits |
 | --- | --- | --- |
-| Dropdown Menu | U/B/E keyboard boundaries, typeahead, disabled skipping, live IDs, checkbox/radio ownership, canceled selection, native anchor, submenu hover/keys, Tab and focus return; U stale placement and teardown. | Nonmodal; no exit-presence or arbitrary child cloning. |
+| Dropdown Menu | U/B/E keyboard boundaries, typeahead, disabled skipping, live IDs, checkbox/radio ownership, canceled selection, native anchor, submenu hover/keys, Tab and focus return; constrained scrolling retains a single native tab stop; U forwarded focus/blur and disabled exclusion, stale placement and teardown. | Nonmodal; no exit-presence or arbitrary child cloning. |
 | Context Menu | U/B/E pointer coordinates, ContextMenu/Shift+F10, disabled native context, nested action and focus return. | Physical touch long-press unverified. |
 | Menubar | U/B/E enabled trigger roving, open-menu transfer, RTL and Escape; U controlled rejection and canceled requests. | Horizontal menus; application shortcuts remain host-owned. |
 | Navigation Menu | U/B/E pointer intent, canceled stale timers, shared/inline viewport, native links, keyboard entry/Escape, outside focus and controlled ownership. | No polygon grace-area or custom reparenting. |
@@ -780,6 +780,36 @@ run against both source integration and built E2E exports in three engines.
 | Appearance and access | B/E: axe and document bounds in 390px light/dark layouts at 24px root text; V: table and dialog screenshots in light/dark/mobile. |
 
 This advances the composition portion of ALL-5. The service is an injected local
-simulator; authentication, actual AppApi/IPC, router/query integration, shared-server
-conflicts, uncertain network writes and real admin migration remain unverified.
+simulator; authentication, actual AppApi/IPC, shared-server conflicts, uncertain
+network writes and real admin migration remain unverified. The isolated router/query
+compatibility checks are recorded in the completion section below.
 See [delivery and measured commands](ADMIN-MENU-DELIVERY.md).
+
+
+## Website and consumer completion
+
+[Website browser cases](../tests/docs-site.ts) run against source and built assets
+in Chromium, Firefox and WebKit: search, native history, unknown page/error retry,
+stable link identity, copy feedback, keyboard skip navigation, themes and enlarged
+mobile accessibility. [Inventory tests](../tests/unit/docs-site.test.ts) require all
+65 families to have their own JSX usage, screenshots and valid preview links, and check rendered
+asset links and absence of executable markup. Four [visual cases](../tests/e2e/docs-site/visual.spec.ts)
+cover desktop light/dark, mobile and custom tokens.
+
+[The isolated consumer](../validation/consumer-stack/consumer.spec.ts) verifies
+actual Router next.36 and Query rc.5 with Solid rc.13. It closes the scoped client
+router/query compatibility gap in ALL-5, not actual application migration or
+streaming/query-cache hydration. All application data is deterministic and local.
+
+[Chart unit regression](../tests/unit/catalog-chart.test.tsx) asserts that import
+alone does not register engines, first mount registers once, and later charts
+reuse registration. [The size probe](../scripts/measure-consumer-bundles.mjs)
+records source/built consumer costs. A dedicated server case also closes the explicit
+Badge SSR assertion gap in ALL-4. No large-dataset performance claim is made.
+[Completion report](PROJECT-COMPLETION.md).
+
+
+The [controlled-state regression](../tests/unit/controllable.test.ts) observes
+consumer notification counts across unrelated owner edits, controlled rejection
+and returning to local ownership. The final admin, overlay and form browser runs
+exercise this shared equality boundary with diagnostics enabled.

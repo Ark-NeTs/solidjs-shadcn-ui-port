@@ -68,5 +68,6 @@ large-dataset performance remain unmeasured. Public export-name availability is
 not full React/Radix/Vaul/Base UI prop or behavior compatibility; the
 [component guide](components.md) documents the supported contracts.
 
-The next adoption step is a realistic admin form and Data Table composition in
-the Solid playground, before migrating the admin application.
+The subsequent [admin form and Data Table composition](ADMIN-MENU-DELIVERY.md)
+is verified. The [documentation website and isolated consumer check](PROJECT-COMPLETION.md)
+complete the next package-delivery work; actual admin migration remains separate.

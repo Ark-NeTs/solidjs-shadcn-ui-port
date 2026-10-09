@@ -1,0 +1,16 @@
+{
+  "name": "solid-theme-consumer-acceptance",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@solidjs/router": "2.0.0-next.36",
+    "@tanstack/solid-query": "6.0.0-rc.5",
+    "solid-js": "2.0.0-rc.13",
+    "@solidjs/web": "2.0.0-rc.13"
+  },
+  "overrides": {
+    "solid-js": "2.0.0-rc.13",
+    "@solidjs/web": "2.0.0-rc.13",
+    "@solidjs/signals": "2.0.0-rc.13"
+  }
+}

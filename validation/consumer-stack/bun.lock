@@ -1,0 +1,39 @@
+{
+  "lockfileVersion": 2,
+  "configVersion": 1,
+  "workspaces": {
+    "": {
+      "name": "solid-theme-consumer-acceptance",
+      "dependencies": {
+        "@solidjs/router": "2.0.0-next.36",
+        "@solidjs/web": "2.0.0-rc.13",
+        "@tanstack/solid-query": "6.0.0-rc.5",
+        "solid-js": "2.0.0-rc.13",
+      },
+    },
+  },
+  "overrides": {
+    "@solidjs/signals": "2.0.0-rc.13",
+    "@solidjs/web": "2.0.0-rc.13",
+    "solid-js": "2.0.0-rc.13",
+  },
+  "packages": {
+    "@solidjs/router": ["@solidjs/router@2.0.0-next.36", "", { "peerDependencies": { "@solidjs/web": "^2.0.0-rc.13", "filesystem-routing": ">=0.4.0", "solid-js": "^2.0.0-rc.13" }, "optionalPeers": ["filesystem-routing"] }, "sha512-u5HcT1SuWfP1nJketHZ78w9ITlzrClIuG/kn7kdHvJ/vk9T2XLLPzgiI49bc38HGVYhMnGnziIVkXYsDJuxysQ=="],
+
+    "@solidjs/signals": ["@solidjs/signals@2.0.0-rc.13", "", {}, "sha512-4+pRdrAHtfyE9BUJWBup3TpzJojJjgW2mV1vm/Jik4tWa5epxXB/YrLkwqP1v8+S9XjyKKZu5BSLqmcpswMYeQ=="],
+
+    "@solidjs/web": ["@solidjs/web@2.0.0-rc.13", "", { "dependencies": { "seroval": "~1.6.7", "seroval-plugins": "~1.6.7" }, "peerDependencies": { "solid-js": "^2.0.0-rc.13" } }, "sha512-vI/7v/XM8B/3U/oKAzCW2VjTLFkM5IArB2DFnrjxyPRYD3FX9KAXg9QuAnPIPQHC/xvg/LgxmvoVfZUfJ96gOQ=="],
+
+    "@tanstack/query-core": ["@tanstack/query-core@5.101.4", "", {}, "sha512-gNwcvOJcRbLWPOLG/2OBm+zM+Yv+MKsXKEOWC57USuZDEsI71hEErQsiEGx5wX9rzWWkfwM0fVSPoiIFSsxfiw=="],
+
+    "@tanstack/solid-query": ["@tanstack/solid-query@6.0.0-rc.5", "", { "dependencies": { "@tanstack/query-core": "5.101.4" }, "peerDependencies": { "@solidjs/web": ">=2.0.0-rc.13 <3.0.0", "solid-js": ">=2.0.0-rc.13 <3.0.0" } }, "sha512-O9lD2JRgaN2ZS4ROBPL6HLPbPJ4FvnUsVe7j6FSxhE3GI8a5ntZbAj5zrTtmny6rSzhdcBuMB38R53tHIuXJkw=="],
+
+    "csstype": ["csstype@3.2.3", "", {}, "sha512-z1HGKcYy2xA8AGQfwrn0PAy+PB7X/GSj3UVJW9qKyn43xWa+gl5nXmU4qqLMRzWVLFC8KusUX8T/0kCiOYpAIQ=="],
+
+    "seroval": ["seroval@1.6.9", "", {}, "sha512-UeEzHwAK+yl0YLbsvROV1t5yMYEwZZ0CfKYxDvUgS2fO9Vxdf8djqVIB+OuVpuawRNPqw68LE1Du/GMsW2ZPqA=="],
+
+    "seroval-plugins": ["seroval-plugins@1.6.9", "", { "peerDependencies": { "seroval": "^1.0" } }, "sha512-kiDK/Tb8IWZ61WEU8pA2PDmAuw37gKph9Y77OZlD56mg0Y2g0Bg7gZ1HeHhs5d40w+nRoUq/wj08V26ilbez9g=="],
+
+    "solid-js": ["solid-js@2.0.0-rc.13", "", { "dependencies": { "@solidjs/signals": "^2.0.0-rc.13", "csstype": "^3.1.0", "seroval": "~1.6.7", "seroval-plugins": "~1.6.7" } }, "sha512-62bYOI4JZ15KOqL5eReKyWSwAXrGb0fbX8SDnHsbJk2UX+SzSyy1gobas2cxW/0BXcobGfQ1V6ffPyQkMIBdoQ=="],
+  }
+}
