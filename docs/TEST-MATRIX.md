@@ -535,7 +535,7 @@ order the next test work; they do not assign bug severity to untested behavior.
 | Extended coverage | ALL-2 | All 24 | [H: real hydration, forms, Tabs and overlays](HYDRATION-DELIVERY.md) passes for the documented source fixtures. [Pending Loading boundary hydration](LOADING-HYDRATION-DELIVERY.md) and [client rejection/retry](ERRORED-HYDRATION-DELIVERY.md) are also covered. Streaming, ready-at-SSR boundaries, multiple roots, every variant and a published SSR build remain unverified. |
 | Cross-cutting | ALL-3 | Interactive controls and semantic content | Record manual assistive-technology navigation/announcements; axe success is only automated evidence. |
 | Cross-cutting | ALL-4 | All 24 | Expand representative state/variant visual cases; isolate assertions currently supported only by shared gallery/SSR markup (notably Badge SSR). |
-| Before app adoption | ALL-5 | Full package | Verify real admin composition, router/query integration and application errors; measure representative large-list/overlay performance. Current E2E is the gallery only. |
+| Before app adoption | ALL-5 | Full package | Verify real admin composition, router/query integration and application errors; measure representative large-list/overlay performance. Current E2E is the gallery only. [Static import availability](ADMIN-PARITY-DELIVERY.md) passes for 35 names across 14 subpaths; real application composition remains open. |
 
 No claim is made that every supported combination appears above. The matrix maps
 currently stated component contracts to concrete evidence and highlights the
@@ -732,3 +732,12 @@ initial 240-pixel width. A transient zoom had satisfied center-alignment checks
 before the starting x coordinate was stable. Fifteen affected source cases and
 fifteen repeated built resize cases pass; production positioning and tolerances
 are unchanged. See [final acceptance](REMAINING-CATALOG-STATUS.md).
+
+## Admin import availability tooling
+
+[Eleven audit tests](../tests/unit/admin-parity.test.ts) inspect real temporary
+modules and the current admin imports against the package export map. Missing
+modules/names, unresolved aliases and denied/private paths are rejected; newly
+exported components need no inventory update. This tooling batch brings the unit
+suite to 380 tests; component/browser behavior and the historical catalog gate
+counts above are unchanged. [Measured delivery](ADMIN-PARITY-DELIVERY.md).

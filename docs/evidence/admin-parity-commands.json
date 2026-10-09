@@ -1,0 +1,27 @@
+[
+  {
+    "command": "bun run check",
+    "exitCode": 0,
+    "seconds": 4.328
+  },
+  {
+    "command": "bun run lint",
+    "exitCode": 0,
+    "seconds": 1.923
+  },
+  {
+    "command": "bun run test",
+    "exitCode": 0,
+    "seconds": 5.682
+  },
+  {
+    "command": "bun run test:server",
+    "exitCode": 0,
+    "seconds": 1.182
+  },
+  {
+    "command": "bun run parity:admin",
+    "exitCode": 0,
+    "seconds": 0.446
+  }
+]

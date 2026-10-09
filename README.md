@@ -173,9 +173,13 @@ bun run build               # ESM, declarations and compiled CSS
 bun run test:integration    # source JSX in Chromium, Firefox and WebKit, including axe
 bun run test:e2e            # fresh builds; journeys in all three browsers; Chromium visuals
 bun run build:playground    # static documentation in playground-dist/
-bun run parity:report       # update the remaining admin import inventory
-bun run parity:admin        # strict full-admin gate; still fails for later components
+bun run parity:report       # inspect actual public exports used by static admin imports
+bun run parity:admin        # fail on a missing public module or imported name
 ```
+
+The [admin import audit](docs/ADMIN-PARITY-DELIVERY.md) checks actual public exports
+and also runs in the unit suite. Passing it proves available names, not compatible
+React props or a working Solid admin migration.
 
 Playwright browsers must be installed (`bunx --no-install playwright install
 chromium firefox webkit`). Tests own their local server and do not reuse a running one.

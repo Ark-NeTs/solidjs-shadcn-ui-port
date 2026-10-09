@@ -1,8 +1,9 @@
 {
-  "scope": "Fourteen components; checks imported names only, not React-to-Solid behavioral or application parity.",
+  "scope": "Actual public package exports against static admin imports and re-exports. Checks module/name availability, not prop types, behavior, namespace member usage, dynamic imports or React-to-Solid application compatibility.",
   "subpaths": [
     {
       "subpath": "ui/alert-dialog",
+      "moduleAvailable": true,
       "requested": [
         "AlertDialog",
         "AlertDialogAction",
@@ -13,24 +14,64 @@
         "AlertDialogHeader",
         "AlertDialogTitle"
       ],
+      "namespace": false,
+      "files": [
+        "screens/layouts.tsx"
+      ],
       "missing": []
     },
     {
       "subpath": "ui/badge",
+      "moduleAvailable": true,
       "requested": [
         "Badge"
+      ],
+      "namespace": false,
+      "files": [
+        "screens/venues.tsx"
       ],
       "missing": []
     },
     {
       "subpath": "ui/button",
+      "moduleAvailable": true,
       "requested": [
         "Button"
+      ],
+      "namespace": false,
+      "files": [
+        "components/chrome/index.tsx",
+        "components/layout-editor/layout-editor.tsx",
+        "components/menu/category-sheet.tsx",
+        "components/menu/extra-sheet.tsx",
+        "components/menu/item-sheet.tsx",
+        "components/menu/items-tab.tsx",
+        "components/menu/menu-toolbar.tsx",
+        "components/menu/publish-flow.tsx",
+        "components/menu/set-sheet.tsx",
+        "components/menu/translation-sheet.tsx",
+        "components/orders-history/cursor-tail.tsx",
+        "components/orders/cancel-order-modal.tsx",
+        "components/orders/order-detail-sheet.tsx",
+        "components/staff/invite-modal.tsx",
+        "components/staff/new-role-modal.tsx",
+        "screens/create-venue.tsx",
+        "screens/join-staff.tsx",
+        "screens/layouts.tsx",
+        "screens/login.tsx",
+        "screens/menu-detail.tsx",
+        "screens/menus.tsx",
+        "screens/reservations.tsx",
+        "screens/service-points.tsx",
+        "screens/settings.tsx",
+        "screens/venues.tsx",
+        "screens/visits.tsx"
       ],
       "missing": []
     },
     {
       "subpath": "ui/card",
+      "moduleAvailable": true,
       "requested": [
         "Card",
         "CardContent",
@@ -38,17 +79,28 @@
         "CardHeader",
         "CardTitle"
       ],
+      "namespace": false,
+      "files": [
+        "screens/create-venue.tsx",
+        "screens/login.tsx"
+      ],
       "missing": []
     },
     {
       "subpath": "ui/checkbox",
+      "moduleAvailable": true,
       "requested": [
         "Checkbox"
+      ],
+      "namespace": false,
+      "files": [
+        "components/staff/role-panel.tsx"
       ],
       "missing": []
     },
     {
       "subpath": "ui/combobox",
+      "moduleAvailable": true,
       "requested": [
         "Combobox",
         "ComboboxContent",
@@ -58,65 +110,163 @@
         "ComboboxList",
         "ComboboxTrigger"
       ],
+      "namespace": false,
+      "files": [
+        "components/searchable-select.tsx"
+      ],
       "missing": []
     },
     {
       "subpath": "ui/input",
+      "moduleAvailable": true,
       "requested": [
         "Input"
+      ],
+      "namespace": false,
+      "files": [
+        "components/menu/category-sheet.tsx",
+        "components/menu/extra-sheet.tsx",
+        "components/menu/item-sheet.tsx",
+        "components/menu/set-sheet.tsx",
+        "components/menu/translation-sheet.tsx",
+        "components/orders-history/toolbar.tsx",
+        "components/staff/invite-modal.tsx",
+        "components/staff/new-role-modal.tsx",
+        "components/staff/role-panel.tsx",
+        "components/staff/staff-table.tsx",
+        "screens/create-venue.tsx",
+        "screens/layouts.tsx",
+        "screens/menus.tsx",
+        "screens/reservations.tsx",
+        "screens/service-points.tsx",
+        "screens/settings.tsx"
       ],
       "missing": []
     },
     {
       "subpath": "ui/label",
+      "moduleAvailable": true,
       "requested": [
         "Label"
+      ],
+      "namespace": false,
+      "files": [
+        "screens/layouts.tsx",
+        "screens/reservations.tsx",
+        "screens/settings.tsx"
       ],
       "missing": []
     },
     {
       "subpath": "ui/popover",
+      "moduleAvailable": true,
       "requested": [
         "Popover",
         "PopoverContent",
         "PopoverTrigger"
       ],
+      "namespace": false,
+      "files": [
+        "components/layout-editor/background-picker.tsx",
+        "components/staff/staff-table.tsx"
+      ],
       "missing": []
     },
     {
       "subpath": "ui/skeleton",
+      "moduleAvailable": true,
       "requested": [
         "Skeleton"
+      ],
+      "namespace": false,
+      "files": [
+        "screens/layouts.tsx",
+        "screens/menu-detail.tsx",
+        "screens/menus.tsx",
+        "screens/orders.tsx",
+        "screens/permissions.tsx",
+        "screens/reservations.tsx",
+        "screens/service-points.tsx",
+        "screens/venues.tsx",
+        "screens/visits.tsx"
       ],
       "missing": []
     },
     {
       "subpath": "ui/switch",
+      "moduleAvailable": true,
       "requested": [
         "Switch"
+      ],
+      "namespace": false,
+      "files": [
+        "components/menu/item-sheet.tsx",
+        "components/menu/items-tab.tsx",
+        "screens/layouts.tsx",
+        "screens/menus.tsx",
+        "screens/service-points.tsx"
       ],
       "missing": []
     },
     {
       "subpath": "ui/tabs",
+      "moduleAvailable": true,
       "requested": [
         "Tabs",
         "TabsList",
         "TabsTrigger"
       ],
+      "namespace": false,
+      "files": [
+        "screens/permissions.tsx"
+      ],
       "missing": []
     },
     {
       "subpath": "ui/textarea",
+      "moduleAvailable": true,
       "requested": [
         "Textarea"
+      ],
+      "namespace": false,
+      "files": [
+        "components/menu/extra-sheet.tsx",
+        "components/menu/item-sheet.tsx",
+        "components/menu/translation-sheet.tsx",
+        "components/orders/cancel-order-modal.tsx",
+        "screens/menus.tsx",
+        "screens/visits.tsx"
       ],
       "missing": []
     },
     {
       "subpath": "utils",
+      "moduleAvailable": true,
       "requested": [
         "cn"
+      ],
+      "namespace": false,
+      "files": [
+        "components/chrome/index.tsx",
+        "components/layout-editor/background-picker.tsx",
+        "components/layout-editor/layout-editor.tsx",
+        "components/menu/extras-tab.tsx",
+        "components/menu/item-sheet.tsx",
+        "components/menu/items-tab.tsx",
+        "components/menu/menu-toolbar.tsx",
+        "components/menu/pictures-field.tsx",
+        "components/orders-history/bill-row.tsx",
+        "components/orders-history/order-card.tsx",
+        "components/orders-history/period-chips.tsx",
+        "components/orders-history/sort-header.tsx",
+        "components/orders-history/toolbar.tsx",
+        "components/orders-history/visit-header.tsx",
+        "components/searchable-select.tsx",
+        "components/select-native.tsx",
+        "components/shell/app-shell.tsx",
+        "screens/menus.tsx",
+        "screens/orders.tsx",
+        "screens/visits.tsx"
       ],
       "missing": []
     }
