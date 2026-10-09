@@ -1,0 +1,44 @@
+[
+  {
+    "command": "bun run check",
+    "seconds": 6.13,
+    "exitCode": 0
+  },
+  {
+    "command": "bun run lint",
+    "seconds": 2.88,
+    "exitCode": 0
+  },
+  {
+    "command": "bun run test:coverage",
+    "seconds": 13.31,
+    "exitCode": 0
+  },
+  {
+    "command": "bun run test:server",
+    "seconds": 1.28,
+    "exitCode": 0
+  },
+  {
+    "command": "bun run test:integration --project=webkit --shard=1/2 --list",
+    "seconds": 0.56,
+    "exitCode": 0
+  },
+  {
+    "command": "bun run test:integration --project=webkit --shard=2/2 --list",
+    "seconds": 0.5,
+    "exitCode": 0
+  },
+  {
+    "command": "Compare complete WebKit test listing with the disjoint union of --shard=1/2 and --shard=2/2 listings",
+    "seconds": 2.27,
+    "exitCode": 0,
+    "inventory": {
+      "full": 310,
+      "part1": 202,
+      "part2": 108,
+      "overlap": 0,
+      "missing": 0
+    }
+  }
+]

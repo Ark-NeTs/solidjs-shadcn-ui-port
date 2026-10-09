@@ -73,3 +73,21 @@ An overlay contrast check observed an intermediate theme-transition color. Await
 | `CI=true THEME_PORT=4403 RESULTS_FILE=test-results/reports/ci-consumer-final.json bun run test:consumer --output=test-results/ci-consumer-final --global-timeout=120000` | 9 browser tests | 10.30 s |
 
 The final matrix runs source, built, hydration and consumer acceptance independently in isolated jobs, with suite-specific failure artifact names. All local completed checks passed. The final hosted outcome is reported with its exact run link in the task response. Manual accessibility/device acceptance and publication remain outside this CI increment.
+
+## Source-suite runtime adjustment
+
+[Run 37985785370](https://github.com/DmytroYeremieiev/solidjs-shadcn-ui-port/actions/runs/37985785370) passed 13 jobs, including every built/visual, hydration, consumer, static/unit/server and documentation job. WebKit source reached the 900-second suite limit after 258 passing tests; 52 tests did not run and no assertion failed. Split source integration into two isolated shards per engine, allow each source shard 1,200 seconds within a 25-minute job, and retain the previous limits for other suites. Both shards cover the entire suite; no tests or diagnostics are skipped. Final hosted outcomes remain linked from the task report.
+
+[Shard verification](../evidence/ci-shard-checks.json):
+
+| Command | Result | Time |
+| --- | --- | ---: |
+| `bun run check` | Pass | 6.13 s |
+| `bun run lint` | Pass | 2.88 s |
+| `bun run test:coverage` | Pass | 13.31 s |
+| `bun run test:server` | Pass | 1.28 s |
+| `bun run test:integration --project=webkit --shard=1/2 --list` | Pass | 0.56 s |
+| `bun run test:integration --project=webkit --shard=2/2 --list` | Pass | 0.50 s |
+| `Compare complete WebKit test listing with the disjoint union of --shard=1/2 and --shard=2/2 listings` | Pass | 2.27 s |
+
+WebKit inventory: 310 tests = 202 in shard 1 + 108 in shard 2; zero overlap and zero missing tests. The final workflow also passes actionlint 1.7.12.
