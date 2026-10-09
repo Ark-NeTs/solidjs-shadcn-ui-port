@@ -1,4 +1,5 @@
 // Interactive examples exercise public package exports and app-owned state; D19.
+import { NotificationCatalogExamples } from './catalog-notifications';
 import { LayoutCatalogExamples } from './catalog-layout';
 import { DateCatalogExamples } from './catalog-dates';
 import { createSignal, Show } from 'solid-js';
@@ -151,6 +152,7 @@ function Preview() {
   const query = new URLSearchParams(location.search);
   if (query.has('catalog-dates')) return <DateCatalogExamples/>;
   if (query.has('catalog-layout')) return <LayoutCatalogExamples/>;
+  if (query.has('catalog-notifications')) return <NotificationCatalogExamples/>;
   if (query.has('catalog-menus')) return <MenuCatalogExamples/>;
   if (query.has('catalog-modal')) return <ModalCatalogExamples/>;
   if (query.has('catalog-display')) return <DisplayCatalogExamples/>;

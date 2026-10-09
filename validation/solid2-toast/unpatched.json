@@ -1,0 +1,38 @@
+[
+  {
+    "browser": "chromium",
+    "checks": {
+      "show": true,
+      "update": true,
+      "dismiss": true,
+      "expire": true,
+      "unmount": true
+    },
+    "diagnostics": [
+      {
+        "type": "warning",
+        "text": "[IMMUTABLE_UPDATE_IN_STORE] \"store.toasts.0\" was replaced with a fresh object whose leaves are mostly the same values (2 of 4 unchanged, 2 changed) — a spread-copy update. The store already tracks leaves; a new container makes every reader of \"store.toasts.0\" re-run for the few that moved. Instead, assign the leaf on the draft (`store.toasts.0.<key> = …`) so only readers of that key re-run. For data arriving from outside (a fetch result), merge it with reconcile(data, key)(store.toasts.0).\n[IMMUTABLE_UPDATE_IN_STORE] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#immutable_update_in_store\n[IMMUTABLE_UPDATE_IN_STORE] deeper evidence: import { attribution } from \"solid-js/attribution\"; attribution.enable() explains every re-run — why-chains, costs(), feedback(), history(\"hold\" | \"waterfall\") — agent loop: node_modules/@solidjs/diagnostics/skills/agent-loops/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/diagnostics/skills/agent-loops/SKILL.md"
+      },
+      {
+        "type": "warning",
+        "text": "[STRICT_READ_UNTRACKED] Reactive value read directly in an effect callback will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\n[STRICT_READ_UNTRACKED] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#strict_read_untracked"
+      }
+    ]
+  },
+  {
+    "browser": "firefox",
+    "checks": {
+      "show": true,
+      "update": true,
+      "dismiss": true,
+      "expire": true,
+      "unmount": true
+    },
+    "diagnostics": [
+      {
+        "type": "warning",
+        "text": "[IMMUTABLE_UPDATE_IN_STORE] \"store.toasts.0\" was replaced with a fresh object whose leaves are mostly the same values (2 of 4 unchanged, 2 changed) — a spread-copy update. The store already tracks leaves; a new container makes every reader of \"store.toasts.0\" re-run for the few that moved. Instead, assign the leaf on the draft (`store.toasts.0.<key> = …`) so only readers of that key re-run. For data arriving from outside (a fetch result), merge it with reconcile(data, key)(store.toasts.0).\n[IMMUTABLE_UPDATE_IN_STORE] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#immutable_update_in_store\n[IMMUTABLE_UPDATE_IN_STORE] deeper evidence: import { attribution } from \"solid-js/attribution\"; attribution.enable() explains every re-run — why-chains, costs(), feedback(), history(\"hold\" | \"waterfall\") — agent loop: node_modules/@solidjs/diagnostics/skills/agent-loops/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/diagnostics/skills/agent-loops/SKILL.md"
+      }
+    ]
+  }
+]
