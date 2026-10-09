@@ -850,7 +850,7 @@ possible interaction or visual variant is tested. [Delivery](LIVE-DOCS-DELIVERY.
 settings, complete light/dark export parity, every setting option and shuffle locks.
 [Shared browser acceptance](../tests/theme-generator.ts) runs against source and
 built exports in Chromium, Firefox and WebKit. It verifies immediate styles and
-URL/reload persistence, retained form drafts, Tabs and pagination, locked shuffle,
+URL/reload persistence, retained form drafts, Tabs and holdings filtering, locked shuffle,
 reset, live chart repaint, Theme-only export, exact clipboard payload, denied-copy
 recovery, pending-copy disposal, Escape/reopen and focus restoration. Mobile
 light/dark checks use 390px width, enlarged text and axe, including the modal.
@@ -860,3 +860,20 @@ dark, mobile and export surfaces. [Public-site checks](../tests/site/public-site
 exercise `/?create` through the local deployment runtime. This does not certify
 all possible palette/font combinations or replace manual screen-reader testing.
 [Delivery](THEME-GENERATOR-DELIVERY.md).
+
+### Expanded create canvas
+
+[Generator browser cases](../tests/theme-generator.ts) assert all 37 card IDs in
+the six column groups, left-to-right geometry, the double-width center, and
+horizontal reachability without page overflow. They exercise new-goal dialog
+submission, transaction menus, FAQ tabs/accordion, holdings filters, receiving
+method changes, shades, mixed/select-all notifications, alert cancellation/focus,
+canceled account syncing, linked amount fields and summaries, calendar selection,
+and image selection with invalid-file recovery. These run against source and
+built exports in Chromium, Firefox and WebKit with strict diagnostics.
+
+The [visual suite](../tests/e2e/docs-site/visual.spec.ts) adds the full seven-column
+canvas to light/dark/mobile/export baselines. Existing mobile checks include
+enlarged text and axe. No primitive implementation changed; existing component
+unit/server coverage is retained. Demo forms do not imply backend persistence.
+See [expansion delivery](THEME-CANVAS-EXPANSION.md) for fresh evidence and limits.

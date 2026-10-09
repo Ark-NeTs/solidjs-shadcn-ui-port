@@ -1,0 +1,20 @@
+[
+  {
+    "name": "source",
+    "command": "THEME_PORT=4403 RESULTS_FILE=docs/evidence/theme-expansion-source.json bunx playwright test tests/integration/theme-generator.spec.ts tests/integration/docs-site.spec.ts --max-failures=1",
+    "exitCode": 0,
+    "seconds": 96.69
+  },
+  {
+    "name": "built",
+    "command": "THEME_PRODUCTION=1 THEME_PORT=4403 RESULTS_FILE=docs/evidence/theme-expansion-built.json bunx playwright test tests/e2e/theme-generator.spec.ts tests/e2e/docs-site.spec.ts tests/e2e/docs-site/visual.spec.ts --update-snapshots=none --max-failures=1",
+    "exitCode": 0,
+    "seconds": 90.02
+  },
+  {
+    "name": "public",
+    "command": "WRANGLER_BIN=/tmp/solid-docs-deploy/node_modules/wrangler/bin/wrangler.js THEME_PORT=4403 RESULTS_FILE=docs/evidence/theme-expansion-public.json bun run test:site",
+    "exitCode": 0,
+    "seconds": 23.62
+  }
+]

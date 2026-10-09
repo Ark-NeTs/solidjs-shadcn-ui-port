@@ -12,6 +12,8 @@ for(const id of ['tabs','data-table','dialog'])test(`inline ${id} preview layout
 });
 
 for(const mode of ['light','dark','mobile'])test(`theme generator ${mode} workspace`,async({page})=>{
- if(mode==='mobile')await page.setViewportSize({width:390,height:844});await page.goto(`/docs.html?create&accent=Violet&chart=Violet${mode==='dark'?'&dark':''}`);await expect(page.getByLabel('Project name',{exact:true})).toBeVisible();await page.evaluate(()=>document.fonts.ready);await expect(page).toHaveScreenshot(`theme-generator-${mode}.png`,{animations:'disabled',maxDiffPixelRatio:0.001});
+ if(mode==='mobile')await page.setViewportSize({width:390,height:844});await page.goto(`/docs.html?create&accent=Violet&chart=Violet${mode==='dark'?'&dark':''}`);await expect(page.locator('[data-preview-card=contributions]')).toBeVisible();await page.evaluate(()=>document.fonts.ready);await expect(page).toHaveScreenshot(`theme-generator-${mode}.png`,{animations:'disabled',maxDiffPixelRatio:0.001});
 });
 test('theme only export dialog',async({page})=>{await page.goto('/docs.html?create&dark');await page.getByRole('button',{name:'Get Code',exact:true}).first().click();await expect(page.getByRole('dialog',{name:'Theme Tokens'})).toBeVisible();await page.evaluate(()=>document.fonts.ready);await expect(page).toHaveScreenshot('theme-generator-export.png',{animations:'disabled',maxDiffPixelRatio:0.001});});
+
+test('full reference ordered theme canvas',async({page})=>{await page.setViewportSize({width:3400,height:2800});await page.goto('/docs.html?create');await expect(page.locator('[data-preview-card=notifications]')).toBeAttached();await page.evaluate(()=>document.fonts.ready);await expect(page.locator('.theme-canvas')).toHaveScreenshot('theme-generator-full-canvas.png',{animations:'disabled',maxDiffPixelRatio:0.001});});

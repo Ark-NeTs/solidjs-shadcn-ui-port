@@ -1,5 +1,8 @@
 # Live theme generator — 2026-10-09
 
+Subsequent canvas expansion: [37-card reference layout and fresh acceptance](THEME-CANVAS-EXPANSION.md).
+The results below describe the initial generator delivery.
+
 The docs Themes link opens `/docs.html?create` locally and `/?create` in the public
 static website. The customization sidebar and live card canvas follow the owner's
 [shadcn/ui create reference](https://ui.shadcn.com/create) and attached Theme popup.

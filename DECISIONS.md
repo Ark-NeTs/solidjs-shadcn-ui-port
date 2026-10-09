@@ -739,3 +739,18 @@ Tokens, selectable CSS and Copy Theme. It preserves semantic ancestry, restores
 the opening button's focus and ignores clipboard completion after closing or
 unmounting. New/existing-project flows, framework/library selection and code
 scaffolding are intentionally absent from this theme-only tool.
+
+## Reference-ordered theme canvas — 2026-10-09
+
+The theme generator now follows the 37-card `preview-02` composition observed on
+https://ui.shadcn.com/create: seven fixed columns, with columns three and four
+forming a nested center group. The preview scrolls in both directions inside its
+own focusable region. Narrow screens retain the reference ordering rather than
+reflowing cards into a different gallery. Shared card/field/chart helpers and
+three composition modules reuse accepted public Solid components.
+
+Demo actions are local. Cover images use revocable object URLs, reject unsupported
+files without discarding the previous preview, and never upload to a service.
+Monetary summaries derive from editable amounts; informational rows keep stable
+identity during updates. The connection pattern is explicitly illustrative.
+The existing Theme-only export and token mapping remain unchanged.

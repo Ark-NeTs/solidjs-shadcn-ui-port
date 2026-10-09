@@ -72,7 +72,9 @@ heading and body font stacks, radius and density. Shuffle honors locked controls
 **Get Code** opens only the Theme export with complete light/dark CSS variables.
 Paste these blocks after the theme imports in your stylesheet; bundled Inter or
 system font stacks require no additional downloads. Settings survive reload in
-the URL, while example drafts remain local to the current page.
+the URL, while example drafts remain local to the current page. The preview now
+contains 37 live cards in the reference's seven-column order, including its nested
+center section. Scroll the canvas horizontally and vertically to explore them.
 
 Use Vite to build, Vitest for unit tests, Playwright for browser acceptance, and
 Cloudflare Workers Static Assets to host. [Deployment instructions](docs/DEPLOYMENT.md)

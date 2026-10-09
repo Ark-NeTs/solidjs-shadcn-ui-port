@@ -1,0 +1,26 @@
+[
+  {
+    "command": "bun run test",
+    "exitCode": 0,
+    "seconds": 9.46,
+    "summary": "$ vitest run\n\n RUN  v4.1.10 /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme\n\n\n Test Files  33 passed (33)\n      Tests  400 passed (400)\n   Start at  20:27:51\n   Duration  9.03s (transform 10.25s, setup 7.47s, import 18.17s, tests 25.21s, environment 23.60s)\n\n"
+  },
+  {
+    "command": "bun run test:server",
+    "exitCode": 0,
+    "seconds": 1.38,
+    "summary": "$ vitest run --config vitest.server.config.ts\n\n RUN  v4.1.10 /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme\n\n\n Test Files  1 passed (1)\n      Tests  26 passed (26)\n   Start at  20:28:00\n   Duration  974ms (transform 653ms, setup 0ms, import 794ms, tests 89ms, environment 0ms)\n\n"
+  },
+  {
+    "command": "bun run check",
+    "exitCode": 0,
+    "seconds": 9.49,
+    "summary": "$ tsc --noEmit\n"
+  },
+  {
+    "command": "bun run lint",
+    "exitCode": 0,
+    "seconds": 3.49,
+    "summary": "$ eslint src tests playground scripts *.ts\n"
+  }
+]
