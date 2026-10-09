@@ -785,3 +785,15 @@ Public packaging must match the exact generated component/guide page inventory,
 including files absent from navigation. Reject extra documentation JSON pages
 rather than treating every filename under the page directory as approved. See
 [documentation boundary audit](../PARENT-DOCUMENTATION-AUDIT.md) for scope and evidence.
+
+## GitHub Actions CI — 2026-10-09
+
+The owner authorized a CI workflow for unit, browser and documentation checks
+with short retention for screenshots and failure traces. Use frozen installs
+and immutable action release pins. Standard Ubuntu runners execute static/unit
+and public-site checks; standard macOS 15 arm64 runners match the reviewed visual
+platform for three-engine source, built, hydration and consumer acceptance.
+Maintain one worker, strict diagnostics and no retries. Preserve suite outputs
+separately, upload diagnostics only on failure, and expire artifacts after three
+days. Read-only workflow permissions and local provider tests require no secrets
+or deployment actions. See [CI guide](../CI.md) and [delivery](../delivery/CI-DELIVERY.md).

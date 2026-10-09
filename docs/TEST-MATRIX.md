@@ -906,3 +906,14 @@ The [artifact checker](../scripts/check-site.mjs) also requires the exact approv
 guide/component page inventory, even for files absent from navigation.
 [Boundary audit](PARENT-DOCUMENTATION-AUDIT.md) records the negative packaging
 probe, history/fixture review and verification limits.
+
+### GitHub Actions automation
+
+[The CI workflow](../.github/workflows/ci.yml) runs existing units/coverage, SSR,
+full source integration, built E2E/Chromium visuals, hydration, isolated-consumer
+and documentation/public-site checks. Three macOS browser jobs preserve the
+reviewed screenshot platform; Ubuntu also verifies the public documentation.
+No retries or baseline acceptance are introduced. Failure screenshots, traces
+and JSON reports expire after three days. Hosting checks automate the existing
+assertions rather than expanding their behavioral scope. See [CI guide](CI.md)
+and [delivery](delivery/CI-DELIVERY.md) for measured results and platform limits.

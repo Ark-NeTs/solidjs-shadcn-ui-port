@@ -8,6 +8,7 @@ Return to the [repository README](../README.md) for setup and commands.
 
 - [Getting started](GETTING-STARTED.md) — install, import and customize components.
 - [Component guide](components.md) — APIs, examples and composition recipes.
+- [Continuous integration](CI.md) — automated checks and short-lived failure evidence.
 - [Website deployment](DEPLOYMENT.md) — build, verify, publish and roll back the documentation site.
 - [Project completion](PROJECT-COMPLETION.md) — current status and remaining release decisions.
 - [Origins and attribution](ORIGINS.md) — upstream sources and licensing context.

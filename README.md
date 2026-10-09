@@ -217,6 +217,12 @@ The deployment tools and optional router/query harness keep their own lockfiles
 and local installs in `deployment` and `validation/consumer-stack`. No temporary
 dependency directory or restaurant-management checkout is required.
 
+## Continuous integration
+
+[GitHub Actions](.github/workflows/ci.yml) checks units, server rendering, all three
+browser engines, visual baselines, hydration and documentation. Failure screenshots
+and traces are retained for three days. See [CI guide](docs/CI.md).
+
 ## Commands
 
 ```sh

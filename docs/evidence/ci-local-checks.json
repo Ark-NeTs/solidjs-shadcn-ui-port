@@ -1,0 +1,63 @@
+[
+  {
+    "command": "/tmp/solid-ci-actionlint/actionlint .github/workflows/ci.yml",
+    "exitCode": 0,
+    "seconds": 0.02
+  },
+  {
+    "command": "bun run check",
+    "exitCode": 0,
+    "seconds": 5.1
+  },
+  {
+    "command": "bun run lint",
+    "exitCode": 0,
+    "seconds": 2.18
+  },
+  {
+    "command": "bun run test:coverage",
+    "exitCode": 0,
+    "seconds": 10.43
+  },
+  {
+    "command": "bun run test:server",
+    "exitCode": 0,
+    "seconds": 1.29
+  },
+  {
+    "command": "bun run docs:check",
+    "exitCode": 0,
+    "seconds": 1.99
+  },
+  {
+    "command": "THEME_PORT=4403 RESULTS_FILE=test-results/reports/ci-docs-source.json bunx --no-install playwright test tests/integration/docs-site.spec.ts --output=test-results/ci-docs-source --global-timeout=300000",
+    "exitCode": 0,
+    "seconds": 30.13,
+    "browserStats": {
+      "startTime": "2026-10-09T19:41:05.110Z",
+      "duration": 29811.72,
+      "expected": 21,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  },
+  {
+    "command": "THEME_PORT=4403 RESULTS_FILE=test-results/reports/ci-public-site.json bun run test:site --output=test-results/ci-public-site --global-timeout=300000",
+    "exitCode": 0,
+    "seconds": 21.15,
+    "browserStats": {
+      "startTime": "2026-10-09T19:41:35.263Z",
+      "duration": 20810.538,
+      "expected": 15,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  },
+  {
+    "command": "bun run parity:admin",
+    "exitCode": 0,
+    "seconds": 0.41
+  }
+]
