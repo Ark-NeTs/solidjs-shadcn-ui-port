@@ -25,3 +25,14 @@ it('Public core state serializes and rejected filters restore their default empt
 it('Disposal during a controlled request leaves detached filter and page-size elements alone',()=>{for(const label of ['Filter rows','Rows per page']){render(()=><DataTable data={rows} columns={columns} onStateChange={()=>cleanup()}/>);const control=screen.getByLabelText(label);if(label==='Filter rows')fireEvent.input(control,{target:{value:'Last edit'}});else fireEvent.change(control,{target:{value:'20'}});flush();expect(control.isConnected).toBe(false);}});
 
 it('A custom initial page size remains represented when omitted from the offered sizes',()=>{render(()=><DataTable data={rows} columns={columns} initialState={{pagination:{pageIndex:0,pageSize:42}}} pageSizes={[2,3]}/>);expect(screen.getByRole('combobox',{name:'Rows per page'})).toHaveValue('42');expect(screen.getAllByRole('option').map(option=>option.textContent)).toEqual(['2','3','42']);});
+
+
+it('uncontrolled selection and pagination do not recompute controlled visibility, while partial resets retain defaults',()=>{
+ let table!:DataTableInstance<Row>;let visibilityReads=0;const visibility={};const state={get columnVisibility(){visibilityReads++;return visibility;}};
+ /** Read visibility through the same public state proxy used by table views. */
+ function View(){table=createDataTable(()=>({data:rows,columns,state}));return <output>{JSON.stringify(table.getState().columnVisibility)}</output>;}
+ render(View);flush();const baseline=visibilityReads;
+ table.setRowSelection({a:true});flush();table.setPageSize(2);flush();table.setSorting([{id:'name',desc:false}]);flush();table.setRowSelection({b:true});flush();
+ expect(visibilityReads).toBe(baseline);expect(table.getState().rowSelection).toEqual({b:true});expect(table.getState().pagination.pageSize).toBe(2);expect(table.getState().columnVisibility).toBe(visibility);
+ table.setState({sorting:[]} as unknown as typeof table.initialState);flush();expect(table.getState().pagination).toEqual(table.initialState.pagination);expect(table.getState().rowSelection).toEqual({});
+});

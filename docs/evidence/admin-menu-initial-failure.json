@@ -1,0 +1,225 @@
+{
+  "config": {
+    "argv": [
+      "/Users/arktas/.asdf/installs/nodejs/25.3.0/bin/node",
+      "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/node_modules/.bin/playwright",
+      "test",
+      "tests/integration/admin-menu.spec.ts",
+      "--project=chromium",
+      "--grep",
+      "validates a draft",
+      "--max-failures=1"
+    ],
+    "configFile": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/playwright.config.ts",
+    "rootDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 1,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "integration/**/*.spec.ts",
+          "e2e/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [
+          "**/visual.spec.ts"
+        ],
+        "testMatch": [
+          "integration/**/*.spec.ts",
+          "e2e/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [
+          "**/visual.spec.ts"
+        ],
+        "testMatch": [
+          "integration/**/*.spec.ts",
+          "e2e/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "docs/evidence/admin-menu-initial-failure.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": {
+      "command": "bun run dev",
+      "url": "http://127.0.0.1:4403",
+      "reuseExistingServer": false,
+      "timeout": 60000
+    }
+  },
+  "suites": [
+    {
+      "title": "integration/admin-menu.spec.ts",
+      "file": "integration/admin-menu.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "validates a draft, edits nested controls, saves canonical rows and restores row focus",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 7058,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeFocused\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('button', { name: 'Edit Seasonal pizza' })\nExpected: focused\nReceived: inactive\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeFocused\" getByRole('button', { name: 'Edit Seasonal pizza' }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Edit Seasonal pizza' })\u001b[22m\n\u001b[2m    14 × locator resolved to <button type=\"button\" data-size=\"sm\" data-slot=\"button\" data-variant=\"outline\" aria-label=\"Edit Seasonal pizza\" class=\"group/button inline-flex shrink-0 items-center justify-center border bg-clip-padding font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ri…>Edit</button>\u001b[22m\n\u001b[2m       - unexpected value \"inactive\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeFocused\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('button', { name: 'Edit Seasonal pizza' })\nExpected: focused\nReceived: inactive\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeFocused\" getByRole('button', { name: 'Edit Seasonal pizza' }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Edit Seasonal pizza' })\u001b[22m\n\u001b[2m    14 × locator resolved to <button type=\"button\" data-size=\"sm\" data-slot=\"button\" data-variant=\"outline\" aria-label=\"Edit Seasonal pizza\" class=\"group/button inline-flex shrink-0 items-center justify-center border bg-clip-padding font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ri…>Edit</button>\u001b[22m\n\u001b[2m       - unexpected value \"inactive\"\u001b[22m\n\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/admin-menu.ts:11:378",
+                    "location": {
+                      "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/admin-menu.ts",
+                      "column": 378,
+                      "line": 11
+                    },
+                    "snippet": "   9 |   await expect(page.getByLabel('Item name',{exact:true})).toBeFocused();await page.getByLabel('Item name',{exact:true}).fill('');await page.getByLabel('Price (USD)').fill('-1');await dialog.getByRole('button',{name:'Save changes'}).click();await expect(page.getByLabel('Item name',{exact:true})).toBeFocused();await expect(page.getByLabel('Price (USD)')).toHaveAttribute('aria-invalid','true');\n  10 |   await page.getByLabel('Item name',{exact:true}).fill('Seasonal pizza');await page.getByLabel('Price (USD)').fill('15.25');await page.getByRole('combobox',{name:'Category',exact:true}).click();await page.getByRole('option',{name:'Desserts',exact:true}).click();await expect(dialog).toBeVisible();await page.getByLabel('Kitchen notes').fill('Keep the dressing on the side.');await page.getByRole('checkbox',{name:'Vegetarian',exact:true}).uncheck();await page.getByRole('switch',{name:'Available to order'}).uncheck();await dialog.getByRole('button',{name:'Save changes'}).click();await expect(dialog).toHaveCount(0);\n> 11 |   const row=page.getByRole('row').filter({has:page.getByText('Seasonal pizza',{exact:true})});await expect(row).toContainText('$15.25');await expect(row).toContainText('Desserts');await expect(row).toContainText('Unavailable');await expect(page.getByTestId('menu-notice')).toHaveText('Saved Seasonal pizza.');await expect(page.getByRole('button',{name:'Edit Seasonal pizza'})).toBeFocused();\n     |                                                                                                                                                                                                                                                                                                                                                                                          ^\n  12 |   await page.keyboard.press('Enter');await expect(page.getByLabel('Kitchen notes')).toHaveValue('Keep the dressing on the side.');await expect(page.getByRole('checkbox',{name:'Vegetarian',exact:true})).not.toBeChecked();await page.keyboard.press('Escape');await expect(page.getByRole('button',{name:'Edit Seasonal pizza'})).toBeFocused();\n  13 |  });\n  14 |  test('rejects a save without changing rows, preserves the draft and only retries explicitly',async({page})=>{"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/admin-menu.ts",
+                        "column": 378,
+                        "line": 11
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeFocused\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('button', { name: 'Edit Seasonal pizza' })\nExpected: focused\nReceived: inactive\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeFocused\" getByRole('button', { name: 'Edit Seasonal pizza' }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Edit Seasonal pizza' })\u001b[22m\n\u001b[2m    14 × locator resolved to <button type=\"button\" data-size=\"sm\" data-slot=\"button\" data-variant=\"outline\" aria-label=\"Edit Seasonal pizza\" class=\"group/button inline-flex shrink-0 items-center justify-center border bg-clip-padding font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ri…>Edit</button>\u001b[22m\n\u001b[2m       - unexpected value \"inactive\"\u001b[22m\n\n\n   9 |   await expect(page.getByLabel('Item name',{exact:true})).toBeFocused();await page.getByLabel('Item name',{exact:true}).fill('');await page.getByLabel('Price (USD)').fill('-1');await dialog.getByRole('button',{name:'Save changes'}).click();await expect(page.getByLabel('Item name',{exact:true})).toBeFocused();await expect(page.getByLabel('Price (USD)')).toHaveAttribute('aria-invalid','true');\n  10 |   await page.getByLabel('Item name',{exact:true}).fill('Seasonal pizza');await page.getByLabel('Price (USD)').fill('15.25');await page.getByRole('combobox',{name:'Category',exact:true}).click();await page.getByRole('option',{name:'Desserts',exact:true}).click();await expect(dialog).toBeVisible();await page.getByLabel('Kitchen notes').fill('Keep the dressing on the side.');await page.getByRole('checkbox',{name:'Vegetarian',exact:true}).uncheck();await page.getByRole('switch',{name:'Available to order'}).uncheck();await dialog.getByRole('button',{name:'Save changes'}).click();await expect(dialog).toHaveCount(0);\n> 11 |   const row=page.getByRole('row').filter({has:page.getByText('Seasonal pizza',{exact:true})});await expect(row).toContainText('$15.25');await expect(row).toContainText('Desserts');await expect(row).toContainText('Unavailable');await expect(page.getByTestId('menu-notice')).toHaveText('Saved Seasonal pizza.');await expect(page.getByRole('button',{name:'Edit Seasonal pizza'})).toBeFocused();\n     |                                                                                                                                                                                                                                                                                                                                                                                          ^\n  12 |   await page.keyboard.press('Enter');await expect(page.getByLabel('Kitchen notes')).toHaveValue('Keep the dressing on the side.');await expect(page.getByRole('checkbox',{name:'Vegetarian',exact:true})).not.toBeChecked();await page.keyboard.press('Escape');await expect(page.getByRole('button',{name:'Edit Seasonal pizza'})).toBeFocused();\n  13 |  });\n  14 |  test('rejects a save without changing rows, preserves the draft and only retries explicitly',async({page})=>{\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/admin-menu.ts:11:378"
+                    },
+                    {
+                      "location": {
+                        "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/browser-fixture.ts",
+                        "column": 69,
+                        "line": 10
+                      },
+                      "message": "Error: No browser errors or development diagnostics\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  -  1\u001b[39m\n\u001b[31m+ Received  + 25\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"[STRICT_READ_UNTRACKED] Reactive value \\\"createControllable.local\\\" read directly in an effect callback will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function).\u001b[39m\n\u001b[31m+ [STRICT_READ_UNTRACKED] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#strict_read_untracked Error: warning origin\u001b[39m\n\u001b[31m+     at console.warn (<anonymous>:4:49)\u001b[39m\n\u001b[31m+     at console.<computed> [as warn] (http://127.0.0.1:4403/@vite/client:357:4)\u001b[39m\n\u001b[31m+     at reportDiagnostic (http://127.0.0.1:4403/@fs/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/node_modules/.vite/deps/dev-shared-DNHqQKh2.js?v=f3df0104:624:64)\u001b[39m\n\u001b[31m+     at warnStrictReadUntracked (http://127.0.0.1:4403/@fs/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/node_modules/.vite/deps/dev-shared-DNHqQKh2.js?v=f3df0104:645:2)\u001b[39m\n\u001b[31m+     at read (http://127.0.0.1:4403/@fs/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/node_modules/.vite/deps/dev-shared-DNHqQKh2.js?v=f3df0104:4218:18)\u001b[39m\n\u001b[31m+     at current (http://127.0.0.1:4403/@fs/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/src/lib/controllable.ts:6:35)\u001b[39m\n\u001b[31m+     at Object.requestOpen (http://127.0.0.1:4403/@fs/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/src/lib/controllable.ts:8:16)\u001b[39m\n\u001b[31m+     at HTMLDocument.outside (http://127.0.0.1:4403/@fs/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/src/components/ui/select.tsx:388:69)\u001b[39m\n\u001b[31m+     at http://127.0.0.1:4403/@fs/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/src/lib/layer.ts:187:22\u001b[39m\n\u001b[31m+     at runEffect (http://127.0.0.1:4403/@fs/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/node_modules/.vite/deps/solid.dev-ByzSm6jT.js?v=f3df0104:1133:16)\",\u001b[39m\n\u001b[31m+   \"[STRICT_READ_UNTRACKED] Reactive value \\\"createControllable.local\\\" read directly in an effect callback will not update. Move it into a tracking scope (JSX, a memo, or an effect's compute function). Error: warning origin\u001b[39m\n\u001b[31m+     at console.warn (<anonymous>:4:49)\u001b[39m\n\u001b[31m+     at console.<computed> [as warn] (http://127.0.0.1:4403/@vite/client:357:4)\u001b[39m\n\u001b[31m+     at reportDiagnostic (http://127.0.0.1:4403/@fs/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/node_modules/.vite/deps/dev-shared-DNHqQKh2.js?v=f3df0104:624:64)\u001b[39m\n\u001b[31m+     at warnStrictReadUntracked (http://127.0.0.1:4403/@fs/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/node_modules/.vite/deps/dev-shared-DNHqQKh2.js?v=f3df0104:645:2)\u001b[39m\n\u001b[31m+     at read (http://127.0.0.1:4403/@fs/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/node_modules/.vite/deps/dev-shared-DNHqQKh2.js?v=f3df0104:4218:18)\u001b[39m\n\u001b[31m+     at current (http://127.0.0.1:4403/@fs/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/src/lib/controllable.ts:6:35)\u001b[39m\n\u001b[31m+     at Object.requestOpen (http://127.0.0.1:4403/@fs/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/src/lib/controllable.ts:8:16)\u001b[39m\n\u001b[31m+     at HTMLDocument.outside (http://127.0.0.1:4403/@fs/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/src/components/ui/select.tsx:388:69)\u001b[39m\n\u001b[31m+     at Object._effectFn (http://127.0.0.1:4403/@fs/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/src/lib/layer.ts:166:9)\u001b[39m\n\u001b[31m+     at runEffect (http://127.0.0.1:4403/@fs/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/node_modules/.vite/deps/solid.dev-ByzSm6jT.js?v=f3df0104:1134:28)\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n   at browser-fixture.ts:10\n\n   8 |     await use(messages);\n   9 |     await testInfo.attach('browser-diagnostics',{body:JSON.stringify(messages),contentType:'application/json'});\n> 10 |     expect(messages,'No browser errors or development diagnostics').toEqual([]);\n     |                                                                     ^\n  11 |   },{auto:true}],\n  12 | });\n  13 | export { expect };\n    at Object.base.extend.diagnostics.auto (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/browser-fixture.ts:10:69)"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T09:54:04.259Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/integration-admin-menu-val-be5ec-rows-and-restores-row-focus-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "WyJbU1RSSUNUX1JFQURfVU5UUkFDS0VEXSBSZWFjdGl2ZSB2YWx1ZSBcImNyZWF0ZUNvbnRyb2xsYWJsZS5sb2NhbFwiIHJlYWQgZGlyZWN0bHkgaW4gYW4gZWZmZWN0IGNhbGxiYWNrIHdpbGwgbm90IHVwZGF0ZS4gTW92ZSBpdCBpbnRvIGEgdHJhY2tpbmcgc2NvcGUgKEpTWCwgYSBtZW1vLCBvciBhbiBlZmZlY3QncyBjb21wdXRlIGZ1bmN0aW9uKS5cbltTVFJJQ1RfUkVBRF9VTlRSQUNLRURdIHJlcGFpciBndWlkZTogbm9kZV9tb2R1bGVzL3NvbGlkLWpzL3NraWxscy9yZWFjdGl2aXR5LWRpYWdub3N0aWNzL1NLSUxMLm1kIOKAlCBodHRwczovL2dpdGh1Yi5jb20vc29saWRqcy9zb2xpZC9ibG9iL21haW4vcGFja2FnZXMvc29saWQvc2tpbGxzL3JlYWN0aXZpdHktZGlhZ25vc3RpY3MvU0tJTEwubWQjc3RyaWN0X3JlYWRfdW50cmFja2VkIEVycm9yOiB3YXJuaW5nIG9yaWdpblxuICAgIGF0IGNvbnNvbGUud2FybiAoPGFub255bW91cz46NDo0OSlcbiAgICBhdCBjb25zb2xlLjxjb21wdXRlZD4gW2FzIHdhcm5dIChodHRwOi8vMTI3LjAuMC4xOjQ0MDMvQHZpdGUvY2xpZW50OjM1Nzo0KVxuICAgIGF0IHJlcG9ydERpYWdub3N0aWMgKGh0dHA6Ly8xMjcuMC4wLjE6NDQwMy9AZnMvVXNlcnMvYXJrdGFzL0dpdEh1Yi9yZXN0YXVyYW50LW1hbmFnZW1lbnQvcGFja2FnZXMvc2hhZGNuLXNvbGlkanMtdGhlbWUvbm9kZV9tb2R1bGVzLy52aXRlL2RlcHMvZGV2LXNoYXJlZC1ETkhxUUtoMi5qcz92PWYzZGYwMTA0OjYyNDo2NClcbiAgICBhdCB3YXJuU3RyaWN0UmVhZFVudHJhY2tlZCAoaHR0cDovLzEyNy4wLjAuMTo0NDAzL0Bmcy9Vc2Vycy9hcmt0YXMvR2l0SHViL3Jlc3RhdXJhbnQtbWFuYWdlbWVudC9wYWNrYWdlcy9zaGFkY24tc29saWRqcy10aGVtZS9ub2RlX21vZHVsZXMvLnZpdGUvZGVwcy9kZXYtc2hhcmVkLUROSHFRS2gyLmpzP3Y9ZjNkZjAxMDQ6NjQ1OjIpXG4gICAgYXQgcmVhZCAoaHR0cDovLzEyNy4wLjAuMTo0NDAzL0Bmcy9Vc2Vycy9hcmt0YXMvR2l0SHViL3Jlc3RhdXJhbnQtbWFuYWdlbWVudC9wYWNrYWdlcy9zaGFkY24tc29saWRqcy10aGVtZS9ub2RlX21vZHVsZXMvLnZpdGUvZGVwcy9kZXYtc2hhcmVkLUROSHFRS2gyLmpzP3Y9ZjNkZjAxMDQ6NDIxODoxOClcbiAgICBhdCBjdXJyZW50IChodHRwOi8vMTI3LjAuMC4xOjQ0MDMvQGZzL1VzZXJzL2Fya3Rhcy9HaXRIdWIvcmVzdGF1cmFudC1tYW5hZ2VtZW50L3BhY2thZ2VzL3NoYWRjbi1zb2xpZGpzLXRoZW1lL3NyYy9saWIvY29udHJvbGxhYmxlLnRzOjY6MzUpXG4gICAgYXQgT2JqZWN0LnJlcXVlc3RPcGVuIChodHRwOi8vMTI3LjAuMC4xOjQ0MDMvQGZzL1VzZXJzL2Fya3Rhcy9HaXRIdWIvcmVzdGF1cmFudC1tYW5hZ2VtZW50L3BhY2thZ2VzL3NoYWRjbi1zb2xpZGpzLXRoZW1lL3NyYy9saWIvY29udHJvbGxhYmxlLnRzOjg6MTYpXG4gICAgYXQgSFRNTERvY3VtZW50Lm91dHNpZGUgKGh0dHA6Ly8xMjcuMC4wLjE6NDQwMy9AZnMvVXNlcnMvYXJrdGFzL0dpdEh1Yi9yZXN0YXVyYW50LW1hbmFnZW1lbnQvcGFja2FnZXMvc2hhZGNuLXNvbGlkanMtdGhlbWUvc3JjL2NvbXBvbmVudHMvdWkvc2VsZWN0LnRzeDozODg6NjkpXG4gICAgYXQgaHR0cDovLzEyNy4wLjAuMTo0NDAzL0Bmcy9Vc2Vycy9hcmt0YXMvR2l0SHViL3Jlc3RhdXJhbnQtbWFuYWdlbWVudC9wYWNrYWdlcy9zaGFkY24tc29saWRqcy10aGVtZS9zcmMvbGliL2xheWVyLnRzOjE4NzoyMlxuICAgIGF0IHJ1bkVmZmVjdCAoaHR0cDovLzEyNy4wLjAuMTo0NDAzL0Bmcy9Vc2Vycy9hcmt0YXMvR2l0SHViL3Jlc3RhdXJhbnQtbWFuYWdlbWVudC9wYWNrYWdlcy9zaGFkY24tc29saWRqcy10aGVtZS9ub2RlX21vZHVsZXMvLnZpdGUvZGVwcy9zb2xpZC5kZXYtQnl6U202alQuanM/dj1mM2RmMDEwNDoxMTMzOjE2KSIsIltTVFJJQ1RfUkVBRF9VTlRSQUNLRURdIFJlYWN0aXZlIHZhbHVlIFwiY3JlYXRlQ29udHJvbGxhYmxlLmxvY2FsXCIgcmVhZCBkaXJlY3RseSBpbiBhbiBlZmZlY3QgY2FsbGJhY2sgd2lsbCBub3QgdXBkYXRlLiBNb3ZlIGl0IGludG8gYSB0cmFja2luZyBzY29wZSAoSlNYLCBhIG1lbW8sIG9yIGFuIGVmZmVjdCdzIGNvbXB1dGUgZnVuY3Rpb24pLiBFcnJvcjogd2FybmluZyBvcmlnaW5cbiAgICBhdCBjb25zb2xlLndhcm4gKDxhbm9ueW1vdXM+OjQ6NDkpXG4gICAgYXQgY29uc29sZS48Y29tcHV0ZWQ+IFthcyB3YXJuXSAoaHR0cDovLzEyNy4wLjAuMTo0NDAzL0B2aXRlL2NsaWVudDozNTc6NClcbiAgICBhdCByZXBvcnREaWFnbm9zdGljIChodHRwOi8vMTI3LjAuMC4xOjQ0MDMvQGZzL1VzZXJzL2Fya3Rhcy9HaXRIdWIvcmVzdGF1cmFudC1tYW5hZ2VtZW50L3BhY2thZ2VzL3NoYWRjbi1zb2xpZGpzLXRoZW1lL25vZGVfbW9kdWxlcy8udml0ZS9kZXBzL2Rldi1zaGFyZWQtRE5IcVFLaDIuanM/dj1mM2RmMDEwNDo2MjQ6NjQpXG4gICAgYXQgd2FyblN0cmljdFJlYWRVbnRyYWNrZWQgKGh0dHA6Ly8xMjcuMC4wLjE6NDQwMy9AZnMvVXNlcnMvYXJrdGFzL0dpdEh1Yi9yZXN0YXVyYW50LW1hbmFnZW1lbnQvcGFja2FnZXMvc2hhZGNuLXNvbGlkanMtdGhlbWUvbm9kZV9tb2R1bGVzLy52aXRlL2RlcHMvZGV2LXNoYXJlZC1ETkhxUUtoMi5qcz92PWYzZGYwMTA0OjY0NToyKVxuICAgIGF0IHJlYWQgKGh0dHA6Ly8xMjcuMC4wLjE6NDQwMy9AZnMvVXNlcnMvYXJrdGFzL0dpdEh1Yi9yZXN0YXVyYW50LW1hbmFnZW1lbnQvcGFja2FnZXMvc2hhZGNuLXNvbGlkanMtdGhlbWUvbm9kZV9tb2R1bGVzLy52aXRlL2RlcHMvZGV2LXNoYXJlZC1ETkhxUUtoMi5qcz92PWYzZGYwMTA0OjQyMTg6MTgpXG4gICAgYXQgY3VycmVudCAoaHR0cDovLzEyNy4wLjAuMTo0NDAzL0Bmcy9Vc2Vycy9hcmt0YXMvR2l0SHViL3Jlc3RhdXJhbnQtbWFuYWdlbWVudC9wYWNrYWdlcy9zaGFkY24tc29saWRqcy10aGVtZS9zcmMvbGliL2NvbnRyb2xsYWJsZS50czo2OjM1KVxuICAgIGF0IE9iamVjdC5yZXF1ZXN0T3BlbiAoaHR0cDovLzEyNy4wLjAuMTo0NDAzL0Bmcy9Vc2Vycy9hcmt0YXMvR2l0SHViL3Jlc3RhdXJhbnQtbWFuYWdlbWVudC9wYWNrYWdlcy9zaGFkY24tc29saWRqcy10aGVtZS9zcmMvbGliL2NvbnRyb2xsYWJsZS50czo4OjE2KVxuICAgIGF0IEhUTUxEb2N1bWVudC5vdXRzaWRlIChodHRwOi8vMTI3LjAuMC4xOjQ0MDMvQGZzL1VzZXJzL2Fya3Rhcy9HaXRIdWIvcmVzdGF1cmFudC1tYW5hZ2VtZW50L3BhY2thZ2VzL3NoYWRjbi1zb2xpZGpzLXRoZW1lL3NyYy9jb21wb25lbnRzL3VpL3NlbGVjdC50c3g6Mzg4OjY5KVxuICAgIGF0IE9iamVjdC5fZWZmZWN0Rm4gKGh0dHA6Ly8xMjcuMC4wLjE6NDQwMy9AZnMvVXNlcnMvYXJrdGFzL0dpdEh1Yi9yZXN0YXVyYW50LW1hbmFnZW1lbnQvcGFja2FnZXMvc2hhZGNuLXNvbGlkanMtdGhlbWUvc3JjL2xpYi9sYXllci50czoxNjY6OSlcbiAgICBhdCBydW5FZmZlY3QgKGh0dHA6Ly8xMjcuMC4wLjE6NDQwMy9AZnMvVXNlcnMvYXJrdGFzL0dpdEh1Yi9yZXN0YXVyYW50LW1hbmFnZW1lbnQvcGFja2FnZXMvc2hhZGNuLXNvbGlkanMtdGhlbWUvbm9kZV9tb2R1bGVzLy52aXRlL2RlcHMvc29saWQuZGV2LUJ5elNtNmpULmpzP3Y9ZjNkZjAxMDQ6MTEzNDoyOCkiXQ=="
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/integration-admin-menu-val-be5ec-rows-and-restores-row-focus-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/integration-admin-menu-val-be5ec-rows-and-restores-row-focus-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/admin-menu.ts",
+                    "column": 378,
+                    "line": 11
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "6034625a11869da9a114-89afc8c9fa1987e89cd6",
+          "file": "admin-menu.ts",
+          "line": 7,
+          "column": 2
+        }
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "message": "\u001b[31mTesting stopped early after 1 maximum allowed failures.\u001b[39m"
+    }
+  ],
+  "stats": {
+    "startTime": "2026-10-09T09:54:02.892Z",
+    "duration": 8799.668,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

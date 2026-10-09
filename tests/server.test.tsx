@@ -110,3 +110,6 @@ it('renders Questionnaire fieldsets and inactive answers without browser form wo
 
 import {DataTableCatalogContent} from '../playground/catalog-data-table';
 it('renders Data Table headers, first-page rows and selection controls without browser work',()=>{const html=renderToString(()=><DataTableCatalogContent/>);for(const text of ['Customer accounts','Customer 01','Customer 10','Select all rows on this page','aria-sort="none"','Rows per page'])expect(html).toContain(text);expect(html).not.toContain('Customer 11');});
+
+import {AdminMenuContent} from '../playground/admin-menu';
+it('renders the admin menu composition without contacting its service or mounting an editor',()=>{let requests=0;const html=renderToString(()=><AdminMenuContent api={{list:async()=>{requests++;return [];},save:async item=>{requests++;return item;}}}/>);expect(requests).toBe(0);for(const text of ['Restaurant menu items','Margherita pizza','Garden salad','Edit Lemon chicken','Select row menu-1'])expect(html).toContain(text);expect(html).not.toContain('Mushroom risotto');expect(html).not.toContain('id="menu-editor"');});

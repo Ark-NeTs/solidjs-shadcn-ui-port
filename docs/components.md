@@ -1502,3 +1502,35 @@ Examples: `/?catalog-data-table`. [Adapter repairs, acceptance and limits](DATA-
 ![Data Table](screenshots/catalog-data-table-light.png)
 ![Dark Data Table](screenshots/catalog-data-table-dark.png)
 ![Mobile Data Table](screenshots/catalog-data-table-mobile.png)
+
+## Restaurant admin composition
+
+Open `/?admin-menu` in the playground for a realistic restaurant menu editor.
+Filter, sort, select and page through dishes, then edit a row in a Dialog. The
+form combines Input, Textarea, Field/Label, a nested Select, Checkbox and Switch.
+Name and price validation focuses the first invalid field. Reset and Cancel
+discard the draft; confirmed rows update only after the injected service accepts
+the save. A failed save retains the draft and requires an explicit retry.
+
+The separate **Demo service controls** panel can reject the next request or slow
+a save. Every request restores that setting to Accept. The service is in memory:
+no information leaves the page, and reloading resets its data. Pending saves
+disable editing, reset, cancellation and Escape, with a synchronous guard against
+duplicate submissions. Refresh failures retain the current menu and offer retry.
+
+See [the complete example](../playground/admin-menu.tsx) and its
+[application state/service boundary](../playground/admin-menu-model.ts). Supply
+your own `MenuApi` when adapting this recipe. The example owns persistence and
+validation; no data service was added to the component package. A real backend
+needs its own authentication, conflict and uncertain-write recovery policies.
+
+After immutable row replacement, focus returns to the current Edit button for
+that stable row ID; if the saved name no longer matches the filter, focus returns
+to the filter instead. The lookup runs after DOM reconciliation, because a table
+cell's old action button may have been replaced.
+
+![Restaurant menu editor](screenshots/admin-editor-light.png)
+![Dark restaurant menu](screenshots/admin-menu-dark.png)
+![Mobile restaurant menu editor](screenshots/admin-editor-mobile.png)
+
+[Validation, browser, hydration and visual evidence](ADMIN-MENU-DELIVERY.md).

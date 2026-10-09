@@ -615,3 +615,23 @@ an additional wrapper component. Native controlled filter
 and page-size rejection restores canonical DOM properties after reconciliation.
 Existing Solid/compiler pins remain rc.13; only explicit engines and their
 required lock entries were added. See the Data Table delivery report.
+
+## Native focus events in composed Select and Dialog — 2026-10-09
+
+Native dialog opening/closing may synchronously dispatch `focusin` while a Solid
+effect is running. Select's outside-focus dismissal reads controlled/uncontrolled
+state as an event-time snapshot through `untrack`; it must not become a read in
+the enclosing dialog effect. The restaurant menu composition reproduced this
+with strict diagnostics enabled. No warning suppression or diagnostic threshold
+change is used. Its editor resolves focus by stable row ID after reconciliation
+because immutable table data can replace the original cell button. Application
+service and draft state remain in the playground, behind an injected local API.
+See [admin menu delivery](docs/ADMIN-MENU-DELIVERY.md).
+
+The same composition acceptance run exposed a remaining shared uncontrolled-state
+source in Data Table: each field memo woke on unrelated selection/pagination
+changes, even when its equality check discarded the result. Local state now uses
+one signal per field with the existing shallow equality policy. Controlled state
+remains authoritative, and partial resets retain initial defaults. The regression
+counts visibility getter reads while unrelated state changes, instead of relying
+only on timing budgets to detect wasted work.

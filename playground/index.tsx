@@ -23,6 +23,7 @@ import { NativeFields } from './native-fields';
 import { CardLayout } from './card-layout';
 import {QuestionnaireCatalogExamples} from './catalog-questionnaire';
 import {ChartCatalogExamples} from './catalog-chart';
+import { AdminMenuExamples } from './admin-menu';
 import { DataTableCatalogExamples } from './catalog-data-table';
 import { SidebarCatalogExamples } from './catalog-sidebar';
 import { NotificationCatalogExamples } from './catalog-notifications';
@@ -155,6 +156,7 @@ function ToggleExamples() {
 /** Select focused acceptance examples without changing the main gallery layout. */
 function Preview() {
   const query = new URLSearchParams(location.search);
+  if (query.has('admin-menu')) return <AdminMenuExamples/>;
   if (query.has('catalog-questionnaire')) return <QuestionnaireCatalogExamples/>;
   if (query.has('catalog-chart')) return <ChartCatalogExamples/>;
   if (query.has('catalog-data-table')) return <DataTableCatalogExamples/>;

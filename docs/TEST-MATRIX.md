@@ -535,7 +535,7 @@ order the next test work; they do not assign bug severity to untested behavior.
 | Extended coverage | ALL-2 | Full catalog | [H: real hydration, forms, Tabs and overlays](HYDRATION-DELIVERY.md) passes for the documented source fixtures. [Pending Loading boundary hydration](LOADING-HYDRATION-DELIVERY.md) and [client rejection/retry](ERRORED-HYDRATION-DELIVERY.md) are also covered. Streaming, ready-at-SSR boundaries, multiple roots, every variant and a published SSR build remain unverified. |
 | Cross-cutting | ALL-3 | Interactive controls and semantic content | Record manual assistive-technology navigation/announcements; axe success is only automated evidence. |
 | Cross-cutting | ALL-4 | Full catalog | Expand representative state/variant visual cases; isolate assertions currently supported only by shared gallery/SSR markup (notably Badge SSR). |
-| Before app adoption | ALL-5 | Full package | Verify real admin composition, router/query integration and application errors; measure representative large-list/overlay performance. Current E2E is the gallery only. [Static import availability](ADMIN-PARITY-DELIVERY.md) passes for 35 names across 14 subpaths; real application composition remains open. |
+| Before app adoption | ALL-5 | Full package | Verify real admin composition, router/query integration and application errors; measure representative large-list/overlay performance. Current E2E covers component galleries and the package-only [admin menu composition](ADMIN-MENU-DELIVERY.md), not the actual application. [Static import availability](ADMIN-PARITY-DELIVERY.md) passes for 35 names across 14 subpaths; real application composition remains open. |
 
 No claim is made that every supported combination appears above. The matrix maps
 currently stated component contracts to concrete evidence and highlights the
@@ -750,3 +750,36 @@ to be the same value through the root barrel. It also checks all sibling module
 value export names, allowing only the documented React `useComboboxAnchor`
 ref-object hook difference. This guards omissions, not prop/behavior equivalence
 or all future upstream additions. [Completion audit](CATALOG-COMPLETION-AUDIT.md).
+
+Data Table's admin-composition follow-up adds a direct state-isolation assertion
+in [its unit suite](../tests/unit/catalog-data-table.test.tsx): local selection,
+sorting and paging updates must not re-read controlled column visibility. The
+shared local state signal was replaced by per-field sources; controls and initial
+reset defaults retain their contracts. See [admin delivery](ADMIN-MENU-DELIVERY.md).
+
+## Admin form and Data Table composition
+
+The [restaurant menu fixture](../playground/admin-menu.tsx) composes Data Table,
+Dialog, Select, Input, Textarea, Label, Field, Checkbox, Switch, Button, Badge and
+Card through public package exports. [Shared browser cases](../tests/admin-menu.ts)
+run against both source integration and built E2E exports in three engines.
+[State/race tests](../tests/unit/admin-menu.test.ts),
+[SSR assertions](../tests/server.test.tsx),
+[hydration journey](../tests/hydration/admin-menu.spec.ts) and
+[visual cases](../tests/e2e/admin-menu/visual.spec.ts) provide the other layers.
+
+| Requirement | Assertion evidence |
+| --- | --- |
+| Confirmed rows remain distinct from drafts | U: `admin-menu.test.ts` failed-save test; B/E: rejected save preserves name/price and table row until explicit retry. |
+| Name/currency validation, field reset and record changes | U: valid integer cents, rejected decimal formats/name/notes; B/E: invalid field focus and ARIA, reset/cancel and subsequent different record. |
+| Nested category choice and native toggles | B/E: Select inside Dialog changes category without closing the editor; Checkbox/Switch and notes persist through successful save/reopen. |
+| Duplicate and pending actions | U: same-turn duplicate call guard; B/E: two programmatic submit events, disabled fields/actions and rejected Escape during a slow save; one service call. |
+| Selection, sorting, filtering and paging | B/E: selection remains attached to stable row IDs across sort/edit; filtered-away row returns focus to the filter; page bounds and explicit refresh retry retain confirmed changes. |
+| Stale reads and disposal | U: out-of-order reads cannot overwrite newest rows; opening an editor invalidates a pending read; late save success/read failure after disposal does not publish changes. Transport cancellation is requested. |
+| SSR and hydration | S: seeded first page with no API calls or mounted editor; H: all server slot nodes reused, then edit/nested Select/save/selection/filter/disposal. |
+| Appearance and access | B/E: axe and document bounds in 390px light/dark layouts at 24px root text; V: table and dialog screenshots in light/dark/mobile. |
+
+This advances the composition portion of ALL-5. The service is an injected local
+simulator; authentication, actual AppApi/IPC, router/query integration, shared-server
+conflicts, uncertain network writes and real admin migration remain unverified.
+See [delivery and measured commands](ADMIN-MENU-DELIVERY.md).

@@ -4,7 +4,7 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises';
 const configFile = new URL('../hydration.vite.config.ts', import.meta.url).pathname;
 await build({ configFile, build: { ssr: 'tests/hydration/server.tsx', outDir: 'hydration-dist/server', manifest: false, rolldownOptions: { input: 'tests/hydration/server.tsx', output: { entryFileNames: 'server.js' } } } });
 await build({ configFile });
-const { renderFixture, bootstrap, renderTabsProbe, probeModes, renderLoading, renderErrored, renderRetry, retryModes } = await import('../hydration-dist/server/server.js');
+const { renderAdminMenu, renderFixture, bootstrap, renderTabsProbe, probeModes, renderLoading, renderErrored, renderRetry, retryModes } = await import('../hydration-dist/server/server.js');
 // Keep server diagnostics fatal, including warnings that renderToString's error hook does not receive.
 console.warn = (...messages) => { throw new Error(messages.join(' ')); };
 console.error = (...messages) => { throw new Error(messages.join(' ')); };
@@ -42,3 +42,8 @@ for (const mode of retryModes) {
   await mkdir(directory, { recursive: true });
   await writeFile(new URL('index.html', directory), `<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Plain retry ${mode}</title>${bootstrap}</head><body><button id="hydrate">Hydrate components</button><button id="dispose" disabled>Dispose components</button><div id="hydration-root" data-retry="${mode}">${renderRetry(mode)}</div><script type="module" src="/${entry.file}"></script></body></html>`);
 }
+
+const adminDirectory = new URL('../hydration-dist/client/admin-menu/', import.meta.url);
+await mkdir(adminDirectory, { recursive: true });
+const adminStyles = (entry.css ?? []).map(file => `<link rel="stylesheet" href="/${file}">`).join('');
+await writeFile(new URL('index.html', adminDirectory), `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Admin menu hydration</title>${adminStyles}${bootstrap}</head><body><button id="hydrate">Hydrate components</button><button id="dispose" disabled>Dispose components</button><div id="hydration-root" data-admin-menu="true">${renderAdminMenu()}</div><script type="module" src="/${entry.file}"></script></body></html>`);

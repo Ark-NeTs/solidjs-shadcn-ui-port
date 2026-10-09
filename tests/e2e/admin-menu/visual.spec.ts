@@ -1,0 +1,4 @@
+import {test,expect} from '../../browser-fixture';
+for(const mode of ['light','dark','mobile'])test(`${mode} restaurant admin table and editor`,async({page})=>{
+ if(mode==='mobile')await page.setViewportSize({width:390,height:844});await page.goto(`/?admin-menu${mode==='dark'?'&dark':''}`);await page.evaluate(()=>document.fonts.ready);await page.emulateMedia({reducedMotion:'reduce'});await expect(page.locator('tbody tr')).toHaveCount(5);await expect(page.locator('main')).toHaveScreenshot(`admin-menu-${mode}.png`,{animations:'disabled',maxDiffPixelRatio:0.001});await page.getByRole('button',{name:'Edit Margherita pizza'}).click();await expect(page.getByLabel('Item name',{exact:true})).toBeFocused();await expect(page).toHaveScreenshot(`admin-editor-${mode}.png`,{animations:'disabled',maxDiffPixelRatio:0.001});
+});

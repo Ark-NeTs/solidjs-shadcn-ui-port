@@ -43,6 +43,14 @@ The Tabs/Popover/Alert Dialog probe is in [KOBALTE-OVERLAYS.md](KOBALTE-OVERLAYS
 | `tests/e2e/` | Built-library journeys and screenshot baselines |
 | `validation/` | Earlier experiments; excluded from production builds/tests |
 
+## Admin composition example
+
+Open `/?admin-menu` in the playground to edit restaurant menu items through a
+validated form and Data Table. The example uses an injected local service with
+repeatable rejection and delayed-save scenarios. See the
+[recipe](docs/components.md#restaurant-admin-composition) and
+[verification report](docs/ADMIN-MENU-DELIVERY.md).
+
 ## Exports and usage
 
 ```tsx

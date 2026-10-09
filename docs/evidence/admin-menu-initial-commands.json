@@ -1,0 +1,32 @@
+[
+  {
+    "command": "bun run check",
+    "exitCode": 0,
+    "seconds": 4.775,
+    "output": "$ tsc --noEmit\n"
+  },
+  {
+    "command": "bun run lint",
+    "exitCode": 0,
+    "seconds": 2.14,
+    "output": "$ eslint src tests playground scripts *.ts\n"
+  },
+  {
+    "command": "bun run test",
+    "exitCode": 0,
+    "seconds": 8.123,
+    "output": "$ vitest run\n\n RUN  v4.1.10 /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme\n\n\n Test Files  30 passed (30)\n      Tests  388 passed (388)\n   Start at  12:56:40\n   Duration  7.75s (transform 8.94s, setup 9.01s, import 15.90s, tests 16.68s, environment 21.43s)\n\n"
+  },
+  {
+    "command": "bun run test:server",
+    "exitCode": 0,
+    "seconds": 1.266,
+    "output": "$ vitest run --config vitest.server.config.ts\n\n RUN  v4.1.10 /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme\n\n\n Test Files  1 passed (1)\n      Tests  25 passed (25)\n   Start at  12:56:49\n   Duration  896ms (transform 595ms, setup 0ms, import 723ms, tests 89ms, environment 0ms)\n\n"
+  },
+  {
+    "command": "bun run test:coverage --coverage.reporter=json-summary --coverage.reporter=text",
+    "exitCode": 1,
+    "seconds": 10.689,
+    "output": "$ vitest run --coverage \"--coverage.reporter=json-summary\" \"--coverage.reporter=text\"\n\n RUN  v4.1.10 /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme\n      Coverage enabled with v8\n\n \u276f tests/unit/catalog-inventory.test.ts (2 tests | 1 failed) 6212ms\n   \u00d7 covers sibling value export names with only the documented React ref-hook exception 6195ms\n\n\u23af\u23af\u23af\u23af\u23af\u23af\u23af Failed Tests 1 \u23af\u23af\u23af\u23af\u23af\u23af\u23af\n\n FAIL  tests/unit/catalog-inventory.test.ts > covers sibling value export names with only the documented React ref-hook exception\nError: Test timed out in 5000ms.\nIf this is a long-running test, pass a timeout value as the last argument or configure it globally with \"testTimeout\".\n \u276f tests/unit/catalog-inventory.test.ts:30:1\n     28| });\n     29|\n     30| it('covers sibling value export names with only the documented React r\u2026\n       | ^\n     31|   const sibling=resolve(root,'../shadcn-theme/src/components/ui');\n     32|   const files=readdirSync(sibling).filter(name=>name.endsWith('.tsx'))\u2026\n\n\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af\u23af[1/1]\u23af\n\n\n Test Files  1 failed | 29 passed (30)\n      Tests  1 failed | 387 passed (388)\n   Start at  12:56:50\n   Duration  10.15s (transform 7.16s, setup 7.21s, import 13.79s, tests 33.46s, environment 21.08s)\n\nerror: script \"test:coverage\" exited with code 1\n"
+  }
+]

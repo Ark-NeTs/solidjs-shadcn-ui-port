@@ -75,7 +75,9 @@ export function SelectContent(props:SelectContentProps){
   async function position(){const ticket=++version;const result=await computePosition(trigger!,node!,{strategy:'fixed',placement:align==='center'?side:`${side}-${align}`,middleware:[offset(gap),flip({padding}),shift({padding}),size({padding,apply({availableWidth,availableHeight}){if(live&&ticket===version){node!.style.maxWidth=`${Math.max(0,availableWidth)}px`;node!.style.maxHeight=`${Math.max(0,availableHeight)}px`;node!.style.minWidth=`${Math.min(trigger!.getBoundingClientRect().width,Math.max(0,availableWidth))}px`;}}})]});if(live&&ticket===version){node!.style.left=`${result.x}px`;node!.style.top=`${result.y}px`;node!.dataset.side=result.placement.split('-')[0];}}
   const dispose=autoUpdate(trigger,node,()=>{void position();},{ancestorScroll:false,animationFrame:true});
   /** Outside pointer or focus dismissal preserves the user's new destination. */
-  function outside(event:Event){const target=event.target as Node;if(!node!.contains(target)&&!trigger!.contains(target))context.requestOpen(false);}
+  // Native dialog focus changes can synchronously dispatch this event inside an effect.
+  // Dismissal is an event-time snapshot, not a dependency of that enclosing effect.
+  function outside(event:Event){const target=event.target as Node;if(!node!.contains(target)&&!trigger!.contains(target))untrack(()=>context.requestOpen(false));}
   const document=node.ownerDocument;document.addEventListener('pointerdown',outside,true);document.addEventListener('focusin',outside,true);
   return()=>{live=false;dispose();document.removeEventListener('pointerdown',outside,true);document.removeEventListener('focusin',outside,true);if(node.matches(':popover-open'))node.hidePopover();};
  });

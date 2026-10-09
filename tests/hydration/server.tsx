@@ -32,3 +32,7 @@ export function renderErrored() {
 export function renderRetry(mode: RetryMode) {
   return renderToString(() => <MinimalRetry mode={mode}/>, { renderId: 'acceptance', onError: error => { throw error; } });
 }
+
+import {AdminMenuHydration} from './admin-menu';
+/** Render the admin composition with the same identity and service seed as its client. */
+export function renderAdminMenu(){return renderToString(()=><AdminMenuHydration/>,{renderId:'acceptance',onError:error=>{throw error;}});}

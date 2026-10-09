@@ -1,4 +1,5 @@
 // Hydrate real SSR markup on demand, exposing disposal without replacing the claimed nodes; D19/D90.
+import {AdminMenuHydration} from './admin-menu';
 import { hydrate } from '@solidjs/web';
 import { HydrationFixture } from './fixture';
 import { MinimalTabs, type ProbeMode } from './tabs-minimal';
@@ -24,6 +25,7 @@ if (lateResolve && loadingRequest) lateResolve.onclick = () => {
 };
 /** Select the matching source fixture without evaluating unrelated component trees. */
 function renderPage() {
+  if (root.dataset.adminMenu) return <AdminMenuHydration/>;
   if (root.dataset.retry) return <MinimalRetry mode={root.dataset.retry as RetryMode}/>;
   if (erroredRequest) return <HydrationErrored request={erroredRequest}/>;
   if (loadingRequest) return <HydrationLoading request={loadingRequest} native={root.dataset.loading === 'native'}/>;
