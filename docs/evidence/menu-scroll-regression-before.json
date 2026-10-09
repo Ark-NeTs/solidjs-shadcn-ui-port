@@ -1,0 +1,217 @@
+{
+  "config": {
+    "argv": [
+      "/Users/arktas/.asdf/installs/nodejs/25.3.0/bin/node",
+      "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/node_modules/.bin/playwright",
+      "test",
+      "tests/integration/catalog-menus.spec.ts",
+      "--project=chromium",
+      "--grep",
+      "Scrollable dropdown",
+      "--max-failures=1"
+    ],
+    "configFile": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/playwright.config.ts",
+    "rootDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 1,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "integration/**/*.spec.ts",
+          "e2e/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [
+          "**/visual.spec.ts"
+        ],
+        "testMatch": [
+          "integration/**/*.spec.ts",
+          "e2e/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [
+          "**/visual.spec.ts"
+        ],
+        "testMatch": [
+          "integration/**/*.spec.ts",
+          "e2e/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "docs/evidence/menu-scroll-regression-before.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": {
+      "command": "bun run dev",
+      "url": "http://127.0.0.1:4403",
+      "reuseExistingServer": false,
+      "timeout": 60000
+    }
+  },
+  "suites": [
+    {
+      "title": "integration/catalog-menus.spec.ts",
+      "file": "integration/catalog-menus.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Scrollable dropdown keeps one native tab stop while arrow focus moves and Tab leaves",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5770,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('menu').locator('[role^=\"menuitem\"][tabindex=\"0\"]')\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" getByRole('menu').locator('[role^=\"menuitem\"][tabindex=\"0\"]') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('menu').locator('[role^=\"menuitem\"][tabindex=\"0\"]')\u001b[22m\n\u001b[2m    14 × locator resolved to 0 elements\u001b[22m\n\u001b[2m       - unexpected value \"0\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('menu').locator('[role^=\"menuitem\"][tabindex=\"0\"]')\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" getByRole('menu').locator('[role^=\"menuitem\"][tabindex=\"0\"]') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('menu').locator('[role^=\"menuitem\"][tabindex=\"0\"]')\u001b[22m\n\u001b[2m    14 × locator resolved to 0 elements\u001b[22m\n\u001b[2m       - unexpected value \"0\"\u001b[22m\n\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/catalog-menus.ts:8:511",
+                    "location": {
+                      "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/catalog-menus.ts",
+                      "column": 511,
+                      "line": 8
+                    },
+                    "snippet": "   6 |  test.beforeEach(async({page})=>{await page.goto('/?catalog-menus');});\n   7 |  test('Dropdown keyboard navigation skips disabled actions, opens submenus and returns focus',async({page})=>{const trigger=page.getByRole('button',{name:'Document actions',exact:true});await trigger.press('Enter');await expect(page.getByRole('menuitem',{name:/New document/})).toBeFocused();await page.keyboard.press('ArrowDown');await expect(page.getByRole('menuitem',{name:'Preview document'})).toBeFocused();await page.keyboard.press('End');const sub=page.getByRole('menuitem',{name:'Share document'});await expect(sub).toBeFocused();await sub.press('ArrowRight');await expect(page.getByRole('menuitem',{name:'Copy document link'})).toBeFocused();await page.keyboard.press('Escape');await expect(sub).toBeFocused();await sub.press('ArrowRight');await page.getByRole('menuitem',{name:'Copy document link'}).press('Enter');await expect(page.getByTestId('menu-result')).toHaveText('Link copied in preview');await expect(page.getByRole('menu')).toHaveCount(0);await expect(trigger).toBeFocused();});\n>  8 |  test('Scrollable dropdown keeps one native tab stop while arrow focus moves and Tab leaves',async({page})=>{await page.addStyleTag({content:'[data-slot=\"dropdown-menu-content\"]{max-height:120px!important}'});const trigger=page.getByRole('button',{name:'Document actions',exact:true});await trigger.press('Enter');const menu=page.getByRole('menu');await expect.poll(()=>menu.evaluate(node=>node.scrollHeight-node.clientHeight)).toBeGreaterThan(0);await expect(menu.locator('[role^=\"menuitem\"][tabindex=\"0\"]')).toHaveCount(1);await expect(page.getByRole('menuitem',{name:/New document/})).toHaveAttribute('tabindex','0');await page.keyboard.press('End');await expect(page.getByRole('menuitem',{name:'Share document'})).toHaveAttribute('tabindex','0');await expect(menu.locator('[role^=\"menuitem\"][tabindex=\"0\"]')).toHaveCount(1);await expect.poll(()=>menu.evaluate(node=>node.scrollTop)).toBeGreaterThan(0);expect((await new AxeBuilder({page}).analyze()).violations).toEqual([]);await page.keyboard.press('Tab');await expect(menu).toHaveCount(0);await expect(page.getByRole('button',{name:'After document actions'})).toBeFocused();});\n     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               ^\n   9 |  test('Dropdown cancels selection, changes preferences and keeps live accessible IDs',async({page})=>{await page.getByRole('button',{name:'Document actions',exact:true}).click();await page.getByRole('menuitem',{name:'Review without closing'}).click();await expect(page.getByRole('menu')).toBeVisible();await expect(page.getByTestId('menu-result')).toHaveText('Selection canceled');await page.getByRole('menuitemcheckbox',{name:'Show labels'}).click();await page.getByRole('menuitemradio',{name:'Compact',exact:true}).click();await expect(page.getByTestId('menu-preferences')).toHaveText('Labels hidden · compact');await expect(page.getByRole('menuitemradio',{name:'Compact',exact:true})).toHaveAttribute('aria-checked','true');await page.getByRole('menuitem',{name:'Rename menu IDs'}).click();await expect(page.getByRole('menu')).toHaveAttribute('id','actions-menu-updated');await expect(page.getByRole('menu')).toHaveAttribute('aria-labelledby','actions-updated');await page.keyboard.press('Escape');});\n  10 |  test('Dropdown Tab leaves naturally, native links navigate and outside pointer does not steal focus',async({page})=>{const trigger=page.getByRole('button',{name:'Document actions',exact:true});await trigger.press('Enter');await page.keyboard.press('Tab');await expect(page.getByRole('menu')).toHaveCount(0);await expect(page.getByRole('button',{name:'After document actions'})).toBeFocused();await trigger.press('Enter');await page.keyboard.press('Shift+Tab');await expect(trigger).toBeFocused();await expect(page.getByRole('menu')).toHaveCount(0);await trigger.press('Enter');await page.getByRole('menuitem',{name:'Preview document'}).press('Enter');await expect(page).toHaveURL(/#catalog-result$/);await trigger.click();const outside=page.getByRole('button',{name:'After document actions'});await outside.focus();await outside.click();await expect(page.getByRole('menu')).toHaveCount(0);await expect(trigger).not.toBeFocused();await page.getByRole('combobox',{name:'Search workspace commands'}).focus();await expect(page.getByRole('combobox',{name:'Search workspace commands'})).toBeFocused();});\n  11 |  test('Dropdown hover opens a child without stealing focus and closes it when another action receives focus',async({page})=>{await page.getByRole('button',{name:'Document actions',exact:true}).click();const sub=page.getByRole('menuitem',{name:'Share document'});await sub.hover();await expect(page.getByRole('menuitem',{name:'Copy document link'})).toBeVisible();await expect(sub).toBeFocused();await page.getByRole('menuitem',{name:'Copy document link'}).hover();await expect(page.getByRole('menuitem',{name:'Copy document link'})).toBeFocused();await page.getByRole('menuitem',{name:/New document/}).hover();await expect(page.getByRole('menuitem',{name:'Copy document link'})).toHaveCount(0);});"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/catalog-menus.ts",
+                        "column": 511,
+                        "line": 8
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCount\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('menu').locator('[role^=\"menuitem\"][tabindex=\"0\"]')\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m0\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCount\" getByRole('menu').locator('[role^=\"menuitem\"][tabindex=\"0\"]') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('menu').locator('[role^=\"menuitem\"][tabindex=\"0\"]')\u001b[22m\n\u001b[2m    14 × locator resolved to 0 elements\u001b[22m\n\u001b[2m       - unexpected value \"0\"\u001b[22m\n\n\n   6 |  test.beforeEach(async({page})=>{await page.goto('/?catalog-menus');});\n   7 |  test('Dropdown keyboard navigation skips disabled actions, opens submenus and returns focus',async({page})=>{const trigger=page.getByRole('button',{name:'Document actions',exact:true});await trigger.press('Enter');await expect(page.getByRole('menuitem',{name:/New document/})).toBeFocused();await page.keyboard.press('ArrowDown');await expect(page.getByRole('menuitem',{name:'Preview document'})).toBeFocused();await page.keyboard.press('End');const sub=page.getByRole('menuitem',{name:'Share document'});await expect(sub).toBeFocused();await sub.press('ArrowRight');await expect(page.getByRole('menuitem',{name:'Copy document link'})).toBeFocused();await page.keyboard.press('Escape');await expect(sub).toBeFocused();await sub.press('ArrowRight');await page.getByRole('menuitem',{name:'Copy document link'}).press('Enter');await expect(page.getByTestId('menu-result')).toHaveText('Link copied in preview');await expect(page.getByRole('menu')).toHaveCount(0);await expect(trigger).toBeFocused();});\n>  8 |  test('Scrollable dropdown keeps one native tab stop while arrow focus moves and Tab leaves',async({page})=>{await page.addStyleTag({content:'[data-slot=\"dropdown-menu-content\"]{max-height:120px!important}'});const trigger=page.getByRole('button',{name:'Document actions',exact:true});await trigger.press('Enter');const menu=page.getByRole('menu');await expect.poll(()=>menu.evaluate(node=>node.scrollHeight-node.clientHeight)).toBeGreaterThan(0);await expect(menu.locator('[role^=\"menuitem\"][tabindex=\"0\"]')).toHaveCount(1);await expect(page.getByRole('menuitem',{name:/New document/})).toHaveAttribute('tabindex','0');await page.keyboard.press('End');await expect(page.getByRole('menuitem',{name:'Share document'})).toHaveAttribute('tabindex','0');await expect(menu.locator('[role^=\"menuitem\"][tabindex=\"0\"]')).toHaveCount(1);await expect.poll(()=>menu.evaluate(node=>node.scrollTop)).toBeGreaterThan(0);expect((await new AxeBuilder({page}).analyze()).violations).toEqual([]);await page.keyboard.press('Tab');await expect(menu).toHaveCount(0);await expect(page.getByRole('button',{name:'After document actions'})).toBeFocused();});\n     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               ^\n   9 |  test('Dropdown cancels selection, changes preferences and keeps live accessible IDs',async({page})=>{await page.getByRole('button',{name:'Document actions',exact:true}).click();await page.getByRole('menuitem',{name:'Review without closing'}).click();await expect(page.getByRole('menu')).toBeVisible();await expect(page.getByTestId('menu-result')).toHaveText('Selection canceled');await page.getByRole('menuitemcheckbox',{name:'Show labels'}).click();await page.getByRole('menuitemradio',{name:'Compact',exact:true}).click();await expect(page.getByTestId('menu-preferences')).toHaveText('Labels hidden · compact');await expect(page.getByRole('menuitemradio',{name:'Compact',exact:true})).toHaveAttribute('aria-checked','true');await page.getByRole('menuitem',{name:'Rename menu IDs'}).click();await expect(page.getByRole('menu')).toHaveAttribute('id','actions-menu-updated');await expect(page.getByRole('menu')).toHaveAttribute('aria-labelledby','actions-updated');await page.keyboard.press('Escape');});\n  10 |  test('Dropdown Tab leaves naturally, native links navigate and outside pointer does not steal focus',async({page})=>{const trigger=page.getByRole('button',{name:'Document actions',exact:true});await trigger.press('Enter');await page.keyboard.press('Tab');await expect(page.getByRole('menu')).toHaveCount(0);await expect(page.getByRole('button',{name:'After document actions'})).toBeFocused();await trigger.press('Enter');await page.keyboard.press('Shift+Tab');await expect(trigger).toBeFocused();await expect(page.getByRole('menu')).toHaveCount(0);await trigger.press('Enter');await page.getByRole('menuitem',{name:'Preview document'}).press('Enter');await expect(page).toHaveURL(/#catalog-result$/);await trigger.click();const outside=page.getByRole('button',{name:'After document actions'});await outside.focus();await outside.click();await expect(page.getByRole('menu')).toHaveCount(0);await expect(trigger).not.toBeFocused();await page.getByRole('combobox',{name:'Search workspace commands'}).focus();await expect(page.getByRole('combobox',{name:'Search workspace commands'})).toBeFocused();});\n  11 |  test('Dropdown hover opens a child without stealing focus and closes it when another action receives focus',async({page})=>{await page.getByRole('button',{name:'Document actions',exact:true}).click();const sub=page.getByRole('menuitem',{name:'Share document'});await sub.hover();await expect(page.getByRole('menuitem',{name:'Copy document link'})).toBeVisible();await expect(sub).toBeFocused();await page.getByRole('menuitem',{name:'Copy document link'}).hover();await expect(page.getByRole('menuitem',{name:'Copy document link'})).toBeFocused();await page.getByRole('menuitem',{name:/New document/}).hover();await expect(page.getByRole('menuitem',{name:'Copy document link'})).toHaveCount(0);});\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/catalog-menus.ts:8:511"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T11:41:23.422Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/integration-catalog-menus--67f40--focus-moves-and-Tab-leaves-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/integration-catalog-menus--67f40--focus-moves-and-Tab-leaves-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/integration-catalog-menus--67f40--focus-moves-and-Tab-leaves-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/catalog-menus.ts",
+                    "column": 511,
+                    "line": 8
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "e117e5e4b357fa03df31-a0f2faacd294cccf3112",
+          "file": "catalog-menus.ts",
+          "line": 8,
+          "column": 2
+        }
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "message": "\u001b[31mTesting stopped early after 1 maximum allowed failures.\u001b[39m"
+    }
+  ],
+  "stats": {
+    "startTime": "2026-10-09T11:41:20.941Z",
+    "duration": 8616.686000000002,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}
