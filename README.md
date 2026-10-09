@@ -9,7 +9,7 @@ See [DECISIONS.md](DECISIONS.md) for the owner's 2026-10-07 foundation direction
 and [full catalog delivery](docs/REMAINING-CATALOG-STATUS.md) for current verification status.
 [FOUNDATION-DELIVERY.md](FOUNDATION-DELIVERY.md) retains the earlier five-component results.
 
-**Catalog complete:** all 65 families have source, examples, tests and documented API boundaries. See [final acceptance](docs/REMAINING-CATALOG-STATUS.md).
+**Catalog complete:** all 65 families have source, examples, tests and documented API boundaries. See [final acceptance](docs/REMAINING-CATALOG-STATUS.md) and the [completion audit](docs/CATALOG-COMPLETION-AUDIT.md).
 
 These sixty-five component families use Solid 2 and native HTML. Toggle wraps Kobalte; the
 other sixty-four component families use owned behavior. Overlay and preview positioning use

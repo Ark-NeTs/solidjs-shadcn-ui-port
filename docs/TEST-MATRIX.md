@@ -532,9 +532,9 @@ order the next test work; they do not assign bug severity to untested behavior.
 | Priority | ID | Component(s) | Concrete closure condition |
 | --- | --- | --- | --- |
 | Manual follow-up | CMB-2 | Combobox | Browser scrolling/Tab/modal checks pass; record a physical IME composition/commit/cancel session before closing the remaining manual portion. |
-| Extended coverage | ALL-2 | All 24 | [H: real hydration, forms, Tabs and overlays](HYDRATION-DELIVERY.md) passes for the documented source fixtures. [Pending Loading boundary hydration](LOADING-HYDRATION-DELIVERY.md) and [client rejection/retry](ERRORED-HYDRATION-DELIVERY.md) are also covered. Streaming, ready-at-SSR boundaries, multiple roots, every variant and a published SSR build remain unverified. |
+| Extended coverage | ALL-2 | Full catalog | [H: real hydration, forms, Tabs and overlays](HYDRATION-DELIVERY.md) passes for the documented source fixtures. [Pending Loading boundary hydration](LOADING-HYDRATION-DELIVERY.md) and [client rejection/retry](ERRORED-HYDRATION-DELIVERY.md) are also covered. Streaming, ready-at-SSR boundaries, multiple roots, every variant and a published SSR build remain unverified. |
 | Cross-cutting | ALL-3 | Interactive controls and semantic content | Record manual assistive-technology navigation/announcements; axe success is only automated evidence. |
-| Cross-cutting | ALL-4 | All 24 | Expand representative state/variant visual cases; isolate assertions currently supported only by shared gallery/SSR markup (notably Badge SSR). |
+| Cross-cutting | ALL-4 | Full catalog | Expand representative state/variant visual cases; isolate assertions currently supported only by shared gallery/SSR markup (notably Badge SSR). |
 | Before app adoption | ALL-5 | Full package | Verify real admin composition, router/query integration and application errors; measure representative large-list/overlay performance. Current E2E is the gallery only. [Static import availability](ADMIN-PARITY-DELIVERY.md) passes for 35 names across 14 subpaths; real application composition remains open. |
 
 No claim is made that every supported combination appears above. The matrix maps
@@ -741,3 +741,12 @@ modules/names, unresolved aliases and denied/private paths are rejected; newly
 exported components need no inventory update. This tooling batch brings the unit
 suite to 380 tests; component/browser behavior and the historical catalog gate
 counts above are unchanged. [Measured delivery](ADMIN-PARITY-DELIVERY.md).
+
+## Catalog inventory regression
+
+[U: catalog inventory](../tests/unit/catalog-inventory.test.ts) matches all 65 dated
+map entries to source files, imports every family, and requires each runtime export
+to be the same value through the root barrel. It also checks all sibling module
+value export names, allowing only the documented React `useComboboxAnchor`
+ref-object hook difference. This guards omissions, not prop/behavior equivalence
+or all future upstream additions. [Completion audit](CATALOG-COMPLETION-AUDIT.md).

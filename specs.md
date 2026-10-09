@@ -8,7 +8,9 @@ and `packages/shadcn-svelte-theme/README.md`, before writing a line of code.
 
 **Current scope:** implement all remaining catalog components, evaluating Kobalte first.
 Deliver in verified logical batches; track remaining work in [catalog delivery](docs/CATALOG-DELIVERY.md).
-The full request remains open until every remaining family is implemented and verified.
+The full 65-family catalog is now implemented and verified within its documented
+contracts; see [final acceptance](docs/REMAINING-CATALOG-STATUS.md) and
+[completion audit](docs/CATALOG-COMPLETION-AUDIT.md) for evidence and remaining limits.
 
 **Previous batch:** implement Progress, evaluating Kobalte first. Deliver the component,
 examples, unit/browser/SSR/hydration tests, screenshots and documentation, then commit

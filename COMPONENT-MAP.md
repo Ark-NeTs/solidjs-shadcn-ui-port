@@ -4,22 +4,23 @@
 Textarea, Label, Checkbox, Switch, Tabs, Popover, Alert Dialog, Combobox, Accordion, Collapsible, Tooltip, Hover Card, Radio Group, Toggle, Toggle Group, Select, Slider, Progress, Alert, Aspect Ratio, Attachment, Breadcrumb, Bubble, Button Group, Empty, Field, Input Group, Item, Kbd, Marker, Message, Native Select, Spinner, Table, Avatar, Pagination, Direction, Typography, Dialog, Sheet, Drawer, Dropdown Menu, Context Menu, Menubar, Navigation Menu, Command, Calendar, Date Picker, Input OTP, Resizable, Scroll Area, Carousel, Message Scroller, Toast, Sonner, Sidebar, Chart, Questionnaire and Data Table now have Solid 2 source, documentation and passing unit, browser and built-library tests.
 See [menu catalog delivery](docs/MENU-CATALOG-DELIVERY.md), [modal catalog delivery](docs/MODAL-CATALOG-DELIVERY.md), [display catalog delivery](docs/DISPLAY-CATALOG-DELIVERY.md), [native catalog delivery](docs/NATIVE-CATALOG-DELIVERY.md), [Progress delivery](docs/PROGRESS-DELIVERY.md), [Slider delivery](docs/SLIDER-DELIVERY.md), [Select delivery](docs/SELECT-DELIVERY.md), [choice delivery](docs/CHOICES-DELIVERY.md), [preview delivery](docs/HINTS-DELIVERY.md), [disclosure delivery](docs/DISCLOSURES-DELIVERY.md), [COMBOBOX-DELIVERY.md](COMBOBOX-DELIVERY.md), [OVERLAYS-DELIVERY.md](OVERLAYS-DELIVERY.md), [TOGGLES-DELIVERY.md](TOGGLES-DELIVERY.md), [FORM-FIELDS-DELIVERY.md](FORM-FIELDS-DELIVERY.md) and the earlier
 [FOUNDATION-DELIVERY.md](FOUNDATION-DELIVERY.md). These use native HTML; Toggle wraps Kobalte after its scoped acceptance;
-headless-library findings below remain relevant to later primitives.
+headless-library findings below explain the adoption decisions and retained API limits.
 
 **Full catalog acceptance (2026-10-09):** the remaining 13 families—Calendar,
 Date Picker, Input OTP, Resizable, Scroll Area, Carousel, Message Scroller, Toast,
 Sonner, Sidebar, Chart, Questionnaire and Data Table—complete all 65 entries.
-See [final gates and limits](docs/REMAINING-CATALOG-STATUS.md). The K/C/N/G mapping
-below records primitive capability assessment; it is not a claim of runtime adoption.
+See [final gates and limits](docs/REMAINING-CATALOG-STATUS.md). The K/C/N/E mapping
+below distinguishes primitive candidates from owned compositions and engine adapters.
+All rows are delivered; letters do not denote acceptance status or Kobalte adoption.
 
 Assessed 2026-10-07 against `@kobalte/core@2.0.0-alpha.2`.
 
 **Finding: no catalog gap currently requires corvu.** Kobalte has candidates
-for all nine primitive categories in corvu's documented catalog. Several
-shadcn components still need substantial implementation work that neither
-library supplies. This is a source/API assessment, not runtime certification,
-complete API parity, or a delivery claim. This initial mapping added no dependencies; the implemented Popover now uses
-Floating UI, as recorded in DECISIONS.md.
+for all nine primitive categories in corvu's documented catalog. The five
+engine/controller gaps identified in the original assessment are now
+implemented using owned controllers or framework-independent engines. The original
+API assessment alone did not certify runtime behavior; current delivery evidence
+is linked above. Production dependencies are recorded in DECISIONS.md.
 
 **Browser follow-up:** [BROWSER-VALIDATION.md](BROWSER-VALIDATION.md) preserves
 unpatched results. [KOBALTE-LIFECYCLE.md](KOBALTE-LIFECYCLE.md) records the tested
@@ -38,7 +39,7 @@ Per-component behavioral acceptance and remaining test gaps are tracked in the
 
 ## Scope and evidence
 
-- The [current main catalog](https://ui.shadcn.com/docs/components) contains
+- The [main catalog assessed on 2026-10-07](https://ui.shadcn.com/docs/components) contains
   **64 components**. Include **Sonner** too: it remains in the
   [Radix docs](https://ui.shadcn.com/docs/components/radix/sonner) and the local
   React package. The map therefore contains **65 entries**.
@@ -73,9 +74,10 @@ component; Solid form integration belongs with Field and the form recipes.
 ## Full mapping
 
 Routes: **K** = a matching Kobalte primitive exists; **C** = compose existing
-primitives with owned Solid logic; **N** = native markup/CSS; **G** = unresolved
-behavior or engine gap. Every route still needs implementation, theme styling,
-documentation, screenshots, and applicable tests. **K does not mean drop-in.**
+primitives with owned Solid logic; **N** = native markup/CSS; **E** = delivered
+engine adapter or owned controller without a Kobalte equivalent. **K records
+a candidate, not production adoption or drop-in compatibility.** The implementation
+column and linked delivery report describe the actual shipped choice.
 No row currently selects corvu; alternatives are evaluated below.
 
 | Route | Entries |
@@ -83,7 +85,7 @@ No row currently selects corvu; alternatives are evaluated below.
 | Matching Kobalte primitive | 11 |
 | Owned composition | 18 |
 | Native markup/CSS | 31 |
-| Unresolved behavior/engine gap | 5 |
+| Delivered engine adapter / owned controller | 5 |
 | Total | 65 |
 
 | shadcn component | Route | Kobalte first / implementation path | Required adaptation or acceptance focus |
@@ -101,14 +103,14 @@ No row currently selects corvu; alternatives are evaluated below.
 | [Button Group](https://ui.shadcn.com/docs/components/button-group) | C | `button`, `separator` | Group orientation and joined borders; not automatically a toggle group. |
 | [Calendar](https://ui.shadcn.com/docs/components/calendar) | K | `calendar` evaluated first; owned Gregorian calendar | Delivered single/multiple/range selection, disabled intervals, bounded keyboard/month navigation, locale and multiple months. Local Gregorian Date API; [scope and evidence](docs/DATE-CATALOG-DELIVERY.md). |
 | [Card](https://ui.shadcn.com/docs/components/card) | K | `card` | Map HeaderAction to CardAction, preserve heading/content/footer classes. |
-| [Carousel](https://ui.shadcn.com/docs/components/carousel) | G | No Kobalte carousel engine; Embla core adapter | Delivered owned engine lifetime, real snaps/dragging, dynamic slides, controls and orientation/direction changes. Options/plugins use Embla core types; [scope and evidence](docs/LAYOUT-CATALOG-DELIVERY.md). |
-| [Chart](https://ui.shadcn.com/docs/components/chart) | G | No Kobalte chart engine; Chart.js adapter | Delivered seven chart kinds, native table alternative, themed canvas, keyboard tooltip and legend. Explicit Solid renderer API; [scope and evidence](docs/CHART-QUESTIONNAIRE-DELIVERY.md). |
+| [Carousel](https://ui.shadcn.com/docs/components/carousel) | E | No Kobalte carousel engine; Embla core adapter | Delivered owned engine lifetime, real snaps/dragging, dynamic slides, controls and orientation/direction changes. Options/plugins use Embla core types; [scope and evidence](docs/LAYOUT-CATALOG-DELIVERY.md). |
+| [Chart](https://ui.shadcn.com/docs/components/chart) | E | No Kobalte chart engine; Chart.js adapter | Delivered seven chart kinds, native table alternative, themed canvas, keyboard tooltip and legend. Explicit Solid renderer API; [scope and evidence](docs/CHART-QUESTIONNAIRE-DELIVERY.md). |
 | [Checkbox](https://ui.shadcn.com/docs/components/checkbox) | N | `checkbox` evaluated first; native input chosen | Implemented checked/mixed/disabled, controlled rejection, forms/reset and labels. Unpatched Kobalte emits diagnostics; see KOBALTE-TOGGLES.md and TOGGLES-DELIVERY.md. |
 | [Collapsible](https://ui.shadcn.com/docs/components/collapsible) | N | `collapsible` evaluated first; owned signals/native button | Controlled/uncontrolled expansion, hidden shell and optional retained drafts delivered. Alpha.2/rc.13 warns; animated exit is unsupported. See KOBALTE-DISCLOSURES.md and docs/DISCLOSURES-DELIVERY.md. |
 | [Combobox](https://ui.shadcn.com/docs/components/combobox) | C | `combobox` evaluated first; owned composition | Evaluated first; alpha.2/rc.13 reset and diagnostics fail. Owned Input/Popover composition delivers single/multiple selection, search, chips, forms and keyboard access. API limits and evidence: COMBOBOX-DELIVERY.md. No corvu Combobox primitive. |
 | [Command](https://ui.shadcn.com/docs/components/command) | C | Owned command collection; Kobalte candidates evaluated | Delivered authored-order filtering, groups, active descendant and Dialog composition; see docs/MENU-CATALOG-DELIVERY.md. |
 | [Context Menu](https://ui.shadcn.com/docs/components/context-menu) | C | `context-menu` | Delivered owned native behavior after Kobalte diagnostic failure; see docs/MENU-CATALOG-DELIVERY.md for acceptance and API limits. |
-| [Data Table](https://ui.shadcn.com/docs/components/data-table) | G | No Kobalte table model; TanStack Table core adapter | Delivered filtering, sorting, selection, visibility, paging and loading/error recovery with owned Solid memo boundaries. Server data stays host-owned; [scope and evidence](docs/DATA-TABLE-DELIVERY.md). |
+| [Data Table](https://ui.shadcn.com/docs/components/data-table) | E | No Kobalte table model; TanStack Table core adapter | Delivered filtering, sorting, selection, visibility, paging and loading/error recovery with owned Solid memo boundaries. Server data stays host-owned; [scope and evidence](docs/DATA-TABLE-DELIVERY.md). |
 | [Date Picker](https://ui.shadcn.com/docs/components/date-picker) | K | `date-picker` assessed; owned Calendar + Popover | Delivered formatting, bounds, selection modes, focus return and local-date form/reset behavior. No time editor; [scope and evidence](docs/DATE-CATALOG-DELIVERY.md). |
 | [Dialog](https://ui.shadcn.com/docs/components/dialog) | C | `dialog` evaluated first; shared native modal | Delivered names, nested focus, canceled dismissal, controlled state and hydration; see docs/MODAL-CATALOG-DELIVERY.md. |
 | [Direction](https://ui.shadcn.com/docs/components/direction) | C | `i18n` evaluated; owned explicit direction | Delivered nested reactive provider with native div boundary, Tabs keyboard direction and Popover alignment; not an external Kobalte context bridge. See docs/DISPLAY-CATALOG-DELIVERY.md. |
@@ -126,7 +128,7 @@ No row currently selects corvu; alternatives are evaluated below.
 | [Marker](https://ui.shadcn.com/docs/components/marker) | N | Owned markup/CSS | Icon/content slots and variants; do not convey state by color alone. |
 | [Menubar](https://ui.shadcn.com/docs/components/menubar) | C | `menubar` | Delivered owned native behavior after Kobalte diagnostic failure; see docs/MENU-CATALOG-DELIVERY.md for acceptance and API limits. |
 | [Message](https://ui.shadcn.com/docs/components/message) | N | Owned markup/CSS | Role/avatar/content/action presentation; streaming transport remains outside UI. |
-| [Message Scroller](https://ui.shadcn.com/docs/components/message-scroller) | G | No Kobalte scroll-follow controller; owned native scrolling | Delivered following, user interruption, streamed growth, stable-item anchor preservation and cleanup. No virtualization or transport; [scope and evidence](docs/LAYOUT-CATALOG-DELIVERY.md). |
+| [Message Scroller](https://ui.shadcn.com/docs/components/message-scroller) | E | No Kobalte scroll-follow controller; owned native scrolling | Delivered following, user interruption, streamed growth, stable-item anchor preservation and cleanup. No virtualization or transport; [scope and evidence](docs/LAYOUT-CATALOG-DELIVERY.md). |
 | [Native Select](https://ui.shadcn.com/docs/components/native-select) | N | Native select/option/optgroup | Form value, keyboard/browser behavior, disabled state and styled icon. |
 | [Navigation Menu](https://ui.shadcn.com/docs/components/navigation-menu) | C | `navigation-menu` | Delivered owned native behavior after Kobalte diagnostic failure; see docs/MENU-CATALOG-DELIVERY.md for acceptance and API limits. |
 | [Pagination](https://ui.shadcn.com/docs/components/pagination) | N | `pagination` evaluated first; passive native links | Delivered sibling link composition, current/disabled state and native navigation; page data stays host-owned. See docs/DISPLAY-CATALOG-DELIVERY.md. |
@@ -135,7 +137,7 @@ No row currently selects corvu; alternatives are evaluated below.
 | [Questionnaire](https://ui.shadcn.com/docs/components/questionnaire) | C | Kobalte controls assessed; owned native form composition | Delivered ordered answer metadata, navigation/validation, freeform/multiple/skipped answers, reset, shortcuts and controlled drafts. No branching or transport; [scope and evidence](docs/CHART-QUESTIONNAIRE-DELIVERY.md). |
 | [Radio Group](https://ui.shadcn.com/docs/components/radio-group) | N | `radio-group` evaluated first; owned native radios | Default reset and diagnostics fail on alpha.2/rc.13. Native forms, controlled rejection, required/disabled/readonly, reset ownership, arrows and SSR/hydration delivered. See KOBALTE-CHOICES.md and docs/CHOICES-DELIVERY.md. |
 | [Resizable](https://ui.shadcn.com/docs/components/resizable) | K | `resizable` evaluated first; owned adjacent percentage panels | Delivered constrained drag/keyboard sizing, collapse/restore, orientation, RTL and rejection. No intersections, persisted layout or imperative React refs; [scope and evidence](docs/LAYOUT-CATALOG-DELIVERY.md). |
-| [Scroll Area](https://ui.shadcn.com/docs/components/scroll-area) | G | No Kobalte custom scrollbar; native overflow and owned tracks | Delivered viewport/tracks/thumbs, both axes, pointer/keyboard control, RTL and resize observation. No Radix visibility-animation API; [scope and evidence](docs/LAYOUT-CATALOG-DELIVERY.md). |
+| [Scroll Area](https://ui.shadcn.com/docs/components/scroll-area) | E | No Kobalte custom scrollbar; native overflow and owned tracks | Delivered viewport/tracks/thumbs, both axes, pointer/keyboard control, RTL and resize observation. No Radix visibility-animation API; [scope and evidence](docs/LAYOUT-CATALOG-DELIVERY.md). |
 | [Select](https://ui.shadcn.com/docs/components/select) | N | Owned native select + combobox/listbox | Delivered keyboard/typeahead, controlled state, form/reset, groups and top-layer placement. Kobalte alpha.2 passes basic interaction but emits 25 diagnostics in each tested engine; [evaluation](KOBALTE-SELECT.md), [delivery](docs/SELECT-DELIVERY.md). Explicit item data; no Radix item-aligned mode or portal API. |
 | [Separator](https://ui.shadcn.com/docs/components/separator) | K | `separator` | Horizontal/vertical and decorative versus semantic separator. |
 | [Sheet](https://ui.shadcn.com/docs/components/sheet) | C | `dialog` evaluated; shared native modal | Delivered four physical sides, long-content scrolling, retained drafts and hydration. Immediate closure, no delayed exit-presence claim. |
@@ -197,50 +199,37 @@ cross-library focus/scroll-lock/cleanup results. Existing fork linker success
 does not satisfy that decision. Original Solid 1 corvu is not an approved
 fallback for this Solid 2 package.
 
-## Implementation gaps and next checks
+## Implementation outcomes and remaining verification
 
-1. **Direction (owned provider delivered):** nested explicit direction, Tabs keyboard and Popover alignment now pass; see docs/DISPLAY-CATALOG-DELIVERY.md. For external Kobalte primitives, the published `I18nProviderProps` only offers `locale` and
-   `children`; `useLocale` supplies direction inferred from locale. A DOM `dir`
-   attribute alone cannot be assumed to change internal keyboard/placement
-   behavior. Test explicit RTL with an LTR locale and nested overrides; choose
-   a supported bridge or upstream change if necessary. Corvu has no replacement
-   direction provider in its documented catalog.
-2. **Command:** Kobalte Search describes itself as a combobox with external
-   filtering. It is a useful building block, not cmdk. Specify item registration,
-   ranking, groups, disabled/empty behavior, inline versus dialog rendering and
-   action activation before committing to that composition.
-3. **Carousel / Data Table / Chart:** these need engines, not another overlay
-   library. Investigate framework-neutral cores or explicitly Solid 2-compatible
-   adapters. [Embla's module approach](https://www.embla-carousel.com/docs/get-started)
-   and [TanStack Table's core/adapters](https://tanstack.com/table/latest/docs/installation)
-   are candidates to investigate, not verified Solid 2 dependencies.
-   The sibling's React imports cannot be reused. Engine/version
-   selection, bundle measurement and runtime checks remain open; no new library
-   has been selected by this map.
-4. **Scroll Area / Message Scroller:** treat custom scrollbars and following
-   message growth as separate behaviors. Verify pointer/keyboard scrolling,
-   resize observers, user interruption, anchor stability and unmount cleanup.
-   The [Message Scroller behavior reference](https://ui.shadcn.com/docs/react/message-scroller)
-   is React-specific and needs a Solid implementation.
-5. **Questionnaire / Sidebar / Sonner:** own the composition and its state
-   contracts. Test transitions, controlled updates and disposal, not just render
-   output. These are larger tasks than adding styled containers.
-6. **Calendar / Date Picker:** Kobalte declares single, multiple and range
-   selection. In this exact alpha, `DateValue` aliases native JavaScript `Date`,
-   with Gregorian-only math and no explicit per-value timezone. Define public
-   date/time semantics, unavailable dates, month navigation and localization
-   explicitly. The earlier internationalized-date-object assessment was incorrect.
-7. **All interactive wrappers:** preserve public names/classes while translating
-   props, refs, contexts, event semantics and `data-*` state hooks. A simple
-   library import replacement cannot preserve all Radix/Vaul contracts.
+All 65 planned families are implemented. The five original engine/controller gaps
+are closed within the documented contracts:
 
-Run the existing Gate 0 runtime/tooling checks first, then prioritize Drawer,
-Resizable, Calendar/Date Picker, Input OTP and Direction behavior probes. For
-every row, attach unit, browser integration, E2E, accessibility and visual
-evidence plus documented examples/screenshots before marking it delivered.
-Use browser tests for gestures, layout, focus, portals and cleanup; unit tests
-alone cannot certify these. Keep tests for async rejection and stale responses
-at the component/host boundary wherever applicable.
+- Carousel uses Embla 8.6.0; Scroll Area and Message Scroller use owned native
+  scrolling/controllers. [Layout delivery](docs/LAYOUT-CATALOG-DELIVERY.md).
+- Data Table uses TanStack Table core 8.21.3 with owned Solid memo boundaries.
+  [Data Table delivery](docs/DATA-TABLE-DELIVERY.md).
+- Chart uses Chart.js 4.5.1 with an accessible table alternative.
+  [Chart and Questionnaire delivery](docs/CHART-QUESTIONNAIRE-DELIVERY.md).
+
+Direction, Command, Questionnaire, Sidebar, notifications and date controls also
+have delivered implementations and linked tests in the table above. Their public
+contracts are described in the [component guide](docs/components.md). A matching
+family/export name does not establish every React, Radix, Vaul or Base UI prop.
+The React ref-object `useComboboxAnchor` hook is intentionally omitted; the owned
+Combobox positions its input/trigger internally, as documented in the guide.
+
+The [catalog inventory regression](tests/unit/catalog-inventory.test.ts) checks
+all 65 dated map entries against source modules and root value exports, and checks
+sibling value export names with that explicit ref-hook exception. It complements
+behavior tests; it cannot establish compatible props, physical device behavior or
+upstream additions after the dated inventory.
+
+Remaining work is verification beyond these delivered contracts: manual assistive
+technology and physical IME/touch/autofill, broader variant/composition coverage,
+consumer bundle measurements and real admin/router/query integration. Keep those
+limits visible in the [acceptance matrix](docs/TEST-MATRIX.md); they are not five
+unimplemented engine components. See [final gates](docs/REMAINING-CATALOG-STATUS.md)
+and [completion audit](docs/CATALOG-COMPLETION-AUDIT.md).
 
 ## Historical delivery report for the initial mapping
 
