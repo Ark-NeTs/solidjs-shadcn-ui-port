@@ -1,4 +1,11 @@
 // Server/client shared acceptance composition through public source exports; D19/D90.
+import {DataTableCatalogContent} from '../../playground/catalog-data-table';
+import {QuestionnaireCatalogContent} from '../../playground/catalog-questionnaire';
+import {ChartCatalogContent} from '../../playground/catalog-chart';
+import {SidebarCatalogContent} from '../../playground/catalog-sidebar';
+import {NotificationCatalogContent} from '../../playground/catalog-notifications';
+import { LayoutCatalogContent } from '../../playground/catalog-layout';
+import { DateCatalogContent } from '../../playground/catalog-dates';
 import { MenuCatalogContent } from '../../playground/catalog-menus';
 import { ModalCatalogContent } from '../../playground/catalog-modal';
 import { DisplayCatalogContent } from '../../playground/catalog-display';
@@ -45,7 +52,7 @@ export function HydrationFixture(props: { initiallyOpen: false | 'popover' | 'al
     setSubmitted(JSON.stringify(Object.fromEntries(new FormData(event.currentTarget))));
     setSubmissions(value => value + 1);
   }
-  return <main class="mx-auto grid max-w-xl gap-4 p-6">
+  return <><main class="mx-auto grid max-w-xl gap-4 p-6">
     <Card><CardHeader><CardTitle>Hydrated preferences</CardTitle></CardHeader><CardContent>
       <Badge>Server content</Badge><Separator decorative={false}/><Skeleton class="h-2 w-16"/>
       <form data-testid="hydration-form" onSubmit={submit} onReset={() => setNotes('Server notes')} class="grid gap-3">
@@ -87,6 +94,6 @@ export function HydrationFixture(props: { initiallyOpen: false | 'popover' | 'al
     <form id="hydrated-select-form"><Select items={[{value:"apple",label:"Apple"},{value:"cherry",label:"Cherry"}]} name="fruit" defaultValue="apple"><SelectTrigger aria-label="Hydrated fruit"><SelectValue/></SelectTrigger><SelectContent>{item=><SelectItem value={item.value}/>}</SelectContent></Select><button type="reset">Reset hydrated fruit</button></form>
     <form id="hydrated-slider-form"><Slider aria-label="Hydrated range" thumbLabels={["Hydrated minimum","Hydrated maximum"]} name="range" defaultValue={[20,80]} minStepsBetweenThumbs={10}/><button type="reset">Reset hydrated range</button></form>
     <span id={`progress-label-${suffix()}`}>Hydrated progress</span><Progress aria-labelledby={`progress-label-${suffix()}`} value={progress()}/><Button onClick={()=>setProgress(100)}>Complete hydrated progress</Button><Button onClick={()=>setProgress(null)}>Unknown hydrated progress</Button>
-    <NativeCatalogContent/><DisplayCatalogContent/><ModalCatalogContent/><MenuCatalogContent/><output data-testid="confirmed">{confirmed()}</output>
-  </main>;
+    <NativeCatalogContent/><DisplayCatalogContent/><ModalCatalogContent/><MenuCatalogContent/><DateCatalogContent/><LayoutCatalogContent/><NotificationCatalogContent/><ChartCatalogContent/><QuestionnaireCatalogContent/><DataTableCatalogContent/><output data-testid="confirmed">{confirmed()}</output>
+  </main><section aria-label="Sidebar fixture" style={{transform:'translateZ(0)'}}><SidebarCatalogContent/></section></>;
 }

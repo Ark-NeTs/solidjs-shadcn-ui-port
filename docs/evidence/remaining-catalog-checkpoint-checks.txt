@@ -1,0 +1,67 @@
+CHECK
+$ tsc --noEmit
+
+
+LINT
+$ eslint src tests playground scripts *.ts
+
+
+UNIT
+$ vitest run
+
+ RUN  v4.1.10 /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme
+
+
+ Test Files  27 passed (27)
+      Tests  353 passed (353)
+   Start at  10:23:55
+   Duration  5.77s (transform 6.70s, setup 5.73s, import 10.60s, tests 12.27s, environment 17.26s)
+
+
+
+SERVER
+$ vitest run --config vitest.server.config.ts
+
+ RUN  v4.1.10 /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme
+
+
+ Test Files  1 passed (1)
+      Tests  23 passed (23)
+   Start at  10:24:01
+   Duration  903ms (transform 614ms, setup 0ms, import 742ms, tests 75ms, environment 0ms)
+
+
+
+COVERAGE
+$ vitest run --coverage
+
+ RUN  v4.1.10 /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme
+      Coverage enabled with v8
+
+
+ Test Files  27 passed (27)
+      Tests  353 passed (353)
+   Start at  10:24:03
+   Duration  6.47s (transform 7.00s, setup 5.55s, import 12.40s, tests 14.35s, environment 15.19s)
+
+ % Coverage report from v8
+-------------------|---------|----------|---------|---------|-------------------
+File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
+-------------------|---------|----------|---------|---------|-------------------
+All files          |   99.64 |    99.38 |   99.39 |     100 |
+ components/ui     |   99.57 |    99.23 |   99.29 |     100 |
+  chart.tsx        |   99.23 |    97.22 |     100 |     100 | 29-30,32,36
+  data-table.tsx   |   89.57 |    83.33 |   84.54 |     100 | 22,30,34
+  ...tionnaire.tsx |   98.26 |    95.98 |     100 |     100 | 20,25,29,32-35,50
+-------------------|---------|----------|---------|---------|-------------------
+
+=============================== Coverage summary ===============================
+Statements   : 99.64% ( 7023/7048 )
+Branches     : 99.38% ( 3876/3900 )
+Functions    : 99.39% ( 2812/2829 )
+Lines        : 100% ( 1371/1371 )
+================================================================================
+ERROR: Coverage for functions (99.39%) does not meet global threshold (100%)
+ERROR: Coverage for statements (99.64%) does not meet global threshold (100%)
+ERROR: Coverage for branches (99.38%) does not meet global threshold (100%)
+error: script "test:coverage" exited with code 1

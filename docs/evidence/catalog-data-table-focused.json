@@ -1,0 +1,494 @@
+{
+  "config": {
+    "argv": [
+      "/Users/arktas/.asdf/installs/nodejs/25.3.0/bin/node",
+      "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/node_modules/.bin/playwright",
+      "test",
+      "tests/integration/catalog-data-table.spec.ts",
+      "--max-failures=1"
+    ],
+    "configFile": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/playwright.config.ts",
+    "rootDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 1,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "integration/**/*.spec.ts",
+          "e2e/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [
+          "**/visual.spec.ts"
+        ],
+        "testMatch": [
+          "integration/**/*.spec.ts",
+          "e2e/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [
+          "**/visual.spec.ts"
+        ],
+        "testMatch": [
+          "integration/**/*.spec.ts",
+          "e2e/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "docs/evidence/catalog-data-table-focused.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": {
+      "command": "bun run dev",
+      "url": "http://127.0.0.1:4403",
+      "reuseExistingServer": false,
+      "timeout": 60000
+    }
+  },
+  "suites": [
+    {
+      "title": "integration/catalog-data-table.spec.ts",
+      "file": "integration/catalog-data-table.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Data Table sorts, honors controlled rejection and filters local records",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 908,
+                  "error": {
+                    "message": "Error: No browser errors or development diagnostics\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  -  1\u001b[39m\n\u001b[31m+ Received  + 10\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"[WIDE_SCOPE_DEPS] effect \\\"input.spread\\\" is subscribed to 80 sources — it re-runs when any of them change. Narrow its reads or split it into smaller memos. Sources: computed, createDataTable.resolved, computed, computed, computed, computed, computed, computed, computed, computed, computed, createDataTable.resolved, …\u001b[39m\n\u001b[31m+   in <Preview> › <DataTableCatalogExamples> › <DataTableCatalogContent> › <Show> › value › <DataTable> › <Table> › table.children › <TableHeader> › thead.children › <For> › <TableRow> › tr.children › <Show> › value › <TableHead> › th.children › <Checkbox> › input.spread\u001b[39m\n\u001b[31m+ [WIDE_SCOPE_DEPS] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#wide_scope_deps\u001b[39m\n\u001b[31m+ [WIDE_SCOPE_DEPS] deeper evidence: import { attribution } from \\\"solid-js/attribution\\\"; attribution.enable() explains every re-run — why-chains, costs(), feedback(), history(\\\"hold\\\" | \\\"waterfall\\\") — agent loop: node_modules/@solidjs/diagnostics/skills/agent-loops/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/diagnostics/skills/agent-loops/SKILL.md\",\u001b[39m\n\u001b[31m+   \"[UNSTABLE_MEMO_OUTPUT] memo \\\"computed\\\" produced a new-but-equivalent object on 4 consecutive runs — its equality gate never closes, so every subscriber re-runs on every upstream change. Return stable references or pass an `equals` option.\u001b[39m\n\u001b[31m+   in <Preview> › <DataTableCatalogExamples> › <DataTableCatalogContent> › <Show> › value › <DataTable> › computed\u001b[39m\n\u001b[31m+ [UNSTABLE_MEMO_OUTPUT] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#unstable_memo_output\u001b[39m\n\u001b[31m+ [UNSTABLE_MEMO_OUTPUT] deeper evidence: import { attribution } from \\\"solid-js/attribution\\\"; attribution.enable() explains every re-run — why-chains, costs(), feedback(), history(\\\"hold\\\" | \\\"waterfall\\\") — agent loop: node_modules/@solidjs/diagnostics/skills/agent-loops/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/diagnostics/skills/agent-loops/SKILL.md\",\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                    "stack": "Error: No browser errors or development diagnostics\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  -  1\u001b[39m\n\u001b[31m+ Received  + 10\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"[WIDE_SCOPE_DEPS] effect \\\"input.spread\\\" is subscribed to 80 sources — it re-runs when any of them change. Narrow its reads or split it into smaller memos. Sources: computed, createDataTable.resolved, computed, computed, computed, computed, computed, computed, computed, computed, computed, createDataTable.resolved, …\u001b[39m\n\u001b[31m+   in <Preview> › <DataTableCatalogExamples> › <DataTableCatalogContent> › <Show> › value › <DataTable> › <Table> › table.children › <TableHeader> › thead.children › <For> › <TableRow> › tr.children › <Show> › value › <TableHead> › th.children › <Checkbox> › input.spread\u001b[39m\n\u001b[31m+ [WIDE_SCOPE_DEPS] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#wide_scope_deps\u001b[39m\n\u001b[31m+ [WIDE_SCOPE_DEPS] deeper evidence: import { attribution } from \\\"solid-js/attribution\\\"; attribution.enable() explains every re-run — why-chains, costs(), feedback(), history(\\\"hold\\\" | \\\"waterfall\\\") — agent loop: node_modules/@solidjs/diagnostics/skills/agent-loops/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/diagnostics/skills/agent-loops/SKILL.md\",\u001b[39m\n\u001b[31m+   \"[UNSTABLE_MEMO_OUTPUT] memo \\\"computed\\\" produced a new-but-equivalent object on 4 consecutive runs — its equality gate never closes, so every subscriber re-runs on every upstream change. Return stable references or pass an `equals` option.\u001b[39m\n\u001b[31m+   in <Preview> › <DataTableCatalogExamples> › <DataTableCatalogContent> › <Show> › value › <DataTable> › computed\u001b[39m\n\u001b[31m+ [UNSTABLE_MEMO_OUTPUT] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#unstable_memo_output\u001b[39m\n\u001b[31m+ [UNSTABLE_MEMO_OUTPUT] deeper evidence: import { attribution } from \\\"solid-js/attribution\\\"; attribution.enable() explains every re-run — why-chains, costs(), feedback(), history(\\\"hold\\\" | \\\"waterfall\\\") — agent loop: node_modules/@solidjs/diagnostics/skills/agent-loops/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/diagnostics/skills/agent-loops/SKILL.md\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at Object.base.extend.diagnostics.auto (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/browser-fixture.ts:10:69)",
+                    "location": {
+                      "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/browser-fixture.ts",
+                      "column": 69,
+                      "line": 10
+                    },
+                    "snippet": "\u001b[90m   at \u001b[39mbrowser-fixture.ts:10\n\n   8 |     await use(messages);\n   9 |     await testInfo.attach('browser-diagnostics',{body:JSON.stringify(messages),contentType:'application/json'});\n> 10 |     expect(messages,'No browser errors or development diagnostics').toEqual([]);\n     |                                                                     ^\n  11 |   },{auto:true}],\n  12 | });\n  13 | export { expect };"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/browser-fixture.ts",
+                        "column": 69,
+                        "line": 10
+                      },
+                      "message": "Error: No browser errors or development diagnostics\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  -  1\u001b[39m\n\u001b[31m+ Received  + 10\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"[WIDE_SCOPE_DEPS] effect \\\"input.spread\\\" is subscribed to 80 sources — it re-runs when any of them change. Narrow its reads or split it into smaller memos. Sources: computed, createDataTable.resolved, computed, computed, computed, computed, computed, computed, computed, computed, computed, createDataTable.resolved, …\u001b[39m\n\u001b[31m+   in <Preview> › <DataTableCatalogExamples> › <DataTableCatalogContent> › <Show> › value › <DataTable> › <Table> › table.children › <TableHeader> › thead.children › <For> › <TableRow> › tr.children › <Show> › value › <TableHead> › th.children › <Checkbox> › input.spread\u001b[39m\n\u001b[31m+ [WIDE_SCOPE_DEPS] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#wide_scope_deps\u001b[39m\n\u001b[31m+ [WIDE_SCOPE_DEPS] deeper evidence: import { attribution } from \\\"solid-js/attribution\\\"; attribution.enable() explains every re-run — why-chains, costs(), feedback(), history(\\\"hold\\\" | \\\"waterfall\\\") — agent loop: node_modules/@solidjs/diagnostics/skills/agent-loops/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/diagnostics/skills/agent-loops/SKILL.md\",\u001b[39m\n\u001b[31m+   \"[UNSTABLE_MEMO_OUTPUT] memo \\\"computed\\\" produced a new-but-equivalent object on 4 consecutive runs — its equality gate never closes, so every subscriber re-runs on every upstream change. Return stable references or pass an `equals` option.\u001b[39m\n\u001b[31m+   in <Preview> › <DataTableCatalogExamples> › <DataTableCatalogContent> › <Show> › value › <DataTable> › computed\u001b[39m\n\u001b[31m+ [UNSTABLE_MEMO_OUTPUT] repair guide: node_modules/solid-js/skills/reactivity-diagnostics/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/solid/skills/reactivity-diagnostics/SKILL.md#unstable_memo_output\u001b[39m\n\u001b[31m+ [UNSTABLE_MEMO_OUTPUT] deeper evidence: import { attribution } from \\\"solid-js/attribution\\\"; attribution.enable() explains every re-run — why-chains, costs(), feedback(), history(\\\"hold\\\" | \\\"waterfall\\\") — agent loop: node_modules/@solidjs/diagnostics/skills/agent-loops/SKILL.md — https://github.com/solidjs/solid/blob/main/packages/diagnostics/skills/agent-loops/SKILL.md\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n   at browser-fixture.ts:10\n\n   8 |     await use(messages);\n   9 |     await testInfo.attach('browser-diagnostics',{body:JSON.stringify(messages),contentType:'application/json'});\n> 10 |     expect(messages,'No browser errors or development diagnostics').toEqual([]);\n     |                                                                     ^\n  11 |   },{auto:true}],\n  12 | });\n  13 | export { expect };\n    at Object.base.extend.diagnostics.auto (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/browser-fixture.ts:10:69)"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T00:37:26.429Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "WyJbV0lERV9TQ09QRV9ERVBTXSBlZmZlY3QgXCJpbnB1dC5zcHJlYWRcIiBpcyBzdWJzY3JpYmVkIHRvIDgwIHNvdXJjZXMg4oCUIGl0IHJlLXJ1bnMgd2hlbiBhbnkgb2YgdGhlbSBjaGFuZ2UuIE5hcnJvdyBpdHMgcmVhZHMgb3Igc3BsaXQgaXQgaW50byBzbWFsbGVyIG1lbW9zLiBTb3VyY2VzOiBjb21wdXRlZCwgY3JlYXRlRGF0YVRhYmxlLnJlc29sdmVkLCBjb21wdXRlZCwgY29tcHV0ZWQsIGNvbXB1dGVkLCBjb21wdXRlZCwgY29tcHV0ZWQsIGNvbXB1dGVkLCBjb21wdXRlZCwgY29tcHV0ZWQsIGNvbXB1dGVkLCBjcmVhdGVEYXRhVGFibGUucmVzb2x2ZWQsIOKAplxuICBpbiA8UHJldmlldz4g4oC6IDxEYXRhVGFibGVDYXRhbG9nRXhhbXBsZXM+IOKAuiA8RGF0YVRhYmxlQ2F0YWxvZ0NvbnRlbnQ+IOKAuiA8U2hvdz4g4oC6IHZhbHVlIOKAuiA8RGF0YVRhYmxlPiDigLogPFRhYmxlPiDigLogdGFibGUuY2hpbGRyZW4g4oC6IDxUYWJsZUhlYWRlcj4g4oC6IHRoZWFkLmNoaWxkcmVuIOKAuiA8Rm9yPiDigLogPFRhYmxlUm93PiDigLogdHIuY2hpbGRyZW4g4oC6IDxTaG93PiDigLogdmFsdWUg4oC6IDxUYWJsZUhlYWQ+IOKAuiB0aC5jaGlsZHJlbiDigLogPENoZWNrYm94PiDigLogaW5wdXQuc3ByZWFkXG5bV0lERV9TQ09QRV9ERVBTXSByZXBhaXIgZ3VpZGU6IG5vZGVfbW9kdWxlcy9zb2xpZC1qcy9za2lsbHMvcmVhY3Rpdml0eS1kaWFnbm9zdGljcy9TS0lMTC5tZCDigJQgaHR0cHM6Ly9naXRodWIuY29tL3NvbGlkanMvc29saWQvYmxvYi9tYWluL3BhY2thZ2VzL3NvbGlkL3NraWxscy9yZWFjdGl2aXR5LWRpYWdub3N0aWNzL1NLSUxMLm1kI3dpZGVfc2NvcGVfZGVwc1xuW1dJREVfU0NPUEVfREVQU10gZGVlcGVyIGV2aWRlbmNlOiBpbXBvcnQgeyBhdHRyaWJ1dGlvbiB9IGZyb20gXCJzb2xpZC1qcy9hdHRyaWJ1dGlvblwiOyBhdHRyaWJ1dGlvbi5lbmFibGUoKSBleHBsYWlucyBldmVyeSByZS1ydW4g4oCUIHdoeS1jaGFpbnMsIGNvc3RzKCksIGZlZWRiYWNrKCksIGhpc3RvcnkoXCJob2xkXCIgfCBcIndhdGVyZmFsbFwiKSDigJQgYWdlbnQgbG9vcDogbm9kZV9tb2R1bGVzL0Bzb2xpZGpzL2RpYWdub3N0aWNzL3NraWxscy9hZ2VudC1sb29wcy9TS0lMTC5tZCDigJQgaHR0cHM6Ly9naXRodWIuY29tL3NvbGlkanMvc29saWQvYmxvYi9tYWluL3BhY2thZ2VzL2RpYWdub3N0aWNzL3NraWxscy9hZ2VudC1sb29wcy9TS0lMTC5tZCIsIltVTlNUQUJMRV9NRU1PX09VVFBVVF0gbWVtbyBcImNvbXB1dGVkXCIgcHJvZHVjZWQgYSBuZXctYnV0LWVxdWl2YWxlbnQgb2JqZWN0IG9uIDQgY29uc2VjdXRpdmUgcnVucyDigJQgaXRzIGVxdWFsaXR5IGdhdGUgbmV2ZXIgY2xvc2VzLCBzbyBldmVyeSBzdWJzY3JpYmVyIHJlLXJ1bnMgb24gZXZlcnkgdXBzdHJlYW0gY2hhbmdlLiBSZXR1cm4gc3RhYmxlIHJlZmVyZW5jZXMgb3IgcGFzcyBhbiBgZXF1YWxzYCBvcHRpb24uXG4gIGluIDxQcmV2aWV3PiDigLogPERhdGFUYWJsZUNhdGFsb2dFeGFtcGxlcz4g4oC6IDxEYXRhVGFibGVDYXRhbG9nQ29udGVudD4g4oC6IDxTaG93PiDigLogdmFsdWUg4oC6IDxEYXRhVGFibGU+IOKAuiBjb21wdXRlZFxuW1VOU1RBQkxFX01FTU9fT1VUUFVUXSByZXBhaXIgZ3VpZGU6IG5vZGVfbW9kdWxlcy9zb2xpZC1qcy9za2lsbHMvcmVhY3Rpdml0eS1kaWFnbm9zdGljcy9TS0lMTC5tZCDigJQgaHR0cHM6Ly9naXRodWIuY29tL3NvbGlkanMvc29saWQvYmxvYi9tYWluL3BhY2thZ2VzL3NvbGlkL3NraWxscy9yZWFjdGl2aXR5LWRpYWdub3N0aWNzL1NLSUxMLm1kI3Vuc3RhYmxlX21lbW9fb3V0cHV0XG5bVU5TVEFCTEVfTUVNT19PVVRQVVRdIGRlZXBlciBldmlkZW5jZTogaW1wb3J0IHsgYXR0cmlidXRpb24gfSBmcm9tIFwic29saWQtanMvYXR0cmlidXRpb25cIjsgYXR0cmlidXRpb24uZW5hYmxlKCkgZXhwbGFpbnMgZXZlcnkgcmUtcnVuIOKAlCB3aHktY2hhaW5zLCBjb3N0cygpLCBmZWVkYmFjaygpLCBoaXN0b3J5KFwiaG9sZFwiIHwgXCJ3YXRlcmZhbGxcIikg4oCUIGFnZW50IGxvb3A6IG5vZGVfbW9kdWxlcy9Ac29saWRqcy9kaWFnbm9zdGljcy9za2lsbHMvYWdlbnQtbG9vcHMvU0tJTEwubWQg4oCUIGh0dHBzOi8vZ2l0aHViLmNvbS9zb2xpZGpzL3NvbGlkL2Jsb2IvbWFpbi9wYWNrYWdlcy9kaWFnbm9zdGljcy9za2lsbHMvYWdlbnQtbG9vcHMvU0tJTEwubWQiXQ=="
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/integration-catalog-data-t-bdeb5-n-and-filters-local-records-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/integration-catalog-data-t-bdeb5-n-and-filters-local-records-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/integration-catalog-data-t-bdeb5-n-and-filters-local-records-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/browser-fixture.ts",
+                    "column": 69,
+                    "line": 10
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "a5be517183df0099ae78-eeeb57083a18e4eaf759",
+          "file": "catalog-data-table.ts",
+          "line": 6,
+          "column": 2
+        },
+        {
+          "title": "Data Table pagination, page selection and visibility follow actual rows",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "a5be517183df0099ae78-76002a0bf8dab386472a",
+          "file": "catalog-data-table.ts",
+          "line": 7,
+          "column": 2
+        },
+        {
+          "title": "Data Table loading, retained error recovery, live data and remount stay usable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "a5be517183df0099ae78-6a9855471b0826bd3705",
+          "file": "catalog-data-table.ts",
+          "line": 8,
+          "column": 2
+        },
+        {
+          "title": "Data Table light narrow enlarged controls and scrollable records remain accessible",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "a5be517183df0099ae78-9d550c0481aece194daa",
+          "file": "catalog-data-table.ts",
+          "line": 9,
+          "column": 33
+        },
+        {
+          "title": "Data Table dark narrow enlarged controls and scrollable records remain accessible",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "a5be517183df0099ae78-0b4d98a925a847dd2957",
+          "file": "catalog-data-table.ts",
+          "line": 9,
+          "column": 33
+        },
+        {
+          "title": "Data Table sorts, honors controlled rejection and filters local records",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "a5be517183df0099ae78-beedb38df0617dc15605",
+          "file": "catalog-data-table.ts",
+          "line": 6,
+          "column": 2
+        },
+        {
+          "title": "Data Table pagination, page selection and visibility follow actual rows",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "a5be517183df0099ae78-dbcf82d69bf71a2c9b6e",
+          "file": "catalog-data-table.ts",
+          "line": 7,
+          "column": 2
+        },
+        {
+          "title": "Data Table loading, retained error recovery, live data and remount stay usable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "a5be517183df0099ae78-3b98f73814827f44f1ed",
+          "file": "catalog-data-table.ts",
+          "line": 8,
+          "column": 2
+        },
+        {
+          "title": "Data Table light narrow enlarged controls and scrollable records remain accessible",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "a5be517183df0099ae78-fe611fbfa138ad388234",
+          "file": "catalog-data-table.ts",
+          "line": 9,
+          "column": 33
+        },
+        {
+          "title": "Data Table dark narrow enlarged controls and scrollable records remain accessible",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "a5be517183df0099ae78-634c193a1fffe2168467",
+          "file": "catalog-data-table.ts",
+          "line": 9,
+          "column": 33
+        },
+        {
+          "title": "Data Table sorts, honors controlled rejection and filters local records",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "a5be517183df0099ae78-91ac7382cd3357c70e00",
+          "file": "catalog-data-table.ts",
+          "line": 6,
+          "column": 2
+        },
+        {
+          "title": "Data Table pagination, page selection and visibility follow actual rows",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "a5be517183df0099ae78-5889b148eae6cb2f5165",
+          "file": "catalog-data-table.ts",
+          "line": 7,
+          "column": 2
+        },
+        {
+          "title": "Data Table loading, retained error recovery, live data and remount stay usable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "a5be517183df0099ae78-f54a89ed23419ef24d26",
+          "file": "catalog-data-table.ts",
+          "line": 8,
+          "column": 2
+        },
+        {
+          "title": "Data Table light narrow enlarged controls and scrollable records remain accessible",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "a5be517183df0099ae78-22ba10d0d1a35a516394",
+          "file": "catalog-data-table.ts",
+          "line": 9,
+          "column": 33
+        },
+        {
+          "title": "Data Table dark narrow enlarged controls and scrollable records remain accessible",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "a5be517183df0099ae78-d8201976f608c5ce4ad0",
+          "file": "catalog-data-table.ts",
+          "line": 9,
+          "column": 33
+        }
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "message": "\u001b[31mTesting stopped early after 1 maximum allowed failures.\u001b[39m"
+    }
+  ],
+  "stats": {
+    "startTime": "2026-10-09T00:37:25.094Z",
+    "duration": 2593.032,
+    "expected": 0,
+    "skipped": 14,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

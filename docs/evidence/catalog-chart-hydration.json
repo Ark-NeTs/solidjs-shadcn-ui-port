@@ -1,0 +1,254 @@
+{
+  "config": {
+    "argv": [
+      "/Users/arktas/.asdf/installs/nodejs/25.3.0/bin/node",
+      "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/node_modules/.bin/playwright",
+      "test",
+      "--config",
+      "playwright.hydration.config.ts",
+      "--grep",
+      "hydrates Chart",
+      "--max-failures=1"
+    ],
+    "configFile": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/playwright.hydration.config.ts",
+    "rootDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 1,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "hydration/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [
+          "**/visual.spec.ts"
+        ],
+        "testMatch": [
+          "hydration/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [
+          "**/visual.spec.ts"
+        ],
+        "testMatch": [
+          "hydration/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "docs/evidence/catalog-chart-hydration.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": {
+      "command": "bun run build:hydration && bunx --no-install vite preview --config hydration.vite.config.ts --host 127.0.0.1 --port 4403 --strictPort",
+      "url": "http://127.0.0.1:4403",
+      "reuseExistingServer": false,
+      "timeout": 60000
+    }
+  },
+  "suites": [
+    {
+      "title": "hydration/hydration.spec.ts",
+      "file": "hydration/hydration.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "hydrates Chart data before keyboard inspection, data replacement and disposal",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 1016,
+                  "error": {
+                    "message": "Error: No browser errors or development diagnostics\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 9\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Hydration completed with 6 unclaimed server-rendered node(s):\u001b[39m\n\u001b[31m+   <button _hk=\\\"acceptanceAfc104k00\\\" type=\\\"button\\\" aria-pressed=\\\"true\\\" class=\\\"flex items-center gap-1.5\u001b[39m\n\u001b[31m+   <span _hk=\\\"acceptanceAfc104k030\\\" aria-hidden=\\\"true\\\"><span _hk=\\\"acceptanceAfc104k0310\\\" class=\\\"block s\u001b[39m\n\u001b[31m+   <span _hk=\\\"acceptanceAfc104k0310\\\" class=\\\"block size-2 shrink-0 rounded-xs\\\" style=\\\"background-color:v\u001b[39m\n\u001b[31m+   <button _hk=\\\"acceptanceAfc104k10\\\" type=\\\"button\\\" aria-pressed=\\\"true\\\" class=\\\"flex items-center gap-1.5\u001b[39m\n\u001b[31m+   <span _hk=\\\"acceptanceAfc104k130\\\" aria-hidden=\\\"true\\\"><span _hk=\\\"acceptanceAfc104k1310\\\" class=\\\"block s\u001b[39m\n\u001b[31m+   <span _hk=\\\"acceptanceAfc104k1310\\\" class=\\\"block size-2 shrink-0 rounded-xs\\\" style=\\\"background-color:v\",\u001b[39m\n\u001b[31m+ ]\u001b[39m",
+                    "stack": "Error: No browser errors or development diagnostics\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 9\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Hydration completed with 6 unclaimed server-rendered node(s):\u001b[39m\n\u001b[31m+   <button _hk=\\\"acceptanceAfc104k00\\\" type=\\\"button\\\" aria-pressed=\\\"true\\\" class=\\\"flex items-center gap-1.5\u001b[39m\n\u001b[31m+   <span _hk=\\\"acceptanceAfc104k030\\\" aria-hidden=\\\"true\\\"><span _hk=\\\"acceptanceAfc104k0310\\\" class=\\\"block s\u001b[39m\n\u001b[31m+   <span _hk=\\\"acceptanceAfc104k0310\\\" class=\\\"block size-2 shrink-0 rounded-xs\\\" style=\\\"background-color:v\u001b[39m\n\u001b[31m+   <button _hk=\\\"acceptanceAfc104k10\\\" type=\\\"button\\\" aria-pressed=\\\"true\\\" class=\\\"flex items-center gap-1.5\u001b[39m\n\u001b[31m+   <span _hk=\\\"acceptanceAfc104k130\\\" aria-hidden=\\\"true\\\"><span _hk=\\\"acceptanceAfc104k1310\\\" class=\\\"block s\u001b[39m\n\u001b[31m+   <span _hk=\\\"acceptanceAfc104k1310\\\" class=\\\"block size-2 shrink-0 rounded-xs\\\" style=\\\"background-color:v\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n    at Object.base.extend.diagnostics.auto (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/browser-fixture.ts:10:69)",
+                    "location": {
+                      "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/browser-fixture.ts",
+                      "column": 69,
+                      "line": 10
+                    },
+                    "snippet": "\u001b[90m   at \u001b[39mbrowser-fixture.ts:10\n\n   8 |     await use(messages);\n   9 |     await testInfo.attach('browser-diagnostics',{body:JSON.stringify(messages),contentType:'application/json'});\n> 10 |     expect(messages,'No browser errors or development diagnostics').toEqual([]);\n     |                                                                     ^\n  11 |   },{auto:true}],\n  12 | });\n  13 | export { expect };"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/browser-fixture.ts",
+                        "column": 69,
+                        "line": 10
+                      },
+                      "message": "Error: No browser errors or development diagnostics\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 9\u001b[39m\n\n\u001b[32m- Array []\u001b[39m\n\u001b[31m+ Array [\u001b[39m\n\u001b[31m+   \"Hydration completed with 6 unclaimed server-rendered node(s):\u001b[39m\n\u001b[31m+   <button _hk=\\\"acceptanceAfc104k00\\\" type=\\\"button\\\" aria-pressed=\\\"true\\\" class=\\\"flex items-center gap-1.5\u001b[39m\n\u001b[31m+   <span _hk=\\\"acceptanceAfc104k030\\\" aria-hidden=\\\"true\\\"><span _hk=\\\"acceptanceAfc104k0310\\\" class=\\\"block s\u001b[39m\n\u001b[31m+   <span _hk=\\\"acceptanceAfc104k0310\\\" class=\\\"block size-2 shrink-0 rounded-xs\\\" style=\\\"background-color:v\u001b[39m\n\u001b[31m+   <button _hk=\\\"acceptanceAfc104k10\\\" type=\\\"button\\\" aria-pressed=\\\"true\\\" class=\\\"flex items-center gap-1.5\u001b[39m\n\u001b[31m+   <span _hk=\\\"acceptanceAfc104k130\\\" aria-hidden=\\\"true\\\"><span _hk=\\\"acceptanceAfc104k1310\\\" class=\\\"block s\u001b[39m\n\u001b[31m+   <span _hk=\\\"acceptanceAfc104k1310\\\" class=\\\"block size-2 shrink-0 rounded-xs\\\" style=\\\"background-color:v\",\u001b[39m\n\u001b[31m+ ]\u001b[39m\n\n   at browser-fixture.ts:10\n\n   8 |     await use(messages);\n   9 |     await testInfo.attach('browser-diagnostics',{body:JSON.stringify(messages),contentType:'application/json'});\n> 10 |     expect(messages,'No browser errors or development diagnostics').toEqual([]);\n     |                                                                     ^\n  11 |   },{auto:true}],\n  12 | });\n  13 | export { expect };\n    at Object.base.extend.diagnostics.auto (/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/browser-fixture.ts:10:69)"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-09T00:57:17.577Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "WyJIeWRyYXRpb24gY29tcGxldGVkIHdpdGggNiB1bmNsYWltZWQgc2VydmVyLXJlbmRlcmVkIG5vZGUocyk6XG4gIDxidXR0b24gX2hrPVwiYWNjZXB0YW5jZUFmYzEwNGswMFwiIHR5cGU9XCJidXR0b25cIiBhcmlhLXByZXNzZWQ9XCJ0cnVlXCIgY2xhc3M9XCJmbGV4IGl0ZW1zLWNlbnRlciBnYXAtMS41XG4gIDxzcGFuIF9oaz1cImFjY2VwdGFuY2VBZmMxMDRrMDMwXCIgYXJpYS1oaWRkZW49XCJ0cnVlXCI+PHNwYW4gX2hrPVwiYWNjZXB0YW5jZUFmYzEwNGswMzEwXCIgY2xhc3M9XCJibG9jayBzXG4gIDxzcGFuIF9oaz1cImFjY2VwdGFuY2VBZmMxMDRrMDMxMFwiIGNsYXNzPVwiYmxvY2sgc2l6ZS0yIHNocmluay0wIHJvdW5kZWQteHNcIiBzdHlsZT1cImJhY2tncm91bmQtY29sb3I6dlxuICA8YnV0dG9uIF9oaz1cImFjY2VwdGFuY2VBZmMxMDRrMTBcIiB0eXBlPVwiYnV0dG9uXCIgYXJpYS1wcmVzc2VkPVwidHJ1ZVwiIGNsYXNzPVwiZmxleCBpdGVtcy1jZW50ZXIgZ2FwLTEuNVxuICA8c3BhbiBfaGs9XCJhY2NlcHRhbmNlQWZjMTA0azEzMFwiIGFyaWEtaGlkZGVuPVwidHJ1ZVwiPjxzcGFuIF9oaz1cImFjY2VwdGFuY2VBZmMxMDRrMTMxMFwiIGNsYXNzPVwiYmxvY2sgc1xuICA8c3BhbiBfaGs9XCJhY2NlcHRhbmNlQWZjMTA0azEzMTBcIiBjbGFzcz1cImJsb2NrIHNpemUtMiBzaHJpbmstMCByb3VuZGVkLXhzXCIgc3R5bGU9XCJiYWNrZ3JvdW5kLWNvbG9yOnYiXQ=="
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-hydration-hydrat-51fdc-ta-replacement-and-disposal-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-hydration-hydrat-51fdc-ta-replacement-and-disposal-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/hydration-hydration-hydrat-51fdc-ta-replacement-and-disposal-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/browser-fixture.ts",
+                    "column": 69,
+                    "line": 10
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "1b38abd37014569c5914-f0e5592255ce5691f44d",
+          "file": "hydration/hydration.spec.ts",
+          "line": 221,
+          "column": 1
+        },
+        {
+          "title": "hydrates Chart data before keyboard inspection, data replacement and disposal",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "1b38abd37014569c5914-c450e1694e2563244cea",
+          "file": "hydration/hydration.spec.ts",
+          "line": 221,
+          "column": 1
+        },
+        {
+          "title": "hydrates Chart data before keyboard inspection, data replacement and disposal",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "1b38abd37014569c5914-228cd2ff16e570c15521",
+          "file": "hydration/hydration.spec.ts",
+          "line": 221,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "message": "\u001b[31mTesting stopped early after 1 maximum allowed failures.\u001b[39m"
+    }
+  ],
+  "stats": {
+    "startTime": "2026-10-09T00:57:15.397Z",
+    "duration": 3562.26,
+    "expected": 0,
+    "skipped": 2,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

@@ -3,10 +3,9 @@
 Initially audited 2026-10-08 against source at `314f27a`; updated with the
 [three-engine browser evidence](WEBKIT-DELIVERY.md) and
 [source hydration regression](HYDRATION-DELIVERY.md), including
-[real Loading boundaries](LOADING-HYDRATION-DELIVERY.md). Covers the **52
-implemented component families**, including their compound parts. The other
-catalog entries in [COMPONENT-MAP.md](../COMPONENT-MAP.md) remain unimplemented;
-their adoption probes are not delivered-component acceptance tests.
+[real Loading boundaries](LOADING-HYDRATION-DELIVERY.md). Covers **65 implemented component families** and their compound parts.
+[Final package acceptance](REMAINING-CATALOG-STATUS.md) records the commands and
+limits. Adoption probes alone are not delivered-component acceptance tests.
 
 This is a behavior inventory, not a claim that every possible state is tested.
 Read the assertions in the linked tests: a broad test title alone is not evidence
@@ -43,14 +42,13 @@ are implementation scope limits, not features that an existing test proves.
 | Diagnostics and cleanup are checked | [Unit setup](../vitest.setup.ts), [browser fixture](../tests/browser-fixture.ts) | Every unit test checks console warn/error after cleanup; every B/E/H test checks console warning/error and page errors. The hydration build also rejects server warnings/errors; ordinary S tests have no equivalent diagnostic fixture. |
 | Whole-gallery accessibility | [B: light/dark examples have no axe accessibility violations](../tests/integration/foundation.spec.ts#L27) | Applies to the rendered, settled gallery state. Axe does not certify screen-reader usability or all dynamic states. |
 | Whole-gallery visual appearance | [V: light/dark/mobile component gallery](../tests/e2e/visual.spec.ts#L3) | Shared gallery plus dedicated disclosure and preview images; not every variant/state combination. |
-| Unit execution coverage | [Coverage configuration](../vitest.config.ts), [measured coverage](evidence/catalog-menus-coverage.json) | 100% statements, branches, functions and lines for included component/helper source; not exhaustive behavior coverage. |
+| Unit execution coverage | [Coverage configuration](../vitest.config.ts), [measured coverage](evidence/catalog-final-coverage.json) | 100% statements, branches, functions and lines for included component/helper source; not exhaustive behavior coverage. |
 
-The current menu delivery records **258 unit tests, 17 grouped SSR tests,
-111 hydration runs (108 positive assertions + 3 unsafe-pattern characterizations),
-480 source integration runs and 468 built E2E/visual runs**. Visual tests compare
-66 images. These totals are package-wide, not per component. See
-[menu verification](MENU-CATALOG-DELIVERY.md) and the
-[initial matrix verification](TEST-MATRIX-DELIVERY.md) for the original audit.
+The final catalog delivery records **369 unit tests, 24 grouped SSR tests,
+132 hydration runs, 609 source integration runs
+and 618 built E2E/visual runs**. These totals are package-wide, not per
+component. Three hydration runs characterize the rejected unsafe pattern.
+See [final verification](REMAINING-CATALOG-STATUS.md).
 
 WebKit runs on macOS with process-scoped button Tab navigation and native
 Option-Tab/Option-Shift-Tab for links. Pointer activation does not focus native
@@ -644,3 +642,93 @@ Tests: [units](../tests/unit/catalog-menus.test.tsx),
 [server](../tests/server.test.tsx), [hydration](../tests/hydration/hydration.spec.ts),
 [visuals](../tests/e2e/visual.spec.ts). Final counts and gates belong in the
 [menu delivery report](MENU-CATALOG-DELIVERY.md), not inferred from code coverage.
+
+## Calendar, Date Picker and Input OTP
+
+| Family | Actual assertions | Boundaries |
+| --- | --- | --- |
+| Calendar | U date arithmetic/leap-year clamping, immutable values, controlled rejection, disabled intervals, bounds, locale, multiple/month dropdown and queued-focus teardown; B/E date selection, keyboard month/week/RTL and disabled skipping. | Local Gregorian Dates; no react-day-picker renderer API, week numbers or time editing. |
+| Date Picker | U/B/E accepted/rejected selection, popup focus return, local-date FormData, reset cancellation and disposal; controlled/empty values. | required prevents clearing, not hidden-field native validation; repeated names serialize ranges/multiple values. |
+| Input OTP | U controlled rejection, invalid edits, paste normalization, callback cancellation, reset and label wiring; B/E real native typing/deletion/paste, one tab stop and submitted code. | Real SMS/password-manager autofill and physical keyboards unrun. |
+| Shared | S semantic HTML, H node retention and live edits/reset/disposal, enlarged light/dark axe and no horizontal page overflow, light/dark/mobile visuals. | No manual assistive-technology certification. |
+
+[Units](../tests/unit/catalog-dates.test.tsx), [browser contracts](../tests/catalog-dates.ts),
+[delivery](DATE-CATALOG-DELIVERY.md). Final commands and times are recorded in the catalog report.
+
+## Layout engines
+
+| Family | Assertions | Limits |
+| --- | --- | --- |
+| Resizable | U constraints, controlled rejection, collapse/default expansion, disabled/canceled keyboard and pointer capture cleanup; B/E real dragging, horizontal/vertical/RTL, min/max and keyboard collapse. | Percentage adjacent pairs; no intersections, storage, pixel-size or React imperative ref API. |
+| Scroll Area | U geometry, thumb/track gestures, cancellation, inherited direction observation and disposal; B/E native scrolling, both axes, thumb dragging and RTL. | Native overflow plus custom tracks; no Radix visibility-animation state machine. |
+| Carousel | U lifecycle adapter and caller cancellation with a mocked engine; B/E real Embla snaps, dynamic slides, controls and direction/orientation changes. | Opt-in plugins; no implicit autoplay. Unit mocks do not certify engine geometry. |
+| Message Scroller | U following, interruption, anchor adjustment, reduced motion, explicit navigation and observer cleanup; B/E streamed growth, user history reading, prepend preservation and remount. | Stable rendered items; no virtualization/networking or React hook compatibility. |
+
+See [layout delivery](LAYOUT-CATALOG-DELIVERY.md), [units](../tests/unit/catalog-layout.test.tsx)
+and [browser contracts](../tests/catalog-layout.ts). Final package acceptance is linked above.
+
+## Toast and Sonner
+
+| Family | Assertions | Boundaries |
+| --- | --- | --- |
+| Toast | U controlled rejection, overlapping pauses, visibility, cancellation, default expiry, cleanup, four swipe directions, repeated shortcut focus return and retained-root reopening. B/E actual hover/focus timers, action, Escape/F8, pointer capture and controlled rejection. | Four-axis threshold dismissal, no drag animation; no manual screen-reader certification. |
+| Sonner | U immutable snapshots, replacement, automatic-ID collision avoidance, FIFO queue, callbacks, stale success/error work and subscription disposal. B/E queue advancement, named replacement, expiry/manual distinction, promise dismissal and remount. | One viewport per store; producers own cancellation and persistence. |
+| Shared | S no request-data retention; H region/node retention and post-hydration actions; B/E narrow enlarged light/dark axe; reviewed screenshot triplet. | The Drawer scroll timing isolation is recorded in [native comparison](../validation/drawer-scroll/README.md). |
+
+[Delivery](NOTIFICATION-CATALOG-DELIVERY.md), [units](../tests/unit/catalog-notifications.test.tsx),
+[browser assertions](../tests/catalog-notifications.ts), [unpatched probe](../validation/solid2-toast/README.md).
+
+## Sidebar
+
+U tests cover controlled desktop/mobile rejection, shortcut exclusions, canceled
+pointer/actions, rail behavior, responsive content identity, native modal cleanup,
+disabled/active links, hint ownership and deterministic placeholders. B/E tests
+assert real desktop icon/offcanvas/none modes, hints, shortcuts, right-side main
+content geometry, actual modal Tab/Escape/outside dismissal, draft identity across
+resizing, teardown/remount and enlarged light/dark mobile/desktop axe. S/H verify
+stable desktop markup and post-hydration responsive draft use. Three screenshots
+are reviewed. No persistence/router/manual assistive-technology claim.
+
+[Delivery](SIDEBAR-CATALOG-DELIVERY.md), [units](../tests/unit/catalog-sidebar.test.tsx),
+[browser assertions](../tests/catalog-sidebar.ts).
+
+## Chart and Questionnaire
+
+| Family | Actual assertions | Remaining boundaries |
+| --- | --- | --- |
+| Chart | U engine configuration/cleanup, stable row identity, inherited theme observation, gaps, native legend and keyboard tooltip; B/E actual canvas pixels, all seven kinds, empty/restore, category/series visibility, resize, narrow enlarged light/dark axe; S/H native alternatives, server node reuse and live updates/disposal. | Six sibling export names preserved, but not Recharts JSX/prop compatibility. No large-dataset or manual screen-reader certification. |
+| Questionnaire | U and B/E required/optional validation, multiple/freeform native values, fixed/freeform exclusion, controlled rejection, cancellation, default reset, keyboard shortcuts, navigation focus, pending/failed/retry forms and disposal; S/H retained fieldsets and native submission after hydration. | Root values own answers; explicit ordered metadata; no branching, remote validation or data transport. |
+| Shared | Six reviewed light/dark/mobile snapshots; final 27 source, 33 built/visual and 6 hydration checks pass with strict diagnostics. | Final coverage is 100% in all four configured metrics; API and manual-device limits remain explicit. |
+
+[Delivery and API limits](CHART-QUESTIONNAIRE-DELIVERY.md),
+[Chart assertions](../tests/catalog-chart.ts), [Questionnaire assertions](../tests/catalog-questionnaire.ts).
+
+## Data Table
+
+U covers actual core filtering/sorting/paging/selection, controlled rejection,
+loading/empty/retry, immutable row retention, grouped headers, column visibility,
+page-size options and deferred-write disposal. B/E covers 24 real rows, page sizes
+up to 20, partial/all page selection, hidden columns, owner-rejected sorting,
+filtering, retained error data, retry and remount, plus enlarged light/dark axe.
+S/H verifies native table output and exact node reuse before interactive changes.
+Three reviewed Chromium images cover light/dark/mobile layouts. No virtualized or
+server-data/performance certification is claimed.
+
+[Units](../tests/unit/catalog-data-table.test.tsx), [browser contracts](../tests/catalog-data-table.ts),
+[adapter repairs and limits](DATA-TABLE-DELIVERY.md).
+
+## Final review regressions
+
+Calendar restores an owner-rejected month dropdown; Resizable restoration
+reapplies changed adjacent bounds and retains CSS text. Questionnaire guards
+pending changes inside authored callbacks. Data Table preserves row elements
+through immutable data and column changes and separates row rendering from the
+parent table-body subscription. These have direct assertions in their unit files.
+Drawer waits for native editor focus paint before its independent scroll check;
+[plain native reproduction](../validation/drawer-scroll/README.md) identifies why.
+
+Popover geometry baselines now await the real opening animation and assert the
+initial 240-pixel width. A transient zoom had satisfied center-alignment checks
+before the starting x coordinate was stable. Fifteen affected source cases and
+fifteen repeated built resize cases pass; production positioning and tolerances
+are unchanged. See [final acceptance](REMAINING-CATALOG-STATUS.md).

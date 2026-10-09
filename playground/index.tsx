@@ -1,11 +1,4 @@
 // Interactive examples exercise public package exports and app-owned state; D19.
-import { DataTableCatalogExamples } from './catalog-data-table';
-import {QuestionnaireCatalogExamples} from './catalog-questionnaire';
-import {ChartCatalogExamples} from './catalog-chart';
-import { SidebarCatalogExamples } from './catalog-sidebar';
-import { NotificationCatalogExamples } from './catalog-notifications';
-import { LayoutCatalogExamples } from './catalog-layout';
-import { DateCatalogExamples } from './catalog-dates';
 import { createSignal, Show } from 'solid-js';
 import { render } from '@solidjs/web';
 import { Button } from 'shadcn-solidjs-theme/ui/button';
@@ -28,6 +21,13 @@ import { ToggleForms } from './toggle-forms';
 import { LinkNavigation } from './link-navigation';
 import { NativeFields } from './native-fields';
 import { CardLayout } from './card-layout';
+import {QuestionnaireCatalogExamples} from './catalog-questionnaire';
+import {ChartCatalogExamples} from './catalog-chart';
+import { DataTableCatalogExamples } from './catalog-data-table';
+import { SidebarCatalogExamples } from './catalog-sidebar';
+import { NotificationCatalogExamples } from './catalog-notifications';
+import { LayoutCatalogExamples } from './catalog-layout';
+import { DateCatalogExamples } from './catalog-dates';
 import { MenuCatalogExamples } from './catalog-menus';
 import { ModalCatalogExamples } from './catalog-modal';
 import { DisplayCatalogExamples } from './catalog-display';
@@ -67,6 +67,7 @@ function Playground() {
         <div class="mt-6 samples"><Button as="a" href="#components">Explore components</Button><span class="text-xs text-muted-foreground">Button / Badge / Card / Separator / Skeleton / Input / Textarea / Label / Checkbox / Switch / Tabs / Popover / Alert Dialog / Combobox / Accordion / Collapsible / Tooltip / Hover Card / Radio Group / Toggle / Toggle Group / Select / Slider / Progress</span></div>
       </section>
       <p class="mb-6"><a class="underline" href="/?disclosures">Explore Accordion and Collapsible →</a> · <a class="underline" href="/?hints">Explore Tooltip and Hover Card →</a> · <a class="underline" href="/?choices">Explore Radio Group and Toggles →</a> · <a class="underline" href="/?select">Explore Select →</a> · <a class="underline" href="/?slider">Explore Slider →</a> · <a class="underline" href="/?progress">Explore Progress →</a> · <a class="underline" href="/?catalog-native">Explore native compositions →</a> · <a class="underline" href="/?catalog-display">Explore identity and navigation →</a></p>
+      <nav aria-label="More component galleries" class="mb-6 flex flex-wrap gap-x-4 gap-y-2 text-sm"><a class="underline" href="/?catalog-modal">Dialog, Sheet and Drawer</a><a class="underline" href="/?catalog-menus">Menus and Command</a><a class="underline" href="/?catalog-dates">Calendar, Date Picker and Input OTP</a><a class="underline" href="/?catalog-layout">Resizable, Scroll Area, Carousel and Message Scroller</a><a class="underline" href="/?catalog-notifications">Toast and Sonner</a><a class="underline" href="/?catalog-sidebar">Sidebar</a><a class="underline" href="/?catalog-data-table">Data Table</a><a class="underline" href="/?catalog-chart">Chart</a><a class="underline" href="/?catalog-questionnaire">Questionnaire</a></nav>
       <Separator />
       <section id="components" class="demo-section" aria-labelledby="button-heading">
         <h2 id="button-heading">01 / Button</h2><p>Actions with clear hierarchy. Native keyboard, form, and disabled behavior.</p>
@@ -154,13 +155,13 @@ function ToggleExamples() {
 /** Select focused acceptance examples without changing the main gallery layout. */
 function Preview() {
   const query = new URLSearchParams(location.search);
-  if (query.has('catalog-dates')) return <DateCatalogExamples/>;
-  if (query.has('catalog-layout')) return <LayoutCatalogExamples/>;
-  if (query.has('catalog-notifications')) return <NotificationCatalogExamples/>;
-  if (query.has('catalog-sidebar')) return <SidebarCatalogExamples/>;
-  if (query.has('catalog-chart')) return <ChartCatalogExamples/>;
   if (query.has('catalog-questionnaire')) return <QuestionnaireCatalogExamples/>;
+  if (query.has('catalog-chart')) return <ChartCatalogExamples/>;
   if (query.has('catalog-data-table')) return <DataTableCatalogExamples/>;
+  if (query.has('catalog-sidebar')) return <SidebarCatalogExamples/>;
+  if (query.has('catalog-notifications')) return <NotificationCatalogExamples/>;
+  if (query.has('catalog-layout')) return <LayoutCatalogExamples/>;
+  if (query.has('catalog-dates')) return <DateCatalogExamples/>;
   if (query.has('catalog-menus')) return <MenuCatalogExamples/>;
   if (query.has('catalog-modal')) return <ModalCatalogExamples/>;
   if (query.has('catalog-display')) return <DisplayCatalogExamples/>;

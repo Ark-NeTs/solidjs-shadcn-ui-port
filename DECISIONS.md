@@ -544,3 +544,74 @@ DOM theme ancestry and cancel stale positioning work. Navigation supplies a shar
 viewport by default; Command filters explicit values/keywords in authored order.
 These are scoped APIs, not a claim of Radix/cmdk prop compatibility. No corvu,
 private Kobalte patches or diagnostic suppression. See the menu delivery report.
+
+## Gregorian date selection and a single native OTP input
+
+Retain the pinned Kobalte Calendar/OTP evaluations as upstream compatibility
+evidence. Avoid adopting the earlier distribution patches. Calendar owns local
+Gregorian day arithmetic, bounded focus and host-controlled selection; Date
+Picker composes it with the accepted native Popover. OTP uses one real input so
+native paste, selection, labels, form association and autocomplete remain browser
+responsibilities. Decorative slots do not introduce extra assistive input stops.
+Deferred completion/dismissal checks owner acceptance and disposal. Non-Gregorian
+calendars, time editing and external autofill integrations are explicit limits.
+
+## Layout engines remain behind the Solid package boundary
+
+Keep Kobalte first: its pinned Resizable evaluation still requires distribution
+patches and leaves an unstable memo diagnostic. Own adjacent percentage panel
+sizing instead. Kobalte has no custom scrollbar, carousel or message-following
+engine. Scroll Area uses native overflow with measured tracks; Message Scroller
+preserves a visible item while history grows and suspends following for user
+scrolling. Carousel adapts framework-independent Embla 8.6.0, matching the sibling
+engine generation without importing its React adapter. Engines, observers and
+pointer capture have component-owned lifetimes; no diagnostic suppression.
+
+## Owned notification records after the Kobalte Toast probe
+
+The unchanged alpha.2 Toast primitive works behaviorally but reports store-write
+and untracked-read diagnostics. Keep that evaluation evidence and implement a
+small owner-neutral notification store plus native Toast composition. No global
+Solid root, framework adapter, distribution patch or diagnostic suppression is
+introduced. Promise tickets invalidate on replacement/dismissal; server calls do
+not retain request data. Each viewport owns its subscription and visible timers.
+Explicit stores support application lifetime boundaries; global service records
+remain until dismissed. No application transport or persistence enters the package.
+
+## Responsive Sidebar preserves its inner DOM owner
+
+Compose the accepted native modal and hint controllers for Sidebar, since Kobalte
+has no distinct Sidebar primitive and its underlying probes remain diagnostic
+failures. Change only the outer aside/dialog shell at a breakpoint; own the inner
+navigation subtree at the stable Sidebar scope. This preserves drafts without
+invalid dialog landmark roles or duplicate mobile/desktop trees. Keep desktop
+and mobile state separate; persistent preferences remain an application concern.
+
+## Framework-neutral charts and native questionnaires
+
+Kobalte and corvu have no chart engine or complete questionnaire. Use Chart.js
+4.5.1 behind owned Solid Chart/legend/tooltip parts with a native table alternative;
+keep the sibling export names while explicitly documenting the different renderer
+API. CSS variables drive DOM colors directly; the canvas engine reads computed
+colors in its owned synchronization effect. This avoids copying derived DOM color
+state through an effect. Synchronous registration metadata preserves SSR legends.
+
+Questionnaire uses explicit ordered item definitions, root draft values, native
+fieldset/radio/checkbox/text controls and validated native FormData submission.
+Applications own pending, retry and persistence. Reset completes after cancellation
+has bubbled but before another user event; deferred timers caused a reproduced
+lost-edit race. No transport or diagnostic suppression is introduced.
+
+## Solid-owned boundaries around TanStack Table core
+
+TanStack Table core 8.21.3 supplies framework-neutral models; each model, state
+slice and option has a Solid memo boundary. Core caching alone did not isolate
+reactive consumers and caused broad-subscription/unstable-memo diagnostics.
+Shallow-equal immutable state slices and a dedicated page-selection derivation
+remove those diagnostics. Header/row derivations are established before JSX so
+server and client allocate matching hydration scopes. Each row owns its native
+`<tr>` bindings so the table body does not collect per-row subscriptions through
+an additional wrapper component. Native controlled filter
+and page-size rejection restores canonical DOM properties after reconciliation.
+Existing Solid/compiler pins remain rc.13; only explicit engines and their
+required lock entries were added. See the Data Table delivery report.

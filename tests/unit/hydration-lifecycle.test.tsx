@@ -8,7 +8,7 @@ vi.mock('solid-js', async importOriginal => {
     // Only simulate the initial absent-node step; the real effect still owns later work and cleanup.
     solid.untrack(() => {
       const value = compute();
-      if (value === undefined || (Array.isArray(value) && value[0] === undefined)) effect(value);
+      if (value === undefined || (Array.isArray(value) && value[0] === undefined) || (value !== null && typeof value === 'object' && 'node' in value && value.node === undefined)) effect(value);
     });
     return solid.createEffect(compute, effect, options);
   }) as typeof solid.createEffect };
@@ -25,3 +25,8 @@ it('waits for label, tab-list and form bridge refs before synchronizing or obser
   expect(new FormData(screen.getByTestId('form') as HTMLFormElement).get('fruit')).toBe('Apple');
   unmount();expect(document.querySelector('label')).toBeNull();
 });
+
+const chartLifecycle=vi.hoisted(()=>({create:vi.fn(),destroy:vi.fn()}));
+vi.mock('chart.js/auto',()=>({default:class{constructor(){chartLifecycle.create();}destroy(){chartLifecycle.destroy();}update(){}toggleDataVisibility(){}}}));
+import {ChartContainer,Chart,ChartLegend} from '../../src/components/ui/chart';
+it('does not create Chart engines or observers until a hydration reference exists',()=>{const {unmount}=render(()=><ChartContainer config={{}}><Chart data={[{label:'First',count:1}]}/><ChartLegend/></ChartContainer>);expect(chartLifecycle.create).toHaveBeenCalledOnce();expect(screen.getByRole('img',{name:'Chart'})).toBeInTheDocument();unmount();expect(chartLifecycle.destroy).toHaveBeenCalledOnce();});

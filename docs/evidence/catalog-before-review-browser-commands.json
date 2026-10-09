@@ -1,0 +1,12 @@
+[
+  {
+    "command": "THEME_PORT=4403 RESULTS_FILE=docs/evidence/catalog-final-hydration.json bun run test:hydration",
+    "exitCode": 0,
+    "seconds": 110.259
+  },
+  {
+    "command": "THEME_PORT=4403 RESULTS_FILE=docs/evidence/catalog-final-integration.json bun run test:integration",
+    "exitCode": 1,
+    "seconds": 578.546
+  }
+]

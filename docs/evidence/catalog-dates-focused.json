@@ -1,0 +1,1788 @@
+{
+  "config": {
+    "argv": [
+      "/Users/arktas/.asdf/installs/nodejs/25.3.0/bin/node",
+      "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/node_modules/.bin/playwright",
+      "test",
+      "tests/integration",
+      "--grep",
+      "Drawer .*supports|Calendar|Date Picker|Multiple selection|OTP |Dates ",
+      "--max-failures=1"
+    ],
+    "configFile": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/playwright.config.ts",
+    "rootDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 1,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "integration/**/*.spec.ts",
+          "e2e/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [
+          "**/visual.spec.ts"
+        ],
+        "testMatch": [
+          "integration/**/*.spec.ts",
+          "e2e/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests",
+        "testIgnore": [
+          "**/visual.spec.ts"
+        ],
+        "testMatch": [
+          "integration/**/*.spec.ts",
+          "e2e/**/*.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "docs/evidence/catalog-dates-focused.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": {
+      "command": "bun run dev",
+      "url": "http://127.0.0.1:4403",
+      "reuseExistingServer": false,
+      "timeout": 60000
+    }
+  },
+  "suites": [
+    {
+      "title": "integration/catalog-dates.spec.ts",
+      "file": "integration/catalog-dates.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Calendar controlled selection rejects requests and enforces unavailable dates",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 974,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T23:37:13.284Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "524b95517eafff306746-ebabc5e74aa77ba6e66c",
+          "file": "catalog-dates.ts",
+          "line": 6,
+          "column": 2
+        },
+        {
+          "title": "Calendar day keyboard crosses disabled days and months, with RTL direction",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 518,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T23:37:14.554Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "524b95517eafff306746-18c582ab39f20d6c9fa3",
+          "file": "catalog-dates.ts",
+          "line": 7,
+          "column": 2
+        },
+        {
+          "title": "Multiple selection and range endpoints retain authored dates and reject disabled intervals",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 674,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T23:37:15.079Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "524b95517eafff306746-5c57017369853d69e039",
+          "file": "catalog-dates.ts",
+          "line": 8,
+          "column": 2
+        },
+        {
+          "title": "Date Picker accepts a day, returns focus and serializes/reset native form values",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 620,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T23:37:15.759Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "524b95517eafff306746-26af614872b88c12c0e2",
+          "file": "catalog-dates.ts",
+          "line": 9,
+          "column": 2
+        },
+        {
+          "title": "OTP uses native text editing, invalid-character recovery and one tab stop",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 612,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T23:37:16.385Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "524b95517eafff306746-55af9bf565e417d5b53a",
+          "file": "catalog-dates.ts",
+          "line": 10,
+          "column": 2
+        },
+        {
+          "title": "OTP accepts a native clipboard paste and normalizes the displayed code",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 398,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T23:37:17.003Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "524b95517eafff306746-77c1bb49f2b4391c1b86",
+          "file": "catalog-dates.ts",
+          "line": 11,
+          "column": 2
+        },
+        {
+          "title": "Dates light mobile enlarged accessibility and unclipped controls",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4290,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T23:37:17.407Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "524b95517eafff306746-b11e39eabc92d0e8b7f4",
+          "file": "catalog-dates.ts",
+          "line": 12,
+          "column": 33
+        },
+        {
+          "title": "Dates dark mobile enlarged accessibility and unclipped controls",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4223,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T23:37:21.703Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "524b95517eafff306746-958b6baf120ace56635f",
+          "file": "catalog-dates.ts",
+          "line": 12,
+          "column": 33
+        },
+        {
+          "title": "Calendar controlled selection rejects requests and enforces unavailable dates",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1685,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T23:37:32.800Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "524b95517eafff306746-fd45fced9b36b9b96387",
+          "file": "catalog-dates.ts",
+          "line": 6,
+          "column": 2
+        },
+        {
+          "title": "Calendar day keyboard crosses disabled days and months, with RTL direction",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 795,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T23:37:35.173Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "524b95517eafff306746-bc0779aa7b3faef34aaf",
+          "file": "catalog-dates.ts",
+          "line": 7,
+          "column": 2
+        },
+        {
+          "title": "Multiple selection and range endpoints retain authored dates and reject disabled intervals",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 870,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T23:37:35.976Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "524b95517eafff306746-45ce711c0e04ce1dcd17",
+          "file": "catalog-dates.ts",
+          "line": 8,
+          "column": 2
+        },
+        {
+          "title": "Date Picker accepts a day, returns focus and serializes/reset native form values",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 799,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T23:37:36.851Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "524b95517eafff306746-5c26b88d3ff098f1f570",
+          "file": "catalog-dates.ts",
+          "line": 9,
+          "column": 2
+        },
+        {
+          "title": "OTP uses native text editing, invalid-character recovery and one tab stop",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 960,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T23:37:37.658Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "524b95517eafff306746-e1f27adfd2a79f9a76e0",
+          "file": "catalog-dates.ts",
+          "line": 10,
+          "column": 2
+        },
+        {
+          "title": "OTP accepts a native clipboard paste and normalizes the displayed code",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 579,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T23:37:38.625Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "524b95517eafff306746-d11806cf2714c3e5bfcf",
+          "file": "catalog-dates.ts",
+          "line": 11,
+          "column": 2
+        },
+        {
+          "title": "Dates light mobile enlarged accessibility and unclipped controls",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6504,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T23:37:39.219Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "524b95517eafff306746-a21a8243385db387953b",
+          "file": "catalog-dates.ts",
+          "line": 12,
+          "column": 33
+        },
+        {
+          "title": "Dates dark mobile enlarged accessibility and unclipped controls",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6058,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T23:37:45.728Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "524b95517eafff306746-e9a1ab74890d5424dfb9",
+          "file": "catalog-dates.ts",
+          "line": 12,
+          "column": 33
+        },
+        {
+          "title": "Calendar controlled selection rejects requests and enforces unavailable dates",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "524b95517eafff306746-b1b91916f41b3b96cc55",
+          "file": "catalog-dates.ts",
+          "line": 6,
+          "column": 2
+        },
+        {
+          "title": "Calendar day keyboard crosses disabled days and months, with RTL direction",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "524b95517eafff306746-a97d5a2d6d5b1cce4e63",
+          "file": "catalog-dates.ts",
+          "line": 7,
+          "column": 2
+        },
+        {
+          "title": "Multiple selection and range endpoints retain authored dates and reject disabled intervals",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "524b95517eafff306746-4d228efc035d5bdf7d8b",
+          "file": "catalog-dates.ts",
+          "line": 8,
+          "column": 2
+        },
+        {
+          "title": "Date Picker accepts a day, returns focus and serializes/reset native form values",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "524b95517eafff306746-e261dc4b54909ee83b21",
+          "file": "catalog-dates.ts",
+          "line": 9,
+          "column": 2
+        },
+        {
+          "title": "OTP uses native text editing, invalid-character recovery and one tab stop",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "524b95517eafff306746-c18209f13a7e8394acbf",
+          "file": "catalog-dates.ts",
+          "line": 10,
+          "column": 2
+        },
+        {
+          "title": "OTP accepts a native clipboard paste and normalizes the displayed code",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "524b95517eafff306746-7b8553d40e82d6fb000b",
+          "file": "catalog-dates.ts",
+          "line": 11,
+          "column": 2
+        },
+        {
+          "title": "Dates light mobile enlarged accessibility and unclipped controls",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "524b95517eafff306746-d5979bef9b7ef8840fe5",
+          "file": "catalog-dates.ts",
+          "line": 12,
+          "column": 33
+        },
+        {
+          "title": "Dates dark mobile enlarged accessibility and unclipped controls",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "524b95517eafff306746-d32a7a0d0b0c80dd5c16",
+          "file": "catalog-dates.ts",
+          "line": 12,
+          "column": 33
+        }
+      ]
+    },
+    {
+      "title": "integration/catalog-display.spec.ts",
+      "file": "integration/catalog-display.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Direction updates nested context, native keyboard direction and aligned overlay placement",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 615,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T23:37:25.938Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8d31439a6ca7ae16c495-09abb9b7b8927a2ab318",
+          "file": "catalog-display.ts",
+          "line": 10,
+          "column": 2
+        },
+        {
+          "title": "Direction updates nested context, native keyboard direction and aligned overlay placement",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 758,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T23:37:51.801Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8d31439a6ca7ae16c495-89cdeb4439460552ebfd",
+          "file": "catalog-display.ts",
+          "line": 10,
+          "column": 2
+        },
+        {
+          "title": "Direction updates nested context, native keyboard direction and aligned overlay placement",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "8d31439a6ca7ae16c495-2fd586e12639a88fda1d",
+          "file": "catalog-display.ts",
+          "line": 10,
+          "column": 2
+        }
+      ]
+    },
+    {
+      "title": "integration/catalog-modal.spec.ts",
+      "file": "integration/catalog-modal.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Drawer top supports snap keyboard, scrolling and pointer dismissal",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 913,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T23:37:26.563Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "00aa10eead6b0909a070-609ccc706139657afdff",
+          "file": "catalog-modal.ts",
+          "line": 11,
+          "column": 52
+        },
+        {
+          "title": "Drawer right supports snap keyboard, scrolling and pointer dismissal",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 913,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T23:37:27.481Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "00aa10eead6b0909a070-bb6390c74f9cf3eed88f",
+          "file": "catalog-modal.ts",
+          "line": 11,
+          "column": 52
+        },
+        {
+          "title": "Drawer bottom supports snap keyboard, scrolling and pointer dismissal",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 912,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T23:37:28.400Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "00aa10eead6b0909a070-6af45242ee6317dd13d5",
+          "file": "catalog-modal.ts",
+          "line": 11,
+          "column": 52
+        },
+        {
+          "title": "Drawer left supports snap keyboard, scrolling and pointer dismissal",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 998,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T23:37:29.320Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "00aa10eead6b0909a070-08508ce29cd8509adcf2",
+          "file": "catalog-modal.ts",
+          "line": 11,
+          "column": 52
+        },
+        {
+          "title": "Drawer top supports snap keyboard, scrolling and pointer dismissal",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1514,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T23:37:52.571Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "00aa10eead6b0909a070-b12c5e9434a74ac8ba33",
+          "file": "catalog-modal.ts",
+          "line": 11,
+          "column": 52
+        },
+        {
+          "title": "Drawer right supports snap keyboard, scrolling and pointer dismissal",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5973,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeInViewport\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('button', { name: 'Close workspace drawer' })\nExpected: in viewport\nReceived: viewport ratio 0\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeInViewport\" getByRole('button', { name: 'Close workspace drawer' }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Close workspace drawer' })\u001b[22m\n\u001b[2m    14 × locator resolved to <button type=\"button\" data-slot=\"drawer-close\" class=\"group/button inline-flex shrink-0 items-center justify-center rounded-lg border border-transparent bg-clip-padding text-sm font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 dark:aria…>Close workspace drawer</button>\u001b[22m\n\u001b[2m       - unexpected value \"viewport ratio 0\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeInViewport\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('button', { name: 'Close workspace drawer' })\nExpected: in viewport\nReceived: viewport ratio 0\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeInViewport\" getByRole('button', { name: 'Close workspace drawer' }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Close workspace drawer' })\u001b[22m\n\u001b[2m    14 × locator resolved to <button type=\"button\" data-slot=\"drawer-close\" class=\"group/button inline-flex shrink-0 items-center justify-center rounded-lg border border-transparent bg-clip-padding text-sm font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 dark:aria…>Close workspace drawer</button>\u001b[22m\n\u001b[2m       - unexpected value \"viewport ratio 0\"\u001b[22m\n\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/catalog-modal.ts:11:1194",
+                    "location": {
+                      "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/catalog-modal.ts",
+                      "column": 1194,
+                      "line": 11
+                    },
+                    "snippet": "   9 |  test('Dialog keeps controlled rejection open and nonmodal pages interactive',async({page})=>{await page.getByRole('button',{name:'Open controlled dialog'}).click();const controlled=page.getByRole('dialog',{name:'Controlled editor'});await page.getByRole('button',{name:'Request close'}).click();await expect(controlled).toBeVisible();await page.keyboard.press('Escape');await expect(controlled).toBeVisible();await page.getByRole('button',{name:'Accept close requests'}).click();await page.getByRole('button',{name:'Request close'}).click();await expect(controlled).toHaveCount(0);await page.getByRole('button',{name:'Open nonmodal dialog'}).click();const companion=page.getByRole('dialog',{name:'Page companion'});await expect(companion).toBeVisible();await expect(companion).not.toHaveAttribute('aria-modal');await expect(page.locator('html')).not.toHaveCSS('overflow','hidden');await page.getByRole('button',{name:'After modal examples'}).click();await expect(companion).toHaveCount(0);});\n  10 |  test('Sheet follows every physical edge, scrolls long content and preserves its draft',async({page})=>{await page.getByRole('button',{name:'Open detail sheet'}).click();const sheet=page.getByRole('dialog',{name:'Detail sheet',exact:true});const panel=sheet.locator('[data-slot=sheet-content]');const draft=page.getByRole('textbox',{name:'Sheet draft'});await draft.fill('Edited sheet');for(const side of ['top','left','bottom','right']){await page.getByRole('button',{name:`${side} sheet`,exact:true}).click();await expect(panel).toHaveAttribute('data-side',side);const box=(await panel.boundingBox())!;if(side==='top')expect(box.y).toBeCloseTo(0,0);if(side==='left')expect(box.x).toBeCloseTo(0,0);if(side==='bottom')expect(box.y+box.height).toBeCloseTo(900,0);if(side==='right')expect(box.x+box.width).toBeCloseTo(1200,0);}await page.getByRole('button',{name:'Close detail sheet',exact:true}).click();await expect(sheet).toBeHidden();await page.getByRole('button',{name:'Open detail sheet'}).click();await expect(draft).toHaveValue('Edited sheet');});\n> 11 |  for(const side of ['top','right','bottom','left'])test(`Drawer ${side} supports snap keyboard, scrolling and pointer dismissal`,async({page})=>{await page.getByRole('button',{name:`${side} drawer`,exact:true}).click();await page.getByRole('button',{name:'Open workspace drawer'}).click();const dialog=page.getByRole('dialog',{name:'Workspace drawer'});const handle=dialog.getByRole('slider',{name:'Drawer size'});await expect(handle).toBeVisible();await expect.poll(async()=>Number(await handle.getAttribute('aria-valuemax'))).toBeGreaterThan(100);const full=Number(await handle.getAttribute('aria-valuemax'));await handle.focus();await handle.press('Home');const compact=Number(await handle.getAttribute('aria-valuenow'));expect(compact).toBeCloseTo(full*0.35,0);await handle.press('End');await expect(handle).toHaveAttribute('aria-valuenow',String(full));await page.getByRole('textbox',{name:'Drawer draft'}).fill('Retained drawer');const body=dialog.locator('[data-slot=drawer-body]');expect(await body.evaluate(node=>node.scrollHeight>node.clientHeight)).toBe(true);await body.hover();await page.mouse.wheel(0,10000);await expect(page.getByRole('button',{name:'Close workspace drawer'})).toBeInViewport();await body.evaluate(node=>{node.scrollTop=0;});const box=(await handle.boundingBox())!;const x=box.x+box.width/2;const y=box.y+box.height/2;await page.mouse.move(x,y);await page.mouse.down();const dx=side==='right'?full*0.9:side==='left'?-full*0.9:0;const dy=side==='bottom'?full*0.9:side==='top'?-full*0.9:0;await page.mouse.move(x+dx,y+dy,{steps:10});await page.mouse.up();await expect(dialog).toBeHidden();await expect(page.getByRole('button',{name:'Open workspace drawer'})).toBeFocused();});\n     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ^\n  12 |  for(const dark of [false,true])test(`Modal ${dark?'dark':'light'} mobile enlarged layouts and accessibility`,async({page})=>{await page.setViewportSize({width:390,height:844});await page.goto(`/?catalog-modal${dark?'&dark':''}`);await page.evaluate(()=>document.documentElement.style.fontSize='24px');for(const [opener,title,slot] of [['Open editor dialog','Profile editor','dialog'],['Open detail sheet','Detail sheet','sheet'],['Open workspace drawer','Workspace drawer','drawer']]){await page.getByRole('button',{name:opener!,exact:true}).click();const dialog=page.getByRole('dialog',{name:title!,exact:true});const panel=dialog.locator(`:scope > [data-slot=${slot}-content]`);const box=(await panel.boundingBox())!;expect(box.x).toBeGreaterThanOrEqual(-1);expect(box.x+box.width).toBeLessThanOrEqual(391);expect((await new AxeBuilder({page}).analyze()).violations).toEqual([]);await page.keyboard.press('Escape');await expect(dialog).toBeHidden();}});\n  13 | }\n  14 |"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/catalog-modal.ts",
+                        "column": 1194,
+                        "line": 11
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeInViewport\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('button', { name: 'Close workspace drawer' })\nExpected: in viewport\nReceived: viewport ratio 0\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeInViewport\" getByRole('button', { name: 'Close workspace drawer' }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Close workspace drawer' })\u001b[22m\n\u001b[2m    14 × locator resolved to <button type=\"button\" data-slot=\"drawer-close\" class=\"group/button inline-flex shrink-0 items-center justify-center rounded-lg border border-transparent bg-clip-padding text-sm font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 dark:aria…>Close workspace drawer</button>\u001b[22m\n\u001b[2m       - unexpected value \"viewport ratio 0\"\u001b[22m\n\n\n   9 |  test('Dialog keeps controlled rejection open and nonmodal pages interactive',async({page})=>{await page.getByRole('button',{name:'Open controlled dialog'}).click();const controlled=page.getByRole('dialog',{name:'Controlled editor'});await page.getByRole('button',{name:'Request close'}).click();await expect(controlled).toBeVisible();await page.keyboard.press('Escape');await expect(controlled).toBeVisible();await page.getByRole('button',{name:'Accept close requests'}).click();await page.getByRole('button',{name:'Request close'}).click();await expect(controlled).toHaveCount(0);await page.getByRole('button',{name:'Open nonmodal dialog'}).click();const companion=page.getByRole('dialog',{name:'Page companion'});await expect(companion).toBeVisible();await expect(companion).not.toHaveAttribute('aria-modal');await expect(page.locator('html')).not.toHaveCSS('overflow','hidden');await page.getByRole('button',{name:'After modal examples'}).click();await expect(companion).toHaveCount(0);});\n  10 |  test('Sheet follows every physical edge, scrolls long content and preserves its draft',async({page})=>{await page.getByRole('button',{name:'Open detail sheet'}).click();const sheet=page.getByRole('dialog',{name:'Detail sheet',exact:true});const panel=sheet.locator('[data-slot=sheet-content]');const draft=page.getByRole('textbox',{name:'Sheet draft'});await draft.fill('Edited sheet');for(const side of ['top','left','bottom','right']){await page.getByRole('button',{name:`${side} sheet`,exact:true}).click();await expect(panel).toHaveAttribute('data-side',side);const box=(await panel.boundingBox())!;if(side==='top')expect(box.y).toBeCloseTo(0,0);if(side==='left')expect(box.x).toBeCloseTo(0,0);if(side==='bottom')expect(box.y+box.height).toBeCloseTo(900,0);if(side==='right')expect(box.x+box.width).toBeCloseTo(1200,0);}await page.getByRole('button',{name:'Close detail sheet',exact:true}).click();await expect(sheet).toBeHidden();await page.getByRole('button',{name:'Open detail sheet'}).click();await expect(draft).toHaveValue('Edited sheet');});\n> 11 |  for(const side of ['top','right','bottom','left'])test(`Drawer ${side} supports snap keyboard, scrolling and pointer dismissal`,async({page})=>{await page.getByRole('button',{name:`${side} drawer`,exact:true}).click();await page.getByRole('button',{name:'Open workspace drawer'}).click();const dialog=page.getByRole('dialog',{name:'Workspace drawer'});const handle=dialog.getByRole('slider',{name:'Drawer size'});await expect(handle).toBeVisible();await expect.poll(async()=>Number(await handle.getAttribute('aria-valuemax'))).toBeGreaterThan(100);const full=Number(await handle.getAttribute('aria-valuemax'));await handle.focus();await handle.press('Home');const compact=Number(await handle.getAttribute('aria-valuenow'));expect(compact).toBeCloseTo(full*0.35,0);await handle.press('End');await expect(handle).toHaveAttribute('aria-valuenow',String(full));await page.getByRole('textbox',{name:'Drawer draft'}).fill('Retained drawer');const body=dialog.locator('[data-slot=drawer-body]');expect(await body.evaluate(node=>node.scrollHeight>node.clientHeight)).toBe(true);await body.hover();await page.mouse.wheel(0,10000);await expect(page.getByRole('button',{name:'Close workspace drawer'})).toBeInViewport();await body.evaluate(node=>{node.scrollTop=0;});const box=(await handle.boundingBox())!;const x=box.x+box.width/2;const y=box.y+box.height/2;await page.mouse.move(x,y);await page.mouse.down();const dx=side==='right'?full*0.9:side==='left'?-full*0.9:0;const dy=side==='bottom'?full*0.9:side==='top'?-full*0.9:0;await page.mouse.move(x+dx,y+dy,{steps:10});await page.mouse.up();await expect(dialog).toBeHidden();await expect(page.getByRole('button',{name:'Open workspace drawer'})).toBeFocused();});\n     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ^\n  12 |  for(const dark of [false,true])test(`Modal ${dark?'dark':'light'} mobile enlarged layouts and accessibility`,async({page})=>{await page.setViewportSize({width:390,height:844});await page.goto(`/?catalog-modal${dark?'&dark':''}`);await page.evaluate(()=>document.documentElement.style.fontSize='24px');for(const [opener,title,slot] of [['Open editor dialog','Profile editor','dialog'],['Open detail sheet','Detail sheet','sheet'],['Open workspace drawer','Workspace drawer','drawer']]){await page.getByRole('button',{name:opener!,exact:true}).click();const dialog=page.getByRole('dialog',{name:title!,exact:true});const panel=dialog.locator(`:scope > [data-slot=${slot}-content]`);const box=(await panel.boundingBox())!;expect(box.x).toBeGreaterThanOrEqual(-1);expect(box.x+box.width).toBeLessThanOrEqual(391);expect((await new AxeBuilder({page}).analyze()).violations).toEqual([]);await page.keyboard.press('Escape');await expect(dialog).toBeHidden();}});\n  13 | }\n  14 |\n    at /Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/catalog-modal.ts:11:1194"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T23:37:54.092Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/integration-catalog-modal--91bc3-lling-and-pointer-dismissal-firefox/test-failed-1.png"
+                    },
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/integration-catalog-modal--91bc3-lling-and-pointer-dismissal-firefox/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/test-results/integration-catalog-modal--91bc3-lling-and-pointer-dismissal-firefox/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/arktas/GitHub/restaurant-management/packages/shadcn-solidjs-theme/tests/catalog-modal.ts",
+                    "column": 1194,
+                    "line": 11
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "00aa10eead6b0909a070-c4e03e7b65077a02f6bc",
+          "file": "catalog-modal.ts",
+          "line": 11,
+          "column": 52
+        },
+        {
+          "title": "Drawer bottom supports snap keyboard, scrolling and pointer dismissal",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "00aa10eead6b0909a070-a0920215517a8efb54c7",
+          "file": "catalog-modal.ts",
+          "line": 11,
+          "column": 52
+        },
+        {
+          "title": "Drawer left supports snap keyboard, scrolling and pointer dismissal",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "00aa10eead6b0909a070-81f8b188d21dacfe359b",
+          "file": "catalog-modal.ts",
+          "line": 11,
+          "column": 52
+        },
+        {
+          "title": "Drawer top supports snap keyboard, scrolling and pointer dismissal",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "00aa10eead6b0909a070-1e2474483160d8153459",
+          "file": "catalog-modal.ts",
+          "line": 11,
+          "column": 52
+        },
+        {
+          "title": "Drawer right supports snap keyboard, scrolling and pointer dismissal",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "00aa10eead6b0909a070-6bc023756bbf0af56f60",
+          "file": "catalog-modal.ts",
+          "line": 11,
+          "column": 52
+        },
+        {
+          "title": "Drawer bottom supports snap keyboard, scrolling and pointer dismissal",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "00aa10eead6b0909a070-3395c56aa4f7cc9a6a38",
+          "file": "catalog-modal.ts",
+          "line": 11,
+          "column": 52
+        },
+        {
+          "title": "Drawer left supports snap keyboard, scrolling and pointer dismissal",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "00aa10eead6b0909a070-c556cdc46d1a22640ec6",
+          "file": "catalog-modal.ts",
+          "line": 11,
+          "column": 52
+        }
+      ]
+    },
+    {
+      "title": "integration/combobox.spec.ts",
+      "file": "integration/combobox.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "searches with keyboard, submits canonical state, resets and validates required selection",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 610,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T23:37:30.334Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "385cb6c6b2e672ec102d-bbc3e6d575922c387804",
+          "file": "integration/combobox.spec.ts",
+          "line": 4,
+          "column": 1
+        },
+        {
+          "title": "searches with keyboard, submits canonical state, resets and validates required selection",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "385cb6c6b2e672ec102d-ce560f83cd48ff1d1b7b",
+          "file": "integration/combobox.spec.ts",
+          "line": 4,
+          "column": 1
+        },
+        {
+          "title": "searches with keyboard, submits canonical state, resets and validates required selection",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "385cb6c6b2e672ec102d-03e4dfdbc738579abd11",
+          "file": "integration/combobox.spec.ts",
+          "line": 4,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "integration/native-fields.spec.ts",
+      "file": "integration/native-fields.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "date Input validates bounds and submits and resets its native string value",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 476,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T23:37:30.954Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "62d0c725a029b03f1fd1-f223cd7ef2cd59fcb5d6",
+          "file": "native-fields.ts",
+          "line": 42,
+          "column": 5
+        },
+        {
+          "title": "time Input validates bounds and submits and resets its native string value",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 491,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T23:37:31.434Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "62d0c725a029b03f1fd1-174fb94e15d41792a337",
+          "file": "native-fields.ts",
+          "line": 42,
+          "column": 5
+        },
+        {
+          "title": "datetime-local Input validates bounds and submits and resets its native string value",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 479,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T23:37:31.930Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-diagnostics",
+                      "contentType": "application/json",
+                      "body": "W10="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "62d0c725a029b03f1fd1-b864cc06b887d3aa0a48",
+          "file": "native-fields.ts",
+          "line": 42,
+          "column": 5
+        },
+        {
+          "title": "date Input validates bounds and submits and resets its native string value",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "62d0c725a029b03f1fd1-aa687de2c60c4e3ad851",
+          "file": "native-fields.ts",
+          "line": 42,
+          "column": 5
+        },
+        {
+          "title": "time Input validates bounds and submits and resets its native string value",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "62d0c725a029b03f1fd1-44c370073203bb86356f",
+          "file": "native-fields.ts",
+          "line": 42,
+          "column": 5
+        },
+        {
+          "title": "datetime-local Input validates bounds and submits and resets its native string value",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "62d0c725a029b03f1fd1-3ba7a65fe03a1dbc7b7b",
+          "file": "native-fields.ts",
+          "line": 42,
+          "column": 5
+        },
+        {
+          "title": "date Input validates bounds and submits and resets its native string value",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "62d0c725a029b03f1fd1-ef5333de42c1482f7b37",
+          "file": "native-fields.ts",
+          "line": 42,
+          "column": 5
+        },
+        {
+          "title": "time Input validates bounds and submits and resets its native string value",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "62d0c725a029b03f1fd1-a7cae0ed647fea6099ab",
+          "file": "native-fields.ts",
+          "line": 42,
+          "column": 5
+        },
+        {
+          "title": "datetime-local Input validates bounds and submits and resets its native string value",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [],
+              "status": "skipped"
+            }
+          ],
+          "id": "62d0c725a029b03f1fd1-34a7f8ad4c8d0728ca8d",
+          "file": "native-fields.ts",
+          "line": 42,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "message": "\u001b[31mTesting stopped early after 1 maximum allowed failures.\u001b[39m"
+    }
+  ],
+  "stats": {
+    "startTime": "2026-10-08T23:37:11.778Z",
+    "duration": 48729.657,
+    "expected": 27,
+    "skipped": 23,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

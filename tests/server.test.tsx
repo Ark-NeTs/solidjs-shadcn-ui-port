@@ -88,3 +88,25 @@ it('renders retained Dialog Sheet and Drawer names, closed state and drafts on t
 
 import {MenuCatalogContent} from '../playground/catalog-menus';
 it('renders menu controls, navigation links and searchable commands without opening overlays on the server',()=>{const html=renderToString(()=><MenuCatalogContent/>);for(const text of ['data-slot="dropdown-menu-trigger"','data-slot="context-menu-trigger"','role="menubar"','aria-label="Library navigation"','role="combobox"','role="listbox"','Create workspace','aria-disabled="true"'])expect(html).toContain(text);expect(html).not.toContain('data-slot="dropdown-menu-content"');expect(html).not.toContain('No matching commands');});
+
+import {DateCatalogContent} from '../playground/catalog-dates';
+it('renders deterministic calendar selection, date fields and one accessible OTP input on the server',()=>{const html=renderToString(()=><DateCatalogContent/>);for(const text of ['data-slot="calendar"','role="grid"','2026-10-07','data-slot="date-picker"','data-slot="input-otp"','autocomplete="one-time-code"','name="code"'])expect(html).toContain(text);expect(html).not.toContain('data-slot="popover-content"');});
+
+import {LayoutCatalogContent} from '../playground/catalog-layout';
+it('renders stable layout panels, scroll viewports and authored slides on the server',()=>{const html=renderToString(()=><LayoutCatalogContent/>);for(const text of ['data-slot="resizable-panel-group"','id="layout-first"','role="separator"','data-slot="scroll-area-viewport"','aria-roledescription="carousel"','Slide 1','data-slot="message-scroller-viewport"','Message 1'])expect(html).toContain(text);});
+
+import {NotificationCatalogContent} from '../playground/catalog-notifications';
+import {createToastStore} from '../src/lib/notifications';
+it('renders notification regions without global server writes or client timers',()=>{const html=renderToString(()=><NotificationCatalogContent/>);expect(html).toContain('Composed notifications');expect(html).toContain('Service notifications');expect(html).not.toContain('data-slot="toast"');const store=createToastStore();store.show('Server private data');store.promise(Promise.resolve('secret'),{loading:'Loading',success:'Done',error:'Error'});expect(store.getSnapshot()).toEqual([]);});
+
+import {SidebarCatalogContent} from '../playground/catalog-sidebar';
+it('renders desktop navigation and deterministic sidebar placeholders without browser media APIs',()=>{const html=renderToString(()=><SidebarCatalogContent/>);for(const text of ['data-slot="sidebar"','<aside','role="complementary"','data-slot="sidebar-input"','aria-current="page"','--skeleton-width:70%'])expect(html).toContain(text);expect(html).not.toContain('<dialog');});
+
+import {ChartCatalogContent} from '../playground/catalog-chart';
+it('renders Chart data alternatives and scoped styles without a browser canvas',()=>{const html=renderToString(()=><ChartCatalogContent/>);for(const text of ['data-slot="chart"','<canvas','role="img"','Monthly visitors data','January','186','--color-desktop'])expect(html).toContain(text);});
+
+import {QuestionnaireCatalogContent} from '../playground/catalog-questionnaire';
+it('renders Questionnaire fieldsets and inactive answers without browser form work',()=>{const html=renderToString(()=><QuestionnaireCatalogContent/>);for(const text of ['data-slot="questionnaire"','<fieldset','<legend','type="radio"','type="checkbox"','name="role"','inert','hidden'])expect(html).toContain(text);});
+
+import {DataTableCatalogContent} from '../playground/catalog-data-table';
+it('renders Data Table headers, first-page rows and selection controls without browser work',()=>{const html=renderToString(()=><DataTableCatalogContent/>);for(const text of ['Customer accounts','Customer 01','Customer 10','Select all rows on this page','aria-sort="none"','Rows per page'])expect(html).toContain(text);expect(html).not.toContain('Customer 11');});

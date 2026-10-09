@@ -1289,3 +1289,216 @@ CommandDialog provides named Dialog framing; its owner decides when an action
 closes the palette. Shortcuts are visual hints, not registered key bindings.
 
 Examples: `/?catalog-menus`. [Acceptance and scope](MENU-CATALOG-DELIVERY.md).
+
+## Calendar, Date Picker and Input OTP
+
+Calendar accepts mode="single"|"multiple"|"range", selected/defaultSelected,
+onSelect, month/defaultMonth/onMonthChange, minDate/maxDate, startMonth/endMonth,
+a disabled boolean/predicate, locale string, weekStartsOn and numberOfMonths.
+A range is {from: Date, to?: Date}. An explicitly supplied selected prop retains
+controlled ownership even when undefined. Day arrows follow DOM direction;
+PageUp/PageDown change month, Shift changes year, Home/End move within the week.
+Pass stable today/defaultMonth for deterministic server examples.
+
+DatePicker adds label, placeholder, name/form, optional format, triggerProps and
+controlled open props. It composes Calendar and Popover; accepted single dates
+close it. Dates submit as local YYYY-MM-DD values, with repeated names for a
+range or multiple selection. required does not validate a hidden form field.
+
+InputOTP requires maxLength and a native accessible label. Compose InputOTPGroup,
+InputOTPSlot index={n} and optional InputOTPSeparator. The root is one native
+text input with value/defaultValue, onChange and onComplete, form/name, required,
+minlength, disabled/readonly and pattern. A pasteTransformer can remove separators.
+Slots are decorative and do not add keyboard stops. onComplete runs after an
+accepted full-length edit settles, not on initial mount.
+
+Examples: `/?catalog-dates`. [Acceptance and limits](DATE-CATALOG-DELIVERY.md).
+
+![Dates and OTP](screenshots/catalog-dates-light.png)
+![Dark dates and OTP](screenshots/catalog-dates-dark.png)
+![Narrow dates and OTP](screenshots/catalog-dates-mobile.png)
+![Date Picker](screenshots/date-picker-light.png)
+![Dark Date Picker](screenshots/date-picker-dark.png)
+![Mobile Date Picker](screenshots/date-picker-mobile.png)
+
+## Resizable, Scroll Area, Carousel and Message Scroller
+
+Use ResizablePanelGroup with layout/defaultLayout/onLayout percentage arrays and
+horizontal/vertical orientation. Alternate ResizablePanel and ResizableHandle;
+panels expose minSize/maxSize and collapsible/collapsedSize. Handles support
+arrows, Shift for larger increments, Home/End and Enter collapse. Controlled
+owners may reject changes. Default sizes are relative weights; use a complete
+defaultLayout for deterministic server percentage metadata.
+
+ScrollArea creates a native viewport and vertical track. Set scrollbars="both"
+for both axes, or false when authoring ScrollBar children. viewportProps and
+viewportRef expose native labeling and scroll access. Carousel composes Content,
+Item, Previous and Next; opts/plugins are Embla core options, while setApi exposes
+the engine (undefined on disposal). The useCarousel context fields are accessors.
+
+Wrap MessageScroller, Viewport, Content, Item and Button in
+MessageScrollerProvider. New messages follow the end until the reader scrolls
+away. Stable Item elements preserve history position on prepend. Explicit
+navigation resumes following; behavior="smooth" is optional and respects reduced
+motion. The application supplies messages and handles transport.
+
+Examples: `/?catalog-layout`. [Acceptance and boundaries](LAYOUT-CATALOG-DELIVERY.md).
+
+![Layout examples](screenshots/catalog-layout-light.png)
+![Dark layout examples](screenshots/catalog-layout-dark.png)
+![Narrow layout examples](screenshots/catalog-layout-mobile.png)
+
+## Toast and Sonner
+
+The package owns these Solid APIs after the pinned Kobalte Toast failed the diagnostic gate.
+
+```tsx
+import { Toaster, createToastStore } from 'shadcn-solidjs-theme/ui/sonner';
+const notifications = createToastStore();
+// In the application owner's markup:
+<Toaster store={notifications} visibleToasts={3} />;
+// In an application event or mutation callback:
+notifications.show('Changes saved', { description: 'You can continue editing.' }, 'success');
+```
+
+For authored JSX, compose ToastProvider/ToastViewport/Toast with ToastTitle,
+ToastDescription, ToastAction and ToastClose from `ui/toast`. F8 visits a viewport;
+Escape dismisses and restores the shortcut origin. Timers pause while a user
+reads by hover/focus or the page is hidden. `toast.promise` observes existing work
+and cannot revive a dismissed/replaced record. Producers own network cancellation.
+
+The service exports `toast`, `createToastStore` and the store/options/record types.
+Use one Toaster per store. Store records outlive a viewport until dismissed; server
+calls do not retain records. See [API limits and evidence](NOTIFICATION-CATALOG-DELIVERY.md).
+
+![Notification example](screenshots/catalog-notifications-light.png)
+![Dark notification example](screenshots/catalog-notifications-dark.png)
+![Narrow notification example](screenshots/catalog-notifications-mobile.png)
+
+## Sidebar
+
+Compose the Sidebar parts with a provider and a named trigger. State from useSidebar is read
+through accessors. Native anchors use `as="a"`/`href` rather than cloned children.
+
+```tsx
+import { SidebarProvider, Sidebar, SidebarContent, SidebarMenu,
+  SidebarMenuItem, SidebarMenuButton, SidebarInset, SidebarTrigger }
+  from 'shadcn-solidjs-theme/ui/sidebar';
+<SidebarProvider>
+  <Sidebar collapsible="icon" aria-label="Main navigation">
+    <SidebarContent><SidebarMenu><SidebarMenuItem>
+      <SidebarMenuButton as="a" href="/overview" tooltip="Overview" isActive>
+        <span aria-hidden="true">⌂</span><span>Overview</span>
+      </SidebarMenuButton>
+    </SidebarMenuItem></SidebarMenu></SidebarContent>
+  </Sidebar>
+  <SidebarInset><SidebarTrigger />Page content</SidebarInset>
+</SidebarProvider>;
+```
+
+Ctrl/Cmd+B toggles outside editable fields. Mobile navigation uses a native modal;
+Escape returns focus to the trigger. The inner subtree survives breakpoint changes.
+Desktop/mobile open state can each be controlled. Set the `--sidebar-width`,
+`--sidebar-width-mobile` and `--sidebar-width-icon` CSS variables for sizing.
+No cookies are written; applications own persistence and navigation destinations.
+See [API boundaries and evidence](SIDEBAR-CATALOG-DELIVERY.md).
+
+![Sidebar](screenshots/catalog-sidebar-light.png)
+![Dark Sidebar](screenshots/catalog-sidebar-dark.png)
+![Mobile Sidebar](screenshots/catalog-sidebar-mobile.png)
+
+## Chart
+
+The renderer uses Chart.js behind a Solid API; Recharts children cannot be pasted into it.
+
+```tsx
+import { ChartContainer, Chart, ChartLegend, ChartTooltip }
+  from 'shadcn-solidjs-theme/ui/chart';
+<ChartContainer config={{ visitors: { label: 'Visitors', color: 'var(--chart-1)' } }}>
+  <Chart data={[{ label: 'January', visitors: 186 }, { label: 'February', visitors: 305 }]}
+    type="bar" label="Monthly visitors" />
+  <ChartLegend />
+  <ChartTooltip />
+</ChartContainer>;
+```
+
+The canvas has a native table alternative. Arrow keys inspect rows, and legend
+buttons toggle visibility. Replacing records, changing theme or unmounting releases
+the old engine. Config can supply light/dark colors. See
+[API limits and verification](CHART-QUESTIONNAIRE-DELIVERY.md).
+
+![Chart](screenshots/catalog-chart-light.png)
+![Dark Chart](screenshots/catalog-chart-dark.png)
+![Mobile Chart](screenshots/catalog-chart-mobile.png)
+
+## Questionnaire
+
+Ordered metadata and the root draft own each answer.
+Submit handlers receive an ordinary form event and can read FormData. Applications
+own pending state, failed submissions and retry.
+
+```tsx
+import { Questionnaire, QuestionnaireItem, QuestionnaireTitle,
+  QuestionnaireDescription, QuestionnaireChoices, QuestionnaireChoice,
+  QuestionnaireError, QuestionnaireActions, QuestionnaireSubmit }
+  from 'shadcn-solidjs-theme/ui/questionnaire';
+<Questionnaire items={[{ name: 'role', required: true, choices: [{ value: 'developer' }] }]}
+  onSubmit={event => {
+    event.preventDefault();
+    const draft = new FormData(event.currentTarget);
+    // Pass this draft to the application's submit handler.
+  }}>
+  <QuestionnaireItem name="role">
+    <QuestionnaireTitle>What is your role?</QuestionnaireTitle>
+    <QuestionnaireDescription>Choose one answer.</QuestionnaireDescription>
+    <QuestionnaireChoices>
+      <QuestionnaireChoice value="developer">Developer</QuestionnaireChoice>
+    </QuestionnaireChoices>
+    <QuestionnaireError />
+  </QuestionnaireItem>
+  <QuestionnaireActions><QuestionnaireSubmit /></QuestionnaireActions>
+</Questionnaire>;
+```
+
+Use `values/defaultValues/onValuesChange` for draft ownership and
+`item/defaultItem/onItemChange` for step ownership. Values map names to
+`{choices?, text?, skipped?}`. Multiple choices and freeform text share the native
+field name; skipped answers are absent from FormData. Next validates the current
+step; Submit returns to the first missing answer. Optional steps must be answered
+or explicitly skipped. Native reset respects cancellation and restores defaults.
+See [boundaries and evidence](CHART-QUESTIONNAIRE-DELIVERY.md).
+
+![Questionnaire](screenshots/catalog-questionnaire-light.png)
+![Dark Questionnaire](screenshots/catalog-questionnaire-dark.png)
+![Mobile Questionnaire](screenshots/catalog-questionnaire-mobile.png)
+
+## Data Table
+
+Pass immutable rows and TanStack v8 column definitions. DataTable supplies local
+sorting, global filtering, column visibility, optional selection and pagination.
+The caller owns loading, errors and the explicit retry action.
+
+```tsx
+import { DataTable, type ColumnDef } from 'shadcn-solidjs-theme/ui/data-table';
+type Customer = { id: string; name: string; amount: number };
+const columns: ColumnDef<Customer, unknown>[] = [
+  { accessorKey: 'name', header: 'Customer' },
+  { accessorKey: 'amount', header: 'Amount' },
+];
+<DataTable data={[{ id: 'one', name: 'Taylor', amount: 42 }]} columns={columns}
+  getRowId={row => row.id} caption="Customer accounts" selectable
+  initialState={{ pagination: { pageIndex: 0, pageSize: 10 } }} />;
+```
+
+Provide state/onStateChange (or per-slice callbacks in options) for controlled
+ownership; rejected requests retain the canonical UI. createDataTable exposes
+an owned core instance for custom compositions, and flexRender accepts plain
+content or Solid cell formatters. initialState is a one-time default. Use stable
+row IDs and immutable replacements to retain DOM identity. Fetching, caching,
+virtualization and server-pagination policy stay with the application.
+
+Examples: `/?catalog-data-table`. [Adapter repairs, acceptance and limits](DATA-TABLE-DELIVERY.md).
+
+![Data Table](screenshots/catalog-data-table-light.png)
+![Dark Data Table](screenshots/catalog-data-table-dark.png)
+![Mobile Data Table](screenshots/catalog-data-table-mobile.png)

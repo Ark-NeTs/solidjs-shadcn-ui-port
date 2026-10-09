@@ -24,3 +24,9 @@ it('serializes native input defaults while explicit values take precedence, incl
   expect(screen.getByLabelText('Missing')).toHaveValue('');
   expect(screen.getByLabelText('Default')).not.toHaveAttribute('defaultvalue');
 });
+
+import {ResizablePanelGroup,ResizablePanel,ResizableHandle} from '../../src/components/ui/resizable';
+it('keeps authored server panel percentages and disposes registration without notifying browser subscribers',()=>{const view=render(()=><ResizablePanelGroup defaultLayout={[40,60]}><ResizablePanel id="server-first"/><ResizableHandle/><ResizablePanel id="server-second"/></ResizablePanelGroup>);expect(screen.getByRole('separator')).toHaveAttribute('aria-valuenow','40');expect(document.getElementById('server-first')).toHaveStyle({'flex-grow':'40'});view.unmount();expect(screen.queryByRole('separator')).toBeNull();});
+
+import {createToastStore} from '../../src/lib/notifications';
+it('server notification producers never retain request data or notify browser subscribers',async()=>{const store=createToastStore();const listener=vi.fn();store.subscribe(listener);listener.mockClear();store.show('Private request',{id:'server'});store.promise(Promise.resolve('private'),{loading:'Loading',success:'Done',error:'Error'});await Promise.resolve();expect(store.getSnapshot()).toEqual([]);expect(listener).not.toHaveBeenCalled();});
