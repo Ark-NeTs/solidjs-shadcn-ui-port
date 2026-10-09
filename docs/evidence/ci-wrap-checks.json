@@ -1,0 +1,32 @@
+[
+  {
+    "command": "bun run check",
+    "seconds": 5.1,
+    "exitCode": 0
+  },
+  {
+    "command": "bun run lint",
+    "seconds": 2.09,
+    "exitCode": 0
+  },
+  {
+    "command": "bun run test:coverage",
+    "seconds": 10.27,
+    "exitCode": 0
+  },
+  {
+    "command": "bun run test:server",
+    "seconds": 1.26,
+    "exitCode": 0
+  },
+  {
+    "command": "THEME_PORT=4403 RESULTS_FILE=test-results/reports/ci-docs-wrap.json bunx --no-install playwright test tests/integration/docs-site.spec.ts --output=test-results/ci-docs-wrap --global-timeout=300000",
+    "seconds": 29.4,
+    "exitCode": 0
+  },
+  {
+    "command": "THEME_PORT=4403 RESULTS_FILE=test-results/reports/ci-site-wrap.json bun run test:site --output=test-results/ci-site-wrap --global-timeout=300000",
+    "seconds": 21.15,
+    "exitCode": 0
+  }
+]

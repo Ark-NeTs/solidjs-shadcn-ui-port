@@ -917,3 +917,5 @@ No retries or baseline acceptance are introduced. Failure screenshots, traces
 and JSON reports expire after three days. Hosting checks automate the existing
 assertions rather than expanding their behavioral scope. See [CI guide](CI.md)
 and [delivery](delivery/CI-DELIVERY.md) for measured results and platform limits.
+
+The first Linux documentation job exposed a mobile header overflow at 24px root text. Mobile navigation now wraps, while `tests/docs-site.ts` keeps the strict 390px overflow and light/dark accessibility assertions. The failed job demonstrated real screenshot/trace upload and three-day artifact expiry.

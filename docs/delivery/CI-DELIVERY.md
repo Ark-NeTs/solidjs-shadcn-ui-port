@@ -34,4 +34,19 @@ physical-device acceptance remain unchanged.
 
 ## Checklist review
 
-Tests and delivery evidence apply and pass locally; hosted acceptance remains pending. State ownership, loading/error UI, mutations, client/server component boundaries, reactive cleanup, keyboard behavior and theming are unchanged, so those UI checklist items are not applicable to this workflow-only increment. Job timeouts, cancellation and separate result folders bound work and preserve failure diagnostics. No new performance claim is made. Existing manual accessibility and physical-device limits remain documented.
+Tests and delivery evidence apply and pass locally; hosted acceptance remains pending. State ownership, loading/error UI, mutations, client/server component boundaries, reactive cleanup, keyboard behavior and component theming are unchanged. Those criteria are not applicable to the workflow itself; the blocking documentation layout correction is covered by the existing light/dark enlarged-text, overflow and accessibility assertions. Job timeouts, cancellation and separate result folders bound work and preserve failure diagnostics. No new performance claim is made. Existing manual accessibility and physical-device limits remain documented.
+
+## Hosted runner findings
+
+The first Ubuntu documentation run exposed a real enlarged-text header overflow: Chromium rendered the 390px mobile page at a 397px scroll width. Its failure screenshot showed the final navigation link clipped. Allow the mobile website navigation to wrap onto another row; preserve the existing strict no-overflow assertion. The failure job successfully uploaded screenshots, traces and its JSON report with three-day retention. Hosted rerun evidence follows once verification completes.
+
+Local checks after the header correction ([measured results](../evidence/ci-wrap-checks.json)):
+
+| Command | Result | Time |
+| --- | --- | ---: |
+| `bun run check` | Pass | 5.10 s |
+| `bun run lint` | Pass | 2.09 s |
+| `bun run test:coverage` | Pass | 10.27 s |
+| `bun run test:server` | Pass | 1.26 s |
+| `THEME_PORT=4403 RESULTS_FILE=test-results/reports/ci-docs-wrap.json bunx --no-install playwright test tests/integration/docs-site.spec.ts --output=test-results/ci-docs-wrap --global-timeout=300000` | Pass | 29.40 s |
+| `THEME_PORT=4403 RESULTS_FILE=test-results/reports/ci-site-wrap.json bun run test:site --output=test-results/ci-site-wrap --global-timeout=300000` | Pass | 21.15 s |
