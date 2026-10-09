@@ -61,3 +61,4 @@ export * from './components/ui/carousel';
 export * from './components/ui/message-scroller';
 export * from './components/ui/toast';
 export * from './components/ui/sonner';
+export * from './components/ui/sidebar';

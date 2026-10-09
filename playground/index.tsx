@@ -1,4 +1,5 @@
 // Interactive examples exercise public package exports and app-owned state; D19.
+import { SidebarCatalogExamples } from './catalog-sidebar';
 import { NotificationCatalogExamples } from './catalog-notifications';
 import { LayoutCatalogExamples } from './catalog-layout';
 import { DateCatalogExamples } from './catalog-dates';
@@ -153,6 +154,7 @@ function Preview() {
   if (query.has('catalog-dates')) return <DateCatalogExamples/>;
   if (query.has('catalog-layout')) return <LayoutCatalogExamples/>;
   if (query.has('catalog-notifications')) return <NotificationCatalogExamples/>;
+  if (query.has('catalog-sidebar')) return <SidebarCatalogExamples/>;
   if (query.has('catalog-menus')) return <MenuCatalogExamples/>;
   if (query.has('catalog-modal')) return <ModalCatalogExamples/>;
   if (query.has('catalog-display')) return <DisplayCatalogExamples/>;
