@@ -8,14 +8,14 @@ examples, regression tests and reviewed light/dark/mobile screenshots.
 Kobalte was evaluated **first**, using an unpatched `2.0.0-alpha.2` composition
 on Solid/web/signals `2.0.0-rc.13` in Chromium and Firefox. Its default-on Switch
 reset to off and both probes emitted ten warnings, including untracked reads
-and effect feedback/relay diagnostics. [KOBALTE-TOGGLES.md](KOBALTE-TOGGLES.md)
+and effect feedback/relay diagnostics. [KOBALTE-TOGGLES.md](../validation/KOBALTE-TOGGLES.md)
 retains the source, pinned standalone lock and full results. The observation
 process exits zero after recording results; that is not a passing adoption gate.
 
 Production uses native inputs with Solid signals. No Kobalte/corvu dependency,
 experimental patch or production lockfile change was added. Kobalte remains the
 first candidate for later primitives; corvu has no replacement for these two
-controls in the existing catalog mapping. See [DECISIONS.md](DECISIONS.md).
+controls in the existing catalog mapping. See [DECISIONS.md](../project/DECISIONS.md).
 
 ## Delivered behavior
 
@@ -41,7 +41,7 @@ Refs/events target **HTMLInputElement**, not the reference React button. An iner
 span positions the decoration, so disabled Label styling should use a wrapping
 group rather than a sibling peer selector crossing that wrapper. The owner
 provides labels, errors and any domain-specific selection logic. These boundaries
-and examples are in [docs/components.md](docs/components.md).
+and examples are in [docs/components.md](../components.md).
 
 Visual review caught the dark input background overriding the mixed checkbox's
 fill. Added an explicit dark mixed-state fill and a browser assertion that mixed
@@ -84,12 +84,12 @@ marked expected-failure. Axe reports zero violations in the tested galleries.
 Node tooling still prints its NO_COLOR/FORCE_COLOR environment warning; browser
 console diagnostics are empty and enforced by the fixture.
 
-Evidence: [commands](docs/evidence/toggles-commands.json),
-[full check/test/build output](docs/evidence/toggles-verification.txt),
-[coverage](docs/evidence/toggles-coverage.json),
-[browser integration](docs/evidence/toggles-integration.json),
-[built E2E](docs/evidence/toggles-e2e.json), and
-[initial browser-test failures](docs/evidence/toggles-integration-before.json).
+Evidence: [commands](../evidence/toggles-commands.json),
+[full check/test/build output](../evidence/toggles-verification.txt),
+[coverage](../evidence/toggles-coverage.json),
+[browser integration](../evidence/toggles-integration.json),
+[built E2E](../evidence/toggles-e2e.json), and
+[initial browser-test failures](../evidence/toggles-integration-before.json).
 
 Initial integration failures were test setup issues: Playwright waits for a
 label's associated disabled input to become enabled, and programmatic focus

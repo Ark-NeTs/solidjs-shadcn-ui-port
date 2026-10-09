@@ -13,7 +13,7 @@ declares rc.3 peers. No corvu dependency or production component was added.
 
 The earlier [unpatched browser report](BROWSER-VALIDATION.md) remains historical
 evidence. Current results and reproduction instructions are in the
-[harness README](validation/solid2-browser/README.md).
+[harness README](../../validation/solid2-browser/README.md).
 
 ## Isolated causes and fixes
 
@@ -29,7 +29,7 @@ DismissableLayer, DrawerContent and Resizable. It does not suppress diagnostics,
 change Solid versions, or modify OTP/Tabs to make their tests pass. Its SHA-256 is
 `a14de171f1e63c31d5e98e0b658123c31bddc7c59cc0ffc433702bdded101838`.
 
-The [original instrumented trace](validation/solid2-browser/evidence/escape-isolation.txt)
+The [original instrumented trace](../../validation/solid2-browser/evidence/escape-isolation.txt)
 records the missing-ref/empty-stack sequence. Temporary instrumentation is absent
 from the retained patch.
 
@@ -74,10 +74,10 @@ Commands ran in `/private/tmp/solid2-browser-patched-clean` unless specified:
 
 Retained JSON contains case outcomes, assertion errors, full console messages,
 diagnostic codes and page errors:
-[development](validation/solid2-browser/evidence/patched-dev.json),
-[production](validation/solid2-browser/evidence/patched-production.json),
-[compiled JS](validation/solid2-browser/evidence/patched-js.json), and
-[unpatched control](validation/solid2-browser/evidence/unpatched-control.json).
+[development](../../validation/solid2-browser/evidence/patched-dev.json),
+[production](../../validation/solid2-browser/evidence/patched-production.json),
+[compiled JS](../../validation/solid2-browser/evidence/patched-js.json), and
+[unpatched control](../../validation/solid2-browser/evidence/unpatched-control.json).
 
 ## Remaining acceptance blockers
 

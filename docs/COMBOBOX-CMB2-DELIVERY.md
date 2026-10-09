@@ -33,9 +33,9 @@ A physical IME session remains open in the [matrix](TEST-MATRIX.md).
   both scroll directions, wrapping, selected-value commit, draft cancellation,
   modal focus loops, scroll lock release and reopening after disposal.
 
-Kobalte's existing [assessment](../KOBALTE-COMBOBOX.md) still governs adoption.
+Kobalte's existing [assessment](validation/KOBALTE-COMBOBOX.md) still governs adoption.
 This batch repairs the delivered owned composition; no new primitive, dependency
-or library pin is introduced. [DECISIONS.md](../DECISIONS.md) records the lifecycle
+or library pin is introduced. [DECISIONS.md](project/DECISIONS.md) records the lifecycle
 and row markup choices. Public exports and prop types are unchanged.
 
 ## Acceptance checklist

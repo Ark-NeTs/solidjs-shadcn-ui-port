@@ -2,7 +2,7 @@
 
 2026-10-08. Adds Progress through public source and build exports, bringing the
 package to 24 component families. [Guide](components.md#progress),
-[acceptance matrix](TEST-MATRIX.md#progress), [Kobalte evaluation](../KOBALTE-PROGRESS.md).
+[acceptance matrix](TEST-MATRIX.md#progress), [Kobalte evaluation](validation/KOBALTE-PROGRESS.md).
 
 ## Implementation and decisions
 
@@ -28,7 +28,7 @@ package to 24 component families. [Guide](components.md#progress),
   Actual Solid Loading resolution, focused draft preservation, pending disposal
   and late completion are verified in the public examples.
 
-[DECISIONS.md](../DECISIONS.md) records the lasting choices. No app, sibling package,
+[DECISIONS.md](project/DECISIONS.md) records the lasting choices. No app, sibling package,
 CI, secret or production dependency change is included.
 
 ## Size

@@ -38,7 +38,7 @@ source and freshly built exports in Chromium and Firefox. The
 
 No dependency, public API, theme or component mapping changes. The Kobalte-first
 adoption decision is unchanged; this repairs existing owned controls.
-[DECISIONS.md](../DECISIONS.md) records the scheduling and cleanup choice.
+[DECISIONS.md](project/DECISIONS.md) records the scheduling and cleanup choice.
 
 ## Acceptance checklist
 

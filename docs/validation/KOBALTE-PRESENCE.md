@@ -27,8 +27,8 @@ the feedback path and the delayed copy reported by Solid's diagnostics. Opening
 from an initially closed state reproduces them without Drawer gestures.
 
 Three independent fixtures were captured through two open/close cycles and
-unmount. [Before](validation/solid2-browser/evidence/presence-before.json) and
-[after](validation/solid2-browser/evidence/presence-after.json) preserve full
+unmount. [Before](../../validation/solid2-browser/evidence/presence-before.json) and
+[after](../../validation/solid2-browser/evidence/presence-after.json) preserve full
 messages, owner paths, interaction phases and page errors:
 
 | Fixture | Before | After |
@@ -61,7 +61,7 @@ Both JS and JSX DialogRoot distributions are patched. The cumulative patch now
 contains eight files; its earlier six lifecycle changes are unchanged. SHA-256:
 `c238413e0b5e23fdf7134563949dc92fb8be09019f3f09ff656853aa70449e33`.
 The independently installable previous patch is preserved in
-[baseline/lifecycle](validation/solid2-browser/baseline/lifecycle/).
+[baseline/lifecycle](../../validation/solid2-browser/baseline/lifecycle).
 
 ## Browser verification
 
@@ -91,7 +91,7 @@ the final runs. Physical touch, WebKit and SSR/hydration were not tested.
 Commands ran in `/private/tmp/solid2-dialog-feedback-final`, with the control in
 `/private/tmp/solid2-dialog-feedback-control`. Dev used port 4399, preview 4400,
 and the control 4411. Reproduction details are in the
-[harness README](validation/solid2-browser/README.md).
+[harness README](../../validation/solid2-browser/README.md).
 
 | Command | Outcome | Time |
 | --- | --- | ---: |
@@ -105,9 +105,9 @@ The compiled JS run used `KOBALTE_DISTRIBUTION=js bun run dev --force`, then
 `RESULTS_FILE=feedback-js-results.json bun run test --grep 'drawer|dialog'
 --output=feedback-js-test-results`; its duration is included above.
 
-Retained evidence: [development](validation/solid2-browser/evidence/feedback-dev.json),
-[production](validation/solid2-browser/evidence/feedback-production.json), [compiled JS](validation/solid2-browser/evidence/feedback-js.json), and
-[control](validation/solid2-browser/evidence/feedback-control.json).
+Retained evidence: [development](../../validation/solid2-browser/evidence/feedback-dev.json),
+[production](../../validation/solid2-browser/evidence/feedback-production.json), [compiled JS](../../validation/solid2-browser/evidence/feedback-js.json), and
+[control](../../validation/solid2-browser/evidence/feedback-control.json).
 
 ## Acceptance limits and DELIVERY.md review
 

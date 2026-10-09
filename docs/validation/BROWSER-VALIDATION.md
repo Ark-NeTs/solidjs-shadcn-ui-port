@@ -14,9 +14,9 @@ Four behavior/API failures reproduce in Chromium and Firefox, in both
 development and production. Development also reports reactivity/ownership
 diagnostics for Resizable, OTP and the Tabs consumer used to test Direction.
 
-The reproducible [harness](validation/solid2-browser/README.md), pinned lockfile,
-[development evidence](validation/solid2-browser/evidence/dev.json),
-[production evidence](validation/solid2-browser/evidence/production.json), and
+The reproducible [harness](../../validation/solid2-browser/README.md), pinned lockfile,
+[development evidence](../../validation/solid2-browser/evidence/dev.json),
+[production evidence](../../validation/solid2-browser/evidence/production.json), and
 fixture screenshots are retained in this package. Execution and dependencies
 were isolated in `/private/tmp/solid2-browser-validation`. No production
 component, application manifest, root lockfile or library source was changed.
@@ -148,11 +148,11 @@ Raw Playwright JSON, traces, failure screenshots and logs remain in the scratch
 folder; temporary files can be removed by the system. The retained evidence
 combines final case outcomes and diagnostic codes without requiring those
 temporary files. Five production-fixture captures are saved:
-[Drawer](validation/solid2-browser/evidence/screenshots/drawer.png),
-[Resizable](validation/solid2-browser/evidence/screenshots/resizable.png),
-[Calendar](validation/solid2-browser/evidence/screenshots/calendar.png),
-[OTP](validation/solid2-browser/evidence/screenshots/otp.png), and
-[Direction](validation/solid2-browser/evidence/screenshots/direction.png).
+[Drawer](../../validation/solid2-browser/evidence/screenshots/drawer.png),
+[Resizable](../../validation/solid2-browser/evidence/screenshots/resizable.png),
+[Calendar](../../validation/solid2-browser/evidence/screenshots/calendar.png),
+[OTP](../../validation/solid2-browser/evidence/screenshots/otp.png), and
+[Direction](../../validation/solid2-browser/evidence/screenshots/direction.png).
 Drawer and Calendar captures were visually inspected; these are evidence of
 diagnostic rendering, not theme parity or visual-regression approval.
 

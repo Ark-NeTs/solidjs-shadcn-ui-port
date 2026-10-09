@@ -3,7 +3,7 @@
 2026-10-08. Tested unpatched `@kobalte/core@2.0.0-alpha.2` with Solid,
 `@solidjs/web` and `@solidjs/signals` pinned to `2.0.0-rc.13`.
 The exact compositions, lockfile, probe and unfiltered diagnostics are in
-[validation/solid2-overlays](validation/solid2-overlays).
+[validation/solid2-overlays](../../validation/solid2-overlays).
 
 | Primitive | Chromium and Firefox result | Adoption decision |
 | --- | --- | --- |
@@ -36,4 +36,4 @@ no rc.13 runtime acceptance is claimed for that fork in this batch. Corvu is not
 installed in production. Tabs uses owned signal state and native buttons;
 Popover uses the browser top layer plus `@floating-ui/dom@1.8.0`; Alert Dialog
 uses native modal dialog behavior plus owned focus wrapping. Their independent
-acceptance results are in [OVERLAYS-DELIVERY.md](OVERLAYS-DELIVERY.md).
+acceptance results are in [OVERLAYS-DELIVERY.md](../delivery/OVERLAYS-DELIVERY.md).

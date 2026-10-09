@@ -2,7 +2,7 @@
 
 2026-10-08. Adds Select and its compound parts through source and build exports.
 The package now contains 22 component families. [Guide](components.md#select),
-[acceptance matrix](TEST-MATRIX.md#select), [Kobalte evaluation](../KOBALTE-SELECT.md).
+[acceptance matrix](TEST-MATRIX.md#select), [Kobalte evaluation](validation/KOBALTE-SELECT.md).
 
 ## Implementation and decisions
 
@@ -32,7 +32,7 @@ The package now contains 22 component families. [Guide](components.md#select),
   a substring name collision in an existing hydration locator; exact matching
   preserves that original test's intent. No browser warning/error was filtered.
 
-[DECISIONS.md](../DECISIONS.md) records lasting architecture. The guide documents
+[DECISIONS.md](project/DECISIONS.md) records lasting architecture. The guide documents
 explicit data order, supported compound parts, API differences and limits.
 
 ## Size and verification

@@ -1,7 +1,7 @@
 > Historical compatibility probes below describe the state on 2026-10-07.
 > The implemented 65-family package and its current tests are recorded in
-> [catalog completion](docs/CATALOG-COMPLETION-AUDIT.md) and
-> [final package delivery](docs/PROJECT-COMPLETION.md). The isolated Router next.36 /
+> [catalog completion](../CATALOG-COMPLETION-AUDIT.md) and
+> [final package delivery](../PROJECT-COMPLETION.md). The isolated Router next.36 /
 > Query rc.5 consumer now verifies the client router/query/Loading/Tabs/Dialog leg
 > on the same Solid rc.13 runtime. Older “unrun” and “no package” notes remain
 > dated probe history, not the current delivery status.
@@ -10,7 +10,7 @@
 
 Checked 2026-10-07 following the owner's selection of Kobalte as the primary
 headless library and corvu for complementary primitives. This is verification
-evidence for the selection in [specs.md](specs.md), not a completed Gate 0.
+evidence for the selection in [specs.md](../project/specs.md), not a completed Gate 0.
 
 **Owner priority clarified:** evaluate Kobalte first for every primitive,
 including its existing Drawer and Resizable. Corvu is a fallback for a

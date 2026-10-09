@@ -23,13 +23,13 @@ commit was made.
 | Ref-dependent settled callbacks could miss nodes. Reset work could overwrite state from the browser's temporary DOM value, run after disposal, or leave a repeated reset empty. | Track refs for listeners/observer setup. Root applies its default after the reset event, respects cancellation and guards disposal. Input restores the canonical value after native reset, including unchanged defaults; pending animation frames are cancelled during cleanup. |
 | The old fixture's `onComplete={setComplete}` mirrored the value into a second signal, producing its own relay warning. | Record real callback invocations in a plain event log and assert their values/counts. This fixture warning is distinguished from library defects. Completion dependencies are also read in the effect's compute phase. |
 
-The [original trace](validation/solid2-browser/evidence/otp-before.json) retains
+The [original trace](../../validation/solid2-browser/evidence/otp-before.json) retains
 untracked-read stacks, the fixture completion relay and a timing warning.
-The [intermediate ID evidence](validation/solid2-browser/evidence/otp-id-relay-intermediate.json)
+The [intermediate ID evidence](../../validation/solid2-browser/evidence/otp-id-relay-intermediate.json)
 records the registration relay exposed by lazy IDs. The
-[previous-patch trace](validation/solid2-browser/evidence/otp-control-trace.json)
+[previous-patch trace](../../validation/solid2-browser/evidence/otp-control-trace.json)
 uses the new event-log fixture and still shows missing IDs/name/ARIA and strict
-reads. The [final trace](validation/solid2-browser/evidence/otp-after.json) shows
+reads. The [final trace](../../validation/solid2-browser/evidence/otp-after.json) shows
 associated IDs, native FormData, live root renaming and reset with no diagnostics.
 
 The cumulative Kobalte patch changes 16 distribution files, covering both JS
@@ -40,7 +40,7 @@ matching type declaration. SHA-256 values:
 - a11y: `0603908f781d1ff943d8723b6987b4a2bdf1e4aae8a32281912441f0881e87f8`
 
 The previous patch, manifest and lockfile are preserved in
-[baseline/dialog-ids](validation/solid2-browser/baseline/dialog-ids/).
+[baseline/dialog-ids](../../validation/solid2-browser/baseline/dialog-ids).
 
 ## Regression evidence
 
@@ -99,18 +99,18 @@ passed again in both browsers in all three modes, using
 --output=/private/tmp/otp-cleanup-dev-test-results`; compiled JS used the JS server
 and `otp-cleanup-js` report/output names; production additionally used
 `HARNESS_URL=http://127.0.0.1:4400` and `otp-cleanup-production` names. Evidence:
-[JSX cleanup](validation/solid2-browser/evidence/otp-cleanup-dev.json),
-[compiled JS cleanup](validation/solid2-browser/evidence/otp-cleanup-js.json),
-and [production cleanup](validation/solid2-browser/evidence/otp-cleanup-production.json).
+[JSX cleanup](../../validation/solid2-browser/evidence/otp-cleanup-dev.json),
+[compiled JS cleanup](../../validation/solid2-browser/evidence/otp-cleanup-js.json),
+and [production cleanup](../../validation/solid2-browser/evidence/otp-cleanup-production.json).
 No library or fixture changes followed the full matrices.
 
 Case-level results and complete messages are retained in
-[development](validation/solid2-browser/evidence/otp-dev.json),
-[production](validation/solid2-browser/evidence/otp-production.json),
-[control](validation/solid2-browser/evidence/otp-control.json),
-[Drawer timing follow-up](validation/solid2-browser/evidence/otp-drawer-timing.json)
-and [compiled JS](validation/solid2-browser/evidence/otp-js.json).
-See the [harness README](validation/solid2-browser/README.md) for reproduction.
+[development](../../validation/solid2-browser/evidence/otp-dev.json),
+[production](../../validation/solid2-browser/evidence/otp-production.json),
+[control](../../validation/solid2-browser/evidence/otp-control.json),
+[Drawer timing follow-up](../../validation/solid2-browser/evidence/otp-drawer-timing.json)
+and [compiled JS](../../validation/solid2-browser/evidence/otp-js.json).
+See the [harness README](../../validation/solid2-browser/README.md) for reproduction.
 
 ## DELIVERY.md review and limits
 

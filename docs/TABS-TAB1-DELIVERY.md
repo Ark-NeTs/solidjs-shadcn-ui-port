@@ -37,7 +37,7 @@ freshly built exports in Chromium and Firefox. The
   render-ref attachment did not survive the lifecycle tests and was removed.
 
 The main gallery layout, dependencies and public selection/panel APIs remain
-unchanged. The existing Kobalte assessment is unchanged. [DECISIONS.md](../DECISIONS.md)
+unchanged. The existing Kobalte assessment is unchanged. [DECISIONS.md](project/DECISIONS.md)
 records the observer lifetime and native tab-entry decisions.
 
 ## Acceptance checklist

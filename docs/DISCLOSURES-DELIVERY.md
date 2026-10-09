@@ -19,7 +19,7 @@ introduced. The public guide is [components.md](components.md#accordion-and-coll
 - **Kobalte first:** unpatched alpha.2 opened and closed both primitives in
   Chromium/Firefox, but emitted six Accordion and four Collapsible warnings per
   engine. REASONING: the strict diagnostic gate blocks adoption, so the existing
-  owned-native approach is used. [Probe/evidence](../KOBALTE-DISCLOSURES.md).
+  owned-native approach is used. [Probe/evidence](validation/KOBALTE-DISCLOSURES.md).
   No missing capability requires corvu and no dependency was added.
 - **SSR-safe custom IDs:** configure triggerId/contentId on AccordionItem or the
   Collapsible root. REASONING: an early server test caught the trigger referencing

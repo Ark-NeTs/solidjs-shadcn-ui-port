@@ -2,8 +2,8 @@
 
 2026-10-08, unpatched `@kobalte/core@2.0.0-alpha.2` with the package's shared
 Solid core/web/signals `2.0.0-rc.13`, Vite `8.3.3`, plugin `3.0.0-next.27` and
-Playwright `1.63.0`. [Fixture](validation/solid2-select/main.tsx),
-[probe](validation/solid2-select/probe.mjs), [raw report](validation/solid2-select/unpatched.json).
+Playwright `1.63.0`. [Fixture](../../validation/solid2-select/main.tsx),
+[probe](../../validation/solid2-select/probe.mjs), [raw report](../../validation/solid2-select/unpatched.json).
 
 | Browser | Open, End/Enter selection, FormData, reset, Escape, returned focus | Diagnostics |
 | --- | --- | ---: |
@@ -35,4 +35,4 @@ Reproduce in the fixture directory: install its package/lock in isolation with
 start `bun run dev` on 4405, then run `node probe.mjs`. No WebKit or exhaustive
 Kobalte API investigation was performed after the diagnostic failure. Exploratory
 commands were not separately timed. The delivered owned Select is verified in
-three engines; see [delivery report](docs/SELECT-DELIVERY.md).
+three engines; see [delivery report](../SELECT-DELIVERY.md).

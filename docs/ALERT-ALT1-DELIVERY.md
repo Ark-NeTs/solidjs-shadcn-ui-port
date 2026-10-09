@@ -31,7 +31,7 @@ freshly built exports in Chromium and Firefox. The
 The fix is in the shared native-layer helper used by Alert Dialog and Popover;
 existing Popover/Combobox tests were rerun. No dependency or public API changes,
 custom traversal, diagnostic suppression, or new timing work was introduced.
-The existing Kobalte assessment is unchanged. [DECISIONS.md](../DECISIONS.md)
+The existing Kobalte assessment is unchanged. [DECISIONS.md](project/DECISIONS.md)
 records the focus ownership rule.
 
 ## Acceptance checklist

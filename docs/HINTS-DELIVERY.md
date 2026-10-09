@@ -12,7 +12,7 @@ families with source/build exports, examples, tests and screenshots.
   focus opening and explicit outside-focus dismissal in Chromium/Firefox, but
   emits two Tooltip and five Hover Card warnings per engine. REASONING: these
   fail the strict diagnostic gate, so neither is adopted. Both capabilities
-  exist; no corvu gap or new dependency is introduced. [Evidence](../KOBALTE-HINTS.md).
+  exist; no corvu gap or new dependency is introduced. [Evidence](validation/KOBALTE-HINTS.md).
 - **Owned previews:** a shared controller handles local/controlled state,
   cancellable delay, provider skip window, pointer bridge and focus engagement.
   REASONING: these concerns overlap; trigger semantics remain separate native

@@ -15,9 +15,9 @@ record the preserved history and verification.
 
 An owned Solid 2 design system with a stable public package boundary. The implementation contains **Button, Badge, Card, Separator, Skeleton, Input,
 Textarea, Label, Checkbox, Switch, Tabs, Popover, Alert Dialog, Combobox, Accordion, Collapsible, Tooltip, Hover Card, Radio Group, Toggle, Toggle Group, Select, Slider, Progress, Alert, Aspect Ratio, Attachment, Breadcrumb, Bubble, Button Group, Empty, Field, Input Group, Item, Kbd, Marker, Message, Native Select, Spinner, Table, Avatar, Pagination, Direction, Typography, Dialog, Sheet, Drawer, Dropdown Menu, Context Menu, Menubar, Navigation Menu, Command, Calendar, Date Picker, Input OTP, Resizable, Scroll Area, Carousel, Message Scroller, Toast, Sonner, Sidebar, Chart, Questionnaire and Data Table**.
-See [DECISIONS.md](DECISIONS.md) for the owner's 2026-10-07 foundation direction
+See [DECISIONS.md](docs/project/DECISIONS.md) for the owner's 2026-10-07 foundation direction
 and [full catalog delivery](docs/REMAINING-CATALOG-STATUS.md) for current verification status.
-[FOUNDATION-DELIVERY.md](FOUNDATION-DELIVERY.md) retains the earlier five-component results.
+[FOUNDATION-DELIVERY.md](docs/delivery/FOUNDATION-DELIVERY.md) retains the earlier five-component results.
 
 **Catalog complete:** all 65 families have source, examples, tests and documented API boundaries. See [final acceptance](docs/REMAINING-CATALOG-STATUS.md) and the [completion audit](docs/CATALOG-COMPLETION-AUDIT.md).
 
@@ -27,17 +27,17 @@ other sixty-four component families use owned behavior. Overlay and preview posi
 framework-independent Embla, TanStack Table core and Chart.js engines.
 Kobalte remains the first
 candidate for richer interaction primitives. Standalone Toggle uses `@kobalte/core@2.0.0-alpha.2` behind a cancellation adapter;
-see [Kobalte selection evaluation](KOBALTE-CHOICES.md). No corvu or experimental
+see [Kobalte selection evaluation](docs/validation/KOBALTE-CHOICES.md). No corvu or experimental
 validation patch is a production dependency.
 Kobalte Checkbox/Switch were browser-tested first; reset and diagnostic failures
-are recorded in [KOBALTE-TOGGLES.md](KOBALTE-TOGGLES.md).
-Tooltip/Hover Card adoption evidence is in [KOBALTE-HINTS.md](KOBALTE-HINTS.md).
-Accordion/Collapsible adoption evidence is in [KOBALTE-DISCLOSURES.md](KOBALTE-DISCLOSURES.md).
-Progress adoption evidence is in [KOBALTE-PROGRESS.md](KOBALTE-PROGRESS.md).
-Slider adoption evidence is in [KOBALTE-SLIDER.md](KOBALTE-SLIDER.md).
-Select adoption evidence is in [KOBALTE-SELECT.md](KOBALTE-SELECT.md).
-Combobox adoption evidence is in [KOBALTE-COMBOBOX.md](KOBALTE-COMBOBOX.md).
-The Tabs/Popover/Alert Dialog probe is in [KOBALTE-OVERLAYS.md](KOBALTE-OVERLAYS.md).
+are recorded in [KOBALTE-TOGGLES.md](docs/validation/KOBALTE-TOGGLES.md).
+Tooltip/Hover Card adoption evidence is in [KOBALTE-HINTS.md](docs/validation/KOBALTE-HINTS.md).
+Accordion/Collapsible adoption evidence is in [KOBALTE-DISCLOSURES.md](docs/validation/KOBALTE-DISCLOSURES.md).
+Progress adoption evidence is in [KOBALTE-PROGRESS.md](docs/validation/KOBALTE-PROGRESS.md).
+Slider adoption evidence is in [KOBALTE-SLIDER.md](docs/validation/KOBALTE-SLIDER.md).
+Select adoption evidence is in [KOBALTE-SELECT.md](docs/validation/KOBALTE-SELECT.md).
+Combobox adoption evidence is in [KOBALTE-COMBOBOX.md](docs/validation/KOBALTE-COMBOBOX.md).
+The Tabs/Popover/Alert Dialog probe is in [KOBALTE-OVERLAYS.md](docs/validation/KOBALTE-OVERLAYS.md).
 
 ## Key files
 
@@ -48,6 +48,10 @@ The Tabs/Popover/Alert Dialog probe is in [KOBALTE-OVERLAYS.md](KOBALTE-OVERLAYS
 | `src/theme.css` | Shared oklch tokens, Inter, utilities and reduced motion |
 | `src/index.ts` | Public library barrel |
 | `playground/` | Interactive documentation using package exports |
+| `docs/project/` | Specifications, implementation plan, component map and decisions |
+| `docs/checklists/` | Reusable UI delivery acceptance checklist |
+| `docs/validation/` | Primitive evaluations and compatibility findings |
+| `docs/delivery/` | Earlier component delivery reports |
 | `tests/unit/` | Reactivity, native contracts, loading, token and class parity |
 | `tests/integration/` | Source-component browser integration and axe checks |
 | `tests/e2e/` | Built-library journeys and screenshot baselines |
@@ -287,7 +291,7 @@ Neither tool adds router, query or Markdown packages to library dependencies.
   `aria-hidden`; the app supplies a loading status or `aria-busy` on its region.
 - Browser tests reject all warnings/errors. Coverage measures this batch, not
   full catalog completeness. Existing primitive findings stay in validation/.
-- Read AGENTS.md, DELIVERY.md and the current delivery report before extending
+- Read AGENTS.md, [the delivery checklist](docs/checklists/DELIVERY.md) and the current delivery report before extending
   the package. No registry script may overwrite the owned Solid 2 source.
 
 Source hydration now has [node-identity and interaction regressions](docs/HYDRATION-DELIVERY.md),

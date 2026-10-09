@@ -36,7 +36,7 @@ remains a record of the original failure and scope at that time.
   simulate stale collections; actual Firefox behavior is covered in browser.
 
 No public API, dependency, style or component-mapping change. Kobalte adoption is
-unchanged. [DECISIONS.md](../DECISIONS.md) records the narrowly scoped workaround.
+unchanged. [DECISIONS.md](project/DECISIONS.md) records the narrowly scoped workaround.
 
 ## Acceptance checklist
 

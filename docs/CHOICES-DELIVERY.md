@@ -3,7 +3,7 @@
 2026-10-08. Adds RadioGroup/RadioGroupItem, Toggle/toggleVariants and
 ToggleGroup/ToggleGroupItem through source and build exports. The package now
 contains 21 component families. [Guide](components.md#radio-group-toggle-and-toggle-group),
-[acceptance matrix](TEST-MATRIX.md#radio-group), [Kobalte evaluation](../KOBALTE-CHOICES.md).
+[acceptance matrix](TEST-MATRIX.md#radio-group), [Kobalte evaluation](validation/KOBALTE-CHOICES.md).
 
 ## Built — what shipped, and what the build did that the plan didn't say
 

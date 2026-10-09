@@ -319,7 +319,7 @@ Switch thumb movement supports RTL; both controls respect reduced motion.
 
 The components share the sibling class contract and semantic tokens. Kobalte
 was evaluated first and was not adopted for this batch because of measured reset
-and Solid 2 diagnostic failures; see [the evaluation](../KOBALTE-TOGGLES.md).
+and Solid 2 diagnostic failures; see [the evaluation](validation/KOBALTE-TOGGLES.md).
 
 ## Themes and screenshots
 
@@ -521,7 +521,7 @@ browser behavior. Packaged Safari and iOS devices remain untested.
 
 The new components require modern HTML popover/dialog APIs. Chromium, Firefox and WebKit
 are tested; older browsers, hydration and physical assistive-technology
-sessions are not certified by this batch. See [delivery evidence](../OVERLAYS-DELIVERY.md).
+sessions are not certified by this batch. See [delivery evidence](delivery/OVERLAYS-DELIVERY.md).
 
 ## Combobox
 
@@ -641,7 +641,7 @@ check does not certify a port of the admin or every Base UI behavior.
 
 Open `/?disclosures` (or `/?disclosures&dark`) in the playground. Both components
 use native buttons, owned Solid signals and the shared semantic theme. Kobalte
-was evaluated first; [its diagnostic evidence](../KOBALTE-DISCLOSURES.md) explains
+was evaluated first; [its diagnostic evidence](validation/KOBALTE-DISCLOSURES.md) explains
 the current implementation choice.
 
 ```tsx
@@ -1111,7 +1111,7 @@ SSR, source hydration, source/built browser updates, real Loading resolution and
 late resolution after unmount are covered. Physical screen-reader announcements,
 forced colors, streaming/published SSR and real admin/Electron composition remain
 unverified. There is no vertical, buffered, segmented or circular mode. See
-[delivery](PROGRESS-DELIVERY.md) and [Kobalte evaluation](../KOBALTE-PROGRESS.md).
+[delivery](PROGRESS-DELIVERY.md) and [Kobalte evaluation](validation/KOBALTE-PROGRESS.md).
 
 ![Light Progress examples](screenshots/progress-light.png)
 ![Dark Progress examples](screenshots/progress-dark.png)

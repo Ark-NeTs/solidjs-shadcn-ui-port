@@ -11,7 +11,7 @@ light/dark/mobile screenshots, unit tests, browser integration and built-library
 end-to-end tests. No application migration or Git commit was made.
 
 The owner's explicit instruction to start this batch is recorded in D90 and
-[DECISIONS.md](DECISIONS.md). Native HTML supplies these components' behavior.
+[DECISIONS.md](../project/DECISIONS.md). Native HTML supplies these components' behavior.
 There are no Kobalte/corvu dependencies or experimental patches in the package.
 Earlier diagnostic work remains isolated in `validation/`.
 
@@ -61,11 +61,11 @@ above without update mode. Baseline generation is not counted as a comparison.
 Light/dark/mobile captures include pending Skeleton content so all five components
 are visible. These are Solid gallery regressions, not React pixel comparisons.
 
-[Command measurements](docs/evidence/commands.json),
-[verification output](docs/evidence/verification.txt),
-[coverage](docs/evidence/coverage-summary.json),
-[browser integration](docs/evidence/integration.json), and
-[built-library E2E](docs/evidence/e2e.json) are retained. No browser test was skipped,
+[Command measurements](../evidence/commands.json),
+[verification output](../evidence/verification.txt),
+[coverage](../evidence/coverage-summary.json),
+[browser integration](../evidence/integration.json), and
+[built-library E2E](../evidence/e2e.json) are retained. No browser test was skipped,
 retried or marked expected-failure. Firefox runs the journeys and axe checks;
 visual baselines are Chromium/macOS-specific.
 
@@ -92,7 +92,7 @@ all possible browser behaviors or full catalog completeness.
 
 ## Explicit remaining work
 
-The [admin import report](docs/evidence/admin-parity.json) finds 14 imported
+The [admin import report](../evidence/admin-parity.json) finds 14 imported
 subpaths, with nine still missing exports. `bun run parity:report` records that
 inventory; `bun run parity:admin` is the intentionally strict future gate and
 must not be presented as passing. No empty component stubs conceal these gaps.

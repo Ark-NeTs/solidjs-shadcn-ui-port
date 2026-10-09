@@ -9,7 +9,7 @@ and `packages/shadcn-svelte-theme/README.md`, before writing a line of code.
 Continue autonomously through the package goal: the full 65-family library,
 documentation website, customizable themes, examples/screenshots and automated
 unit, browser integration and E2E acceptance. The admin composition is verified;
-[final delivery](docs/PROJECT-COMPLETION.md) records the website, consumer costs,
+[final delivery](../PROJECT-COMPLETION.md) records the website, consumer costs,
 isolated router/query acceptance and remaining release/manual limits. Existing
 app migration and external publication remain outside the package increment.
 The latest working agreement authorizes verified commits/pushes to the codex
@@ -18,55 +18,55 @@ branch and supersedes historical checkpoint/never-commit instructions below.
 ## Previous owner direction — 2026-10-08
 
 **Current scope:** implement all remaining catalog components, evaluating Kobalte first.
-Deliver in verified logical batches; track remaining work in [catalog delivery](docs/CATALOG-DELIVERY.md).
+Deliver in verified logical batches; track remaining work in [catalog delivery](../CATALOG-DELIVERY.md).
 The full 65-family catalog is now implemented and verified within its documented
-contracts; see [final acceptance](docs/REMAINING-CATALOG-STATUS.md) and
-[completion audit](docs/CATALOG-COMPLETION-AUDIT.md) for evidence and remaining limits.
+contracts; see [final acceptance](../REMAINING-CATALOG-STATUS.md) and
+[completion audit](../CATALOG-COMPLETION-AUDIT.md) for evidence and remaining limits.
 
 **Previous batch:** implement Progress, evaluating Kobalte first. Deliver the component,
 examples, unit/browser/SSR/hydration tests, screenshots and documentation, then commit
-and push under the working agreement. See [Progress delivery](docs/PROGRESS-DELIVERY.md).
+and push under the working agreement. See [Progress delivery](../PROGRESS-DELIVERY.md).
 
 **Previous batch:** implement Slider, evaluating Kobalte first. Deliver the component,
 examples, unit/browser/SSR/hydration tests, screenshots and documentation, then commit
-and push under the working agreement. See [Slider delivery](docs/SLIDER-DELIVERY.md).
+and push under the working agreement. See [Slider delivery](../SLIDER-DELIVERY.md).
 
 **Previous batch:** implement Select, evaluating Kobalte first. Deliver the public
 component, examples, unit/browser/SSR/hydration tests, screenshots and documentation,
-then commit and push under the working agreement. See [Select delivery](docs/SELECT-DELIVERY.md).
+then commit and push under the working agreement. See [Select delivery](../SELECT-DELIVERY.md).
 
 **Previous batch:** implement Radio Group, Toggle and Toggle Group, evaluating
 Kobalte first. Deliver implementations, examples, tests, documentation and measured
-evidence under the full commit/push agreement. See [choice delivery](docs/CHOICES-DELIVERY.md).
+evidence under the full commit/push agreement. See [choice delivery](../CHOICES-DELIVERY.md).
 
 **Previous batch:** implement Tooltip and Hover Card, evaluating Kobalte first.
 Deliver source, examples, tests, screenshots and docs under the full commit/push
-working agreement. See [preview delivery](docs/HINTS-DELIVERY.md).
+working agreement. See [preview delivery](../HINTS-DELIVERY.md).
 
 **Previous batch:** implement Accordion and Collapsible after evaluating Kobalte.
 Deliver source, examples, unit/browser/SSR/hydration tests and screenshots; follow
-the commit/push working agreement. See [disclosure delivery](docs/DISCLOSURES-DELIVERY.md).
+the commit/push working agreement. See [disclosure delivery](../DISCLOSURES-DELIVERY.md).
 
 **Previous batch:** implement Combobox as the next increment. Evaluate Kobalte first;
 deliver source, docs and tests, then commit/push on a codex branch under the latest
-working agreement. See [COMBOBOX-DELIVERY.md](COMBOBOX-DELIVERY.md).
+working agreement. See [COMBOBOX-DELIVERY.md](../delivery/COMBOBOX-DELIVERY.md).
 
 **Previous batch authorized:** “Continue with Tabs, Popover, Alert Dialog.”
 Evaluate Kobalte first, preserve diagnostics, and deliver the three components,
 tests and docs. The owner subsequently authorized the full commit/push workflow
 and requested merging into local main; push only the codex branch. See
-[KOBALTE-OVERLAYS.md](KOBALTE-OVERLAYS.md) and
-[OVERLAYS-DELIVERY.md](OVERLAYS-DELIVERY.md).
+[KOBALTE-OVERLAYS.md](../validation/KOBALTE-OVERLAYS.md) and
+[OVERLAYS-DELIVERY.md](../delivery/OVERLAYS-DELIVERY.md).
 
 **Previous batch:** “implement Checkbox and Switch, evaluating Kobalte
 first.” The form-field batch is committed as `a916220`. Preserve that priority,
 record measured adoption failures, and deliver this bounded component batch
-with tests and docs. See [KOBALTE-TOGGLES.md](KOBALTE-TOGGLES.md) and
-[TOGGLES-DELIVERY.md](TOGGLES-DELIVERY.md).
+with tests and docs. See [KOBALTE-TOGGLES.md](../validation/KOBALTE-TOGGLES.md) and
+[TOGGLES-DELIVERY.md](../delivery/TOGGLES-DELIVERY.md).
 
 **Earlier batch:** “commit and implement Input, Textarea, and Label.”
 The foundation is committed as `b82f86c`. Extend its native-field contract with
-these three components; see [FORM-FIELDS-DELIVERY.md](FORM-FIELDS-DELIVERY.md).
+these three components; see [FORM-FIELDS-DELIVERY.md](../delivery/FORM-FIELDS-DELIVERY.md).
 The earlier broad Gate 0 restriction does not block this explicitly requested batch.
 
 **Implementation checkpoint authorized:** the owner explicitly requested the
@@ -75,7 +75,7 @@ another diagnostic investigation. This supersedes the original broad Gate 0
 stop-before-code requirement for this limited batch. Use owned native HTML for
 these five components; no experimental Kobalte patch enters production. Keep
 Kobalte first for subsequent interaction primitives. See [DECISIONS.md](DECISIONS.md)
-and [FOUNDATION-DELIVERY.md](FOUNDATION-DELIVERY.md). Full catalog, router/query,
+and [FOUNDATION-DELIVERY.md](../delivery/FOUNDATION-DELIVERY.md). Full catalog, router/query,
 complex primitives and admin migration remain later increments.
 
 This section takes precedence over the original scope and library alternatives
@@ -124,16 +124,16 @@ below where they differ.
   below are historical inputs to re-verify, not proof of compatibility.
   Do not switch to Solid 1 or add a second Solid runtime to make corvu load.
   A required port or replacement must be made explicit before adoption.
-  See [COMPATIBILITY.md](COMPATIBILITY.md) for the current verification result.
+  See [COMPATIBILITY.md](../validation/COMPATIBILITY.md) for the current verification result.
   The five-primitive browser probe and its outstanding acceptance failures are
-  recorded in [BROWSER-VALIDATION.md](BROWSER-VALIDATION.md); it is not a complete
+  recorded in [BROWSER-VALIDATION.md](../validation/BROWSER-VALIDATION.md); it is not a complete
   Gate 0 or permission to mark the component set delivered.
-  [KOBALTE-LIFECYCLE.md](KOBALTE-LIFECYCLE.md) records the subsequent harness-only
+  [KOBALTE-LIFECYCLE.md](../validation/KOBALTE-LIFECYCLE.md) records the subsequent harness-only
   patch for Drawer Escape and effect ownership. Its passing scoped regressions
-  do not approve production adoption. [KOBALTE-PRESENCE.md](KOBALTE-PRESENCE.md)
+  do not approve production adoption. [KOBALTE-PRESENCE.md](../validation/KOBALTE-PRESENCE.md)
   subsequently resolves Drawer/DialogRoot feedback and relay diagnostics.
-  [KOBALTE-DIALOG-IDS.md](KOBALTE-DIALOG-IDS.md) resolves plain Dialog untracked
-  ID reads and verifies live ARIA wiring. [KOBALTE-OTP.md](KOBALTE-OTP.md)
+  [KOBALTE-DIALOG-IDS.md](../validation/KOBALTE-DIALOG-IDS.md) resolves plain Dialog untracked
+  ID reads and verifies live ARIA wiring. [KOBALTE-OTP.md](../validation/KOBALTE-OTP.md)
   subsequently resolves tested OTP diagnostics and label/form wiring through
   harness-only Kobalte and shared a11y patches. Other primitive findings and
   Gate 0 requirements still block production acceptance.
@@ -392,7 +392,7 @@ The D49/D90 package contract now lives at the standalone repository root:
 solidjs-shadcn-ui-port/
   package.json          name shadcn-solidjs-theme; description (D19 + the new D#)
   README.md             standalone setup, scope and verification
-  specs.md              this file (keep; update the "checked" dates if you re-verify)
+  docs/project/specs.md this file (keep; update the "checked" dates if you re-verify)
   tsconfig.json         self-contained settings; jsx preserve; jsxImportSource @solidjs/web
   vite.config.ts        library build + vitest config (vite-plugin-solid, @tailwindcss/vite, dts)
   vitest.setup.ts       jest-dom matchers, ResizeObserver/matchMedia stubs, cleanup()

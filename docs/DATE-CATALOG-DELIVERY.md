@@ -6,9 +6,9 @@ Final acceptance: [full catalog gates](REMAINING-CATALOG-STATUS.md).
 ## Kobalte first
 
 At the unchanged alpha.2/rc.13 pins, Kobalte Calendar's original interaction
-probe is supplemented by the [lifecycle diagnostics](../KOBALTE-LIFECYCLE.md):
+probe is supplemented by the [lifecycle diagnostics](validation/KOBALTE-LIFECYCLE.md):
 untracked reads and relay writes remained after the isolated shared repairs.
-Kobalte OTP's [earlier harness repair](../KOBALTE-OTP.md) passed its tested cases
+Kobalte OTP's [earlier harness repair](validation/KOBALTE-OTP.md) passed its tested cases
 only with cumulative Kobalte and transitive a11y distribution patches. Those are
 not production dependencies. This group reuses that exact-pin evaluation and
 ships owned calendar behavior plus one native OTP input; Date Picker composes

@@ -10,7 +10,7 @@ alpha.2 with Solid/web/signals rc.13 in Chromium and Firefox. All four menu
 primitives open, Escape-close and unmount, but Dropdown/Context/Menubar emit three
 ownership/relay diagnostics each; Navigation emits seven. This is a runtime
 acceptance failure, not a missing API. Command has no cmdk equivalent; the closest
-Kobalte candidates retain the [Combobox evaluation](../KOBALTE-COMBOBOX.md).
+Kobalte candidates retain the [Combobox evaluation](validation/KOBALTE-COMBOBOX.md).
 Owned native menus and a command collection avoid private dependency patches.
 No corvu dependency, version change or diagnostic suppression was introduced.
 

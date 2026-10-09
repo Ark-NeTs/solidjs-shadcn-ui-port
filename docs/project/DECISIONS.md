@@ -172,7 +172,7 @@ Let native Tab navigation finish before closing in the next task. Suppress
 restoration for that dismissal only; cancel queued closure on disposal or a newer
 request. Popup Shift+Tab returns to the trigger, following native DOM order.
 No focusable-element enumeration, forced clicks, diagnostic filters or library
-pin changes are introduced. See [CMB-2 delivery](docs/COMBOBOX-CMB2-DELIVERY.md).
+pin changes are introduced. See [CMB-2 delivery](../COMBOBOX-CMB2-DELIVERY.md).
 
 ## Popover placement follow-up — 2026-10-08 (D19/D90)
 
@@ -184,7 +184,7 @@ real-browser sampling measured roughly 17–21px lag behind a moving anchor.
 Do not hide the defect by disabling motion in the test or widening its tolerance.
 The regression samples intermediate frames, then requires subpixel attachment
 at rest. No placement engine, observer lifecycle or public prop API changes.
-See [POP-1 delivery](docs/POPOVER-POP1-DELIVERY.md).
+See [POP-1 delivery](../POPOVER-POP1-DELIVERY.md).
 
 ## Alert Dialog focus follow-up — 2026-10-08 (D19/D90)
 
@@ -196,7 +196,7 @@ child button before the parent's own Cancel, so the parent's Cancel did not
 receive initial focus in either browser. Preserve Cancel priority, consumer cancellation
 hooks, native modality, Tab handling and scroll-lock cleanup. No new library,
 observer or delayed focus task is needed. See
-[ALT-1 delivery](docs/ALERT-ALT1-DELIVERY.md).
+[ALT-1 delivery](../ALERT-ALT1-DELIVERY.md).
 
 ## Tabs lifecycle follow-up — 2026-10-08 (D19/D90)
 
@@ -214,7 +214,7 @@ REASONING: Firefox exposed the overflow container as an additional Tab stop,
 before the intended roving trigger. Preserve existing registration-based fallback
 selection and manual activation; no collection state or draft mirror is added.
 Force-mounted panels already preserve their draft nodes; lazy panels already
-dispose children. See [TAB-1 delivery](docs/TABS-TAB1-DELIVERY.md).
+dispose children. See [TAB-1 delivery](../TABS-TAB1-DELIVERY.md).
 
 ## Toggle reset cancellation after native event propagation (2026-10-08)
 
@@ -228,7 +228,7 @@ form-association effect. Remove the listener and clear every pending timer on
 reassociation or unmount. REASONING: a microtask is not an end-of-propagation
 boundary for browser-generated events. Cancellation must be checked after all
 native listeners and the reset default action. No API, theme or headless-library
-choice changes. [Delivery evidence](docs/TOGGLES-FORMS-DELIVERY.md) covers source
+choice changes. [Delivery evidence](../TOGGLES-FORMS-DELIVERY.md) covers source
 and built exports in Chromium and Firefox.
 
 ## Refresh stale native label collections on reassociation (2026-10-08)
@@ -246,7 +246,7 @@ A DOM effect observes the static ref and reactive for prop after the DOM commit;
 it retains only the previous target and is disposed with the component. No timer,
 observer, global registry or external-DOM mutation monitoring is added. SSR remains
 native markup. Consumers observing label child-list mutations can see the temporary
-comment insertion/removal. [Delivery](docs/LABEL-REFRESH-DELIVERY.md) records the
+comment insertion/removal. [Delivery](../LABEL-REFRESH-DELIVERY.md) records the
 probe, repeated focus/selection/identity tests and restored both-engine assertions.
 
 ## WebKit coverage and newest-modal focus containment (2026-10-08)
@@ -268,7 +268,7 @@ restoration. No user-agent branch enters component code.
 REASONING: native showModal still owns top-layer display, inertness and dismissal;
 the guard supplies the tested focus-containment contract where native behavior
 falls short. Existing exact nested-focus tests now run in three engines; a unit
-regression verifies target removal and disposal. [Delivery](docs/WEBKIT-DELIVERY.md)
+regression verifies target removal and disposal. [Delivery](../WEBKIT-DELIVERY.md)
 records scope, native probes and remaining browser/device gaps.
 
 ## Hydration registration and DOM ownership (2026-10-08)
@@ -291,7 +291,7 @@ it is not evidence that ordinary Solid hydration or Kobalte Tabs is broken.
 
 DOM effects wait for their refs because hydration can commit an initial effect
 first. Input maps its server default to a native value attribute while preserving
-client semantics. [Hydration evidence](docs/HYDRATION-DELIVERY.md) records exact
+client semantics. [Hydration evidence](../HYDRATION-DELIVERY.md) records exact
 node identity, interactions, diagnostic checks and scope limits. No runtime patch,
 dependency upgrade or diagnostic suppression is needed.
 
@@ -308,7 +308,7 @@ editable drafts outside that fallback in the acceptance fixture.
 REASONING: treating the fallback's documented-in-source runtime handoff as a
 Skeleton defect would encourage unnecessary component workarounds. Real promise
 resolution, late completion and disposal assertions remain strict, with no runtime
-patch or diagnostics suppression. [Evidence](docs/LOADING-HYDRATION-DELIVERY.md)
+patch or diagnostics suppression. [Evidence](../LOADING-HYDRATION-DELIVERY.md)
 is specific to pending renderToString output and client-owned completion; it does
 not establish streaming or ready-at-SSR boundary support.
 
@@ -318,7 +318,7 @@ not establish streaming or ready-at-SSR boundary support.
 Under D19/D90, evaluate Kobalte first, then keep these two wrappers native and
 signal-owned: unpatched alpha.2 opens/closes in Chromium and Firefox but emits
 Solid 2 rc.13 untracked-read, feedback and relay diagnostics.
-[Kobalte evidence](KOBALTE-DISCLOSURES.md) records every message. No missing
+[Kobalte evidence](../validation/KOBALTE-DISCLOSURES.md) records every message. No missing
 capability justifies corvu; neither library is added to production.
 
 REASONING: these disclosures need selection, button activation and hidden content,
@@ -330,7 +330,7 @@ link in the server regression and is not used here.
 
 Keep content shells mounted and hidden while closed; unmount children unless
 forceMount is requested. Natural height replaces animated height/exit presence.
-These API differences are documented in the [component guide](docs/components.md).
+These API differences are documented in the [component guide](../components.md).
 
 
 ## Tooltip and Hover Card lifetime (2026-10-08)
@@ -338,7 +338,7 @@ These API differences are documented in the [component guide](docs/components.md
 Keep Kobalte first: alpha.2 on Solid 2 rc.13 passes isolated pointer opening,
 Escape, focus opening and explicit outside-focus dismissal in Chromium/Firefox,
 but produces two Tooltip and five Hover Card warnings in each engine. The
-[unpatched probe](KOBALTE-HINTS.md) therefore fails the strict diagnostic gate.
+[unpatched probe](../validation/KOBALTE-HINTS.md) therefore fails the strict diagnostic gate.
 Both capabilities exist, so no corvu catalog fallback is introduced.
 
 REASONING: one owned hint controller shares delay cancellation, owner state,
@@ -371,7 +371,7 @@ per-component entry. REASONING: the library priority applies per primitive;
 rejection of other components does not justify replacing a usable Toggle.
 Its canceled-click defect is contained by supplying canonical controlled state
 and declining the library change request after a canceled caller event. No
-library patch or diagnostic filter is used. See [evaluation](KOBALTE-CHOICES.md).
+library patch or diagnostic filter is used. See [evaluation](../validation/KOBALTE-CHOICES.md).
 
 Native radios provide the actual label/focus/form/validity targets. One root
 owns selection and one reset subscription. REASONING: native radio activation
@@ -389,7 +389,7 @@ Toggle Group uses pressed buttons for both modes; it is not a radio form control
 Its joined borders use logical start/end edges for RTL. Long groups can scroll
 inside their available width. No data layer, toolbar mode, asChild, library
 patch, focus restoration after focused-node removal or runtime selection-type
-switching is promised by this increment. [Guide](docs/components.md#radio-group-toggle-and-toggle-group).
+switching is promised by this increment. [Guide](../components.md#radio-group-toggle-and-toggle-group).
 
 Focus callbacks explicitly leave the caller's reactive scope before inspecting
 item metadata. REASONING: a parent effect may focus a native item synchronously;
@@ -409,7 +409,7 @@ pass, but 25 diagnostics per tested engine expose internal untracked reads,
 feedback and relay tearing. Keep the accepted Toggle dependency, but implement
 Select as owned state/native HTML with Floating UI. REASONING: do not ship
 library-internal diagnostic failures or carry experimental patches into production.
-See [probe evidence](KOBALTE-SELECT.md).
+See [probe evidence](../validation/KOBALTE-SELECT.md).
 
 Select takes explicit `{value,label,disabled}` items at its root. REASONING:
 closed server markup, the displayed label and native successful option must agree
@@ -435,7 +435,7 @@ Evaluate unpatched Kobalte alpha.2 first on the shared rc.13 runtime. The two-en
 range probe emits seven internal diagnostics per engine and fails settled arrow,
 End and drag updates. REASONING: implement the requested component without adopting
 those lifecycle failures or a private library patch. Toggle remains on its accepted
-Kobalte path; no corvu or new dependency is added. See [evaluation](KOBALTE-SLIDER.md).
+Kobalte path; no corvu or new dependency is added. See [evaluation](../validation/KOBALTE-SLIDER.md).
 
 Use an explicit numeric array with stable index-based thumb owners, normalized on
 a min/step grid and constrained by neighbor gaps. REASONING: values, visible fill,
@@ -472,7 +472,7 @@ Root still produce mismatched hydration keys. The exact upstream-versus-adapter
 cause remains unresolved. REASONING: two adapter repair attempts do not establish
 hydration acceptance, so deliver the small owned display component with the same strict
 hydration assertions instead of adding a private dependency patch or key workaround.
-Preserve the failed reports in [the evaluation](KOBALTE-PROGRESS.md).
+Preserve the failed reports in [the evaluation](../validation/KOBALTE-PROGRESS.md).
 
 Normalize the public wrapper to zero-based value/max semantics: absent/null,
 nonfinite or out-of-range values mean unknown work; nonpositive/nonfinite max
@@ -502,7 +502,7 @@ presentation parts. Native buttons default to `type=button`. The host owns uploa
 transport, validation, shortcuts and message state. Keep canonical tokens intact;
 use the existing destructive-emphasis token and foreground keyboard text for
 contrast. Logical alert-action placement and bounded example grids address RTL
-and enlarged text. [Delivery and limits](docs/NATIVE-CATALOG-DELIVERY.md).
+and enlarged text. [Delivery and limits](../NATIVE-CATALOG-DELIVERY.md).
 
 ## 2026-10-09 — display/navigation compositions
 
@@ -513,7 +513,7 @@ Direction owns an explicit reactive context and native div boundary, independent
 of locale; `display: contents` does not establish inline layout direction.
 Typography provides semantic recipes without a Markdown parser or a claim to
 upstream Typeset's complete CSS API. No new dependency or shared-token changes.
-[Acceptance and limits](docs/DISPLAY-CATALOG-DELIVERY.md).
+[Acceptance and limits](../DISPLAY-CATALOG-DELIVERY.md).
 
 ## 2026-10-09 — Dialog, Sheet and Drawer
 
@@ -525,7 +525,7 @@ Drawer owns bounded snap selection and handle-only dragging so scrollable conten
 keeps native gestures. Numeric snaps refer to panel size; pixel snaps are explicit.
 No Vaul momentum/background scaling or delayed exit-presence claim. A plain
 accessor for the shell popover mode avoids the observed nested-getter hydration
-memo mismatch. [Delivery](docs/MODAL-CATALOG-DELIVERY.md).
+memo mismatch. [Delivery](../MODAL-CATALOG-DELIVERY.md).
 
 Full modal regression exposed two existing wasted-recomputation diagnostics.
 Tabs now places an equality boundary at each panel's active value, after trigger
@@ -626,7 +626,7 @@ with strict diagnostics enabled. No warning suppression or diagnostic threshold
 change is used. Its editor resolves focus by stable row ID after reconciliation
 because immutable table data can replace the original cell button. Application
 service and draft state remain in the playground, behind an injected local API.
-See [admin menu delivery](docs/ADMIN-MENU-DELIVERY.md).
+See [admin menu delivery](../ADMIN-MENU-DELIVERY.md).
 
 The same composition acceptance run exposed a remaining shared uncontrolled-state
 source in Data Table: each field memo woke on unrelated selection/pagination
@@ -654,7 +654,7 @@ The router/query compatibility probe lives in an isolated temporary install with
 a committed manifest/lock. Router next.36 and Query rc.5 declare compatible rc.13
 peers; newer Router tags require rc.14 and are not silently forced onto rc.13.
 Applications continue owning cache/routing; neither dependency enters this package.
-See [completion evidence](docs/PROJECT-COMPLETION.md).
+See [completion evidence](../PROJECT-COMPLETION.md).
 
 
 ## Scrollable menu tab stops — 2026-10-09
@@ -684,7 +684,7 @@ copyright holder. The package-local LICENSE records that notice and the manifest
 declares the MIT SPDX identifier. This applies to this package, not the entire
 monorepo. Registry publication and website deployment remain separate actions;
 `private: true` stays in place until a release is requested.
-See [license delivery](docs/LICENSE-DELIVERY.md).
+See [license delivery](../LICENSE-DELIVERY.md).
 
 
 ## Public documentation artifact — 2026-10-09
@@ -763,4 +763,12 @@ project history, source, docs, deployment tools and validation evidence. Retain
 the public package name and exports. Configuration and active dependency installs
 are local to this repository. Capture external React-theme and admin import
 contracts as dated fixtures so verification does not require the former monorepo.
-Historical reports retain their original context. See [migration delivery](docs/REPOSITORY-MIGRATION.md).
+Historical reports retain their original context. See [migration delivery](../REPOSITORY-MIGRATION.md).
+
+## Documentation folders — 2026-10-09
+
+The owner requested organizing root Markdown documents into appropriate folders.
+README and agent instructions remain at the root. Project plans/specifications,
+checklists, primitive evaluations and delivery reports use separate directories
+under `docs`. Local website discovery is recursive; public-page publication stays
+allowlisted. All maintained links follow the moved files.

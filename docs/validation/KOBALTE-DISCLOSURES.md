@@ -5,10 +5,10 @@
 Vite `8.3.3`, vite-plugin-solid `3.0.0-next.27`, Playwright `1.63.0`.
 No registry upgrade or alternative prerelease search was part of this batch.
 
-The [isolated fixture](validation/solid2-disclosures/main.tsx) renders each primitive
+The [isolated fixture](../../validation/solid2-disclosures/main.tsx) renders each primitive
 separately. It clicks a named trigger, waits for the input to become visible,
 clicks again and waits for it to disappear. It captures every browser warning,
-console error and page error. [Raw output](validation/solid2-disclosures/unpatched.json).
+console error and page error. [Raw output](../../validation/solid2-disclosures/unpatched.json).
 
 | Primitive | Chromium open/close | Firefox open/close | Warnings per engine |
 | --- | --- | --- | ---: |
@@ -36,4 +36,4 @@ user's gallery on 4399. Its diagnostic arrays are evidence, not passing acceptan
 | `bun run dev` (fixture) | Isolated development server available on 4405 | Long-running; not timed |
 | `node probe.mjs` (fixture) | Four open/close journeys pass; 20 warnings captured | Not separately timed |
 
-[Implementation and final acceptance](docs/DISCLOSURES-DELIVERY.md).
+[Implementation and final acceptance](../DISCLOSURES-DELIVERY.md).

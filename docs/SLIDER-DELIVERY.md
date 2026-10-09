@@ -2,7 +2,7 @@
 
 2026-10-08. Adds Slider through public source and build exports, bringing the
 package to 23 component families. [Guide](components.md#slider),
-[acceptance matrix](TEST-MATRIX.md#slider), [Kobalte evaluation](../KOBALTE-SLIDER.md).
+[acceptance matrix](TEST-MATRIX.md#slider), [Kobalte evaluation](validation/KOBALTE-SLIDER.md).
 
 ## Implementation and decisions
 
@@ -32,7 +32,7 @@ package to 23 component families. [Guide](components.md#slider),
   using semantic background for dark/custom themes. Keep every remaining API and
   manual acceptance limit explicit in the component guide and matrix.
 
-[DECISIONS.md](../DECISIONS.md) retains the architectural reasoning. There are no
+[DECISIONS.md](project/DECISIONS.md) retains the architectural reasoning. There are no
 application service, CI, secret or sibling-package changes.
 
 ## Size

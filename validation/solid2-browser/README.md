@@ -5,8 +5,8 @@ An isolated compatibility experiment for the Kobalte-first decision in
 components and is not the design-system package or the complete Gate 0.
 The owner requested these five browser probes before implementation.
 
-See [KOBALTE-OTP.md](../../KOBALTE-OTP.md) for current findings and
-limits; [BROWSER-VALIDATION.md](../../BROWSER-VALIDATION.md) preserves the unpatched
+See [KOBALTE-OTP.md](../../docs/validation/KOBALTE-OTP.md) for current findings and
+limits; [BROWSER-VALIDATION.md](../../docs/validation/BROWSER-VALIDATION.md) preserves the unpatched
 baseline. The manifest applies cumulative Kobalte and shared a11y patches. It is
 an experiment, not production adoption or an upstream release.
 The acceptance suite intentionally fails for unresolved library/API gaps;

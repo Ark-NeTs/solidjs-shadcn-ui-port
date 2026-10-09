@@ -11,8 +11,17 @@ const docsPath=publicSite?'/':'/docs.html';
 const markdown=globalThis.Bun?.markdown;
 if(!markdown?.html)throw new Error('Documentation generation requires Bun 1.4.2 or later with Bun.markdown.');
 const groups=JSON.parse(await readFile(resolve(root,'playground/docs-groups.json'),'utf8'));
-const catalog=await readFile(resolve(root,'COMPONENT-MAP.md'),'utf8');
-const sources=publicSite?publicPages:(await Promise.all(['','docs'].map(async directory=>(await readdir(resolve(root,directory))).filter(name=>name.endsWith('.md')&&name!=='AGENTS.md').map(name=>`${directory?`${directory}/`:''}${name}`)))).flat();
+const catalog=await readFile(resolve(root,'docs/project/COMPONENT-MAP.md'),'utf8');
+/** Discover nested maintained guides without following links or publishing agent instructions. */
+async function documentationSources(directory){
+ const entries=await readdir(resolve(root,directory),{withFileTypes:true});
+ const groups=await Promise.all(entries.filter(entry=>!entry.name.startsWith('.')).map(entry=>{
+  const path=`${directory}/${entry.name}`;
+  return entry.isDirectory()?documentationSources(path):entry.isFile()&&entry.name.endsWith('.md')&&entry.name!=='AGENTS.md'?[path]:[];
+ }));
+ return groups.flat().sort();
+}
+const sources=publicSite?publicPages:['README.md',...await documentationSources('docs')];
 const documents=new Set(sources);const copied=new Map();const omitted=new Set();
 // Rebuild this generated directory so removed pages/assets cannot remain in a release.
 await rm(output,{recursive:true,force:true});

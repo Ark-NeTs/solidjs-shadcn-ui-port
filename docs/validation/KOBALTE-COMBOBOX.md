@@ -3,7 +3,7 @@
 2026-10-08. Kobalte was evaluated first with unpatched
 `@kobalte/core@2.0.0-alpha.2` and Solid/core/web `2.0.0-rc.13`.
 The composition, isolated manifest/lockfile, probe and full diagnostic output
-are in [validation/solid2-combobox](validation/solid2-combobox).
+are in [validation/solid2-combobox](../../validation/solid2-combobox).
 
 Both Chromium and Firefox display the initial Apple value, filter to Banana,
 select it and serialize `fruit=Banana`. After reset the observed input is empty,
@@ -32,4 +32,4 @@ error in `unpatched.json`. Corvu's mapped catalog has no Combobox primitive;
 there is no demonstrated missing Kobalte API that corvu fills here. No dependency
 is added. The delivered component composes the already accepted native Popover
 and Input with owned Solid 2 selection/search/form state. Its independent
-acceptance is in [COMBOBOX-DELIVERY.md](COMBOBOX-DELIVERY.md).
+acceptance is in [COMBOBOX-DELIVERY.md](../delivery/COMBOBOX-DELIVERY.md).

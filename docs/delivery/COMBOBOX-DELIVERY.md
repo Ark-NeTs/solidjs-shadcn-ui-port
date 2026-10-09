@@ -12,8 +12,8 @@ source and built exports. No application migration or additional dependency.
   that composition and an external editable input are implemented and tested.
 - Kobalte was evaluated first. Search and selection work in the pinned probe,
   but reset leaves an empty input and both engines emit 21 diagnostics. Retain
-  [unfiltered evidence](validation/solid2-combobox/unpatched.json) and
-  [adoption assessment](KOBALTE-COMBOBOX.md). REASONING: reuse accepted native
+  [unfiltered evidence](../../validation/solid2-combobox/unpatched.json) and
+  [adoption assessment](../validation/KOBALTE-COMBOBOX.md). REASONING: reuse accepted native
   Input/Popover instead of promoting unaccepted experimental patches. Corvu's
   mapped catalog has no Combobox, so no fallback dependency is justified.
 - Reset restoration runs in a cancelable next task. REASONING: real browsers
@@ -26,7 +26,7 @@ source and built exports. No application migration or additional dependency.
 - Compound-part names match the current admin imports. REASONING: the inventory
   now passes, but name presence cannot establish a React-to-Solid application
   port. Unsupported Base UI APIs and styling differences are documented in the
-  [component guide](docs/components.md#combobox), including the absent React
+  [component guide](../components.md#combobox), including the absent React
   ref-object anchor hook, virtualization and automatic highlighting.
 
 ## Acceptance checklist
@@ -63,7 +63,7 @@ source and built exports. No application migration or additional dependency.
 
 Coverage: **1,096 statements, 640 branches, 452 functions and 317 lines**, all
 100%. No source exclusion or lower threshold. Command logs and browser JSON
-(with empty diagnostic attachments) are in [docs/evidence](docs/evidence).
+(with empty diagnostic attachments) are in [docs/evidence](../evidence).
 Node's NO_COLOR/FORCE_COLOR notices are runner output, not application warnings.
 The isolated Kobalte adoption probe remains failing evidence and is not counted
 as an implementation acceptance test.
@@ -71,7 +71,7 @@ as an implementation acceptance test.
 The full package build is 78.18 kB JavaScript (Vite gzip 20.79 kB) and 347.22 kB CSS
 (Vite gzip 231.07 kB, including the existing bundled font). These are whole-package
 outputs, not the marginal cost of Combobox or a tree-shaken consumer. Exact bytes
-and Python gzip measurements are in [combobox-bundle.json](docs/evidence/combobox-bundle.json).
+and Python gzip measurements are in [combobox-bundle.json](../evidence/combobox-bundle.json).
 
 ## Remaining scope and unrun checks
 

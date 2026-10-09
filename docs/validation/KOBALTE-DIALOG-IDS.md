@@ -16,7 +16,7 @@ decision changed. No Git commit was made.
 
 ## Causes verified against behavior
 
-The [before capture](validation/solid2-browser/evidence/dialog-reads-before.json)
+The [before capture](../../validation/solid2-browser/evidence/dialog-reads-before.json)
 records warning stacks ending in DialogRoot's `generateId` and shows that changing
 the root ID leaves Content, Title and Description IDs unchanged.
 
@@ -26,10 +26,10 @@ the root ID leaves Content, Title and Description IDs unchanged.
 | Once IDs became reactive, their registration effects copied each changed string into context state, producing `EFFECT_RELAY_TEAR`. | Parts register an accessor once. DOM IDs and ARIA references read the same source directly. Registration cleanup still clears the source. Existing public string registration remains supported. |
 | The earlier layer-registration patch read `props.onDismiss` in an effect apply callback. Reactive prop spreads exposed this additional untracked read. | Store a callback that reads the current `onDismiss` when invoked, instead of snapshotting the prop during registration. |
 
-The [getter-only intermediate capture](validation/solid2-browser/evidence/dialog-reads-getter-only.json)
+The [getter-only intermediate capture](../../validation/solid2-browser/evidence/dialog-reads-getter-only.json)
 preserves the additional relay warning and the stack identifying DismissableLayer's
 callback read. It is diagnostic evidence, not the accepted patch.
-The [final capture](validation/solid2-browser/evidence/dialog-reads-after.json)
+The [final capture](../../validation/solid2-browser/evidence/dialog-reads-after.json)
 shows generated IDs changing to `renamed-dialog-*`, with matching
 `aria-controls`, `aria-labelledby` and `aria-describedby`, and no warnings/errors.
 
@@ -37,7 +37,7 @@ Both JS and JSX paths are patched. The cumulative patch still changes eight
 distribution files. SHA-256:
 `b08ccf2f385c51b3fb7ca31f9d76490dd617e1d57b2bf7a0736c65543733f2e7`.
 The previous patch and its frozen install inputs are preserved in
-[baseline/presence](validation/solid2-browser/baseline/presence/).
+[baseline/presence](../../validation/solid2-browser/baseline/presence).
 
 ## Regression evidence
 
@@ -80,12 +80,12 @@ The compiled JS check started with `KOBALTE_DISTRIBUTION=js bun run dev --force`
 and ran `RESULTS_FILE=reads-js-results.json bun run test --grep 'dialog:|drawer:'
 --output=reads-js-test-results` in 34.976 s.
 
-Retained evidence: [development](validation/solid2-browser/evidence/reads-dev.json),
-[production](validation/solid2-browser/evidence/reads-production.json),
-[compiled JS](validation/solid2-browser/evidence/reads-js.json), and
-[control](validation/solid2-browser/evidence/reads-control.json). Full console
+Retained evidence: [development](../../validation/solid2-browser/evidence/reads-dev.json),
+[production](../../validation/solid2-browser/evidence/reads-production.json),
+[compiled JS](../../validation/solid2-browser/evidence/reads-js.json), and
+[control](../../validation/solid2-browser/evidence/reads-control.json). Full console
 messages, assertion errors and page errors are retained. The
-[harness README](validation/solid2-browser/README.md) describes reproduction.
+[harness README](../../validation/solid2-browser/README.md) describes reproduction.
 
 ## DELIVERY.md review and acceptance limits
 

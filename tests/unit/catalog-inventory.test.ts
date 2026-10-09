@@ -10,7 +10,7 @@ const componentDirectory=resolve(root,'src/components/ui');
 const families=readdirSync(componentDirectory).filter(name=>name.endsWith('.tsx')).map(name=>name.slice(0,-4)).sort();
 
 it('delivers every dated catalog family through a public subpath and the root barrel',async()=>{
-  const map=readFileSync(resolve(root,'COMPONENT-MAP.md'),'utf8');
+  const map=readFileSync(resolve(root,'docs/project/COMPONENT-MAP.md'),'utf8');
   const catalog=[...map.matchAll(/^\| \[[^\]]+\]\(https:\/\/ui\.shadcn\.com\/docs\/components\/(?:radix\/)?([^/)]+)\) \|/gm)].map(match=>match[1]!).sort();
   expect(catalog).toHaveLength(65);
   expect(new Set(catalog).size).toBe(catalog.length);

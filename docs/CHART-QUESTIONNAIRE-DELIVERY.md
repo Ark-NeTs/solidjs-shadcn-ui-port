@@ -4,13 +4,13 @@ Both families passed the final package gates, including 100% coverage. See [full
 
 ## Kobalte-first assessment
 
-The alpha.2 export inventory in [COMPONENT-MAP.md](../COMPONENT-MAP.md) contains
+The alpha.2 export inventory in [COMPONENT-MAP.md](project/COMPONENT-MAP.md) contains
 neither a chart engine nor a complete questionnaire. Corvu supplies neither.
 Chart uses framework-independent `chart.js@4.5.1`; no React adapter or second
 Solid runtime is installed. Questionnaire composes native form controls and the
 accepted Button/Input/Progress parts. Earlier Kobalte radio/checkbox findings
-remain in [KOBALTE-CHOICES.md](../KOBALTE-CHOICES.md) and
-[KOBALTE-TOGGLES.md](../KOBALTE-TOGGLES.md). No new claim of Kobalte runtime
+remain in [KOBALTE-CHOICES.md](validation/KOBALTE-CHOICES.md) and
+[KOBALTE-TOGGLES.md](validation/KOBALTE-TOGGLES.md). No new claim of Kobalte runtime
 acceptance is made for these compositions.
 
 Chart follows the engine's [lifecycle/update documentation](https://www.chartjs.org/docs/latest/developers/updates.html).

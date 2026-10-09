@@ -395,7 +395,7 @@ remain unverified. Shared coverage percentages do not close those gaps.
 
 | Acceptance requirement | Existing evidence |
 | --- | --- |
-| Kobalte adapter keeps default/controlled state, data-bound handlers and refs | U Kobalte adapter/local state cases; [adoption probe](../KOBALTE-CHOICES.md) |
+| Kobalte adapter keeps default/controlled state, data-bound handlers and refs | U Kobalte adapter/local state cases; [adoption probe](validation/KOBALTE-CHOICES.md) |
 | Space/Enter/click, canceled activation, disabled semantics, owner rejection then acceptance | B/E standalone and controlled Toggle scenarios; U adapter assertions |
 | Native type button, variants, sizes, class overrides | U variants/attrs; B/E actual 28/32/36 px height; V light/dark/mobile |
 | SSR and hydration of pressed state, no replacement or diagnostics | S10; H choice interaction/disposal |
@@ -419,7 +419,7 @@ or outside this increment. Coverage is for owned source/adapter execution, not K
 ## Select
 
 [Unit assertions](../tests/unit/select.test.tsx), [shared source/built scenarios](../tests/select.ts),
-[Kobalte evaluation](../KOBALTE-SELECT.md), [delivery](SELECT-DELIVERY.md).
+[Kobalte evaluation](validation/KOBALTE-SELECT.md), [delivery](SELECT-DELIVERY.md).
 
 | Acceptance requirement | Existing evidence |
 | --- | --- |
@@ -441,7 +441,7 @@ and source hydration are the accepted composition contract.
 ## Slider
 
 [Unit assertions](../tests/unit/slider.test.tsx), [shared source/built scenarios](../tests/slider.ts),
-[Kobalte evaluation](../KOBALTE-SLIDER.md), [delivery](SLIDER-DELIVERY.md).
+[Kobalte evaluation](validation/KOBALTE-SLIDER.md), [delivery](SLIDER-DELIVERY.md).
 
 | Acceptance requirement | Existing evidence |
 | --- | --- |
@@ -463,7 +463,7 @@ browser range scenarios use two thumbs. No crossing/swap mode or draggable fill.
 ## Progress
 
 [Unit assertions](../tests/unit/progress.test.tsx), [shared browser scenarios](../tests/progress.ts),
-[Kobalte evaluation](../KOBALTE-PROGRESS.md), [delivery](PROGRESS-DELIVERY.md).
+[Kobalte evaluation](validation/KOBALTE-PROGRESS.md), [delivery](PROGRESS-DELIVERY.md).
 
 | Acceptance requirement | Existing evidence |
 | --- | --- |
@@ -885,3 +885,12 @@ fixtures in `validation`, preserving the pre-extraction baseline. These are date
 contracts rather than a live application audit. Component implementations and
 browser assertions are unchanged. Fresh relocation checks and unrun scope are
 recorded in [repository migration](REPOSITORY-MIGRATION.md).
+
+### Documentation organization
+
+[Documentation unit checks](../tests/unit/docs-site.test.ts) assert nested project,
+checklist, validation and delivery pages, root-link rewriting and the unchanged
+public-page allowlist. [Shared website browser checks](../tests/docs-site.ts)
+follow the relocated decisions and foundation-report links, including a deep-link
+reload, against source and built documentation in all three browsers.
+See [organization delivery](DOCUMENTATION-ORGANIZATION.md) for measured results.

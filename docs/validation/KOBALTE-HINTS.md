@@ -5,9 +5,9 @@ web and signals `2.0.0-rc.13`, Vite `8.3.3`, vite-plugin-solid `3.0.0-next.27`,
 and Playwright `1.63.0`. This batch tests the selected pins; it does not claim a
 new registry/prerelease survey.
 
-[Fixture](validation/solid2-hints/main.tsx),
-[probe](validation/solid2-hints/probe.mjs),
-[raw diagnostic arrays](validation/solid2-hints/unpatched.json).
+[Fixture](../../validation/solid2-hints/main.tsx),
+[probe](../../validation/solid2-hints/probe.mjs),
+[raw diagnostic arrays](../../validation/solid2-hints/unpatched.json).
 
 | Primitive | Chromium pointer / Escape / focus / blur | Firefox pointer / Escape / focus / blur | Diagnostics per engine |
 | --- | --- | --- | ---: |
@@ -32,5 +32,5 @@ To reproduce, install the fixture package/lock in isolation with
 `bun install --frozen-lockfile --ignore-scripts` and expose its node_modules to
 `validation/solid2-hints`. From that fixture directory run `bun run dev` (4405),
 then `node probe.mjs` in a second terminal. Probe commands were exploratory and
-not separately timed. [Implementation acceptance](docs/HINTS-DELIVERY.md) records
+not separately timed. [Implementation acceptance](../HINTS-DELIVERY.md) records
 measured production verification.

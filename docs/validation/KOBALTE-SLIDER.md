@@ -2,8 +2,8 @@
 
 2026-10-08. Evaluated unpatched `@kobalte/core@2.0.0-alpha.2` with shared Solid
 core/web/signals `2.0.0-rc.13`, Vite `8.3.3`, plugin `3.0.0-next.27` and Playwright
-`1.63.0`. [Fixture](validation/solid2-slider/main.tsx),
-[probe](validation/solid2-slider/probe.mjs), [raw report](validation/solid2-slider/unpatched.json).
+`1.63.0`. [Fixture](../../validation/solid2-slider/main.tsx),
+[probe](../../validation/solid2-slider/probe.mjs), [raw report](../../validation/solid2-slider/unpatched.json).
 
 | Engine | ArrowRight / End with minimum gap | Drag | FormData / reset | Diagnostics |
 | --- | --- | --- | --- | ---: |
@@ -37,4 +37,4 @@ Reproduce by installing the fixture package/lock in isolation with
 then running `node probe.mjs`. Probe/registry commands were exploratory and not
 separately timed. WebKit and exhaustive Kobalte APIs were not investigated after
 the rejection. The delivered owned component has three-engine acceptance evidence
-in [the delivery report](docs/SLIDER-DELIVERY.md).
+in [the delivery report](../SLIDER-DELIVERY.md).

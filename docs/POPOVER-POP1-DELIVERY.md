@@ -22,7 +22,7 @@ freshly built exports in Chromium and Firefox. The
   REASONING: placement coordinates must follow the anchor immediately rather
   than interpolate toward an already outdated location. The original 12px
   transient-error bound was not relaxed. Settled gap/alignment must be within
-  1px. [DECISIONS.md](../DECISIONS.md) records this choice.
+  1px. [DECISIONS.md](project/DECISIONS.md) records this choice.
 - The initial resize fixture allowed its widest state to enter the collision
   margin, where centering is intentionally subordinate to visibility. That test
   now uses a 720px viewport to isolate centered resizing. A separate 320×300

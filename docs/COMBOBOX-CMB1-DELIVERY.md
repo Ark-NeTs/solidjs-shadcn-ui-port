@@ -25,7 +25,7 @@ public API, dependencies and existing screenshot baselines are unchanged.
   No synthetic form events, force-clicks, diagnostic exclusions or retry settings
   were introduced.
 
-Kobalte's existing [adoption assessment](../KOBALTE-COMBOBOX.md) was reviewed. This
+Kobalte's existing [adoption assessment](validation/KOBALTE-COMBOBOX.md) was reviewed. This
 batch tests the delivered owned composition; it introduces no new primitive or
 library adoption and does not promote the experimental Kobalte patches.
 

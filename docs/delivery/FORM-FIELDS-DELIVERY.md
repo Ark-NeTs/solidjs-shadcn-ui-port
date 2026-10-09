@@ -13,7 +13,7 @@ The new components preserve native DOM props, refs, events and Solid 2 reactive
 updates, expose typed source subpaths and barrel exports, and reproduce the
 sibling React class strings exactly. Kobalte TextField was evaluated first; its
 contextual composition does not need to replace these standalone native fields.
-No dependency or lockfile changed. See [DECISIONS.md](DECISIONS.md).
+No dependency or lockfile changed. See [DECISIONS.md](../project/DECISIONS.md).
 
 ## Behavior and evidence
 
@@ -75,15 +75,15 @@ There are no skipped, retried or expected-failure cases in the final runs.
 Node tooling emits its existing NO_COLOR/FORCE_COLOR environment warning; this
 is distinct from the zero browser-console diagnostics checked by the fixture.
 
-Evidence: [commands](docs/evidence/form-fields-commands.json),
-[browser commands](docs/evidence/form-fields-browser-commands.json),
-[check/test/build output](docs/evidence/form-fields-verification.txt),
-[browser output](docs/evidence/form-fields-browser-verification.txt),
-[coverage](docs/evidence/form-fields-coverage.json),
-[integration](docs/evidence/form-fields-integration.json),
-[E2E](docs/evidence/form-fields-e2e.json),
-[initial reset failures](docs/evidence/form-fields-reset-before.json), and
-[character-count assertion failures](docs/evidence/form-fields-count-before.json).
+Evidence: [commands](../evidence/form-fields-commands.json),
+[browser commands](../evidence/form-fields-browser-commands.json),
+[check/test/build output](../evidence/form-fields-verification.txt),
+[browser output](../evidence/form-fields-browser-verification.txt),
+[coverage](../evidence/form-fields-coverage.json),
+[integration](../evidence/form-fields-integration.json),
+[E2E](../evidence/form-fields-e2e.json),
+[initial reset failures](../evidence/form-fields-reset-before.json), and
+[character-count assertion failures](../evidence/form-fields-count-before.json).
 The package ignore rules now retain evidence text files despite the repository's
 broad `*.txt` ignore, including the earlier foundation's verification output.
 

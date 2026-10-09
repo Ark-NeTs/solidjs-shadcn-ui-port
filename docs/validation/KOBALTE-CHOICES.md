@@ -4,8 +4,8 @@
 `2.0.0-rc.13`, Vite `8.3.3`, vite-plugin-solid `3.0.0-next.27`, Playwright
 `1.63.0`. This is evaluation of the selected pins, not a fresh registry survey.
 
-[Fixture](validation/solid2-choices/main.tsx), [probe](validation/solid2-choices/probe.mjs),
-[raw outcomes and diagnostics](validation/solid2-choices/unpatched.json).
+[Fixture](../../validation/solid2-choices/main.tsx), [probe](../../validation/solid2-choices/probe.mjs),
+[raw outcomes and diagnostics](../../validation/solid2-choices/unpatched.json).
 
 | Primitive | Chromium and Firefox behavior | Diagnostics per engine | Decision |
 | --- | --- | ---: | --- |
@@ -44,4 +44,4 @@ fixture directory, start `bun run dev` there on 4405, then run `node probe.mjs`.
 Exploratory commands were not separately timed. Radio Group/Toggle Group WebKit
 and exhaustive library APIs were not evaluated after the recorded failures.
 The production implementations and Toggle adapter are verified in all three
-engines, SSR and hydration; see [delivery evidence](docs/CHOICES-DELIVERY.md).
+engines, SSR and hydration; see [delivery evidence](../CHOICES-DELIVERY.md).

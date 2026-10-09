@@ -8,8 +8,8 @@ request. Final acceptance: [full catalog gates](REMAINING-CATALOG-STATUS.md).
 The unchanged alpha.2 / Solid rc.13 Resizable probe covers pointer constraints,
 keyboard collapse and orientation. Its unpatched ownerless computations and
 untracked reads, followed by an unstable memo warning after harness repairs, are
-recorded in [browser validation](../BROWSER-VALIDATION.md) and
-[lifecycle evaluation](../KOBALTE-LIFECYCLE.md). Those private patches are not
+recorded in [browser validation](validation/BROWSER-VALIDATION.md) and
+[lifecycle evaluation](validation/KOBALTE-LIFECYCLE.md). Those private patches are not
 production dependencies. The package owns adjacent percentage panel sizing.
 
 Kobalte has no Carousel engine, custom Scroll Area primitive or Message Scroller

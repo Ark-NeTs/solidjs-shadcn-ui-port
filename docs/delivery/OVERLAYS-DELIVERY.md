@@ -18,13 +18,13 @@ adapters or unrelated workspace changes.
   owner-controlled pending/error/retry behavior and custom accessible names.
 
 Kobalte was evaluated first; the unpatched alpha.2 compositions fail acceptance
-on rc.13. [KOBALTE-OVERLAYS.md](KOBALTE-OVERLAYS.md) records exact observed failures
+on rc.13. [KOBALTE-OVERLAYS.md](../validation/KOBALTE-OVERLAYS.md) records exact observed failures
 without attributing a timeout to an unproven cause. No Kobalte/corvu dependency
 or experimental patch enters production. Added framework-neutral
 `@floating-ui/dom@1.8.0` and its core/utils lock entries for placement.
 
 The native architecture and intentional API differences are in
-[DECISIONS.md](DECISIONS.md) and the [component guide](docs/components.md).
+[DECISIONS.md](../project/DECISIONS.md) and the [component guide](../components.md).
 AlertDialogPortal preserves DOM ancestry, Content supplies its default overlay,
 and modern dialog/popover support is required. There is no exit-presence delay
 or arbitrary React asChild API. Public Popover Content refs correctly allow div
@@ -68,12 +68,12 @@ were added. Browser tests record every page error and console warning/error and
 assert empty diagnostics. Tool-launch NO_COLOR/FORCE_COLOR notices are Node
 runner notices, not filtered application diagnostics.
 
-Evidence: [command logs](docs/evidence/overlays-checks.json),
-[browser command logs](docs/evidence/overlays-browser-checks.json),
-[integration report](docs/evidence/overlays-integration.json),
-[E2E report](docs/evidence/overlays-e2e.json),
-[coverage](docs/evidence/overlays-coverage.json),
-[deliberate visual baseline update](docs/evidence/overlays-visual-update.json).
+Evidence: [command logs](../evidence/overlays-checks.json),
+[browser command logs](../evidence/overlays-browser-checks.json),
+[integration report](../evidence/overlays-integration.json),
+[E2E report](../evidence/overlays-e2e.json),
+[coverage](../evidence/overlays-coverage.json),
+[deliberate visual baseline update](../evidence/overlays-visual-update.json).
 Earlier failing runs found and drove fixes for native beforetoggle reentrancy,
 Chromium modal Tab escape into browser chrome, and enlarged-text tab overflow.
 The final E2E run compares screenshots without updating them.
@@ -83,7 +83,7 @@ The library ESM is **63,541 bytes raw / 16,844 bytes gzip**. Compiled CSS is
 assets. These are whole-library outputs with Floating UI included, not the
 incremental cost of an individual import. Gzip uses Python gzip.compress with
 mtime=0 and default level 9; Vite's compression estimate may differ.
-[Exact sizes](docs/evidence/overlays-bundle-sizes.json). No runtime performance
+[Exact sizes](../evidence/overlays-bundle-sizes.json). No runtime performance
 benchmark or per-component tree-shaken size study is claimed.
 
 ## Boundaries and remaining work
@@ -121,7 +121,7 @@ during this merge preparation.
 | `THEME_PORT=4402 RESULTS_FILE=/tmp/solid-merge-test-integration.json bun run test:integration` | Pass | 48.078 s |
 | `THEME_PORT=4402 RESULTS_FILE=/tmp/solid-merge-test-e2e.json bun run test:e2e` | Pass | 18.561 s |
 
-[Retained pre-merge output](docs/evidence/overlays-merge-checks.json). The branch
+[Retained pre-merge output](../evidence/overlays-merge-checks.json). The branch
 is based on local main, including its nine existing unpublished ancestor commits.
 Only this component batch is staged in the new commit. The requested merge uses
 a local fast-forward. Commit `20c9183` is now on local main. Publication of

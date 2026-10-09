@@ -5,7 +5,7 @@
 acceptance checks. Kobalte remains first for later components; this result does
 not claim that these failures cannot be fixed.
 
-The [standalone probe](validation/solid2-toggles/main.tsx) uses public
+The [standalone probe](../../validation/solid2-toggles/main.tsx) uses public
 `@kobalte/core/checkbox` and `@kobalte/core/switch` Root/Input/Control/Indicator
 or Thumb/Label components. It uses the published alpha without either earlier
 harness patch. Versions and transitive dependencies are pinned in its own
@@ -22,7 +22,7 @@ package.json/bun.lock. The production package's dependencies and lock are unchan
 Both browsers also record `STRICT_READ_UNTRACKED`, `EFFECT_RELAY_TEAR` and
 `EFFECT_WRITES_OWN_SOURCE` warnings. The labels, checkbox indicator and input
 paths appear in the diagnostic stacks. Full output is retained in
-[unpatched.json](validation/solid2-toggles/unpatched.json). No warning was hidden
+[unpatched.json](../../validation/solid2-toggles/unpatched.json). No warning was hidden
 or reclassified as a passing acceptance check. The observation script's zero
 exit means it captured results, not that the primitive passed.
 

@@ -7,9 +7,9 @@ Dialog. This is one group within the full [catalog task](CATALOG-DELIVERY.md).
 
 The pinned `@kobalte/core@2.0.0-alpha.2` has both Dialog and Drawer, including
 Drawer gestures and snap points. Earlier unpatched probes and isolated repairs
-are retained in [KOBALTE-LIFECYCLE.md](../KOBALTE-LIFECYCLE.md),
-[KOBALTE-PRESENCE.md](../KOBALTE-PRESENCE.md) and
-[KOBALTE-DIALOG-IDS.md](../KOBALTE-DIALOG-IDS.md). Those owner/registration,
+are retained in [KOBALTE-LIFECYCLE.md](validation/KOBALTE-LIFECYCLE.md),
+[KOBALTE-PRESENCE.md](validation/KOBALTE-PRESENCE.md) and
+[KOBALTE-DIALOG-IDS.md](validation/KOBALTE-DIALOG-IDS.md). Those owner/registration,
 presence and ID failures have not become a production-accepted upstream release.
 This group reuses that evaluation at the unchanged pins, rather than claiming a
 new Kobalte run. Sheet is dialog presentation. Owned native shells avoid private

@@ -15,6 +15,18 @@ export function registerDocsSiteTests(){
  test('keeps navigation nodes through filtering and reports code-copy feedback',async({page,browserName})=>{
   await page.goto('/docs.html?component=button');await expect(page.getByRole('heading',{name:'Button',level:1,exact:true})).toBeVisible();const original=await page.locator('.docs-components a').filter({hasText:/^Button$/}).elementHandle();await page.getByLabel('Find a component').fill('no matches');expect(await original!.evaluate(node=>node.isConnected)).toBe(true);await page.getByRole('button',{name:'Clear search'}).click();expect(await original!.evaluate(node=>node===document.querySelector('.docs-components a[aria-current=page]'))).toBe(true);await original!.dispose();await page.locator('.docs-prose button[data-copy]').first().click();await expect(page.locator('.docs-copy-status')).toHaveText(/Code copied\.|Clipboard unavailable\./);await page.goto('/docs.html');await expect(page.getByRole('heading',{name:'Build with Solid UI',level:1,exact:true})).toBeVisible();await page.keyboard.press(browserName==='webkit'&&process.platform==='darwin'?'Alt+Tab':'Tab');await expect(page.getByRole('link',{name:'Skip to documentation'})).toBeFocused();await page.keyboard.press('Enter');await expect(page.locator('#docs-content')).toBeFocused();
  });
+ test('opens relocated project and delivery pages through maintained links',async({page})=>{
+  await page.goto('/docs.html?doc=README.md');
+  await Promise.all([page.waitForURL('**/docs.html?doc=docs%2Fproject%2FDECISIONS.md',{waitUntil:'load'}),page.getByRole('link',{name:'DECISIONS.md',exact:true}).click({noWaitAfter:true})]);
+  await expect(page).toHaveURL(/doc=docs%2Fproject%2FDECISIONS.md/);
+  await expect(page.getByRole('heading',{name:'Solid 2 foundation decisions',level:1,exact:true})).toBeVisible();
+  await page.reload();
+  await expect(page.getByRole('heading',{name:'Solid 2 foundation decisions',level:1,exact:true})).toBeVisible();
+  await page.goto('/docs.html?doc=README.md');
+  await Promise.all([page.waitForURL('**/docs.html?doc=docs%2Fdelivery%2FFOUNDATION-DELIVERY.md',{waitUntil:'load'}),page.getByRole('link',{name:'FOUNDATION-DELIVERY.md',exact:true}).click({noWaitAfter:true})]);
+  await expect(page).toHaveURL(/doc=docs%2Fdelivery%2FFOUNDATION-DELIVERY.md/);
+  await expect(page.getByRole('heading',{name:'Foundation delivery — 2026-10-07',level:1,exact:true})).toBeVisible();
+ });
  for(const dark of [false,true])test(`documentation supports ${dark?'dark':'light'} mobile themes and enlarged text`,async({page})=>{
   await page.setViewportSize({width:390,height:844});await page.goto(`/docs.html?component=button${dark?'&dark':''}`);await expect(page.getByRole('heading',{name:'Button',level:1,exact:true})).toBeVisible();await page.evaluate(()=>document.documentElement.style.fontSize='24px');await page.getByLabel('Palette',{exact:true}).selectOption('ocean');await page.getByLabel('Corners',{exact:true}).selectOption('0.8');await expect.poll(()=>page.getByRole('button',{name:'Primary action',exact:true}).evaluate(node=>parseFloat(getComputedStyle(node).borderRadius))).toBeCloseTo(19.2,4);expect(await page.evaluate(()=>document.documentElement.scrollWidth)).toBeLessThanOrEqual(390);expect((await new AxeBuilder({page}).analyze()).violations).toEqual([]);
  });

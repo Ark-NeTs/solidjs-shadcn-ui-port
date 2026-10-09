@@ -21,3 +21,14 @@ it('public generation excludes internal reports and clears obsolete public asset
  const publicOutput=resolve(root,'playground/public-site/docs');mkdirSync(resolve(publicOutput,'files/docs/evidence'),{recursive:true});writeFileSync(resolve(publicOutput,'files/docs/evidence/stale.json'),'{}');execFileSync('bun',['scripts/build-docs.mjs','--public'],{cwd:root,stdio:'pipe'});
  const index=JSON.parse(readFileSync(resolve(publicOutput,'index.json'),'utf8')) as {families:{id:string;preview:string}[];pages:{id:string}[]};expect(index.families).toHaveLength(65);expect(index.pages.map(page=>page.id).sort()).toEqual(['docs/GETTING-STARTED.md','docs/PUBLIC-VERIFICATION.md','docs/components.md']);expect(existsSync(resolve(publicOutput,'files/docs/evidence'))).toBe(false);expect(existsSync(resolve(publicOutput,'pages/AGENTS.md.json'))).toBe(false);expect(readFileSync(resolve(publicOutput,'files/LICENSE.txt'),'utf8')).toBe(readFileSync(resolve(root,'LICENSE'),'utf8'));for(const family of index.families)expect(new URL(family.preview,'https://docs.test').pathname).toBe('/playground');
 });
+
+it('discovers relocated documents as navigable pages and rewrites root links to their new IDs',()=>{
+ const index=JSON.parse(readFileSync(resolve(output,'index.json'),'utf8')) as {pages:{id:string;url:string}[]};
+ const ids=index.pages.map(page=>page.id);
+ expect(ids).toEqual(expect.arrayContaining(['docs/project/specs.md','docs/project/COMPONENT-MAP.md','docs/project/DECISIONS.md','docs/checklists/DELIVERY.md','docs/validation/KOBALTE-CHOICES.md','docs/delivery/FOUNDATION-DELIVERY.md']));
+ expect(ids).not.toContain('COMPONENT-MAP.md');
+ const page=JSON.parse(readFileSync(resolve(output,'pages/README.md.json'),'utf8'));
+ const doc=new DOMParser().parseFromString(page.html,'text/html');
+ expect([...doc.querySelectorAll('a[href]')].map(anchor=>anchor.getAttribute('href'))).toContain('/docs.html?doc=docs%2Fproject%2FDECISIONS.md');
+ expect([...doc.querySelectorAll('a[href]')].map(anchor=>anchor.getAttribute('href'))).toContain('/docs.html?doc=docs%2Fdelivery%2FFOUNDATION-DELIVERY.md');
+});
