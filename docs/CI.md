@@ -1,9 +1,12 @@
 # Continuous integration
 
-[GitHub Actions CI](../.github/workflows/ci.yml) runs on pushes to `main`, pull
-requests targeting `main`, and manual dispatch; topic branches get CI by opening a
-pull request. New runs cancel older runs for the same branch or pull request. There are no publishing,
-account-login or deployment steps.
+[GitHub Actions CI](../.github/workflows/ci.yml) runs on pull requests targeting
+`main` and on manual dispatch; topic branches get CI by opening a pull request.
+Merges to `main` do not start another run: the ruleset only merges pull requests
+that are up to date with `main`, so the merged tree is the one the pull request
+already tested. Use **Run workflow** to recheck `main`, for example after an
+administrator bypass. New runs cancel older runs for the same pull request. There
+are no publishing, account-login or deployment steps.
 
 The repository ruleset “Protect main: require CI” requires a pull request into
 `main` and all 17 jobs below (the two core jobs and the 15 browser matrix jobs) to
