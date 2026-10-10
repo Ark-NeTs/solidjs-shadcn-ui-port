@@ -1,7 +1,7 @@
 // Real table-core behavior with Solid ownership; browser tests cover layout and focus; D19/D90.
 import {it,expect,vi,beforeEach} from 'vitest';
 import {render,screen,fireEvent,cleanup} from '@solidjs/testing-library';
-import {createSignal,flush} from 'solid-js';
+import {createEffect,createSignal,flush} from 'solid-js';
 import {DataTable,createDataTable,flexRender,type DataTableInstance,type ColumnDef,type SortingState} from '../../src/components/ui/data-table';
 beforeEach(()=>{Object.defineProperty(HTMLElement.prototype,'showPopover',{configurable:true,value:function(this:HTMLElement){this.dataset.nativeOpen='';this.style.display='block';}});Object.defineProperty(HTMLElement.prototype,'hidePopover',{configurable:true,value:function(this:HTMLElement){delete this.dataset.nativeOpen;this.style.display='none';}});const matches=HTMLElement.prototype.matches;vi.spyOn(HTMLElement.prototype,'matches').mockImplementation(function(this:HTMLElement,s){return s===':popover-open'?this.hasAttribute('data-native-open'):matches.call(this,s);});});
 type Row={id:string;name:string;amount:number};
@@ -35,4 +35,10 @@ it('uncontrolled selection and pagination do not recompute controlled visibility
  table.setRowSelection({a:true});flush();table.setPageSize(2);flush();table.setSorting([{id:'name',desc:false}]);flush();table.setRowSelection({b:true});flush();
  expect(visibilityReads).toBe(baseline);expect(table.getState().rowSelection).toEqual({b:true});expect(table.getState().pagination.pageSize).toBe(2);expect(table.getState().columnVisibility).toBe(visibility);
  table.setState({sorting:[]} as unknown as typeof table.initialState);flush();expect(table.getState().pagination).toEqual(table.initialState.pagination);expect(table.getState().rowSelection).toEqual({});
+});
+it('Data changes do not re-run option reads that only the default options answer',()=>{const [data,setData]=createSignal(rows);let table!:DataTableInstance<Row>;const sortable:boolean[]=[];
+ /** Read sortability the way a column header does; `enableSorting` is not passed, so the core default answers. */
+ function View(){table=createDataTable(()=>({data:data(),columns}));createEffect(()=>table.getColumn('name')!.getCanSort(),value=>{sortable.push(value);});return null;}
+ render(View);flush();for(const next of [[rows[0]!],rows,[rows[1]!,rows[2]!]]){setData(next);flush();}
+ expect(table.getRowModel().rows).toHaveLength(2);expect(sortable).toEqual([true]);
 });
