@@ -705,6 +705,14 @@ are reviewed. No persistence/router/manual assistive-technology claim.
 [Delivery and API limits](CHART-QUESTIONNAIRE-DELIVERY.md),
 [Chart assertions](../tests/catalog-chart.ts), [Questionnaire assertions](../tests/catalog-questionnaire.ts).
 
+The [Chart list-equality regression](../tests/unit/catalog-chart.test.tsx) covers kind changes among bar, line, area and radar while a tooltip is open:
+- Only the engine rebuild reads config labels: 8 reads for four changes (the earlier implementation made 24).
+- A custom legend icon is not re-invoked, and the legend icon and tooltip nodes are kept.
+- Circular kinds still switch the legend to categories and the tooltip to category colors.
+- The tooltip disappears when its slice, or every series, is hidden, and returns when the slice or one series is shown again.
+
+The browser evidence uses a temporary 0ms `wastedRecompute` budget. With it, all Chart source cases (×3) run without `WASTED_RECOMPUTE` in Firefox, Chromium and WebKit. That probe configuration is not committed.
+
 ## Data Table
 
 U covers actual core filtering/sorting/paging/selection, controlled rejection,

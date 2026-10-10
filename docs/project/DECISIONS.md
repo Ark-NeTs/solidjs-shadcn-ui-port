@@ -835,6 +835,30 @@ After the change, all admin cases pass in three engines at the 0ms probe budget.
 No diagnostic or CI threshold changes; the `hotTime` CI adjustment above remains
 the only timing exception. The component guide recommends this pattern to consumers.
 
+## Chart list equality boundaries — 2026-10-10
+
+PR #7 hosted run 38065582147 failed Firefox/Linux source shard 1 in the Chart
+replacement case with `WASTED_RECOMPUTE` on the tooltip's `<For>`: 6 of 6 runs
+discarded 2.0ms. The figure is not a shared signature with the earlier Dialog
+case, because 2ms is the default budget. Every finding reports a value just past it.
+A temporary 0ms `wastedRecompute` probe failed this case 3 of 3 times in each local
+engine, flagging both `<For>` lists, the tooltip `<Show>` condition and the legend
+label effects. One local WebKit run reached the 2.0ms default budget. The repair is
+structural; it does not change the CI threshold.
+
+Chart kind changes rebuilt `colors`, then `legend` and `tooltip`, with identical
+content. `circular` is now a memo. `colors` uses the same list equality as `keys` and `labels`.
+`legend` and `tooltip` compare entries field by field. The tooltip condition
+reads a dedicated `visible` memo, which reads the chart kind only when a series is
+hidden. Real changes, such as the category legend, colors for circular kinds,
+hidden slices and active-row values, still propagate.
+
+Local wasted-time readings were whole milliseconds even for trivial memos
+(for example 1.0ms for four length checks in Firefox). That suggests coarse
+browser timer resolution can quantize small amounts of work up to the 2ms budget.
+The repair therefore removes structural reruns rather than relying on per-run cost.
+The CI `hotTime` calibration remains the only timing exception.
+
 ## Wasted-recompute probe, Tabs and Combobox — 2026-10-10
 
 Hosted Firefox and WebKit runs failed intermittently with `WASTED_RECOMPUTE` at
@@ -861,5 +885,5 @@ Fixed upstream of the wasted scope, as the diagnostics guide requires:
 Both have counting unit tests that fail without the change; both scopes pass the
 0ms probe in all three engines. A projection for Slider `count` only moved the
 discarded runs into the projection; its measured cost is 0.0–0.1ms, so it is
-left unchanged. Chart, Menubar and Data Table remain open. No diagnostic or CI
-threshold changes.
+left unchanged. Chart is fixed by the entry above; Menubar and Data Table remain
+open. No diagnostic or CI threshold changes.
