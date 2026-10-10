@@ -887,3 +887,24 @@ Both have counting unit tests that fail without the change; both scopes pass the
 discarded runs into the projection; its measured cost is 0.0–0.1ms, so it is
 left unchanged. Chart is fixed by the entry above; Menubar and Data Table remain
 open. No diagnostic or CI threshold changes.
+
+## CI wasted-recompute budget — 2026-10-10
+
+Hosted CI uses an 8ms `wastedRecompute` budget, keeping Solid's other defaults:
+five runs within 1000ms, of which 80% return an unchanged value. Local development
+keeps the 2ms default, as it does for `hotTime`.
+
+Without cross-origin isolation, Firefox and WebKit time these pages in 1ms steps.
+Work of a few microseconds is charged a whole millisecond when it crosses a tick,
+so two crossings meet the 2ms default. All four hosted `WASTED_RECOMPUTE` failures
+since 9 October reported exactly 2.0ms in Firefox or WebKit. The 0ms probe showed
+the reruns themselves were real: Dialog, Chart, Tabs and Combobox were fixed
+structurally. The budget change does not replace those fixes; it stops timer
+quantization from failing unrelated pull requests.
+
+Slider `count` (0.0–0.1ms measured with accurate timers), Menubar and Data Table
+remain known reruns. A slow structural rerun below 8ms per second can now merge
+without failing CI; local runs still report it at 2ms. A later deterministic check
+that ignores time, with the budget at 0ms, would close that gap once the known
+reruns are fixed or allowed. Cross-origin isolation was not adopted; see the
+probe entry above. Options and evidence were reviewed on 10 October 2026.

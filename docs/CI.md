@@ -37,6 +37,10 @@ no retries and strict console diagnostics. The development profiler uses a CI-on
 32 ms accumulated compute budget per one-second window; local development keeps
 Solid’s 8 ms default. Hosted findings varied across unrelated scopes (8–15 ms),
 so this timing limit allows runner variance without disabling performance checks.
+CI also raises the wasted-recompute budget from Solid’s 2 ms default to 8 ms, with
+the default rule of five runs per second of which 80% are unchanged. Firefox and
+WebKit test pages time in 1 ms steps, so a few microseconds of work that crosses
+two ticks reads as exactly 2.0 ms; local development keeps 2 ms.
 All emitted warnings and errors remain fatal; this is not a production performance
 benchmark. Separate source, built, hydration and consumer jobs report independently
 so a failing suite cannot skip another. Source integration runs in two shards per
