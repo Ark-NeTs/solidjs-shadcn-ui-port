@@ -1,8 +1,8 @@
 # Continuous integration
 
-[GitHub Actions CI](../.github/workflows/ci.yml) runs on pushes to `main` and
-`codex/*` branches, pull requests targeting `main`, and manual dispatch. New runs
-cancel older runs for the same branch or pull request. There are no publishing,
+[GitHub Actions CI](../.github/workflows/ci.yml) runs on pushes to `main`, pull
+requests targeting `main`, and manual dispatch; topic branches get CI by opening a
+pull request. New runs cancel older runs for the same branch or pull request. There are no publishing,
 account-login or deployment steps.
 
 The repository ruleset “Protect main: require CI” requires a pull request into
