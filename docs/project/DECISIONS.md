@@ -813,3 +813,24 @@ Hosted VM acceptance uses the Vite plugin’s documented `performanceTracks.attr
 Run each engine/suite combination in an isolated job. This allows source, built, hydration and consumer acceptance to report independently even when another suite fails, with one worker per runner and no shared server port. Artifact names include engine, suite and attempt.
 
 The first complete matrix reached its 15-minute WebKit source limit with 258 passes and 52 unrun tests, without an assertion failure. Split source integration into two isolated shards per engine; allow each source shard 20 minutes within a 25-minute job. Keep built/hydration suite limits at 15 minutes and consumer at two minutes. Include the shard in failure artifact names.
+
+## Admin editor open boundary — 2026-10-10
+
+Hosted WebKit source shard 1 failed on PR #4 (run 38059719460) with
+`WASTED_RECOMPUTE`: `createControllable.current` re-ran 5 times and 4 runs
+returned the same value, discarding 2.0ms of compute. The cause was structural
+rather than runner noise. The admin example passed `open={!!menu.draft()}`, so
+every field edit reran the Dialog's controlled equality gate. Locally, the
+default 2ms budget did not trip in 20 WebKit repeats. A temporary 0ms
+`wastedRecompute` probe failed 3 of 3 runs on the same memo, with
+`createAdminMenu.draft` named as the cause.
+
+The 0ms probe also flagged the editor's Select and Checkbox, for the same reason:
+each control read the whole draft object. A per-field memo would only move the
+discarded runs. The admin model now keeps the open state in a separate `editing`
+signal and the fields in a store. Each control tracks only its own property; reset
+and reopen write only fields that changed. `draft()` still returns `MenuDraft | null`.
+After the change, all admin cases pass in three engines at the 0ms probe budget.
+`createControllable` and the controlled/uncontrolled contracts are unchanged.
+No diagnostic or CI threshold changes; the `hotTime` CI adjustment above remains
+the only timing exception. The component guide recommends this pattern to consumers.

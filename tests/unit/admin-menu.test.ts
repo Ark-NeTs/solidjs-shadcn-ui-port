@@ -1,6 +1,7 @@
 // Exercise application draft ownership and async races with an injected service.
-import {createRoot,flush} from 'solid-js';
+import {createEffect,createRoot,flush} from 'solid-js';
 import {afterEach,expect,it,vi} from 'vitest';
+import {createLayer} from '../../src/lib/layer';
 import {createAdminMenu,menuSeed,validateMenuDraft,type MenuApi,type MenuItem} from '../../playground/admin-menu-model';
 const disposers:(()=>void)[]=[];
 afterEach(()=>{for(const dispose of disposers.splice(0))dispose();});
@@ -35,4 +36,15 @@ it('editing invalidates a pending read; disposal ignores a service that settles 
 
 it('disposal aborts outstanding reads and ignores late rejection without publishing an error',async()=>{
  const read=deferred<MenuItem[]>();const list=vi.fn<MenuApi['list']>(()=>read.promise);const {menu,dispose}=setup({list,save:vi.fn()});const request=menu.refresh();dispose();expect(list.mock.calls[0]![0].aborted).toBe(true);read.reject(new Error('Late transport rejection'));await request;expect(menu.loadError()).toBe('');expect(menu.rows()).toHaveLength(12);
+});
+
+it('draft edits notify only their own field and never rerun the dialog open gate',()=>{
+ const {menu}=setup({list:vi.fn(),save:vi.fn()});let reads=0;const opened:boolean[]=[];const categories:string[]=[];const vegetarian:boolean[]=[];
+ // Mirror compiled Dialog/Select/Checkbox prop getters so counts measure each controlled gate's input, not a timing budget.
+ createRoot(dispose=>{disposers.push(dispose);const layer=createLayer({get open(){reads++;return menu.editing();}});createEffect(layer.open,value=>{opened.push(value);});createEffect(()=>menu.draft()?.category??'',value=>{categories.push(value);});createEffect(()=>menu.draft()?.vegetarian??false,value=>{vegetarian.push(value);});});
+ flush();expect(opened).toEqual([false]);menu.edit(menuSeed[0]!);flush();expect(opened).toEqual([false,true]);const afterOpen=reads;
+ for(const name of ['D','Di','Dis','Disc']){menu.update({name});flush();}menu.update({available:false});flush();menu.reset();flush();menu.update({name:'Discard again'});flush();
+ expect(reads).toBe(afterOpen);expect(menu.draft()?.name).toBe('Discard again');expect(opened).toEqual([false,true]);expect(categories).toEqual(['','Kitchen']);expect(vegetarian).toEqual([false,true]);
+ menu.update({category:'Desserts'});flush();expect(categories).toEqual(['','Kitchen','Desserts']);expect(vegetarian).toEqual([false,true]);
+ menu.close();flush();expect(opened).toEqual([false,true,false]);expect(menu.editing()).toBe(false);expect(menu.draft()).toBeNull();menu.update({name:'Closed'});menu.edit(menuSeed[2]!);flush();expect(menu.draft()).toMatchObject({name:'Lemon chicken',category:'Kitchen',vegetarian:false});
 });

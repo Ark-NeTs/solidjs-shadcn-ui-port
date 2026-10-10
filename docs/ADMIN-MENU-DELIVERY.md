@@ -104,6 +104,37 @@ A second full source run exposed the table recomputation finding described above
 [its original results](evidence/admin-menu-second-full-integration.json) are retained.
 The table repair addresses the shared-state dependency that triggered the finding.
 
+## Editor open boundary follow-up — 2026-10-10
+
+Hosted WebKit source shard 1 on PR #4 (run 38059719460) reported
+`WASTED_RECOMPUTE` for the Dialog's `createControllable.current`, with
+`createAdminMenu.draft` writes as the cause. With the default 2ms budget, the
+failing case passed 20 times in WebKit locally. A temporary 0ms
+`wastedRecompute` budget reproduced the finding in all 3 runs. With that budget,
+the Select and Checkbox controls also discarded runs on every draft write.
+The model now separates the open signal (`editing`) from the field store; see
+DECISIONS.md, "Admin editor open boundary". The 0ms probe was a local, uncommitted
+`playground/vite.config.ts` edit.
+
+Local macOS arm64, Bun 1.4.2, Node 25.3.0, `THEME_PORT=4403`, sequential:
+
+| Command | Result | Time |
+| --- | --- | ---: |
+| 0ms probe, before: `playwright test tests/integration/admin-menu.spec.ts --project=webkit -g "never leaks it into a different menu item" --repeat-each=3` | 3 failed: `createControllable.current`, cause `createAdminMenu.draft` | not recorded |
+| 0ms probe, after: same spec, all cases, `--repeat-each=3` in WebKit / Chromium / Firefox | 21 / 21 / 21 passed, no diagnostics | 50.2 / 43.6 / 55.3 s |
+| `bun run check` | Pass | 5.26 s |
+| `bun run lint` | Pass | 2.21 s |
+| `bun run test` | 33 files, 402 tests | 8.13 s |
+| `bun run test:server` | 26 tests | 1.44 s |
+| `bun run parity:admin` | Captured import contract complete | 0.39 s |
+| `bunx playwright test tests/integration/admin-menu.spec.ts` | 21 passed, three engines | 50.9 s |
+| `bunx playwright test tests/integration/admin-menu.spec.ts --project=webkit -g "never leaks it into a different menu item" --repeat-each=20` | 20 passed | 34.1 s |
+| `THEME_PRODUCTION=1 bunx playwright test tests/e2e/admin-menu.spec.ts tests/e2e/admin-menu` | 24 passed (built journeys and visuals) | 52.2 s |
+| `bunx playwright test --config playwright.hydration.config.ts tests/hydration/admin-menu.spec.ts` | 3 passed | 10.5 s |
+
+The full source, built, hydration and consumer suites were not repeated locally;
+the PR's hosted CI matrix runs them.
+
 ## DELIVERY checklist
 
 | Criterion | Evidence and scope |

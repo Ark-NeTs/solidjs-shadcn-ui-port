@@ -1357,6 +1357,14 @@ import { Input } from 'shadcn-solidjs-theme/ui/input';
 
 `draft` and `setDraft` belong to the application and keep edits across closing.
 
+Pass controlled `open` from a boolean signal or memo that changes only when the
+editor opens or closes, and bind each control to its own field. If you derive these
+values inline from one draft object, as in `open={!!draft()}` and
+`value={draft()?.category}`, every edit reruns every control's equality gate. In
+development this triggers `WASTED_RECOMPUTE` for `createControllable.current`. The
+restaurant editor keeps a separate `editing` signal and a draft store, so each
+control is notified only when its own field changes.
+
 Portal parts retain DOM ancestry and Content generates its overlay. Avoid adding
 an extra overlay unless intentionally decorating. Native nonmodal light-dismiss
 does not use the modal outside cancellation hooks. Exit-animation retention,
