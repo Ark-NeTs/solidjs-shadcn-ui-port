@@ -245,6 +245,7 @@ negative control.
 | Keyed reordering retains the focused node and navigates the new DOM order in both activation modes | [B/E: adjacent and nonadjacent moves](../tests/tabs-lifecycle.ts#L47), [U: moved node and unrelated mutations](../tests/unit/tabs.test.tsx#L48) |
 | A force-mounted draft keeps its DOM identity/value while hidden; default lazy content is disposed | [B/E: native draft lifetime and hidden Tab exclusion](../tests/tabs-lifecycle.ts#L81) |
 | External updates preserve outside focus; disposal cancels recovery and releases listeners | [B/E: external removal/reorder and Tab entry](../tests/tabs-lifecycle.ts#L109), [U: newer destination](../tests/unit/tabs.test.tsx#L36), [U: root disposal](../tests/unit/tabs.test.tsx#L41) |
+| Force-mounted panels do not re-run their mount condition on tab changes | [U: force-mounted panels do not re-run their mount condition when the active tab changes](../tests/unit/tabs.test.tsx#L57) counts `forceMount` reads across four tab changes; fails if the condition reads the active state first |
 
 **TAB-1 closed:** six scenarios run through
 [source integration](../tests/integration/tabs-lifecycle.spec.ts#L3) and
@@ -317,6 +318,7 @@ and nested scroll locks. Controlled rejection/disposal remains covered in units.
 | Nested chooser selection/Escape/Tab preserve its parent modal, focus containment and scroll locking | [B/E: modal composition](../tests/combobox-navigation.ts#L82); tested with modal Popover, not every possible dialog implementation |
 | Canceled/deferred reset and input work are disposed on unmount | [U: disabled/reset disposal](../tests/unit/combobox.test.tsx#L34), [U: deferred input disposal](../tests/unit/combobox.test.tsx#L46), [U: reset-owner unmount](../tests/unit/combobox.test.tsx#L58) |
 | Open dark/enlarged-mobile accessibility and light/dark/mobile appearance | [B: keeps open content accessible and within enlarged narrow viewports](../tests/integration/combobox.spec.ts#L16), [V: open combobox](../tests/e2e/visual.spec.ts#L16) |
+| Search edits that keep the same enabled options do not re-run the active-option lookup | [U: search edits that keep the same enabled options do not re-run active-option lookup](../tests/unit/combobox.test.tsx#L98) counts `itemToStringValue` calls across five whitespace-only queries; fails without the enabled-list equality |
 
 **CMB-1 closed:** four shared scenarios run in Chromium, Firefox and WebKit through
 [source integration](../tests/integration/combobox.spec.ts#L21) and

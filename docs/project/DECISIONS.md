@@ -858,3 +858,32 @@ Local wasted-time readings were whole milliseconds even for trivial memos
 browser timer resolution can quantize small amounts of work up to the 2ms budget.
 The repair therefore removes structural reruns rather than relying on per-run cost.
 The CI `hotTime` calibration remains the only timing exception.
+
+## Wasted-recompute probe, Tabs and Combobox — 2026-10-10
+
+Hosted Firefox and WebKit runs failed intermittently with `WASTED_RECOMPUTE` at
+exactly 2.0ms (Slider `count`, Chart tooltip, the admin Dialog fixed above). A
+local probe with `wastedRecompute.budgetMs` at 0 over source integration in
+Chromium, Firefox and WebKit flagged nine scopes: Chart tooltip/legend (four),
+multiple Combobox `active`, Menubar `createControllable.current`, Slider `count`,
+force-mounted Tabs panels, and Data Table pagination (Firefox only).
+
+Without cross-origin isolation, `performance.now()` resolves to 1ms in Firefox and
+WebKit and 0.1ms in Chromium (measured locally). A microsecond scope that crosses
+a tick is charged a whole millisecond, so two crossings meet the 2ms budget. With
+COOP/COEP headers all three engines resolved to 0.02ms or finer, but Firefox then
+measured real 10–16ms `HOT_SCOPE_TIME` in three source tests that pass without
+isolation against the local 8ms budget. Isolation therefore changes the
+`hotTime` calibration and is not adopted here.
+
+Fixed upstream of the wasted scope, as the diagnostics guide requires:
+- `TabsContent` reads `forceMount` before its active state, so force-mounted
+  panels no longer subscribe to tab changes.
+- Combobox `enabled` compares option lists by item identity and order, so a
+  rebuilt but identical list no longer reruns the active-option lookup.
+
+Both have counting unit tests that fail without the change; both scopes pass the
+0ms probe in all three engines. A projection for Slider `count` only moved the
+discarded runs into the projection; its measured cost is 0.0–0.1ms, so it is
+left unchanged. Chart is fixed by the entry above; Menubar and Data Table remain
+open. No diagnostic or CI threshold changes.

@@ -95,3 +95,10 @@ it('reveals the active option again after layout shrinks the list and releases i
  vi.stubGlobal('ResizeObserver',class {constructor(callback:ResizeObserverCallback){callbacks.push(callback);}observe=observe;disconnect=disconnect;});
  try{const mounted=render(()=><Combobox items={items}><Parts/></Combobox>);key('ArrowDown');const list=screen.getByRole('listbox');expect(observe).toHaveBeenCalledWith(list);vi.spyOn(list,'getBoundingClientRect').mockReturnValue({top:0,bottom:50} as DOMRect);vi.spyOn(screen.getByRole('option',{name:'Apple'}),'getBoundingClientRect').mockReturnValue({top:40,bottom:70} as DOMRect);callbacks.at(-1)!([],{} as ResizeObserver);expect(list.scrollTop).toBe(20);mounted.unmount();expect(disconnect).toHaveBeenCalled();}finally{vi.unstubAllGlobals();}
 });
+it('search edits that keep the same enabled options do not re-run active-option lookup',()=>{
+ const [query,setQuery]=createSignal('');let keys=0;
+ render(()=><Combobox items={items} inputValue={query()} itemToStringValue={(item:string)=>{keys++;return item;}} defaultOpen><Parts/></Combobox>);
+ // Whitespace-only searches trim to the same filter, so each one rebuilds an identical option list.
+ flush();const settled=keys;for(const next of [' ','  ','   ',' ','']){setQuery(next);flush();}
+ expect(keys).toBe(settled);
+});
