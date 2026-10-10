@@ -26,8 +26,9 @@ for (const mode of ['light', 'dark', 'mobile']) test(`${mode} compact cards and 
 for(const mode of ['light','dark','mobile'])test(`${mode} accordion and collapsible`,async({page})=>{
  if(mode==='mobile')await page.setViewportSize({width:390,height:844});await page.goto(`/?disclosures${mode==='dark'?'&dark':''}`);await page.evaluate(()=>document.fonts.ready);await page.emulateMedia({reducedMotion:'reduce'});await expect(page.locator('main')).toHaveScreenshot(`disclosures-${mode}.png`,{animations:'disabled',maxDiffPixelRatio:0.001});
 });
+// Mobile height leaves room below the person link; at 844px the card needed 849px and flipped whenever full-page capture re-measured.
 for(const mode of ['light','dark','mobile'])test(`${mode} tooltip and hover card`,async({page})=>{
- if(mode==='mobile')await page.setViewportSize({width:390,height:844});await page.goto(`/?hints&visual${mode==='dark'?'&dark':''}`);await page.evaluate(()=>document.fonts.ready);await page.emulateMedia({reducedMotion:'reduce'});await expect(page.locator('#save-hint')).toBeVisible();await expect(page.locator('#person-preview')).toBeVisible();await expect(page).toHaveScreenshot(`hints-${mode}.png`,{fullPage:true,animations:'disabled',maxDiffPixelRatio:0.001});
+ if(mode==='mobile')await page.setViewportSize({width:390,height:1000});await page.goto(`/?hints&visual${mode==='dark'?'&dark':''}`);await page.evaluate(()=>document.fonts.ready);await page.emulateMedia({reducedMotion:'reduce'});await expect(page.locator('#save-hint')).toBeVisible();await expect(page.locator('#person-preview')).toBeVisible();await expect(page).toHaveScreenshot(`hints-${mode}.png`,{fullPage:true,animations:'disabled',maxDiffPixelRatio:0.001});
 });
 for(const mode of ['light','dark','mobile'])test(`${mode} radio and toggle choices`,async({page})=>{
  if(mode==='mobile')await page.setViewportSize({width:390,height:844});await page.goto(`/?choices${mode==='dark'?'&dark':''}`);await page.evaluate(()=>document.fonts.ready);await page.emulateMedia({reducedMotion:'reduce'});await expect(page.locator('main')).toHaveScreenshot(`choices-${mode}.png`,{animations:'disabled',maxDiffPixelRatio:0.001});

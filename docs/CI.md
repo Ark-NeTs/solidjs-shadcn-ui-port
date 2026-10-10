@@ -1,9 +1,12 @@
 # Continuous integration
 
-[GitHub Actions CI](../.github/workflows/ci.yml) runs on pushes to `main`, pull
-requests targeting `main`, and manual dispatch; topic branches get CI by opening a
-pull request. New runs cancel older runs for the same branch or pull request. There are no publishing,
-account-login or deployment steps.
+[GitHub Actions CI](../.github/workflows/ci.yml) runs on pull requests targeting
+`main` and on manual dispatch; topic branches get CI by opening a pull request.
+Merges to `main` do not start another run: the ruleset only merges pull requests
+that are up to date with `main`, so the merged tree is the one the pull request
+already tested. Use **Run workflow** to recheck `main`, for example after an
+administrator bypass. New runs cancel older runs for the same pull request. There
+are no publishing, account-login or deployment steps.
 
 The repository ruleset “Protect main: require CI” requires a pull request into
 `main` and all 17 jobs below (the two core jobs and the 15 browser matrix jobs) to
@@ -17,14 +20,17 @@ deployment check runs only on `main` and must not be required.
 | Job | Runner | Acceptance |
 | --- | --- | --- |
 | Types, lint, units and SSR | Ubuntu 24.04 | Typecheck, lint, unit coverage thresholds, server rendering and the captured public-import contract |
-| Browser / Chromium, Firefox, WebKit | macOS 15 arm64, one isolated job per engine, suite and source shard | Full source integration, built E2E, existing Chromium visuals, hydration and isolated router/query consumer |
+| Browser / Chromium, Firefox, WebKit | Chromium and WebKit on macOS 15 arm64, Firefox on Ubuntu 24.04; one isolated job per engine, suite and source shard | Full source integration, built E2E, existing Chromium visuals, hydration and isolated router/query consumer |
 | Documentation and public artifact | Ubuntu 24.04 | Guide examples, Markdown generation, three-engine navigation/accessibility and a fresh public build tested through the local provider |
 
 Each job installs Bun 1.4.2, Node 25.3.0 and frozen dependencies. External actions
 are pinned to reviewed release commits. Browser downloads match the pinned
 Playwright package. Standard `macos-15` and `ubuntu-24.04` runners are used;
 there are no larger-runner labels. macOS 15 matches the platform used to review
-the committed visual baselines. Runner images still receive provider updates.
+the committed visual baselines. Firefox has no visual baselines or
+platform-specific keyboard paths, so its jobs use Ubuntu runners, which start
+without waiting for the limited macOS concurrency. Runner images still receive
+provider updates.
 
 Each browser job runs one suite on its own runner and port 4403, with one worker,
 no retries and strict console diagnostics. The development profiler uses a CI-only
