@@ -4,6 +4,9 @@ on:
   pull_request:
     branches: [main]
   workflow_dispatch:
+  # Weekly recheck of main: merges do not start runs, so drift (runner images, intermittent diagnostics) surfaces here.
+  schedule:
+    - cron: '17 6 * * 1'
 
 permissions:
   contents: read

@@ -4,9 +4,15 @@
 `main` and on manual dispatch; topic branches get CI by opening a pull request.
 Merges to `main` do not start another run: the ruleset only merges pull requests
 that are up to date with `main`, so the merged tree is the one the pull request
-already tested. Use **Run workflow** to recheck `main`, for example after an
-administrator bypass. New runs cancel older runs for the same pull request. There
-are no publishing, account-login or deployment steps.
+already tested. A scheduled run rechecks `main` every Monday at 06:17 UTC. It
+catches drift that no pull request exercises, such as runner image updates or
+intermittent diagnostics. Use **Run workflow** to recheck `main` at other times,
+for example after an administrator bypass. New runs cancel older runs for the same
+pull request. Scheduled and manual runs on `main` share one concurrency group, so a
+newer one cancels an older one still in progress. GitHub notifies the user who last
+changed the `cron` line when a scheduled run fails. In a public repository, GitHub
+disables scheduled workflows after 60 days without repository activity. There are
+no publishing, account-login or deployment steps.
 
 The repository ruleset “Protect main: require CI” requires a pull request into
 `main` and all 17 jobs below (the two core jobs and the 15 browser matrix jobs) to
