@@ -918,3 +918,26 @@ the hour to avoid peak scheduling delay) running the same jobs, budgets and
 artifact retention as pull request CI. The schedule detects drift no pull request
 exercises, such as runner image updates and intermittent diagnostics. It does not
 gate merges and is not a required check.
+
+## Menubar and Slider reruns — 2026-10-10
+
+The 0ms `wastedRecompute` probe still flags Menubar and Slider. Menubar passes
+`open={bar.value()===value()}` to each menu, so switching the open menu re-runs
+every menu's `createControllable.current`, though only two answers change. Slider's
+`count` re-runs on every value change while the thumb count stays the same.
+
+The diagnostics guide recommends a keyed `createProjection` for one-of-many state.
+Both components were tried that way, and in Chromium, Firefox and WebKit the probe
+then flagged the projection itself (`createBar.open`, `thumbs`) as producing the same
+value, although every Menubar run wrote two keys. A standalone reproduction with
+only `solid-js` shows the same result: a keyed projection is reported after five
+switches, while per-key memos with genuinely discarded runs are not. This appears
+to be an attribution false positive for projections; see
+[the upstream issue draft](../validation/SOLID-PROJECTION-WASTED-RECOMPUTE.md).
+The Menubar projection also cost 1.2ms in Chromium against 0.0ms for the original.
+
+Both components keep their per-item comparisons. Measured with accurate timers they
+cost 0.0–0.1ms, and the 8ms hosted budget prevents timer quantization from failing
+CI. Data Table pagination stays as recorded above. Revisit if the upstream check
+changes, or if a deterministic 0ms check is added to CI (it would need these three
+scopes fixed or allowed).
