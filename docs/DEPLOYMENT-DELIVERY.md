@@ -86,3 +86,38 @@ upstream notices. No component runtime, secrets, CI configuration or remote
 resources changed. The public host is prepared but has not been published; the
 remaining operational step is choosing the Cloudflare account and hostname, then
 following the explicit publish and remote acceptance instructions.
+
+## Publication — 2026-10-10
+
+The owner selected `solidjs-shadcn-ui.westark.net`, a subdomain of the active
+`westark.net` zone in the owner's Cloudflare account. `wrangler.jsonc` declares
+it as a custom domain, keeps `workers.dev` enabled and disables per-version
+preview URLs. The owner connected `main` to Cloudflare Workers Builds with the
+documented build/deploy commands, pinned Node 25.3.0/Bun 1.4.2 and an
+automatically created build token; preview builds are disabled.
+
+| Item | Result |
+| --- | --- |
+| Custom domain | <https://solidjs-shadcn-ui.westark.net> |
+| `workers.dev` | <https://arknet-solid-ui-docs.dmytro-yeremieiev.workers.dev> |
+| First hosted deploy | Commit `eed74b0`, version `82b2bbbf-d537-45cd-aed0-bc14563b9f9e`, 11:19 UTC; 167 artifact files, 9,609,802 bytes |
+| Push-triggered redeploy | Commit `b1f79e9`, version `9738a3ec-516f-42fd-b88b-a25c5303ec24`, 11:34 UTC; Cloudflare reports preview URLs disabled |
+
+Before the first push, `bun run check`, `bun run lint`, `bun run test`,
+`bun run test:server`, `bun run build:site`, a Wrangler dry run, and
+`THEME_PORT=4403 bun run test:site` passed; the last ran 15 Chromium, Firefox and
+WebKit checks against local Wrangler with the custom-domain configuration.
+
+Live acceptance on both hostnames: root, component deep link
+(`/?component=tabs`), `/playground?catalog-data-table`, `/legal/LICENSE.txt` and
+`/deployment.json` returned 200 over valid HTTPS; an unknown path returned the
+custom 404. On the custom domain in a desktop-app browser pane: search narrowed to
+Data Table; the Tabs preview selected Password and showed its panel; the Data Table
+preview sorted Amount descending; dark mode kept table text legible; the 375px
+layout had no horizontal overflow; Get Code showed the full theme CSS; no console
+errors appeared. That pane denied clipboard access and showed the manual-copy
+fallback; the owner then confirmed **Copy Theme** in their own browser.
+
+Not run remotely: the Playwright site suite, Firefox/WebKit, physical devices,
+assistive technology and performance measurement. Pushes to `main` deploy without
+waiting for GitHub CI.
