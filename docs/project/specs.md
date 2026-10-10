@@ -122,6 +122,7 @@ replace behavioral acceptance.
 
 Record exact commands, outcomes and measured durations, and disclose checks not
 run. Self-review the full diff, commit related files with conventional messages,
-and push a `codex/*` branch under the current working agreement. No parent
-workspace gates, numbered roadmap slots or historical stop-before-code approval
+push a `codex/*` branch under the current working agreement and open a pull
+request into `main`; CI runs on the pull request and must pass before merging.
+No parent workspace gates, numbered roadmap slots or historical stop-before-code approval
 checkpoints apply to this standalone project.
