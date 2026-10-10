@@ -2,6 +2,9 @@
   // Static files only; publishing requires a separately selected Cloudflare account.
   "name": "arknet-solid-ui-docs",
   "compatibility_date": "2026-10-09",
+  // Keep workers.dev for pre-domain checks; deploy owns the custom-domain DNS record and certificate.
+  "workers_dev": true,
+  "routes": [{ "pattern": "solidjs-shadcn-ui.westark.net", "custom_domain": true }],
   "assets": {
     "directory": "./site-dist",
     "html_handling": "auto-trailing-slash",

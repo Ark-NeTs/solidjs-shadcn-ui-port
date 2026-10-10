@@ -705,6 +705,16 @@ provider routing, headers and 404 behavior. The site is prepared for publication
 selecting an account/domain and actually publishing remain separate actions.
 
 
+## Documentation hostname — 2026-10-10
+
+The public documentation hostname is `solidjs-shadcn-ui.westark.net`, a subdomain
+of the owner's active `westark.net` Cloudflare zone, matching the repository name.
+It is declared in `wrangler.jsonc` as a custom-domain route so every deploy keeps
+the DNS record and certificate in sync with versioned configuration; `workers.dev`
+stays enabled for pre-domain checks. Publishing still requires connecting the
+repository in Cloudflare. See [deployment](../DEPLOYMENT.md).
+
+
 ## Live components inside documentation — 2026-10-09
 
 Each component guide mounts a focused real example before its reference content.

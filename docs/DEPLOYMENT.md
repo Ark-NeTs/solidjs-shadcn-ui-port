@@ -65,11 +65,14 @@ first using the package's usual test setup. For interactive inspection:
 node "$WRANGLER_BIN" dev --local --port 4403
 ```
 
-## Publish after selecting the account and hostname
+## Publish to the selected hostname
 
-No account, domain, token or production route is configured here. No login,
-remote resource creation, CI change or publication was performed during preparation.
-Review the Worker name `arknet-solid-ui-docs` in `wrangler.jsonc` before first use.
+The production hostname is `solidjs-shadcn-ui.westark.net`, declared in
+`wrangler.jsonc` as a Workers custom domain. The `westark.net` zone must be active
+in the deploying Cloudflare account; each deploy creates or keeps the DNS record
+and certificate. `workers_dev` stays enabled so the generated `workers.dev` address
+can be checked before and alongside the custom domain. No token or CI change is
+stored here. Review the Worker name `arknet-solid-ui-docs` before first use.
 After explicitly choosing the destination, the operator can run:
 
 ```sh
@@ -80,8 +83,9 @@ node "$WRANGLER_BIN" deploy
 ```
 
 `deploy --dry-run` validates packaging without uploading. `login` accesses your
-Cloudflare account; the final `deploy` publishes. Add the chosen custom domain in
-Cloudflare after verifying the generated `workers.dev` address. The package's
+Cloudflare account; the final `deploy` publishes to `workers.dev` and attaches
+the custom domain. Do not also add the domain manually in the dashboard; the
+configuration owns it. The package's
 `private: true` flag remains: website deployment does not publish an npm package.
 
 For a future GitHub integration, choose a reviewed commit on this repository's
