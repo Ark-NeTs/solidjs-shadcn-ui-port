@@ -908,3 +908,13 @@ without failing CI; local runs still report it at 2ms. A later deterministic che
 that ignores time, with the budget at 0ms, would close that gap once the known
 reruns are fixed or allowed. Cross-origin isolation was not adopted; see the
 probe entry above. Options and evidence were reviewed on 10 October 2026.
+
+## Weekly scheduled CI on main — 2026-10-10
+
+Merges to `main` no longer start CI, so `main` was rechecked only by manual dispatch.
+Manual run 38075554379 passed all 17 jobs on `f53dfdb`, after the Dialog, Chart,
+Tabs and Combobox fixes. Add a weekly `schedule` trigger (Mondays 06:17 UTC, off
+the hour to avoid peak scheduling delay) running the same jobs, budgets and
+artifact retention as pull request CI. The schedule detects drift no pull request
+exercises, such as runner image updates and intermittent diagnostics. It does not
+gate merges and is not a required check.
