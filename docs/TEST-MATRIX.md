@@ -932,7 +932,7 @@ and [delivery](delivery/CI-DELIVERY.md) for measured results and platform limits
 
 The first Linux documentation job exposed a mobile header overflow at 24px root text. Mobile navigation now wraps, while `tests/docs-site.ts` keeps the strict 390px overflow and light/dark accessibility assertions. The failed job demonstrated real screenshot/trace upload and three-day artifact expiry.
 
-Hosted development profiling uses a documented 32ms-per-second accumulated compute budget (local default: 8ms); all emitted warnings remain fatal. The overlay accessibility assertion waits for finite transitions to complete before checking final-state contrast. Timing results on shared hosted runners do not establish production performance.
+Hosted development profiling uses a documented 32ms-per-second accumulated compute budget (local default: 8ms) and an 8ms wasted-recompute budget (local default: 2ms); all emitted warnings remain fatal. The overlay accessibility assertion waits for finite transitions to complete before checking final-state contrast. Timing results on shared hosted runners do not establish production performance.
 
 Source integration is distributed across two isolated Playwright shards per engine, each with one worker. The unsharded hosted WebKit source run reached its 15-minute global limit after 258 passes (52 unrun, no failed assertion); sharding covers the complete inventory with a 20-minute source-shard limit.
 
