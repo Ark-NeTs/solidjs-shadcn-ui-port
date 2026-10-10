@@ -99,3 +99,33 @@ registration; both were corrected and the six hydration journeys passed.
 [Chart units](../tests/unit/catalog-chart.test.tsx), [Chart browser assertions](../tests/catalog-chart.ts),
 [Questionnaire units](../tests/unit/catalog-questionnaire.test.tsx),
 [Questionnaire browser assertions](../tests/catalog-questionnaire.ts).
+
+## Chart list equality follow-up — 2026-10-10
+
+PR #7 hosted run 38065582147 failed Firefox/Linux source shard 1 in the Chart
+replacement case with `WASTED_RECOMPUTE` on the tooltip `<For>`. Equality
+boundaries now cover the chart-kind flag, colors, legend entries, tooltip entries
+and tooltip visibility; see DECISIONS.md, "Chart list equality boundaries". The 0ms
+`wastedRecompute` probe was a local, uncommitted `playground/vite.config.ts` edit.
+The coverage run was delayed until the machine load average fell below 12. Earlier
+attempts under concurrent load timed out in unrelated 5s unit tests
+(`admin-parity`, `catalog-inventory`).
+
+Local macOS arm64, Bun 1.4.2, Node 25.3.0, `THEME_PORT=4403`, sequential:
+
+| Command | Result | Time |
+| --- | --- | ---: |
+| 0ms probe, before: `playwright test tests/integration/catalog-chart.spec.ts --repeat-each=3` in Firefox / Chromium / WebKit | 3 failed per engine, all in the replacement case: tooltip and legend `<For>`, tooltip condition, legend label effects | 27.0 / 14.1 / 18.8 s |
+| 0ms probe, after: same command | 12 / 12 / 12 passed, no diagnostics | 23.7 / 15.0 / 19.0 s |
+| `bun run check` | Pass | 5.67 s |
+| `bun run lint` | Pass | 2.40 s |
+| `bun run test` | 403 tests | 12.94 s |
+| `bun run test:coverage` | 403 tests; configured 100% thresholds met | 12.52 s |
+| `bun run test:server` | 26 tests | 1.52 s |
+| `bunx playwright test tests/integration/catalog-chart.spec.ts` | 12 passed, three engines | 24.21 s |
+| Same spec, `-g "every chart kind" --repeat-each=10` | 30 passed | 78.91 s |
+| `THEME_PRODUCTION=1 bunx playwright test tests/e2e/catalog-chart.spec.ts tests/e2e/visual.spec.ts -g chart` | 15 passed (built journeys and chart visuals) | 29.08 s |
+| `bunx playwright test --config playwright.hydration.config.ts -g Chart` | 3 passed | 12.03 s |
+
+The full source, built, hydration and consumer matrices were not repeated locally;
+the PR's hosted CI runs them.
