@@ -26,6 +26,8 @@ const Inside=createContext(false);
 /** Require compound parts to share the same selection owner. */
 function useCombobox(){const context=useContext(Context);if(!context)throw new Error('Combobox parts must be inside Combobox.');return context;}
 /** Own drafts independently from canonical values; reflect only accepted controlled selections. */
+/** Option lists are equal when they hold the same items in the same order. */
+const sameOptions=(a:readonly unknown[],b:readonly unknown[])=>a.length===b.length&&a.every((item,index)=>item===b[index]);
 export function Combobox<T>(props:ComboboxProps<T>){
  let tabbing=false;let tabTimer:ReturnType<typeof setTimeout>;
  onCleanup(()=>clearTimeout(tabTimer));
@@ -47,7 +49,8 @@ export function Combobox<T>(props:ComboboxProps<T>){
  // Share filtering/navigation derivations across all option and input bindings.
  const items=createMemo(()=>props.filteredItems??props.items.filter(item=>label(item).toLocaleLowerCase().includes(query().trim().toLocaleLowerCase())));
  const blocked=(item:unknown)=>Boolean(props.isItemDisabled?.(item as T));
- const enabled=createMemo(()=>items().filter(item=>!blocked(item)));
+ // A recomputed list with the same options must not notify navigation; reruns otherwise reach every active-option read.
+ const enabled=createMemo(()=>items().filter(item=>!blocked(item)),{equals:sameOptions});
  const active=createMemo(()=>enabled().find(item=>key(item)===activeKey()));
  /** Reset navigation when opening; closing discards an uncommitted search draft. */
  function requestOpen(next:boolean,tabExit=false){clearTimeout(tabTimer);tabbing=tabExit;if(next&&(props.disabled||props.readOnly))return;if(!next){setDraft(undefined);props.onInputValueChange?.('',{reason:'dismiss'});}else if(!open())setActiveKey(undefined);changeOpen(next);}

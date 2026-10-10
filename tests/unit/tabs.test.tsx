@@ -54,3 +54,9 @@ it('restores a moved node without changing manual selection and ignores unrelate
  // A detached list cannot reclaim page focus even when child mutations are still queued.
  list.remove();list.append(moving);await Promise.resolve();expect(document.activeElement).toBe(document.body);
 });
+it('force-mounted panels do not re-run their mount condition when the active tab changes',()=>{
+ const [value,setValue]=createSignal('one');let reads=0;const panel={get forceMount(){reads++;return true;}};
+ render(()=><Tabs value={value()}><TabsList aria-label="Options"><TabsTrigger value="one">One</TabsTrigger><TabsTrigger value="two">Two</TabsTrigger></TabsList><TabsContent value="one">First</TabsContent><TabsContent value="two" {...panel}>Second</TabsContent></Tabs>);
+ const mounted=reads;for(const next of ['two','one','two','one']){setValue(next);flush();}
+ expect(screen.getByText('Second')).toBeInTheDocument();expect(reads).toBe(mounted);
+});
