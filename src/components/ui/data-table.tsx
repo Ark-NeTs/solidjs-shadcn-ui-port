@@ -1,5 +1,5 @@
 // Framework-independent TanStack Table core with Solid-owned view state; D19/D90.
-import {createMemo,createSignal,For,Show,omit,onSettled,untrack,type Accessor} from 'solid-js';
+import {createMemo,createSignal,For,Show,getOwner,omit,onSettled,runWithOwner,untrack,type Accessor} from 'solid-js';
 import type {JSX} from '@solidjs/web';
 import {createTable,functionalUpdate,getCoreRowModel,getSortedRowModel,getFilteredRowModel,getPaginationRowModel,type RowData,type TableOptions,type TableState,type Updater,type Table as TableInstance,type ColumnDef,type Row as CoreRow,type Header as CoreHeader} from '@tanstack/table-core';
 import {Table,TableHeader,TableHead,TableBody,TableRow,TableCell,TableCaption} from './table';
@@ -15,7 +15,7 @@ export type DataTableOptions<T extends RowData>=Omit<TableOptions<T>,'getCoreRow
 /** Preserve immutable slices when the engine resets to the same shallow state. */
 function sameSlice(a:unknown,b:unknown){if(Object.is(a,b))return true;if(!a||!b||typeof a!=='object'||typeof b!=='object')return false;const keys=Object.keys(a);return keys.length===Object.keys(b).length&&keys.every(key=>Object.is(Reflect.get(a,key),Reflect.get(b,key)));}
 /** Connect core option reads to Solid accessors without a second framework runtime. */
-export function createDataTable<T extends RowData>(options:Accessor<DataTableOptions<T>>){const resolved=createMemo(options);const local=new Map<PropertyKey,{read:Accessor<unknown>;write:(value:unknown)=>void}>();
+export function createDataTable<T extends RowData>(options:Accessor<DataTableOptions<T>>){const owner=getOwner();const resolved=createMemo(options);const local=new Map<PropertyKey,{read:Accessor<unknown>;write:(value:unknown)=>void}>();
  /** Apply uncontrolled slices locally; explicitly controlled slices still win on every read. */
  function change(updater:Updater<TableState>){const next=functionalUpdate(updater,table.getState());for(const [key,slice] of local)slice.write(Object.hasOwn(next,key)?Reflect.get(next,key):Reflect.get(table.initialState,key));resolved().onStateChange?.(updater);}
  const initial=untrack(resolved);const table=createTable<T>({getCoreRowModel:getCoreRowModel(),getSortedRowModel:getSortedRowModel(),getFilteredRowModel:getFilteredRowModel(),getPaginationRowModel:getPaginationRowModel(),renderFallbackValue:null,...initial,state:initial.state??{},onStateChange:change});
@@ -24,8 +24,14 @@ export function createDataTable<T extends RowData>(options:Accessor<DataTableOpt
  for(const key of Object.keys(table.initialState)){const [read,write]=createSignal<unknown>(()=>Reflect.get(table.initialState,key),{ownedWrite:true,equals:sameSlice,name:`table.local.${key}`});local.set(key,{read,write:value=>write(()=>value)});}
  const stateReads=new Map<PropertyKey,Accessor<unknown>>(Array.from(local,([key,slice])=>[key,createMemo(()=>{const controlled=resolved().state;return controlled&&Object.hasOwn(controlled,key)?Reflect.get(controlled,key):slice.read();},{name:`table.state.${String(key)}`,equals:sameSlice})]));
  const state=new Proxy(table.initialState,{get(target,key){const read=stateReads.get(key);return read?read():Reflect.get(target,key);}});
- const optionReads=new Map<PropertyKey,Accessor<unknown>>(Array.from(new Set([...Object.keys(defaults),...Object.keys(initial)])).filter(key=>key!=='state'&&key!=='onStateChange').map(key=>[key,createMemo(()=>key==='initialState'?initial.initialState:Reflect.get(resolved(),key)??Reflect.get(defaults,key),{name:`table.option.${String(key)}`})]));
- table.options=new Proxy(defaults,{get(target,key){if(key==='state')return state;if(key==='onStateChange')return change;const read=optionReads.get(key);return read?read():Reflect.get(resolved(),key)??Reflect.get(target,key);}});
+ // Feature switches (enableSorting, enableHiding…) back per-column capability reads such as getCanSort(); when only the
+ // core's defaults answer them, give each its own memo on first read so a new options object does not re-run every header.
+ // Other unknown keys stay direct reads: the core reads them in hot loops, where extra memos cost more than they save.
+ const optionReads=new Map<PropertyKey,Accessor<unknown>>();
+ const optionMemo=(key:string)=>createMemo(()=>key==='initialState'?initial.initialState:Reflect.get(resolved(),key)??Reflect.get(defaults,key),{name:`table.option.${key}`});
+ for(const key of new Set([...Object.keys(defaults),...Object.keys(initial)]))if(key!=='state'&&key!=='onStateChange')optionReads.set(key,optionMemo(key));
+ function optionRead(key:string){let read=optionReads.get(key);if(!read){read=runWithOwner(owner,()=>optionMemo(key));optionReads.set(key,read);}return read();}
+ table.options=new Proxy(defaults,{get(target,key){if(key==='state')return state;if(key==='onStateChange')return change;if(typeof key==='string'&&(optionReads.has(key)||key.startsWith('enable')))return optionRead(key);return Reflect.get(resolved(),key)??Reflect.get(target,key);}});
  // Core memoization caches values but does not create Solid dependency boundaries.
  // Give each model an owned memo so consumers subscribe to the requested result,
  // rather than every option and state slice traversed by the core's dependency chain.

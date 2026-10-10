@@ -918,3 +918,31 @@ the hour to avoid peak scheduling delay) running the same jobs, budgets and
 artifact retention as pull request CI. The schedule detects drift no pull request
 exercises, such as runner image updates and intermittent diagnostics. It does not
 gate merges and is not a required check.
+
+## Data Table option reads — 2026-10-10
+
+PR #9 failed hosted WebKit source shard 1 with `HOT_SCOPE_TIME`: a column header's
+sortability `<Show>` spent 33.0ms against the 32ms CI budget, caused by
+`createDataTable.resolved`. `createDataTable` created per-key memos only for option
+keys present at creation. Keys that only the core's defaults answer, such as
+`enableSorting` read by `column.getCanSort()`, fell through to `resolved()`, the
+whole options object, which `DataTable` rebuilds on every prop change. Each data
+change in the admin example therefore re-ran every header's sortability check.
+
+Feature switches (`enable…` keys) now get their own memo on first read, created
+under the table's owner so their lifetime matches the table. Other keys the core
+asks for later remain direct reads. A first version memoized every late key (15 in
+the admin table, such as `getSubRows`); local Firefox source runs then failed the
+8ms `hotTime` budget in 4 of 6 runs against 0 of 5 without the change, so the
+memos are limited to the switches behind per-column capability checks. In four
+interleaved rounds the limited version then passed every Firefox run, while the
+previous code failed one at 10ms. A unit test
+that records header sortability across three data changes fails without the change.
+After it, the `createDataTable.resolved` header finding no longer appears in a local
+WebKit 2ms `hotTime` probe.
+
+`DataTablePagination` still recomputes its page-size options when only the page
+index changes, because `pagination` is one state object. The 0ms probe reports it
+in Firefox only, at 0.0ms; splitting state slices into per-field sources would be
+a larger adapter change and is not made here. Menubar remains the other known
+rerun.
