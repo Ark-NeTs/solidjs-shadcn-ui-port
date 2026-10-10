@@ -831,7 +831,8 @@ remote TLS or an actual deployment. See [deployment delivery](DEPLOYMENT-DELIVER
 ## Inline documentation previews
 
 [Shared preview acceptance](../tests/docs-previews.ts) mounts all 65 families
-through source and built documentation in all three browsers. It exercises state
+through source and built documentation in all three browsers, in five batched
+tests that reload the page per family and fail on that family's diagnostics. It exercises state
 and reset, inherited themes, editable forms, keyboard Tabs, overlay dismissal and
 reopening, Select/Command actions, Data Table empty/restore, and notification
 cleanup. A held module response proves loading and explicit reload recovery;

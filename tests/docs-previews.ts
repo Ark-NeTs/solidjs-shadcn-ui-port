@@ -5,9 +5,12 @@ import {test,expect} from './browser-fixture';
 import groups from '../playground/docs-groups.json' with {type:'json'};
 /** Run the same interactions against source and built documentation. */
 export function registerDocsPreviewTests(){
- for(const id of groups.flatMap(group=>group.families))test(`inline ${id} preview mounts without diagnostics`,async({page})=>{
-  await page.goto(`/docs.html?component=${id}`);await expect(page.locator(`[data-live-component="${id}"]`)).toBeVisible();await expect(page.locator(`[data-live-component="${id}"] [data-slot]`).first()).toBeVisible();await expect(page.getByRole('button',{name:'Reset preview',exact:true})).toBeEnabled();
- });
+ // Batches share one browser context to avoid per-test setup; each step reloads the page and attributes diagnostics to its family.
+ const families=groups.flatMap(group=>group.families);const size=13;
+ for(let start=0;start<families.length;start+=size){const batch=families.slice(start,start+size);test(`inline previews mount without diagnostics: ${batch[0]} to ${batch.at(-1)}`,async({page,diagnostics})=>{
+  test.setTimeout(90000);
+  for(const id of batch)await test.step(id,async()=>{await page.goto(`/docs.html?component=${id}`);await expect(page.locator(`[data-live-component="${id}"]`)).toBeVisible();await expect(page.locator(`[data-live-component="${id}"] [data-slot]`).first()).toBeVisible();await expect(page.getByRole('button',{name:'Reset preview',exact:true})).toBeEnabled();expect(diagnostics,`${id} preview diagnostics`).toEqual([]);});
+ });}
  test('button state survives theme changes and reset creates a fresh example',async({page})=>{
   await page.goto('/docs.html?component=button');const preview=page.getByRole('region',{name:'Button live preview'});await preview.getByRole('button',{name:'Click me',exact:true}).click();await expect(preview.getByRole('status')).toHaveText('Clicked 1 times');await page.getByRole('button',{name:'Dark mode',exact:true}).click();await page.getByLabel('Palette',{exact:true}).selectOption('forest');await expect(preview.getByRole('status')).toHaveText('Clicked 1 times');await expect.poll(()=>preview.getByRole('button',{name:'Click me',exact:true}).evaluate(node=>getComputedStyle(node).getPropertyValue('--primary').trim())).toBe('oklch(0.46 0.15 155)');await preview.getByRole('button',{name:'Reset preview',exact:true}).click();await expect(preview.getByRole('status')).toHaveText('Clicked 0 times');await expect(page).toHaveURL(/component=button/);
  });
