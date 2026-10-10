@@ -89,9 +89,11 @@ the custom domain. Do not also add the domain manually in the dashboard; the
 configuration owns it. The package's
 `private: true` flag remains: website deployment does not publish an npm package.
 
-For a future GitHub integration, choose a reviewed commit on this repository's
-default `main` branch. Configure the same build command and pinned toolchain,
-with an isolated repository install. No pipeline is created here.
+Cloudflare Workers Builds deploys every commit on `main` and does not wait for
+GitHub CI itself. The repository ruleset provides that gate: `main` accepts
+changes only through pull requests whose 17 CI jobs pass while up to date with
+`main`. Administrators can bypass the ruleset; reserve that for emergencies,
+because a bypassed commit deploys without CI.
 
 ## Acceptance and rollback
 

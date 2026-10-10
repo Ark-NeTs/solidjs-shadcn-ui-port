@@ -5,6 +5,13 @@
 cancel older runs for the same branch or pull request. There are no publishing,
 account-login or deployment steps.
 
+The repository ruleset “Protect main: require CI” requires a pull request into
+`main` and all 17 jobs below (the two core jobs and the 15 browser matrix jobs) to
+pass while up to date with `main`. Force pushes and deletion of `main` are blocked;
+administrators may bypass. Rename a job only together with the ruleset's required
+check names, or merges will wait for a check that never reports. Cloudflare's
+deployment check runs only on `main` and must not be required.
+
 ## Checks
 
 | Job | Runner | Acceptance |

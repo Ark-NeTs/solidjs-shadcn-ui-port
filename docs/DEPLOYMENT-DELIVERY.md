@@ -119,5 +119,7 @@ errors appeared. That pane denied clipboard access and showed the manual-copy
 fallback; the owner then confirmed **Copy Theme** in their own browser.
 
 Not run remotely: the Playwright site suite, Firefox/WebKit, physical devices,
-assistive technology and performance measurement. Pushes to `main` deploy without
-waiting for GitHub CI.
+assistive technology and performance measurement. Workers Builds deploys `main`
+without waiting for GitHub CI; the same day, the repository ruleset
+“Protect main: require CI” began requiring pull requests with all 17 CI jobs
+passing before changes reach `main`, with an administrator bypass.
