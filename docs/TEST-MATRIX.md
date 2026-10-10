@@ -727,6 +727,11 @@ server-data/performance certification is claimed.
 [Units](../tests/unit/catalog-data-table.test.tsx), [browser contracts](../tests/catalog-data-table.ts),
 [adapter repairs and limits](DATA-TABLE-DELIVERY.md).
 
+Feature switches that only the core's defaults answer, such as `enableSorting` behind
+`getCanSort()`, go through per-key memos. [U: data changes do not re-run option
+reads that only the default options answer](../tests/unit/catalog-data-table.test.tsx#L39)
+fails if a header's sortability re-runs when only `data` changes.
+
 ## Final review regressions
 
 Calendar restores an owner-rejected month dropdown; Resizable restoration
