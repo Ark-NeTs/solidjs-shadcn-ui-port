@@ -58,8 +58,9 @@ jobs:
 
   browser:
     name: Browser / ${{ matrix.browser }} / ${{ matrix.suite.name }} (${{ matrix.suite.part }}/${{ matrix.suite.parts }})
-    # Existing Chromium screenshots were reviewed on macOS 15 arm64.
-    runs-on: macos-15
+    # Existing Chromium screenshots were reviewed on macOS 15 arm64; WebKit keeps
+    # macOS keyboard behavior. Firefox has no baselines and runs on Linux capacity.
+    runs-on: ${{ matrix.browser == 'firefox' && 'ubuntu-24.04' || 'macos-15' }}
     timeout-minutes: 25
     strategy:
       fail-fast: false
