@@ -1,5 +1,5 @@
 // Playground application state; persistence stays behind an injected API, outside UI components.
-import {createSignal,onCleanup} from 'solid-js';
+import {createSignal,createStore,onCleanup} from 'solid-js';
 export type MenuItem={id:string;name:string;priceCents:number;category:string;notes:string;vegetarian:boolean;available:boolean};
 export type MenuDraft=Omit<MenuItem,'priceCents'>&{price:string};
 export type MenuErrors=Partial<Record<'name'|'price'|'notes',string>>;
@@ -16,17 +16,22 @@ export function validateMenuDraft(draft:MenuDraft):{errors:MenuErrors;item:MenuI
 /** Separate confirmed rows, editable drafts and request lifetimes; never replay a failed save. */
 export function createAdminMenu(api:MenuApi,initial:MenuItem[]=menuSeed){
  const [rows,setRows]=createSignal(initial.map(item=>({...item})));
- const [draft,setDraft]=createSignal<MenuDraft|null>(null);
+ // Open state is interaction state; draft fields are store properties, so each control is notified only by its own field.
+ const [editing,setEditing]=createSignal(false);
+ const [fields,setFields]=createStore<MenuDraft>({id:'',name:'',price:'',category:'',notes:'',vegetarian:false,available:false});
+ const draft=():MenuDraft|null=>editing()?fields:null;
  const [errors,setErrors]=createSignal<MenuErrors>({});
  const [saving,setSaving]=createSignal(false);const [loading,setLoading]=createSignal(false);
  const [saveError,setSaveError]=createSignal('');const [loadError,setLoadError]=createSignal('');const [notice,setNotice]=createSignal('');
+ /** Replace the whole draft; unchanged fields and an already-open editor notify nobody. */
+ function replaceDraft(next:MenuDraft|null){if(next)setFields(current=>{Object.assign(current,next);});setEditing(next!==null);}
  let alive=true;let epoch=0;let read:AbortController|undefined;let write:AbortController|undefined;
  onCleanup(()=>{alive=false;epoch++;read?.abort();write?.abort();});
  /** Open a snapshot of the selected confirmed record, never the previous item's draft. */
- function edit(item:MenuItem){if(!alive||write)return;epoch++;read?.abort();setLoading(false);setDraft({...item,price:(item.priceCents/100).toFixed(2)});setErrors({});setSaveError('');setNotice('');}
+ function edit(item:MenuItem){if(!alive||write)return;epoch++;read?.abort();setLoading(false);replaceDraft({...item,price:(item.priceCents/100).toFixed(2)});setErrors({});setSaveError('');setNotice('');}
  /** Disabled controls are also guarded against programmatic or queued input. */
- function update(patch:Partial<MenuDraft>){if(alive&&!write)setDraft(current=>current?{...current,...patch}:null);}
- function close(){if(!alive||write)return;setDraft(null);setErrors({});setSaveError('');}
+ function update(patch:Partial<MenuDraft>){if(alive&&!write&&editing())setFields(current=>{Object.assign(current,patch);});}
+ function close(){if(!alive||write)return;replaceDraft(null);setErrors({});setSaveError('');}
  function reset(){const current=draft();const item=rows().find(row=>row.id===current?.id);if(item)edit(item);}
  async function refresh(){if(!alive||write||draft())return;const token=++epoch;read?.abort();const request=new AbortController();read=request;setLoading(true);setLoadError('');
   try{const result=await api.list(request.signal);if(alive&&token===epoch)setRows(result);}
@@ -35,11 +40,11 @@ export function createAdminMenu(api:MenuApi,initial:MenuItem[]=menuSeed){
  }
  async function save(){const current=draft();if(!alive||write||!current)return false;const parsed=validateMenuDraft(current);setErrors(parsed.errors);if(Object.keys(parsed.errors).length)return false;
   const token=++epoch;read?.abort();const request=new AbortController();write=request;setSaving(true);setSaveError('');
-  try{const item=await api.save(parsed.item,request.signal);if(!alive||token!==epoch)return false;setRows(currentRows=>currentRows.map(row=>row.id===item.id?item:row));setDraft(null);setNotice(`Saved ${item.name}.`);return true;}
+  try{const item=await api.save(parsed.item,request.signal);if(!alive||token!==epoch)return false;setRows(currentRows=>currentRows.map(row=>row.id===item.id?item:row));replaceDraft(null);setNotice(`Saved ${item.name}.`);return true;}
   catch{if(alive&&token===epoch&&!request.signal.aborted)setSaveError('Could not save this item. Your draft is preserved. Review it and try again.');return false;}
   finally{if(alive&&token===epoch){write=undefined;setSaving(false);}}
  }
- return {rows,draft,errors,saving,loading,saveError,loadError,notice,edit,update,close,reset,refresh,save};
+ return {rows,draft,editing,errors,saving,loading,saveError,loadError,notice,edit,update,close,reset,refresh,save};
 }
 /** An abortable demo delay models a request without reaching the network. */
 function delay(ms:number,signal:AbortSignal){return new Promise<void>((resolve,reject)=>{if(signal.aborted){reject(new Error('Canceled'));return;}const timer=setTimeout(()=>{signal.removeEventListener('abort',abort);resolve();},ms);function abort(){clearTimeout(timer);signal.removeEventListener('abort',abort);reject(new Error('Canceled'));}signal.addEventListener('abort',abort,{once:true});});}
