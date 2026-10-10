@@ -71,7 +71,8 @@ The production hostname is `solidjs-shadcn-ui.westark.net`, declared in
 `wrangler.jsonc` as a Workers custom domain. The `westark.net` zone must be active
 in the deploying Cloudflare account; each deploy creates or keeps the DNS record
 and certificate. `workers_dev` stays enabled so the generated `workers.dev` address
-can be checked before and alongside the custom domain. No token or CI change is
+can be checked before and alongside the custom domain; per-version preview URLs
+are disabled. No token or CI change is
 stored here. Review the Worker name `arknet-solid-ui-docs` before first use.
 After explicitly choosing the destination, the operator can run:
 
