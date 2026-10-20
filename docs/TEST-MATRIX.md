@@ -942,3 +942,31 @@ Hosted development profiling uses a documented 32ms-per-second accumulated compu
 Source integration is distributed across two isolated Playwright shards per engine, each with one worker. The unsharded hosted WebKit source run reached its 15-minute global limit after 258 passes (52 unrun, no failed assertion); sharding covers the complete inventory with a 20-minute source-shard limit.
 
 The shared documentation history test waits for the Data Table live preview to contain its first customer row before going Back (`tests/docs-site.ts`). Article content alone does not establish readiness of the separately imported example. This preserves strict Firefox diagnostics without interpreting navigation-canceled module imports as component failures. See [main-branch verification](delivery/CI-MAIN-VERIFICATION.md).
+
+### HTTP consumer workflow — 2026-10-20
+
+The isolated [HTTP editor](../validation/consumer-stack/workflow.tsx) extends
+ALL-5 with actual loopback fetches, the pinned Router/Query stack and public
+Data Table/Dialog exports. [Workflow assertions](../validation/consumer-stack/workflow.spec.ts)
+run against source and freshly built ESM components in Chromium, Firefox and
+WebKit; the application itself remains a Vite consumer.
+
+| Requirement | Concrete assertion |
+| --- | --- |
+| Accepted writes update both cell values and server records | `commits canonical server values…` checks trimmed name, integer price, incremented version, displayed name/price, selection and current-row focus. |
+| Cache and persistence boundaries | The same case checks route-remount read count stays at one, a full reload reads again, and reopened fields match the server record. |
+| Rejection preserves drafts and confirmed data | `preserves rejected drafts…` checks both field values, unchanged table/server version, one save before explicit retry and exactly two saves afterward, in light/dark enlarged narrow layouts with axe. |
+| Pending writes cannot duplicate or dismiss | `guards duplicate submits…` holds an actual HTTP response; disabled fields/actions, Escape and two extra submit events still produce one server write, then focus returns after release. |
+| Unknown writes cannot be replayed | `does not replay a write…` commits on the server but omits the acceptance field. Another submit and route remount remain blocked; reload reads version 2 without a second save. |
+| A stale editor cannot overwrite a newer version | `rejects a stale version…` performs a second HTTP client's write, preserves the rejected draft/new server record and reads the newer value after reload. |
+
+The consumer snapshots Query's reconciled store rows before Table core caches
+accessor values. The initial direct-proxy composition failed on stale name/price
+cells; the displayed-cell assertions retain that regression. See
+[delivery evidence and limits](delivery/CONSUMER-WORKFLOW-DELIVERY.md).
+
+This advances the HTTP/cache composition portion of ALL-5. It does not close real
+application adoption, production authentication/database integration, arbitrary
+HTTP errors/network partitions, SSR streaming or large-data performance. The
+server is a test-only, in-memory HTTP service; application rejections use a typed
+HTTP 200 envelope. Manual assistive technology and physical devices remain open.

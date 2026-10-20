@@ -946,3 +946,26 @@ index changes, because `pagination` is one state object. The 0ms probe reports i
 in Firefox only, at 0.0ms; splitting state slices into per-field sources would be
 a larger adapter change and is not made here. Menubar remains the other known
 rerun.
+
+## HTTP consumer row boundary — 2026-10-20
+
+The isolated Router/Query consumer now exercises a Data Table → edit Dialog →
+HTTP save/error-recovery workflow using a loopback Vite test service. Application
+transport, confirmed Query data, editable fields and request state remain outside
+component source. The fixture uses per-session authoritative records and version
+checks; it neither connects nor migrates an existing production application.
+
+Query rc.5 exposes reconciled store proxies. Passing those rows directly to
+TanStack Table core left cached name/price cells unchanged after a successful
+save, although the reactive Edit label and server record changed. Snapshot the
+tracked record fields to plain immutable rows at the consumer boundary. Keep
+stable `getRowId` values for selection and focus restoration; do not change the
+library's table model or hide the defect with action-label-only assertions.
+
+Explicit server rejection permits a user retry. An unreadable acknowledgement
+is an uncertain write: preserve the draft, block another save, and retain that
+block in the host QueryClient across route remounts. A full reload reads the
+server's canonical record. This is a controlled protocol test, not a guarantee
+for real network partitions, authentication, database persistence or arbitrary
+backend conflict semantics. Source and freshly rebuilt ESM consumer suites use
+all three engines, one worker, no retries and unchanged diagnostics.

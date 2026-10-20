@@ -1,0 +1,1980 @@
+[
+  {
+    "name": "initial-stale-cells",
+    "stats": {
+      "startTime": "2026-10-20T15:54:45.940Z",
+      "duration": 8069.7519999999995,
+      "expected": 0,
+      "skipped": 4,
+      "unexpected": 1,
+      "flaky": 0
+    },
+    "tests": [
+      {
+        "title": "commits canonical server values, retains selection and persists after a full reload",
+        "project": "chromium",
+        "status": "unexpected",
+        "results": [
+          {
+            "status": "failed",
+            "durationMs": 6133,
+            "errors": [
+              "Error: expect(locator).toContainText(expected) failed\n\nLocator: getByRole('row').filter({ hasText: 'Seasonal pizza' })\nExpected substring: \"$15.25\"\nTimeout: 5000ms\nError: element(s) not found"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "source",
+    "stats": {
+      "startTime": "2026-10-20T15:57:12.653Z",
+      "duration": 29103.328,
+      "expected": 27,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "tests": [
+      {
+        "title": "resolves Loading, retains drafts through native router links and remounts from query cache",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 719,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "holds the previous tab content while a new query is pending",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 438,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "dismisses pending query content inside a modal and safely reopens it",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 491,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "resolves Loading, retains drafts through native router links and remounts from query cache",
+        "project": "firefox",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1300,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "holds the previous tab content while a new query is pending",
+        "project": "firefox",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 638,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "dismisses pending query content inside a modal and safely reopens it",
+        "project": "firefox",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 740,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "resolves Loading, retains drafts through native router links and remounts from query cache",
+        "project": "webkit",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1198,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "holds the previous tab content while a new query is pending",
+        "project": "webkit",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 718,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "dismisses pending query content inside a modal and safely reopens it",
+        "project": "webkit",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 773,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "commits canonical server values, retains selection and persists after a full reload",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 899,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "preserves rejected drafts and retries only explicitly in light narrow layout",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1243,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "preserves rejected drafts and retries only explicitly in dark narrow layout",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1166,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "does not replay a write with an unreadable acknowledgement and reconciles through reload",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 855,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "guards duplicate submits and Escape until the HTTP write settles",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 525,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "rejects a stale version without overwriting the newer server record",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 729,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "commits canonical server values, retains selection and persists after a full reload",
+        "project": "firefox",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1229,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "preserves rejected drafts and retries only explicitly in light narrow layout",
+        "project": "firefox",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1509,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "preserves rejected drafts and retries only explicitly in dark narrow layout",
+        "project": "firefox",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1329,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "does not replay a write with an unreadable acknowledgement and reconciles through reload",
+        "project": "firefox",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 974,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "guards duplicate submits and Escape until the HTTP write settles",
+        "project": "firefox",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 767,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "rejects a stale version without overwriting the newer server record",
+        "project": "firefox",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 856,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "commits canonical server values, retains selection and persists after a full reload",
+        "project": "webkit",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 959,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "preserves rejected drafts and retries only explicitly in light narrow layout",
+        "project": "webkit",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1455,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "preserves rejected drafts and retries only explicitly in dark narrow layout",
+        "project": "webkit",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1451,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "does not replay a write with an unreadable acknowledgement and reconciles through reload",
+        "project": "webkit",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 926,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "guards duplicate submits and Escape until the HTTP write settles",
+        "project": "webkit",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 616,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "rejects a stale version without overwriting the newer server record",
+        "project": "webkit",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 768,
+            "errors": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "built",
+    "stats": {
+      "startTime": "2026-10-20T15:58:06.237Z",
+      "duration": 33413.102,
+      "expected": 27,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "tests": [
+      {
+        "title": "resolves Loading, retains drafts through native router links and remounts from query cache",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 757,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "holds the previous tab content while a new query is pending",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 511,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "dismisses pending query content inside a modal and safely reopens it",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 611,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "resolves Loading, retains drafts through native router links and remounts from query cache",
+        "project": "firefox",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1177,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "holds the previous tab content while a new query is pending",
+        "project": "firefox",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 660,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "dismisses pending query content inside a modal and safely reopens it",
+        "project": "firefox",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 720,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "resolves Loading, retains drafts through native router links and remounts from query cache",
+        "project": "webkit",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1127,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "holds the previous tab content while a new query is pending",
+        "project": "webkit",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 662,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "dismisses pending query content inside a modal and safely reopens it",
+        "project": "webkit",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 768,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "commits canonical server values, retains selection and persists after a full reload",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 941,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "preserves rejected drafts and retries only explicitly in light narrow layout",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1209,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "preserves rejected drafts and retries only explicitly in dark narrow layout",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1245,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "does not replay a write with an unreadable acknowledgement and reconciles through reload",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1007,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "guards duplicate submits and Escape until the HTTP write settles",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 554,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "rejects a stale version without overwriting the newer server record",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 826,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "commits canonical server values, retains selection and persists after a full reload",
+        "project": "firefox",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1417,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "preserves rejected drafts and retries only explicitly in light narrow layout",
+        "project": "firefox",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1603,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "preserves rejected drafts and retries only explicitly in dark narrow layout",
+        "project": "firefox",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1680,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "does not replay a write with an unreadable acknowledgement and reconciles through reload",
+        "project": "firefox",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1248,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "guards duplicate submits and Escape until the HTTP write settles",
+        "project": "firefox",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 662,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "rejects a stale version without overwriting the newer server record",
+        "project": "firefox",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 933,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "commits canonical server values, retains selection and persists after a full reload",
+        "project": "webkit",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 939,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "preserves rejected drafts and retries only explicitly in light narrow layout",
+        "project": "webkit",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1503,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "preserves rejected drafts and retries only explicitly in dark narrow layout",
+        "project": "webkit",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1386,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "does not replay a write with an unreadable acknowledgement and reconciles through reload",
+        "project": "webkit",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 986,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "guards duplicate submits and Escape until the HTTP write settles",
+        "project": "webkit",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 671,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "rejects a stale version without overwriting the newer server record",
+        "project": "webkit",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 785,
+            "errors": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "unrelated-broad-run",
+    "stats": {
+      "startTime": "2026-10-20T15:58:56.133Z",
+      "duration": 39078.009000000005,
+      "expected": 32,
+      "skipped": 717,
+      "unexpected": 1,
+      "flaky": 0
+    },
+    "tests": [
+      {
+        "title": "validates a draft, edits nested controls, saves canonical rows and restores row focus",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1932,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "rejects a save without changing rows, preserves the draft and only retries explicitly",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 2216,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "guards duplicate pending submissions and dismissal while the save is unresolved",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 2388,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "resets or cancels a draft and never leaks it into a different menu item",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 870,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "keeps selection through sorting and edits, handles filtered-away focus and recovers refresh failures",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 3223,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "admin composition stays usable in light narrow enlarged layouts",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1566,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "admin composition stays usable in dark narrow enlarged layouts",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1546,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "Alert Dialog wraps both Tab boundaries and skips disabled, hidden and negative-tabindex controls",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 387,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "nested Alert Dialog wraps focus and Escape restores its parent",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 490,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "nested Alert Dialog wraps focus and Cancel restores its parent",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 444,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "nested Alert Dialog wraps focus and Confirm restores its parent",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 476,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "nested Alert Dialog wraps focus and Escape restores its parent with force-mounted content",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 458,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "a queued native close event cannot dismiss a reopened force-mounted Alert Dialog",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 629,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "light desktop cards wrap long content and retain compact spacing and usable actions",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 677,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "light narrow enlarged cards wrap long content and retain compact spacing and usable actions",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 621,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "light vertical separators stretch, accept overrides, expose semantics and skip keyboard navigation",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 499,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "dark desktop cards wrap long content and retain compact spacing and usable actions",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 514,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "dark narrow enlarged cards wrap long content and retain compact spacing and usable actions",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 738,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "dark vertical separators stretch, accept overrides, expose semantics and skip keyboard navigation",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 529,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "Chart exposes data through keyboard, table and native legend controls",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 597,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "Chart supports empty data, replacement, every chart kind, theme updates and disposal",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 874,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "Chart light stays accessible and resizes in a narrow viewport",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 993,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "Chart dark stays accessible and resizes in a narrow viewport",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 979,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "Data Table sorts, honors controlled rejection and filters local records",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 575,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "Data Table pagination, page selection and visibility follow actual rows",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 769,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "Data Table loading, retained error recovery, live data and remount stay usable",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 659,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "Data Table light narrow enlarged controls and scrollable records remain accessible",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1052,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "Data Table dark narrow enlarged controls and scrollable records remain accessible",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 990,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "Calendar controlled selection rejects requests and enforces unavailable dates",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 560,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "Calendar day keyboard crosses disabled days and months, with RTL direction",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 582,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "Multiple selection and range endpoints retain authored dates and reject disabled intervals",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 681,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "Date Picker accepts a day, returns focus and serializes/reset native form values",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 581,
+            "errors": []
+          }
+        ]
+      },
+      {
+        "title": "OTP uses native text editing, invalid-character recovery and one tab stop",
+        "project": "chromium",
+        "status": "unexpected",
+        "results": [
+          {
+            "status": "failed",
+            "durationMs": 5526,
+            "errors": [
+              "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: 1\nReceived: 6"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "focused-integration",
+    "stats": {
+      "startTime": "2026-10-20T15:59:51.123Z",
+      "duration": 67238.434,
+      "expected": 36,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "tests": [
+      {
+        "title": "validates a draft, edits nested controls, saves canonical rows and restores row focus",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1889
+          }
+        ]
+      },
+      {
+        "title": "rejects a save without changing rows, preserves the draft and only retries explicitly",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 2207
+          }
+        ]
+      },
+      {
+        "title": "guards duplicate pending submissions and dismissal while the save is unresolved",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 2434
+          }
+        ]
+      },
+      {
+        "title": "resets or cancels a draft and never leaks it into a different menu item",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 840
+          }
+        ]
+      },
+      {
+        "title": "keeps selection through sorting and edits, handles filtered-away focus and recovers refresh failures",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 3192
+          }
+        ]
+      },
+      {
+        "title": "admin composition stays usable in light narrow enlarged layouts",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1622
+          }
+        ]
+      },
+      {
+        "title": "admin composition stays usable in dark narrow enlarged layouts",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1548
+          }
+        ]
+      },
+      {
+        "title": "validates a draft, edits nested controls, saves canonical rows and restores row focus",
+        "project": "firefox",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 3095
+          }
+        ]
+      },
+      {
+        "title": "rejects a save without changing rows, preserves the draft and only retries explicitly",
+        "project": "firefox",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 2207
+          }
+        ]
+      },
+      {
+        "title": "guards duplicate pending submissions and dismissal while the save is unresolved",
+        "project": "firefox",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 2552
+          }
+        ]
+      },
+      {
+        "title": "resets or cancels a draft and never leaks it into a different menu item",
+        "project": "firefox",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1122
+          }
+        ]
+      },
+      {
+        "title": "keeps selection through sorting and edits, handles filtered-away focus and recovers refresh failures",
+        "project": "firefox",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 3237
+          }
+        ]
+      },
+      {
+        "title": "admin composition stays usable in light narrow enlarged layouts",
+        "project": "firefox",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 2289
+          }
+        ]
+      },
+      {
+        "title": "admin composition stays usable in dark narrow enlarged layouts",
+        "project": "firefox",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 2485
+          }
+        ]
+      },
+      {
+        "title": "validates a draft, edits nested controls, saves canonical rows and restores row focus",
+        "project": "webkit",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 2496
+          }
+        ]
+      },
+      {
+        "title": "rejects a save without changing rows, preserves the draft and only retries explicitly",
+        "project": "webkit",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 2530
+          }
+        ]
+      },
+      {
+        "title": "guards duplicate pending submissions and dismissal while the save is unresolved",
+        "project": "webkit",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 2681
+          }
+        ]
+      },
+      {
+        "title": "resets or cancels a draft and never leaks it into a different menu item",
+        "project": "webkit",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 870
+          }
+        ]
+      },
+      {
+        "title": "keeps selection through sorting and edits, handles filtered-away focus and recovers refresh failures",
+        "project": "webkit",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 3519
+          }
+        ]
+      },
+      {
+        "title": "admin composition stays usable in light narrow enlarged layouts",
+        "project": "webkit",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 2033
+          }
+        ]
+      },
+      {
+        "title": "admin composition stays usable in dark narrow enlarged layouts",
+        "project": "webkit",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1971
+          }
+        ]
+      },
+      {
+        "title": "Data Table sorts, honors controlled rejection and filters local records",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 623
+          }
+        ]
+      },
+      {
+        "title": "Data Table pagination, page selection and visibility follow actual rows",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 837
+          }
+        ]
+      },
+      {
+        "title": "Data Table loading, retained error recovery, live data and remount stay usable",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 830
+          }
+        ]
+      },
+      {
+        "title": "Data Table light narrow enlarged controls and scrollable records remain accessible",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 997
+          }
+        ]
+      },
+      {
+        "title": "Data Table dark narrow enlarged controls and scrollable records remain accessible",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 938
+          }
+        ]
+      },
+      {
+        "title": "Data Table sorts, honors controlled rejection and filters local records",
+        "project": "firefox",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 820
+          }
+        ]
+      },
+      {
+        "title": "Data Table pagination, page selection and visibility follow actual rows",
+        "project": "firefox",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1105
+          }
+        ]
+      },
+      {
+        "title": "Data Table loading, retained error recovery, live data and remount stay usable",
+        "project": "firefox",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1589
+          }
+        ]
+      },
+      {
+        "title": "Data Table light narrow enlarged controls and scrollable records remain accessible",
+        "project": "firefox",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1313
+          }
+        ]
+      },
+      {
+        "title": "Data Table dark narrow enlarged controls and scrollable records remain accessible",
+        "project": "firefox",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1324
+          }
+        ]
+      },
+      {
+        "title": "Data Table sorts, honors controlled rejection and filters local records",
+        "project": "webkit",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 754
+          }
+        ]
+      },
+      {
+        "title": "Data Table pagination, page selection and visibility follow actual rows",
+        "project": "webkit",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1238
+          }
+        ]
+      },
+      {
+        "title": "Data Table loading, retained error recovery, live data and remount stay usable",
+        "project": "webkit",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1187
+          }
+        ]
+      },
+      {
+        "title": "Data Table light narrow enlarged controls and scrollable records remain accessible",
+        "project": "webkit",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1537
+          }
+        ]
+      },
+      {
+        "title": "Data Table dark narrow enlarged controls and scrollable records remain accessible",
+        "project": "webkit",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1313
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "focused-e2e",
+    "stats": {
+      "startTime": "2026-10-20T16:01:13.857Z",
+      "duration": 60568.6,
+      "expected": 36,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "tests": [
+      {
+        "title": "validates a draft, edits nested controls, saves canonical rows and restores row focus",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1636
+          }
+        ]
+      },
+      {
+        "title": "rejects a save without changing rows, preserves the draft and only retries explicitly",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 2013
+          }
+        ]
+      },
+      {
+        "title": "guards duplicate pending submissions and dismissal while the save is unresolved",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 2219
+          }
+        ]
+      },
+      {
+        "title": "resets or cancels a draft and never leaks it into a different menu item",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 572
+          }
+        ]
+      },
+      {
+        "title": "keeps selection through sorting and edits, handles filtered-away focus and recovers refresh failures",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 2929
+          }
+        ]
+      },
+      {
+        "title": "admin composition stays usable in light narrow enlarged layouts",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1253
+          }
+        ]
+      },
+      {
+        "title": "admin composition stays usable in dark narrow enlarged layouts",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1119
+          }
+        ]
+      },
+      {
+        "title": "validates a draft, edits nested controls, saves canonical rows and restores row focus",
+        "project": "firefox",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 2797
+          }
+        ]
+      },
+      {
+        "title": "rejects a save without changing rows, preserves the draft and only retries explicitly",
+        "project": "firefox",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1869
+          }
+        ]
+      },
+      {
+        "title": "guards duplicate pending submissions and dismissal while the save is unresolved",
+        "project": "firefox",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 2410
+          }
+        ]
+      },
+      {
+        "title": "resets or cancels a draft and never leaks it into a different menu item",
+        "project": "firefox",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 859
+          }
+        ]
+      },
+      {
+        "title": "keeps selection through sorting and edits, handles filtered-away focus and recovers refresh failures",
+        "project": "firefox",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 2991
+          }
+        ]
+      },
+      {
+        "title": "admin composition stays usable in light narrow enlarged layouts",
+        "project": "firefox",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1846
+          }
+        ]
+      },
+      {
+        "title": "admin composition stays usable in dark narrow enlarged layouts",
+        "project": "firefox",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1790
+          }
+        ]
+      },
+      {
+        "title": "validates a draft, edits nested controls, saves canonical rows and restores row focus",
+        "project": "webkit",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 2124
+          }
+        ]
+      },
+      {
+        "title": "rejects a save without changing rows, preserves the draft and only retries explicitly",
+        "project": "webkit",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 2281
+          }
+        ]
+      },
+      {
+        "title": "guards duplicate pending submissions and dismissal while the save is unresolved",
+        "project": "webkit",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 2426
+          }
+        ]
+      },
+      {
+        "title": "resets or cancels a draft and never leaks it into a different menu item",
+        "project": "webkit",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 668
+          }
+        ]
+      },
+      {
+        "title": "keeps selection through sorting and edits, handles filtered-away focus and recovers refresh failures",
+        "project": "webkit",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 3249
+          }
+        ]
+      },
+      {
+        "title": "admin composition stays usable in light narrow enlarged layouts",
+        "project": "webkit",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1825
+          }
+        ]
+      },
+      {
+        "title": "admin composition stays usable in dark narrow enlarged layouts",
+        "project": "webkit",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1758
+          }
+        ]
+      },
+      {
+        "title": "Data Table sorts, honors controlled rejection and filters local records",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 336
+          }
+        ]
+      },
+      {
+        "title": "Data Table pagination, page selection and visibility follow actual rows",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 534
+          }
+        ]
+      },
+      {
+        "title": "Data Table loading, retained error recovery, live data and remount stay usable",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 459
+          }
+        ]
+      },
+      {
+        "title": "Data Table light narrow enlarged controls and scrollable records remain accessible",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 613
+          }
+        ]
+      },
+      {
+        "title": "Data Table dark narrow enlarged controls and scrollable records remain accessible",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 610
+          }
+        ]
+      },
+      {
+        "title": "Data Table sorts, honors controlled rejection and filters local records",
+        "project": "firefox",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 618
+          }
+        ]
+      },
+      {
+        "title": "Data Table pagination, page selection and visibility follow actual rows",
+        "project": "firefox",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 932
+          }
+        ]
+      },
+      {
+        "title": "Data Table loading, retained error recovery, live data and remount stay usable",
+        "project": "firefox",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1283
+          }
+        ]
+      },
+      {
+        "title": "Data Table light narrow enlarged controls and scrollable records remain accessible",
+        "project": "firefox",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 921
+          }
+        ]
+      },
+      {
+        "title": "Data Table dark narrow enlarged controls and scrollable records remain accessible",
+        "project": "firefox",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 934
+          }
+        ]
+      },
+      {
+        "title": "Data Table sorts, honors controlled rejection and filters local records",
+        "project": "webkit",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 544
+          }
+        ]
+      },
+      {
+        "title": "Data Table pagination, page selection and visibility follow actual rows",
+        "project": "webkit",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 764
+          }
+        ]
+      },
+      {
+        "title": "Data Table loading, retained error recovery, live data and remount stay usable",
+        "project": "webkit",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 678
+          }
+        ]
+      },
+      {
+        "title": "Data Table light narrow enlarged controls and scrollable records remain accessible",
+        "project": "webkit",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 970
+          }
+        ]
+      },
+      {
+        "title": "Data Table dark narrow enlarged controls and scrollable records remain accessible",
+        "project": "webkit",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 967
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "otp-baseline",
+    "stats": {
+      "startTime": "2026-10-20T16:02:27.229Z",
+      "duration": 2548.11,
+      "expected": 1,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "tests": [
+      {
+        "title": "OTP uses native text editing, invalid-character recovery and one tab stop",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 900
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "otp-current",
+    "stats": {
+      "startTime": "2026-10-20T16:02:57.759Z",
+      "duration": 3722.662,
+      "expected": 1,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "tests": [
+      {
+        "title": "OTP uses native text editing, invalid-character recovery and one tab stop",
+        "project": "chromium",
+        "status": "expected",
+        "results": [
+          {
+            "status": "passed",
+            "durationMs": 1032
+          }
+        ]
+      }
+    ]
+  }
+]

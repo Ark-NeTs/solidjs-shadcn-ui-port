@@ -10,6 +10,7 @@ import {Skeleton} from 'shadcn-solidjs-theme/ui/skeleton';
 import {Tabs,TabsList,TabsTrigger,TabsContent} from 'shadcn-solidjs-theme/ui/tabs';
 import {Dialog,DialogTrigger,DialogContent,DialogTitle,DialogDescription} from 'shadcn-solidjs-theme/ui/dialog';
 import '../../playground/index.css';
+import {Workflow} from './workflow';
 type Data={title:string};
 const waiting=new Map<string,()=>void>();let requests=0;
 /** Query owns caching; this deterministic service owns transport and cancellation. */
@@ -22,7 +23,7 @@ function MenuTabs(){const [selected,setSelected]=createSignal('overview');const 
 function Menu(){return <section><h2>Menu route</h2><Loading fallback={<div role="status">Loading menu…<Skeleton class="h-8 w-48"/></div>}><MenuTabs/></Loading><Dialog><DialogTrigger>Inspect details</DialogTrigger><DialogContent><DialogTitle>Menu details</DialogTitle><DialogDescription>Query-backed content inside the modal.</DialogDescription><Loading fallback={<div role="status">Loading details…<Skeleton class="h-8 w-48"/></div>}><QueryText name="details"/></Loading><Button onClick={()=>waiting.get('details')?.()}>Resolve details</Button></DialogContent></Dialog></section>;}
 /** A second route exercises unmounting, native links, history and cached remounts. */
 function Settings(){return <section><h2>Settings route</h2><p>Your menu draft remains in the application shell.</p></section>;}
-const Router=createRouter({preloadLinks:false,routes:[{path:'/',component:Menu},{path:'/settings',component:Settings}]});
+const Router=createRouter({preloadLinks:false,routes:[{path:'/',component:Menu},{path:'/settings',component:Settings},{path:'/workflow',component:Workflow}]});
 /** Keep query cache and shell form ownership above route-level component disposal. */
 function App(){const client=new QueryClient({defaultOptions:{queries:{retry:false,refetchOnWindowFocus:false,gcTime:Infinity}}});const [count,setCount]=createSignal(0);onCleanup(()=>client.clear());return <QueryClientProvider client={client}><Router>{props=><main class="grid gap-5"><h1>Solid consumer compatibility</h1><nav aria-label="Application"><Button as="a" href="/">Menu page</Button><Button as="a" href="/settings" variant="outline">Settings page</Button></nav><Label for="consumer-draft">Persistent draft</Label><Input id="consumer-draft" defaultValue="Initial draft"/><div class="flex gap-2"><Button onClick={()=>{for(const settle of [...waiting.values()])settle();setCount(requests);}}>Resolve requests</Button><output data-testid="request-count">Requests: {count()}</output></div>{props.children}</main>}</Router></QueryClientProvider>;}
 render(()=><App/>,document.getElementById('app')!);
