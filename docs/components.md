@@ -1723,6 +1723,14 @@ content or Solid cell formatters. initialState is a one-time default. Use stable
 row IDs and immutable replacements to retain DOM identity. Fetching, caching,
 virtualization and server-pagination policy stay with the application.
 
+When a cache exposes reconciled store proxies, create immutable row snapshots
+before passing them to Table core. With Solid Query rc.5, for example, derive
+`const rows = createMemo(() => query.data.map(item => ({ ...item })))` and pass
+`data={rows()}`. Read every field used by column accessors in that snapshot;
+copy nested values explicitly when needed. Stable proxies can otherwise keep
+Table core's cached cell values stale after a successful cache update. Keep
+`getRowId` stable so selection remains attached to the record.
+
 Examples: `/?catalog-data-table`. [Adapter repairs, acceptance and limits](DATA-TABLE-DELIVERY.md).
 
 ![Data Table](screenshots/catalog-data-table-light.png)

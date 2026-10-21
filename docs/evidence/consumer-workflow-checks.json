@@ -1,0 +1,68 @@
+[
+  {
+    "command": "bun run check && bun run lint && bun run test && bun run test:server && node scripts/check-consumer.mjs",
+    "exitCode": 0,
+    "seconds": 19.304,
+    "cwd": "/Users/arktas/GitHub/solidjs-shadcn-ui-port"
+  },
+  {
+    "command": "THEME_PORT=4403 RESULTS_FILE=/tmp/consumer-workflow-source.json bun run test:consumer --max-failures=1",
+    "exitCode": 0,
+    "seconds": 30.447,
+    "cwd": "/Users/arktas/GitHub/solidjs-shadcn-ui-port"
+  },
+  {
+    "command": "THEME_PORT=4403 RESULTS_FILE=/tmp/consumer-workflow-source-final.json bun run test:consumer --max-failures=1",
+    "exitCode": 0,
+    "seconds": 29.467,
+    "cwd": "/Users/arktas/GitHub/solidjs-shadcn-ui-port"
+  },
+  {
+    "command": "node --input-type=module -e 'import {ESLint} from \"eslint\"; import tseslint from \"typescript-eslint\"; const lint = new ESLint({overrideConfigFile: true, overrideConfig: tseslint.config(...tseslint.configs.recommended)}); const files = [\"workflow.tsx\", \"workflow-api.ts\", \"workflow-server.ts\", \"workflow.spec.ts\"].map(file => \"validation/consumer-stack/\" + file); const results = await lint.lintFiles(files); console.log(await (await lint.loadFormatter(\"stylish\")).format(results)); if (results.some(result => result.errorCount || result.warningCount)) process.exitCode = 1;'",
+    "exitCode": 0,
+    "seconds": 0.743,
+    "cwd": "/Users/arktas/GitHub/solidjs-shadcn-ui-port"
+  },
+  {
+    "command": "THEME_PORT=4403 CONSUMER_BUILT=1 RESULTS_FILE=/tmp/consumer-workflow-built.json bun run test:consumer --max-failures=1",
+    "exitCode": 0,
+    "seconds": 33.81,
+    "cwd": "/Users/arktas/GitHub/solidjs-shadcn-ui-port"
+  },
+  {
+    "command": "THEME_PORT=4403 RESULTS_FILE=/tmp/consumer-workflow-integration.json bun run test:integration tests/integration/admin-menu.spec.ts tests/integration/catalog-data-table.spec.ts --max-failures=1",
+    "exitCode": 1,
+    "seconds": 39.55,
+    "cwd": "/Users/arktas/GitHub/solidjs-shadcn-ui-port"
+  },
+  {
+    "command": "THEME_PORT=4403 RESULTS_FILE=/tmp/consumer-workflow-focused-integration.json bunx --no-install playwright test tests/integration/admin-menu.spec.ts tests/integration/catalog-data-table.spec.ts --max-failures=1",
+    "exitCode": 0,
+    "seconds": 67.626,
+    "cwd": "/Users/arktas/GitHub/solidjs-shadcn-ui-port"
+  },
+  {
+    "command": "bun run check && bun run lint && bun run test && bun run test:server && node scripts/check-consumer.mjs && bun run docs:check && bun run parity:admin",
+    "exitCode": 0,
+    "seconds": 22.29,
+    "cwd": "/Users/arktas/GitHub/solidjs-shadcn-ui-port"
+  },
+  {
+    "command": "THEME_PORT=4403 THEME_PRODUCTION=1 RESULTS_FILE=/tmp/consumer-workflow-focused-e2e.json bunx --no-install playwright test tests/e2e/admin-menu.spec.ts tests/e2e/catalog-data-table.spec.ts --max-failures=1",
+    "exitCode": 0,
+    "seconds": 60.945,
+    "cwd": "/Users/arktas/GitHub/solidjs-shadcn-ui-port"
+  },
+  {
+    "command": "THEME_PORT=4403 RESULTS_FILE=/tmp/consumer-workflow-otp-baseline.json bunx --no-install playwright test tests/integration/catalog-dates.spec.ts --project=chromium --grep \"OTP uses native text editing\" --max-failures=1",
+    "exitCode": 0,
+    "seconds": 2.947,
+    "cwd": "/tmp/consumer-baseline.7l6Kqs"
+  },
+  {
+    "command": "THEME_PORT=4403 RESULTS_FILE=/tmp/consumer-workflow-otp-current.json bunx --no-install playwright test tests/integration/catalog-dates.spec.ts --project=chromium --grep \"OTP uses native text editing\" --max-failures=1",
+    "exitCode": 0,
+    "seconds": 4.101,
+    "cwd": "/Users/arktas/GitHub/solidjs-shadcn-ui-port"
+  }
+]
